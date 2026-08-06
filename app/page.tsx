@@ -108,9 +108,9 @@ export default function HomePage() {
                 Zero student data. Ever.
               </h2>
               <p className="mt-4 text-lg text-primary-foreground/80">
-                Built by an educator, privacy-first, and district-approvable.
-                The whole product is designed around one hard rule: never put
-                student personal information into public AI.
+                Built by two veteran teachers, privacy-first, and
+                district-approvable. The whole product is designed around one
+                hard rule: never put student personal information into public AI.
               </p>
             </div>
           </div>

@@ -47,7 +47,7 @@ export default async function OwnerResourcesPage() {
                         <div className="min-w-0">
                           <p className="truncate text-sm font-medium text-foreground">{r.title}</p>
                           <p className="text-xs text-muted-foreground">
-                            {r.category} · {r.grade_band} · {roleLabel(r.min_role)}
+                            {r.subject} · {r.category} · {r.grade_band} · {roleLabel(r.min_role)}
                           </p>
                         </div>
                         <DeleteButton id={r.id} kind="recipe" label={r.title} />

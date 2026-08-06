@@ -70,6 +70,14 @@ export default async function BlogPostPage({
             <div className="prose-content mx-auto max-w-3xl text-foreground">
               <MDXRemote source={post.content} />
             </div>
+
+            {post.authorBio && (
+              <div className="mx-auto mt-10 max-w-3xl rounded-2xl border bg-secondary/40 p-6">
+                <p className="font-semibold text-foreground">{post.author}</p>
+                <p className="text-sm text-accent">{post.authorRole}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{post.authorBio}</p>
+              </div>
+            )}
           </Container>
         </Section>
       </article>

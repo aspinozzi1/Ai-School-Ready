@@ -38,7 +38,7 @@ export function SiteFooter() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t pt-6 text-sm text-muted-foreground sm:flex-row">
           <p>
-            © {site.launchYear} {site.name}. Built by an educator, privacy-first.
+            © {site.launchYear} {site.name}. Built by two teachers, privacy-first.
           </p>
           <p>
             Questions?{" "}

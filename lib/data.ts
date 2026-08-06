@@ -13,7 +13,8 @@ export async function getRecipes(): Promise<Recipe[]> {
   const { data } = await supabase
     .from("recipes")
     .select("*")
-    .order("category", { ascending: true })
+    .order("subject", { ascending: true })
+    .order("grade_band", { ascending: true })
     .order("title", { ascending: true });
   return (data as Recipe[]) ?? [];
 }

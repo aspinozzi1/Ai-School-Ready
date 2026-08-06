@@ -15,6 +15,7 @@ const roleEnum = z.enum(["teacher", "school_admin", "owner"]);
 
 const recipeSchema = z.object({
   title: z.string().trim().min(1, "Title is required."),
+  subject: z.string().trim().min(1, "Subject is required."),
   category: z.string().trim().min(1, "Category is required."),
   grade_band: z.string().trim().min(1, "Grade band is required."),
   summary: z.string().trim().default(""),

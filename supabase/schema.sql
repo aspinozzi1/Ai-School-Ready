@@ -54,6 +54,7 @@ create table if not exists public.resources (
 create table if not exists public.recipes (
   id uuid primary key default gen_random_uuid(),
   title text not null,
+  subject text not null default 'Cross-curricular',
   category text not null default 'General',
   grade_band text not null default 'All grades',
   summary text not null default '',
@@ -61,6 +62,11 @@ create table if not exists public.recipes (
   min_role text not null default 'teacher' check (min_role in ('teacher','school_admin','owner')),
   created_at timestamptz not null default now()
 );
+
+-- Migration for existing projects created before "subject" existed. Safe to
+-- re-run; does nothing once the column is present.
+alter table public.recipes
+  add column if not exists subject text not null default 'Cross-curricular';
 
 create table if not exists public.rollout_steps (
   id uuid primary key default gen_random_uuid(),

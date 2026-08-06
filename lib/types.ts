@@ -35,6 +35,7 @@ export interface License {
 export interface Recipe {
   id: string;
   title: string;
+  subject: string;
   category: string;
   grade_band: string;
   summary: string;

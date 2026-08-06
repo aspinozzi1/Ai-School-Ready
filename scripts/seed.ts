@@ -73,18 +73,19 @@ async function ensureBucket() {
 async function uploadPlaceholders() {
   for (const r of seedResources) {
     if (r.type !== "file" || !r.file_path) continue;
+    // Render the resource's real starter text into the PDF so downloads work
+    // end to end. Owners replace these with final files from Owner Admin.
     const pdf = makePdf(r.title, [
-      "This is a sample placeholder document.",
-      "Replace it with your real file from the Owner Admin.",
+      ...r.body,
       "",
-      r.description ?? "",
+      "— Starter template from AI-Ready School. Review and adapt before adopting.",
     ]);
     const { error } = await admin.storage
       .from("resources")
       .upload(r.file_path, pdf, { contentType: "application/pdf", upsert: true });
     if (error) throw error;
   }
-  console.log(`✓ Uploaded ${seedResources.length} placeholder files`);
+  console.log(`✓ Uploaded ${seedResources.length} starter files`);
 }
 
 async function seedTable(
@@ -140,7 +141,18 @@ async function main() {
   await ensureBucket();
   await uploadPlaceholders();
   await seedTable("recipes", seedRecipes);
-  await seedTable("resources", seedResources);
+  // `body` is only used to render the PDF above — it's not a DB column.
+  await seedTable(
+    "resources",
+    seedResources.map((r) => ({
+      title: r.title,
+      description: r.description,
+      category: r.category,
+      type: r.type,
+      file_path: r.file_path,
+      min_role: r.min_role,
+    }))
+  );
   await ensureOwner();
   console.log("\n✓ Seed complete.\n");
 }

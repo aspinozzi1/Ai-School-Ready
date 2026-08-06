@@ -48,6 +48,15 @@ export function AddRecipeForm() {
           <Input id="r-title" name="title" required />
         </div>
         <div className="space-y-1.5">
+          <Label htmlFor="r-subject">Subject</Label>
+          <Input
+            id="r-subject"
+            name="subject"
+            placeholder="Math, ELA, Science, CTE, Early Childhood…"
+            required
+          />
+        </div>
+        <div className="space-y-1.5">
           <Label htmlFor="r-category">Category</Label>
           <Input id="r-category" name="category" placeholder="Planning, Assessment…" required />
         </div>
