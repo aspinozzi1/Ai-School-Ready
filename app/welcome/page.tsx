@@ -3,7 +3,6 @@ import Link from "next/link";
 import { CheckCircle2, Mail, PartyPopper } from "lucide-react";
 import { Container, Section } from "@/components/marketing/section";
 import { Logo } from "@/components/brand/logo";
-import { Button } from "@/components/ui/button";
 import { SetPasswordForm } from "./set-password-form";
 import { getSessionUser } from "@/lib/auth";
 import { dashboardPathFor } from "@/lib/nav";

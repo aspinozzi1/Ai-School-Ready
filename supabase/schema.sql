@@ -250,3 +250,11 @@ on conflict (id) do nothing;
 drop policy if exists resources_bucket_read on storage.objects;
 create policy resources_bucket_read on storage.objects for select
   to authenticated using (bucket_id = 'resources');
+
+-- The Owner may manage files directly. (The app also uploads via the service
+-- role, which bypasses RLS, so this is a convenience/defense-in-depth policy.)
+drop policy if exists resources_bucket_owner_write on storage.objects;
+create policy resources_bucket_owner_write on storage.objects for all
+  to authenticated
+  using (bucket_id = 'resources' and app_role() = 'owner')
+  with check (bucket_id = 'resources' and app_role() = 'owner');
