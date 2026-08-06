@@ -5,6 +5,7 @@ import type { NavItem } from "@/components/dashboard/sidebar-nav";
 
 const ownerNav: NavItem[] = [
   { title: "Overview", href: "/owner", icon: "LayoutDashboard" },
+  { title: "PD Courses", href: "/owner/pd", icon: "GraduationCap" },
   { title: "Resources", href: "/owner/resources", icon: "FolderCog" },
   { title: "Users", href: "/owner/users", icon: "Users" },
   { title: "Sales", href: "/owner/sales", icon: "BarChart3" },

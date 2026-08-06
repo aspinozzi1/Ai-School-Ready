@@ -5,6 +5,7 @@ import type { NavItem } from "@/components/dashboard/sidebar-nav";
 
 const teacherNav: NavItem[] = [
   { title: "Overview", href: "/dashboard", icon: "LayoutDashboard" },
+  { title: "PD Courses", href: "/dashboard/pd", icon: "GraduationCap" },
   { title: "Cookbook", href: "/dashboard/cookbook", icon: "BookOpen" },
   { title: "Downloads", href: "/dashboard/downloads", icon: "Download" },
   { title: "Account", href: "/dashboard/account", icon: "User" },

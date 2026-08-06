@@ -3,15 +3,23 @@ import {
   Presentation,
   BookOpen,
   Map,
+  Blocks,
+  Accessibility,
+  GraduationCap,
+  Clock,
   type LucideIcon,
 } from "lucide-react";
 
-/** Map the string icon names used in config/site.ts to Lucide components. */
+/** Map the string icon names used in config/site.ts + config/pillars.ts. */
 const icons: Record<string, LucideIcon> = {
   ShieldCheck,
   Presentation,
   BookOpen,
   Map,
+  Blocks,
+  Accessibility,
+  GraduationCap,
+  Clock,
 };
 
 export function Icon({

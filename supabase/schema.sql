@@ -264,3 +264,70 @@ create policy resources_bucket_owner_write on storage.objects for all
   to authenticated
   using (bucket_id = 'resources' and app_role() = 'owner')
   with check (bucket_id = 'resources' and app_role() = 'owner');
+
+-- =============================================================================
+-- Self-paced PD: pillars → courses → lessons, with per-user completion tracking.
+-- Pillars are a text label (see config/pillars.ts) so the catalog can grow.
+-- =============================================================================
+
+-- Tag prompts and downloads with a pillar so each pillar is a full "package".
+alter table public.recipes   add column if not exists pillar text;
+alter table public.resources add column if not exists pillar text;
+
+create table if not exists public.pd_courses (
+  id uuid primary key default gen_random_uuid(),
+  pillar text not null default 'AI Safety & Policy',
+  title text not null,
+  summary text not null default '',
+  audience text not null default 'All staff',
+  est_minutes int not null default 30,
+  min_role text not null default 'teacher' check (min_role in ('teacher','school_admin','owner')),
+  sort_order int not null default 0,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists public.pd_lessons (
+  id uuid primary key default gen_random_uuid(),
+  course_id uuid not null references public.pd_courses(id) on delete cascade,
+  title text not null,
+  body text not null default '',
+  sort_order int not null default 0,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists public.pd_progress (
+  user_id uuid not null references public.profiles(id) on delete cascade,
+  lesson_id uuid not null references public.pd_lessons(id) on delete cascade,
+  completed_at timestamptz not null default now(),
+  primary key (user_id, lesson_id)
+);
+
+alter table public.pd_courses  enable row level security;
+alter table public.pd_lessons  enable row level security;
+alter table public.pd_progress enable row level security;
+
+-- Courses: visible to anyone with active access at/above the course's min_role.
+drop policy if exists pd_courses_select on public.pd_courses;
+create policy pd_courses_select on public.pd_courses for select using (
+  has_active_access() and role_rank(app_role()) >= role_rank(min_role)
+);
+drop policy if exists pd_courses_write on public.pd_courses;
+create policy pd_courses_write on public.pd_courses for all using (app_role() = 'owner')
+  with check (app_role() = 'owner');
+
+-- Lessons: visible when their parent course is visible.
+drop policy if exists pd_lessons_select on public.pd_lessons;
+create policy pd_lessons_select on public.pd_lessons for select using (
+  has_active_access() and exists (
+    select 1 from public.pd_courses c
+    where c.id = course_id and role_rank(app_role()) >= role_rank(c.min_role)
+  )
+);
+drop policy if exists pd_lessons_write on public.pd_lessons;
+create policy pd_lessons_write on public.pd_lessons for all using (app_role() = 'owner')
+  with check (app_role() = 'owner');
+
+-- Progress: each user reads and writes only their own completion rows.
+drop policy if exists pd_progress_rw on public.pd_progress;
+create policy pd_progress_rw on public.pd_progress for all using (user_id = auth.uid())
+  with check (user_id = auth.uid());

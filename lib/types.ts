@@ -41,6 +41,7 @@ export interface Recipe {
   summary: string;
   prompt_text: string;
   min_role: Role;
+  pillar: string | null;
 }
 
 export interface Resource {
@@ -51,7 +52,29 @@ export interface Resource {
   file_path: string | null;
   category: string;
   min_role: Role;
+  pillar: string | null;
   created_at: string;
+}
+
+/** A self-paced PD course (belongs to a pillar). */
+export interface PdCourse {
+  id: string;
+  pillar: string;
+  title: string;
+  summary: string;
+  audience: string;
+  est_minutes: number;
+  min_role: Role;
+  sort_order: number;
+}
+
+/** One lesson within a PD course. */
+export interface PdLesson {
+  id: string;
+  course_id: string;
+  title: string;
+  body: string;
+  sort_order: number;
 }
 
 export interface RolloutStep {
