@@ -9,10 +9,28 @@ student opportunity are where it scales.**
 
 ---
 
-## ✅ Shipped in this pass (launch content + Prompt Packs)
+## ✅ Shipped so far
+- **Self-paced PD system** — pillars → courses → lessons with per-user completion
+  tracking. Learner PD Library + course viewer (`/dashboard/pd`); owner management
+  (`/owner/pd`). Six pillars defined in `config/pillars.ts`. Content loader in
+  `supabase/seed.sql` (full Cookbook + 6 authored courses / 21 lessons, incl.
+  "Finding & Using the Right AI Tools for Your Subject" and "Teaching Students to
+  Harness AI Responsibly").
 - **Prompt Packs** — Cookbook organized by **subject & grade**: new `subject`
   field on recipes, grouped/filterable browser, and the Owner "Add recipe" form
   updated to match. (Run the DB migration in `supabase/schema.sql`.)
+- **Pricing**: added a visible **invoice / purchase-order option for schools**
+  (full invoice backend is the next build).
+
+## 🔜 Next builds (in order)
+1. **Invoice / PO system** — generate + track invoices, mark paid, provision the
+   school on payment (schools rarely pay by card). Wedge → membership packaging.
+2. **Subscription + tiers** wired to the monetization model (Safety Starter wedge →
+   AI-Ready Membership subscription → District).
+3. **Certificate + NJ/PA credit-logging engine** on top of the PD completion data.
+4. **Scaling readiness** before high traffic: upgrade Supabase to Pro + connection
+   pooling; fix provisioning user-lookup past ~1,000 accounts; paginate large
+   library reads; confirm Netlify function limits.
 - **Real content library** — a privacy-safe Cookbook across subjects/grades
   (incl. CTE and Early Childhood), plus **real starter governance documents**:
   AI Acceptable-Use Policy, FERPA one-pager, Family Letter, Staff AI Agreement,

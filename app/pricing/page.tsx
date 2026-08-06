@@ -111,6 +111,20 @@ export default function PricingPage() {
             })}
           </div>
 
+          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-accent/30 bg-accent/5 p-6 text-center">
+            <h3 className="font-semibold text-primary">
+              Schools &amp; districts: pay by invoice or purchase order
+            </h3>
+            <p className="mx-auto mt-2 max-w-xl text-sm text-muted-foreground">
+              No card required. Request an invoice or send a PO and we&apos;ll bill
+              your school directly (net-30). Your access is activated as soon as
+              payment is arranged.
+            </p>
+            <Button asChild size="lg" variant="outline" className="mt-4">
+              <Link href="/contact?topic=invoice">Request an invoice / PO</Link>
+            </Button>
+          </div>
+
           <p className="mt-8 text-center text-sm text-muted-foreground">
             Already purchased?{" "}
             <Link href="/login" className="font-medium text-accent hover:underline">
