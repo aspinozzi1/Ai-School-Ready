@@ -84,6 +84,45 @@ export function sendWelcomeEmail(to: string, actionUrl: string, productName: str
   });
 }
 
+/**
+ * Flow A step 4 — the onboarding sequence. Email #1 is the welcome/set-password
+ * email above. This schedules the two follow-ups (Resend's scheduledAt handles
+ * the delay, so we don't need our own queue).
+ */
+export async function scheduleTeacherOnboarding(to: string) {
+  if (!isResendConfigured) {
+    console.info(`[email] (onboarding not scheduled — Resend not configured) → ${to}`);
+    return;
+  }
+  const resend = new Resend(env.resendApiKey);
+  try {
+    await resend.emails.send({
+      from: env.emailFrom,
+      to,
+      scheduledAt: "in 1 day",
+      subject: "Getting the most from your Prompt Cookbook",
+      html: layout(
+        "How to use the Cookbook",
+        `<p style="font-size:14px;">Open the <a href="${env.siteUrl}/dashboard/cookbook" style="color:#0d9488;">Cookbook</a>, search for a task (like "rubric" or "parent email"), and copy a prompt. Swap in placeholders — never real student names.</p>
+         <p style="font-size:14px;">Start with one prompt this week. That's it. The time savings add up fast.</p>`
+      ),
+    });
+    await resend.emails.send({
+      from: env.emailFrom,
+      to,
+      scheduledAt: "in 3 days",
+      subject: "Bring AI-Ready School to your whole team",
+      html: layout(
+        "Know a school that needs this?",
+        `<p style="font-size:14px;">If your building or district is ready for a real AI plan — a board-ready policy, staff training, and seats for everyone — the School License covers it.</p>
+         <p style="margin:20px 0;"><a href="${env.siteUrl}/pricing" style="background:#173a5e;color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:600;display:inline-block;">See the School License</a></p>`
+      ),
+    });
+  } catch (err) {
+    console.error("[email] onboarding scheduling failed:", err);
+  }
+}
+
 /** Teacher invite email (used in the administration phase). */
 export function sendTeacherInviteEmail(to: string, actionUrl: string, schoolName: string) {
   return sendEmail({
