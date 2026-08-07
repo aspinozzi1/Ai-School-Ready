@@ -36,6 +36,14 @@ students or data are discussed.
 | 8 | `KitXX_AdminOnePager.pdf` | single sheet | 1 p |
 | 9 | `KitXX_References.pdf` | flow doc | 2 pp, APA + "used for" note per source + 3–5 further reading |
 
+## Pagination (owner rule, 2026-08-07)
+No sentence or paragraph is ever split across a page break. Prose blocks, list
+items, cards, callouts, and reference entries move to the next page whole; lists
+may break between items only; a slide cue, its stage direction, and its first
+spoken block stay together; headings never sit alone at a page bottom. Enforced
+in `kits/tooling/brand.css` (break-inside/break-after rules); a slightly ragged
+page bottom is always preferred over a split.
+
 ## Look (locked brand)
 Navy `#13293D` band top of every page with the white/teal logo; navy footer strip with
 credit line. Teal `#2A9D8F` accents, amber `#F4A825` sparingly (rule blocks, founder
