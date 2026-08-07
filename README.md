@@ -28,15 +28,15 @@ teacher; Katelyn is a certified K-8 teacher.
 
 **Part I — the kit factory** (in progress)
 
-- [ ] **Gate 1 — Kit 1 exemplar** (all 9 components + Kit Standard) → owner audit
-- [ ] Kits 2–4 → owner audit
+- [x] **Gate 1 — Kit 1 exemplar** (all 9 components + Kit Standard) → **approved 2026-08-07**
+- [ ] Kits 2–4 (in production) → owner audit
 - [ ] Kits 5–8 (Track A complete — unlocks site launch) → owner audit
 - [ ] Kits 9–14 → owner audit
 - [ ] Kits 15–17 → owner audit
 - [ ] Kits 18–20 → owner audit → catalog overview PDF + free sample pack
 
-**Part II — the platform** (begins only after the owner approves Track A and says
-"start the site"; may run in parallel after Kit 1 approval at the owner's option)
+**Part II — the platform** (owner authorized parallel build at Kit 1 approval;
+in production)
 
 Next.js + Supabase + Stripe + Resend membership site selling School ($1,499/yr) and
 Individual ($99/yr) memberships. Full spec lives with the owners; build phases 0–5

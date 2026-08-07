@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       'The one rule that keeps you and your students safe',
       '15 minutes of actually using AI, hands-on'],
       { x: 7.2, y: 2.55, w: 5.3, h: 3.4, fontSize: 20 });
-    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Kate’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she reworked it herself to fit her class, and nothing about her students ever went into the tool. AI drafts, the teacher decides.');
+    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Katelyn’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she reworked it herself to fit her class, and nothing about her students ever went into the tool. AI drafts, the teacher decides.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
