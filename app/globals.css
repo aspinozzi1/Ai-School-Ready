@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* AI-Ready School — locked brand tokens (see kits/KIT_STANDARD.md).
+   Never introduce colors outside these tokens. */
+@theme {
+  --color-navy: #13293d;
+  --color-teal: #2a9d8f;
+  --color-amber: #f4a825;
+  --color-paper: #f7f5f0;
+  --color-ink: #1b1f24;
+  --color-mist: #dce3ea;
+  --color-success: #2e7d5b;
+  --color-error: #b4453a;
+  --color-muted: #5b6b7a;
+  --color-navy-soft: #9fb2c2; /* light text on navy */
+
+  --font-sans: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Breathing room is brand-wide (owner rule): content never sits tight
+   against chrome. Sections default to generous vertical padding. */
+.section {
+  @apply px-6 py-16 md:py-20;
+}
+.section-inner {
+  @apply mx-auto w-full max-w-6xl;
+}
