@@ -1,0 +1,205 @@
+/* AI-Ready School — locked print brand. Every kit PDF uses this file unchanged. */
+
+@font-face { font-family: 'Inter'; font-weight: 400; src: url('../../node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 500; src: url('../../node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 600; src: url('../../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-weight: 700; src: url('../../node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2'); }
+
+:root {
+  --navy: #13293D;
+  --teal: #2A9D8F;
+  --amber: #F4A825;
+  --paper: #F7F5F0;
+  --ink: #1B1F24;
+  --mist: #DCE3EA;
+  --success: #2E7D5B;
+  --error: #B4453A;
+  --muted: #5B6B7A;
+}
+
+@page { size: Letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* ---- page frame: navy header band + footer band on every sheet ---- */
+.sheet {
+  width: 8.5in;
+  height: 11in;
+  position: relative;
+  page-break-after: always;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sheet:last-child { page-break-after: auto; }
+
+.band {
+  background: var(--navy);
+  color: #fff;
+  padding: 0.22in 0.55in;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+.band .logo { height: 0.34in; display: block; }
+.band .doc-tag { font-size: 8.5pt; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #9FB2C2; text-align: right; }
+.band .doc-tag b { display: block; color: #fff; letter-spacing: 0.8px; }
+
+.foot {
+  background: var(--navy);
+  color: #9FB2C2;
+  padding: 0.12in 0.55in;
+  font-size: 7.5pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.foot .brand-line { font-weight: 600; letter-spacing: 0.6px; }
+.foot .brand-line span { color: var(--teal); }
+
+.body {
+  padding: 0.42in 0.55in 0.3in;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+/* ---- type scale ---- */
+h1 { color: var(--navy); font-size: 21pt; font-weight: 700; letter-spacing: -0.3px; line-height: 1.25; margin-bottom: 6pt; }
+h2 { color: var(--navy); font-size: 13.5pt; font-weight: 700; margin: 14pt 0 5pt; }
+h3 { color: var(--navy); font-size: 11pt; font-weight: 600; margin: 10pt 0 3pt; }
+p  { margin-bottom: 7pt; }
+.kicker { color: var(--teal); font-weight: 600; font-size: 9pt; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4pt; }
+.lede { font-size: 11.5pt; color: var(--muted); margin-bottom: 10pt; }
+.small { font-size: 8.5pt; color: var(--muted); }
+
+ul, ol { margin: 0 0 8pt 16pt; }
+li { margin-bottom: 3.5pt; }
+li::marker { color: var(--teal); font-weight: 700; }
+strong { font-weight: 600; color: var(--navy); }
+
+/* ---- components ---- */
+.callout {
+  border-left: 4px solid var(--amber);
+  background: #FDF6E7;
+  border-radius: 0 8px 8px 0;
+  padding: 9pt 12pt;
+  margin: 10pt 0;
+}
+.callout.teal { border-left-color: var(--teal); background: #EAF5F3; }
+.callout.navy { border-left-color: var(--navy); background: var(--paper); }
+.callout.rule {
+  border: none;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #fff;
+  padding: 13pt 16pt;
+  text-align: center;
+}
+.callout.rule .rule-label { color: var(--amber); font-weight: 700; font-size: 9pt; letter-spacing: 2.4px; text-transform: uppercase; }
+.callout.rule .rule-text { font-size: 14.5pt; font-weight: 700; line-height: 1.4; }
+.callout.rule .rule-text em { color: var(--teal); font-style: normal; }
+
+.card {
+  background: #fff;
+  border: 1px solid var(--mist);
+  border-radius: 10px;
+  padding: 10pt 12pt;
+  margin-bottom: 8pt;
+  break-inside: avoid;
+}
+.card.paper { background: var(--paper); border: none; }
+
+table { width: 100%; border-collapse: collapse; margin: 8pt 0; font-size: 9.5pt; }
+th { background: var(--navy); color: #fff; font-weight: 600; text-align: left; padding: 5pt 8pt; }
+th:first-child { border-radius: 6px 0 0 0; } th:last-child { border-radius: 0 6px 0 0; }
+td { border-bottom: 1px solid var(--mist); padding: 5pt 8pt; vertical-align: top; }
+tr:nth-child(even) td { background: var(--paper); }
+
+.cols { display: flex; gap: 14pt; }
+.cols > * { flex: 1; }
+
+.badge {
+  display: inline-block; background: var(--teal); color: #fff;
+  border-radius: 20px; padding: 1.5pt 9pt; font-size: 8pt; font-weight: 600; letter-spacing: 0.5px;
+}
+.badge.amber { background: var(--amber); color: var(--navy); }
+.badge.navy { background: var(--navy); }
+
+.checklist { list-style: none; margin-left: 0; }
+.checklist li { padding-left: 20pt; position: relative; margin-bottom: 5pt; }
+.checklist li::before {
+  content: ''; position: absolute; left: 0; top: 2.5pt;
+  width: 10pt; height: 10pt; border: 1.6pt solid var(--teal); border-radius: 3pt;
+}
+
+.writein { border-bottom: 1px solid var(--muted); display: block; height: 16pt; }
+.notes-box { border: 1px solid var(--mist); border-radius: 8px; min-height: 70pt; padding: 8pt; }
+
+.timing { display: flex; gap: 6pt; align-items: baseline; margin-bottom: 4pt; }
+.timing .t { flex: 0 0 58pt; font-weight: 700; color: var(--teal); font-size: 9.5pt; }
+
+.legal {
+  font-size: 7.8pt; color: var(--muted); border-top: 1px solid var(--mist);
+  padding-top: 6pt; margin-top: 10pt; line-height: 1.45;
+}
+
+/* ---- flow layout (multi-page docs): repeating band, pinned footer, no clipping ---- */
+table.doc { width: 8.5in; border-collapse: collapse; }
+table.doc > thead > tr > td,
+table.doc > tbody > tr > td,
+table.doc > tfoot > tr > td { padding: 0; border: none; background: none !important; }
+table.doc > tbody > tr > td.content-cell { padding: 0.34in 0.55in 0.12in; }
+table.doc > tfoot > tr > td.foot-space { height: 0.46in; }
+.fixed-foot { position: fixed; bottom: 0; left: 0; right: 0; }
+.fixed-foot .foot { padding: 0.1in 0.55in; }
+.foot { white-space: nowrap; }
+.foot .brand-line { overflow: hidden; text-overflow: ellipsis; }
+
+.card, .callout, .stage { break-inside: avoid; }
+h1, h2, h3 { break-after: avoid; }
+.slide-cue { break-inside: avoid; break-after: avoid; }
+table tr { break-inside: avoid; }
+
+/* ---- script-specific ---- */
+.slide-cue {
+  display: flex; align-items: center; gap: 8pt; margin: 13pt 0 5pt;
+  break-after: avoid;
+}
+.slide-cue .num {
+  background: var(--navy); color: #fff; border-radius: 6px; padding: 2pt 8pt;
+  font-weight: 700; font-size: 9.5pt; white-space: nowrap;
+}
+.slide-cue .title { font-weight: 700; color: var(--navy); font-size: 11pt; }
+.slide-cue .clock { margin-left: auto; color: var(--teal); font-weight: 600; font-size: 9pt; white-space: nowrap; }
+.say { margin-bottom: 7pt; }
+.stage {
+  color: var(--muted); font-style: italic; font-size: 9.5pt;
+  background: var(--paper); border-radius: 6px; padding: 4pt 9pt; margin-bottom: 7pt;
+}
+.stage::before { content: '⟶  '; color: var(--teal); font-style: normal; font-weight: 700; }
+
+/* ---- cover ---- */
+.cover { background: var(--navy); color: #fff; display: flex; flex-direction: column; }
+.cover .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 0.9in; }
+.cover .spark-badge {
+  width: 0.9in; height: 0.9in; border-radius: 50%; background: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22pt; font-weight: 700; color: #fff; margin-bottom: 0.28in;
+}
+.cover .track { color: var(--amber); font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; font-size: 10pt; margin-bottom: 8pt; }
+.cover h1 { color: #fff; font-size: 30pt; line-height: 1.2; margin-bottom: 10pt; }
+.cover .cover-sub { color: #C9D4DE; font-size: 12.5pt; max-width: 6in; }
+.cover .component-name { margin-top: 0.35in; display: inline-block; }
+.cover .component-name .badge { font-size: 10pt; padding: 4pt 14pt; }
+.cover .credit { padding: 0.3in 0.9in 0.42in; color: #9FB2C2; font-size: 9pt; border-top: 1px solid rgba(220,227,234,.18); }
+.cover .credit b { color: #fff; display: block; font-size: 10.5pt; }
