@@ -29,5 +29,20 @@ across buildings.
   multi-building buyers (per master brief A5.4).
 
 **Deliberately NOT doing:** per-seat pricing, IP/domain policing, or any manual
-verification — all would add owner labor or purchase friction. The cap + clear
+verification; all would add owner labor or purchase friction. The cap + clear
 license language + the contact-us path is enough.
+
+## 2026-08-07 — Em dash rule is brand-wide (owner-directed)
+
+Em dashes are the most visible AI tell. The rule set for kits in
+`kits/KIT_STANDARD.md` applies to EVERYTHING the brand produces, including all
+Part II surfaces: website copy, portal/dashboard text, emails, certificates,
+quote PDFs, blog posts, FAQ answers, error and empty-state messages.
+
+- Default punctuation: periods, colons, commas, semicolons, parentheses.
+- An em dash is allowed only where the hard break is the point; a page or
+  document earns at most one or two.
+- Labels, titles, and headings use ":" or "·", never an em dash.
+- En dashes in numeric ranges (45–60 min, 2023–24) are fine.
+- Where the master brief's locked copy contains em dashes, the builder recasts
+  the punctuation while keeping the words (pending owner override).
