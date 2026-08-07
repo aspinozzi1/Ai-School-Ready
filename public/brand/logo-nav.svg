@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-label="AI-Ready School">
+  <!-- Nav lockup: mark + wordmark only (no tagline) — light backgrounds -->
+  <path d="M62 14 L67 28 L81 33 L67 38 L62 52 L57 38 L43 33 L57 28 Z" fill="#2A9D8F"/>
+  <path d="M60 60 C 50 52, 36 50, 24 54 L24 88 C 36 84, 50 86, 60 94 Z" fill="#13293D"/>
+  <path d="M64 60 C 74 52, 88 50, 100 54 L100 88 C 88 84, 74 86, 64 94 Z" fill="#13293D"/>
+  <path d="M32 62 C 40 60, 48 61, 54 65" stroke="#2A9D8F" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M92 62 C 84 60, 76 61, 70 65" stroke="#2A9D8F" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="124" y="80" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#2A9D8F">AI-Ready</tspan><tspan fill="#13293D"> School</tspan>
+  </text>
+</svg>
