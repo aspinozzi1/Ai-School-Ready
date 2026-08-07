@@ -10,6 +10,11 @@ in every kit: **AI drafts, the teacher decides.** Skeptics are treated as assets
 Banned cadence: "delve," "furthermore," "moreover," "in today's rapidly evolving
 landscape," "it's important to note," "harness the power," "game-changer," hype-"unlock,"
 uniform sentence rhythm. Concrete beats abstract.
+**Em dashes (owner rule, 2026-08-07): almost never.** The em dash is the most visible AI
+tell. Default to periods, colons, commas, semicolons, and parentheses; an em dash is
+allowed only where the hard break IS the point (a spoken pushback line, a signature
+close), and a document earns at most one or two. Labels and titles use ":" or "·",
+never "—". En dashes in numeric ranges (45–60 min, 2023–24) are fine.
 
 ## Session shape (45–60 min)
 Welcome/why-now (≤4 min) → concept teaching (≤20 min) → guided practice (≈8 min) →

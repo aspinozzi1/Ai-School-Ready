@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Kit 1 Presentation Deck — AI Foundations & Safety: The One Hard Rule
+/* Kit 1 Presentation Deck · AI Foundations & Safety: The One Hard Rule
    30 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit01/src/deck.js  → kits/kit01/Kit01_PresentationDeck.pptx */
 const pptxgen = require('pptxgenjs');
@@ -27,9 +27,9 @@ const W = 13.33, H = 7.5;
   p.layout = 'WIDE';
   p.author = 'Adam & Katelyn Spinozzi';
   p.company = 'AI-Ready School';
-  p.title = 'Kit 1 — AI Foundations & Safety: The One Hard Rule';
+  p.title = 'Kit 1: AI Foundations & Safety: The One Hard Rule';
 
-  // ---------- helpers (fresh option objects every call — pptxgenjs mutates) ----------
+  // ---------- helpers (fresh option objects every call; pptxgenjs mutates) ----------
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -78,7 +78,7 @@ const W = 13.33, H = 7.5;
     s.addText(label, { x, y: 3.55, w, h: 1.7, fontFace: FONT, fontSize: 16, color: INK, align: 'center', valign: 'top', margin: 0 });
   }
 
-  // ============================== SLIDE 1 — TITLE ==============================
+  // ============================== SLIDE 1 · TITLE ==============================
   {
     const s = base(true);
     s.addImage({ data: markDarkPng, x: 0.85, y: 0.8, w: 1.15, h: 1.06 });
@@ -92,18 +92,18 @@ const W = 13.33, H = 7.5;
     s.addText('AI Foundations & Safety:\nThe One Hard Rule', {
       x: 0.85, y: 3.35, w: 11.6, h: 2.0, fontFace: FONT, fontSize: 47, bold: true,
       color: WHITE, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
-    s.addText('A 45–60 minute working session for the whole staff — with 15 minutes hands-on.', {
+    s.addText('A 45–60 minute working session for the whole staff, with 15 minutes hands-on.', {
       x: 0.9, y: 5.45, w: 10.5, h: 0.5, fontFace: FONT, fontSize: 18, color: 'C9D4DE', margin: 0 });
-    s.addText('Built by Adam & Katelyn Spinozzi — certified educators, 20+ combined years in the classroom', {
+    s.addText('Built by Adam & Katelyn Spinozzi · certified educators · 20+ combined years in the classroom', {
       x: 0.9, y: 6.6, w: 11.5, h: 0.4, fontFace: FONT, fontSize: 12, color: '9FB2C2', margin: 0 });
-    s.addNotes('Have this slide up as people arrive. Start on time. Script: "Welcome, everyone…" — the full word-for-word text is in the Facilitator Script, keyed to every slide number.');
+    s.addNotes('Have this slide up as people arrive. Start on time. Script: "Welcome, everyone…". The full word-for-word text is in the Facilitator Script, keyed to every slide number.');
   }
 
-  // ============================== SLIDE 2 — WHAT TODAY IS ==============================
+  // ============================== SLIDE 2 · WHAT TODAY IS ==============================
   {
     const s = base();
     kicker(s, 'Two promises');
-    title(s, 'What today is — and isn’t');
+    title(s, 'What today is (and isn’t)');
     card(s, 0.7, 1.65, 5.9, 4.6, PAPER);
     s.addText('This session is NOT', { x: 1.05, y: 1.95, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: BAD, margin: 0 });
     bullets(s, ['A sales pitch for AI', 'A scare session', 'A prediction that robots replace teachers'],
@@ -114,13 +114,13 @@ const W = 13.33, H = 7.5;
       'The one rule that keeps you and your students safe',
       '15 minutes of actually using AI, hands-on'],
       { x: 7.2, y: 2.55, w: 5.3, h: 3.4, fontSize: 20 });
-    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool — it can take the robotic parts of the job, never the human parts. FOUNDER STORY (Katelyn) lands after this slide — see script.');
+    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. FOUNDER STORY (Katelyn) lands after this slide; see script.');
   }
 
-  // ============================== SLIDE 3 — WHY NOW ==============================
+  // ============================== SLIDE 3 · WHY NOW ==============================
   {
     const s = base();
-    kicker(s, 'Why now — three numbers');
+    kicker(s, 'Why now: three numbers');
     title(s, 'This moved faster than any school technology before it');
     card(s, 0.7, 1.75, 3.85, 3.6, PAPER);
     s.addText([
@@ -128,7 +128,7 @@ const W = 13.33, H = 7.5;
       { text: ' → ', options: { color: TEAL } },
       { text: '53%', options: { color: NAVY } },
     ], { x: 0.7, y: 2.0, w: 3.85, h: 1.5, fontFace: FONT, fontSize: 44, bold: true, align: 'center', margin: 0, valign: 'middle' });
-    s.addText('Teachers using AI for work —\n2023–24 vs. 2024–25 (RAND)', {
+    s.addText('Teachers using AI for work,\n2023–24 vs. 2024–25 (RAND)', {
       x: 0.7, y: 3.55, w: 3.85, h: 1.7, fontFace: FONT, fontSize: 16, color: INK, align: 'center', valign: 'top', margin: 0 });
     card(s, 4.75, 1.75, 3.85, 3.6, PAPER);
     statBlock(s, 4.75, 3.85, '60%', 'of teachers used AI during\nthe 2024–25 school year\n(Gallup & Walton Family Fdn.)', TEAL);
@@ -139,17 +139,17 @@ const W = 13.33, H = 7.5;
     s.addNotes('Optional show of hands first: who has used ChatGPT or similar at least once? Sources: RAND RR-A134-25 (25% in 2023-24), RAND RR-A4180-1 (53% of ELA/math/science teachers in 2024-25), Gallup-Walton 2025 (60%), Pew 2026 (54% of teens). All in the References file.');
   }
 
-  // ============================== SLIDE 4 — AGENDA ==============================
+  // ============================== SLIDE 4 · AGENDA ==============================
   {
     const s = base();
     kicker(s, 'The hour ahead');
-    title(s, 'Agenda — and one promise');
+    title(s, 'Agenda, and one promise');
     const rows = [
       ['0:00', 'Welcome & why now'],
       ['0:04', 'What AI actually is (no jargon)'],
-      ['0:12', 'The One Hard Rule — student privacy'],
+      ['0:12', 'The One Hard Rule: student privacy'],
       ['0:22', 'Safe practice: rewriting risky prompts'],
-      ['0:30', 'Hands-on lab — you type, in pairs'],
+      ['0:30', 'Hands-on lab: you type, in pairs'],
       ['0:45', 'Staying human · our three commitments'],
       ['0:52', 'First 48 hours & exit ticket'],
     ];
@@ -160,12 +160,12 @@ const W = 13.33, H = 7.5;
     });
     card(s, 10.0, 2.3, 2.75, 2.9, NAVY);
     s.addText('One promise', { x: 10.25, y: 2.55, w: 2.25, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: AMBER, margin: 0 });
-    s.addText('You will actually use an AI tool today — and leave with something for tomorrow morning.', {
+    s.addText('You will actually use an AI tool today, and leave with something for tomorrow morning.', {
       x: 10.25, y: 3.0, w: 2.25, h: 2.0, fontFace: FONT, fontSize: 14, color: WHITE, margin: 0, valign: 'top' });
-    s.addNotes('Research point (Darling-Hammond et al., Learning Policy Institute 2017): PD changes practice when it includes active learning and sustained follow-up — hence the lab and the 30-day plan. "This isn’t a one-and-done."');
+    s.addNotes('Research point (Darling-Hammond et al., Learning Policy Institute 2017): PD changes practice when it includes active learning and sustained follow-up; hence the lab and the 30-day plan. "This isn’t a one-and-done."');
   }
 
-  // ============================== SLIDE 5 — WHAT A CHATBOT DOES ==============================
+  // ============================== SLIDE 5 · WHAT A CHATBOT DOES ==============================
   {
     const s = base();
     kicker(s, 'Demystifying the thing');
@@ -176,32 +176,32 @@ const W = 13.33, H = 7.5;
       { text: '  Not a database. Not a search engine. A very sophisticated pattern-continuation machine, trained on enormous amounts of text.', options: { color: INK } },
     ], { x: 1.05, y: 1.95, w: 11.3, h: 1.7, fontFace: FONT, fontSize: 22, margin: 0, valign: 'middle' });
     bullets(s, [
-      { text: 'Why the writing sounds so fluent — fluent is what it was trained to produce', options: {} },
-      { text: 'Why it can be smoothly, confidently wrong — it continues patterns; it doesn’t check facts', options: {} },
+      { text: 'Why the writing sounds so fluent: fluent is what it was trained to produce', options: {} },
+      { text: 'Why it can be smoothly, confidently wrong: it continues patterns instead of checking facts', options: {} },
       { text: 'One fact that explains almost everything you’ll ever see AI do', options: { bold: true, color: NAVY } },
     ], { y: 4.25, h: 2.3 });
     s.addNotes('Keep this plain: typing into ChatGPT/Claude/Gemini/Copilot is not looking up facts. The tool predicts likely next words. That one fact explains both the brilliance and the failures.');
   }
 
-  // ============================== SLIDE 6 — CONFIDENTLY WRONG ==============================
+  // ============================== SLIDE 6 · CONFIDENTLY WRONG ==============================
   {
     const s = base();
     kicker(s, 'Peer-reviewed evidence, not folklore');
     title(s, 'It can be confidently wrong');
     card(s, 0.7, 1.7, 5.7, 4.5, PAPER);
     s.addText('19.9%', { x: 0.7, y: 2.15, w: 5.7, h: 1.3, fontFace: FONT, fontSize: 66, bold: true, color: BAD, align: 'center', margin: 0 });
-    s.addText('of citations produced by a leading AI model in a 2025 test were entirely fabricated — the papers did not exist', {
+    s.addText('of citations produced by a leading AI model in a 2025 test were entirely fabricated. The papers did not exist', {
       x: 1.1, y: 3.55, w: 4.9, h: 2.3, fontFace: FONT, fontSize: 17, color: INK, align: 'center', margin: 0 });
     card(s, 6.65, 1.7, 5.7, 4.5, PAPER);
     s.addText('45.4%', { x: 6.65, y: 2.15, w: 5.7, h: 1.3, fontFace: FONT, fontSize: 66, bold: true, color: AMBER, align: 'center', margin: 0 });
-    s.addText('of the real citations still contained errors — and every one of them looked perfect on the page', {
+    s.addText('of the real citations still contained errors, and every one of them looked perfect on the page', {
       x: 7.05, y: 3.55, w: 4.9, h: 2.3, fontFace: FONT, fontSize: 17, color: INK, align: 'center', margin: 0 });
     s.addText('The habit that follows: verify anything factual before you rely on it.', {
       x: 0.7, y: 6.35, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Source: Linardon et al., JMIR Mental Health (2025) — GPT-4o literature-review test. This is called hallucination and it is a side effect of prediction, not a bug about to be fixed. If asked "why use it at all?": most classroom uses aren’t factual lookup — they’re drafting and reformatting, where you are the fact-checker by definition.');
+    s.addNotes('Source: Linardon et al., JMIR Mental Health (2025), the GPT-4o literature-review test. This is called hallucination and it is a side effect of prediction, not a bug about to be fixed. If asked "why use it at all?": most classroom uses aren’t factual lookup; they’re drafting and reformatting, where you are the fact-checker by definition.');
   }
 
-  // ============================== SLIDE 7 — EAGER INTERN ==============================
+  // ============================== SLIDE 7 · EAGER INTERN ==============================
   {
     const s = base(true);
     kicker(s, 'The mental model for the whole series', { color: TEAL });
@@ -214,10 +214,10 @@ const W = 13.33, H = 7.5;
     ], { y: 3.0, h: 2.2, fontSize: 22 });
     s.addText('AI drafts. The teacher decides.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.9, fontFace: FONT, fontSize: 30, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addNotes('The intern only works because there is a professional in charge — that’s you. This five-word posture is the spine of the entire curriculum: AI drafts, the teacher decides.');
+    s.addNotes('The intern only works because there is a professional in charge. That’s you. This five-word posture is the spine of the entire curriculum: AI drafts, the teacher decides.');
   }
 
-  // ============================== SLIDE 8 — GOOD AT ==============================
+  // ============================== SLIDE 8 · GOOD AT ==============================
   {
     const s = base();
     kicker(s, 'Where the intern earns its keep');
@@ -234,28 +234,28 @@ const W = 13.33, H = 7.5;
       s.addText(h, { x: x + 0.3, y: y + 0.18, w: 5.25, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0 });
       s.addText(b, { x: x + 0.3, y: y + 0.68, w: 5.25, h: 0.9, fontFace: FONT, fontSize: 16, color: INK, margin: 0 });
     });
-    s.addText('Teachers who use AI weekly report saving ~5.9 hours a week — the paperwork part of the job, not the teaching part. (Gallup & Walton Family Foundation, 2025)', {
+    s.addText('Teachers who use AI weekly report saving ~5.9 hours a week: the paperwork part of the job, not the teaching part. (Gallup & Walton Family Foundation, 2025)', {
       x: 0.7, y: 5.65, w: 12.0, h: 0.8, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('These four categories cover most of what staff will actually do this year. The time-savings stat is Gallup–Walton 2025: weekly users save about 5.9 hours/week — roughly six weeks a year.');
+    s.addNotes('These four categories cover most of what staff will actually do this year. The time-savings stat is Gallup–Walton 2025: weekly users save about 5.9 hours/week, roughly six weeks a year.');
   }
 
-  // ============================== SLIDE 9 — CAN'T DO ==============================
+  // ============================== SLIDE 9 · CAN'T DO ==============================
   {
     const s = base();
     kicker(s, 'On purpose, forever');
-    title(s, 'What it can’t do — at any price');
+    title(s, 'What it can’t do, at any price');
     bullets(s, [
-      { text: 'Know your students — that this class shuts down after lunch, that this kid needs a win today', options: {} },
-      { text: 'Verify its own facts — that’s you', options: {} },
-      { text: 'Care — it produces text, not judgment, and not relationships', options: {} },
+      { text: 'Know your students: that this class shuts down after lunch, that this kid needs a win today', options: {} },
+      { text: 'Verify its own facts (that’s you)', options: {} },
+      { text: 'Care: it produces text, not judgment, and not relationships', options: {} },
     ], { y: 1.6, h: 2.9 });
     card(s, 0.7, 4.6, 12.0, 1.7, 'EAF5F3');
-    s.addText('Everything on this slide is your job on purpose. The tool buys back time FOR this list — it never takes this list away.', {
+    s.addText('Everything on this slide is your job on purpose. The tool buys back time FOR this list; it never takes this list away.', {
       x: 1.05, y: 4.8, w: 11.3, h: 1.3, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('This is the session’s first explicit "human moment." Land it plainly and move on — the founder story on slide 25 will echo it.');
+    s.addNotes('This is the session’s first explicit "human moment." Land it plainly and move on; the founder story on slide 25 will echo it.');
   }
 
-  // ============================== SLIDE 10 — THE ONE HARD RULE ==============================
+  // ============================== SLIDE 10 · THE ONE HARD RULE ==============================
   {
     const s = base(true);
     s.addText('THE ONE HARD RULE', {
@@ -269,7 +269,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Slow down. Read the rule off the screen, then pause a full three seconds. This is the most important slide of the session.');
   }
 
-  // ============================== SLIDE 11 — WHAT COUNTS ==============================
+  // ============================== SLIDE 11 · WHAT COUNTS ==============================
   {
     const s = base();
     kicker(s, 'The rule, made concrete');
@@ -282,10 +282,10 @@ const W = 13.33, H = 7.5;
     s.addText('About a child', { x: 7.2, y: 1.85, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0 });
     bullets(s, ['Discipline history', 'Health or diagnosis information', 'Family details, addresses', 'Anything about an identifiable student'],
       { x: 7.2, y: 2.45, w: 5.3, h: 3.5, fontSize: 19 });
-    s.addNotes('The obvious things — then widen it: anything from a record or about a specific child stays out of the chat box.');
+    s.addNotes('The obvious things first, then widen it: anything from a record or about a specific child stays out of the chat box.');
   }
 
-  // ============================== SLIDE 12 — SNEAKY ONES ==============================
+  // ============================== SLIDE 12 · SNEAKY ONES ==============================
   {
     const s = base();
     kicker(s, 'Where well-meaning people slip');
@@ -302,37 +302,37 @@ const W = 13.33, H = 7.5;
       s.addText(why, { x: 8.35, y: y + 0.12, w: 4.3, h: 0.9, fontFace: FONT, fontSize: 15, color: BAD, margin: 0, valign: 'middle' });
     });
     card(s, 0.7, 5.75, 12.0, 1.0, NAVY);
-    s.addText('The test: could anyone who knows our school figure out who this is?  If yes — it doesn’t go in.', {
+    s.addText('The test: could anyone who knows our school figure out who this is?  If yes, it doesn’t go in.', {
       x: 1.05, y: 5.85, w: 11.3, h: 0.8, fontFace: FONT, fontSize: 19, bold: true, color: WHITE, margin: 0, valign: 'middle' });
-    s.addNotes('If asked "even in a private chat that I delete?" — yes. Deleting your view doesn’t recall what the company received. The rule works because it has no exceptions to remember at 9pm on a Sunday.');
+    s.addNotes('If asked "even in a private chat that I delete?": yes. Deleting your view doesn’t recall what the company received. The rule works because it has no exceptions to remember at 9pm on a Sunday.');
   }
 
-  // ============================== SLIDE 13 — WHY THE RULE EXISTS ==============================
+  // ============================== SLIDE 13 · WHY THE RULE EXISTS ==============================
   {
     const s = base();
     kicker(s, 'One legal reason, one practical reason');
     title(s, 'Why the rule exists');
     card(s, 0.7, 1.6, 5.9, 4.5, PAPER);
     s.addText('Legal', { x: 1.05, y: 1.85, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0 });
-    s.addText('FERPA protects student education records — and schools answer for how record information is shared. A public AI tool is a third party with no agreement with our district. Where typed data goes depends on terms of service that change without asking us.', {
+    s.addText('FERPA protects student education records, and schools answer for how record information is shared. A public AI tool is a third party with no agreement with our district. Where typed data goes depends on terms of service that change without asking us.', {
       x: 1.05, y: 2.4, w: 5.3, h: 3.4, fontFace: FONT, fontSize: 17, color: INK, margin: 0, valign: 'top' });
     card(s, 6.85, 1.6, 5.9, 4.5, PAPER);
     s.addText('Practical', { x: 7.2, y: 1.85, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0 });
-    s.addText('An open chat box makes oversharing effortless — privacy researchers flag exactly this. And nobody in this room wants to be the example in the district’s cautionary email. One rule, followed always, means that’s never you.', {
+    s.addText('An open chat box makes oversharing effortless; privacy researchers flag exactly this. And nobody in this room wants to be the example in the district’s cautionary email. One rule, followed always, means that’s never you.', {
       x: 7.2, y: 2.4, w: 5.3, h: 3.4, fontFace: FONT, fontSize: 17, color: INK, margin: 0, valign: 'top' });
-    s.addText('Educators sharing safe practice — not legal advice. District-specific questions go to the district office.', {
+    s.addText('Educators sharing safe practice, not legal advice. District-specific questions go to the district office.', {
       x: 0.7, y: 6.25, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 13, italic: true, color: MUTED, align: 'center', margin: 0 });
     s.addNotes('Sources: FERPA (federal law); Future of Privacy Forum vetting guidance (2024) on open-chat-box oversharing. Keep the not-legal-advice line verbatim.');
   }
 
-  // ============================== SLIDE 14 — PUBLIC VS APPROVED ==============================
+  // ============================== SLIDE 14 · PUBLIC VS APPROVED ==============================
   {
     const s = base();
     kicker(s, 'So the rule doesn’t overreach');
     title(s, '“Public tool” vs. district-approved tool');
     card(s, 0.7, 1.6, 5.9, 4.3, PAPER);
     s.addText('Public tool', { x: 1.05, y: 1.85, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: BAD, margin: 0 });
-    s.addText('Anything you signed up for yourself — free ChatGPT, Claude, Gemini, personal accounts.\n\nThe One Hard Rule applies. Always.', {
+    s.addText('Anything you signed up for yourself: free ChatGPT, Claude, Gemini, personal accounts.\n\nThe One Hard Rule applies. Always.', {
       x: 1.05, y: 2.4, w: 5.3, h: 3.2, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'top' });
     card(s, 6.85, 1.6, 5.9, 4.3, PAPER);
     s.addText('District-approved tool', { x: 7.2, y: 1.85, w: 5.2, h: 0.45, fontFace: FONT, fontSize: 20, bold: true, color: GOOD, margin: 0 });
@@ -341,7 +341,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('This distinction keeps the rule accurate without weakening it. If your district has already approved a tool with a data agreement, name it here.');
   }
 
-  // ============================== SLIDE 15 — GOOD NEWS ==============================
+  // ============================== SLIDE 15 · GOOD NEWS ==============================
   {
     const s = base();
     kicker(s, 'And now the good news');
@@ -357,14 +357,14 @@ const W = 13.33, H = 7.5;
     ], { x: 1.1, y: 3.2, w: 11.2, h: 1.8, fontFace: FONT, fontSize: 26, margin: 0, valign: 'middle', lineSpacingMultiple: 1.4 });
     s.addText('Which brings us to the ten-second skill that makes this automatic →', {
       x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, italic: true, color: MUTED, margin: 0 });
-    s.addNotes('Transition slide — quick. The de-identification skill on the next slides is what makes the rule cost nothing in practice.');
+    s.addNotes('Transition slide; keep it quick. The de-identification skill on the next slides is what makes the rule cost nothing in practice.');
   }
 
-  // ============================== SLIDE 16 — SAFE SWAP 1 ==============================
+  // ============================== SLIDE 16 · SAFE SWAP 1 ==============================
   {
     const s = base();
     kicker(s, 'Same email, zero risk');
-    title(s, 'Safe swap #1 — the parent email');
+    title(s, 'Safe swap #1: the parent email');
     card(s, 0.7, 1.6, 12.0, 2.15, 'FBEFED');
     s.addText('UNSAFE', { x: 1.0, y: 1.78, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: BAD, margin: 0 });
     s.addText('“Write an email to Jayden Miller’s mom about his three missing assignments and his outburst in class Tuesday.”', {
@@ -373,14 +373,14 @@ const W = 13.33, H = 7.5;
     s.addText('SAFE', { x: 1.0, y: 4.18, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: GOOD, margin: 0 });
     s.addText('“Write a warm, professional email to a parent about a middle schooler with several missing assignments and a recent difficult day in class. Firm but supportive; end by inviting a conversation.”', {
       x: 1.0, y: 4.55, w: 11.4, h: 1.7, fontFace: FONT, fontSize: 19, italic: true, color: INK, margin: 0 });
-    s.addNotes('The unsafe version pastes a full student record — name, family, academics, behavior — into a stranger’s text box. The safe version gets the same email; the AI needed the situation, never the child. Add the name after it’s back in your own email account.');
+    s.addNotes('The unsafe version pastes a full student record (name, family, academics, behavior) into a stranger’s text box. The safe version gets the same email; the AI needed the situation, never the child. Add the name after it’s back in your own email account.');
   }
 
-  // ============================== SLIDE 17 — SAFE SWAP 2 ==============================
+  // ============================== SLIDE 17 · SAFE SWAP 2 ==============================
   {
     const s = base();
     kicker(s, 'Safer is also just a better prompt');
-    title(s, 'Safe swap #2 — differentiation');
+    title(s, 'Safe swap #2: differentiation');
     card(s, 0.7, 1.6, 12.0, 2.0, 'FBEFED');
     s.addText('UNSAFE', { x: 1.0, y: 1.78, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: BAD, margin: 0 });
     s.addText('“Rewrite this passage for Sofia R., who has a reading IEP with a 2nd-grade fluency goal.”', {
@@ -389,16 +389,16 @@ const W = 13.33, H = 7.5;
     s.addText('SAFE', { x: 1.0, y: 4.03, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: GOOD, margin: 0 });
     s.addText('“Rewrite this passage at a 2nd-grade reading level, same key ideas, shorter sentences, and add a five-word picture-supported vocabulary list.”', {
       x: 1.0, y: 4.4, w: 11.4, h: 1.5, fontFace: FONT, fontSize: 19, italic: true, color: INK, margin: 0 });
-    s.addText('The AI never needed the diagnosis — it needed the reading level and the format.', {
+    s.addText('The AI never needed the diagnosis; it needed the reading level and the format.', {
       x: 0.7, y: 6.25, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Notice the safe version is also the better prompt — more specific about what you actually want. Safer and more useful is the usual trade.');
+    s.addNotes('Notice the safe version is also the better prompt: more specific about what you actually want. Safer and more useful is the usual trade.');
   }
 
-  // ============================== SLIDE 18 — 3 MOVES ==============================
+  // ============================== SLIDE 18 · 3 MOVES ==============================
   {
     const s = base();
     kicker(s, 'Ten seconds, then it’s automatic');
-    title(s, 'De-identify like a pro — the 3 moves');
+    title(s, 'De-identify like a pro: the 3 moves');
     const moves = [
       ['1', 'Strip identity', 'No names, no initials, no one-of-a-kind details'],
       ['2', 'Generalize', '“A 7th grader” · “several students” · “a parent”'],
@@ -417,11 +417,11 @@ const W = 13.33, H = 7.5;
     s.addNotes('They just watched all three moves in the safe swaps. Ten seconds of habit; automatic within a week.');
   }
 
-  // ============================== SLIDE 19 — YOU TRY ==============================
+  // ============================== SLIDE 19 · YOU TRY ==============================
   {
     const s = base();
-    kicker(s, 'Call it out — safe or unsafe?');
-    title(s, 'You try — spot the problem');
+    kicker(s, 'Call it out: safe or unsafe?');
+    title(s, 'You try: spot the problem');
     const prompts = [
       ['A', '“Write a note home about D.T.’s IEP accommodations for the field trip.”'],
       ['B', '“Create a behavior-reflection sheet for elementary students, friendly tone.”'],
@@ -435,10 +435,10 @@ const W = 13.33, H = 7.5;
       card(s, 1.6, y, 11.1, 0.95, PAPER);
       s.addText(txt, { x: 1.9, y: y + 0.06, w: 10.5, h: 0.85, fontFace: FONT, fontSize: 18, italic: true, color: INK, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Answers: A unsafe (initials + IEP contents). B safe. C unsafe — no name, but "the student who just moved here from Ukraine" identifies a child; fix: "a student who recently arrived from another country and is learning English." D safe — aggregate, no identities. Prompt C splits the room on purpose; resolve with the slide-12 test. 3 minutes, brisk.');
+    s.addNotes('Answers: A unsafe (initials + IEP contents). B safe. C unsafe: no name, but "the student who just moved here from Ukraine" identifies a child; fix: "a student who recently arrived from another country and is learning English." D safe: aggregate, no identities. Prompt C splits the room on purpose; resolve with the slide-12 test. 3 minutes, brisk.');
   }
 
-  // ============================== SLIDE 20 — LAB SETUP ==============================
+  // ============================== SLIDE 20 · LAB SETUP ==============================
   {
     const s = base(true);
     kicker(s, 'Hands-on · 15 minutes', { color: AMBER });
@@ -447,9 +447,9 @@ const W = 13.33, H = 7.5;
     s.addText('Pair up · one screen per pair · open the tool we’re using today', {
       x: 0.7, y: 2.55, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, color: 'C9D4DE', margin: 0 });
     const rules = [
-      ['1', 'No student information — we practice like we play'],
-      ['2', 'Nothing has to be good — this is a sandbox'],
-      ['3', 'When it gives you something mediocre — don’t settle'],
+      ['1', 'No student information: we practice like we play'],
+      ['2', 'Nothing has to be good; this is a sandbox'],
+      ['3', 'When it gives you something mediocre, don’t settle'],
     ];
     rules.forEach(([n, r], i) => {
       const y = 3.4 + i * 0.95;
@@ -457,18 +457,18 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 21, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Energy up — this is the moment the session exists for. Announce the tool by name. Pairs formed inside two minutes.');
+    s.addNotes('Energy up: this is the moment the session exists for. Announce the tool by name. Pairs formed inside two minutes.');
   }
 
-  // ============================== SLIDE 21 — LAB TASK 1 ==============================
+  // ============================== SLIDE 21 · LAB TASK 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 1 of 2 · 6 minutes');
-    title(s, 'Your first useful prompt — pick one');
+    title(s, 'Your first useful prompt: pick one');
     const opts = [
       ['A', 'Families', '“Write a warm, professional newsletter blurb for families about [any upcoming school event], under 120 words.”'],
       ['B', 'Assessment', '“Create a five-question review quiz on [any topic you teach], mixed difficulty, with an answer key.”'],
-      ['C', 'Differentiation', '“Rewrite this paragraph at three different reading levels” — paste any paragraph you already have.'],
+      ['C', 'Differentiation', '“Rewrite this paragraph at three different reading levels.” Then paste any paragraph you already have.'],
     ];
     opts.forEach(([ltr, tag, txt], i) => {
       const y = 1.55 + i * 1.55;
@@ -480,14 +480,14 @@ const W = 13.33, H = 7.5;
     });
     s.addText('Pick whichever is closest to your real job. Type it. Read what comes back.', {
       x: 0.7, y: 6.3, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 17, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. LOCAL EXAMPLE (Adam): add an Option D from the shop — a real CTE prompt in your own words; see the script’s marked slot.');
+    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. LOCAL EXAMPLE (Adam): add an Option D from the shop, a real CTE prompt in your own words; see the script’s marked slot.');
   }
 
-  // ============================== SLIDE 22 — LAB TASK 2 ==============================
+  // ============================== SLIDE 22 · LAB TASK 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 2 of 2 · 6 minutes');
-    title(s, 'Now push back — twice, minimum');
+    title(s, 'Now push back: twice, minimum');
     s.addText('Don’t accept the first draft. Tell it what’s wrong, like you would an intern:', {
       x: 0.7, y: 1.55, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, color: INK, margin: 0 });
     const cmds = ['“Warmer.”', '“Shorter.”', '“A 5th grader wouldn’t know three of these words — fix that.”', '“Make question four harder and add a diagram question.”'];
@@ -501,25 +501,25 @@ const W = 13.33, H = 7.5;
     s.addNotes('45-minute version: skip this task, go straight to the debrief. This is the move that separates people who get real value from people who quit in a week.');
   }
 
-  // ============================== SLIDE 23 — DEBRIEF ==============================
+  // ============================== SLIDE 23 · DEBRIEF ==============================
   {
     const s = base();
     kicker(s, 'Debrief · 3–4 voices');
     title(s, 'What did you notice?');
     bullets(s, [
       'What surprised you?',
-      'What was better than you expected — and what was worse?',
+      'What was better than you expected, and what was worse?',
       { text: 'Did anyone catch it being wrong?', options: { bold: true, color: NAVY } },
     ], { y: 1.6, h: 2.4, fontSize: 23 });
     card(s, 0.7, 4.3, 12.0, 2.0, PAPER);
     s.addText([
       { text: 'Two patterns worth naming:  ', options: { bold: true, color: NAVY } },
-      { text: 'the first draft is rarely the good draft — the value shows up when you push back. And everything you just made still needs your eyes: it’s fast, it’s fluent, and it’s unsigned until a professional signs it.', options: { color: INK } },
+      { text: 'the first draft is rarely the good draft; the value shows up when you push back. And everything you just made still needs your eyes: it’s fast, it’s fluent, and it’s unsigned until a professional signs it.', options: { color: INK } },
     ], { x: 1.05, y: 4.55, w: 11.3, h: 1.6, fontFace: FONT, fontSize: 19, margin: 0, valign: 'middle' });
-    s.addNotes('If the room saw an AI mistake, spotlight it warmly — best possible outcome of the lab. Take 3–4 voices, a minute each.');
+    s.addNotes('If the room saw an AI mistake, spotlight it warmly; it’s the best possible outcome of the lab. Take 3–4 voices, a minute each.');
   }
 
-  // ============================== SLIDE 24 — HUMAN IN CHARGE ==============================
+  // ============================== SLIDE 24 · HUMAN IN CHARGE ==============================
   {
     const s = base();
     kicker(s, 'The companion habit');
@@ -528,20 +528,20 @@ const W = 13.33, H = 7.5;
     s.addText('Nothing AI-drafted reaches a student or a parent without a human reading it first.', {
       x: 1.1, y: 1.95, w: 11.2, h: 1.4, fontFace: FONT, fontSize: 25, bold: true, color: WHITE, margin: 0, valign: 'middle' });
     bullets(s, [
-      'Not because it’s usually wrong — because sometimes it is, and your name is on it',
+      'Not because it’s usually wrong, but because sometimes it is, and your name is on it',
       'Federal guidance says it in three words: keep humans in the loop (U.S. Dept. of Education, 2023)',
       { text: 'In this building: AI drafts, the teacher decides. Always.', options: { bold: true, color: NAVY } },
     ], { y: 3.95, h: 2.4, fontSize: 20 });
     s.addNotes('Rule one governed what goes INTO the tool; this governs what comes OUT. Source: U.S. Dept. of Education OET (2023), "humans in the loop."');
   }
 
-  // ============================== SLIDE 25 — SHADOW SIDE ==============================
+  // ============================== SLIDE 25 · SHADOW SIDE ==============================
   {
     const s = base();
     kicker(s, 'Trust requires honesty');
-    title(s, 'Honest limits — the risks are real');
+    title(s, 'Honest limits: the risks are real');
     const risks = [
-      ['Over-reliance', 'If the tool writes everything, your writing muscle atrophies — students’ too'],
+      ['Over-reliance', 'If the tool writes everything, your writing muscle atrophies; students’ too'],
       ['Sameness', 'AI output has a beige, everyone-sounds-alike quality; your voice is worth protecting'],
       ['Drift', 'It’s easy to slide from “AI drafts it” to “AI decides it” without noticing'],
     ];
@@ -553,33 +553,33 @@ const W = 13.33, H = 7.5;
     });
     s.addText('The guardrails you learned today exist because these are genuine, not theoretical.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. FOUNDER STORY (Adam — the shop, hands-on judgment) and YOUR TAKE (which risk worries you most) land here — see the script’s marked slots.');
+    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. FOUNDER STORY (Adam: the shop, hands-on judgment) and YOUR TAKE (which risk worries you most) land here; see the script’s marked slots.');
   }
 
-  // ============================== SLIDE 26 — STUDENTS ==============================
+  // ============================== SLIDE 26 · STUDENTS ==============================
   {
     const s = base();
     kicker(s, 'The question every faculty asks');
     title(s, 'What about students using it?');
     bullets(s, [
-      'Major public chatbots require users to be 13+ — and minors need parent/guardian permission under the terms of service',
-      'So student use is a real policy question — not a free-for-all, and not banned by default',
-      { text: 'It deserves its own session: that’s Kit 5 — AI & Academic Integrity', options: { bold: true, color: NAVY } },
+      'Major public chatbots require users to be 13+, and minors need parent/guardian permission under the terms of service',
+      'So student use is a real policy question, not a free-for-all, and not banned by default',
+      { text: 'It deserves its own session: that’s Kit 5, AI & Academic Integrity', options: { bold: true, color: NAVY } },
     ], { y: 1.6, h: 2.9 });
     card(s, 0.7, 4.7, 12.0, 1.5, 'EAF5F3');
     s.addText('Today’s scope is the adults: our use, our privacy practice, our judgment. Get that right and we’re ready to lead students well.', {
       x: 1.05, y: 4.9, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 19, color: NAVY, bold: true, margin: 0, valign: 'middle' });
-    s.addNotes('Age facts: OpenAI terms — 13+ minimum, under-18 parental permission. Park student-cheating debates here explicitly: "That’s Kit 5 — today is about our use."');
+    s.addNotes('Age facts: OpenAI terms: 13+ minimum, under-18 parental permission. Park student-cheating debates here explicitly: "That’s Kit 5; today is about our use."');
   }
 
-  // ============================== SLIDE 27 — COMMITMENTS ==============================
+  // ============================== SLIDE 27 · COMMITMENTS ==============================
   {
     const s = base(true);
     kicker(s, 'Starting today', { color: AMBER });
     s.addText('Our three commitments', {
       x: 0.7, y: 0.85, w: 12.0, h: 0.8, fontFace: FONT, fontSize: 36, bold: true, color: WHITE, margin: 0 });
     const cs = [
-      'No student personally identifiable information in public AI tools — ever',
+      'No student personally identifiable information in public AI tools. Ever',
       'A human reviews everything AI-drafted before it reaches a student or family',
       'When we find something that works, we share it',
     ];
@@ -594,15 +594,15 @@ const W = 13.33, H = 7.5;
     s.addNotes('Read all three, then ask for a visible nod or thumbs-up. It matters that this is agreed, not just heard. These commitments are the school’s interim stance until a formal policy exists (Kit 15).');
   }
 
-  // ============================== SLIDE 28 — FIRST 48 ==============================
+  // ============================== SLIDE 28 · FIRST 48 ==============================
   {
     const s = base();
     kicker(s, 'Before Friday becomes a memory');
-    title(s, 'Your first 48 hours — three small things');
+    title(s, 'Your first 48 hours: three small things');
     const acts = [
-      ['~10 min', 'Do one real task with AI', 'Something already on your to-do list — push back twice, review it, use it'],
-      ['~5 min', 'Run the de-identification drill', 'One real prompt, written unsafe then safe, on paper — the rep that builds the habit'],
-      ['~2 min', 'Share one discovery', 'One colleague, one specific thing — a win or a useful failure'],
+      ['~10 min', 'Do one real task with AI', 'Something already on your to-do list. Push back twice, review it, use it'],
+      ['~5 min', 'Run the de-identification drill', 'One real prompt, written unsafe then safe, on paper; the rep that builds the habit'],
+      ['~2 min', 'Share one discovery', 'One colleague, one specific thing: a win or a useful failure'],
     ];
     acts.forEach(([t, h, b], i) => {
       const y = 1.6 + i * 1.55;
@@ -613,10 +613,10 @@ const W = 13.33, H = 7.5;
     });
     s.addText('PD you don’t use within two days mostly evaporates. The action sheet in your hands is the antidote.', {
       x: 0.7, y: 6.3, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Hold up the First 48 Hours sheet as you talk. Research basis for follow-through: Darling-Hammond et al. (2017) — sustained duration and active use are what make PD stick.');
+    s.addNotes('Hold up the First 48 Hours sheet as you talk. Research basis for follow-through: Darling-Hammond et al. (2017): sustained duration and active use are what make PD stick.');
   }
 
-  // ============================== SLIDE 29 — WHAT'S NEXT ==============================
+  // ============================== SLIDE 29 · WHAT'S NEXT ==============================
   {
     const s = base();
     kicker(s, 'Kit 1 of 8 · Track A');
@@ -630,12 +630,12 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 4.6, 12.0, 1.6, NAVY);
     s.addText([
       { text: 'Finish all eight → the AI-Ready Educator Certificate of Completion.', options: { bold: true, color: WHITE } },
-      { text: '  Real documentation of real professional learning. Follow-ups run inside existing PLC time — nothing new to schedule.', options: { color: 'C9D4DE' } },
+      { text: '  Real documentation of real professional learning. Follow-ups run inside existing PLC time; nothing new to schedule.', options: { color: 'C9D4DE' } },
     ], { x: 1.05, y: 4.8, w: 11.3, h: 1.2, fontFace: FONT, fontSize: 18, margin: 0, valign: 'middle' });
-    s.addNotes('Next up: Kit 2 — Prompting Basics: consistently useful results instead of occasionally lucky ones. Certificate language is exactly "Certificate of Completion" — check with your district whether it qualifies for local credit.');
+    s.addNotes('Next up is Kit 2, Prompting Basics: consistently useful results instead of occasionally lucky ones. Certificate language is exactly "Certificate of Completion"; check with your district whether it qualifies for local credit.');
   }
 
-  // ============================== SLIDE 30 — CLOSE ==============================
+  // ============================== SLIDE 30 · CLOSE ==============================
   {
     const s = base(true);
     s.addText('Two minutes: the exit ticket.', {
@@ -648,10 +648,10 @@ const W = 13.33, H = 7.5;
       x: 0.7, y: 5.7, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 24, bold: true, color: TEAL, align: 'center', margin: 0 });
     s.addText('Human teaching. Life-changing tools.', {
       x: 0.7, y: 6.5, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 13, color: '9FB2C2', align: 'center', charSpacing: 2, margin: 0 });
-    s.addNotes('Distribute exit tickets; collect at the door — they are the school’s PD documentation. Your worries steer what we do next. Thanks, everyone.');
+    s.addNotes('Distribute exit tickets; collect at the door; they are the school’s PD documentation. Your worries steer what we do next. Thanks, everyone.');
   }
 
   const out = path.join(root, 'kits/kit01/Kit01_PresentationDeck.pptx');
   await p.writeFile({ fileName: out });
-  console.log('wrote', out, '—', slideNo, 'slides');
+  console.log('wrote', out, '·', slideNo, 'slides');
 })();
