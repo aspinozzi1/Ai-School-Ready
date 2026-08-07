@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       'The one rule that keeps you and your students safe',
       '15 minutes of actually using AI, hands-on'],
       { x: 7.2, y: 2.55, w: 5.3, h: 3.4, fontSize: 20 });
-    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. FOUNDER STORY (Katelyn) lands after this slide; see script.');
+    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Katelyn Spinozzi’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she rewrote it with her kids in it. AI drafts, the teacher decides.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
@@ -469,18 +469,19 @@ const W = 13.33, H = 7.5;
       ['A', 'Families', '“Write a warm, professional newsletter blurb for families about [any upcoming school event], under 120 words.”'],
       ['B', 'Assessment', '“Create a five-question review quiz on [any topic you teach], mixed difficulty, with an answer key.”'],
       ['C', 'Differentiation', '“Rewrite this paragraph at three different reading levels.” Then paste any paragraph you already have.'],
+      ['D', 'CTE & electives', '“Create a five-question tool safety check for the miter saw station, mixed question formats, with an answer key.” Swap in any station, lab, kitchen, or instrument.'],
     ];
     opts.forEach(([ltr, tag, txt], i) => {
-      const y = 1.55 + i * 1.55;
-      card(s, 0.7, y, 12.0, 1.35, PAPER);
-      s.addShape('ellipse', { x: 1.0, y: y + 0.33, w: 0.7, h: 0.7, fill: { color: TEAL }, line: { color: TEAL } });
-      s.addText(ltr, { x: 1.0, y: y + 0.33, w: 0.7, h: 0.7, fontFace: FONT, fontSize: 22, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
-      s.addText(tag.toUpperCase(), { x: 1.95, y: y + 0.14, w: 3, h: 0.32, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
-      s.addText(txt, { x: 1.95, y: y + 0.45, w: 10.4, h: 0.85, fontFace: FONT, fontSize: 16.5, color: INK, margin: 0, valign: 'top' });
+      const y = 1.42 + i * 1.22;
+      card(s, 0.7, y, 12.0, 1.08, PAPER);
+      s.addShape('ellipse', { x: 1.0, y: y + 0.21, w: 0.66, h: 0.66, fill: { color: TEAL }, line: { color: TEAL } });
+      s.addText(ltr, { x: 1.0, y: y + 0.21, w: 0.66, h: 0.66, fontFace: FONT, fontSize: 21, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
+      s.addText(tag.toUpperCase(), { x: 1.95, y: y + 0.1, w: 4, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+      s.addText(txt, { x: 1.95, y: y + 0.38, w: 10.4, h: 0.66, fontFace: FONT, fontSize: 14.5, color: INK, margin: 0, valign: 'top' });
     });
     s.addText('Pick whichever is closest to your real job. Type it. Read what comes back.', {
-      x: 0.7, y: 6.3, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 17, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. LOCAL EXAMPLE (Adam): add an Option D from the shop, a real CTE prompt in your own words; see the script’s marked slot.');
+      x: 0.7, y: 6.35, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. Option D is Adam Spinozzi’s own prompt from his carpentry room; say so, and invite electives staff to swap in their station or lab.');
   }
 
   // ============================== SLIDE 22 · LAB TASK 2 ==============================
@@ -553,7 +554,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('The guardrails you learned today exist because these are genuine, not theoretical.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. FOUNDER STORY (Adam: the shop, hands-on judgment) and YOUR TAKE (which risk worries you most) land here; see the script’s marked slots.');
+    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. Then read the two author passages from the script: Adam Spinozzi’s table-saw story (his student caught a kickback setup by eye, from experience, not from AI) and the authors’ shared take: over-reliance is the biggest risk; students must identify the problem and the tools before AI helps.');
   }
 
   // ============================== SLIDE 26 · STUDENTS ==============================

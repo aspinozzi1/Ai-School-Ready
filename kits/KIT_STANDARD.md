@@ -42,7 +42,10 @@ items, cards, callouts, and reference entries move to the next page whole; lists
 may break between items only; a slide cue, its stage direction, and its first
 spoken block stay together; headings never sit alone at a page bottom. Enforced
 in `kits/tooling/brand.css` (break-inside/break-after rules); a slightly ragged
-page bottom is always preferred over a split.
+page bottom is always preferred over a split. Breathing room is non-negotiable:
+~0.5in clear space below the navy band on every page (continuation pages included) and
+~0.35in above the footer band; when content and whitespace compete, whitespace wins;
+add a page instead of compressing. (Component page counts flex by one page for this.)
 
 ## Look (locked brand)
 Navy `#13293D` band top of every page with the white/teal logo; navy footer strip with

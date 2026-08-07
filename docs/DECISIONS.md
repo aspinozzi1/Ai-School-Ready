@@ -46,3 +46,12 @@ quote PDFs, blog posts, FAQ answers, error and empty-state messages.
 - En dashes in numeric ranges (45–60 min, 2023–24) are fine.
 - Where the master brief's locked copy contains em dashes, the builder recasts
   the punctuation while keeping the words (pending owner override).
+
+## 2026-08-07 — Breathing room is brand-wide (owner-directed)
+
+Nothing sits tight against chrome. In kit PDFs: ~0.5in clear space between the navy
+band and content at the top of every page (including continuation pages) and ~0.35in
+above the footer band; enforced in kits/tooling/brand.css. Part II must carry the same
+principle: generous padding between nav/header bars, page content, and footers on every
+website and portal page, email, certificate, and quote PDF. When content and whitespace
+compete, whitespace wins; add a page instead of compressing.

@@ -68,7 +68,7 @@ html, body {
 .foot .brand-line span { color: var(--teal); }
 
 .body {
-  padding: 0.42in 0.55in 0.3in;
+  padding: 0.55in 0.55in 0.4in;
   flex: 1 1 auto;
   overflow: hidden;
 }
@@ -158,8 +158,10 @@ table.doc { width: 8.5in; border-collapse: collapse; }
 table.doc > thead > tr > td,
 table.doc > tbody > tr > td,
 table.doc > tfoot > tr > td { padding: 0; border: none; background: none !important; }
-table.doc > tbody > tr > td.content-cell { padding: 0.34in 0.55in 0.12in; }
-table.doc > tfoot > tr > td.foot-space { height: 0.46in; }
+/* the gap below the band lives in the repeating thead, so EVERY page gets it */
+table.doc > thead > tr > td { padding-bottom: 0.3in; }
+table.doc > tbody > tr > td.content-cell { padding: 0.2in 0.55in 0.28in; }
+table.doc > tfoot > tr > td.foot-space { height: 0.72in; }
 .fixed-foot { position: fixed; bottom: 0; left: 0; right: 0; }
 .fixed-foot .foot { padding: 0.1in 0.55in; }
 .foot { white-space: nowrap; }
