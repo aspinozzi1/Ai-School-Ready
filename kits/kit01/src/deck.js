@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       'The one rule that keeps you and your students safe',
       '15 minutes of actually using AI, hands-on'],
       { x: 7.2, y: 2.55, w: 5.3, h: 3.4, fontSize: 20 });
-    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Katelyn Spinozzi’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she rewrote it with her kids in it. AI drafts, the teacher decides.');
+    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Kate’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she reworked it herself to fit her class, and nothing about her students ever went into the tool. AI drafts, the teacher decides.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
@@ -481,7 +481,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('Pick whichever is closest to your real job. Type it. Read what comes back.', {
       x: 0.7, y: 6.35, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. Option D is Adam Spinozzi’s own prompt from his carpentry room; say so, and invite electives staff to swap in their station or lab.');
+    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. Option D is Adam’s own prompt from his carpentry room; say so, and invite electives staff to swap in their station or lab.');
   }
 
   // ============================== SLIDE 22 · LAB TASK 2 ==============================
@@ -554,7 +554,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('The guardrails you learned today exist because these are genuine, not theoretical.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. Then read the two author passages from the script: Adam Spinozzi’s table-saw story (his student caught a kickback setup by eye, from experience, not from AI) and the authors’ shared take: over-reliance is the biggest risk; students must identify the problem and the tools before AI helps.');
+    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. Then read the two author passages from the script: Adam’s table-saw story (his student caught a kickback setup by eye, from experience, not from AI) and the authors’ shared take: over-reliance is the biggest risk; students must identify the problem and the tools before AI helps.');
   }
 
   // ============================== SLIDE 26 · STUDENTS ==============================
