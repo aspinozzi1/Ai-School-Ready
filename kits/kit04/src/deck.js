@@ -389,7 +389,7 @@ const W = 13.33, H = 7.5;
     const rules = [
       ['1', 'No student information of any kind; we draft materials only'],
       ['2', 'Rubric first, then questions, then feedback starters'],
-      ['3', 'At least one weak question dies by your hand before the lab ends'],
+      ['3', 'You catch and cut at least one weak question before the lab ends'],
     ];
     rules.forEach(([n, r], i) => {
       const y = 3.8 + i * 0.9;
@@ -494,7 +494,7 @@ const W = 13.33, H = 7.5;
     title(s, 'The inventory');
     card(s, 0.7, 1.8, 12.0, 3.6, PAPER);
     s.addText([
-      { text: 'A four-level rubric a student can read. A vetted question bank with a checked answer key. Three feedback starters for the comments you write most. One dead weak question as proof the reflex works.\n\n', options: { color: INK } },
+      { text: 'A four-level rubric a student can read. A vetted question bank with a checked answer key. Three feedback starters for the comments you write most. One weak question caught and cut as proof the reflex works.\n\n', options: { color: INK } },
       { text: 'That set used to be a weekend. The judgment in it is all yours; only the typing got faster.', options: { bold: true, color: NAVY } },
     ], { x: 1.1, y: 2.1, w: 11.2, h: 3.0, fontFace: FONT, fontSize: 20, margin: 0, valign: 'middle' });
     s.addNotes('Land this plainly. The asset is materials plus the vetting habit, not speed for its own sake.');

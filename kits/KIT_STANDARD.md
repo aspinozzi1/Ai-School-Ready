@@ -9,7 +9,9 @@ limits. Teachers are the experts; AI is the eager intern. The five-word posture 
 in every kit: **AI drafts, the teacher decides.** Skeptics are treated as assets.
 Banned cadence: "delve," "furthermore," "moreover," "in today's rapidly evolving
 landscape," "it's important to note," "harness the power," "game-changer," hype-"unlock,"
-uniform sentence rhythm. Concrete beats abstract.
+uniform sentence rhythm. Concrete beats abstract. No death or violence metaphors for
+editing work (owner rule, 2026-08-08): weak questions are "caught and cut," never
+"killed," and nothing "dies by your hand."
 **Em dashes (owner rule, 2026-08-07): almost never.** The em dash is the most visible AI
 tell. Default to periods, colons, commas, semicolons, and parentheses; an em dash is
 allowed only where the hard break IS the point (a spoken pushback line, a signature
