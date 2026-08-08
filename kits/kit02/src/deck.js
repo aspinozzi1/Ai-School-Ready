@@ -219,7 +219,7 @@ const W = 13.33, H = 7.5;
       'Prompting improves quality and fit; it does not replace verification',
       { text: 'The Kit 1 rule rides along forever: anything factual gets checked before you rely on it', options: { bold: true, color: NAVY } },
     ], { y: 4.2, h: 1.8, fontSize: 20 });
-    s.addNotes('Read Adam’s french-polish story from the script: a well-iterated prompt for guitar-finishing instructions confidently claimed shellac was not a necessary ingredient for a french polish (a finish that IS shellac). His expertise caught it; the writing looked perfect.');
+    s.addNotes('Land this honestly: even a well-iterated, careful prompt can produce a confident factual error that only subject expertise catches. Expertise is the safety net; never lend yours out.');
   }
 
   // ============================== SLIDE 9 · MAKEOVER 1 ==============================
@@ -388,7 +388,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. LOCAL EXAMPLE slot: share one of the authors’ real reusable prompts from the script.');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. The script’s worked example under slide 19 is a real reusable prompt from a working carpentry program.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
@@ -404,7 +404,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('Run it. Then read the draft like an editor, not a fan.', {
       x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Weak prompts usually lack context; nudge with "what would a substitute need to know to do this right?" Then read Adam’s real CNC table-leg prompt from the script as the worked example (three stacked roles, one task, SVG-for-CNC format).');
+    s.addNotes('Circulate. Weak prompts usually lack context; nudge with "what would a substitute need to know to do this right?" Then read the real carpentry CNC table-leg prompt from the script as the worked example (three stacked roles, one task, SVG-for-CNC format).');
   }
 
   // ============================== SLIDE 20 · LAB STEP 2 ==============================

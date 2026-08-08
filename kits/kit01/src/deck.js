@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       'The one rule that keeps you and your students safe',
       '15 minutes of actually using AI, hands-on'],
       { x: 7.2, y: 2.55, w: 5.3, h: 3.4, fontSize: 20 });
-    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. Then read Katelyn’s graduation-speech story from the script: ChatGPT nailed the length and timing but wasn’t age-appropriate or personal; she reworked it herself to fit her class, and nothing about her students ever went into the tool. AI drafts, the teacher decides.');
+    s.addNotes('Two promises: not a sales pitch (skeptics are important here), not a scare session. Position: AI is a tool: it can take the robotic parts of the job, never the human parts. AI drafts, the teacher decides.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
@@ -252,7 +252,7 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 4.6, 12.0, 1.7, 'EAF5F3');
     s.addText('Everything on this slide is your job on purpose. The tool buys back time FOR this list; it never takes this list away.', {
       x: 1.05, y: 4.8, w: 11.3, h: 1.3, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('This is the session’s first explicit "human moment." Land it plainly and move on; the founder story on slide 25 will echo it.');
+    s.addNotes('This is the session’s first explicit "human moment." Land it plainly and move on.');
   }
 
   // ============================== SLIDE 10 · THE ONE HARD RULE ==============================
@@ -481,7 +481,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('Pick whichever is closest to your real job. Type it. Read what comes back.', {
       x: 0.7, y: 6.35, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. Option D is Adam’s own prompt from his carpentry room; say so, and invite electives staff to swap in their station or lab.');
+    s.addNotes('Circulate. Stuck pairs → option A, it works for every role. Deputize power users to float. Option D comes from a real carpentry classroom; invite electives staff to swap in their station or lab.');
   }
 
   // ============================== SLIDE 22 · LAB TASK 2 ==============================
@@ -554,7 +554,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('The guardrails you learned today exist because these are genuine, not theoretical.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. Then read the two author passages from the script: Adam’s table-saw story (his student caught a kickback setup by eye, from experience, not from AI) and the authors’ shared take: over-reliance is the biggest risk; students must identify the problem and the tools before AI helps.');
+    s.addNotes('Nobody selling AI leads with these. Naming them is what earns the room’s trust. If you chose to share the founders’ note, their view that over-reliance is the biggest risk lands well here.');
   }
 
   // ============================== SLIDE 26 · STUDENTS ==============================

@@ -85,6 +85,51 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section bg-navy">
+        <div className="section-inner max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber">
+            Our why
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-white">
+            Two teachers, walking into a room full of giants. On purpose.
+          </h2>
+          <div className="mt-6 space-y-5 text-white/85">
+            <p>
+              We're honest about who we're up against. The AI-in-education space
+              is filling fast with large platforms and institutions, backed by
+              money and &quot;credentials.&quot; We're two ordinary teachers. And
+              here's what two decades in classrooms taught us: at the end of the
+              day, the ordinary teachers are the most important people in the
+              room. We came into this space to be disrupters, and we're not
+              ashamed of that.
+            </p>
+            <p>
+              We built this company with the aid of AI: the curriculum, the
+              layout, the website you're reading right now. From conception to
+              delivery, the thoughts and convictions are ours; AI helped us
+              carry them. We don't hide that in a footnote, because it's
+              exactly what we're selling: proof that, used correctly, AI is a
+              tremendous tool in the hands of someone who knows what they're
+              trying to build.
+            </p>
+            <p>
+              And we'll say the quiet part out loud: the marketplace ultimately
+              dictates what happens in schools, whether any of us likes that or
+              not. AI is coming to your building either way. The only real
+              question is what will steer it when it arrives. Our answer: let
+              your ethics, your integrity, and your morals be the framework by
+              which AI is directed. Not a vendor's roadmap.
+            </p>
+            <p className="font-semibold text-white">
+              The goal is simple to say and worth a career to do: help teachers
+              build amazing things with AI, the way we have, and then teach
+              teachers how to teach students to do the same. Give every student
+              the best possible chance to find success.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section bg-white">
         <div className="section-inner">
           <h2 className="text-3xl font-bold text-navy">Our promise</h2>

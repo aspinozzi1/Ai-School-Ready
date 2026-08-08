@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 3.4, w: 5.15, h: 1.8, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('This session doesn’t grade for you. It makes the materials around grading fast to build.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('FOUNDER STORY slot lands here; read it from the script: the grading night you still remember, what the stack was, and what it cost. Sixty seconds, told plainly.');
+    s.addNotes('If you have your own grading-night story, sixty seconds on it lands here: what the stack was, how long it took, what it cost.');
   }
 
   // ============================== SLIDE 3 · THE PARADOX ==============================
@@ -310,7 +310,7 @@ const W = 13.33, H = 7.5;
       'No student work needed at all: you already know your patterns by heart',
       { text: 'Starters, not stamps: you add the sentence only you can write, then you deliver it', options: { bold: true, color: NAVY } },
     ], { y: 4.85, h: 1.5, fontSize: 20 });
-    s.addNotes('FOUNDER STORY slot lands here; read it from the script: a piece of feedback that only worked because you knew the kid and what they were attempting.');
+    s.addNotes('A personal beat fits here if you have one: a piece of feedback that only worked because you knew the kid and what they were attempting.');
   }
 
   // ============================== SLIDE 15 · THE RED LINES ==============================
@@ -371,7 +371,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('The tool improves the work of people who check it. It embarrasses the people who don’t.', {
       x: 0.7, y: 5.65, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('YOUR TAKE slot lands here; read the authors’ stated line from the script: what feedback they refuse to let AI even draft, and why there.');
+    s.addNotes('If you chose to share the founders’ note, their personal line on AI and assessment lands well here. Your own line lands even better; staff trust red lines more when the presenter shows theirs.');
   }
 
   // ============================== SLIDE 18 · LAB SETUP ==============================
@@ -393,7 +393,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. LOCAL EXAMPLE slot: show one of the authors’ real rubrics from the script (Adam’s shop rubric or Katelyn’s K-8 writing rubric).');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. If you grade with a rubric of your own, show it here; one real rubric from a real room tells the lab what "done" looks like.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================

@@ -267,6 +267,10 @@ export default function HomePage() {
                   shop to the kindergarten rug, so every kit lands with your
                   whole staff, not just the core classrooms.
                 </p>
+                <p className="mt-4 border-l-2 border-accent pl-4 font-medium text-primary">
+                  &quot;Let your ethics, your integrity, and your morals be the
+                  framework by which AI is directed.&quot;
+                </p>
                 <Link
                   href="/about"
                   className="mt-4 inline-block font-medium text-accent hover:underline"

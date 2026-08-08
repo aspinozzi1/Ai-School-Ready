@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 2.9, w: 5.15, h: 2.3, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
     s.addText('The gap was never intention. It was time.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Deunk et al. 2018, Educational Research Review: grouping alone is not enough; the materials have to actually differ. Then read Katelyn’s story from the script: in her 8th grade literature class, scaffolds took precedence over stretching; when versions are hand-built, the stretch gets triaged.');
+    s.addNotes('Deunk et al. 2018, Educational Research Review: grouping alone is not enough; the materials have to actually differ. If you chose to share the founders’ note from the front of the script, their point lands here: when versions are hand-built, the stretch gets triaged.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
@@ -445,7 +445,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. Then read Adam’s practice from the script: he levels the reading level of safety training materials and their tests/quizzes so every student understands equally; in a shop, comprehension is fingers.');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. The standard to name here: differentiate until understanding is equal, and let AI do the drafting that used to make that impossible.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 1 ==============================

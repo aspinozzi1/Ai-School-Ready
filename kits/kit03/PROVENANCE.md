@@ -13,3 +13,6 @@ Human-authorship chain for "AI for Planning & Differentiation."
 | Approved | _pending_ | Batch 2 sign-off |
 
 **Transparency statement** ships on the References back page, verbatim.
+
+| Owner directive: founders' note restructure | 2026-08-08 | Adam & Katelyn: no founder stories/takes/examples sprinkled through the script. All founder content consolidated into a single "From the founders" passage at the front of the facilitator script, leading with why the session matters for classroom success. The passage is presenter-facing and explicitly optional to share. Load-bearing classroom examples remain in the body unattributed. Deck notes updated to point to the note as an optional moment. |
+| Owner directive: Why-only founders' note | 2026-08-08 | Second refinement, same day: the founders' note contains no stories or examples. Two paragraphs only: why this kit matters for classroom success, and the valuable lessons the founders believe it teaches. Setup identical across all kits. Kit 4's note is AI-drafted from the session's stance and awaits owner review at the Batch 2 gate. Deck notes scrubbed of story references. |

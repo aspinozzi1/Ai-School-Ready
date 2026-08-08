@@ -64,9 +64,19 @@ Numbers appear with plain attributions in speech ("that's from RAND"), full APA 
 References file. Claims that can't be sourced get softened to professional judgment or cut.
 
 ## Human co-authorship (per kit, non-negotiable)
-≥2 `[FOUNDER STORY]` slots (specific, answerable prompts), ≥1 `[YOUR TAKE]`, ≥1
-`[LOCAL EXAMPLE]` (Adam's shop / Katelyn's K-8 room) — placed where a story carries
-teaching load (openings, objection-handling, lab/debrief), never as decoration.
+One **"From the founders"** passage at the front of the facilitator script (after "How
+to use this script," before Segment 1), identical setup across every kit (owner
+directive, 2026-08-08). The note is **Why-only**: two paragraphs in Adam and Katelyn's
+first-person voice — (1) why this kit matters for educational success in the classroom,
+(2) the valuable lessons they believe the kit will teach. **No personal stories,
+anecdotes, or examples in the note, and none sprinkled through the script body.** It is
+presenter-facing and explicitly optional to share: read aloud, retold, or kept as
+background; the session is complete either way. The whole section is wrapped in a
+`break-inside:avoid` div so it never splits across pages. Classroom examples that carry
+teaching load in labs may remain in the body but unattributed ("a real prompt from a
+carpentry classroom"). Deck speaker notes may point to the founders' note as an
+optional moment, never instruct reading it. AI-drafted notes are marked for owner
+review in PROVENANCE.md until approved.
 `PROVENANCE.md` per kit; `kits/tooling/HUMANIZATION_CHECKLIST.md` accompanies every
 draft; owners' edits always win over draft polish. Transparency statement on the
 References back page, verbatim.
