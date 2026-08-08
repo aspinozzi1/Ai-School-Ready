@@ -1,31 +1,111 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-/* AI-Ready School — locked brand tokens (see kits/KIT_STANDARD.md).
-   Never introduce colors outside these tokens. */
-@theme {
+/*
+  AI-Ready School design tokens.
+  Locked brand palette (kits/KIT_STANDARD.md): Chalk Navy #13293D · Spark Teal
+  #2A9D8F · Pencil Amber #F4A825 · Paper #F7F5F0 · Ink #1B1F24 · Mist #DCE3EA.
+  Stored as HSL channels so opacity utilities (bg-primary/90) work.
+  Layout language restored from the original build the owners preferred:
+  light, airy, centered heroes; navy reserved for accent bands.
+*/
+:root {
+  --background: 43 30% 98%;
+  --foreground: 213 14% 12%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 213 14% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 213 14% 12%;
+
+  /* Chalk Navy #13293D */
+  --primary: 209 53% 16%;
+  --primary-foreground: 43 30% 98%;
+
+  /* Paper #F7F5F0 */
+  --secondary: 43 30% 95%;
+  --secondary-foreground: 209 53% 16%;
+
+  --muted-foreground: 209 15% 42%;
+
+  /* Spark Teal #2A9D8F */
+  --accent: 173 58% 39%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Pencil Amber #F4A825 */
+  --amber: 38 90% 55%;
+  --amber-foreground: 209 53% 16%;
+
+  --destructive: 5 51% 47%;
+  --destructive-foreground: 0 0% 98%;
+
+  --success: 154 46% 34%;
+  --success-foreground: 0 0% 100%;
+
+  /* Mist #DCE3EA */
+  --border: 210 25% 89%;
+  --input: 210 25% 86%;
+  --ring: 173 58% 39%;
+
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-amber: hsl(var(--amber));
+  --color-amber-foreground: hsl(var(--amber-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Named brand aliases (used across existing pages) */
   --color-navy: #13293d;
   --color-teal: #2a9d8f;
-  --color-amber: #f4a825;
   --color-paper: #f7f5f0;
   --color-ink: #1b1f24;
   --color-mist: #dce3ea;
-  --color-success: #2e7d5b;
-  --color-error: #b4453a;
   --color-muted: #5b6b7a;
-  --color-navy-soft: #9fb2c2; /* light text on navy */
+  --color-navy-soft: #9fb2c2;
+  --color-error: #b4453a;
 
   --font-sans: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 4px);
   --radius-card: 12px;
   --radius-btn: 8px;
 }
 
 html {
   font-family: var(--font-sans);
-  color: var(--color-ink);
-  background: var(--color-paper);
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+* {
+  border-color: hsl(var(--border));
 }
 
 /* Breathing room is brand-wide (owner rule): content never sits tight

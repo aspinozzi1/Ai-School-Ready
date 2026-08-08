@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <section className="bg-navy text-white">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="text-4xl font-bold">Terms of service</h1>
-          <p className="mt-4 max-w-2xl text-lg text-mist">
+      <section className="border-b bg-secondary/40">
+        <div className="mx-auto w-full max-w-3xl px-6 py-14 text-center md:py-16">
+          <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">Terms of service</h1>
+          <p className="mt-4 mx-auto max-w-2xl text-lg text-muted-foreground">
             Plain language, because you're busy. Effective August 2026.
           </p>
         </div>

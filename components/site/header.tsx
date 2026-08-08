@@ -1,35 +1,35 @@
 import Link from "next/link";
 import { site } from "@/config/site";
-import { Logo } from "@/components/site/logo";
+import { Logo } from "@/components/brand/logo";
+import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/site/mobile-nav";
 
+/** Sticky light header with blur, restored from the original build's design. */
 export function SiteHeader() {
   return (
-    <header className="bg-navy text-white">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-5">
-        <Link href="/" aria-label="AI-Ready School home" className="shrink-0">
-          <Logo dark className="h-9 w-auto" />
-        </Link>
-        <nav className="hidden items-center gap-6 text-sm font-semibold lg:flex">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4">
+        <Logo />
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {site.nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-mist transition-colors hover:text-white"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
-          <Link
-            href="/login"
-            className="hidden rounded-btn bg-teal px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:block"
-          >
-            Log in / My Library
-          </Link>
-          <MobileNav />
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button asChild variant="ghost" size="sm">
+            <Link href="/login">Log in</Link>
+          </Button>
+          <Button asChild variant="accent" size="sm">
+            <Link href="/pricing">See Pricing</Link>
+          </Button>
         </div>
+        <MobileNav />
       </div>
     </header>
   );

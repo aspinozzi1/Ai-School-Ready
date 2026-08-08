@@ -19,12 +19,12 @@ const promises = [
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-navy text-white">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber">
+      <section className="border-b bg-secondary/40">
+        <div className="mx-auto w-full max-w-3xl px-6 py-14 text-center md:py-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
             About AI-Ready School
           </p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight">
+          <h1 className="mt-4 mx-auto max-w-3xl text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">
             PD built by two people who actually teach.
           </h1>
         </div>

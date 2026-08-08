@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 export default function BusinessOfficesPage() {
   return (
     <>
-      <section className="bg-navy text-white">
-        <div className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
-          <h1 className="text-4xl font-bold">For business offices</h1>
-          <p className="mt-4 max-w-2xl text-lg text-mist">
+      <section className="border-b bg-secondary/40">
+        <div className="mx-auto w-full max-w-3xl px-6 py-14 text-center md:py-16">
+          <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">For business offices</h1>
+          <p className="mt-4 mx-auto max-w-2xl text-lg text-muted-foreground">
             Everything your purchasing process needs on one page. We work with
             school accounts payable every week; this should be the easy part.
           </p>

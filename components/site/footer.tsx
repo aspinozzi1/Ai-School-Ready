@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/config/site";
-import { Logo } from "@/components/site/logo";
+import { Logo } from "@/components/brand/logo";
 
 const footerLinks = {
   Product: [
@@ -30,41 +30,54 @@ const footerLinks = {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy text-navy-soft">
-      <div className="mx-auto w-full max-w-6xl px-6 py-16">
-        <div className="flex flex-col gap-12 md:flex-row md:justify-between">
+    <footer className="border-t bg-secondary/40">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
-            <Logo dark className="h-9 w-auto" />
-            <p className="mt-5 text-sm font-semibold tracking-wide text-mist">
+            <Logo />
+            <p className="mt-4 text-sm font-semibold tracking-wide text-primary">
               {site.tagline}
             </p>
-            <p className="mt-4 text-sm">
+            <p className="mt-3 text-sm text-muted-foreground">
               Built by {site.founders.display}, certified educators with 20+
               combined years in the classroom.
             </p>
+            <p className="mt-4 rounded-lg bg-accent/10 px-3 py-2 text-xs font-medium text-accent">
+              Never put student personally identifiable information into a
+              public AI tool.
+            </p>
           </div>
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
-            {Object.entries(footerLinks).map(([group, links]) => (
-              <div key={group}>
-                <h3 className="text-sm font-semibold text-white">{group}</h3>
-                <ul className="mt-4 space-y-2.5 text-sm">
-                  {links.map((l) => (
-                    <li key={l.href}>
-                      <Link href={l.href} className="transition-colors hover:text-white">
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {Object.entries(footerLinks).map(([group, links]) => (
+            <div key={group}>
+              <h3 className="text-sm font-semibold text-foreground">{group}</h3>
+              <ul className="mt-3 space-y-2">
+                {links.map((l) => (
+                  <li key={l.href}>
+                    <Link
+                      href={l.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="mt-14 border-t border-white/10 pt-8 text-xs leading-relaxed">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t pt-6 text-sm text-muted-foreground sm:flex-row">
           <p>
-            © {new Date().getFullYear()} AI-Ready School · {site.founders.display}. The
-            platform stores no student information, ever. Certificates are Certificates of
-            Completion; {site.certificate.disclaimer.toLowerCase()}
+            © {new Date().getFullYear()} {site.name}. Built by two teachers,
+            privacy-first. The platform stores no student information, ever.
+          </p>
+          <p>
+            Questions?{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="font-medium text-accent hover:underline"
+            >
+              {site.contactEmail}
+            </a>
           </p>
         </div>
       </div>

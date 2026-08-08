@@ -30,12 +30,12 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <section className="bg-navy text-white">
-        <div className="mx-auto w-full max-w-3xl px-6 py-16 md:py-20">
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber">
+      <section className="border-b bg-secondary/40">
+        <div className="mx-auto w-full max-w-3xl px-6 py-14 text-center md:py-16">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">
             {post.meta.author} · {formatDate(post.meta.date)}
           </p>
-          <h1 className="mt-3 text-3xl font-bold leading-tight md:text-4xl">
+          <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
             {post.meta.title}
           </h1>
         </div>
