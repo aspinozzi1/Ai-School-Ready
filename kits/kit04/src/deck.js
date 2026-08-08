@@ -270,13 +270,15 @@ const W = 13.33, H = 7.5;
     kicker(s, 'How good are the drafts? Honest answer');
     title(s, 'Good, and not good enough to skip you');
     card(s, 0.7, 1.75, 5.75, 3.2, 'EAF5F3');
-    s.addText('97%', { x: 0.7, y: 2.05, w: 5.75, h: 1.1, fontFace: FONT, fontSize: 54, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addText('of LLM-drafted questions rated\ntopic-relevant by teachers\n(Elkins et al., 2023)', {
-      x: 1.0, y: 3.2, w: 5.15, h: 1.5, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
+    s.addText('HOW OFTEN DRAFTS ARE ON-TOPIC', { x: 0.7, y: 1.9, w: 5.75, h: 0.32, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
+    s.addText('97%', { x: 0.7, y: 2.22, w: 5.75, h: 0.95, fontFace: FONT, fontSize: 48, bold: true, color: TEAL, align: 'center', margin: 0 });
+    s.addText('When teachers rated quiz questions drafted by AI, 97 in 100 were judged relevant to the topic they asked for. (Elkins et al., 2023)', {
+      x: 1.0, y: 3.25, w: 5.15, h: 1.6, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     card(s, 6.85, 1.75, 5.75, 3.2, 'EAF5F3');
-    s.addText('3.6 / 4', { x: 6.85, y: 2.05, w: 5.75, h: 1.1, fontFace: FONT, fontSize: 54, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addText('average usefulness rating,\nwith teacher vetting integral\n(same study)', {
-      x: 7.15, y: 3.2, w: 5.15, h: 1.5, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
+    s.addText('HOW USEFUL TEACHERS FOUND THEM', { x: 6.85, y: 1.9, w: 5.75, h: 0.32, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
+    s.addText('3.6 / 4', { x: 6.85, y: 2.22, w: 5.75, h: 0.95, fontFace: FONT, fontSize: 48, bold: true, color: TEAL, align: 'center', margin: 0 });
+    s.addText('The same teachers scored the questions’ usefulness 3.6 out of 4, and the study treats teacher vetting as integral, not optional. (same study)', {
+      x: 7.15, y: 3.25, w: 5.15, h: 1.6, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('Those numbers are why drafting works. The gap is why vetting isn’t optional. Every bank gets a vetting pass; every answer key gets checked.', {
       x: 0.7, y: 5.35, w: 12.0, h: 0.9, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
     s.addNotes('In the lab, everyone will catch and fix or delete at least one weak question by hand, on purpose. That rep is the habit.');
