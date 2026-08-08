@@ -36,3 +36,17 @@ html {
 .section-inner {
   @apply mx-auto w-full max-w-6xl;
 }
+
+/* Blog article typography (MDX output) */
+.prose-custom h2 { color: var(--color-navy); font-size: 1.35rem; font-weight: 700; margin: 1.6em 0 0.5em; }
+.prose-custom h3 { color: var(--color-navy); font-size: 1.1rem; font-weight: 600; margin: 1.3em 0 0.4em; }
+.prose-custom p { margin-bottom: 1em; color: var(--color-ink); }
+.prose-custom ul, .prose-custom ol { margin: 0 0 1em 1.4em; }
+.prose-custom ul { list-style: disc; }
+.prose-custom ol { list-style: decimal; }
+.prose-custom li { margin-bottom: 0.35em; }
+.prose-custom li::marker { color: var(--color-teal); }
+.prose-custom strong { color: var(--color-navy); font-weight: 600; }
+.prose-custom a { color: var(--color-teal); font-weight: 600; text-decoration: underline; }
+.prose-custom blockquote { border-left: 4px solid var(--color-teal); padding-left: 1em; color: var(--color-muted); margin: 1em 0; }
+.prose-custom code { background: var(--color-paper); border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.9em; }
