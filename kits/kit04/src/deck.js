@@ -123,13 +123,15 @@ const W = 13.33, H = 7.5;
     kicker(s, 'High leverage, barely touched');
     title(s, 'The most powerful lever, the least-tapped use');
     card(s, 0.7, 1.75, 5.75, 3.7, 'EAF5F3');
-    s.addText('0.79', { x: 0.7, y: 2.1, w: 5.75, h: 1.2, fontFace: FONT, fontSize: 58, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addText('average effect size of feedback,\namong the most powerful influences\non achievement (Hattie & Timperley)', {
-      x: 1.0, y: 3.4, w: 5.15, h: 1.8, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
+    s.addText('THE POWER OF FEEDBACK', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
+    s.addText('0.79', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: TEAL, align: 'center', margin: 0 });
+    s.addText('Feedback’s average “effect size” on student achievement: roughly double the impact of the typical educational intervention. (Hattie & Timperley, 2007)', {
+      x: 1.0, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     card(s, 6.85, 1.75, 5.75, 3.7, PAPER);
-    s.addText('≤15%', { x: 6.85, y: 2.1, w: 5.75, h: 1.2, fontFace: FONT, fontSize: 58, bold: true, color: MUTED, align: 'center', margin: 0 });
-    s.addText('of AI-using teachers used AI\nfor writing assessments in 2023–24\n(RAND, 2025)', {
-      x: 7.15, y: 3.4, w: 5.15, h: 1.8, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
+    s.addText('HOW MANY TEACHERS TAP IT WITH AI', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
+    s.addText('≤15%', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: MUTED, align: 'center', margin: 0 });
+    s.addText('Of teachers who already used AI in 2023–24, 15% or fewer used it for writing assessments: the least-tapped use, sitting under the highest-leverage work. (RAND, 2025)', {
+      x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('Feedback’s power varies with how it’s given. That skill is yours; the drafting is delegable.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
     s.addNotes('Hattie & Timperley: 0.79 average, roughly double the typical intervention, but impact swings widely with feedback type and delivery. RAND: assessment writing is the least-tapped use among AI-using teachers. That gap is why this hour exists.');
