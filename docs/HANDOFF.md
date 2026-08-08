@@ -17,7 +17,8 @@ Two products in one repo:
   Kit 1 (approved) → Kits 2-4 (built, awaiting Batch 2 gate) → 5-8 → 9-14 → 15-17 → 18-20.
 - **Part II** — Next.js membership platform. $1,499/yr School Membership (one
   building, 75 staff-account cap), $99/yr Individual. Phase 1 (public site) is live in
-  the repo; Phase 2+ (Supabase auth, member library, Stripe, invoice/PO flow,
+  the repo, including the free-resource library (5 real PDFs on /resources, built
+  2026-08-08). Phase 2+ (Supabase auth, member library, Stripe, invoice/PO flow,
   certificates, school dashboard, admin) not started.
 
 ## Non-negotiables (never violate)
@@ -55,13 +56,21 @@ Two products in one repo:
   proud of it; ethics/integrity/morals as the framework directing AI; teach teachers
   to teach students). A pull quote sits on the home founders card.
 
-## State of the repo (branch: claude/ai-ready-school-platform-g8zikw)
+## State of the repo (latest work: branch claude/handoff-docs-review-dnghzx)
+
+Branch lineage: `claude/handoff-docs-review-dnghzx` continues (is a superset of)
+`claude/ai-ready-school-platform-g8zikw`. The old app-line branch
+`claude/ai-ready-school-build-sph7f5` and its PR #1 belong to the replaced product;
+don't merge them. New sessions should start from the latest branch above.
 
 - `kits/KIT_STANDARD.md` — binding standard for all kits (voice, lengths, pagination,
   founders' note, legal fixtures, build mechanics). Kit 1 + this file are the template.
 - `kits/kit01..kit04/` — complete (9 components each, built PDFs + PPTX,
   RESEARCH_LOG.md, PROVENANCE.md). Kits 1-3 founder-approved content; Kit 4 note
   pending owner review. Kits marked "released" in lib/catalog.ts (1-4).
+- `kits/free-resources/` — the 5 free lead-magnet PDFs (src/ HTML + built PDFs,
+  same tooling as kits), copied to `public/free/` and served on /resources with
+  working download buttons. Visually verified 2026-08-08.
 - `kits/tooling/` — build_pdf.js (Chromium at /opt/pw-browsers/chromium), brand.css,
   build_kit.sh, merge_covers.py (NOTE: merging consumes the .cover.pdf; rebuild covers
   if you rebuild a script PDF standalone), render_check.py (usage: out_dir first, then
@@ -85,16 +94,19 @@ Two products in one repo:
 
 ## Git rules
 
-Work on branch claude/ai-ready-school-platform-g8zikw only. Push with
-`git push -u origin claude/ai-ready-school-platform-g8zikw` (retry with backoff on
-network failure). No PRs unless the owner asks.
+Each session works on its own designated branch, cut from the latest-work branch
+named at the top of "State of the repo" (update that line every session). Push with
+`git push -u origin <branch>` (retry with backoff on network failure). No PRs unless
+the owner asks.
 
 ## Pending work, in order
 
 1. **Batch 2 gate**: owner reviews Kits 2-4 (including Kit 4's AI-drafted founders'
-   note). On approval → build Kits 5-8 (Batch 3).
-2. **Part II Phase 2**: Supabase auth + member library + 5 free-resource PDFs + tools
-   directory (12-15 entries, factual). Then Stripe (card + invoice/PO flow),
-   certificates, school dashboard with progress roll-up, owner admin with View-as
-   switcher, seed "Spinozzi Demo School."
+   note). All 27 components + research logs + provenance files were delivered to the
+   owner in-session 2026-08-08; verdict pending. On approval → build Kits 5-8 (Batch 3).
+2. **Part II Phase 2**: Supabase auth + member library + tools directory (12-15
+   entries, factual; every claim WebSearch-verified). Then Stripe (card + invoice/PO
+   flow), certificates, school dashboard with progress roll-up, owner admin with
+   View-as switcher, seed "Spinozzi Demo School." (The 5 free-resource PDFs from this
+   phase shipped 2026-08-08 — see /resources.)
 3. Owner placeholders (above) whenever supplied.
