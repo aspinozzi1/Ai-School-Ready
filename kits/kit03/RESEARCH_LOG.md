@@ -1,0 +1,21 @@
+# Kit 3 — Research log (sources verified 2026-08-07 via live web search)
+
+Kit 3: "AI for Planning & Differentiation." Every source verified to exist and support
+the claim before use.
+
+| # | Source (APA) | Verified claim used in kit | Link |
+|---|---|---|---|
+| 1 | CAST. (2024). *Universal Design for Learning Guidelines version 3.0.* | The UDL framework (multiple means of engagement, representation, action & expression; goal of learner agency) — the research-based frame the kit pairs with AI-drafted options and scaffolds. | https://udlguidelines.cast.org/ |
+| 2 | Tomlinson, C. A., Brighton, C., Hertberg, H., Callahan, C. M., Moon, T. R., Brimijoin, K., Conover, L. A., & Reynolds, T. (2003). Differentiating instruction in response to student readiness, interest, and learning profile in academically diverse classrooms: A review of literature. *Journal for the Education of the Gifted, 27*(2–3), 119–145. | Foundational support for differentiating by readiness, interest, and learning profile. | https://journals.sagepub.com/doi/10.1177/016235320302700203 |
+| 3 | Deunk, M. I., Smale-Jacobse, A. E., de Boer, H., Doolaard, S., & Bosker, R. J. (2018). Effective differentiation practices: A systematic review and meta-analysis. *Educational Research Review, 24*, 31–54. | Differentiation shows small-to-moderate positive effects when embedded in a broader program and supported by technology; grouping alone is not enough. The bottleneck is materials-creation time — exactly what AI compresses. | https://www.sciencedirect.com/science/article/abs/pii/S1747938X18301039 |
+| 4 | Capp, M. J. (2017). The effectiveness of universal design for learning: A meta-analysis of literature between 2013 and 2016. *International Journal of Inclusive Education, 21*(8), 791–807. | UDL is an effective methodology for improving the learning process for all students. | https://www.tandfonline.com/doi/full/10.1080/13603116.2017.1325074 |
+| 5 | Gallup & Walton Family Foundation. (2025). *Teaching for tomorrow.* | 60–84% of teachers using AI for a given task (preparing lessons, modifying materials to student levels) say it saves them time; weekly users save ~5.9 hrs/week. | https://news.gallup.com/poll/691967/three-teachers-weekly-saving-six-weeks-year.aspx |
+| 6 | Kaufman, J. H., Woo, A., Eagan, J., Lee, S., & Kassan, E. B. (2025). *Uneven adoption…* (RR-A134-25). RAND. | 25% of teachers used AI for planning/teaching in 2023–24; higher-poverty schools lag — differentiation help is an equity lever. | https://www.rand.org/pubs/research_reports/RRA134-25.html |
+| 7 | EdWeek Research Center. (2026, January). More teachers are using AI in their classrooms. Here's why. *Education Week.* | 61% of teachers used AI in their work as of late 2025 (up from 34% in Dec 2023); creating lesson plans and student resources is among the most common uses. | https://www.edweek.org/technology/more-teachers-are-using-ai-in-their-classrooms-heres-why/2026/01 |
+| 8 | Crossley, S., Heintz, A., Choi, J. S., Batchelor, J., Karimi, M., & Malatinszky, A. (2022). A large-scaled corpus for assessing text readability. *Behavior Research Methods, 55*, 491–507. | Readability is measurable against teacher judgment (CommonLit CLEAR corpus) — the basis for the kit's "check the level, don't trust the label" habit for AI-leveled texts. | https://link.springer.com/article/10.3758/s13428-022-01802-x |
+| 9 | Powell, W., & Courchesne, S. (2024). Opportunities and risks involved in using ChatGPT to create first grade science lesson plans. *PLOS ONE, 19*(6), e0305337. | ChatGPT drafted and refined a standards-aligned grade 1 science lesson in ~30 minutes, but iterations contained questionable components, missing details, and one fabricated resource — the kit's evidence that teacher review is non-negotiable. | https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0305337 |
+
+**Claims deliberately avoided (could not verify):** "38% of educators use AI to create
+lesson plans" (aggregator-only); a specific EdWeek percentage for lesson planning as the
+top use; peer-reviewed evidence that LLMs hit target readability levels (only preprints
+exist — the kit teaches verification instead of assuming accuracy).
