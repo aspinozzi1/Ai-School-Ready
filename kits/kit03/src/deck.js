@@ -114,7 +114,7 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 2.9, w: 5.15, h: 2.3, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
     s.addText('The gap was never intention. It was time.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Deunk et al. 2018, Educational Research Review: grouping alone is not enough; the materials have to actually differ. FOUNDER STORY slot lands here; read Katelyn’s three-versions story from the script.');
+    s.addNotes('Deunk et al. 2018, Educational Research Review: grouping alone is not enough; the materials have to actually differ. Then read Katelyn’s story from the script: in her 8th grade literature class, scaffolds took precedence over stretching; when versions are hand-built, the stretch gets triaged.');
   }
 
   // ============================== SLIDE 3 · WHY NOW ==============================
@@ -301,7 +301,7 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 4.9, 12.0, 1.35, 'EAF5F3');
     s.addText('Readability is measurable; teacher judgment is the benchmark. That’s the point of the CLEAR corpus research. Verify in two minutes; keep everything the leveling bought you.', {
       x: 1.05, y: 5.05, w: 11.3, h: 1.05, fontFace: FONT, fontSize: 16.5, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('Crossley et al. 2022: the CommonLit CLEAR corpus grounded readability in teacher judgment; level is a testable property, not a vibe. FOUNDER STORY slot lands here: the time a level label was wrong and how you caught it.');
+    s.addNotes('Crossley et al. 2022: the CommonLit CLEAR corpus grounded readability in teacher judgment; level is a testable property, not a vibe. Teach the three quick checks (read aloud, sentence length, try on one student) and move on.');
   }
 
   // ============================== SLIDE 13 · MOVE 2: SCAFFOLD IT ==============================
@@ -423,7 +423,7 @@ const W = 13.33, H = 7.5;
       x: 1.4, y: 3.7, w: 10.5, h: 1.1, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('The fix in this building: everyone learns the moves, everyone shares the prompts, every roster benefits.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('That’s from RAND (RR-A134-25): the schools whose students most need differentiated materials are least likely to be getting AI’s help making them. YOUR TAKE slot lands here; read the authors’ stated position from the script.');
+    s.addNotes('That’s from RAND (RR-A134-25): the schools whose students most need differentiated materials are least likely to be getting AI’s help making them. Then read the authors’ shared take from the script: in practice, equity tends to favor the struggling child, and the top end of the class gets forgotten; now that extensions cost two minutes, build the stretch on purpose.');
   }
 
   // ============================== SLIDE 19 · LAB SETUP ==============================
@@ -445,7 +445,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. LOCAL EXAMPLE slot: read one of the authors’ real differentiation prompts from the script (Adam’s leveled shop-safety procedure or Katelyn’s read-aloud-to-centers prompt).');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. Then read Adam’s practice from the script: he levels the reading level of safety training materials and their tests/quizzes so every student understands equally; in a shop, comprehension is fingers.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 1 ==============================
