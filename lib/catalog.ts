@@ -95,7 +95,7 @@ export const tracks: TrackMeta[] = [
           "Redesign one assignment to be resilient to AI shortcuts",
           "Handle suspected AI use without accusations you can't support",
         ],
-        status: "production",
+        status: "released",
       },
       {
         n: 6,

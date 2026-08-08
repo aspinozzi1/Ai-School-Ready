@@ -101,9 +101,12 @@ the owner asks.
 
 ## Pending work, in order
 
-1. **Batch 2 gate**: owner reviews Kits 2-4 (including Kit 4's AI-drafted founders'
-   note). All 27 components + research logs + provenance files were delivered to the
-   owner in-session 2026-08-08; verdict pending. On approval → build Kits 5-8 (Batch 3).
+1. **Batch 2 gate: PASSED 2026-08-08.** Owner audited Kits 2-4 in-session; three Kit 4
+   corrections applied (slide 3 + slide 12 stat-card context, catch-and-cut phrasing,
+   both now KIT_STANDARD rules) and the founders' note stood review. Batch 3 (Kits 5-8)
+   is unlocked and in progress: **Kit 5 built 2026-08-08** (9 components, visually
+   verified, marked released in lib/catalog.ts; its AI-drafted founders' note awaits
+   owner review). Kits 6-8 next, then the Batch 3 owner audit gate.
 2. **Part II Phase 2**: Supabase auth + member library + tools directory (12-15
    entries, factual; every claim WebSearch-verified). Then Stripe (card + invoice/PO
    flow), certificates, school dashboard with progress roll-up, owner admin with
