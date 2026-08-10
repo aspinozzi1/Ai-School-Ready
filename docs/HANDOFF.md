@@ -174,7 +174,9 @@ All three phases of the launch directive's backend are implemented and building:
    Full locked spec: docs/MEMBER_EXPERIENCE_SPEC.md. Includes the Kit 2
    prompt-doc copy pass + rebuilds, gated with Batch 3. Sandbox
    (Supabase/Stripe test/Netlify behind SSO) is fully set up and verified
-   as of 2026-08-10; launch checklist lives with the owner.
+   as of 2026-08-10. THE LAUNCH TO-DO LIST AND ITS CURRENT STATE LIVE IN
+   docs/LAUNCH_RUNBOOK.md — read it, act on the first open task, and keep
+   its status board current.
 1. **Batch 2 gate: PASSED 2026-08-08** (Kits 2-4; Kit 4 corrections now KIT_STANDARD
    rules). **Batch 3 gate: OPEN** — owner audits Kits 5-8 incl. four AI-drafted
    founders' notes. All kit files are pushed; nothing else blocks it.
