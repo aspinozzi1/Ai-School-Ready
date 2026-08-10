@@ -65,9 +65,10 @@ don't merge them. New sessions should start from the latest branch above.
 
 - `kits/KIT_STANDARD.md` — binding standard for all kits (voice, lengths, pagination,
   founders' note, legal fixtures, build mechanics). Kit 1 + this file are the template.
-- `kits/kit01..kit04/` — complete (9 components each, built PDFs + PPTX,
-  RESEARCH_LOG.md, PROVENANCE.md). Kits 1-3 founder-approved content; Kit 4 note
-  pending owner review. Kits marked "released" in lib/catalog.ts (1-4).
+- `kits/kit01..kit08/` — ALL EIGHT COMPLETE (9 components each, built PDFs + PPTX,
+  RESEARCH_LOG.md, PROVENANCE.md, visually verified). All marked "released" in
+  lib/catalog.ts; Track A + certificate promise are real. Kits 1-4 founder-audited;
+  Kits 5-8 (incl. their AI-drafted founders' notes) await the Batch 3 owner gate.
 - `kits/free-resources/` — the 5 free lead-magnet PDFs (src/ HTML + built PDFs,
   same tooling as kits), copied to `public/free/` and served on /resources with
   working download buttons. Visually verified 2026-08-08.
@@ -116,17 +117,62 @@ The old app-line branch (d1d2f... see `claude/ai-ready-school-build-sph7f5`,
 commit d1d2d3b) contains a working reference implementation of auth, Stripe
 webhook provisioning, and dashboards; adapt patterns, don't merge it.
 
+## Backend (built 2026-08-10; graceful degradation without env keys)
+
+All three phases of the launch directive's backend are implemented and building:
+
+- **Data**: `supabase/schema.sql` (orgs w/ 75-seat default, profiles + auto-create
+  trigger, licenses, invites, quote_requests, leads, rollout_steps; RLS everywhere;
+  helper fns app_role/app_org). `supabase/seed.sql` = Spinozzi Demo School +
+  owner-role snippets; doubles as the manual-provisioning template for PO sales.
+- **Auth**: lib/env.ts (config booleans), lib/supabase/{server,client,admin}.ts,
+  middleware.ts session refresh, lib/auth.ts (getSessionUser/requireAccess =
+  server-side source of truth). Real /login (password + magic link, honors ?next=),
+  /signup, /auth/callback, /auth/signout, /account. Header is session-aware.
+- **Member library**: /library + /library/[slug] list released kits from
+  lib/catalog.ts; lib/kit-files.ts is the file manifest; /api/download/[slug]/[file]
+  streams in-repo kit files after requireAccess (manifest allowlist only;
+  next.config.ts traces kit deliverables into the route, excludes src/tooling).
+- **Payments**: /api/checkout (both memberships = yearly subscriptions; school
+  checkout collects school name), /api/webhooks/stripe (signature-verified,
+  idempotent provisionFromCheckout, syncSubscription revokes/restores on
+  cancel/lapse). lib/provisioning.ts creates org + school_admin + license + rollout
+  seed + welcome email w/ magic link. /welcome success page. Pricing page has live
+  checkout buttons that degrade to friendly copy without keys.
+- **Invoice/PO**: /invoice-request has a real form → quote_requests + owner email
+  (lib/actions/quotes.ts), mailto fallback.
+- **School dashboard** (/school): rollout checklist (toggle via
+  lib/actions/rollout.ts), staff invites w/ 75-seat cap enforced at send AND accept
+  (lib/actions/staff.ts; manual-link fallback when Resend absent), member/invite
+  lists. Shared component components/school/dashboard.tsx.
+- **Owner admin** (/admin): stats, school list w/ "View as school"
+  (/admin/schools/[id] reuses the dashboard read-only), quote-request queue, lead
+  count. Owner role comes from SQL (see seed.sql footer).
+
+## Launch runbook (owner supplies keys; then this order)
+
+1. Supabase project → run schema.sql, then seed.sql. Auth settings: set Site URL,
+   allow {site}/auth/callback. Env: NEXT_PUBLIC_SUPABASE_URL,
+   NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY.
+2. Stripe → two yearly Prices (School $1,499, Individual $99). Env:
+   STRIPE_SECRET_KEY, STRIPE_PRICE_SCHOOL, STRIPE_PRICE_INDIVIDUAL. Webhook
+   endpoint {site}/api/webhooks/stripe (checkout.session.completed,
+   customer.subscription.updated/deleted) → STRIPE_WEBHOOK_SECRET.
+3. Resend → RESEND_API_KEY, EMAIL_FROM (verified domain), OWNER_EMAIL.
+4. NEXT_PUBLIC_SITE_URL = real domain. Sign up both owners → run the owner-role
+   UPDATE in seed.sql.
+5. Test: buy Individual with a Stripe test card → welcome email → library opens;
+   buy School → dashboard → invite a staff email → accept → library opens;
+   cancel the sub in Stripe → access flips off.
+
 ## Pending work, in order
 
-1. **Batch 2 gate: PASSED 2026-08-08.** Owner audited Kits 2-4 in-session; three Kit 4
-   corrections applied (slide 3 + slide 12 stat-card context, catch-and-cut phrasing,
-   both now KIT_STANDARD rules) and the founders' note stood review. Batch 3 (Kits 5-8)
-   is unlocked and in progress: **Kit 5 built 2026-08-08** (9 components, visually
-   verified, marked released in lib/catalog.ts; its AI-drafted founders' note awaits
-   owner review). Kits 6-8 next, then the Batch 3 owner audit gate.
-2. **Part II Phase 2**: Supabase auth + member library + tools directory (12-15
-   entries, factual; every claim WebSearch-verified). Then Stripe (card + invoice/PO
-   flow), certificates, school dashboard with progress roll-up, owner admin with
-   View-as switcher, seed "Spinozzi Demo School." (The 5 free-resource PDFs from this
-   phase shipped 2026-08-08 — see /resources.)
-3. Owner placeholders (above) whenever supplied.
+1. **Batch 2 gate: PASSED 2026-08-08** (Kits 2-4; Kit 4 corrections now KIT_STANDARD
+   rules). **Batch 3 gate: OPEN** — owner audits Kits 5-8 incl. four AI-drafted
+   founders' notes. All kit files are pushed; nothing else blocks it.
+2. **Legal-exposure audit (pre-launch gate)**: ToS/license scope, refund consistency,
+   privacy vs zero-student-data claim, FERPA page, certificate naming, citation
+   spot-check, marketing claims, quote/invoice language. Flag attorney items.
+3. Owner placeholders whenever supplied: real domain + contact email in
+   config/site.ts, real W-9 (public/vendor/w9-placeholder.pdf), About photo, env
+   keys per the runbook above.
