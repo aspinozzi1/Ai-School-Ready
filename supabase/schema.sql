@@ -64,6 +64,20 @@ create table if not exists public.leads (
   created_at timestamptz not null default now()
 );
 
+-- Quote / purchase-order requests from the invoice-request form
+-- (written via the service role; read by the owners).
+create table if not exists public.quote_requests (
+  id uuid primary key default gen_random_uuid(),
+  school_name text not null,
+  district text,
+  contact_name text not null,
+  contact_email text not null,
+  po_number text,
+  notes text,
+  status text not null default 'new' check (status in ('new','quoted','won','closed')),
+  created_at timestamptz not null default now()
+);
+
 -- Rollout checklist for the school dashboard.
 create table if not exists public.rollout_steps (
   id uuid primary key default gen_random_uuid(),
@@ -116,6 +130,7 @@ alter table public.profiles      enable row level security;
 alter table public.licenses      enable row level security;
 alter table public.invites       enable row level security;
 alter table public.leads         enable row level security;
+alter table public.quote_requests enable row level security;
 alter table public.rollout_steps enable row level security;
 
 -- ---------- Policies: profiles ----------------------------------------------
@@ -170,6 +185,10 @@ create policy invites_manage on public.invites for all using (
 
 drop policy if exists leads_select on public.leads;
 create policy leads_select on public.leads for select using (app_role() = 'owner');
+
+drop policy if exists quote_requests_owner on public.quote_requests;
+create policy quote_requests_owner on public.quote_requests for all
+  using (app_role() = 'owner') with check (app_role() = 'owner');
 
 -- ---------- Policies: rollout_steps -----------------------------------------
 

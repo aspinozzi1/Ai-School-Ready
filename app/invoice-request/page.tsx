@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/config/site";
+import { QuoteForm } from "@/components/pricing/quote-form";
 
 export const metadata: Metadata = {
   title: "Request an invoice",
@@ -8,20 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function InvoiceRequestPage() {
-  const mailBody = encodeURIComponent(
-    [
-      "Please send a formal quote for a School Membership.",
-      "",
-      "School name:",
-      "District:",
-      "Billing contact name:",
-      "Billing contact email:",
-      "Buyer (admin) name:",
-      "Buyer email:",
-      "PO number (if available):",
-      "Notes:",
-    ].join("\n"),
-  );
   return (
     <section className="section bg-paper">
       <div className="mx-auto w-full max-w-2xl">
@@ -34,17 +21,18 @@ export default function InvoiceRequestPage() {
             /year for one school building, up to {site.schoolSeatLimit} staff
             accounts. Terms are Net 30; we accept POs, ACH, check, and card.
           </p>
-          <p className="mt-3 text-sm text-muted">
-            The instant quote form goes live with checkout. Until then, email
-            us the details below and a formal quote PDF goes to your billing
-            contact within one school day.
+          <p className="mb-6 mt-3 text-sm text-muted">
+            Fill this in and a formal quote PDF goes to your billing contact
+            within one school day. Prefer email? Write to{" "}
+            <a
+              href={`mailto:${site.contactEmail}?subject=Quote%20request%3A%20School%20Membership`}
+              className="font-semibold text-teal hover:underline"
+            >
+              {site.contactEmail}
+            </a>
+            .
           </p>
-          <a
-            href={`mailto:${site.contactEmail}?subject=Quote%20request%3A%20School%20Membership&body=${mailBody}`}
-            className="mt-6 inline-block rounded-btn bg-teal px-6 py-3 font-semibold text-white hover:opacity-90"
-          >
-            Email a quote request
-          </a>
+          <QuoteForm />
           <p className="mt-6 text-xs text-muted">
             Business office needs vendor details first? Everything is on{" "}
             <Link href="/business-offices" className="font-semibold text-teal hover:underline">

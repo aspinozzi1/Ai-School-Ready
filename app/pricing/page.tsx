@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CheckoutButton } from "@/components/pricing/checkout-button";
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { site } from "@/config/site";
@@ -64,12 +65,12 @@ export default function PricingPage() {
               ))}
             </ul>
             <div className="mt-9 grid gap-3 sm:grid-cols-2">
-              <Link
-                href="/signup?plan=school"
-                className="rounded-btn bg-teal px-5 py-3 text-center font-semibold text-white transition-opacity hover:opacity-90"
+              <CheckoutButton
+                product="school"
+                className="w-full rounded-btn bg-teal px-5 py-3 text-center font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
               >
                 Pay by card
-              </Link>
+              </CheckoutButton>
               <Link
                 href="/invoice-request"
                 className="rounded-btn bg-navy px-5 py-3 text-center font-semibold text-white transition-opacity hover:opacity-90"
@@ -107,12 +108,14 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/signup?plan=individual"
-              className="mt-9 block rounded-btn bg-navy px-5 py-3 text-center font-semibold text-white transition-opacity hover:opacity-90"
-            >
-              Start your membership
-            </Link>
+            <div className="mt-9">
+              <CheckoutButton
+                product="individual"
+                className="w-full rounded-btn bg-navy px-5 py-3 text-center font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+              >
+                Start your membership
+              </CheckoutButton>
+            </div>
             <p className="mt-4 text-center text-xs text-muted">
               Individual memberships are card-only.
             </p>
