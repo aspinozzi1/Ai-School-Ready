@@ -45,10 +45,25 @@ export default function TermsPage() {
           <div className="rounded-card border border-mist bg-white p-7">
             <h2 className="text-lg font-semibold text-navy">Payment and renewal</h2>
             <p className="mt-3 text-sm text-muted">
-              Memberships are annual. Card subscriptions renew automatically
-              unless cancelled before renewal; schools paying by purchase order
-              receive a renewal invoice and simply decline it to end the
-              membership. {site.pricing.refundPolicy}
+              Memberships are annual. Card subscriptions renew automatically at
+              the then-current price unless cancelled before the renewal date;
+              cancel any time from the link in your Stripe receipt or by
+              emailing{" "}
+              <a href={`mailto:${site.contactEmail}`} className="font-semibold text-teal hover:underline">{site.contactEmail}</a>{" "}
+              (cancellation takes effect at the end of the paid term, and you
+              keep access until then). Schools paying by purchase order receive
+              a renewal invoice and simply decline it to end the membership.{" "}
+              {site.pricing.refundPolicy}
+            </p>
+          </div>
+          <div className="rounded-card border border-mist bg-white p-7">
+            <h2 className="text-lg font-semibold text-navy">Your account</h2>
+            <p className="mt-3 text-sm text-muted">
+              Keep your sign-in credentials to yourself; you're responsible for
+              activity under your account. School admins manage their
+              building's seats and confirm that invited staff are employees of
+              the licensed school. Tell us promptly about any unauthorized use
+              and we'll help lock things down.
             </p>
           </div>
           <div className="rounded-card border border-mist bg-white p-7">
@@ -76,9 +91,12 @@ export default function TermsPage() {
           <div className="rounded-card border border-mist bg-white p-7">
             <h2 className="text-lg font-semibold text-navy">The usual limits</h2>
             <p className="mt-3 text-sm text-muted">
-              The service is provided as-is; our total liability is capped at
-              the fees you paid in the current term. We'll give at least 30
-              days' notice of material changes to these terms. Questions to{" "}
+              The service is provided as-is; to the fullest extent the law
+              allows, our total liability is capped at the fees you paid in the
+              current term, and we aren't liable for indirect or consequential
+              damages. These terms are governed by the laws of the Commonwealth
+              of Pennsylvania. We'll give at least 30 days' notice of material
+              changes to these terms. Questions to{" "}
               <a href={`mailto:${site.contactEmail}`} className="font-semibold text-teal hover:underline">{site.contactEmail}</a>.
             </p>
           </div>

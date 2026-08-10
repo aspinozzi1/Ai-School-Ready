@@ -16,3 +16,10 @@ Human-authorship chain for "AI & Academic Integrity: Setting Clear Expectations 
 | Owner directive: exemplar in script | 2026-08-10 | "Meet Ms. Rivera" intro callout added to the script's "How to use this script" section (identical across kits). Script rebuilt; pagination verified unchanged. |
 | Owner directive: Rivera on every slide | 2026-08-10 | Persistent "Ms. Rivera's screen · so far" tracker chip added to every content slide (per-slide state lines tracking her artifact through the session), per the extended KIT_STANDARD exemplar rule. Long titles narrowed where needed. Rebuilt and re-inspected. |
 | Owner directive: tracker in script | 2026-08-10 | Per-slide "Ms. Rivera's screen · so far" lines added under every slide cue in the facilitator script, mirroring the deck chip exactly. Scripts rebuilt; pagination verified (page counts +1 at most, within standard flex). |
+
+## Revision 2026-08-10 (pre-launch legal audit)
+The Admin One-Pager had overflowed its single sheet, clipping the legal
+footer. Marketing copy was trimmed (lede, callout, citation list; no claims
+changed, no citations altered beyond removal of secondary entries) so the
+"informational, not legal advice" and local-credit lines render fully.
+Rebuilt and re-verified visually. See docs/LEGAL_AUDIT.md.

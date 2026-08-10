@@ -132,3 +132,12 @@ prompt" demonstrations*.
 HTML sources in `kits/kitXX/src/` + `kits/tooling/brand.css` → `bash kits/tooling/build_kit.sh kits/kitXX`.
 Deck via `kits/kitXX/src/deck.js` (pptxgenjs). Every artifact is rendered and visually
 inspected before presenting — no exceptions.
+
+## Single-sheet legal-line verification (added 2026-08-10, from the legal audit)
+
+Every single-sheet PDF (admin one-pager, exit ticket, First 48 Hours) must pass
+BOTH checks before shipping: (1) text extraction finds "not legal advice" and,
+where applicable, "local credit"; (2) a rendered PNG shows the full legal line
+above the footer band. Text can survive in the extraction layer while being
+visually clipped. Never fix an overflow by removing the legal footer; trim
+marketing copy (lede, callouts, citation lists) instead.

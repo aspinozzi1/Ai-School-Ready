@@ -27,6 +27,7 @@ export default function PrivacyPage() {
               <li>Progress data: which kits you've marked complete, so certificates and school dashboards work.</li>
               <li>Email addresses you give us for the free resources list.</li>
               <li>Ordinary technical logs (page requests, errors) needed to keep the site running.</li>
+              <li>Essential cookies only: the cookie that keeps you signed in. No advertising or cross-site tracking cookies.</li>
             </ul>
           </div>
           <div className="rounded-card border border-mist bg-white p-7">
@@ -64,9 +65,9 @@ export default function PrivacyPage() {
               <a href={`mailto:${site.contactEmail}`} className="font-semibold text-teal hover:underline">
                 {site.contactEmail}
               </a>
-              . School admins control their staff roster and can remove
-              accounts themselves. Free-list emails have an unsubscribe link in
-              every message.
+              . School admins manage their staff roster from the dashboard;
+              email us to remove an account and we&apos;ll do it promptly.
+              Free-list emails have an unsubscribe link in every message.
             </p>
           </div>
           <p className="text-xs text-muted">

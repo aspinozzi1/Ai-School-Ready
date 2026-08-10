@@ -78,6 +78,10 @@ export default function PricingPage() {
                 Request an invoice / pay by PO
               </Link>
             </div>
+            <p className="mt-3 text-center text-xs text-muted">
+              Renews yearly; cancel anytime before renewal.{" "}
+              {site.pricing.refundPolicy}
+            </p>
             <p className="mt-4 text-center text-xs text-muted">
               Most schools pay by purchase order. It&apos;s a first-class
               option here:{" "}
@@ -117,7 +121,7 @@ export default function PricingPage() {
               </CheckoutButton>
             </div>
             <p className="mt-4 text-center text-xs text-muted">
-              Individual memberships are card-only.
+              Card-only. Renews yearly; cancel anytime before renewal.
             </p>
           </div>
         </div>

@@ -103,6 +103,18 @@ export function SignupForm() {
         <p className="rounded-btn bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
       ) : null}
 
+      <p className="text-xs text-muted">
+        By creating an account you agree to our{" "}
+        <Link href="/terms" className="font-semibold text-teal hover:underline">
+          Terms of Service
+        </Link>{" "}
+        and{" "}
+        <Link href="/privacy" className="font-semibold text-teal hover:underline">
+          Privacy Policy
+        </Link>
+        .
+      </p>
+
       <button
         type="submit"
         disabled={busy}

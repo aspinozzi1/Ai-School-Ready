@@ -170,9 +170,9 @@ All three phases of the launch directive's backend are implemented and building:
 1. **Batch 2 gate: PASSED 2026-08-08** (Kits 2-4; Kit 4 corrections now KIT_STANDARD
    rules). **Batch 3 gate: OPEN** — owner audits Kits 5-8 incl. four AI-drafted
    founders' notes. All kit files are pushed; nothing else blocks it.
-2. **Legal-exposure audit (pre-launch gate)**: ToS/license scope, refund consistency,
-   privacy vs zero-student-data claim, FERPA page, certificate naming, citation
-   spot-check, marketing claims, quote/invoice language. Flag attorney items.
+2. **Legal-exposure audit: DONE 2026-08-10** — see docs/LEGAL_AUDIT.md for what was
+   checked/fixed (incl. clipped legal footers on Kits 3-5 one-pagers, now rebuilt) and
+   the six attorney items (entity formation first).
 3. Owner placeholders whenever supplied: real domain + contact email in
    config/site.ts, real W-9 (public/vendor/w9-placeholder.pdf), About photo, env
    keys per the runbook above.
