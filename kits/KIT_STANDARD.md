@@ -81,6 +81,8 @@ with legend chips (ROLE teal · TASK navy · CONTEXT dark amber #B07914 · FORMA
 green). Where the exemplar isn't a prompt (an expectation box, a rubric), show her
 finished artifact beside the template. The purpose is stated in the notes: at
 worst, a participant can mimic what's on the screen and still complete the lab.
+Every facilitator script introduces her with the same "Meet Ms. Rivera" teal
+callout in "How to use this script," so presenters meet her before the room does.
 
 ## Research
 Every citation verified against the live source before writing (existence AND claim).

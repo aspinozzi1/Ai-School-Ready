@@ -13,3 +13,4 @@ Human-authorship chain for "AI & Academic Integrity: Setting Clear Expectations 
 
 **Transparency statement** ships on the References back page, verbatim.
 | Owner directive: running exemplar | 2026-08-10 | Ms. Rivera (composite example teacher) added on the kit's flagship worked-example slide(s) in a generic mock chat window with color-coded, labeled prompt parts, per the new KIT_STANDARD exemplar rule. Rebuilt and re-inspected. |
+| Owner directive: exemplar in script | 2026-08-10 | "Meet Ms. Rivera" intro callout added to the script's "How to use this script" section (identical across kits). Script rebuilt; pagination verified unchanged. |
