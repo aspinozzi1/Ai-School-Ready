@@ -15,7 +15,7 @@
   # into its build cache. That cache is a build artifact and is never deployed,
   # but Netlify's secrets scanner reads it and fails the build. Scan everything
   # that ships; skip the cache.
-  SECRETS_SCAN_OMIT_PATHS = ".next/cache/**"
+  SECRETS_SCAN_OMIT_PATHS = ".next/cache/**,.netlify/**"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
