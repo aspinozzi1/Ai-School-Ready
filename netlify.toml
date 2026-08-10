@@ -1,0 +1,16 @@
+# Netlify build config for the Next.js app.
+#
+# These values mirror what was previously set only in the Netlify UI, so the
+# deploy is reproducible from the repo. The Next.js runtime plugin is what
+# turns `next build` output into Netlify functions + edge handlers; Netlify
+# installs it automatically from the registry, so it needs no npm dependency.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
