@@ -90,7 +90,10 @@ the session so the room never loses the thread. Exempt: the title slide, the
 closing slide, and slides where her full chat window is the content. The chip is
 peripheral chrome and is exempt from the 16pt card floor (it runs 8-10pt); titles
 long enough to reach the chip zone narrow to w:8.7. In deck code the chip is
-driven by a per-slide RIVERA state array and drawn automatically in base().
+driven by a per-slide RIVERA state array and drawn automatically in base(). The
+facilitator script mirrors the chip: a `.rivera-line` under each slide cue shows
+the chip's exact text for that slide, so the presenter always knows what the room
+is reading.
 
 ## Research
 Every citation verified against the live source before writing (existence AND claim).

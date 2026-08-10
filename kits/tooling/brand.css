@@ -209,3 +209,12 @@ table tr { break-inside: avoid; }
 .cover .component-name .badge { font-size: 10pt; padding: 4pt 14pt; }
 .cover .credit { padding: 0.3in 0.9in 0.42in; color: #9FB2C2; font-size: 9pt; border-top: 1px solid rgba(220,227,234,.18); }
 .cover .credit b { color: #fff; display: block; font-size: 10.5pt; }
+
+/* ---- Ms. Rivera tracker line in scripts (mirrors the deck chip) ---- */
+.rivera-line {
+  font-size: 8.5pt; color: var(--muted); background: var(--paper);
+  border: 1px solid var(--mist); border-radius: 6px;
+  padding: 3pt 8pt; margin: -2pt 0 7pt;
+  break-inside: avoid; break-after: avoid;
+}
+.rivera-line b { color: var(--teal); letter-spacing: 1px; font-size: 7.5pt; }
