@@ -121,7 +121,7 @@ export const tracks: TrackMeta[] = [
           "Automate two recurring tasks with reusable prompts",
           "Protect the human parts of the job on purpose",
         ],
-        status: "production",
+        status: "released",
       },
       {
         n: 8,
