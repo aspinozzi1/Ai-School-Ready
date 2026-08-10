@@ -55,3 +55,20 @@ above the footer band; enforced in kits/tooling/brand.css. Part II must carry th
 principle: generous padding between nav/header bars, page content, and footers on every
 website and portal page, email, certificate, and quote PDF. When content and whitespace
 compete, whitespace wins; add a page instead of compressing.
+
+## 2026-08-10 — Decks must be self-standing (owner-directed)
+
+**Problem:** the decks leaned on the script for meaning. A presenter who isn't
+great, or an audience member reviewing the file, could be left in the dark.
+
+**Decision:** every deck must direct the PD on its own. Full tests recorded in
+`kits/KIT_STANDARD.md` ("Self-standing decks"): complete claims on teaching
+slides, on-slide context for every number, on-slide answers for practice slides,
+visible steps/timing for labs, and speaker notes that open with the content to
+deliver rather than stage directions only.
+
+**Audit outcome (Kits 1–5):** Kits 3–5 already met the bar. Kit 1 slide 19 and
+Kit 2 slide 13 had audience-practice answers only in the notes; both gained
+on-slide answer strips. Five stage-direction-only notes across Kits 1–4 were
+rewritten to lead with "Say:" delivery content. All decks rebuilt and
+re-inspected.

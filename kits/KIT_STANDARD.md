@@ -59,6 +59,17 @@ slides go dark-navy full-bleed. Kit covers: navy, teal spark-circle kit number, 
 track line, title ≤2 lines, founders' credit block. Deck footer: mark + wordmark left,
 "Kit X · title | slide #" right.
 
+## Self-standing decks (owner rule, 2026-08-10)
+The deck must be able to direct the session without the script; a merely adequate
+presenter (or a reader flipping the file) must never be left in the dark. Tests,
+applied to every slide: teaching slides carry their full claim in complete phrases,
+never teaser fragments; every stat carries its context on the slide; practice slides
+show their answers on-slide (small, muted, bottom strip; the presenter reveals
+verbally first); lab slides show steps, timing, and ground rules; and every slide's
+speaker notes open with the content to deliver ("Say: …"), not only stage
+directions. The script remains the gold-standard delivery; the deck alone must
+still work.
+
 ## Research
 Every citation verified against the live source before writing (existence AND claim).
 Each kit: 5–10 sources logged in `RESEARCH_LOG.md` with the exact figure used and where.

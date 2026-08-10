@@ -158,7 +158,7 @@ const W = 13.33, H = 7.5;
     s.addText('One promise', { x: 10.15, y: 2.35, w: 2.35, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: AMBER, margin: 0 });
     s.addText('You leave with a rubric and a question bank for an assessment already on your calendar. Not samples. Inventory.', {
       x: 10.15, y: 2.8, w: 2.35, h: 2.3, fontFace: FONT, fontSize: 14, color: WHITE, margin: 0, valign: 'top' });
-    s.addNotes('Keep this quick. The promise line matters: real materials for a real assessment, built today.');
+    s.addNotes('Say: five stops this hour: what makes assessment materials work, three prompt workshops (rubrics, question banks, feedback starters), the red lines in writing, a lab where you build for an assessment already on your calendar, and how it sticks. The promise line matters: real materials for a real assessment, built today. Keep this quick.');
   }
 
   // ============================== SLIDE 5 · FORMATIVE ASSESSMENT ==============================

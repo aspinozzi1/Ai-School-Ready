@@ -154,7 +154,7 @@ const W = 13.33, H = 7.5;
     s.addText('One promise', { x: 10.15, y: 2.35, w: 2.35, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: AMBER, margin: 0 });
     s.addText('You leave owning a reusable prompt for a task you do every week. Not theory. Inventory.', {
       x: 10.15, y: 2.8, w: 2.35, h: 2.3, fontFace: FONT, fontSize: 14, color: WHITE, margin: 0, valign: 'top' });
-    s.addNotes('Keep this quick. The promise line matters: staff leave with a tool, not notes.');
+    s.addNotes('Say: four stops this hour: the anatomy of a prompt that works, live makeovers of real prompts, learning to iterate instead of settling, and a lab where you build a reusable prompt for a task you do every week. The promise line matters: staff leave with a tool, not notes. Keep this quick.');
   }
 
   // ============================== SLIDE 5 · COLLEAGUE TEST ==============================
@@ -298,7 +298,9 @@ const W = 13.33, H = 7.5;
       card(s, 1.6, y, 11.1, 1.0, PAPER);
       s.addText(txt, { x: 1.9, y: y + 0.05, w: 10.5, h: 0.9, fontFace: FONT, fontSize: 15.5, italic: true, color: INK, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Answers: A missing context (grade? focus?). B missing format (what should "help" look like?). C missing task entirely (a topic, not a request). D has all four. Brisk; 3 minutes.');
+    s.addText('Answers: A missing context (grade? focus?) · B missing format (what should "help" look like?) · C missing the task itself · D has all four parts', {
+      x: 0.7, y: 6.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 13.5, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Let the room call each one before you confirm with the answer line at the bottom. Brisk; 3 minutes.');
   }
 
   // ============================== SLIDE 14 · TEMPLATES ==============================

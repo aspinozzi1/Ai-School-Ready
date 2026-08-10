@@ -252,7 +252,7 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 4.6, 12.0, 1.7, 'EAF5F3');
     s.addText('Everything on this slide is your job on purpose. The tool buys back time FOR this list; it never takes this list away.', {
       x: 1.05, y: 4.8, w: 11.3, h: 1.3, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('This is the session’s first explicit "human moment." Land it plainly and move on.');
+    s.addNotes('Say: nothing on this list is under threat, on purpose and forever. AI can\'t know your students, can\'t verify its own facts, and can\'t care. The tool buys back time FOR this list; it never takes this list away. This is the session\'s first explicit "human moment"; land it plainly and move on.');
   }
 
   // ============================== SLIDE 10 · THE ONE HARD RULE ==============================
@@ -435,7 +435,9 @@ const W = 13.33, H = 7.5;
       card(s, 1.6, y, 11.1, 0.95, PAPER);
       s.addText(txt, { x: 1.9, y: y + 0.06, w: 10.5, h: 0.85, fontFace: FONT, fontSize: 18, italic: true, color: INK, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Answers: A unsafe (initials + IEP contents). B safe. C unsafe: no name, but "the student who just moved here from Ukraine" identifies a child; fix: "a student who recently arrived from another country and is learning English." D safe: aggregate, no identities. Prompt C splits the room on purpose; resolve with the slide-12 test. 3 minutes, brisk.');
+    s.addText('Answers: A unsafe (initials + IEP details) · B safe · C unsafe (identifiable without a name) · D safe (aggregate, no identities)', {
+      x: 0.7, y: 6.35, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 13.5, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Let the room call each one before you confirm with the answer line at the bottom. C is the splitter: no name, but "the student who just moved here from Ukraine" identifies a child; fix: "a student who recently arrived from another country and is learning English." Resolve debates with the slide-12 test. 3 minutes, brisk.');
   }
 
   // ============================== SLIDE 20 · LAB SETUP ==============================
@@ -457,7 +459,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 21, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Energy up: this is the moment the session exists for. Announce the tool by name. Pairs formed inside two minutes.');
+    s.addNotes('Say: this is the moment the session exists for; everything so far was preparation for you actually typing. Nothing has to be good, it\'s a sandbox, and we practice like we play: zero student information. Announce the tool by name. Energy up; pairs formed inside two minutes.');
   }
 
   // ============================== SLIDE 21 · LAB TASK 1 ==============================

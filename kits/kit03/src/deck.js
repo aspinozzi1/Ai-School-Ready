@@ -521,7 +521,7 @@ const W = 13.33, H = 7.5;
       { text: 'A core artifact. A support version. An extension. All reviewed by the one person qualified to review them.\n\n', options: { bold: true, color: NAVY } },
       { text: 'The research said differentiation works best embedded and technology-supported. That’s not a description of some other school anymore. It’s what’s on your screen.', options: { color: INK } },
     ], { x: 1.1, y: 2.1, w: 11.2, h: 3.0, fontFace: FONT, fontSize: 20, margin: 0, valign: 'middle' });
-    s.addNotes('Callback to Deunk et al. from slide 2. Land it plainly and move to the habit.');
+    s.addNotes('Say: an hour ago, differentiation was a good intention priced at three hand-built versions of everything. You just built core, support, and stretch for a real lesson in twenty minutes, and the research from slide 2 says materials that actually differ are what make it work. Land it plainly and move to the habit.');
   }
 
   // ============================== SLIDE 25 · ONE ARTIFACT A WEEK ==============================
