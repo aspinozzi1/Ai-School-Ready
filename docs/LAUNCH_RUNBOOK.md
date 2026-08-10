@@ -27,7 +27,10 @@ Phase 1 — parallel, owner is the critical path
       replay by Claude (SSO blocks Stripe->site delivery; see Playbook A)
 - [ ] Batch 3 owner audit: Kits 5-8 + founders' notes (+ rebuilt Kit 2 when
       the build's copy pass lands)
-- [ ] OWNER: LLC formed + EIN obtained
+- [ ] OWNER: LLC formed + EIN obtained. NEW JERSEY (owner-corrected
+      2026-08-10): file online at njportal.com, $125, approval ~1 business
+      day; EIN instant online after; then bank account + Stripe business
+      verification (allow 3-5 days filing-to-live-payments total)
 - [ ] OWNER: real domain purchased (name: ____________)
 
 Phase 2 — as dependencies unlock

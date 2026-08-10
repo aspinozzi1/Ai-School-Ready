@@ -49,6 +49,14 @@ below need the owner's attorney before or shortly after launch.**
   trimmed, rebuilt, re-verified visually and by text search. Kit 8's
   references and handout had the same class of bug; also fixed.
 
+> **Correction (owner, 2026-08-10): the owners are in NEW JERSEY, not
+> Pennsylvania.** The governing-law placeholder in the Terms has been
+> switched to New Jersey (still attorney-to-confirm). Item 3's analysis
+> below was researched under the PA Ethics Act and must be redone under
+> New Jersey law (School Ethics Act / district conflict-of-interest and
+> nepotism policies) before any sale to the owners' own district. Item 4's
+> auto-renewal check should likewise start from NJ's requirements.
+
 ## Items for the owner's attorney (in priority order)
 
 1. **Entity formation.** The site sells as "AI-Ready School · Adam &

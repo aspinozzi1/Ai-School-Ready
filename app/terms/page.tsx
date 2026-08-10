@@ -94,8 +94,8 @@ export default function TermsPage() {
               The service is provided as-is; to the fullest extent the law
               allows, our total liability is capped at the fees you paid in the
               current term, and we aren't liable for indirect or consequential
-              damages. These terms are governed by the laws of the Commonwealth
-              of Pennsylvania. We'll give at least 30 days' notice of material
+              damages. These terms are governed by the laws of the State of New
+              Jersey. We'll give at least 30 days' notice of material
               changes to these terms. Questions to{" "}
               <a href={`mailto:${site.contactEmail}`} className="font-semibold text-teal hover:underline">{site.contactEmail}</a>.
             </p>
