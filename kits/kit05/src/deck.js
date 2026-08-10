@@ -27,6 +27,32 @@ const W = 13.33, H = 7.5;
   p.company = 'AI-Ready School';
   p.title = 'Kit 5: AI & Academic Integrity: Setting Clear Expectations with Students';
 
+  const RIVERA = [null, "Her reality check: half her students use AI; nobody told them the rules.",
+    "Her blood pressure, lowered: the cheating rate didn't move.",
+    "Her goal: her next assignment leaves with its AI rules written on it.",
+    "Her lens: kids cheat from pressure and disengagement, not tool access.",
+    "Her verdict on bans: honest kids lose, teaching stops. Not her policy.",
+    "Her verdict on detectors: the maker shut its own down. Not evidence.",
+    "Her red line, adopted: no accusation on a detector score alone.",
+    "Her framework: three lanes. AI-free, AI-assisted, AI-included.",
+    "Her labels, ready to print: one line per lane, in student words.",
+    "Her disclosure norm: two lines: what tool, what it did. Honesty lands soft.",
+    "Her calls: quiz lane 1, essay lane 2, research lane 3, homework = design.",
+    "Her design moves: visible thinking, plus anchors from Tuesday's class.",
+    "Her other moves: a two-minute live defense; the process in the rubric.",
+    "Her opener, rehearsed: 'walk me through how you made this.'",
+    "Her never list: no confession-first, no score-only, never public.",
+    "Her why: six values a false accusation breaks and clear rules build.",
+    "Her lab pick: the persuasive essay she assigns next week.",
+    "Her lanes: research lane 3, final draft lane 1. Defended in one sentence.", null, "Her design change: outline due Thursday, worth ten points.",
+    "Her two sentences: written calm, filed where frustrated-her will look.",
+    "Her share-out: the box, read aloud, in student words.",
+    "Her inventory: lane, box, one design move, two sentences.",
+    "Her honesty: some will still cheat. Honest kids now know the rules.",
+    "Her commitments: label, disclose with a soft landing, never score-only.",
+    "Her month: box swap, gray-area calibration, a class-written agreement.",
+    "Her 48 hours: box out, norm taught once, sentences filed.",
+    "Her exit ticket: lane, box line, one gray area for the staff.", null];
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -41,6 +67,14 @@ const W = 13.33, H = 7.5;
       s.addText(`Kit 5 · Academic Integrity   |   ${slideNo}`, {
         x: W - 3.6, y: H - 0.47, w: 3.15, h: 0.32, fontFace: FONT, fontSize: 9,
         color: dark ? '9FB2C2' : MUTED, align: 'right', margin: 0, valign: 'middle' });
+      if (RIVERA[slideNo - 1]) {
+        const rx = 9.55, ry = 0.12, rw = 3.2, rh = 0.98;
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: rh, rectRadius: 0.07, fill: { color: dark ? '1E3A50' : 'F7F5F0' }, line: { color: dark ? '2A4A63' : 'DCE3EA', width: 1 } });
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: 0.26, rectRadius: 0.07, fill: { color: '0D1E2E' }, line: { color: '0D1E2E' } });
+        ['E8837A', 'F4A825', '2E7D5B'].forEach((c, i) => s.addShape('ellipse', { x: rx + 0.1 + i * 0.16, y: ry + 0.08, w: 0.1, h: 0.1, fill: { color: c }, line: { color: c } }));
+        s.addText("MS. RIVERA'S SCREEN \u00b7 SO FAR", { x: rx + 0.62, y: ry, w: rw - 0.7, h: 0.26, fontFace: FONT, fontSize: 8, bold: true, color: '9FB2C2', charSpacing: 1, margin: 0, valign: 'middle' });
+        s.addText(RIVERA[slideNo - 1], { x: rx + 0.14, y: ry + 0.28, w: rw - 0.28, h: rh - 0.36, fontFace: FONT, fontSize: 10, color: dark ? 'C9D4DE' : INK, margin: 0, valign: 'middle' });
+      }
     }
     return s;
   }
@@ -115,7 +149,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Before ChatGPT vs. after: the Stanford surveys');
-    title(s, 'The number that should lower your blood pressure');
+    title(s, 'The number that should lower your blood pressure', { w: 8.7, fontSize: 28 });
     card(s, 0.7, 1.75, 5.75, 3.7, 'EAF5F3');
     s.addText('CHEATING BEFORE CHATGPT', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('60–70%', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: TEAL, align: 'center', margin: 0 });
@@ -306,7 +340,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Design moves · honest work as the easy path');
-    title(s, 'Move 1: visible thinking · Move 2: local anchors');
+    title(s, 'Move 1: visible thinking · Move 2: local anchors', { w: 8.7, fontSize: 28 });
     card(s, 0.7, 1.7, 5.75, 4.3, PAPER);
     s.addText('MAKE THE THINKING VISIBLE', { x: 0.95, y: 1.95, w: 5.25, h: 0.4, fontFace: FONT, fontSize: 15, bold: true, color: TEAL, margin: 0 });
     s.addText('Collect the outline, the messy draft, the version history. Grade the journey, not just the destination.\n\nA finished essay is easy to fake. A thinking trail is hard to fake, and better assessment anyway.', {
@@ -322,7 +356,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Design moves · honest work as the easy path');
-    title(s, 'Move 3: live thinking · Move 4: assessed process');
+    title(s, 'Move 3: live thinking · Move 4: assessed process', { w: 8.7, fontSize: 28 });
     card(s, 0.7, 1.7, 5.75, 4.3, PAPER);
     s.addText('MOVE SOME THINKING LIVE', { x: 0.95, y: 1.95, w: 5.25, h: 0.4, fontFace: FONT, fontSize: 15, bold: true, color: TEAL, margin: 0 });
     s.addText('A two-minute "defend your choice," an in-class quick-write, a cold question about their own essay.\n\nNot a gotcha: a normal part of how work gets finished here. Students who did the thinking enjoy it.', {

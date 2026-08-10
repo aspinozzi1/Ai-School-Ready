@@ -27,6 +27,32 @@ const W = 13.33, H = 7.5;
   p.company = 'AI-Ready School';
   p.title = 'Kit 3: AI for Planning & Differentiation';
 
+  const RIVERA = [null, "Her dilemma: differentiation worked when she managed it; the hours didn't exist.",
+    "Her time math changed: the drafting help finally arrived.",
+    "Her goal: one artifact, three versions, reviewed, teachable this week.",
+    "Her stance: never from a blank page again. Skeleton drafted, judgment hers.",
+    "Her expectation: a 30-minute draft, and at least one invented thing to catch.",
+    "Her review habit: that's where her expertise enters the document.",
+    "Her UDL frame: AI generates the menu; she orders for her class.",
+    "Her workflow: draft, then options, then pick and adapt, then review.",
+    "Her four moves: level it, scaffold it, stretch it, reformat it.", null, "Her level check: read aloud, eyeball sentence length, try on one student.",
+    "Her scaffold set: starters, word bank, worked example on a different topic.",
+    "Her stretch rule: depth, not more worksheets. Apply, critique, teach.",
+    "Her reformat: same lesson as stations, cards, and a ramped practice set.",
+    "Her 4-point review: accurate, at level, fits her kids, sounds like her.",
+    "Her honesty: the level label is a guess until she checks it.",
+    "Her equity move: build the stretch on purpose, not just the support.",
+    "Her lab: the lesson she brought, differentiated two directions.",
+    "On her screen: the core artifact, drafted to 80%, not polished.",
+    "Her two follow-ups in the same chat: support version, then stretch.",
+    "Her review, run live: caught one off-level sentence, fixed the examples.",
+    "Her artifacts: core, support, stretch. An evening's work in twenty minutes.",
+    "Her materials now match her intentions. That was the whole gap.",
+    "Her habit: one differentiated artifact a week. Small and steady.",
+    "Her commitment #5: nothing reaches a student until the review passes.",
+    "Her next kit: assessment. Rubrics and question banks from her notes.",
+    "Her 48 hours: teach the support version, run one review, post one prompt.",
+    "Her exit ticket: the artifact built, the direction that surprised her.", null];
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -41,6 +67,14 @@ const W = 13.33, H = 7.5;
       s.addText(`Kit 3 · Planning & Differentiation   |   ${slideNo}`, {
         x: W - 4.6, y: H - 0.47, w: 4.15, h: 0.32, fontFace: FONT, fontSize: 9,
         color: dark ? '9FB2C2' : MUTED, align: 'right', margin: 0, valign: 'middle' });
+      if (RIVERA[slideNo - 1]) {
+        const rx = 9.55, ry = 0.12, rw = 3.2, rh = 0.98;
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: rh, rectRadius: 0.07, fill: { color: dark ? '1E3A50' : 'F7F5F0' }, line: { color: dark ? '2A4A63' : 'DCE3EA', width: 1 } });
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: 0.26, rectRadius: 0.07, fill: { color: '0D1E2E' }, line: { color: '0D1E2E' } });
+        ['E8837A', 'F4A825', '2E7D5B'].forEach((c, i) => s.addShape('ellipse', { x: rx + 0.1 + i * 0.16, y: ry + 0.08, w: 0.1, h: 0.1, fill: { color: c }, line: { color: c } }));
+        s.addText("MS. RIVERA'S SCREEN \u00b7 SO FAR", { x: rx + 0.62, y: ry, w: rw - 0.7, h: 0.26, fontFace: FONT, fontSize: 8, bold: true, color: '9FB2C2', charSpacing: 1, margin: 0, valign: 'middle' });
+        s.addText(RIVERA[slideNo - 1], { x: rx + 0.14, y: ry + 0.28, w: rw - 0.28, h: rh - 0.36, fontFace: FONT, fontSize: 10, color: dark ? 'C9D4DE' : INK, margin: 0, valign: 'middle' });
+      }
     }
     return s;
   }

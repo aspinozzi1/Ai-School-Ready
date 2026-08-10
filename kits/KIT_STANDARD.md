@@ -83,6 +83,14 @@ finished artifact beside the template. The purpose is stated in the notes: at
 worst, a participant can mimic what's on the screen and still complete the lab.
 Every facilitator script introduces her with the same "Meet Ms. Rivera" teal
 callout in "How to use this script," so presenters meet her before the room does.
+**She is on every slide (owner rule, 2026-08-10):** a persistent tracker chip in
+the top-right of every content slide ("MS. RIVERA'S SCREEN · SO FAR", mini window
+with the three dots) shows her current state in one or two lines, updating with
+the session so the room never loses the thread. Exempt: the title slide, the
+closing slide, and slides where her full chat window is the content. The chip is
+peripheral chrome and is exempt from the 16pt card floor (it runs 8-10pt); titles
+long enough to reach the chip zone narrow to w:8.7. In deck code the chip is
+driven by a per-slide RIVERA state array and drawn automatically in base().
 
 ## Research
 Every citation verified against the live source before writing (existence AND claim).

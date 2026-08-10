@@ -27,6 +27,32 @@ const W = 13.33, H = 7.5;
   p.company = 'AI-Ready School';
   p.title = 'Kit 4: AI for Assessment: Rubrics, Feedback, and Question Banks';
 
+  const RIVERA = [null, "Her pile: 5 hours a week of grading and feedback, most after dinner.",
+    "Her gap: feedback is her highest-leverage move, and AI never touched it.",
+    "Her goal: a rubric and question bank for a real upcoming assessment.",
+    "Her formative habit: check understanding, adapt. AI drafts the materials.",
+    "Her rubric bar: students can read it. That's what makes the research pay.",
+    "Her question bar: quality beats quantity; the misconception does the work.",
+    "Her division of labor: AI drafts the materials, she makes every judgment.", null, "Her rubric test: hand it to a student. 'Limited understanding' fails.",
+    "Her bank prompt: topic plus the confusion her students actually have.",
+    "Her vetting stance: 97% on-topic still isn't 100%. Every key gets checked.",
+    "Her read of the evidence: AI feedback is a floor. She is the ceiling.",
+    "Her starters: drafted for patterns, personalized before any student sees one.",
+    "Her red lines: AI never grades, never sees names, never decides.",
+    "Her excerpt rule: anonymous or described, never pasted with identity.",
+    "Her red lines, adopted out loud, with the presenter's own.",
+    "Her lab: the assessment on her calendar, materials built tonight-free.",
+    "On her screen: notes in, rubric out, hand-it-to-a-student pass next.",
+    "Her bank: ten questions, misconception distractors, key checked.",
+    "Her vetting rep: found the weak question, caught and cut it.",
+    "Her starters: three patterns she writes every stack, drafted once.",
+    "Her share-out: the catch story goes first.",
+    "Her inventory: rubric, vetted bank, three starters, one caught question.",
+    "Her templates: filed in the staff doc's Assessment section.",
+    "Her five hours: the drafting share just moved to a faster tool.",
+    "Her next kit: the student side. Integrity and clear expectations.",
+    "Her 48 hours: rubric out with the assignment, finish vetting, use one starter.",
+    "Her exit ticket: what she built, the weak question she caught.", null];
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -41,6 +67,14 @@ const W = 13.33, H = 7.5;
       s.addText(`Kit 4 · AI for Assessment   |   ${slideNo}`, {
         x: W - 3.6, y: H - 0.47, w: 3.15, h: 0.32, fontFace: FONT, fontSize: 9,
         color: dark ? '9FB2C2' : MUTED, align: 'right', margin: 0, valign: 'middle' });
+      if (RIVERA[slideNo - 1]) {
+        const rx = 9.55, ry = 0.12, rw = 3.2, rh = 0.98;
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: rh, rectRadius: 0.07, fill: { color: dark ? '1E3A50' : 'F7F5F0' }, line: { color: dark ? '2A4A63' : 'DCE3EA', width: 1 } });
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: 0.26, rectRadius: 0.07, fill: { color: '0D1E2E' }, line: { color: '0D1E2E' } });
+        ['E8837A', 'F4A825', '2E7D5B'].forEach((c, i) => s.addShape('ellipse', { x: rx + 0.1 + i * 0.16, y: ry + 0.08, w: 0.1, h: 0.1, fill: { color: c }, line: { color: c } }));
+        s.addText("MS. RIVERA'S SCREEN \u00b7 SO FAR", { x: rx + 0.62, y: ry, w: rw - 0.7, h: 0.26, fontFace: FONT, fontSize: 8, bold: true, color: '9FB2C2', charSpacing: 1, margin: 0, valign: 'middle' });
+        s.addText(RIVERA[slideNo - 1], { x: rx + 0.14, y: ry + 0.28, w: rw - 0.28, h: rh - 0.36, fontFace: FONT, fontSize: 10, color: dark ? 'C9D4DE' : INK, margin: 0, valign: 'middle' });
+      }
     }
     return s;
   }
@@ -121,7 +155,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'High leverage, barely touched');
-    title(s, 'The most powerful lever, the least-tapped use');
+    title(s, 'The most powerful lever, the least-tapped use', { w: 8.7, fontSize: 28 });
     card(s, 0.7, 1.75, 5.75, 3.7, 'EAF5F3');
     s.addText('THE POWER OF FEEDBACK', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('0.79', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: TEAL, align: 'center', margin: 0 });

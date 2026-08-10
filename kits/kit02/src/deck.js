@@ -27,6 +27,32 @@ const W = 13.33, H = 7.5;
   p.company = 'AI-Ready School';
   p.title = 'Kit 2: Prompting Basics: Getting Useful Results Every Time';
 
+  const RIVERA = [null, "Her gap: same tools as the weekly savers. The skill is what differs.",
+    "Her lesson learned: vague in, beige out. The model only has what she gives it.",
+    "Her goal: leave owning one reusable prompt for a weekly task.",
+    "Her pre-flight: would a colleague with zero context get it?",
+    "Her formula, from now on: Role, Task, Context, Format.",
+    "Her expectation, calibrated: structure buys measurably better output.",
+    "Her caveat, permanent: no prompt turns off hallucination. She still verifies.", null, "Her note-home prompt: the situation, never the child. Kit 1 rides along.",
+    "Her leveling spec: grade level, keep key ideas, sentence limits, vocab box.",
+    "Her spice rack: constraints, audience, an example, 'ask me questions first.'",
+    "Her diagnosis eye: when output disappoints, context is usually missing.",
+    "Her template: blanks for topic, grade, count, format. Twenty seconds to reuse.",
+    "Her iteration rounds, in order: content, then voice, then details.",
+    "Her judgment call: 80% right, iterate. Wrong thing entirely, fresh prompt.",
+    "Her voice check: read it aloud; if it isn't her, she says 'warmer' or 'blunter.'",
+    "Her lab pick: the Friday newsletter. Weekly task, real payoff.",
+    "On her screen: the four-part draft, run once, read like an editor.",
+    "Her three rounds, live: fixed content, warmed the voice, tightened details.",
+    "Her template, saved: her name, one line on what it's for, in the staff doc.",
+    "Her before and after, read aloud: the delta is the lesson.",
+    "Her library: one entry today. It compounds from here.",
+    "Her one-slide system: formula, colleague test, three rounds, template it.",
+    "Her limits list: can't check facts, know her kids, or pick what matters.",
+    "Her new norm: working prompts go in the staff doc. Nobody solves twice.",
+    "Her next kit: the formula starts differentiating for her whole roster.",
+    "Her 48 hours: run the template for real, one colleague test, one post.",
+    "Her exit ticket: one technique taken, one task still wanted.", null];
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -41,6 +67,14 @@ const W = 13.33, H = 7.5;
       s.addText(`Kit 2 · Prompting Basics   |   ${slideNo}`, {
         x: W - 3.6, y: H - 0.47, w: 3.15, h: 0.32, fontFace: FONT, fontSize: 9,
         color: dark ? '9FB2C2' : MUTED, align: 'right', margin: 0, valign: 'middle' });
+      if (RIVERA[slideNo - 1]) {
+        const rx = 9.55, ry = 0.12, rw = 3.2, rh = 0.98;
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: rh, rectRadius: 0.07, fill: { color: dark ? '1E3A50' : 'F7F5F0' }, line: { color: dark ? '2A4A63' : 'DCE3EA', width: 1 } });
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: 0.26, rectRadius: 0.07, fill: { color: '0D1E2E' }, line: { color: '0D1E2E' } });
+        ['E8837A', 'F4A825', '2E7D5B'].forEach((c, i) => s.addShape('ellipse', { x: rx + 0.1 + i * 0.16, y: ry + 0.08, w: 0.1, h: 0.1, fill: { color: c }, line: { color: c } }));
+        s.addText("MS. RIVERA'S SCREEN \u00b7 SO FAR", { x: rx + 0.62, y: ry, w: rw - 0.7, h: 0.26, fontFace: FONT, fontSize: 8, bold: true, color: '9FB2C2', charSpacing: 1, margin: 0, valign: 'middle' });
+        s.addText(RIVERA[slideNo - 1], { x: rx + 0.14, y: ry + 0.28, w: rw - 0.28, h: rh - 0.36, fontFace: FONT, fontSize: 10, color: dark ? 'C9D4DE' : INK, margin: 0, valign: 'middle' });
+      }
     }
     return s;
   }

@@ -30,6 +30,30 @@ const W = 13.33, H = 7.5;
   p.title = 'Kit 1: AI Foundations & Safety: The One Hard Rule';
 
   // ---------- helpers (fresh option objects every call; pptxgenjs mutates) ----------
+  const RIVERA = [null, "Meet her: our running example teacher. Same piles on her desk as yours.",
+    "She noticed: her students and colleagues are already using these tools.",
+    "Her goal this hour: leave with one real task done with AI, safely.",
+    "Her mental note: it predicts words. It isn't looking anything up.",
+    "Her habit forming: anything factual gets checked before she relies on it.",
+    "Her new frame: a fast, eager intern. She stays the professional in charge.",
+    "Her shortlist: newsletter drafts, leveled passages, rubrics, reformatting.",
+    "Hers alone: knowing her kids, checking facts, caring.",
+    "Her line, memorized: no student PII in a public AI tool. Ever.",
+    "Her checklist: names, IDs, grades, IEPs, health, family details. All out.",
+    "Her test before typing: could anyone who knows our school tell who this is?",
+    "Her why: FERPA, plus a text box that makes oversharing effortless.",
+    "Her rule of thumb: every tool is public until the district says otherwise.",
+    "Her relief: the work she wants help with never needed identities anyway.", null, "Her swap: the reading level and format, never the diagnosis.",
+    "Her 3 moves, automatic: strip identity, generalize, describe the need.",
+    "Her eye: initials + context still identify. Rare details identify too.",
+    "Her lab plan: one real task, zero student info, nothing has to be good.",
+    "On her screen: option A, the family newsletter blurb, typed and running.", null, "Her lab notes: draft one beige; two pushbacks later, usable. One error caught.",
+    "Her rule for what leaves her desk: nothing AI-drafted goes out unread.",
+    "Her guardrails: keep her own voice; drafts never become decisions.",
+    "Her scope today: adult use only. Student use is Kit 5's hour.",
+    "She nodded to all three. Her interim stance until policy exists.",
+    "Her next 48 hours: one real task, one de-ID drill, one share.",
+    "Her track: Kit 1 done, seven to go, certificate at the end.", null];
   let slideNo = 0;
   function base(dark = false) {
     const s = p.addSlide();
@@ -45,6 +69,14 @@ const W = 13.33, H = 7.5;
       s.addText(`Kit 1 · AI Foundations & Safety   |   ${slideNo}`, {
         x: W - 3.6, y: H - 0.47, w: 3.15, h: 0.32, fontFace: FONT, fontSize: 9,
         color: dark ? '9FB2C2' : MUTED, align: 'right', margin: 0, valign: 'middle' });
+      if (RIVERA[slideNo - 1]) {
+        const rx = 9.55, ry = 0.12, rw = 3.2, rh = 0.98;
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: rh, rectRadius: 0.07, fill: { color: dark ? '1E3A50' : 'F7F5F0' }, line: { color: dark ? '2A4A63' : 'DCE3EA', width: 1 } });
+        s.addShape('roundRect', { x: rx, y: ry, w: rw, h: 0.26, rectRadius: 0.07, fill: { color: '0D1E2E' }, line: { color: '0D1E2E' } });
+        ['E8837A', 'F4A825', '2E7D5B'].forEach((c, i) => s.addShape('ellipse', { x: rx + 0.1 + i * 0.16, y: ry + 0.08, w: 0.1, h: 0.1, fill: { color: c }, line: { color: c } }));
+        s.addText("MS. RIVERA'S SCREEN \u00b7 SO FAR", { x: rx + 0.62, y: ry, w: rw - 0.7, h: 0.26, fontFace: FONT, fontSize: 8, bold: true, color: '9FB2C2', charSpacing: 1, margin: 0, valign: 'middle' });
+        s.addText(RIVERA[slideNo - 1], { x: rx + 0.14, y: ry + 0.28, w: rw - 0.28, h: rh - 0.36, fontFace: FONT, fontSize: 10, color: dark ? 'C9D4DE' : INK, margin: 0, valign: 'middle' });
+      }
     }
     return s;
   }
@@ -121,7 +153,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Why now: three numbers');
-    title(s, 'This moved faster than any school technology before it');
+    title(s, 'This moved faster than any school technology before it', { w: 8.7, fontSize: 26 });
     card(s, 0.7, 1.75, 3.85, 3.6, PAPER);
     s.addText([
       { text: '25%', options: { color: MUTED } },
