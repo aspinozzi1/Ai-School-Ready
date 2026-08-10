@@ -225,13 +225,32 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 9 · MAKEOVER 1 ==============================
   {
     const s = base();
-    kicker(s, 'Makeover #1 · planning');
+    kicker(s, 'Makeover #1 · planning · on Ms. Rivera\'s screen');
     title(s, 'The lesson plan');
-    beforeAfter(s,
-      '“Write a lesson on fractions.”',
-      '“You are an experienced 4th grade teacher. Draft a 45-minute introductory lesson on equivalent fractions for a class that has mastered basic fraction notation but confuses numerator and denominator when simplifying. Include a 5-minute warm-up, a hands-on activity using paper folding, and a 3-question exit check. Format as a table with timings.”',
-      2.9);
-    s.addNotes('Count the four parts out loud with the room: role (teacher), task (45-min intro lesson), context (mastered notation, confuse numerator/denominator), format (table with timings, named components). Same request, completely different result.');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '“Write a lesson on fractions.”', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 3.85, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 2.08, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
+      x: 1.95, y: 1.95, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 1.7, y: 2.6, w: 10.55, h: 2.35, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    s.addText([
+      { text: '“You are an experienced 4th grade teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'Draft a 45-minute introductory lesson on equivalent fractions ', options: { color: NAVY, bold: true } },
+      { text: 'for a class that has mastered basic fraction notation but confuses numerator and denominator when simplifying. Include a 5-minute warm-up, a hands-on activity using paper folding, and a 3-question exit check. ', options: { color: 'B07914', bold: true } },
+      { text: 'Format as a table with timings.”', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.1, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.12 });
+    s.addText('AI: drafting the table…', { x: 1.7, y: 5.05, w: 6, h: 0.4, fontFace: FONT, fontSize: 13, italic: true, color: MUTED, margin: 0 });
+    const chips = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y: 6.05, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y: 6.05, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
+    s.addNotes('Say: watch the same request go from beige to usable on our example teacher\'s screen. Ms. Rivera appears in every kit; she\'s a composite, not a real teacher, and her screen is the thing to mimic in the lab. Count the four color-coded parts out loud: role in teal, task in navy, context in amber, format in green. Same request, completely different result.');
   }
 
   // ============================== SLIDE 10 · MAKEOVER 2 ==============================

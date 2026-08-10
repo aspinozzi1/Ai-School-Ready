@@ -72,3 +72,19 @@ Kit 2 slide 13 had audience-practice answers only in the notes; both gained
 on-slide answer strips. Five stage-direction-only notes across Kits 1–4 were
 rewritten to lead with "Say:" delivery content. All decks rebuilt and
 re-inspected.
+
+## 2026-08-10 — Running teacher exemplar in every deck (owner-directed)
+
+**Owner's insight:** teachers learn from seeing what it looks like on their end;
+at worst they can mimic the screen and still complete the lab.
+
+**Decision:** a persistent composite teacher, "Ms. Rivera," appears in every
+deck on the flagship worked-prompt slide (and as a finished artifact where the
+task isn't a prompt), shown in a generic mock chat window with prompt parts
+color-coded and labeled. Full spec in kits/KIT_STANDARD.md ("The running
+exemplar"). A deliberate adjustment from the owner's first sketch: the mock is
+a generic chat window, not a fake version of any real AI product's site, per
+the no-endorsement legal fixture and the series' tool-agnostic stance.
+
+**Applied 2026-08-10:** Kit 1 slides 16 + 22, Kit 2 slide 9, Kit 3 slide 11,
+Kit 4 slide 9, Kit 5 slide 20. All decks rebuilt and visually verified.

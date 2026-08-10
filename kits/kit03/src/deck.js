@@ -273,13 +273,31 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 11 · MOVE 1: LEVEL IT ==============================
   {
     const s = base();
-    kicker(s, 'Move 1 · the workhorse');
+    kicker(s, 'Move 1 · the workhorse · on Ms. Rivera\'s screen');
     title(s, 'Level it: one passage, three levels');
-    beforeAfter(s,
-      '“Make this easier.”',
-      '“You are a reading specialist. Rewrite the passage below at three levels: on-grade for 6th grade, about two years below, and about two years above. Keep every key idea, the section headings, and the same core vocabulary. Lower level: sentences under 12 words plus a 5-word vocabulary box. Higher level: raise the complexity of the reasoning, not just the vocabulary. Label each version.”  [paste passage]',
-      2.9);
-    s.addNotes('The Kit 2 formula wearing work clothes: role, task, context, format. Ninety seconds replaces an evening. Next slide is the habit that keeps this honest.');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '“Make this easier.”', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 3.85, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 2.08, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
+      x: 1.95, y: 1.95, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 1.7, y: 2.6, w: 10.55, h: 2.95, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    s.addText([
+      { text: '“You are a reading specialist. ', options: { color: TEAL, bold: true } },
+      { text: 'Rewrite the passage below at three levels: on-grade for 6th grade, about two years below, and about two years above. ', options: { color: NAVY, bold: true } },
+      { text: 'Keep every key idea, the section headings, and the same core vocabulary. ', options: { color: 'B07914', bold: true } },
+      { text: 'Lower level: sentences under 12 words plus a 5-word vocabulary box. Higher level: raise the complexity of the reasoning, not just the vocabulary. Label each version.”  [paste passage]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    const chips = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y: 6.05, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y: 6.05, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
+    s.addNotes('Say: here\'s the same move on Ms. Rivera\'s screen, our running composite example. It\'s the Kit 2 formula wearing work clothes: role in teal, task in navy, context in amber, format in green. Ninety seconds replaces an evening. In the lab, mimic this shape with your own passage. Next slide is the habit that keeps this honest.');
   }
 
   // ============================== SLIDE 12 · CHECK THE LEVEL ==============================

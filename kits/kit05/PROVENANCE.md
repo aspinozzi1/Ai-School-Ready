@@ -12,3 +12,4 @@ Human-authorship chain for "AI & Academic Integrity: Setting Clear Expectations 
 | Approved | _pending_ | Batch 3 sign-off |
 
 **Transparency statement** ships on the References back page, verbatim.
+| Owner directive: running exemplar | 2026-08-10 | Ms. Rivera (composite example teacher) added on the kit's flagship worked-example slide(s) in a generic mock chat window with color-coded, labeled prompt parts, per the new KIT_STANDARD exemplar rule. Rebuilt and re-inspected. |

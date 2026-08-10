@@ -363,17 +363,24 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 16 · SAFE SWAP 1 ==============================
   {
     const s = base();
-    kicker(s, 'Same email, zero risk');
+    kicker(s, 'Same email, zero risk · on Ms. Rivera\'s screen');
     title(s, 'Safe swap #1: the parent email');
-    card(s, 0.7, 1.6, 12.0, 2.15, 'FBEFED');
-    s.addText('UNSAFE', { x: 1.0, y: 1.78, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: BAD, margin: 0 });
+    s.addShape('roundRect', { x: 0.7, y: 1.55, w: 12.0, h: 4.8, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y: 1.55, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 1.68, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
+      x: 1.95, y: 1.55, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 1.7, y: 2.2, w: 10.55, h: 1.6, rectRadius: 0.12, fill: { color: 'FBEFED' }, line: { color: 'FBEFED' } });
+    s.addText('WHAT SHE ALMOST TYPED · UNSAFE', { x: 1.95, y: 2.32, w: 10, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: BAD, charSpacing: 1.5, margin: 0 });
     s.addText('“Write an email to Jayden Miller’s mom about his three missing assignments and his outburst in class Tuesday.”', {
-      x: 1.0, y: 2.15, w: 11.4, h: 1.4, fontFace: FONT, fontSize: 19, italic: true, color: INK, margin: 0 });
-    card(s, 0.7, 4.0, 12.0, 2.35, 'EAF5F3');
-    s.addText('SAFE', { x: 1.0, y: 4.18, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: GOOD, margin: 0 });
+      x: 1.95, y: 2.64, w: 10.05, h: 1.1, fontFace: FONT, fontSize: 17, italic: true, color: INK, margin: 0 });
+    s.addShape('roundRect', { x: 1.7, y: 4.0, w: 10.55, h: 2.1, rectRadius: 0.12, fill: { color: 'EAF5F3' }, line: { color: 'EAF5F3' } });
+    s.addText('WHAT SHE SENT · SAFE', { x: 1.95, y: 4.12, w: 10, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: GOOD, charSpacing: 1.5, margin: 0 });
     s.addText('“Write a warm, professional email to a parent about a middle schooler with several missing assignments and a recent difficult day in class. Firm but supportive; end by inviting a conversation.”', {
-      x: 1.0, y: 4.55, w: 11.4, h: 1.7, fontFace: FONT, fontSize: 19, italic: true, color: INK, margin: 0 });
-    s.addNotes('The unsafe version pastes a full student record (name, family, academics, behavior) into a stranger’s text box. The safe version gets the same email; the AI needed the situation, never the child. Add the name after it’s back in your own email account.');
+      x: 1.95, y: 4.44, w: 10.05, h: 1.55, fontFace: FONT, fontSize: 17, italic: true, color: INK, margin: 0 });
+    s.addText('Same email out the other end. The AI needed the situation, never the child.', {
+      x: 0.7, y: 6.45, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('Say: this is Ms. Rivera, our running example teacher; she\'s a composite, and her screen shows what this looks like on your end. The unsafe version pastes a full student record (name, family, academics, behavior) into a stranger\'s text box. The safe version gets the same email; the AI needed the situation, never the child. She adds the name after it\'s back in her own email account.');
   }
 
   // ============================== SLIDE 17 · SAFE SWAP 2 ==============================
@@ -489,19 +496,20 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 22 · LAB TASK 2 ==============================
   {
     const s = base();
-    kicker(s, 'Lab · task 2 of 2 · 6 minutes');
+    kicker(s, 'Lab · task 2 of 2 · 6 minutes · how Ms. Rivera does it');
     title(s, 'Now push back: twice, minimum');
-    s.addText('Don’t accept the first draft. Tell it what’s wrong, like you would an intern:', {
-      x: 0.7, y: 1.55, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, color: INK, margin: 0 });
-    const cmds = ['“Warmer.”', '“Shorter.”', '“A 5th grader wouldn’t know three of these words — fix that.”', '“Make question four harder and add a diagram question.”'];
+    s.addText('Don’t accept the first draft. Tell it what’s wrong, like you would an intern. Ms. Rivera’s replies, one at a time:', {
+      x: 0.7, y: 1.5, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, color: INK, margin: 0 });
+    const cmds = ['“Warmer.”', '“Shorter.”', '“A 5th grader wouldn’t know three of these words. Fix that.”', '“Make question four harder and add a diagram question.”'];
     cmds.forEach((c, i) => {
-      const y = 2.35 + i * 0.95;
-      card(s, 1.2, y, 11.0, 0.78, 'EAF5F3');
-      s.addText(c, { x: 1.55, y: y + 0.05, w: 10.3, h: 0.68, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+      const y = 2.3 + i * 0.95;
+      s.addShape('roundRect', { x: 3.6, y, w: 8.6, h: 0.78, rectRadius: 0.12, fill: { color: 'EAF5F3' }, line: { color: 'EAF5F3' } });
+      s.addText(c, { x: 3.95, y: y + 0.05, w: 8.0, h: 0.68, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+      s.addText('she types →', { x: 2.15, y: y + 0.05, w: 1.35, h: 0.68, fontFace: FONT, fontSize: 12, italic: true, color: MUTED, margin: 0, valign: 'middle', align: 'right' });
     });
     s.addText('The first draft is the intern’s. The third one is yours.', {
       x: 0.7, y: 6.35, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 19, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('45-minute version: skip this task, go straight to the debrief. This is the move that separates people who get real value from people who quit in a week.');
+    s.addNotes('Say: each of these is a real reply Ms. Rivera types into the chat after the first draft comes back; short and blunt is fine, the tool has no feelings. Push back at least twice on your own draft, the same way. 45-minute version: skip this task, go straight to the debrief. This is the move that separates people who get real value from people who quit in a week.');
   }
 
   // ============================== SLIDE 23 · DEBRIEF ==============================

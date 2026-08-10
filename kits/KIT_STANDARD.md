@@ -70,6 +70,18 @@ speaker notes open with the content to deliver ("Say: …"), not only stage
 directions. The script remains the gold-standard delivery; the deck alone must
 still work.
 
+## The running exemplar: Ms. Rivera (owner rule, 2026-08-10)
+Every deck carries the same fictional teacher, **Ms. Rivera**, always labeled
+"our running example teacher (a composite, not a real person)." Her screen is a
+**generic** chat window (navy title bar, three dots, "AI chat tool (any of them)"),
+never the trade dress of a real product: tools are referenced factually with no
+endorsement, and the mock must not imitate any vendor's interface. On the flagship
+worked-prompt slide of each kit, her prompt's parts are color-coded and labeled
+with legend chips (ROLE teal · TASK navy · CONTEXT dark amber #B07914 · FORMAT
+green). Where the exemplar isn't a prompt (an expectation box, a rubric), show her
+finished artifact beside the template. The purpose is stated in the notes: at
+worst, a participant can mimic what's on the screen and still complete the lab.
+
 ## Research
 Every citation verified against the live source before writing (existence AND claim).
 Each kit: 5–10 sources logged in `RESEARCH_LOG.md` with the exact figure used and where.

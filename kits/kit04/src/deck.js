@@ -230,13 +230,31 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 9 · WORKSHOP 1: RUBRIC ==============================
   {
     const s = base();
-    kicker(s, 'Workshop #1 · rubrics');
+    kicker(s, 'Workshop #1 · rubrics · on Ms. Rivera\'s screen');
     title(s, 'Notes → rubric');
-    beforeAfter(s,
-      '“Make a rubric for my essay assignment.”',
-      '“You are an experienced 7th grade ELA teacher. Turn my notes into a 4-level analytic rubric (Beginning · Developing · Proficient · Advanced) for a persuasive essay. Criteria: claim, evidence, organization, conventions. Write every descriptor in language a 7th grader can read, and make each level describe what the work does, not what it lacks. Format: a table with criteria down the side. Then ask me up to three questions about anything unclear in my notes.”  [paste your notes]',
-      3.1);
-    s.addNotes('Your messy grading notes are the context; that is Kit 2’s formula doing assessment work. The "ask me up to three questions" line is the escape hatch from Kit 2’s spice rack.');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '“Make a rubric for my essay assignment.”', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 3.85, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 2.08, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
+      x: 1.95, y: 1.95, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+    s.addShape('roundRect', { x: 1.7, y: 2.6, w: 10.55, h: 2.95, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    s.addText([
+      { text: '“You are an experienced 7th grade ELA teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'Turn my notes into a 4-level analytic rubric (Beginning · Developing · Proficient · Advanced) for a persuasive essay. ', options: { color: NAVY, bold: true } },
+      { text: 'Criteria: claim, evidence, organization, conventions. Write every descriptor in language a 7th grader can read, and make each level describe what the work does, not what it lacks. ', options: { color: 'B07914', bold: true } },
+      { text: 'Format: a table with criteria down the side. Then ask me up to three questions about anything unclear in my notes.”  [paste your notes]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.72, w: 10.05, h: 2.75, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    const chips = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y: 6.05, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y: 6.05, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
+    s.addNotes('Say: workshop one, on Ms. Rivera\'s screen, our running composite example. Her messy grading notes are the context; that is Kit 2\'s formula doing assessment work: role teal, task navy, context amber, format green. The "ask me up to three questions" line is the escape hatch from Kit 2\'s spice rack. In the lab you\'ll mimic this shape with your own notes.');
   }
 
   // ============================== SLIDE 10 · HAND IT TO A STUDENT ==============================

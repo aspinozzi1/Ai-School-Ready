@@ -435,22 +435,37 @@ const W = 13.33, H = 7.5;
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 6 minutes · the heart of the lab');
     title(s, 'Write the AI-expectation box');
-    card(s, 0.7, 1.6, 12.0, 3.6, PAPER);
+    card(s, 0.7, 1.6, 5.9, 3.9, PAPER);
+    s.addText('THE TEMPLATE', { x: 1.0, y: 1.78, w: 5.3, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: MUTED, charSpacing: 2, margin: 0 });
     s.addText([
       { text: 'Lane: ', options: { bold: true, color: NAVY } },
-      { text: '[1 / 2 / 3], because [one honest sentence about what this assignment teaches]\n', options: { color: INK } },
+      { text: '[1 / 2 / 3], because [what this assignment teaches]\n', options: { color: INK } },
       { text: 'Okay: ', options: { bold: true, color: NAVY } },
       { text: '[what\'s allowed, in student words]\n', options: { color: INK } },
       { text: 'Not okay: ', options: { bold: true, color: NAVY } },
       { text: '[what\'s not, in student words]\n', options: { color: INK } },
       { text: 'If you used AI: ', options: { bold: true, color: NAVY } },
-      { text: 'two lines at the end: what tool, and what it did for you\n', options: { color: INK } },
+      { text: 'two lines: what tool, what it did\n', options: { color: INK } },
       { text: 'If something seems off: ', options: { bold: true, color: NAVY } },
-      { text: 'I\'ll ask you to walk me through your work. A conversation, not an accusation.', options: { color: INK } },
-    ], { x: 1.05, y: 1.9, w: 11.3, h: 3.0, fontFace: FONT, fontSize: 18, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
+      { text: 'we walk through the work together.', options: { color: INK } },
+    ], { x: 1.0, y: 2.15, w: 5.35, h: 3.2, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    card(s, 6.85, 1.6, 5.9, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S BOX · PERSUASIVE ESSAY (COMPOSITE EXAMPLE)', { x: 7.15, y: 1.78, w: 5.3, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Lane: ', options: { bold: true, color: NAVY } },
+      { text: '2 · AI-assisted, because I\'m grading your argument, not your typing.\n', options: { color: INK } },
+      { text: 'Okay: ', options: { bold: true, color: NAVY } },
+      { text: 'brainstorming ideas; feedback on your draft.\n', options: { color: INK } },
+      { text: 'Not okay: ', options: { bold: true, color: NAVY } },
+      { text: 'turning in sentences you didn\'t write.\n', options: { color: INK } },
+      { text: 'If you used AI: ', options: { bold: true, color: NAVY } },
+      { text: 'two lines at the end.\n', options: { color: INK } },
+      { text: 'If something seems off: ', options: { bold: true, color: NAVY } },
+      { text: 'we\'ll talk it through, not write it up.', options: { color: INK } },
+    ], { x: 7.15, y: 2.15, w: 5.35, h: 3.2, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
     s.addText('The test: could a ninth grader read your box and know exactly what\'s okay tonight?', {
-      x: 0.7, y: 5.5, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('6 minutes. Template is on the handout with worked examples. Push for student language, not policy language. 45-min cut: lane line + disclosure line only.');
+      x: 0.7, y: 5.75, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('Say: template on the left; on the right is Ms. Rivera\'s finished box for her persuasive essay (our running composite example, same teacher whose screen you saw in Kits 1-4). Mimic her box with your own assignment: at worst, copy its shape line for line. 6 minutes. Push for student language, not policy language. 45-min cut: lane line + disclosure line only.');
   }
 
   // ============================== SLIDE 21 · LAB STEP 3 ==============================
