@@ -99,6 +99,23 @@ named at the top of "State of the repo" (update that line every session). Push w
 `git push -u origin <branch>` (retry with backoff on network failure). No PRs unless
 the owner asks.
 
+## LAUNCH DIRECTIVE (owner, 2026-08-10)
+
+The owner is launching the business at **8 completed kits** with a **fully
+functional backend**: kits delivered on purchase, plus all purchase-attached
+content. Work sequence to launch (execute in order, continue across sessions):
+1. Kits 6, 7, 8 (Track A complete; certificate promise becomes real).
+2. Backend phase 1: Supabase schema + auth + gated member library serving all
+   released kit files; staff invites with the 75-seat cap (DECISIONS.md).
+3. Backend phase 2: Stripe checkout (School $1,499/yr, Individual $99/yr) +
+   webhook provisioning + invoice/PO quote flow.
+4. Backend phase 3: school dashboard, owner admin with View-as, demo school.
+5. Batch 3 owner audit gate (Kits 5-8) + owner supplies env keys (Supabase,
+   Stripe, Resend) + final launch checklist.
+The old app-line branch (d1d2f... see `claude/ai-ready-school-build-sph7f5`,
+commit d1d2d3b) contains a working reference implementation of auth, Stripe
+webhook provisioning, and dashboards; adapt patterns, don't merge it.
+
 ## Pending work, in order
 
 1. **Batch 2 gate: PASSED 2026-08-08.** Owner audited Kits 2-4 in-session; three Kit 4

@@ -108,7 +108,7 @@ export const tracks: TrackMeta[] = [
           "Use AI translation support responsibly",
           "Keep every message human-reviewed and personal",
         ],
-        status: "production",
+        status: "released",
       },
       {
         n: 7,
