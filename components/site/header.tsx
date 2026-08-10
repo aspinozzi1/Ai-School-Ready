@@ -3,9 +3,13 @@ import { site } from "@/config/site";
 import { Logo } from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/site/mobile-nav";
+import { getSessionUser } from "@/lib/auth";
+import { isSupabaseConfigured } from "@/lib/env";
 
 /** Sticky light header with blur, restored from the original build's design. */
-export function SiteHeader() {
+export async function SiteHeader() {
+  const user = isSupabaseConfigured ? await getSessionUser() : null;
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4">
@@ -22,12 +26,25 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/login">Log in</Link>
-          </Button>
-          <Button asChild variant="accent" size="sm">
-            <Link href="/pricing">See Pricing</Link>
-          </Button>
+          {user ? (
+            <>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/account">Account</Link>
+              </Button>
+              <Button asChild variant="accent" size="sm">
+                <Link href="/library">My Library</Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/login">Log in</Link>
+              </Button>
+              <Button asChild variant="accent" size="sm">
+                <Link href="/pricing">See Pricing</Link>
+              </Button>
+            </>
+          )}
         </div>
         <MobileNav />
       </div>
