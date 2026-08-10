@@ -26,18 +26,22 @@ No LLC/domain/W-9 needed for this; the deploy is a private preview URL.
    which is fine for testing; skip it entirely and invite links appear
    on-screen for copy-paste instead.
 
-4. **Vercel** (to actually see the site): vercel.com → Account Settings →
-   Tokens → create a token. With it, Claude deploys the branch, sets every
-   env var, and hands back a private preview URL. (Alternative: import the
-   GitHub repo in the Vercel dashboard yourself and paste the env vars from
-   `.env.example`.)
+4. **Netlify** (to actually see the site): the repo is already connected to
+   the `aischoolready` site on the owner's team. Claude needs a personal
+   access token (User settings → Applications → New access token) to set the
+   production branch to `claude/handoff-docs-review-dnghzx`, set env vars,
+   trigger the deploy, and verify. Keep the site's access protection
+   (password/SSO) ON until launch — the deploy is a private preview.
 
 ## What Claude does with those
 
 1. Runs `supabase/schema.sql` + `seed.sql` (if given the connection string).
 2. Runs `scripts/setup-stripe.mjs` → creates both yearly prices + the webhook
    endpoint pointed at the deploy URL, capturing the signing secret.
-3. Sets all env vars on Vercel and deploys the branch.
+3. Sets all env vars on Netlify (names per `.env.example`; also set Supabase
+   Auth's site_url and redirect allow-list to the deploy URL + /auth/callback)
+   and deploys the branch. `netlify.toml` in the repo carries the build config,
+   including the secrets-scanner cache exclusion Netlify needs with Turbopack.
 4. Smoke-tests every route, then hands over the URL and the test script below.
 
 ## The 10-minute test script (owner, in a browser)
@@ -61,6 +65,10 @@ Use Stripe's test card: **4242 4242 4242 4242**, any future expiry, any CVC.
    supabase/seed.sql with your email).
 7. **Owner admin**: /admin → stats populated → "View as school" opens the
    demo school.
+
+Note for databases that previously ran the OLD product line's schema: run
+`supabase/reconcile-old-product-db.sql` BEFORE schema.sql (see that file's
+header), or use a fresh Supabase project and skip it.
 
 When the test passes, launch = swapping in live Stripe keys, the real domain,
 and the placeholders (HANDOFF runbook).
