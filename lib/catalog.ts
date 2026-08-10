@@ -134,7 +134,7 @@ export const tracks: TrackMeta[] = [
           "Stand up sharing routines that outlive the training",
           "Plan the next semester of adoption",
         ],
-        status: "production",
+        status: "released",
       },
     ],
   },
