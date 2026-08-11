@@ -29,15 +29,22 @@ Phase 1 — parallel, owner is the critical path
       pass landed 2026-08-11; nothing blocks this sitting). Also on the
       agenda: the starter prompt set (lib/prompts.ts), the certificate
       design (/certificate), and slide 28's title/chip touch in Kit 2's deck
-- [ ] OWNER: LLC formed + EIN obtained. NEW JERSEY (owner-corrected
-      2026-08-10): file online at njportal.com, $125, approval ~1 business
-      day; EIN instant online after; then bank account + Stripe business
-      verification (allow 3-5 days filing-to-live-payments total)
-      DECIDED 2026-08-11: LLC, not a DBA. The owner asked whether to test the
-      concept under a trade name first; a DBA saves about $70 and no time,
-      gives no liability separation, does not cover sales made before the
-      entity exists, and forces a school business office to reissue any PO
-      made out to the wrong payee. Not yet filed.
+- [x] OWNER: LLC FORMED — 2026-08-11. AI-READY SCHOOL LLC, New Jersey
+      single-member (Adam), filed and paperwork in hand; EIN 42-4384815
+      obtained same day; NJ-REG tax registration completed (0 employees, no
+      sales tax registration for now — accountant to confirm NJ digital-
+      product taxability). One follow-up from the EIN letter: it reads
+      "AI-READY SCHOOL" without "LLC" — if the bank balks when opening the
+      account, a name-correction letter to the IRS fixes it, no new EIN.
+      NEXT, IN ORDER: (1) business bank account (bring formation doc + EIN
+      letter), (2) Stripe business verification the same day (the ~2-day
+      item), (3) real W-9 — UNBLOCKED now that the EIN exists, (4) E&O +
+      general liability quote (bind the week the first sale closes; monthly
+      billing ~$50-90; ask for earliest retroactive date; expect COI
+      requests from school business offices). Owner decisions on record:
+      annual subscription model confirmed; 5-year side-business horizon;
+      target small private schools AND charters first (charter reference
+      matters most for later public-district sales), districts later.
 - [ ] OWNER: real domain purchased (name: ____________)
 
 Phase 2 — as dependencies unlock
