@@ -79,6 +79,59 @@ below need the owner's attorney before or shortly after launch.**
 6. **Insurance.** General liability + professional (E&O) coverage for a PD
    content business is inexpensive and worth a quote.
 
+## Addendum — 2026-08-11 issue-spotting pass (post member-experience build)
+
+Same caveat as above: layperson's analysis, not legal advice. New facts since
+the 2026-08-10 audit: LLC filing in progress (NJ, single member: Adam; EIN
+42-4384815 obtained), prompt library + progress tracking + certificate +
+Stripe Invoicing shipped, owner targeting private schools then charters.
+
+Ranked by (likelihood × severity) as of today:
+
+1. **Content-reliance claims remain the #1 exposure class.** A school acts
+   on kit guidance and something goes wrong; the vendor gets named. All
+   disclaimers are in place; the remaining fix is E&O + general liability
+   insurance (item 6 above) — elevate it to "before first school sale."
+2. **NEW: Terms don't cover the prompt library (user-generated content).**
+   Verified today: no UGC clause exists. Needed: a license grant from the
+   member to host/display their prompts within their school, the no-PII
+   rule stated as a term of use (the UI checkbox already exists and is
+   good evidence of reasonable design), our right to remove content, and a
+   takedown contact. Consider a DMCA registered agent (~$6). The worst
+   scenario is a member pasting student PII into a shared library —
+   author + admin delete already exist; terms need to back them.
+3. **NEW: progress records are employment-adjacent data about named
+   teachers, recorded by their admin.** Privacy policy already discloses
+   progress data (verified today). Residual risk is a teacher disputing an
+   admin-recorded completion; low severity, no action beyond the existing
+   removal-by-email path.
+4. **Trademark + name clearance — gap in the original audit.** Nobody has
+   cleared "AI-Ready School" against existing marks, and the domain is
+   still a placeholder. A knockout search before money is spent on the
+   brand is cheap; rebranding after launch is not. Add to the attorney
+   list alongside the copyright-posture question (AI-assisted authorship:
+   register the compilation disclosing AI-generated material; keep the
+   per-kit PROVENANCE.md files as the human-authorship record).
+5. **LLC discipline once approved.** Separate bank account, no
+   commingling, sign everything "Adam Spinozzi, Member, AI-Ready School
+   LLC," and update the Terms entity name, site footer, W-9, and Stripe
+   business profile. The LLC only shields what stays separated.
+6. **Own-district sales + employment contracts (restates item 3 under NJ
+   law).** Do not sell to the owners' own district(s) without counsel;
+   check both employment contracts for outside-work and IP clauses; keep
+   the business strictly off district time and equipment so no district
+   work-product claim can attach.
+7. **Auto-renewal statutes (restates item 4).** Note the new invoice/PO
+   path is naturally compliant — each year is a fresh invoice, no
+   auto-renewal. The card-subscription path still needs the NJ ARL check.
+8. **Hygiene items, not attorney-urgent:** sales-tax treatment of digital
+   products in NJ and nexus states (accountant question; schools are
+   usually exempt — collect exemption certificates in the PO flow);
+   website accessibility (ADA) as an education vendor; state student-data
+   procurement forms (NY Ed Law 2-d etc.) will be asked for by public
+   buyers — the honest answer is "no student data by design," but expect
+   the forms as sales friction.
+
 ## Standing rules this audit adds
 
 - Any single-sheet PDF must pass BOTH checks before shipping: text
