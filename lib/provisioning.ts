@@ -3,6 +3,7 @@ import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { env } from "@/lib/env";
 import { site } from "@/config/site";
 import { defaultRolloutSteps } from "@/lib/rollout";
+import { seedStarterPrompts } from "@/lib/prompt-seed";
 import { sendWelcomeEmail } from "@/lib/email";
 
 type Admin = ReturnType<typeof createSupabaseAdminClient>;
@@ -114,6 +115,9 @@ export async function provisionFromCheckout(session: Stripe.Checkout.Session) {
       stripe_ref: stripeRef,
     });
 
+    // Their personal prompt library opens with the founder starter set.
+    await seedStarterPrompts(admin, { authorId: userId });
+
     await sendSetupEmail(admin, email, site.pricing.individual.name);
     return;
   }
@@ -157,6 +161,10 @@ export async function provisionFromCheckout(session: Stripe.Checkout.Session) {
       defaultRolloutSteps.map((s) => ({ ...s, org_id: org.id, is_complete: false })),
       { onConflict: "org_id,step_key" }
     );
+
+    // Their prompt library opens with the founder starter set, so Kit 2's
+    // lab has somewhere to put its templates on day one.
+    await seedStarterPrompts(admin, { orgId: org.id });
 
     await sendSetupEmail(admin, email, site.pricing.school.name);
     return;

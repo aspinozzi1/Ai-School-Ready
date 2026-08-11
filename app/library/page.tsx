@@ -60,6 +60,24 @@ export default async function LibraryPage() {
           </p>
         </div>
 
+        <Link
+          href="/prompts"
+          className="mt-8 flex flex-wrap items-center justify-between gap-3 rounded-card border border-mist bg-white p-6 transition hover:border-teal"
+        >
+          <span>
+            <span className="block font-bold text-navy">
+              Your prompt library
+            </span>
+            <span className="mt-1 block text-sm text-muted">
+              The prompts your staff has saved, plus a starter set from the
+              founders. Copy, fill the brackets, go.
+            </span>
+          </span>
+          <span className="shrink-0 text-sm font-semibold text-teal">
+            Open prompts →
+          </span>
+        </Link>
+
         {released.map((track) => (
           <div key={track.key} className="mt-10">
             <h2 className="text-xl font-bold text-navy">{track.title}</h2>

@@ -88,6 +88,11 @@ export default async function AccountPage() {
                 Choose a membership
               </Link>
             )}
+            {user.hasActiveAccess ? (
+              <Link href="/prompts" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">
+                Prompt library
+              </Link>
+            ) : null}
             {user.profile.role === "school_admin" || user.profile.role === "owner" ? (
               <Link href="/school" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">
                 School dashboard
