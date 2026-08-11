@@ -128,47 +128,115 @@ export async function provisionFromCheckout(session: Stripe.Checkout.Session) {
     const schoolName =
       schoolField?.text?.value || session.customer_details?.name || "Your School";
 
-    const { data: org, error: orgErr } = await admin
-      .from("organizations")
-      .insert({
-        name: schoolName,
-        license_status: "active",
-        seats_limit: site.schoolSeatLimit,
-        stripe_customer_id: (session.customer as string) ?? null,
-        stripe_subscription_id:
-          typeof session.subscription === "string" ? session.subscription : null,
-      })
-      .select("id")
-      .single<{ id: string }>();
-    if (orgErr || !org) {
-      console.error("[provisioning] could not create org:", orgErr?.message);
-      throw new Error("org creation failed");
-    }
-
-    const { id: userId } = await findOrCreateUser(admin, email, fullName);
-    await ensureProfileRole(admin, userId, email, "school_admin", org.id);
-
-    await admin.from("licenses").insert({
-      user_id: userId,
-      org_id: org.id,
-      product: "school",
-      status: "active",
-      stripe_ref: stripeRef,
+    await provisionSchool(admin, {
+      email,
+      fullName,
+      schoolName,
+      stripeRef,
+      stripeCustomerId: (session.customer as string) ?? null,
+      stripeSubscriptionId:
+        typeof session.subscription === "string" ? session.subscription : null,
     });
-
-    // Seed this school's rollout checklist.
-    await admin.from("rollout_steps").upsert(
-      defaultRolloutSteps.map((s) => ({ ...s, org_id: org.id, is_complete: false })),
-      { onConflict: "org_id,step_key" }
-    );
-
-    // Their prompt library opens with the founder starter set, so Kit 2's
-    // lab has somewhere to put its templates on day one.
-    await seedStarterPrompts(admin, { orgId: org.id });
-
-    await sendSetupEmail(admin, email, site.pricing.school.name);
     return;
   }
+}
+
+/**
+ * Stand up a school: organization, admin account, license, rollout checklist,
+ * starter prompt library, welcome email. Shared by card checkout and by the
+ * invoice path, so a school that paid by purchase order lands in exactly the
+ * same state as one that paid by card.
+ */
+async function provisionSchool(
+  admin: Admin,
+  opts: {
+    email: string;
+    fullName?: string;
+    schoolName: string;
+    stripeRef: string;
+    stripeCustomerId?: string | null;
+    stripeSubscriptionId?: string | null;
+  }
+) {
+  const { data: org, error: orgErr } = await admin
+    .from("organizations")
+    .insert({
+      name: opts.schoolName,
+      license_status: "active",
+      seats_limit: site.schoolSeatLimit,
+      stripe_customer_id: opts.stripeCustomerId ?? null,
+      stripe_subscription_id: opts.stripeSubscriptionId ?? null,
+    })
+    .select("id")
+    .single<{ id: string }>();
+  if (orgErr || !org) {
+    console.error("[provisioning] could not create org:", orgErr?.message);
+    throw new Error("org creation failed");
+  }
+
+  const { id: userId } = await findOrCreateUser(admin, opts.email, opts.fullName);
+  await ensureProfileRole(admin, userId, opts.email, "school_admin", org.id);
+
+  await admin.from("licenses").insert({
+    user_id: userId,
+    org_id: org.id,
+    product: "school",
+    status: "active",
+    stripe_ref: opts.stripeRef,
+  });
+
+  // Seed this school's rollout checklist.
+  await admin.from("rollout_steps").upsert(
+    defaultRolloutSteps.map((s) => ({ ...s, org_id: org.id, is_complete: false })),
+    { onConflict: "org_id,step_key" }
+  );
+
+  // Their prompt library opens with the founder starter set, so Kit 2's
+  // lab has somewhere to put its templates on day one.
+  await seedStarterPrompts(admin, { orgId: org.id });
+
+  await sendSetupEmail(admin, opts.email, site.pricing.school.name);
+}
+
+/**
+ * Provision from a paid invoice: the purchase-order path. One flow covers
+ * card, ACH, and check, because a check that clears is recorded in Stripe as
+ * "paid outside Stripe" and fires this same event.
+ *
+ * Idempotent on the invoice id, like the checkout path.
+ */
+export async function provisionFromInvoice(invoice: Stripe.Invoice) {
+  const admin = createSupabaseAdminClient();
+
+  if (invoice.metadata?.product !== "school") return;
+
+  const email = invoice.customer_email ?? "";
+  if (!email || !invoice.id) {
+    console.error("[provisioning] invoice missing email or id", invoice.id);
+    return;
+  }
+
+  const { data: dupe } = await admin
+    .from("licenses")
+    .select("id")
+    .eq("stripe_ref", invoice.id)
+    .maybeSingle();
+  if (dupe) return;
+
+  await provisionSchool(admin, {
+    email,
+    fullName: invoice.customer_name ?? undefined,
+    schoolName: invoice.metadata?.school_name || invoice.customer_name || "Your School",
+    stripeRef: invoice.id,
+    stripeCustomerId:
+      typeof invoice.customer === "string" ? invoice.customer : null,
+  });
+
+  // Close the loop on the quote queue this invoice came from.
+  await admin
+    .from("quote_requests")
+    .update({ status: "won" })
+    .eq("stripe_invoice_id", invoice.id);
 }
 
 /**

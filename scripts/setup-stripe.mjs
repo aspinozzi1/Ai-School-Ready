@@ -60,6 +60,18 @@ const individualPrice = await ensurePrice({
   amount: 9900,
 });
 
+/**
+ * Every event the webhook route handles. invoice.paid is what provisions a
+ * school that bought by purchase order, including the ones whose invoice is
+ * marked "paid outside Stripe" after a check clears.
+ */
+const REQUIRED_EVENTS = [
+  "checkout.session.completed",
+  "customer.subscription.updated",
+  "customer.subscription.deleted",
+  "invoice.paid",
+];
+
 let webhookSecret = null;
 const webhookUrl = process.argv[2];
 if (webhookUrl) {
@@ -69,14 +81,15 @@ if (webhookUrl) {
   if (dupe) {
     console.log(`webhook endpoint already exists for ${url}`);
     console.log("(its signing secret was shown when created; reuse it, or delete the endpoint and re-run)");
+    const missing = REQUIRED_EVENTS.filter((e) => !dupe.enabled_events.includes(e));
+    if (missing.length > 0) {
+      console.log(`WARNING: this endpoint is missing ${missing.join(", ")}.`);
+      console.log("Add it in the Stripe dashboard, or delete the endpoint and re-run this script.");
+    }
   } else {
     const wh = await stripe.webhookEndpoints.create({
       url,
-      enabled_events: [
-        "checkout.session.completed",
-        "customer.subscription.updated",
-        "customer.subscription.deleted",
-      ],
+      enabled_events: REQUIRED_EVENTS,
     });
     webhookSecret = wh.secret;
     console.log(`created webhook endpoint: ${url}`);

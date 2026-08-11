@@ -2,7 +2,11 @@ import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { env } from "@/lib/env";
-import { provisionFromCheckout, syncSubscription } from "@/lib/provisioning";
+import {
+  provisionFromCheckout,
+  provisionFromInvoice,
+  syncSubscription,
+} from "@/lib/provisioning";
 
 // Stripe needs the raw request body to verify the signature.
 export const runtime = "nodejs";
@@ -45,6 +49,12 @@ export async function POST(request: Request) {
         if (session.payment_status === "paid" || session.mode === "subscription") {
           await provisionFromCheckout(session);
         }
+        break;
+      }
+      case "invoice.paid": {
+        // The purchase-order path. Also fires when the owners mark a mailed
+        // check as "paid outside Stripe" in the dashboard.
+        await provisionFromInvoice(event.data.object as Stripe.Invoice);
         break;
       }
       case "customer.subscription.updated":

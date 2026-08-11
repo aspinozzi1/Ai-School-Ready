@@ -6,6 +6,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/env";
 import { site } from "@/config/site";
 import type { License, Organization } from "@/lib/types";
+import { QuoteActions } from "@/components/admin/quote-actions";
 
 export const metadata: Metadata = {
   title: "Owner admin",
@@ -21,6 +22,7 @@ interface QuoteRow {
   po_number: string | null;
   notes: string | null;
   status: string;
+  stripe_invoice_id: string | null;
   created_at: string;
 }
 
@@ -60,7 +62,10 @@ export default async function AdminPage() {
   ]);
 
   const activeSchools = (orgs ?? []).filter((o) => o.license_status === "active");
-  const openQuotes = (quotes ?? []).filter((q) => q.status === "new");
+  // Anything still in play: issued invoices are open until they are paid.
+  const openQuotes = (quotes ?? []).filter(
+    (q) => q.status !== "won" && q.status !== "closed"
+  );
 
   return (
     <section className="section bg-paper">
@@ -149,6 +154,11 @@ export default async function AdminPage() {
                   {q.notes ? (
                     <p className="mt-1 text-xs text-muted">{q.notes}</p>
                   ) : null}
+                  <QuoteActions
+                    quoteId={q.id}
+                    status={q.status}
+                    stripeInvoiceId={q.stripe_invoice_id}
+                  />
                 </li>
               ))}
             </ul>
