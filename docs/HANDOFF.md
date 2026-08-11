@@ -205,11 +205,14 @@ building. `supabase/schema.sql` MUST be re-run before any of it works.
    as of 2026-08-10. THE LAUNCH TO-DO LIST AND ITS CURRENT STATE LIVE IN
    docs/LAUNCH_RUNBOOK.md — read it, act on the first open task, and keep
    its status board current.
-   **Status 2026-08-11: the code is built** (see the section above). What
-   is left in this release: the Kit 2 prompt-doc copy pass and rebuilds,
-   plus the owner gates. Two sandbox chores must happen before the next
-   test drive: re-run supabase/schema.sql, and add invoice.paid to the
-   Stripe webhook endpoint.
+   **Status 2026-08-11: the entire release is built**, including the Kit 2
+   copy pass and rebuilds (all components + deck point at the member-site
+   prompt library; visually verified; rides Batch 3). What is left is
+   owner-gated: starter prompt set review, Batch 3 audit, certificate
+   design sign-off, extended test drive. Two sandbox chores must happen
+   before the next test drive and need credentials: re-run
+   supabase/schema.sql, and add invoice.paid to the Stripe webhook
+   endpoint (dashboard edit, or delete + re-run setup-stripe.mjs).
 1. **Batch 2 gate: PASSED 2026-08-08** (Kits 2-4; Kit 4 corrections now KIT_STANDARD
    rules). **Batch 3 gate: OPEN** — owner audits Kits 5-8 incl. four AI-drafted
    founders' notes. All kit files are pushed; nothing else blocks it.

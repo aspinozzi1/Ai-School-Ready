@@ -25,8 +25,10 @@ Phase 1 — parallel, owner is the critical path
 - [x] Member-experience spec locked — 2026-08-10, docs/MEMBER_EXPERIENCE_SPEC.md
 - [ ] Owner 10-minute sandbox test drive (docs/TEST_DRIVE.md) + webhook
       replay by Claude (SSO blocks Stripe->site delivery; see Playbook A)
-- [ ] Batch 3 owner audit: Kits 5-8 + founders' notes (+ rebuilt Kit 2 when
-      the build's copy pass lands)
+- [ ] Batch 3 owner audit: Kits 5-8 + founders' notes + rebuilt Kit 2 (copy
+      pass landed 2026-08-11; nothing blocks this sitting). Also on the
+      agenda: the starter prompt set (lib/prompts.ts), the certificate
+      design (/certificate), and slide 28's title/chip touch in Kit 2's deck
 - [ ] OWNER: LLC formed + EIN obtained. NEW JERSEY (owner-corrected
       2026-08-10): file online at njportal.com, $125, approval ~1 business
       day; EIN instant online after; then bank account + Stripe business
@@ -39,11 +41,10 @@ Phase 1 — parallel, owner is the critical path
 - [ ] OWNER: real domain purchased (name: ____________)
 
 Phase 2 — as dependencies unlock
-- [ ] BUILD: member-experience release per docs/MEMBER_EXPERIENCE_SPEC.md
-      (schema -> prompt library -> progress/certificate -> Stripe Invoicing;
-      Kit 2 copy pass + rebuilds routed to the Batch 3 gate). Code is done
-      as of 2026-08-11; the release closes when the Kit 2 rebuild lands and
-      the owner gates pass. Sub-progress notes:
+- [x] BUILD: member-experience release per docs/MEMBER_EXPERIENCE_SPEC.md —
+      ALL BUILD WORK DONE 2026-08-11. What remains lives in the owner gates
+      (starter prompt set review, rebuilt Kit 2 with Batch 3, certificate
+      design sign-off, extended test drive). Sub-progress notes:
       - [x] schema additions (prompts, pd_progress, quote_requests columns)
             2026-08-11. NOT YET RUN against the sandbox: re-run
             supabase/schema.sql in the Supabase SQL editor (idempotent) or
@@ -57,7 +58,10 @@ Phase 2 — as dependencies unlock
             2026-08-11. The sandbox webhook endpoint predates invoice.paid:
             add that event in the Stripe dashboard, or delete the endpoint
             and re-run scripts/setup-stripe.mjs, before testing the PO flow.
-      - [ ] Kit 2 copy pass + rebuilds (owner gate with Batch 3)
+      - [x] Kit 2 copy pass + rebuilds, 2026-08-11: prompt-doc references
+            across all components + deck now point at the member-site prompt
+            library (shared-doc fallback kept in the prep guide); rebuilt and
+            visually verified; rides the Batch 3 owner gate
       - [x] starter prompt set drafted 2026-08-11, awaiting owner review.
             Ten prompts lifted from the published free prompt sheet plus
             Kit 2's reusable template; see starterPrompts in lib/prompts.ts.
