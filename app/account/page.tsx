@@ -89,9 +89,14 @@ export default async function AccountPage() {
               </Link>
             )}
             {user.hasActiveAccess ? (
-              <Link href="/prompts" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">
-                Prompt library
-              </Link>
+              <>
+                <Link href="/prompts" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">
+                  Prompt library
+                </Link>
+                <Link href="/certificate" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">
+                  Progress and certificate
+                </Link>
+              </>
             ) : null}
             {user.profile.role === "school_admin" || user.profile.role === "owner" ? (
               <Link href="/school" className="block rounded-btn bg-paper px-5 py-3 text-center font-semibold text-navy ring-1 ring-mist hover:bg-white">

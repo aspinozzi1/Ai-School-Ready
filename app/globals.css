@@ -104,8 +104,14 @@ html {
   scroll-behavior: smooth;
 }
 
-* {
-  border-color: hsl(var(--border));
+/* Default border color. This MUST stay inside @layer base: unlayered rules
+   beat every layered rule in the cascade, so an unlayered `*` here would
+   override each border-teal / border-navy / border-amber utility on the site
+   and quietly flatten every intended accent border to the default. */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
 }
 
 /* Breathing room is brand-wide (owner rule): content never sits tight
@@ -130,3 +136,19 @@ html {
 .prose-custom a { color: var(--color-teal); font-weight: 600; text-decoration: underline; }
 .prose-custom blockquote { border-left: 4px solid var(--color-teal); padding-left: 1em; color: var(--color-muted); margin: 1em 0; }
 .prose-custom code { background: var(--color-paper); border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.9em; }
+
+/* Certificate printing. Everything that is not the certificate carries
+   .no-print, so printing is a matter of dropping the page chrome rather than
+   hiding content that would otherwise leave blank pages behind. */
+@media print {
+  html, body { background: #FFFFFF; }
+  header, footer, .no-print { display: none !important; }
+  .section { padding: 0 !important; background: #FFFFFF !important; }
+  .certificate-sheet {
+    margin: 0 !important;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+@page { size: landscape; margin: 0.4in; }

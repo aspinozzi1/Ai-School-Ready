@@ -7,6 +7,8 @@ import {
   RolloutChecklist,
   type RolloutStepRow,
 } from "@/components/school/rollout-checklist";
+import { ProgressRoster } from "@/components/school/progress-roster";
+import { recordableKits, type ProgressRow } from "@/lib/progress";
 
 /**
  * The school dashboard body, shared between /school (admins see their own
@@ -46,6 +48,28 @@ export async function SchoolDashboard({
         .order("sort_order", { ascending: true })
         .returns<RolloutStepRow[]>(),
     ]);
+
+  // PD progress for everyone in this building. Read after the member list so
+  // the query can be scoped to those profiles.
+  const memberIds = (members ?? []).map((m) => m.id);
+  const { data: progress } = memberIds.length
+    ? await supabase
+        .from("pd_progress")
+        .select("*")
+        .in("profile_id", memberIds)
+        .returns<ProgressRow[]>()
+    : { data: [] as ProgressRow[] };
+
+  const completedByMember: Record<string, string[]> = {};
+  for (const row of progress ?? []) {
+    (completedByMember[row.profile_id] ??= []).push(row.kit_slug);
+  }
+
+  const certificateCount = (members ?? []).filter((m) =>
+    recordableKits.every((k) =>
+      (completedByMember[m.id] ?? []).includes(k.slug)
+    )
+  ).length;
 
   if (!org) {
     return (
@@ -90,6 +114,31 @@ export async function SchoolDashboard({
             and beyond. Tick steps off as they happen.
           </p>
           <RolloutChecklist steps={steps} />
+        </div>
+      ) : null}
+
+      {members && members.length > 0 ? (
+        <div className="mt-6 rounded-card border border-mist bg-white p-7">
+          <h2 className="text-xl font-bold text-navy">PD progress</h2>
+          <p className="mb-5 mt-1 text-sm text-muted">
+            You record completion for your staff, which is what makes the
+            certificate real. {certificateCount} of {members.length}{" "}
+            {certificateCount === 1 ? "educator has" : "educators have"} finished
+            all {recordableKits.length} core kits.
+          </p>
+          <ProgressRoster
+            members={members.map((m) => ({
+              id: m.id,
+              name: m.full_name || m.email,
+            }))}
+            kits={recordableKits.map((k) => ({
+              n: k.n,
+              slug: k.slug,
+              title: k.title,
+            }))}
+            completed={completedByMember}
+            readOnly={viewingAsOwner}
+          />
         </div>
       ) : null}
 
