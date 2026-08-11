@@ -78,6 +78,18 @@ Phase 2 — as dependencies unlock
       config/site.ts, About photo, both owners signed up + owner role SQL
       (seed.sql footer)
 
+TpT channel (owner decision 2026-08-11: TpT is top-of-funnel; full catalog
+stays membership-only)
+- [ ] BUILD: Kit 1 "TpT edition" — license line changes from
+      within-the-purchasing-school to TpT's single-teacher license; member-site
+      references point outward. Edit src, rebuild, visual verify per
+      KIT_STANDARD; OWNER GATE rides the Batch 3 sitting
+- [ ] OWNER: TpT seller account under the LLC (needs bank account + W-9)
+- [ ] Listing copy drafted: 5 free resources + paid Kit 1 (~$24-39); check
+      current TpT seller handbook on off-site promotion + AI disclosure
+- [ ] PUBLISH: all listings go live the same day as the domain (footers in
+      every PDF point at the site; do not send traffic to the SSO wall)
+
 Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
 - [ ] Custom domain on Netlify + SSL
 - [ ] NEXT_PUBLIC_SITE_URL + Supabase auth site_url/redirects -> real domain
