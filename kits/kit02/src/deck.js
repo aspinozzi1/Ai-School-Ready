@@ -44,12 +44,12 @@ const W = 13.33, H = 7.5;
     "Her lab pick: the Friday newsletter. Weekly task, real payoff.",
     "On her screen: the four-part draft, run once, read like an editor.",
     "Her three rounds, live: fixed content, warmed the voice, tightened details.",
-    "Her template, saved: her name, one line on what it's for, in the staff doc.",
+    "Her template, saved to the school prompt library: title, subject, grades.",
     "Her before and after, read aloud: the delta is the lesson.",
     "Her library: one entry today. It compounds from here.",
     "Her one-slide system: formula, colleague test, three rounds, template it.",
     "Her limits list: can't check facts, know her kids, or pick what matters.",
-    "Her new norm: working prompts go in the staff doc. Nobody solves twice.",
+    "Her new norm: working prompts go in the school library. Nobody solves twice.",
     "Her next kit: the formula starts differentiating for her whole roster.",
     "Her 48 hours: run the template for real, one colleague test, one post.",
     "Her exit ticket: one technique taken, one task still wanted.", null];
@@ -367,9 +367,9 @@ const W = 13.33, H = 7.5;
     bullets(s, [
       'Four blanks, twenty seconds, done',
       'Today’s lab builds your first one',
-      { text: 'The staff prompt doc is where they live: nobody solves the same problem twice', options: { bold: true, color: NAVY } },
+      { text: 'The school prompt library is where they live: nobody solves the same problem twice', options: { bold: true, color: NAVY } },
     ], { y: 4.5, h: 1.9, fontSize: 20 });
-    s.addNotes('Researchers call these "prompt patterns" (White et al., 2023): documented, reusable solutions. We call it the staff prompt doc.');
+    s.addNotes('Researchers call these "prompt patterns" (White et al., 2023): documented, reusable solutions. We call it the school prompt library, on the member site.');
   }
 
   // ============================== SLIDE 15 · FIRST DRAFT = PROPOSAL ==============================
@@ -492,13 +492,13 @@ const W = 13.33, H = 7.5;
     title(s, 'Template it. Save it. Share it.');
     bullets(s, [
       'Replace the specifics with blanks: [topic], [grade], [number of questions]',
-      'Paste the final template into the staff prompt doc',
-      'Add your name and one line: what it’s for',
+      'Save the final template to the school prompt library',
+      'Give it a title and pick subject and grades; your name rides along',
     ], { y: 1.6, h: 2.5 });
     card(s, 0.7, 4.3, 12.0, 1.9, 'EAF5F3');
     s.addText('You just wrote the first entry in your professional prompt library. Kit 18 grows it into a whole collection.', {
       x: 1.05, y: 4.55, w: 11.3, h: 1.4, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('Project the staff prompt doc link. Watching entries appear live is the session’s proudest moment.');
+    s.addNotes('Project the school prompt library on the member site. Watching entries appear live is the session’s proudest moment.');
   }
 
   // ============================== SLIDE 22 · SHARE-OUT ==============================
@@ -536,7 +536,7 @@ const W = 13.33, H = 7.5;
     const lines = [
       ['Before you type', 'Role · Task · Context · Format, then the colleague test'],
       ['After it answers', 'Three rounds: content, voice, details'],
-      ['When it works', 'Template it, save it, share it in the staff doc'],
+      ['When it works', 'Template it, save it, share it in the prompt library'],
       ['Always', 'No student PII in. Nothing unreviewed out. Verify anything factual.'],
     ];
     lines.forEach(([h, b], i) => {
@@ -574,7 +574,7 @@ const W = 13.33, H = 7.5;
     kicker(s, 'Kit 1 gave us three; today adds one', { color: AMBER });
     s.addText('Commitment #4', {
       x: 0.7, y: 1.6, w: 12.0, h: 0.8, fontFace: FONT, fontSize: 36, bold: true, color: WHITE, margin: 0 });
-    s.addText('When a prompt works, it goes in the staff doc.\nNobody at this school solves the same problem twice.', {
+    s.addText('When a prompt works, it goes in the prompt library.\nNobody at this school solves the same problem twice.', {
       x: 0.7, y: 2.7, w: 12.0, h: 1.6, fontFace: FONT, fontSize: 28, bold: true, color: TEAL, margin: 0, lineSpacingMultiple: 1.2 });
     s.addText('Can I get a nod on that?', {
       x: 0.7, y: 5.3, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, italic: true, color: '9FB2C2', margin: 0 });
@@ -608,7 +608,7 @@ const W = 13.33, H = 7.5;
     const acts = [
       ['~10 min', 'Run your reusable prompt for real', 'On the actual task it was built for; iterate once; use the result'],
       ['~3 min', 'Run the colleague test once', 'Catch the missing context before you hit enter'],
-      ['~2 min', 'Post to the staff doc', 'Your template, your name, one line about what it’s for'],
+      ['~2 min', 'Save to the prompt library', 'Your template, a title, one line about what it’s for'],
     ];
     acts.forEach(([t, h, b], i) => {
       const y = 1.6 + i * 1.55;

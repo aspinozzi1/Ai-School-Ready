@@ -31,6 +31,11 @@ Phase 1 — parallel, owner is the critical path
       2026-08-10): file online at njportal.com, $125, approval ~1 business
       day; EIN instant online after; then bank account + Stripe business
       verification (allow 3-5 days filing-to-live-payments total)
+      DECIDED 2026-08-11: LLC, not a DBA. The owner asked whether to test the
+      concept under a trade name first; a DBA saves about $70 and no time,
+      gives no liability separation, does not cover sales made before the
+      entity exists, and forces a school business office to reissue any PO
+      made out to the wrong payee. Not yet filed.
 - [ ] OWNER: real domain purchased (name: ____________)
 
 Phase 2 — as dependencies unlock
