@@ -9,7 +9,7 @@ it can act on, and continues. Sessions UPDATE THE STATUS BOARD in this file
 ## The prompt the owner pastes (copy exactly, fill the brackets)
 
     Read docs/HANDOFF.md and docs/LAUNCH_RUNBOOK.md on branch
-    claude/handoff-docs-review-dnghzx and continue the launch plan.
+    claude/handoff-launch-docs-review-4u0dju and continue the launch plan.
     Work on this branch only; never push to main.
     Status updates since last session: [what happened, e.g. "LLC approved,
     EIN 12-3456789" / "domain is aireadyschool.com" / "Batch 3 audit passed"
@@ -36,14 +36,26 @@ Phase 1 — parallel, owner is the critical path
 Phase 2 — as dependencies unlock
 - [ ] BUILD: member-experience release per docs/MEMBER_EXPERIENCE_SPEC.md
       (schema -> prompt library -> progress/certificate -> Stripe Invoicing;
-      Kit 2 copy pass + rebuilds routed to the Batch 3 gate). 5-7 sessions
-      of work; sub-progress notes go here:
-      - [ ] schema additions (prompts, pd_progress, quote_requests columns)
-      - [ ] prompt library UI + starter-seed pipeline
-      - [ ] progress recording + certificate page/PDF
-      - [ ] Stripe Invoicing (quote queue action + invoice.paid webhook)
+      Kit 2 copy pass + rebuilds routed to the Batch 3 gate). Code is done
+      as of 2026-08-11; the release closes when the Kit 2 rebuild lands and
+      the owner gates pass. Sub-progress notes:
+      - [x] schema additions (prompts, pd_progress, quote_requests columns)
+            2026-08-11. NOT YET RUN against the sandbox: re-run
+            supabase/schema.sql in the Supabase SQL editor (idempotent) or
+            nothing below works. Do this before the next test drive.
+      - [x] prompt library UI + starter-seed pipeline, 2026-08-11 (/prompts)
+      - [x] progress recording + certificate page/PDF, 2026-08-11
+            (/certificate + roster on /school). The PDF is the browser's
+            print-to-PDF against a print stylesheet, verified as a one-page
+            landscape sheet; no server-side PDF dependency.
+      - [x] Stripe Invoicing (quote queue action + invoice.paid webhook),
+            2026-08-11. The sandbox webhook endpoint predates invoice.paid:
+            add that event in the Stripe dashboard, or delete the endpoint
+            and re-run scripts/setup-stripe.mjs, before testing the PO flow.
       - [ ] Kit 2 copy pass + rebuilds (owner gate with Batch 3)
-      - [ ] starter prompt set drafted (owner gate item)
+      - [x] starter prompt set drafted 2026-08-11, awaiting owner review.
+            Ten prompts lifted from the published free prompt sheet plus
+            Kit 2's reusable template; see starterPrompts in lib/prompts.ts.
 - [ ] Owner extended test drive of the new features (spec's test plan)
 - [ ] Attorney review of docs/LEGAL_AUDIT.md items (needs LLC; flag the new
       user-generated-content surface for the terms review)
@@ -126,15 +138,26 @@ or re-point, delete the endpoint first, then re-run. When the Stripe
 Invoicing build lands, the endpoint needs the invoice.paid event added
 (delete + re-create with the script, or edit in the dashboard).
 
+**E1. Known issue: `npm run lint` is broken on this branch.** ESLint 9 cannot
+load the eslint-config-next config it extends ("Converting circular structure
+to JSON"). It fails on an untouched checkout, so it is not something a session
+introduced. `npm run build` type-checks and is the real gate. Worth fixing
+before wiring CI back up, but it blocks nothing today.
+
 **E. Kit rebuild rules.** Any kit copy change (e.g. Kit 2 prompt-doc pass)
 follows kits/KIT_STANDARD.md: edit src/, rebuild PDFs (kits/tooling), deck
 via deck.js, visual verification, and an owner gate before "released."
 
 ## Standing rules
 
-- All work on claude/handoff-docs-review-dnghzx (or a branch cut from it,
-  updating HANDOFF's latest-branch line). Never push to main. No PRs
-  unless the owner asks.
+- All work on claude/handoff-launch-docs-review-4u0dju (or a branch cut from
+  it, updating HANDOFF's latest-branch line and the pasteable prompt above).
+  Never push to main. No PRs unless the owner asks.
+  Branch lineage: handoff-launch-docs-review-4u0dju continues
+  handoff-docs-review-dnghzx, which continues ai-ready-school-platform-g8zikw.
+  A session handed a branch cut from the OLD app line
+  (ai-ready-school-build-sph7f5, commit d1d2d3b) has the replaced product and
+  none of this work: re-cut from the branch named above before doing anything.
 - SSO stays ON until the Phase 3 cutover. The site being 401 to anonymous
   visitors (and to Stripe) before launch is intentional.
 - Owner gates are hard stops. Do not mark gated items done without the

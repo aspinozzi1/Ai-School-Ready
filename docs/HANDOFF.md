@@ -56,12 +56,15 @@ Two products in one repo:
   proud of it; ethics/integrity/morals as the framework directing AI; teach teachers
   to teach students). A pull quote sits on the home founders card.
 
-## State of the repo (latest work: branch claude/handoff-docs-review-dnghzx)
+## State of the repo (latest work: branch claude/handoff-launch-docs-review-4u0dju)
 
-Branch lineage: `claude/handoff-docs-review-dnghzx` continues (is a superset of)
+Branch lineage: `claude/handoff-launch-docs-review-4u0dju` continues (is a superset
+of) `claude/handoff-docs-review-dnghzx`, which continues
 `claude/ai-ready-school-platform-g8zikw`. The old app-line branch
 `claude/ai-ready-school-build-sph7f5` and its PR #1 belong to the replaced product;
-don't merge them. New sessions should start from the latest branch above.
+don't merge them. New sessions should start from the latest branch above. If a
+session is handed a branch cut from the old app line (commit d1d2d3b), it has none
+of this work: re-cut from the latest branch before doing anything.
 
 - `kits/KIT_STANDARD.md` — binding standard for all kits (voice, lengths, pagination,
   founders' note, legal fixtures, build mechanics). Kit 1 + this file are the template.
@@ -149,6 +152,31 @@ All three phases of the launch directive's backend are implemented and building:
   (/admin/schools/[id] reuses the dashboard read-only), quote-request queue, lead
   count. Owner role comes from SQL (see seed.sql footer).
 
+## Member-experience release (built 2026-08-11; code complete)
+
+The four locked features of docs/MEMBER_EXPERIENCE_SPEC.md are implemented and
+building. `supabase/schema.sql` MUST be re-run before any of it works.
+
+- **Prompt library** (/prompts): one shared library per school, personal for
+  Individual members. Browse/filter/search/copy; add/edit/delete with
+  author-or-admin rules left to RLS. The de-identification notice is a fixture
+  of the add form and saving requires the confirmation. Founder starter set
+  (lib/prompts.ts, drawn from the published free prompt sheet + Kit 2's
+  template) is seeded at provisioning and lazily on first open, so schools
+  provisioned earlier get theirs too. Starter set awaits owner review.
+- **Progress + certificate**: lib/progress.ts derives the certificate rule
+  from the catalog (all of Track A, one capstone). Admins record attendance on
+  a roster on /school; Individual members self-record on /certificate. The
+  split is enforced in the pd_progress RLS policies, not only in the UI.
+  /certificate prints via a print stylesheet (verified one-page landscape);
+  members can set the name that prints.
+- **Stripe Invoicing**: provisionSchool() is now shared by checkout and
+  invoice paths. Owner admin issues a net-30 invoice from the quote queue;
+  invoice.paid provisions the school and advances the quote to won. Marking a
+  mailed check "paid outside Stripe" fires the same event.
+- Also fixed a site-wide CSS bug: the default `* { border-color }` rule was
+  unlayered and beat every border-teal/navy/amber utility on the site.
+
 ## Launch runbook (owner supplies keys; then this order)
 
 1. Supabase project → run schema.sql, then seed.sql. Auth settings: set Site URL,
@@ -177,6 +205,11 @@ All three phases of the launch directive's backend are implemented and building:
    as of 2026-08-10. THE LAUNCH TO-DO LIST AND ITS CURRENT STATE LIVE IN
    docs/LAUNCH_RUNBOOK.md — read it, act on the first open task, and keep
    its status board current.
+   **Status 2026-08-11: the code is built** (see the section above). What
+   is left in this release: the Kit 2 prompt-doc copy pass and rebuilds,
+   plus the owner gates. Two sandbox chores must happen before the next
+   test drive: re-run supabase/schema.sql, and add invoice.paid to the
+   Stripe webhook endpoint.
 1. **Batch 2 gate: PASSED 2026-08-08** (Kits 2-4; Kit 4 corrections now KIT_STANDARD
    rules). **Batch 3 gate: OPEN** — owner audits Kits 5-8 incl. four AI-drafted
    founders' notes. All kit files are pushed; nothing else blocks it.
