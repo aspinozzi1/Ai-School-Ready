@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container, Section, SectionHeading } from "@/components/marketing/section";
+import { LogoMark } from "@/components/brand/logo";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { site } from "@/config/site";
 
@@ -98,15 +99,15 @@ export default function HomePage() {
       <Section className="relative overflow-hidden bg-gradient-to-b from-secondary/70 to-background pt-20">
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
-            <Badge variant="accent" className="mb-5">
-              Ready-to-run PD kits for K-12 schools
-            </Badge>
+            <LogoMark className="mx-auto mb-7 h-16 w-auto sm:h-20" />
             <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-              Professional development your school runs itself.
+              Human teaching.
+              <br />
+              <span className="text-accent">Life-changing tools.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              {site.description} Starting with a complete AI curriculum for
-              teachers, built by two educators with 20+ years in the classroom.
+            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
+              Ready-to-run AI professional development for K-12 schools, built
+              by two certified teachers. Your own staff presents it.
             </p>
             <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg" variant="accent">

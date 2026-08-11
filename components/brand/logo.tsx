@@ -1,6 +1,28 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+/**
+ * The mark on its own: open book plus spark, no wordmark. For places that
+ * already carry the name nearby (the home hero sits under the header lockup),
+ * where repeating the full lockup would just read as a duplicate.
+ */
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="16 6 92 96"
+      className={className}
+      role="img"
+      aria-label="AI-Ready School"
+    >
+      <path d="M62 14 L67 28 L81 33 L67 38 L62 52 L57 38 L43 33 L57 28 Z" fill="#2A9D8F" />
+      <path d="M60 60 C 50 52, 36 50, 24 54 L24 88 C 36 84, 50 86, 60 94 Z" fill="#13293D" />
+      <path d="M64 60 C 74 52, 88 50, 100 54 L100 88 C 88 84, 74 86, 64 94 Z" fill="#13293D" />
+      <path d="M32 62 C 40 60, 48 61, 54 65" stroke="#2A9D8F" strokeWidth="3" fill="none" strokeLinecap="round" />
+      <path d="M92 62 C 84 60, 76 61, 70 65" stroke="#2A9D8F" strokeWidth="3" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 /** The approved AI-Ready School lockup: book-and-spark mark + wordmark. */
 export function Logo({
   className,
