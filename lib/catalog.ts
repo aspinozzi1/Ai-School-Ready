@@ -100,13 +100,13 @@ export const tracks: TrackMeta[] = [
       {
         n: 6,
         slug: "ai-for-communication",
-        title: "AI for Communication: Parent Messages, Translation, and Tone",
+        title: "AI for Communication: Parent Messages and Tone",
         summary:
-          "Newsletters, difficult emails, translation support, and tone repair, with the review rule and family privacy at the center.",
+          "Newsletters, difficult emails, and tone repair, with plain-language drafting, the review rule, and family privacy at the center.",
         objectives: [
           "Draft family communication faster without losing your voice",
-          "Use AI translation support responsibly",
-          "Keep every message human-reviewed and personal",
+          "Write plain-language messages every family can read, human-reviewed before sending",
+          "Keep every message personal, and deliver hard news by voice",
         ],
         status: "released",
       },
