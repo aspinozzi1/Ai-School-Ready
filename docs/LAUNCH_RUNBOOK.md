@@ -68,9 +68,12 @@ Phase 2 — as dependencies unlock
       (starter prompt set review, rebuilt Kit 2 with Batch 3, certificate
       design sign-off, extended test drive). Sub-progress notes:
       - [x] schema additions (prompts, pd_progress, quote_requests columns)
-            2026-08-11. NOT YET RUN against the sandbox: re-run
-            supabase/schema.sql in the Supabase SQL editor (idempotent) or
-            nothing below works. Do this before the next test drive.
+            2026-08-11. RUN against the sandbox 2026-08-12 and verified:
+            prompts + pd_progress tables exist with 4 RLS policies each,
+            app_org_of() present, quote_requests.stripe_invoice_id present
+            with the 5-value status constraint, profiles_select now allows
+            same-building colleague visibility. The owner's Supabase PAT
+            was used once and should be DELETED (runbook rule).
       - [x] prompt library UI + starter-seed pipeline, 2026-08-11 (/prompts)
       - [x] progress recording + certificate page/PDF, 2026-08-11
             (/certificate + roster on /school). The PDF is the browser's
