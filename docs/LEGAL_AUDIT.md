@@ -122,6 +122,16 @@ Ranked by (likelihood × severity) as of today:
    the top item for the attorney sitting, alongside the copyright-posture
    question (register the compilation disclosing AI-generated material;
    per-kit PROVENANCE.md files are the human-authorship record).
+   Deep-read of their site 2026-08-12 CONFIRMS: India-only market (every
+   testimonial school is Indian — Raipur, Dehradun; no USD pricing, no US
+   office/phone/customers) and a DIFFERENT product category (student AI
+   companion, teacher productivity software, tool suite, lab hardware,
+   on-prem infra — a software/hardware platform, not PD content or
+   facilitator kits). No US commerce = no accruing US common-law rights.
+   Consequence: the owner's own federal TM filing upgrades from
+   "convenience" to "within the first weeks of revenue" — priority of use
+   plus registration is what wins the only real collision scenario (their
+   future US expansion).
    OWNER DECISION 2026-08-12: risk accepted; proceeding in the US under
    the name at full speed. Evidence basis: no US trademark filing indexed
    (Justia/USPTO-crawled records), no US search presence for the Indian
