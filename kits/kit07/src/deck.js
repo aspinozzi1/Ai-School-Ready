@@ -43,12 +43,12 @@ const W = 13.33, H = 7.5;
     "Her hour, spent on purpose: planning she enjoys, and leaving at a human time.",
     "Her never list: no delegating the relational, no skipping review, no new busywork.",
     "Her why: the sustainable version of this job is the one she can keep.",
-    "Her lab: audit the real week, pick two, build both.",
-    "On her screen: the audit: every recurring task, sorted in ten minutes.",
-    "Her template #1: the sub plan, built and tested on a real instance.",
-    "Her template #2: exit tickets from any objective; both saved to the staff doc.",
-    "Her protected list, written: the work that stays hers on purpose.",
-    "Her share-out: the task she's taking back, and the hour it frees.",
+    "Her lab artifact: her own week audit, one sheet worked through all four steps.",
+    "Her week audit, step 1: every repeater listed and starred; worst star, the sub plan.",
+    "Her week audit, step 2: the worst star, the sub plan, is now template #1, tested twice.",
+    "Her week audit, step 3: star #2, exit tickets, is template #2; both go to the staff doc.",
+    "Her week audit, step 4: the unstarred column becomes her protected list, in ink.",
+    "Her share-out, from the same audit: the sub plan star, and the evenings it frees.",
     "Her inventory: audit done, two templates live, protected list written.",
     "Her honest limits: the tool saves time; it doesn't set boundaries. She does.",
     "Her commitments: two templates in use, review always, the protected list protected.",
@@ -438,61 +438,92 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.95, y: y + 0.06, w: 0.55, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', margin: 0, valign: 'middle' });
       s.addText(r, { x: 1.75, y, w: 10.8, h: 0.7, fontFace: FONT, fontSize: 21, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Dark slide. Devices out, pairs formed inside two minutes, announce the tool.');
+    s.addNotes('Dark slide. Devices out, pairs formed inside two minutes, announce the tool. Say: Ms. Rivera works ONE artifact through all four steps, her own week audit; her exemplar appears large on every step slide, so anyone lost can copy her structure.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 1 of 4 · 5 minutes');
-    title(s, 'Audit the week');
+    title(s, 'Audit the week', { w: 8.7 });
     bullets(s, [
       'List every task from last week that you\'ll do again, small ones included',
       'Run the two questions on each: needs my kids? repeats?',
       'Star everything that repeats and doesn\'t need your kids',
       { text: 'Most people find six to ten stars. Each is a candidate.', options: { bold: true } },
-    ]);
-    s.addNotes('5 minutes. The handout has the quadrant grid. The common miss is the fifteen-minute repeaters; they\'re where the hours hide.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 18 });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S WEEK AUDIT · STEP 1', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: '★ Sub plans, every absence\n', options: { bold: true, color: NAVY } },
+      { text: '★ Exit tickets, weekly\n', options: { bold: true, color: NAVY } },
+      { text: '★ Newsletter shell\n', options: { bold: true, color: NAVY } },
+      { text: '★ Materials lists\n', options: { bold: true, color: NAVY } },
+      { text: 'Reading groups: hers\n', options: { color: INK } },
+      { text: 'Feedback chats: hers\n\n', options: { color: INK } },
+      { text: 'Worst star: the sub plan.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 19, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    s.addNotes('5 minutes. The handout has the quadrant grid. The common miss is the fifteen-minute repeaters; they\'re where the hours hide. Ms. Rivera\'s finished audit is on screen large: one sheet she carries through all four steps. Stars are her delegable repeaters; the unstarred lines stay hers. Anyone lost copies her format.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 6 minutes');
-    title(s, 'Build template #1');
+    title(s, 'Build template #1', { w: 8.7 });
     bullets(s, [
       'Take your worst starred task: the one that costs the most evenings',
       'The recipe: write it once (four parts) → bracket the changes → test on a second instance',
-      'Mimic the sub-plan shape on Ms. Rivera\'s screen from slide 9',
+      'Mimic Ms. Rivera\'s card: the sub-plan shape from slide 9',
       { text: 'When it works twice, it\'s real. Save it.', options: { bold: true } },
-    ]);
-    s.addNotes('6 minutes. Push for testing on a REAL instance, not admiring the template. Circulate.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 17 });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S WEEK AUDIT · STEP 2', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Worst star → template #1: the sub plan.\n\n', options: { bold: true, color: NAVY } },
+      { text: 'Her template: slide 9\'s four-part prompt, with [GRADE], [TOPIC], and [ROUTINE] left as brackets.\n\n', options: { color: INK } },
+      { text: 'Tested on a second real absence: works. Saved.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 19, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    s.addNotes('6 minutes. Push for testing on a REAL instance, not admiring the template. Circulate. Ms. Rivera\'s card shows the same audit narrowing: her worst star, the sub plan, is now template #1, built to slide 9\'s shape and tested twice.');
   }
 
   // ============================== SLIDE 21 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 4 · 6 minutes');
-    title(s, 'Build template #2, share both');
+    title(s, 'Build template #2, share both', { w: 8.7 });
     bullets(s, [
       'Same recipe, second-worst repeater',
       'Both templates go to the staff doc\'s Workload section: name attached, one line each',
       { text: 'Sixty deleted repeaters, remember. Your Tuesday night is about to become everyone\'s.', options: { bold: true } },
-    ]);
-    s.addNotes('6 minutes. 45-min cut: skip #2 (it moves to the First 48 Hours sheet) and post #1 now.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 18 });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S WEEK AUDIT · STEP 3', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Star #2 → template #2: exit tickets.\n\n', options: { bold: true, color: NAVY } },
+      { text: '"Write five exit-ticket questions for [OBJECTIVE], mixed recall and reasoning, answer key last."\n\n', options: { color: INK } },
+      { text: 'Both templates posted to the staff doc, name attached.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 19, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    s.addNotes('6 minutes. 45-min cut: skip #2 (it moves to the First 48 Hours sheet) and post #1 now. Ms. Rivera\'s card: star #2 off the same audit, exit tickets, templated the same way; both of her templates go to the staff doc.');
   }
 
   // ============================== SLIDE 22 · LAB STEP 4 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 4 of 4 · 3 minutes · alone, in ink');
-    title(s, 'Write the protected list');
-    card(s, 0.7, 1.7, 12.0, 2.6, PAPER);
+    title(s, 'Write the protected list', { w: 8.7 });
+    card(s, 0.7, 1.7, 5.9, 2.9, PAPER);
     s.addText('Three to five pieces of this job you are keeping, by decision, no matter how good the tools get.', {
-      x: 1.05, y: 2.0, w: 11.3, h: 2.0, fontFace: FONT, fontSize: 24, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.2 });
+      x: 1.0, y: 1.95, w: 5.3, h: 2.4, fontFace: FONT, fontSize: 19, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.25 });
+    card(s, 6.85, 1.7, 5.9, 2.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S WEEK AUDIT · STEP 4', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Feedback conversations.\nGrading judgment.\nGreeting kids at the door.\n', options: { bold: true, color: NAVY } },
+      { text: 'Her protected list: the unstarred column of her audit, kept on purpose.', options: { italic: true, color: MUTED, fontSize: 16 } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 2.1, fontFace: FONT, fontSize: 20, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
     s.addText('Put it where you\'ll see it. This list is why the efficiency is safe: you\'ve named what it will never touch.', {
-      x: 0.7, y: 4.7, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('3 minutes, quiet, alone, in ink. This is the step people remember; give it silence.');
+      x: 0.7, y: 4.95, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('3 minutes, quiet, alone, in ink. This is the step people remember; give it silence. Ms. Rivera\'s card closes the loop: the lines she never starred in step 1 are exactly what her protected list protects.');
   }
 
   // ============================== SLIDE 23 · SHARE-OUT ==============================
