@@ -174,7 +174,9 @@ from classroom experience):
   over information, always.
 
 Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
-- [ ] Custom domain on Netlify + SSL
+- [x] Custom domain on Netlify + SSL — ai-readyschool.com attached and
+      serving over HTTPS (2026-08-12); production branch now deploys the
+      current work branch
 - [ ] NEXT_PUBLIC_SITE_URL + Supabase auth site_url/redirects -> real domain
 - [ ] Stripe LIVE: owner completes business verification (do this as soon as
       LLC + bank exist, it can take 2 days); run scripts/setup-stripe.mjs
@@ -188,7 +190,15 @@ Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
 ## Fixed identifiers (safe to keep here; none are secrets)
 
 - Netlify site: aischoolready, site_id 925ffbd9-b9d6-4f2c-9f60-175f88d1b70a,
-  https://aischoolready.netlify.app, org account slug aspinozzi1
+  https://aischoolready.netlify.app, org account slug aspinozzi1.
+  2026-08-12: custom domain ai-readyschool.com is ATTACHED with SSL (so the
+  Phase 3 domain step is already half done); production branch repointed
+  from claude/handoff-docs-review-dnghzx to
+  claude/handoff-launch-docs-review-4u0dju and rebuilt — the deploy now
+  carries the member-experience release and the new hero. Site still
+  returns 401 to anonymous visitors (SSO on, as intended until cutover),
+  so the deployed pages cannot be eyeballed until SSO comes off; the same
+  commit was verified locally before pushing.
 - Supabase project ref: jgdowlzklejdksgdswhj (org "AI Ready School")
 - Stripe test products: metadata airs_slug in {school, individual};
   setup-stripe.mjs finds/creates by that metadata, so re-running is safe
