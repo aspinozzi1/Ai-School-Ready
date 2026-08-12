@@ -77,9 +77,10 @@ Phase 2 — as dependencies unlock
             print-to-PDF against a print stylesheet, verified as a one-page
             landscape sheet; no server-side PDF dependency.
       - [x] Stripe Invoicing (quote queue action + invoice.paid webhook),
-            2026-08-11. The sandbox webhook endpoint predates invoice.paid:
-            add that event in the Stripe dashboard, or delete the endpoint
-            and re-run scripts/setup-stripe.mjs, before testing the PO flow.
+            2026-08-11. Sandbox webhook now CARRIES invoice.paid — done
+            2026-08-12 by running setup-stripe.mjs against the new
+            LLC sandbox account; Netlify's four Stripe env vars were
+            repointed to it and the site redeployed.
       - [x] Kit 2 copy pass + rebuilds, 2026-08-11: prompt-doc references
             across all components + deck now point at the member-site prompt
             library (shared-doc fallback kept in the prep guide); rebuilt and
@@ -202,6 +203,17 @@ Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
 - Supabase project ref: jgdowlzklejdksgdswhj (org "AI Ready School")
 - Stripe test products: metadata airs_slug in {school, individual};
   setup-stripe.mjs finds/creates by that metadata, so re-running is safe
+- Stripe accounts (2026-08-12, after the LLC): the owner created a new
+  Stripe account under the LLC. Its dashboard account is
+  acct_1U3ajVCnL1ioLwAg; the TEST key belongs to its linked SANDBOX
+  account acct_1U3ajvEOTcytyvlm ("AI-Ready School sandbox"). Sandbox
+  objects do NOT carry over to live — at cutover, re-run setup-stripe.mjs
+  with the LIVE key of the real account and swap the four env vars again.
+  Sandbox now holds: School price price_1U3aurEOTcytyvlmDSEB169K
+  ($1,499/yr), Individual price price_1U3aurEOTcytyvlmcfzgEFFU ($99/yr),
+  and a webhook endpoint at https://ai-readyschool.com/api/webhooks/stripe
+  carrying all four events INCLUDING invoice.paid. The August 10 sandbox
+  is superseded; its objects are dead weight.
 - Launch-plan artifact (visual version of this list):
   https://claude.ai/code/artifact/a68e583e-6adf-45db-8d5d-48216bfe408c
   (republish with the Artifact tool passing url=<that> to update in place)
