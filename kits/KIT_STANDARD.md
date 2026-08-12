@@ -103,8 +103,10 @@ primary slide content** (a big card showing her actual work product at that
 stage), not only in the tracker chip; a participant who is lost can copy her
 structure and still finish. The chip stays, and its lab-step lines all
 reference that same artifact. The script's lab rivera-lines must name the same
-artifact at every step. Retrofit status: Kits 5-8 at the Batch 3 gate; Kits
-1-4 retrofit is an owner decision, not automatic.
+artifact at every step. Retrofit status (owner decision 2026-08-12): ALL
+kits get this model — Kits 5-8 at the Batch 3 gate, Kits 1-4 plus their TpT
+editions as a universal-corrections pass; rebuilt kits re-verify visually
+but do not reopen Batch 2's content approval beyond the lab slides.
 
 ## School-wide templates (owner rule, 2026-08-12)
 Any recurring fixture a kit asks teachers or students to produce (an AI
