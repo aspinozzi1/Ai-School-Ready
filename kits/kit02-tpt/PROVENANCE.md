@@ -33,3 +33,20 @@ one for a TpT buyer with no member access. Changes on top of that base:
 promise reworded for TpT re-downloads, (4) deck certificate note routed
 through membership, deck output path fixed to kit02-tpt. Built and
 visually verified with the standard tooling. Owner gate: rides Batch 3.
+
+## Lab exemplar retrofit (2026-08-12)
+
+Same universal-corrections pass as the member edition, per the KIT_STANDARD
+"lab exemplar model" rule: Ms. Rivera carries ONE artifact (her weekly
+review-questions prompt) through every lab step, displayed large in teal
+exemplar cards on slides 19-21 (first color-coded draft, three iteration
+rounds, final bracketed template); lab chips and script rivera-lines all
+name the same artifact; lab-setup say-text adds the copy-her-structure
+line. TpT differences preserved throughout: the save destination remains
+the shared staff doc (slide 21 card reads "In the staff doc: Ms. Rivera",
+chip and rivera-line say "pasted into the staff doc"), and the license
+lines, certificate-through-membership note, References re-download
+promise, and prep-guide membership upsell sentence are untouched. Slide
+28's long title narrowed to w:8.7 per the chip-zone rule. Deck and PDFs
+rebuilt with the standard tooling; every changed slide and page visually
+re-inspected. Owner gate: rides Batch 3.

@@ -41,12 +41,12 @@ const W = 13.33, H = 7.5;
     "Her iteration rounds, in order: content, then voice, then details.",
     "Her judgment call: 80% right, iterate. Wrong thing entirely, fresh prompt.",
     "Her voice check: read it aloud; if it isn't her, she says 'warmer' or 'blunter.'",
-    "Her lab pick: the Friday newsletter. Weekly task, real payoff.",
-    "On her screen: the four-part draft, run once, read like an editor.",
-    "Her three rounds, live: fixed content, warmed the voice, tightened details.",
-    "Her template, saved to the school prompt library: title, subject, grades.",
-    "Her before and after, read aloud: the delta is the lesson.",
-    "Her library: one entry today. It compounds from here.",
+    "Her lab pick, one prompt through every step: her weekly review questions.",
+    "Her review prompt, draft one: all four parts in, run once, read like an editor.",
+    "Her review prompt, three rounds in: content fixed, voice warmed, details tight.",
+    "Her review prompt, bracketed into a template and saved to the school prompt library.",
+    "Her review prompt, before and after: the delta is the lesson.",
+    "Her library: one entry today, the review-questions template. It compounds.",
     "Her one-slide system: formula, colleague test, three rounds, template it.",
     "Her limits list: can't check facts, know her kids, or pick what matters.",
     "Her new norm: working prompts go in the school library. Nobody solves twice.",
@@ -430,8 +430,8 @@ const W = 13.33, H = 7.5;
     kicker(s, 'Hands-on · ~19 minutes', { color: AMBER });
     s.addText('Lab: build a tool, not a toy.', {
       x: 0.7, y: 1.5, w: 12.0, h: 1.0, fontFace: FONT, fontSize: 42, bold: true, color: WHITE, margin: 0 });
-    s.addText('Pick one task you do every week: the Friday newsletter, the weekly quiz, leveling a reading, station directions.', {
-      x: 0.7, y: 2.6, w: 12.0, h: 0.9, fontFace: FONT, fontSize: 20, color: 'C9D4DE', margin: 0 });
+    s.addText('Pick one task you do every week: the Friday newsletter, the weekly quiz, leveling a reading, station directions. Ms. Rivera builds hers on screen the whole way: one prompt for her weekly review questions.', {
+      x: 0.7, y: 2.6, w: 12.0, h: 1.0, fontFace: FONT, fontSize: 20, color: 'C9D4DE', margin: 0 });
     const rules = [
       ['1', 'No student information; we practice like we play'],
       ['2', 'Draft with all four parts; be generous with context'],
@@ -443,7 +443,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. The script’s worked example under slide 19 is a real reusable prompt from a working carpentry program.');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. Ms. Rivera builds ONE artifact across all three steps: her weekly review-questions prompt, first draft to saved template. Her exemplar appears large on every step slide; anyone lost can copy her structure and still finish. The script’s worked example under slide 19 is a real reusable prompt from a working carpentry program.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
@@ -454,12 +454,22 @@ const W = 13.33, H = 7.5;
     const parts = ['Role: who should it be?', 'Task: one clear verb', 'Context: what would a substitute need to know?', 'Format: exactly what the output looks like'];
     parts.forEach((t, i) => {
       const y = 1.65 + i * 0.95;
-      card(s, 0.7, y, 12.0, 0.8, PAPER);
-      s.addText(t, { x: 1.05, y: y + 0.06, w: 11.3, h: 0.68, fontFace: FONT, fontSize: 19, color: INK, margin: 0, valign: 'middle' });
+      card(s, 0.7, y, 5.35, 0.8, PAPER);
+      s.addText(t, { x: 1.0, y: y + 0.06, w: 4.8, h: 0.68, fontFace: FONT, fontSize: 15.5, color: INK, margin: 0, valign: 'middle' });
     });
+    card(s, 6.35, 1.65, 6.35, 3.75, 'EAF5F3');
+    s.addText('MS. RIVERA\'S REVIEW PROMPT · STEP 1 · HER FIRST DRAFT', { x: 6.65, y: 1.85, w: 5.85, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: '“You are an experienced 4th grade teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'Write a 10-question Friday review on equivalent fractions ', options: { color: NAVY, bold: true } },
+      { text: 'for a class that still confuses numerator and denominator when simplifying. ', options: { color: 'B07914', bold: true } },
+      { text: 'Mix multiple choice and short answer. Include an answer key.”', options: { color: GOOD, bold: true } },
+    ], { x: 6.65, y: 2.3, w: 5.75, h: 2.55, fontFace: FONT, fontSize: 17, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    s.addText('Same colors as the makeover: role, task, context, format.', {
+      x: 6.65, y: 4.9, w: 5.75, h: 0.4, fontFace: FONT, fontSize: 13, italic: true, color: MUTED, margin: 0 });
     s.addText('Run it. Then read the draft like an editor, not a fan.', {
       x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Weak prompts usually lack context; nudge with "what would a substitute need to know to do this right?" Then read the real carpentry CNC table-leg prompt from the script as the worked example (three stacked roles, one task, SVG-for-CNC format).');
+    s.addNotes('Circulate. Weak prompts usually lack context; nudge with "what would a substitute need to know to do this right?" The big card is Ms. Rivera\'s first draft for her weekly review questions, the one artifact she carries through all three steps, color-coded like slide 9; anyone stuck can copy its shape. Then read the real carpentry CNC table-leg prompt from the script as the worked example (three stacked roles, one task, SVG-for-CNC format).');
   }
 
   // ============================== SLIDE 20 · LAB STEP 2 ==============================
@@ -468,21 +478,29 @@ const W = 13.33, H = 7.5;
     kicker(s, 'Lab · step 2 of 3 · 6 minutes');
     title(s, 'Three rounds of iteration');
     const rounds = [
-      ['Content', 'What’s wrong or missing? Fix it first.'],
-      ['Voice', 'Does it sound like you? Read it aloud.'],
-      ['Details', 'Length, level, layout: make them exact.'],
+      ['1 · Content', 'What’s wrong or missing? Fix it first.'],
+      ['2 · Voice', 'Does it sound like you? Read it aloud.'],
+      ['3 · Details', 'Length, level, layout: make them exact.'],
     ];
     rounds.forEach(([h, b], i) => {
-      const x = 0.7 + i * 4.12;
-      card(s, x, 1.7, 3.85, 3.2, PAPER);
-      s.addShape('ellipse', { x: x + 1.42, y: 2.0, w: 1.0, h: 1.0, fill: { color: TEAL }, line: { color: TEAL } });
-      s.addText(String(i + 1), { x: x + 1.42, y: 2.0, w: 1.0, h: 1.0, fontFace: FONT, fontSize: 30, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
-      s.addText(h, { x: x + 0.25, y: 3.2, w: 3.35, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-      s.addText(b, { x: x + 0.25, y: 3.75, w: 3.35, h: 1.0, fontFace: FONT, fontSize: 15, color: INK, align: 'center', margin: 0 });
+      const y = 1.65 + i * 1.3;
+      card(s, 0.7, y, 4.55, 1.15, PAPER);
+      s.addText(h, { x: 1.0, y: y + 0.12, w: 4.0, h: 0.4, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, margin: 0 });
+      s.addText(b, { x: 1.0, y: y + 0.52, w: 4.0, h: 0.55, fontFace: FONT, fontSize: 13.5, color: INK, margin: 0 });
     });
+    card(s, 5.5, 1.65, 7.25, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S REVIEW PROMPT · STEP 2 · HER THREE ROUNDS', { x: 5.8, y: 1.85, w: 6.7, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Content  ', options: { bold: true, color: NAVY } },
+      { text: '“Question 3 is mixed numbers; we haven’t gotten there. Swap in a comparing-fractions item.”\n', options: { italic: true, color: INK } },
+      { text: 'Voice  ', options: { bold: true, color: NAVY } },
+      { text: '“The directions don’t sound like me. Warmer, and lose ‘utilize.’”\n', options: { italic: true, color: INK } },
+      { text: 'Details  ', options: { bold: true, color: NAVY } },
+      { text: '“Exactly ten questions, numbered, answer key on its own page.”', options: { italic: true, color: INK } },
+    ], { x: 5.8, y: 2.3, w: 6.65, h: 3.1, fontFace: FONT, fontSize: 16.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addText('Push back like you would with a capable student teacher: specific, kind, unafraid.', {
-      x: 0.7, y: 5.4, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('45-min cut: one round instead of three, then straight to step 3.');
+      x: 0.7, y: 5.8, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('45-min cut: one round instead of three, then straight to step 3. The big card is Ms. Rivera\'s three typed pushback lines, all on the same review prompt from step 1: content, then voice, then details. Lost participants copy her rhythm with their own draft.');
   }
 
   // ============================== SLIDE 21 · LAB STEP 3 ==============================
@@ -494,11 +512,17 @@ const W = 13.33, H = 7.5;
       'Replace the specifics with blanks: [topic], [grade], [number of questions]',
       'Save the final template to the school prompt library',
       'Give it a title and pick subject and grades; your name rides along',
-    ], { y: 1.6, h: 2.5 });
-    card(s, 0.7, 4.3, 12.0, 1.9, 'EAF5F3');
+    ], { y: 1.65, w: 5.3, h: 3.4, fontSize: 17 });
+    card(s, 6.35, 1.65, 6.35, 3.75, 'EAF5F3');
+    s.addText('MS. RIVERA\'S REVIEW PROMPT · STEP 3 · HER TEMPLATE, SAVED', { x: 6.65, y: 1.85, w: 5.85, h: 0.32, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.2, margin: 0 });
+    s.addText('“You are an experienced [grade] teacher. Write a [number]-question review on [topic] for a class that still confuses [what they mix up]. Mix multiple choice and short answer. Include an answer key.”', {
+      x: 6.65, y: 2.3, w: 5.75, h: 2.3, fontFace: FONT, fontSize: 16.5, italic: true, bold: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    s.addText('Saved: “Weekly review questions” · Math · Grades 3–5 · Ms. Rivera', {
+      x: 6.65, y: 4.75, w: 5.75, h: 0.5, fontFace: FONT, fontSize: 12, color: MUTED, margin: 0 });
+    card(s, 0.7, 5.6, 12.0, 1.0, 'EAF5F3');
     s.addText('You just wrote the first entry in your professional prompt library. Kit 18 grows it into a whole collection.', {
-      x: 1.05, y: 4.55, w: 11.3, h: 1.4, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('Project the school prompt library on the member site. Watching entries appear live is the session’s proudest moment.');
+      x: 1.05, y: 5.7, w: 11.3, h: 0.8, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addNotes('Project the school prompt library on the member site. Watching entries appear live is the session’s proudest moment. The big card is Ms. Rivera\'s finished template: the same review prompt from steps 1 and 2 with the specifics swapped for blanks, saved under her name.');
   }
 
   // ============================== SLIDE 22 · SHARE-OUT ==============================
@@ -511,7 +535,7 @@ const W = 13.33, H = 7.5;
       'What one change made the biggest difference?',
       { text: 'Anyone catch the AI being wrong mid-lab? That story goes first.', options: { bold: true, color: NAVY } },
     ], { y: 1.7, h: 2.8, fontSize: 22 });
-    s.addNotes('One person reading their before AND after lets the room hear the delta. Keep each voice to a minute.');
+    s.addNotes('One person reading their before AND after lets the room hear the delta. Keep each voice to a minute. If the room is shy, read Ms. Rivera\'s delta yourself: her step 1 draft against her step 3 template.');
   }
 
   // ============================== SLIDE 23 · WHAT YOU BUILT ==============================
@@ -604,7 +628,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Before Friday becomes a memory');
-    title(s, 'Your first 48 hours: three small things');
+    title(s, 'Your first 48 hours: three small things', { w: 8.7 });
     const acts = [
       ['~10 min', 'Run your reusable prompt for real', 'On the actual task it was built for; iterate once; use the result'],
       ['~3 min', 'Run the colleague test once', 'Catch the missing context before you hit enter'],
