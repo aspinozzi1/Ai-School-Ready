@@ -31,6 +31,11 @@ Files come from kits/free-resources/. Description template for each:
    talking-to-parents-about-ai.pdf · Free
 5. **AI Readiness Checklist for School Leaders | Principal's Planning Tool**
    ai-readiness-checklist-for-leaders.pdf · Free
+6. **AI Student Privacy Practice for Teachers | 20 De-Identification Drills**
+   files: kits/tpt-deid-drills/ · Free (re-tiered per owner Swipe Test ruling,
+   2026-08-12: practice drills are training material, not swipe-worthy
+   classroom documentation; as the strongest free item it becomes the funnel's
+   anchor and carries the membership pitch on its back page)
 
 ## PAID listing 1 — Kit 1 (files: kits/kit01-tpt/)
 
@@ -83,11 +88,16 @@ Files come from kits/free-resources/. Description template for each:
 - **Keywords:** ChatGPT for teachers, AI prompts, prompt engineering, teacher
   PD, staff training, AI workshop, time savers
 
-## PAID listing 3 — De-Identification Drills (files: kits/tpt-deid-drills/)
+## FREE listing 6 — De-Identification Drills (files: kits/tpt-deid-drills/)
+
+Re-tiered from $5 to FREE by owner ruling (Swipe Test, 2026-08-12): paid
+micro-products must contain tangible classroom-usable documentation (lesson
+materials, templates, planning tools); training drills and infographics are
+funnel material. Listing copy unchanged otherwise:
 
 - **Title:** AI Student Privacy Practice for Teachers | 20 De-Identification
   Drills | Use ChatGPT Safely Without Student Data | FERPA-Friendly Habits
-- **Price:** $5
+- **Price:** Free
 - **Description:**
   > The one AI skill every teacher needs and nobody practices: getting real
   > help from AI without ever putting a student's identity into it. Twenty
@@ -110,8 +120,10 @@ Files come from kits/free-resources/. Description template for each:
 
 ## Publish cadence after launch day
 
-Week 0 (launch day): all 5 free + Kit 1 + De-ID Drills.
+Week 0 (launch day): all 6 free (De-ID Drills included) + Kit 1.
 Week 1: Kit 2. Week 2: bundle. Then the weekly factory takes over
-(one package per week, owner-gated), next candidates: "The AI Mistake
-Gallery" (failure-first wedge), "Parent Message Makeovers" (Kit 6
-derivative), "You Don't Have to Like AI" (skeptic wedge).
+(one package per week, owner-gated). Paid-micro candidates must pass the
+Swipe Test (tangible classroom documentation, not training info): "Parent
+Message Makeovers" templates pack (Kit 6 derivative), sub-plan builder
+pack, rubric pack. Free/wedge candidates: "The AI Mistake Gallery"
+(failure-first wedge), "You Don't Have to Like AI" (skeptic wedge).
