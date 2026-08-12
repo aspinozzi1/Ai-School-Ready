@@ -33,6 +33,17 @@ our own federal trademark as soon as revenue allows.
   A hit matters only if it is LIVE + class 041 (education/training) or
   009/042 (software) + genuinely similar + education-related goods text.
   Owner: append the result of each search here with the date.
+- 2026-08-12 · Owner ran all four queries in the USPTO Trademark Center
+  (tmsearch.uspto.gov, screenshots kept with the LLC paperwork). RESULT:
+  CLEAN. No "AI Ready School" combined mark exists, live or dead, in any
+  spelling; `"aiready"` returns zero results entirely; no filing by the
+  Indian company or Learnia. Closest neighbors, all non-conflicts:
+  "SCHOOL READY" (LIVE, FL, classes 035/036, retail school supplies —
+  different name and goods), "AI-Ready Leadership" (DEAD/ABANDONED,
+  class 041 publishing), "EZ-AI Ready" (DEAD, class 035 consulting).
+  Open follow-up: click "AI-READY GRADUATE" and record status/class here.
+  Interpretation: the US lane is open with dead prior attempts nearby —
+  the most favorable posture for our own eventual filing.
 - 2026-08-12 · OWNER DECISION: risk accepted, proceeding in the US under
   the name at full speed. Sessions do not re-raise this as a blocker.
 
