@@ -23,6 +23,23 @@ Human-authorship chain for "AI for Planning & Differentiation."
 | Owner directive: Rivera on every slide | 2026-08-10 | Persistent "Ms. Rivera's screen · so far" tracker chip added to every content slide (per-slide state lines tracking her artifact through the session), per the extended KIT_STANDARD exemplar rule. Long titles narrowed where needed. Rebuilt and re-inspected. |
 | Owner directive: tracker in script | 2026-08-10 | Per-slide "Ms. Rivera's screen · so far" lines added under every slide cue in the facilitator script, mirroring the deck chip exactly. Scripts rebuilt; pagination verified (page counts +1 at most, within standard flex). |
 
+## Retrofit 2026-08-12 (lab exemplar model, universal-corrections pass)
+Per the KIT_STANDARD lab exemplar rule (owner rule 2026-08-12, from the Kit 5
+audit): Ms. Rivera now follows ONE artifact through the entire lab, the reading
+passage for her 6th grade food webs lesson, chosen to fit the existing three
+lab steps and the 6th grade leveling prompt already on slide 11. Deck slides
+20-22 each gained a large teal exemplar card ("MS. RIVERA'S PASSAGE · STEP N")
+showing her passage at that stage (core draft at 80%; support + stretch
+follow-ups; the 4-point review run with two fixes); slide 22's title narrowed
+to clear the chip zone. Tracker-chip lines for slides 19-24 rewritten to name
+the same passage, and the facilitator script's lab rivera-lines updated to
+mirror them exactly; the lab-setup say-text adds that she builds one artifact
+all the way through ("if you ever feel lost, copy her structure"). No changes
+to teaching content, timings, step names, or slide count (30 slides; script
+still 10 pp, page breaks match the approved build). Presentation-only retrofit;
+Batch 2 content approval not reopened. Deck and script rebuilt and every
+changed slide/page visually re-inspected.
+
 ## Revision 2026-08-10 (pre-launch legal audit)
 The Admin One-Pager had overflowed its single sheet, clipping the legal
 footer. Marketing copy was trimmed (lede, callout, citation list; no claims
