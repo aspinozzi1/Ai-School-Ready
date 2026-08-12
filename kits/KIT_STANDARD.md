@@ -107,6 +107,13 @@ artifact at every step. Retrofit status (owner decision 2026-08-12): ALL
 kits get this model — Kits 5-8 at the Batch 3 gate, Kits 1-4 plus their TpT
 editions as a universal-corrections pass; rebuilt kits re-verify visually
 but do not reopen Batch 2's content approval beyond the lab slides.
+**Retrofit COMPLETE 2026-08-12** across all ten editions. The artifact per
+kit: Kit 1 her family newsletter blurb, Kit 2 her weekly review-questions
+prompt, Kit 3 her food webs reading passage, Kit 4 her persuasive essay
+assessment, Kit 5 her persuasive essay assignment, Kit 6 her Friday
+newsletter, Kit 7 her week audit, Kit 8 her culture page. Kits 1 and 2
+carry the same artifact in their TpT editions. New kits build to this
+model from the start; there is nothing left to retrofit.
 
 ## School-wide templates (owner rule, 2026-08-12)
 Any recurring fixture a kit asks teachers or students to produce (an AI
@@ -159,8 +166,24 @@ inspected before presenting — no exceptions.
 ## Single-sheet legal-line verification (added 2026-08-10, from the legal audit)
 
 Every single-sheet PDF (admin one-pager, exit ticket, First 48 Hours) must pass
-BOTH checks before shipping: (1) text extraction finds "not legal advice" and,
-where applicable, "local credit"; (2) a rendered PNG shows the full legal line
-above the footer band. Text can survive in the extraction layer while being
+BOTH checks before shipping: (1) text extraction finds the sheet's required
+legal text, which is "not legal advice" on the one-pager and First 48 Hours and
+the "local credit" line on the exit ticket (the exit ticket is a student-free
+documentation sheet and carries the credit line, not the counsel line, per
+Legal fixtures above; flagged 2026-08-12 because this section previously read
+as requiring both on every sheet, which no kit has ever done); (2) a rendered
+PNG shows the full legal line above the footer band. Text can survive in the extraction layer while being
 visually clipped. Never fix an overflow by removing the legal footer; trim
 marketing copy (lede, callouts, citation lists) instead.
+
+Two more build checks, both added 2026-08-12 after live catches:
+**Text layer.** Confirm every rebuilt PDF actually extracts text. A build that
+starts before the Inter webfont is cached produces a file with correct colors,
+cards, and bands but no glyphs at all; it looks plausible in a thumbnail and is
+worthless in a customer's hands. One line catches it: any page extracting under
+~100 characters means rebuild, then re-check.
+**Trailing pages.** Confirm the last page carries real content, not just the
+footer band. Longer edition-specific text (a TpT license line) can push a
+sheet onto a page that holds nothing, which is what happened to Kit 1's TpT
+handout. Fix by shortening a notes box or trimming marketing copy, never the
+legal line.

@@ -27,8 +27,26 @@ Phase 1 — parallel, owner is the critical path
       replay by Claude (SSO blocks Stripe->site delivery; see Playbook A)
 - [ ] Batch 3 owner audit: Kits 5-8 + founders' notes + rebuilt Kit 2 (copy
       pass landed 2026-08-11; nothing blocks this sitting). Also on the
-      agenda: the starter prompt set (lib/prompts.ts), the certificate
-      design (/certificate), and slide 28's title/chip touch in Kit 2's deck
+      agenda: the starter prompt set (lib/prompts.ts) and the certificate
+      design (/certificate). Kit 2's slide-28 title/chip touch is FIXED
+      (2026-08-12), so it is off this agenda.
+      Revised Kits 5-8 PDFs were delivered 2026-08-12 (Kit 5 as v2, after
+      the owner caught the slide-23 chip overlap and the slides 19/20 lane
+      contradiction). Kit 6's founders' note was reworded during its
+      revision and needs an explicit read.
+- [x] UNIVERSAL LAB-EXEMPLAR RETROFIT — COMPLETE 2026-08-12, all ten
+      editions. Owner directive from the Kit 5 audit: Ms. Rivera follows one
+      artifact through every lab step, shown large as primary slide content
+      so a lost participant can copy her structure. Kits 5-8 were done at
+      the Batch 3 gate; Kits 1-4 plus the Kit 1 and Kit 2 TpT editions
+      landed in this pass, each verified independently (banned-term and
+      em-dash greps, PDF text layers, rendered lab slides, TpT strings
+      confirmed preserved) and committed per kit. Artifact per kit is
+      recorded in kits/KIT_STANDARD.md. New kits build to this model from
+      the start.
+      OWNER GATE: Kits 1-4 lab slides are new presentation and have not
+      been through an owner read. Their content is Batch-2-approved and
+      unchanged; only the lab exemplar presentation moved.
 - [x] OWNER: LLC FORMED — 2026-08-11. AI-READY SCHOOL LLC, New Jersey
       single-member (Adam), filed and paperwork in hand; EIN 42-4384815
       obtained same day; NJ-REG tax registration completed (0 employees, no
