@@ -512,11 +512,11 @@ const W = 13.33, H = 7.5;
     s.addText('MS. RIVERA\'S ESSAY · STEP 2 · HER BOX, FILLED IN', { x: 5.8, y: 1.78, w: 6.7, h: 0.3, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
     s.addText([
       { text: 'Lane: ', options: { bold: true, color: NAVY } },
-      { text: '\u2612 2 \u00b7 AI-assisted, because I\'m grading your argument, not your typing.\n', options: { color: INK } },
+      { text: 'by part \u00b7 Research \u2612 3 \u00b7 Outline \u2612 2 \u00b7 Final draft \u2612 1, because I\'m grading your argument, not your typing.\n', options: { color: INK } },
       { text: 'Okay: ', options: { bold: true, color: NAVY } },
-      { text: 'brainstorming ideas; feedback on your draft.\n', options: { color: INK } },
+      { text: 'AI to compare sources; brainstorming and feedback on your outline.\n', options: { color: INK } },
       { text: 'Not okay: ', options: { bold: true, color: NAVY } },
-      { text: 'turning in sentences you didn\'t write.\n', options: { color: INK } },
+      { text: 'AI-written sentences in your final draft.\n', options: { color: INK } },
       { text: 'Disclosure: ', options: { bold: true, color: NAVY } },
       { text: 'fill in the Disclosure block at the end. Every time.\n', options: { color: INK } },
       { text: 'If something seems off: ', options: { bold: true, color: NAVY } },
@@ -569,7 +569,7 @@ const W = 13.33, H = 7.5;
   {
     const s = base();
     kicker(s, 'Lab · share-out · 4 voices, 1 minute each');
-    title(s, 'Read us your AI Box, or your sentences');
+    title(s, 'Read us your AI Box, or your sentences', { w: 8.7, fontSize: 28 });
     bullets(s, [
       'Four voices, one minute each: your AI Box or your two sentences',
       'Listen for how different subjects landed in different lanes',
