@@ -85,7 +85,11 @@ Phase 2 — as dependencies unlock
             Kit 2's reusable template; see starterPrompts in lib/prompts.ts.
 - [ ] Owner extended test drive of the new features (spec's test plan)
 - [ ] Attorney review of docs/LEGAL_AUDIT.md items (needs LLC; flag the new
-      user-generated-content surface for the terms review)
+      user-generated-content surface for the terms review). Name-collision
+      question: see docs/NAME_CONTINGENCY.md — evidence log, quarterly
+      USPTO watch protocol, bootstrap ladder (sale 1 insurance, sale 2 TM
+      filing, sale 3 attorney hour), and the full if-a-letter-arrives
+      playbook. Owner decision on record: proceeding under the name.
 - [ ] Resend: verify real domain, set EMAIL_FROM (needs domain)
 - [ ] Supabase Auth -> custom SMTP via Resend (needs the above; built-in
       mailer is rate-limited to a few emails/hour and will fail onboarding)
