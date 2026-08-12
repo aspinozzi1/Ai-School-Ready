@@ -96,6 +96,32 @@ stays membership-only)
       current TpT seller handbook on off-site promotion + AI disclosure
 - [ ] PUBLISH: all listings go live the same day as the domain (footers in
       every PDF point at the site; do not send traffic to the SSO wall)
+- [ ] BUILD: launch backlog BEFORE the store opens — 5 free listings + 2-3
+      micro-products + the Kit 1 TpT edition, so the store opens full and
+      the weekly drip starts from a running start. Micro-products are
+      derivatives of already-audited kits (prompt card decks, cheat sheets,
+      template packs), built in tpt/ with kit tooling + visual verification,
+      each with TpT-spec cover images and paste-ready listing copy (keyword
+      title, description, price, tags)
+- [ ] OWNER + CLAUDE: weekly TpT listing factory (owner request 2026-08-11).
+      Cadence after launch: Claude generates one listing package per week
+      (product PDF + covers + listing copy, committed to tpt/ for review);
+      owner reviews (~15 min, fast gate: derivatives of audited kits) and
+      uploads (~10 min; TpT has no seller API, publishing is always manual).
+      Start the automation only AFTER the store is live — owner says "turn
+      on the weekly TpT factory" and the session schedules a recurring
+      weekly Routine (fresh session, this branch, standalone prompt: build
+      next package per the pricing ladder in this section). Do not start
+      before launch; pre-launch inventory just stacks unreviewed.
+      Pricing ladder (owner-endorsed 2026-08-11): free items $0; micros
+      $3-6; micro bundles $10-15; Kit 1 full session $19-25; Kits 3-8 NEVER
+      on TpT (membership-only; scarcity is the pointer to the site).
+      Research note 2026-08-11: TpT has NO dedicated AI-content policy;
+      the governing rule is the IP/rights warranty (we clear it: Anthropic
+      assigns output rights, citations verified, PROVENANCE.md per kit).
+      Listings lead with "built and audited by two certified teachers,"
+      never with the AI. Take the paid seller tier (~80% payout) on day one;
+      payouts are monthly for the prior month.
 
 Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
 - [ ] Custom domain on Netlify + SSL
