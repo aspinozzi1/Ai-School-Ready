@@ -190,6 +190,18 @@ Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
       (this is the only place live webhook delivery can be proven)
 - [ ] Announce. After launch: Tracks B-D kit batches; ClassLink SAML only on
       district demand.
+- [ ] BUILD (owner request 2026-08-12): NJ principal outreach list — every
+      private and charter school in New Jersey with principal/head name and
+      best-available email, organized county by county (the owner works the
+      list county-by-county starting at launch; goal 3 paying schools by
+      Thanksgiving). Sources: NJDOE public school directory data (nonpublic
+      + charter listings) as the spine, school websites for direct emails
+      where the directory carries only office addresses. Deliverable: one
+      spreadsheet, one tab per county — columns: school, type
+      (private/charter), grades, principal/head name, email, phone, city.
+      Ground rules: professional school contacts only; outreach emails carry
+      truthful sender info and an opt-out line (CAN-SPAM); the sales motion
+      is personalized one-by-one sends, never a blast.
 
 ## Fixed identifiers (safe to keep here; none are secrets)
 
