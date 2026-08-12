@@ -45,7 +45,18 @@ Phase 1 — parallel, owner is the critical path
       annual subscription model confirmed; 5-year side-business horizon;
       target small private schools AND charters first (charter reference
       matters most for later public-district sales), districts later.
-- [ ] OWNER: real domain purchased (name: ____________)
+- [x] OWNER: real domain purchased 2026-08-12 — **ai-readyschool.com**
+      (hyphenated; aireadyschool.com is TAKEN by an ACTIVE India-based
+      ed-tech company operating as "AI Ready School" — K-12 AI platform,
+      10,000+ claimed users, verified by fetch 2026-08-12). Consequences,
+      all recorded in LEGAL_AUDIT: (1) trademark clearance is now URGENT —
+      same name, same sector, they hold the exact-match .com; attorney
+      knockout search before real marketing spend; (2) type-in and search
+      leakage is real — people who HEAR the name will reach their site, so
+      always print/say the hyphen and consider grabbing aireadyschool.org
+      /.net defensively if free; (3) config/site.ts now carries the real
+      domain; kit PDFs print it with a no-wrap guard so the hyphen never
+      breaks across lines.
 
 Phase 2 — as dependencies unlock
 - [x] BUILD: member-experience release per docs/MEMBER_EXPERIENCE_SPEC.md —
@@ -87,10 +98,16 @@ Phase 2 — as dependencies unlock
 
 TpT channel (owner decision 2026-08-11: TpT is top-of-funnel; full catalog
 stays membership-only)
-- [ ] BUILD: Kit 1 "TpT edition" — license line changes from
-      within-the-purchasing-school to TpT's single-teacher license; member-site
-      references point outward. Edit src, rebuild, visual verify per
-      KIT_STANDARD; OWNER GATE rides the Batch 3 sitting
+- [x] BUILD: Kit 1 "TpT edition" — DONE 2026-08-12 (kits/kit01-tpt/): TpT
+      single-user license line w/ school-licensing pointer, certificate
+      claims routed through membership (one-pager, script slide 29, deck
+      slide + notes), References promise reworded for TpT re-downloads,
+      domain printed with no-wrap guard. All 9 components rebuilt, changed
+      pages + deck slide visually verified; a clipped one-pager legal block
+      was caught and fixed in the pass. OWNER GATE: rides Batch 3.
+      FLAG for Batch 3: Kit 1 member edition's 30-day plan still says
+      "staff prompt doc" (predates the prompt library; Kit 2's pass didn't
+      touch Kit 1) — owner decides if it gets the same library rewording.
 - [ ] OWNER: TpT seller account under the LLC (needs bank account + W-9)
 - [ ] Listing copy drafted: 5 free resources + paid Kit 1 (~$24-39); check
       current TpT seller handbook on off-site promotion + AI disclosure

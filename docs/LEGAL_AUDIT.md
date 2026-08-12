@@ -105,13 +105,23 @@ Ranked by (likelihood × severity) as of today:
    progress data (verified today). Residual risk is a teacher disputing an
    admin-recorded completion; low severity, no action beyond the existing
    removal-by-email path.
-4. **Trademark + name clearance — gap in the original audit.** Nobody has
-   cleared "AI-Ready School" against existing marks, and the domain is
-   still a placeholder. A knockout search before money is spent on the
-   brand is cheap; rebranding after launch is not. Add to the attorney
-   list alongside the copyright-posture question (AI-assisted authorship:
-   register the compilation disclosing AI-generated material; keep the
-   per-kit PROVENANCE.md files as the human-authorship record).
+4. **Trademark + name clearance — now URGENT (upgraded 2026-08-12).**
+   Verified by direct fetch: aireadyschool.com hosts an ACTIVE India-based
+   ed-tech company operating as "AI Ready School" (self-described "India's
+   first complete K-12 AI ecosystem," products Cypher/Morpheus/Zion/NEO/
+   Matrix, parent company Learnia, 10,000+ claimed users). Same name, same
+   sector. The owner purchased ai-readyschool.com (hyphenated) 2026-08-12.
+   What this means: (a) attorney knockout search (USPTO + common law)
+   BEFORE meaningful marketing spend — if they hold or file a US mark,
+   rebranding later is expensive; if they have no US commerce, the owner's
+   first-use-in-US position may actually be strong, which cuts the other
+   way and is worth establishing early; (b) practical confusion is certain
+   regardless of law: brand searches and spoken referrals will leak to
+   their site — always print the hyphenated domain, consider defensive
+   registrations (aireadyschool.org/.net) if available; (c) this is now
+   the top item for the attorney sitting, alongside the copyright-posture
+   question (register the compilation disclosing AI-generated material;
+   per-kit PROVENANCE.md files are the human-authorship record).
 5. **LLC discipline once approved.** Separate bank account, no
    commingling, sign everything "Adam Spinozzi, Member, AI-Ready School
    LLC," and update the Terms entity name, site footer, W-9, and Stripe

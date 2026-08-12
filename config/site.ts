@@ -7,8 +7,8 @@ export const site = {
   tagline: "Human teaching. Life-changing tools.",
   description:
     "An all-access library of ready-to-run PD kits: facilitator decks, word-for-word scripts, and handouts. Your own coach presents; no consultants, no scheduling, no prep.",
-  url: "https://aireadyschool.com", // placeholder; set to the real domain before launch
-  contactEmail: "hello@aireadyschool.com", // placeholder; owners' real inbox
+  url: "https://ai-readyschool.com", // owner-purchased 2026-08-12 (note the hyphen)
+  contactEmail: "hello@ai-readyschool.com", // activates once Resend verifies the domain
   founders: {
     display: "Adam & Katelyn Spinozzi",
     credential:
