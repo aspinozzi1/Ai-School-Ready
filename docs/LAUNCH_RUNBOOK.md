@@ -123,6 +123,31 @@ stays membership-only)
       never with the AI. Take the paid seller tier (~80% payout) on day one;
       payouts are monthly for the prior month.
 
+QUALITY STANDARD — binding for ALL sold content (owner directive
+2026-08-11: "mediocre content is a low bar"; outthink the major AI-school
+players; novel but search-relevant; owner audits, edits, and feeds topics
+from classroom experience):
+  Five gates, every product, before it ships:
+  1. MONDAY MORNING TEST — usable within 48 hours, ends in an artifact the
+     teacher keeps (built rubric, finished letter, filled template), zero
+     new signups required. Fails -> doesn't ship.
+  2. NOVELTY GATE — search TpT for the target keyword BEFORE building; if
+     the top results already do it, ship only with an angle visible in the
+     listing's first two lines, or don't ship.
+  3. EVERGREEN GATE — no UI screenshots, no tool-version dependencies;
+     write to capabilities so content survives model churn.
+  4. KIT-GRADE PRODUCTION — brand fixtures, visual verification, verified
+     citations for factual claims, even on a $4 item.
+  5. OWNER GATE — nothing uploads without owner audit; owner topic
+     suggestions from the classroom jump the build queue.
+  Content wedges (where the field is thin; build here, not in the
+  commodity layer of prompt lists / tool tutorials / explainer decks):
+  judgment-over-buttons (when NOT to use AI, verification habits);
+  failure-first products (spot-the-error, "confidently wrong AI" drills);
+  privacy DRILLS not lectures (One Hard Rule de-identification makeovers);
+  the skeptic market (value for teachers who don't like AI); artifacts
+  over information, always.
+
 Phase 3 — launch cutover, strict order, one sitting (SSO stays ON until here)
 - [ ] Custom domain on Netlify + SSL
 - [ ] NEXT_PUBLIC_SITE_URL + Supabase auth site_url/redirects -> real domain
