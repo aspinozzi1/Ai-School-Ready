@@ -29,3 +29,20 @@ footer. Marketing copy was trimmed (lede, callout, citation list; no claims
 changed, no citations altered beyond removal of secondary entries) so the
 "informational, not legal advice" and local-credit lines render fully.
 Rebuilt and re-verified visually. See docs/LEGAL_AUDIT.md.
+
+## Retrofit 2026-08-12 (lab exemplar model, owner rule from the Kit 5 audit)
+Ms. Rivera now follows one real artifact through the whole lab: her upcoming
+7th grade persuasive essay assessment, the same assessment her workshop-1 rubric
+prompt (slide 9) already builds for and the same essay Kit 5's lab picks up.
+Deck slides 19-22 each gained a large teal exemplar card ("MS. RIVERA'S ESSAY ·
+STEP N") as primary slide content: her rubric descriptor from her notes (step 1),
+her misconception-driven bank question (step 2), her caught-and-cut question 7
+(vetting rep), and one of her three feedback starters (step 3). Existing step
+checklists reflowed to a left column, verbatim; slide 21's title narrowed and
+resized to clear the chip zone. Tracker-chip lines for slides 18-24 and the
+script's matching .rivera-lines all name the same essay; the lab-setup say text
+adds the one-artifact anchor ("if you ever feel lost, copy her structure").
+Presentation-only retrofit: no changes to teaching content, timings, step names,
+or slide count; Batch-2-approved content untouched outside the lab exemplar.
+Deck, script, and cover rebuilt; every changed slide and script page rendered
+and visually inspected.

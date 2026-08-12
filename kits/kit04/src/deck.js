@@ -41,13 +41,13 @@ const W = 13.33, H = 7.5;
     "Her red lines: AI never grades, never sees names, never decides.",
     "Her excerpt rule: anonymous or described, never pasted with identity.",
     "Her red lines, adopted out loud, with the presenter's own.",
-    "Her lab: the assessment on her calendar, materials built tonight-free.",
-    "On her screen: notes in, rubric out, hand-it-to-a-student pass next.",
-    "Her bank: ten questions, misconception distractors, key checked.",
-    "Her vetting rep: found the weak question, caught and cut it.",
-    "Her starters: three patterns she writes every stack, drafted once.",
-    "Her share-out: the catch story goes first.",
-    "Her inventory: rubric, vetted bank, three starters, one caught question.",
+    "Her lab pick, one assessment through every step: her persuasive essay.",
+    "Her essay rubric, on screen big: messy notes in, four readable levels out.",
+    "Her essay bank, on screen: the claim-repeat confusion built into a distractor.",
+    "Her essay bank, vetted: question 7 had two fair answers. Caught and cut.",
+    "Her essay starters, on screen: three patterns from her essay stacks, drafted once.",
+    "Her share-out: the catch from her essay bank goes first.",
+    "Her essay inventory: rubric, vetted bank, three starters, one catch.",
     "Her templates: filed in the staff doc's Assessment section.",
     "Her five hours: the drafting share just moved to a faster tool.",
     "Her next kit: the student side. Integrity and clear expectations.",
@@ -449,81 +449,106 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. If you grade with a rubric of your own, show it here; one real rubric from a real room tells the lab what "done" looks like.');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. Ms. Rivera builds for ONE assessment across all three steps: her 7th grade persuasive essay, the same one from workshop 1. Her exemplar appears large on every step slide; anyone lost can copy her structure. If you grade with a rubric of your own, show it here; one real rubric from a real room tells the lab what "done" looks like.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 1 of 3 · 6 minutes');
-    title(s, 'Notes → rubric, then iterate');
-    const parts = [
+    title(s, 'Notes → rubric, then iterate', { w: 8.7 });
+    bullets(s, [
       'Run the rubric prompt with your grade, subject, criteria, and pasted notes',
       'Content round: are these the right criteria? Is anything you actually grade for missing?',
       'Voice round: the hand-it-to-a-student test, on every descriptor',
       'Details round: table format, level names, point values if you use them',
-    ];
-    parts.forEach((t, i) => {
-      const y = 1.65 + i * 0.95;
-      card(s, 0.7, y, 12.0, 0.8, PAPER);
-      s.addText(t, { x: 1.05, y: y + 0.06, w: 11.3, h: 0.68, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'middle' });
-    });
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 3.9, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S ESSAY · STEP 1 · HER RUBRIC', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Her note: ', options: { bold: true, color: NAVY } },
+      { text: '"an A backs every claim and says why the evidence matters."\n', options: { italic: true, color: INK } },
+      { text: 'Level 4 · Evidence: ', options: { bold: true, color: NAVY } },
+      { text: '"Every claim has a quote or fact behind it, and you explain why it proves your point."\n', options: { color: INK } },
+      { text: 'Passed the hand-it-to-a-student test on round two.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.1, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
     s.addText('45-min cut: run the voice round only; it’s the one that matters most.', {
-      x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Circulate. Weak rubrics are usually missing the teacher’s notes; nudge with "what do you actually look for when you grade this? Type that."');
+      x: 0.7, y: 5.85, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Circulate. Weak rubrics are usually missing the teacher’s notes; nudge with "what do you actually look for when you grade this? Type that." The big card is Ms. Rivera\'s persuasive-essay rubric mid-build, the same assessment she carries through all three steps: her messy note went in, a readable level-4 descriptor came out. Anyone stuck can copy that shape with their own notes.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 3 · 5 minutes');
-    title(s, 'Build the 10-question bank');
+    title(s, 'Build the 10-question bank', { w: 8.7 });
     bullets(s, [
       'Same assessment: 10 questions, mixed format, full answer key, distractor rationale',
       { text: 'First, finish this sentence: “My students keep confusing X with Y.”', options: { bold: true, color: NAVY } },
       'Put that sentence in the prompt and make the misconception a distractor',
-    ], { y: 1.6, h: 2.6 });
-    card(s, 0.7, 4.4, 12.0, 1.7, 'EAF5F3');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 3.9, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S ESSAY · STEP 2 · HER BANK', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Her sentence: ', options: { bold: true, color: NAVY } },
+      { text: '"My students keep confusing restating the claim with giving evidence."\n', options: { italic: true, color: INK } },
+      { text: 'Q4: ', options: { bold: true, color: NAVY } },
+      { text: '"Which sentence gives evidence for the claim?" Distractor C restates the claim, louder.\n', options: { color: INK } },
+      { text: 'That distractor finds exactly who holds the mix-up.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.1, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    card(s, 0.7, 5.75, 12.0, 0.85, 'EAF5F3');
     s.addText('The misconception is the one ingredient only you can supply.', {
-      x: 1.05, y: 4.65, w: 11.3, h: 1.2, fontFace: FONT, fontSize: 24, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('45-min cut: six questions instead of ten. Listen for the misconception sentences; they’re the best writing that happens all day.');
+      x: 1.05, y: 5.75, w: 11.3, h: 0.85, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addNotes('45-min cut: six questions instead of ten. Listen for the misconception sentences; they’re the best writing that happens all day. The big card is Ms. Rivera\'s bank for the same persuasive essay: her misconception sentence went into the prompt, and one distractor now restates the claim, exactly the mix-up her students make. Mimic her sentence with your own X and Y.');
   }
 
   // ============================== SLIDE 21 · THE VETTING REP ==============================
   {
     const s = base();
     kicker(s, 'Lab · still step 2 · 2 minutes · everyone');
-    title(s, 'The vetting rep: find the weak one');
-    const checks = [
+    title(s, 'The vetting rep: find the weak one', { w: 8.7, fontSize: 28 });
+    bullets(s, [
       'Answer key checked against your own professional knowledge',
       'Every distractor checked for accidental truth',
       'Reading level right? Exactly one fair answer per question?',
       'Weakest question: fix it by hand, or delete it and write its replacement yourself',
-    ];
-    checks.forEach((t, i) => {
-      const y = 1.65 + i * 0.95;
-      card(s, 0.7, y, 12.0, 0.8, PAPER);
-      s.addText(t, { x: 1.05, y: y + 0.06, w: 11.3, h: 0.68, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'middle' });
-    });
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 3.9, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S ESSAY · STEP 2 · HER CATCH', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'The catch: ', options: { bold: true, color: NAVY } },
+      { text: 'question 7\'s "wrong" answer was defensible too. Two fair answers, one question.\n', options: { color: INK } },
+      { text: 'The fix: ', options: { bold: true, color: NAVY } },
+      { text: 'she cut it and wrote the replacement herself.\n', options: { color: INK } },
+      { text: '"Got one."', options: { italic: true, bold: true, color: NAVY } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.1, fontFace: FONT, fontSize: 17, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addText('When you find it, say “got one” out loud. Drafts are cheap; vetting is sacred.', {
-      x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('This rep is a requirement, not a suggestion: it installs the habit that makes the whole workflow safe. Celebrate every catch audibly.');
+      x: 0.7, y: 5.85, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('This rep is a requirement, not a suggestion: it installs the habit that makes the whole workflow safe. The big card shows Ms. Rivera\'s catch in her own essay bank: a question with two defensible answers, cut and rewritten by hand. Celebrate every catch audibly.');
   }
 
   // ============================== SLIDE 22 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 3 · 3–4 minutes');
-    title(s, 'Three reusable feedback starters');
+    title(s, 'Three reusable feedback starters', { w: 8.7 });
     bullets(s, [
       'Name your three most common student patterns for this kind of work',
       'Run the pattern prompt: strength, pattern, next step, in plain student language',
       'Save all three where you grade; paste your best one into the staff doc’s Assessment section',
-    ], { y: 1.6, h: 2.5 });
-    card(s, 0.7, 4.3, 12.0, 1.9, 'EAF5F3');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 3.9, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 3.9, 'EAF5F3');
+    s.addText('MS. RIVERA\'S ESSAY · STEP 3 · HER STARTERS', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Her pattern: ', options: { bold: true, color: NAVY } },
+      { text: 'claims with no evidence.\n', options: { color: INK } },
+      { text: '"Your claim is clear and confident. Right now the essay repeats it instead of backing it up. Pick your strongest fact and add one sentence on why it proves your point."\n', options: { italic: true, color: INK } },
+      { text: 'Personalized before any student sees it.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.1, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    card(s, 0.7, 5.75, 12.0, 0.85, 'EAF5F3');
     s.addText('Starters, not stamps: in real grading you’ll personalize every one before it reaches a kid.', {
-      x: 1.05, y: 4.55, w: 11.3, h: 1.4, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('If someone starts pasting a student’s work, redirect gently: describe the pattern instead; excerpts only if fully anonymous by Kit 1’s test.');
+      x: 1.05, y: 5.75, w: 11.3, h: 0.85, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addNotes('If someone starts pasting a student’s work, redirect gently: describe the pattern instead; excerpts only if fully anonymous by Kit 1’s test. The big card is one of Ms. Rivera\'s three starters for the same persuasive essay: strength, pattern, next step, in words a 7th grader can read. Copy its shape for your own patterns.');
   }
 
   // ============================== SLIDE 23 · SHARE-OUT ==============================
