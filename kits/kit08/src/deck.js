@@ -43,13 +43,13 @@ const W = 13.33, H = 7.5;
     "Her tool-churn insurance: habits that survive any vendor: rules, formula, review.",
     "Her never list: no policy lag, no mocked skeptics, no finish line.",
     "Her certificate: all eight kits, lived. The AI-Ready Educator Certificate of Completion.",
-    "Her lab: norms, routine, onboarding, calendar. The culture, drafted.",
-    "On her screen: the five norms, drafted with her partner.",
-    "Her routine, picked and calendared: five minutes, every other PLC.",
-    "Her onboarding + skeptic plan: Kit 1 for hires; skeptics recruited as reviewers.",
-    "Her semester calendar: one refresher a month, norms revisited in January.",
-    "Her share-out: one norm, read aloud.",
-    "Her inventory: norms, routine, onboarding plan, calendar. Culture, started.",
+    "Her lab pick, one page all the way through: her school's culture page.",
+    "Her culture page, step 1: the five norms, in her building's words.",
+    "Her culture page, step 2: win-fail-steal calendared, round one owned.",
+    "Her culture page, step 3: a Kit 1 owner named; skeptics recruited as reviewers.",
+    "Her culture page, step 4: the semester strip, months and kit numbers written in.",
+    "Her share-out: her culture page's privacy norm, read aloud.",
+    "Her inventory, one culture page: norms, routine, onboarding, semester strip.",
     "Her honest limits: a document isn't a culture; consistency is. Leadership carries it.",
     "Her commitments: run the routine, onboard every hire, revisit the norms.",
     "Her next: Tracks B-D as they release; the culture makes them land.",
@@ -454,64 +454,92 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.95, y: y + 0.06, w: 0.55, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', margin: 0, valign: 'middle' });
       s.addText(r, { x: 1.75, y, w: 10.8, h: 0.7, fontFace: FONT, fontSize: 19.5, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Dark slide. Groups of 3-4 (not pairs), mixed departments. Devices optional; this lab drafts text.');
+    s.addNotes('Dark slide. Groups of 3-4 (not pairs), mixed departments. Devices optional; this lab drafts text. Ms. Rivera drafts ONE culture page across all four steps: norms, routine, onboarding, semester strip, one page. Her page appears large on every step slide, so anyone lost can copy her structure.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 1 of 4 · 7 minutes');
-    title(s, 'Draft the five norms');
+    title(s, 'Draft the five norms', { w: 8.7 });
     bullets(s, [
       'The five jobs are fixed: privacy · review · honesty · sharing · the protected list',
       'The wording is yours: "we never put a student into a chatbot" beats any compliance sentence',
       'One line per norm',
       { text: 'Finished early? Argue about the wording. That argument is the culture forming.', options: { bold: true } },
-    ]);
-    s.addNotes('7 protected minutes. Circulate; push for the building\'s own words, not policy-speak.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S CULTURE PAGE · STEP 1', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Privacy: ', options: { bold: true, color: NAVY } }, { text: 'no student in a chatbot. Ever.\n', options: { color: INK } },
+      { text: 'Review: ', options: { bold: true, color: NAVY } }, { text: 'nothing ships unread.\n', options: { color: INK } },
+      { text: 'Honesty: ', options: { bold: true, color: NAVY } }, { text: 'we say what we use.\n', options: { color: INK } },
+      { text: 'Sharing: ', options: { bold: true, color: NAVY } }, { text: 'into the doc, same week.\n', options: { color: INK } },
+      { text: 'Protected: ', options: { bold: true, color: NAVY } }, { text: 'people work stays people.\n\n', options: { color: INK } },
+      { text: '"Sounds like us, not like a policy."', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 18, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
+    s.addNotes('7 protected minutes. Circulate; push for the building\'s own words, not policy-speak. Rivera\'s culture page is the running exemplar for the whole lab; this card is its top half, five norms in her building\'s voice. Anyone stuck can copy her structure and swap in their own words.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 4 minutes');
-    title(s, 'Calendar the routine');
+    title(s, 'Calendar the routine', { w: 8.7 });
     bullets(s, [
       'Pick the rhythm this building will actually keep: every PLC, every other, or monthly at staff meetings',
       'Win · fail · steal, five minutes',
       { text: 'It counts when it has a date and an owner: who runs round one, and when. Write both.', options: { bold: true } },
-    ]);
-    s.addNotes('4 minutes. A routine without a date and an owner is a wish; insist on both.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 17 });
+    card(s, 6.85, 1.7, 5.9, 3.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S CULTURE PAGE · STEP 2', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText('Every other PLC.\nFive minutes: win · fail · steal.\nRound one: Tuesday, hers.', {
+      x: 7.15, y: 2.35, w: 5.35, h: 2.55, fontFace: FONT, fontSize: 22, bold: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
+    s.addNotes('4 minutes. A routine without a date and an owner is a wish; insist on both. Rivera\'s card is the same culture page gaining its routine line: rhythm picked, five minutes, round one dated and owned.');
   }
 
   // ============================== SLIDE 21 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 4 · 4 minutes');
-    title(s, 'Onboarding + skeptic partners');
-    card(s, 0.7, 1.7, 5.9, 4.2, PAPER);
-    s.addText('ONBOARDING', { x: 1.05, y: 1.95, w: 5.25, h: 0.4, fontFace: FONT, fontSize: 15, bold: true, color: TEAL, margin: 0 });
+    title(s, 'Onboarding + skeptic partners', { w: 8.7 });
+    card(s, 0.7, 1.7, 5.9, 2.05, PAPER);
+    s.addText('ONBOARDING', { x: 1.05, y: 1.88, w: 5.25, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: TEAL, margin: 0 });
     s.addText('Who runs Kit 1 for new hires? What\'s in the welcome folder? (The norms page and a library tour, minimum.) Name the owner.', {
-      x: 1.05, y: 2.45, w: 5.25, h: 3.2, fontFace: FONT, fontSize: 17, color: INK, margin: 0, valign: 'top' });
-    card(s, 6.85, 1.7, 5.9, 4.2, PAPER);
-    s.addText('SKEPTIC PARTNERS', { x: 7.2, y: 1.95, w: 5.25, h: 0.4, fontFace: FONT, fontSize: 15, bold: true, color: TEAL, margin: 0 });
-    s.addText('Name the colleagues whose doubts keep us honest, and give them a real role: reviewers, drift-spotters, the first people we ask "what\'s wrong with this?" With respect, out loud.', {
-      x: 7.2, y: 2.45, w: 5.25, h: 3.2, fontFace: FONT, fontSize: 17, color: INK, margin: 0, valign: 'top' });
-    s.addNotes('4 minutes. 45-min cut: fold into step 4\'s block. Recruiting skeptics respectfully is the culture\'s best quality-control hire.');
+      x: 1.05, y: 2.28, w: 5.25, h: 1.35, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top' });
+    card(s, 0.7, 3.95, 5.9, 2.15, PAPER);
+    s.addText('SKEPTIC PARTNERS', { x: 1.05, y: 4.13, w: 5.25, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: TEAL, margin: 0 });
+    s.addText('Name the colleagues whose doubts keep us honest, and give them a real role: reviewers, drift-spotters, the first people we ask "what\'s wrong with this?"', {
+      x: 1.05, y: 4.53, w: 5.25, h: 1.45, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top' });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S CULTURE PAGE · STEP 3', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Kit 1 owner: ', options: { bold: true, color: NAVY } }, { text: 'her PLC lead, month one.\n', options: { color: INK } },
+      { text: 'Welcome folder: ', options: { bold: true, color: NAVY } }, { text: 'norms page + library tour.\n', options: { color: INK } },
+      { text: 'Skeptic partners: ', options: { bold: true, color: NAVY } }, { text: 'her two best doubters, recruited as reviewers of first resort.\n\n', options: { color: INK } },
+      { text: '"What\'s wrong with this?" goes to them first.', options: { italic: true, color: MUTED } },
+    ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 18, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
+    s.addNotes('4 minutes. 45-min cut: fold into step 4\'s block. Rivera\'s page now carries its onboarding owner and its skeptic partners; recruiting skeptics respectfully is the culture\'s best quality-control hire.');
   }
 
   // ============================== SLIDE 22 · LAB STEP 4 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 4 of 4 · 4 minutes');
-    title(s, 'Next semester, one line per month');
+    title(s, 'Next semester, one line per month', { w: 8.7 });
     bullets(s, [
       'One 10-minute kit refresher a month, from the 30-day plans you already own',
       'Norms revisited in the first month back',
       'New-hire Kit 1 as needed',
       { text: 'Write the months and the kit numbers. That strip of calendar is what makes today permanent.', options: { bold: true } },
-    ]);
-    s.addNotes('4 minutes. The 30-day plans are the refresher material; nothing new to write, just dates to claim.');
+    ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 16 });
+    card(s, 6.85, 1.7, 5.9, 4.4, 'EAF5F3');
+    s.addText('MS. RIVERA\'S CULTURE PAGE · STEP 4', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText('Jan · norms revisited\nFeb · Kit 2 refresher\nMar · Kit 5 refresher\nApr · Kit 7 refresher\nMay · Kit 4 refresher', {
+      x: 7.15, y: 2.35, w: 5.35, h: 2.9, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
+    s.addText('New-hire Kit 1, whenever the hire arrives.', {
+      x: 7.15, y: 5.45, w: 5.35, h: 0.5, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, margin: 0, valign: 'top' });
+    s.addNotes('4 minutes. The 30-day plans are the refresher material; nothing new to write, just dates to claim. Rivera\'s page finishes with its semester strip: months and kit numbers, one line each. That completes her one-page culture draft.');
   }
 
   // ============================== SLIDE 23 · SHARE-OUT ==============================
