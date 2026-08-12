@@ -35,3 +35,5 @@ school membership (admin one-pager, script slide 29, deck slide + notes),
 (3) the References citation promise describes TpT re-downloads instead of
 membership updates. Built and visually verified with the standard tooling.
 Owner gate: rides the Batch 3 sitting before listing.
+
+| Owner directive: lab exemplar model | 2026-08-12 | Same-day propagation of the member edition's lab-exemplar retrofit (KIT_STANDARD "lab exemplar model," owner decision 2026-08-12): Ms. Rivera's family newsletter blurb followed through the whole lab, shown large in the generic chat window on slides 21-22, with matching tracker chips and script rivera-lines, and the lab-setup "copy her structure" line. Applied as the identical targeted edits to this edition's src; all TpT-specific differences (license line, membership certificate framing, slide 29 wording, deck output path) verified preserved. Deck, script, and cover rebuilt; every changed slide and page rendered and visually inspected. |
