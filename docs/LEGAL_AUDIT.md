@@ -122,6 +122,15 @@ Ranked by (likelihood × severity) as of today:
    the top item for the attorney sitting, alongside the copyright-posture
    question (register the compilation disclosing AI-generated material;
    per-kit PROVENANCE.md files are the human-authorship record).
+   OWNER DECISION 2026-08-12: risk accepted; proceeding in the US under
+   the name at full speed. Evidence basis: no US trademark filing indexed
+   (Justia/USPTO-crawled records), no US search presence for the Indian
+   company, name collisions across borders are commonplace. Sessions
+   should NOT re-raise this as a blocker. Still recommended, as OFFENSE
+   not defense: file the owner's own federal trademark (~$350) once sales
+   begin — it locks the US name against future domestic copycats, which
+   is the realistic long-term threat. Stays on the attorney agenda as a
+   convenience item, blocks nothing.
 5. **LLC discipline once approved.** Separate bank account, no
    commingling, sign everything "Adam Spinozzi, Member, AI-Ready School
    LLC," and update the Terms entity name, site footer, W-9, and Stripe
