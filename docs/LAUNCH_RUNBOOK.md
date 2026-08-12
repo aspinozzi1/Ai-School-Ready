@@ -120,6 +120,12 @@ stays membership-only)
       FLAG for Batch 3: Kit 1 member edition's 30-day plan still says
       "staff prompt doc" (predates the prompt library; Kit 2's pass didn't
       touch Kit 1) — owner decides if it gets the same library rewording.
+- [x] De-ID Drills re-tiered to FREE — DONE 2026-08-12 per the owner's
+      Swipe Test ruling (gate 0 below): tpt/LISTINGS.md moves it to free
+      listing #6, packet license line updated for a free download and
+      visually re-verified. The paid-micro slots now need artifact-first
+      products (Parent Message Makeovers templates, sub-plan builder,
+      rubric pack are the queued candidates).
 - [ ] OWNER: TpT seller account under the LLC (needs bank account + W-9)
 - [ ] Listing copy drafted: 5 free resources + paid Kit 1 (~$24-39); check
       current TpT seller handbook on off-site promotion + AI disclosure
