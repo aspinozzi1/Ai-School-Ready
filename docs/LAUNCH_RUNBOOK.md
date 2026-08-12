@@ -156,7 +156,15 @@ QUALITY STANDARD — binding for ALL sold content (owner directive
 2026-08-11: "mediocre content is a low bar"; outthink the major AI-school
 players; novel but search-relevant; owner audits, edits, and feeds topics
 from classroom experience):
-  Five gates, every product, before it ships:
+  Six gates, every product, before it ships:
+  0. SWIPE TEST (owner ruling 2026-08-12, from the De-ID Drills review):
+     PAID products must contain tangible, usable classroom/planning
+     documentation — templates the teacher fills and sends, plans they
+     run, rubrics they grade with, materials that reach students or
+     families. Training information, skill drills, and infographics are
+     FREE-tier funnel content no matter how good; "helpful information is
+     not a credit card swipe." The scripted PD kits pass (a runnable
+     session with handouts IS the artifact); read-only products do not.
   1. MONDAY MORNING TEST — usable within 48 hours, ends in an artifact the
      teacher keeps (built rubric, finished letter, filled template), zero
      new signups required. Fails -> doesn't ship.

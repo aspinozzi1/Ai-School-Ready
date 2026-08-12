@@ -23,3 +23,16 @@ footer. Marketing copy was trimmed (lede, callout, citation list; no claims
 changed, no citations altered beyond removal of secondary entries) so the
 "informational, not legal advice" and local-credit lines render fully.
 Rebuilt and re-verified visually. See docs/LEGAL_AUDIT.md.
+
+## Batch 3 owner-audit revision (2026-08-12)
+
+Owner findings applied across all components: (1) the disclosure norm became
+the fixed school-wide AI Disclosure block (checkboxes, identical in every
+classroom; free-form "two lines" removed per owner: uneven student output);
+(2) the AI Box is now introduced with full context on slide 11 as the
+teacher's half of one two-template system, both templates copy-ready in the
+handout; (3) "design moves" de-jargonized to four plain assignment upgrades;
+(4) the lab follows the new exemplar model (KIT_STANDARD 2026-08-12):
+Ms. Rivera's one persuasive essay tracked through every step, her artifact
+displayed large as primary slide content on steps 1-4. Rebuilt and visually
+verified after the pass.

@@ -95,6 +95,27 @@ facilitator script mirrors the chip: a `.rivera-line` under each slide cue shows
 the chip's exact text for that slide, so the presenter always knows what the room
 is reading.
 
+**The lab exemplar model (owner rule, 2026-08-12, from the Kit 5 audit):**
+In every kit's LAB segment, Ms. Rivera follows **one real artifact** through
+every lab step: one assignment, one message, one rubric — picked at lab setup
+and never switched mid-lab. Her exemplar at each step is displayed **large, as
+primary slide content** (a big card showing her actual work product at that
+stage), not only in the tracker chip; a participant who is lost can copy her
+structure and still finish. The chip stays, and its lab-step lines all
+reference that same artifact. The script's lab rivera-lines must name the same
+artifact at every step. Retrofit status: Kits 5-8 at the Batch 3 gate; Kits
+1-4 retrofit is an owner decision, not automatic.
+
+## School-wide templates (owner rule, 2026-08-12)
+Any recurring fixture a kit asks teachers or students to produce (an AI
+disclosure at the bottom of assignments, an AI-expectation box printed on an
+assignment) ships as a **defined, fixed template** used identically across the
+whole school: checkbox-and-blank layouts, copy-ready in the handout, shown
+full-size on a slide. Never "write two lines in your own words" for anything
+meant to be school-wide: free-form production yields uneven results across
+students and defeats consistency, which is the product's core promise to
+admins ("five teachers, one answer").
+
 ## Research
 Every citation verified against the live source before writing (existence AND claim).
 Each kit: 5–10 sources logged in `RESEARCH_LOG.md` with the exact figure used and where.
