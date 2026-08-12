@@ -36,9 +36,13 @@ Phase 1 — parallel, owner is the critical path
       product taxability). One follow-up from the EIN letter: it reads
       "AI-READY SCHOOL" without "LLC" — if the bank balks when opening the
       account, a name-correction letter to the IRS fixes it, no new EIN.
-      NEXT, IN ORDER: (1) business bank account (bring formation doc + EIN
-      letter), (2) Stripe business verification the same day (the ~2-day
-      item), (3) real W-9 — UNBLOCKED now that the EIN exists, (4) E&O +
+      NEXT, IN ORDER: (1) business bank account — DONE 2026-08-12, Relay
+      (Thread Bank, Member FDIC), industry "Subscription and Membership
+      Platforms", purpose "E-Commerce Sales"; set up Operating + Tax
+      sub-accounts with a 30%-of-deposits auto-transfer rule, (2) Stripe
+      business verification — NEXT, needs the Relay account + routing
+      numbers (the ~2-day item that gates live payments), (3) real W-9 —
+      UNBLOCKED now that the EIN exists, (4) E&O +
       general liability quote (bind the week the first sale closes; monthly
       billing ~$50-90; ask for earliest retroactive date; expect COI
       requests from school business offices). Owner decisions on record:
