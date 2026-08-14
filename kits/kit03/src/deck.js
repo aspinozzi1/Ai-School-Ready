@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Kit 3 Presentation Deck · AI for Planning & Differentiation
-   30 slides, locked AI-Ready School brand, speaker notes on every slide.
+   34 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit03/src/deck.js  → kits/kit03/Kit03_PresentationDeck.pptx */
 const pptxgen = require('pptxgenjs');
 const sharp = require('sharp');
@@ -44,10 +44,13 @@ const W = 13.33, H = 7.5;
     "Her equity move: build the stretch on purpose, not just the support.",
     "Her lab pick, one artifact all the way through: her 6th grade food webs passage.",
     "On her screen big: her food webs passage, drafted to 80%, not polished.",
+    "Her starting artifact, in full: the on-grade food webs passage she will differentiate.",
     "Her passage's two follow-ups, same chat: the support version, then the stretch.",
+    null, null,
     "Her passage's review, run live: one long sentence split, one example swapped.",
+    "Her finished set, on screen: core, support, stretch, stations, all reviewed.",
     "Her share-out: what the review caught in her food webs passage, told first.",
-    "Her inventory, one passage: core, support, stretch, all four points passed.",
+    "Her twenty minutes: one food webs passage became four teachable versions.",
     "Her habit: one differentiated artifact a week. Small and steady.",
     "Her commitment #5: nothing reaches a student until the review passes.",
     "Her next kit: assessment. Rubrics and question banks from her notes.",
@@ -115,6 +118,29 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 3.3, 12.0, afterH, 'EAF5F3');
     s.addText('AFTER', { x: 1.0, y: 3.45, w: 2, h: 0.35, fontFace: FONT, fontSize: 14, bold: true, color: GOOD, margin: 0 });
     s.addText(afterTxt, { x: 1.0, y: 3.8, w: 11.4, h: afterH - 0.6, fontFace: FONT, fontSize: 15.5, italic: true, color: INK, margin: 0, valign: 'top' });
+  }
+  // The exemplar layout the owner approved (Kit 4 slide 9): a full-width generic
+  // chat window, navy title bar with three dots, a paper inner card holding Ms.
+  // Rivera's actual prompt colour-coded by part, legend chips across the bottom.
+  const RIVERA_LABEL = 'AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)';
+  function chatWin(s, y, h, extra) {
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: y + 0.13, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText(RIVERA_LABEL + (extra || ''), {
+      x: 1.95, y, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+  }
+  function chatPaper(s, y, h, inset = 1.0) {
+    s.addShape('roundRect', { x: 0.7 + inset, y: y + 0.65, w: 12.0 - inset * 2, h: h - 0.9, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+  }
+  const PART_CHIPS = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+  const MOVE_CHIPS = [['LEVEL IT', TEAL], ['SCAFFOLD IT', NAVY], ['STRETCH IT', 'B07914'], ['REFORMAT IT', GOOD]];
+  function legend(s, y, chips) {
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
   }
 
   // ============================== SLIDE 1 · TITLE ==============================
@@ -318,24 +344,15 @@ const W = 13.33, H = 7.5;
       { text: 'BEFORE   ', options: { bold: true, color: BAD } },
       { text: '“Make this easier.”', options: { italic: true, color: MUTED } },
     ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
-    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 3.85, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
-    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
-    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 2.08, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
-    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
-      x: 1.95, y: 1.95, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
-    s.addShape('roundRect', { x: 1.7, y: 2.6, w: 10.55, h: 2.95, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    chatWin(s, 1.95, 3.85);
+    chatPaper(s, 1.95, 3.85);
     s.addText([
       { text: '“You are a reading specialist. ', options: { color: TEAL, bold: true } },
       { text: 'Rewrite the passage below at three levels: on-grade for 6th grade, about two years below, and about two years above. ', options: { color: NAVY, bold: true } },
       { text: 'Keep every key idea, the section headings, and the same core vocabulary. ', options: { color: 'B07914', bold: true } },
       { text: 'Lower level: sentences under 12 words plus a 5-word vocabulary box. Higher level: raise the complexity of the reasoning, not just the vocabulary. Label each version.”  [paste passage]', options: { color: GOOD, bold: true } },
     ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
-    const chips = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
-    chips.forEach(([t, c], i) => {
-      const x = 0.7 + i * 3.08;
-      s.addShape('roundRect', { x, y: 6.05, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
-      s.addText(t, { x, y: 6.05, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
-    });
+    legend(s, 6.05, PART_CHIPS);
     s.addNotes('Say: here\'s the same move on Ms. Rivera\'s screen, our running composite example. It\'s the Kit 2 formula wearing work clothes: role in teal, task in navy, context in amber, format in green. Ninety seconds replaces an evening. In the lab, mimic this shape with your own passage. Next slide is the habit that keeps this honest.');
   }
 
@@ -364,66 +381,83 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 13 · MOVE 2: SCAFFOLD IT ==============================
   {
     const s = base();
-    kicker(s, 'Move 2 · same target, more handholds');
+    kicker(s, 'Move 2 · same target, more handholds · on her screen');
     title(s, 'Scaffold it');
-    const items = [
-      ['Sentence starters', 'One per paragraph; gets the stuck writer moving'],
-      ['Word bank', '10 words with student-friendly definitions'],
-      ['Worked example', 'On a different topic: teaches the shape, not the answer'],
-      ['Organizer text', 'The labels and prompts for your graphic organizer'],
-    ];
-    items.forEach(([h, b], i) => {
-      const x = 0.7 + (i % 2) * 6.15, y = 1.6 + Math.floor(i / 2) * 2.15;
-      card(s, x, y, 5.85, 1.95, PAPER);
-      s.addText(h, { x: x + 0.3, y: y + 0.2, w: 5.25, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0 });
-      s.addText(b, { x: x + 0.3, y: y + 0.75, w: 5.25, h: 1.1, fontFace: FONT, fontSize: 15.5, color: INK, margin: 0 });
-    });
-    s.addNotes('Prompt on the handout: starters + word bank + one worked example on a DIFFERENT topic, so students see the structure without copying content. That clause is the professional touch.');
+    card(s, 0.7, 1.34, 12.0, 1.26, PAPER);
+    s.addText([
+      { text: 'Sentence starters: ', options: { bold: true, color: NAVY } },
+      { text: 'one per paragraph; gets the stuck writer moving', options: { color: INK, breakLine: true } },
+      { text: 'Word bank: ', options: { bold: true, color: NAVY } },
+      { text: '10 words with student-friendly definitions', options: { color: INK, breakLine: true } },
+      { text: 'Worked example: ', options: { bold: true, color: NAVY } },
+      { text: 'on a different topic, so it teaches the shape, not the answer', options: { color: INK, breakLine: true } },
+      { text: 'Organizer text: ', options: { bold: true, color: NAVY } },
+      { text: 'the labels and prompts for your graphic organizer', options: { color: INK } },
+    ], { x: 1.05, y: 1.42, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'middle', lineSpacingMultiple: 1.08 });
+    chatWin(s, 2.70, 3.35);
+    chatPaper(s, 2.70, 3.35);
+    s.addText([
+      { text: '“You are a 6th grade science teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'For the food webs passage below, create five sentence starters, a 10-word word bank, and one fully worked example paragraph. ', options: { color: NAVY, bold: true } },
+      { text: 'My students can explain a food web out loud and then freeze on the page. Keep the science exactly as the passage has it. ', options: { color: 'B07914', bold: true } },
+      { text: 'One starter per paragraph, student-friendly definitions, and the worked example on a different topic, so students see the shape without copying the content.”  [paste passage]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 3.47, w: 10.05, h: 2.2, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.18, PART_CHIPS);
+    s.addNotes('Say: move two is scaffolds. Same task, same target, more handholds, and here it is on Ms. Rivera\'s screen, filled in on the food webs passage she is carrying through this session. Role in teal, task in navy, context in amber, format in green; your handout has the same prompt as a blank template. The clause worth pointing at is the worked example on a DIFFERENT topic: that teaches the structure and keeps the thinking with the student.');
   }
 
   // ============================== SLIDE 14 · MOVE 3: STRETCH IT ==============================
   {
     const s = base();
-    kicker(s, 'Move 3 · early finishers & advanced learners');
+    kicker(s, 'Move 3 · early finishers & advanced learners · on her screen');
     title(s, 'Stretch it: depth, not more worksheets');
-    const rounds = [
-      ['Apply', 'Use the concept in an unfamiliar context'],
-      ['Critique', 'Find the flaw in a flawed example'],
-      ['Teach', 'Explain it to a younger student, own words'],
-    ];
-    rounds.forEach(([h, b], i) => {
-      const x = 0.7 + i * 4.12;
-      card(s, x, 1.7, 3.85, 3.2, PAPER);
-      s.addShape('ellipse', { x: x + 1.42, y: 2.0, w: 1.0, h: 1.0, fill: { color: TEAL }, line: { color: TEAL } });
-      s.addText(String(i + 1), { x: x + 1.42, y: 2.0, w: 1.0, h: 1.0, fontFace: FONT, fontSize: 30, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
-      s.addText(h, { x: x + 0.25, y: 3.2, w: 3.35, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-      s.addText(b, { x: x + 0.25, y: 3.75, w: 3.35, h: 1.0, fontFace: FONT, fontSize: 15, color: INK, align: 'center', margin: 0 });
-    });
-    s.addText('A second worksheet is a punishment for being fast. Say “no additional practice problems” in the prompt.', {
-      x: 0.7, y: 5.4, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('The quiet rule out loud: early finishers get depth, not volume. Your strongest students stop being your most bored ones, and it cost a minute.');
+    card(s, 0.7, 1.34, 12.0, 1.26, PAPER);
+    s.addText([
+      { text: 'Apply: ', options: { bold: true, color: NAVY } },
+      { text: 'use the concept in an unfamiliar context', options: { color: INK, breakLine: true } },
+      { text: 'Critique: ', options: { bold: true, color: NAVY } },
+      { text: 'find the flaw in a flawed example', options: { color: INK, breakLine: true } },
+      { text: 'Teach: ', options: { bold: true, color: NAVY } },
+      { text: 'explain it to a younger student, in their own words', options: { color: INK, breakLine: true } },
+      { text: 'A second worksheet is a punishment for being fast. Say “no additional practice problems.”', options: { italic: true, color: MUTED } },
+    ], { x: 1.05, y: 1.42, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'middle', lineSpacingMultiple: 1.08 });
+    chatWin(s, 2.70, 3.35);
+    chatPaper(s, 2.70, 3.35);
+    s.addText([
+      { text: '“You are a 6th grade science teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'Create three extension prompts for students who have already mastered the food webs passage below. ', options: { color: NAVY, bold: true } },
+      { text: 'These are the students who finish in ten minutes. Go deeper, not longer, and no additional practice problems. ', options: { color: 'B07914', bold: true } },
+      { text: 'One prompt that applies the idea to an unfamiliar context, one that asks them to critique a flawed example, and one that asks them to teach it to a younger student in their own words.”  [paste passage]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 3.47, w: 10.05, h: 2.2, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.18, PART_CHIPS);
+    s.addNotes('Say: move three is extension, and the quiet rule goes out loud: early finishers get depth, not more of the same. Ms. Rivera\'s screen shows the prompt on her food webs passage, colour-coded the same four ways; the handout carries the blank template. Apply, critique, teach: your strongest students stop being your most bored ones, and it cost a minute.');
   }
 
   // ============================== SLIDE 15 · MOVE 4: REFORMAT IT ==============================
   {
     const s = base();
-    kicker(s, 'Move 4 · the UDL move');
+    kicker(s, 'Move 4 · the UDL move · on her screen');
     title(s, 'Reformat it: same content, new shape');
-    const formats = [
-      ['Stations', 'Four activity-direction sets from one lesson'],
-      ['Discussion cards', 'Eight cards, one question each'],
-      ['Practice set', '10 items ramping recall → application'],
-    ];
-    formats.forEach(([h, b], i) => {
-      const x = 0.7 + i * 4.12;
-      card(s, x, 1.7, 3.85, 3.0, PAPER);
-      s.addText(h, { x: x + 0.28, y: 2.0, w: 3.3, h: 0.6, fontFace: FONT, fontSize: 19, bold: true, color: TEAL, margin: 0 });
-      s.addText(b, { x: x + 0.28, y: 2.7, w: 3.3, h: 1.7, fontFace: FONT, fontSize: 15.5, color: INK, margin: 0, valign: 'top' });
-    });
-    card(s, 0.7, 5.0, 12.0, 1.2, 'EAF5F3');
-    s.addText('One draft becomes a menu: multiple means of engagement and expression, on demand.', {
-      x: 1.05, y: 5.15, w: 11.3, h: 0.9, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('Prompt on the handout: “same concepts in all three; label everything.” The version you never had time to make now exists.');
+    card(s, 0.7, 1.34, 12.0, 1.26, PAPER);
+    s.addText([
+      { text: 'Stations: ', options: { bold: true, color: NAVY } },
+      { text: 'four activity-direction sets from one lesson', options: { color: INK, breakLine: true } },
+      { text: 'Discussion cards: ', options: { bold: true, color: NAVY } },
+      { text: 'eight cards, one question each', options: { color: INK, breakLine: true } },
+      { text: 'Practice set: ', options: { bold: true, color: NAVY } },
+      { text: '10 items ramping from recall to application', options: { color: INK, breakLine: true } },
+      { text: 'One draft becomes a menu: multiple means of engagement and expression, on demand.', options: { italic: true, color: MUTED } },
+    ], { x: 1.05, y: 1.42, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'middle', lineSpacingMultiple: 1.08 });
+    chatWin(s, 2.70, 3.35);
+    chatPaper(s, 2.70, 3.35);
+    s.addText([
+      { text: '“You are a 6th grade science teacher. ', options: { color: TEAL, bold: true } },
+      { text: 'Turn the food webs content below into three formats. ', options: { color: NAVY, bold: true } },
+      { text: 'Same concepts and same vocabulary in all three, and label everything, so I can hand them out without re-reading them. ', options: { color: 'B07914', bold: true } },
+      { text: 'A set of four station-activity directions. A deck of eight discussion cards, one question per card. A 10-item practice set that ramps from recall to application.”  [paste content]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 3.47, w: 10.05, h: 2.2, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.18, PART_CHIPS);
+    s.addNotes('Say: move four is the UDL move, same content in a different shape. On Ms. Rivera\'s screen it runs on the same food webs content, with the four parts colour-coded; the handout has the blank template. Some days you use one format, some days three stations run at once. Either way, the version you never had time to make now exists.');
   }
 
   // ============================== SLIDE 16 · THE 4-POINT REVIEW ==============================
@@ -502,7 +536,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 20, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Pairs, devices out inside two minutes, announce the tool. The standard to name here: differentiate until understanding is equal, and let AI do the drafting that used to make that impossible. Ms. Rivera builds ONE artifact across all three steps, the reading passage for her 6th grade food webs lesson; her exemplar appears large on every step slide, so anyone lost can copy her structure.');
+    s.addNotes('Pairs, devices out inside two minutes, announce the tool. The standard to name here: differentiate until understanding is equal, and let AI do the drafting that used to make that impossible. Ms. Rivera builds ONE artifact across all three steps, the reading passage for her 6th grade food webs lesson. You will see it through to completion: the passage she starts with (slide 21), the prompt she types (slide 23), her four follow-ups and what each one changed (slide 24), and the finished set (slide 26). Anyone lost can copy her structure.');
   }
 
   // ============================== SLIDE 20 · LAB STEP 1 ==============================
@@ -527,10 +561,32 @@ const W = 13.33, H = 7.5;
     ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 16.5, margin: 0, valign: "top", lineSpacingMultiple: 1.2 });
     s.addText("Don’t polish. The next step is where today earns its name.", {
       x: 0.7, y: 6.25, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: "center", margin: 0 });
-    s.addNotes("Circulate. Weak drafts usually lack context; nudge with “what would a substitute need to know about this lesson?” The big card is Ms. Rivera’s step 1: one reading passage for her 6th grade food webs lesson, drafted to 80%. The same passage runs through all three steps; anyone stuck can copy her structure.");
+    s.addNotes("Say: step one, draft the core artifact with the Kit 2 formula, and get it to eighty percent. Circulate. Weak drafts usually lack context; nudge with “what would a substitute need to know about this lesson?” The big card is Ms. Rivera’s step 1: one reading passage for her 6th grade food webs lesson, drafted to 80%. The next slide shows that passage in full.");
   }
 
-  // ============================== SLIDE 21 · LAB STEP 2 ==============================
+  // ============================== SLIDE 21 · HER STARTING ARTIFACT ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · Ms. Rivera’s core artifact');
+    title(s, 'The passage she starts with');
+    card(s, 0.7, 1.34, 12.0, 4.45, PAPER);
+    s.addShape('roundRect', { x: 0.7, y: 1.34, w: 0.12, h: 4.45, rectRadius: 0.05, fill: { color: TEAL }, line: { color: TEAL } });
+    s.addText('MS. RIVERA’S CORE ARTIFACT · 6TH GRADE SCIENCE · ON-GRADE DRAFT', {
+      x: 1.1, y: 1.5, w: 11.2, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('“Food Webs: Energy on the Move”', {
+      x: 1.1, y: 1.85, w: 11.2, h: 0.5, fontFace: FONT, fontSize: 26, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'Section 1 · What a food web shows\n', options: { bold: true, color: TEAL, fontSize: 14 } },
+      { text: 'Every organism in an ecosystem needs energy, and a food web is the map of where that energy goes. Producers, such as grasses and oak trees, capture sunlight and build their own food. Consumers get their energy secondhand: a rabbit eats the grass, a hawk eats the rabbit.\n\n', options: { color: INK, fontSize: 17 } },
+      { text: 'Section 4 · When one link breaks\n', options: { bold: true, color: TEAL, fontSize: 14 } },
+      { text: 'Remove the hawks from a schoolyard food web and the rabbits are not the only thing that changes. The grasses get grazed to the roots, the soil loses its cover, and the decomposers that live on fallen leaves lose their supply.', options: { color: INK, fontSize: 17 } },
+    ], { x: 1.1, y: 2.4, w: 11.2, h: 3.25, fontFace: FONT, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    s.addText('Four sections, drafted with role, task, context, format. Eighty percent, not polished. Every version that follows starts here.', {
+      x: 0.7, y: 5.95, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is the artifact Ms. Rivera is about to differentiate, in full, so nobody has to imagine it. Sections 2 and 3, producers and consumers, then decomposers, run the same way; sections 1 and 4 are on screen. Point out that it is on-grade and unpolished: this is what eighty percent looks like, and it is enough to start differentiating. Keep this up while pairs finish their own step 1 draft.');
+  }
+
+  // ============================== SLIDE 22 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 3 · 7 minutes');
@@ -550,14 +606,70 @@ const W = 13.33, H = 7.5;
       { text: 'her passage leveled down. Sentences under 12 words, plus a 5-word vocabulary box.\n\n', options: { color: INK } },
       { text: 'Stretch: ', options: { bold: true, color: TEAL } },
       { text: 'three depth prompts: apply it to a desert food web, find the flaw in a broken one, teach it to a 3rd grader.\n\n', options: { color: INK } },
-      { text: '"Two follow-ups in the same chat. It already has my passage."', options: { italic: true, color: MUTED } },
+      { text: '"Same chat, no re-pasting. My prompt is on the next slide."', options: { italic: true, color: MUTED } },
     ], { x: 7.15, y: 2.35, w: 5.35, h: 3.5, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
     s.addText('You’re building the versions that used to cost an evening, inside seven minutes.', {
       x: 0.7, y: 6.25, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Two follow-up prompts in the same chat. The big card is Ms. Rivera\'s step 2 on the same food webs passage: the leveled support version, then three depth prompts. Mimic her pair of follow-ups with your own artifact. 45-min cut: one direction instead of two; each teacher picks support or stretch based on their roster.');
+    s.addNotes('Say: step two, differentiate it in two directions, both as follow-ups in the same chat. The big card is Ms. Rivera\'s step 2 on the same food webs passage: the leveled support version, then three depth prompts. The next two slides show her actual prompt and every follow-up she typed, so mimicking her is possible from the screen alone. 45-min cut: one direction instead of two; each teacher picks support or stretch based on their roster.');
   }
 
-  // ============================== SLIDE 22 · LAB STEP 3 ==============================
+  // ============================== SLIDE 23 · HER PROMPT ON SCREEN ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 2 · the prompt she types into the chat');
+    title(s, 'What she actually typed');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '“Now make an easier version of that.”', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    chatWin(s, 1.95, 3.85, ' · same chat');
+    chatPaper(s, 1.95, 3.85);
+    s.addText([
+      { text: '“You are a reading specialist who works with 6th graders. ', options: { color: TEAL, bold: true } },
+      { text: 'Rewrite the food webs passage you just drafted for students reading about two years below grade level. ', options: { color: NAVY, bold: true } },
+      { text: 'Keep all four sections, every key idea, and these words: producer, consumer, decomposer, energy, ecosystem. The science does not get smaller; the sentences do. ', options: { color: 'B07914', bold: true } },
+      { text: 'Sentences under 12 words. Add a 5-word vocabulary box with student-friendly definitions. Label it “Support version.”', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.05, PART_CHIPS);
+    s.addNotes('Say: this is the whole point of the lab on one screen. The same four parts you learned in Kit 2, aimed at the passage from two slides ago: role in teal, task in navy, context in amber, format in green. Notice what the context does, because it is the part people skip: naming the five words that must survive is what keeps the support version real science instead of baby talk. At worst, copy this shape with your own artifact and you will finish the lab.');
+  }
+
+  // ============================== SLIDE 24 · HER ITERATIONS ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 2 · her iterations, one chat, four follow-ups');
+    title(s, 'What she typed next, and what changed');
+    chatWin(s, 1.40, 4.55, ' · follow-ups, no re-pasting');
+    chatPaper(s, 1.40, 4.55, 0.3);
+    s.addText('SHE TYPED NEXT', { x: 3.75, y: 2.12, w: 4.75, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('WHAT CHANGED', { x: 8.75, y: 2.12, w: 3.35, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    const iters = [
+      ['LEVEL IT', TEAL,
+        '“Rewrite it two years below grade level. Same four sections, same key words, sentences under 12 words.”',
+        'One passage became two. Same science, shorter sentences, plus a 5-word vocabulary box.'],
+      ['SCAFFOLD IT', NAVY,
+        '“Add five sentence starters, one per paragraph, and one worked example on a different topic.”',
+        'The support version can now be written from, not only read.'],
+      ['STRETCH IT', 'B07914',
+        '“Three extension prompts for the students who finish in ten minutes. Deeper, not longer. No extra practice problems.”',
+        'Apply it to a desert web, find the flaw in a broken one, teach it to a 3rd grader.'],
+      ['REFORMAT IT', GOOD,
+        '“Turn the same content into four station directions and eight discussion cards. Label everything.”',
+        'Tuesday can run as stations without a second planning night.'],
+    ];
+    iters.forEach(([badge, c, typed, changed], i) => {
+      const y = 2.40 + i * 0.82;
+      s.addShape('roundRect', { x: 1.35, y: y + 0.04, w: 1.72, h: 0.34, rectRadius: 0.17, fill: { color: c }, line: { color: c } });
+      s.addText(badge, { x: 1.35, y: y + 0.04, w: 1.72, h: 0.34, fontFace: FONT, fontSize: 11, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 1 });
+      s.addText(typed, { x: 3.35, y, w: 5.0, h: 0.76, fontFace: FONT, fontSize: 14.5, italic: true, color: NAVY, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+      s.addShape('rect', { x: 8.58, y: y + 0.06, w: 0.014, h: 0.64, fill: { color: 'DCE3EA' }, line: { color: 'DCE3EA' } });
+      s.addText(changed, { x: 8.75, y, w: 3.35, h: 0.76, fontFace: FONT, fontSize: 14.5, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+    });
+    legend(s, 6.15, MOVE_CHIPS);
+    s.addNotes('Say: iteration is not failure, it is the work. Four follow-ups, one chat, nothing re-pasted, and each one is one of the four moves you learned before the lab. Read the right-hand column out loud: that is what each follow-up bought her. Tell the room the honest timing, that this whole thread ran under seven minutes, and that they are doing the same thing right now with their own artifact.');
+  }
+
+  // ============================== SLIDE 25 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 3 · 4 minutes');
@@ -583,10 +695,47 @@ const W = 13.33, H = 7.5;
     ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
     s.addText('An artifact that passes all four is done. Not AI-done. Done done.', {
       x: 0.7, y: 6.25, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Insist on this step; skipping review is the failure mode of the whole kit. Pairs swap and check each other’s level labels: a partner’s ear is the first check. The big card is Ms. Rivera\'s review run on the same food webs passage: two points fail, two fixes happen live, and only then is it done.');
+    s.addNotes('Say: step three, run the 4-point review on all three versions and fix what fails while the chat is still open. Insist on this step; skipping review is the failure mode of the whole kit. Pairs swap and check each other’s level labels: a partner’s ear is the first check. The big card is Ms. Rivera\'s review run on the same food webs passage: two points fail, two fixes happen live, and only then is it done. The next slide shows what she ends up holding.');
   }
 
-  // ============================== SLIDE 23 · SHARE-OUT ==============================
+  // ============================== SLIDE 26 · HER FINISHED SET ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · after the review · one passage, finished');
+    title(s, 'Her finished set, ready to teach');
+    const done = [
+      ['CORE · ON GRADE', TEAL, 0.7, 1.34, [
+        ['“Food Webs: Energy on the Move”\n', { bold: true, color: NAVY }],
+        ['Four sections, unchanged. “Producers, such as grasses and oak trees, capture sunlight and build their own food.”', { color: INK }],
+      ]],
+      ['SUPPORT · ABOUT TWO YEARS BELOW', GOOD, 6.85, 1.34, [
+        ['“Food Webs: Energy on the Move (Support)”\n', { bold: true, color: NAVY }],
+        ['Same four sections. “A rabbit eats the grass. A hawk eats the rabbit.” Vocabulary box, five sentence starters, one worked example.', { color: INK }],
+      ]],
+      ['STRETCH · DEPTH, NOT VOLUME', 'B07914', 0.7, 3.62, [
+        ['Three prompts, no extra worksheet\n', { bold: true, color: NAVY }],
+        ['Apply it to a desert food web. Find the flaw in a broken web. Teach it to a 3rd grader in your own words.', { color: INK }],
+      ]],
+      ['REFORMAT · SAME CONTENT, NEW SHAPE', NAVY, 6.85, 3.62, [
+        ['Four station directions, eight cards\n', { bold: true, color: NAVY }],
+        ['The same food web content, labeled and ready to print, so Tuesday can run as stations instead of a read-aloud.', { color: INK }],
+      ]],
+    ];
+    done.forEach(([label, lc, x, y, runs]) => {
+      card(s, x, y, 5.85, 2.16, PAPER);
+      s.addText(label, { x: x + 0.3, y: y + 0.16, w: 5.25, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: lc, charSpacing: 1.4, margin: 0, valign: 'middle' });
+      s.addText(runs.map(([t, o]) => ({ text: t, options: o })), {
+        x: x + 0.3, y: y + 0.52, w: 5.25, h: 1.5, fontFace: FONT, fontSize: 15, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    });
+    card(s, 0.7, 5.95, 12.0, 0.72, NAVY);
+    s.addText([
+      { text: 'Accurate · At level · Fits her students · Sounds like her.  ', options: { bold: true, color: TEAL } },
+      { text: 'All four passed, after two fixes. One passage in, four teachable versions out.', options: { color: WHITE } },
+    ], { x: 1.05, y: 5.95, w: 11.3, h: 0.72, fontFace: FONT, fontSize: 16, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is completion, not process. One passage went in and four teachable versions came out, and every one of them passed the 4-point review. Point at the support card and read the leveled line aloud, because that is the moment the room hears the difference. Then say the honest arithmetic: hand-built, this set was an evening; on her screen it was under twenty minutes, and it is what she teaches Tuesday. Hold this up while the last pairs finish.');
+  }
+
+  // ============================== SLIDE 27 · SHARE-OUT ==============================
   {
     const s = base();
     kicker(s, 'Share-out · 3–4 voices');
@@ -599,7 +748,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Prioritize anyone whose review caught a real problem; it’s the most useful minute in the room. Ms. Rivera\'s model story is on the chip: what the review caught in her food webs passage goes first. 45-min cut: two voices. Keep each to a minute.');
   }
 
-  // ============================== SLIDE 24 · WHAT YOU BUILT ==============================
+  // ============================== SLIDE 28 · WHAT YOU BUILT ==============================
   {
     const s = base();
     kicker(s, 'Nineteen minutes ago this didn’t exist');
@@ -612,7 +761,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Say: an hour ago, differentiation was a good intention priced at three hand-built versions of everything. You just built core, support, and stretch for a real lesson in twenty minutes, and the research from slide 2 says materials that actually differ are what make it work. Land it plainly and move to the habit.');
   }
 
-  // ============================== SLIDE 25 · ONE ARTIFACT A WEEK ==============================
+  // ============================== SLIDE 29 · ONE ARTIFACT A WEEK ==============================
   {
     const s = base();
     kicker(s, 'The habit that compounds');
@@ -628,7 +777,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Built in the margins of time staff already have. The 30-day plan’s PLC follow-ups reinforce exactly this cadence.');
   }
 
-  // ============================== SLIDE 26 · COMMITMENT #5 ==============================
+  // ============================== SLIDE 30 · COMMITMENT #5 ==============================
   {
     const s = base(true);
     kicker(s, 'The list grows by one', { color: AMBER });
@@ -641,7 +790,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Kit 1 gave three commitments; Kit 2 added the staff doc. Ask for the visible nod; agreement out loud is what makes it a norm.');
   }
 
-  // ============================== SLIDE 27 · WHAT'S NEXT ==============================
+  // ============================== SLIDE 31 · WHAT'S NEXT ==============================
   {
     const s = base();
     kicker(s, 'Kit 3 of 8 · Track A');
@@ -660,7 +809,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Your differentiated artifact from today comes with you; it’s about to need an exit ticket. Completing all eight kits earns the Certificate of Completion; check with your district or state about local credit.');
   }
 
-  // ============================== SLIDE 28 · FIRST 48 ==============================
+  // ============================== SLIDE 32 · FIRST 48 ==============================
   {
     const s = base();
     kicker(s, 'Before Friday becomes a memory');
@@ -680,7 +829,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Hold up the First 48 Hours sheet. Tomorrow morning, coffee in hand, pick one.');
   }
 
-  // ============================== SLIDE 29 · EXIT TICKET ==============================
+  // ============================== SLIDE 33 · EXIT TICKET ==============================
   {
     const s = base();
     kicker(s, 'Two minutes');
@@ -695,7 +844,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Distribute tickets; collect at the door. They double as the school’s PD documentation.');
   }
 
-  // ============================== SLIDE 30 · CLOSE ==============================
+  // ============================== SLIDE 34 · CLOSE ==============================
   {
     const s = base(true);
     s.addText('Differentiation was never\na good-intentions problem.\nIt was a time problem.', {

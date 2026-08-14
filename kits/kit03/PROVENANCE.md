@@ -46,3 +46,69 @@ footer. Marketing copy was trimmed (lede, callout, citation list; no claims
 changed, no citations altered beyond removal of secondary entries) so the
 "informational, not legal advice" and local-credit lines render fully.
 Rebuilt and re-verified visually. See docs/LEGAL_AUDIT.md.
+
+## Upgrade 2026-08-14 (owner-mandated exemplar layout, from the 2026-08-14 audit)
+Owner finding: "Ms. Rivera's exemplar needs to be shown through completion in
+the lab." Kit 3's lab now carries her one running artifact, the reading passage
+for her 6th grade food webs lesson ("Food Webs: Energy on the Move"), from
+starting artifact to finished product, using the reference layout the owner
+approved on Kit 4 slide 9 (full-width generic chat window at x 0.7 / w 12.0,
+navy title bar with three dots and the "AI chat tool (any of them) · Ms. Rivera,
+our running example teacher (a composite, not a real person)" label, paper inner
+card holding her actual prompt colour-coded ROLE teal / TASK navy / CONTEXT dark
+amber B07914 / FORMAT green, and four legend chips across the bottom).
+
+Deck 30 slides -> 34 slides (KIT_STANDARD allows 25-40). Four slides added, all
+inside the lab; nothing was removed, and no teaching content, timing, step name,
+or lab step changed.
+- 21 (new) HER STARTING ARTIFACT: the on-grade food webs passage itself, large,
+  sections 1 and 4 verbatim, labelled as the 80% draft she is about to
+  differentiate.
+- 23 (new) HER PROMPT: full-width chat window, her actual "support version"
+  prompt colour-coded by part, ROLE/TASK/CONTEXT/FORMAT legend chips, with the
+  weak "before" line above it. Her full window is the content, so the tracker
+  chip steps aside (RIVERA null), matching slide 11 and the Kit 4 reference.
+- 24 (new) HER ITERATIONS: the same chat window holding a four-row thread, one
+  row per Kit 3 move (Level it / Scaffold it / Stretch it / Reformat it) showing
+  what she typed next and what each follow-up changed; legend chips carry the
+  four move names in the matching colours. Chip-exempt for the same reason.
+- 26 (new) HER FINISHED SET: the completed differentiated set (core, support,
+  stretch, reformat) with the 4-point review result, so the room sees
+  completion, not only process.
+Lab order is now 19 setup, 20 step 1, 21 her artifact, 22 step 2, 23 her prompt,
+24 her iterations, 25 step 3, 26 her finished set, 27 share-out, 28 what you
+built. Slides 27-34 are the former 23-30, renumbered.
+
+Workshop slides given the same chat-window + legend-chip treatment: 13 (Scaffold
+it), 14 (Stretch it), 15 (Reformat it). Each keeps its teaching content as a
+compact card above the window and now shows her prompt on the food webs passage,
+so labs and workshops match; slide 11 (Level it) already carried the treatment
+and was refactored onto the shared chatWin/chatPaper/legend helpers with its
+approved geometry unchanged. The participant handout's copy-ready prompt cards
+are unchanged and remain the blank templates; the script says so at each move,
+and the three quoted prompts gained the role sentence that the on-screen version
+shows (the kit teaches role, task, context, format, so a chip-labelled prompt
+with no ROLE part would have been a defect).
+
+Tracker chips: RIVERA array rebuilt to 34 entries, new lines for slides 21 and
+26, nulls for 23 and 24, and slide 28's line rewritten so it no longer repeats
+slide 26's. Facilitator script renumbered to match (cues 1-34, segment heads and
+the 0:53 timing checkpoint updated), with four new slide cues carrying clocks
+0:35, 0:39, 0:41 and 0:47 inside the existing lab windows; every .rivera-line
+verified equal to its deck chip string by script.
+
+Defects found and fixed during the build: the slide 13 prompt overran its paper
+card (window heights raised, prompt set at 15.5pt); the slide 23 title-bar label
+wrapped and clipped (suffix shortened to "· same chat"); the slide 24 typed
+column touched the divider rule (column narrowed); and the script broke a slide
+cue away from its spoken block at the page 8/9 boundary, because brand.css pins
+".slide-cue + .stage" while this kit puts the Rivera tracker line between them.
+Fixed kit-locally with a ".rivera-line + .stage { break-after: avoid; }" rule in
+this script's head, leaving shared tooling and other kits untouched.
+
+Verification: node kits/kit03/src/deck.js (34 slides, notes on all 34);
+check_overlap.py clean; deck converted with LibreOffice and every touched slide
+inspected as a rendered PNG; script and cover rebuilt, cover merged, 12 pages
+(cover + 11), every page extracts well over 100 characters, every page ends on a
+completed sentence and no cue is separated from its first spoken block.
+Presentation upgrade only; Batch 2 content approval not reopened.
