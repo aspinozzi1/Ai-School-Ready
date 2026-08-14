@@ -54,9 +54,11 @@ const W = 13.33, H = 7.5;
     "Her 48 hours: teach the support version, run one review, post one prompt.",
     "Her exit ticket: the artifact built, the direction that surprised her.", null];
   let slideNo = 0;
+  let chipOn = false;
   function base(dark = false) {
     const s = p.addSlide();
     slideNo++;
+    chipOn = slideNo > 1 && !!RIVERA[slideNo - 1];
     s.background = { color: dark ? NAVY : WHITE };
     if (slideNo > 1) {
       s.addImage({ data: dark ? markDarkPng : markPng, x: 0.45, y: H - 0.42, w: 0.26, h: 0.24 });
@@ -79,14 +81,17 @@ const W = 13.33, H = 7.5;
     return s;
   }
   function title(s, txt, opts = {}) {
+    // Chip-zone rule: Ms. Rivera's tracker chip owns x >= 9.55, so a titled
+    // slide that carries a chip stops at 9.3 and long titles step down a size.
     s.addText(txt, Object.assign({
-      x: 0.6, y: 0.42, w: W - 1.2, h: 0.85, fontFace: FONT, fontSize: 32,
+      x: 0.6, y: 0.42, w: chipOn ? 8.7 : W - 1.2, h: 0.85, fontFace: FONT,
+      fontSize: chipOn && txt.length > 34 ? 28 : 32,
       bold: true, color: NAVY, margin: 0, valign: 'middle',
     }, opts));
   }
   function kicker(s, txt, opts = {}) {
     s.addText(txt.toUpperCase(), Object.assign({
-      x: 0.62, y: 0.14, w: W - 1.24, h: 0.3, fontFace: FONT, fontSize: 12,
+      x: 0.62, y: 0.14, w: chipOn ? 8.7 : W - 1.24, h: 0.3, fontFace: FONT, fontSize: 12,
       bold: true, color: TEAL, charSpacing: 2, margin: 0, valign: 'middle',
     }, opts));
   }

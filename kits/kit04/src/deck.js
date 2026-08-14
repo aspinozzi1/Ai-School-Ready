@@ -54,9 +54,11 @@ const W = 13.33, H = 7.5;
     "Her 48 hours: rubric out with the assignment, finish vetting, use one starter.",
     "Her exit ticket: what she built, the weak question she caught.", null];
   let slideNo = 0;
+  let chipOn = false;
   function base(dark = false) {
     const s = p.addSlide();
     slideNo++;
+    chipOn = slideNo > 1 && !!RIVERA[slideNo - 1];
     s.background = { color: dark ? NAVY : WHITE };
     if (slideNo > 1) {
       s.addImage({ data: dark ? markDarkPng : markPng, x: 0.45, y: H - 0.42, w: 0.26, h: 0.24 });
@@ -79,14 +81,17 @@ const W = 13.33, H = 7.5;
     return s;
   }
   function title(s, txt, opts = {}) {
+    // Chip-zone rule: Ms. Rivera's tracker chip owns x >= 9.55, so a titled
+    // slide that carries a chip stops at 9.3 and long titles step down a size.
     s.addText(txt, Object.assign({
-      x: 0.6, y: 0.42, w: W - 1.2, h: 0.85, fontFace: FONT, fontSize: 32,
+      x: 0.6, y: 0.42, w: chipOn ? 8.7 : W - 1.2, h: 0.85, fontFace: FONT,
+      fontSize: chipOn && txt.length > 34 ? 28 : 32,
       bold: true, color: NAVY, margin: 0, valign: 'middle',
     }, opts));
   }
   function kicker(s, txt, opts = {}) {
     s.addText(txt.toUpperCase(), Object.assign({
-      x: 0.62, y: 0.14, w: W - 1.24, h: 0.3, fontFace: FONT, fontSize: 12,
+      x: 0.62, y: 0.14, w: chipOn ? 8.7 : W - 1.24, h: 0.3, fontFace: FONT, fontSize: 12,
       bold: true, color: TEAL, charSpacing: 2, margin: 0, valign: 'middle',
     }, opts));
   }
@@ -159,8 +164,10 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 1.75, 5.75, 3.7, 'EAF5F3');
     s.addText('THE POWER OF FEEDBACK', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('0.79', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addText('Feedback’s average “effect size” on student achievement: roughly double the impact of the typical educational intervention. (Hattie & Timperley, 2007)', {
-      x: 1.0, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
+    s.addText('Feedback’s average effect size on student achievement. (Hattie & Timperley, 2007)', {
+      x: 1.0, y: 3.35, w: 5.15, h: 0.75, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
+    s.addText('“Effect size” is how researchers put very different practices on one scale, so they can be compared. Most things schools try land near 0.40. Feedback runs about double that.', {
+      x: 1.0, y: 4.15, w: 5.15, h: 1.15, fontFace: FONT, fontSize: 13, color: MUTED, align: 'center', margin: 0 });
     card(s, 6.85, 1.75, 5.75, 3.7, PAPER);
     s.addText('HOW MANY TEACHERS TAP IT WITH AI', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('≤15%', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: MUTED, align: 'center', margin: 0 });
@@ -168,7 +175,7 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('Feedback’s power varies with how it’s given. That skill is yours; the drafting is delegable.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Hattie & Timperley: 0.79 average, roughly double the typical intervention, but impact swings widely with feedback type and delivery. RAND: assessment writing is the least-tapped use among AI-using teachers. That gap is why this hour exists.');
+    s.addNotes('Say: define the number before you use it. An effect size is just a way to compare practices that are otherwise hard to compare, on one scale. Across everything schools try, the average is around 0.40. Feedback comes in at 0.79, about double, which puts it among the most powerful things we do. Say the same review is clear the impact swings widely with how feedback is given. RAND: assessment writing is the least-tapped use among AI-using teachers. That gap is why this hour exists.');
   }
 
   // ============================== SLIDE 4 · AGENDA ==============================
