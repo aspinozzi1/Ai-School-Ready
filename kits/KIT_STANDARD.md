@@ -162,6 +162,13 @@ prompt" demonstrations*.
 HTML sources in `kits/kitXX/src/` + `kits/tooling/brand.css` → `bash kits/tooling/build_kit.sh kits/kitXX`.
 Deck via `kits/kitXX/src/deck.js` (pptxgenjs). Every artifact is rendered and visually
 inspected before presenting — no exceptions.
+**Overlap check (owner audit, 2026-08-14):** pptxgenjs never wraps or shrinks text
+to fit its box, so an overlong title, kicker, or card line prints straight through
+whatever sits beneath it, and the eye misses it at thumbnail size. Run
+`python3 kits/tooling/check_overlap.py kits/kitXX/KitXX_PresentationDeck.pptx`
+after every deck build; it must come back clean. The chip-zone rule is now enforced
+in code (title/kicker clamp to w:8.7 whenever the slide carries a Rivera chip), so
+new collisions mean a hand-placed text box, not a helper.
 
 ## Single-sheet legal-line verification (added 2026-08-10, from the legal audit)
 
