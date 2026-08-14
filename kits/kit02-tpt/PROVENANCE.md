@@ -50,3 +50,35 @@ promise, and prep-guide membership upsell sentence are untouched. Slide
 28's long title narrowed to w:8.7 per the chip-zone rule. Deck and PDFs
 rebuilt with the standard tooling; every changed slide and page visually
 re-inspected. Owner gate: rides Batch 3.
+
+## Exemplar chat-window layout everywhere (2026-08-14)
+
+Same presentation upgrade as the member edition, propagated by targeted
+edits (no file copies): the owner-approved full-width chat window (generic
+navy title bar, three dots, "AI chat tool (any of them) · Ms. Rivera, our
+running example teacher (a composite, not a real person)", paper inner card,
+color legend chips) now carries every prompt of hers in the deck. Slides 10
+and 11 converted from before/after cards; slide 11's prompt gained its
+missing role clause. The lab splits into how-to plus her-screen slides:
+20 (her first four-part draft, with her rough first instinct above it),
+22 (the three messages she typed, chipped CONTENT/VOICE/DETAILS), 24 (her
+bracketed template). Deck 30 → 33 slides; the flagship four-part slide 9 is
+byte-identical to before.
+
+TpT differences verified preserved: the save destination is still the shared
+staff doc, not the member-site prompt library (slide 23 bullets read "Paste
+the final template into the staff prompt doc" / "Add your name and one line:
+what it's for"; slide 24's caption reads "In the staff doc: Ms. Rivera ·
+'weekly review questions, any topic'"; the step-3 chip and rivera-line say
+the doc entry goes in; slides 14, 27, 29 and 31 keep their staff-doc
+wording). The TpT single-user license lines, the certificate-through-
+membership framing on What's Next, the References free re-download promise,
+and the prep-guide membership upsell are all untouched and confirmed present
+in the rebuilt PDFs. Prep guide slide count 30 → 33; References citation now
+points at slides 14 and 23.
+
+Verified: check_overlap.py clean on the rebuilt deck; all 33 slides and all
+11 script pages extract text; LibreOffice conversion inspected slide by slide
+(only slides 14, 23, 24, 27, 29 and 31 differ from the member render, exactly
+the TpT-specific set); script rebuilt with its cover and re-merged; no
+sentence split across a page break.
