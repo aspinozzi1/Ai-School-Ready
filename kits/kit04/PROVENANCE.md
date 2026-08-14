@@ -46,3 +46,61 @@ Presentation-only retrofit: no changes to teaching content, timings, step names,
 or slide count; Batch-2-approved content untouched outside the lab exemplar.
 Deck, script, and cover rebuilt; every changed slide and script page rendered
 and visually inspected.
+
+## Upgrade 2026-08-14 (owner-mandated exemplar layout, from the 2026-08-14 audit)
+The owner screenshotted slide 9 (workshop 1: Ms. Rivera's rubric prompt in a
+full-width generic chat window, prompt color-coded ROLE/TASK/CONTEXT/FORMAT,
+four legend chips) and named it the model for every worked prompt and every lab
+step. Kit 4 was rebuilt to that model.
+
+**Deck: 30 slides to 36.** The slide-9 treatment is now a set of shared helpers
+(`chatWindow` / `promptText` / `legendChips` / `artifactCard`), so the picture is
+identical everywhere it appears; slide 9's own geometry is unchanged.
+- Slide 11 (workshop 2, question banks): before/after cards replaced by the
+  full-width window and chips. The photosynthesis-and-respiration prompt is kept
+  verbatim in substance; its window is captioned honestly as a science teacher's
+  screen, since Ms. Rivera teaches 7th grade ELA, and her chip now says her own
+  version is coming in the lab.
+- Slide 14 (workshop 3, feedback starters): tinted card replaced by her chat
+  window with the color-coded prompt and chips; the two teaching lines moved
+  above the window so nothing was lost. Her window is the content, so the slide
+  is now chip-exempt.
+- Lab (slides 18-30) rebuilt as artifact-through-completion on her one artifact,
+  the persuasive essay assessment: step slides carry the steps, timing, and
+  ground rules; her prompts appear in the full-width window with legend chips
+  (20, her voice round; 23, her bank prompt with her misconception sentence);
+  her outputs appear large as finished artifacts (21, her rubric's level 3 and 4
+  Evidence descriptors; 24, her question 4 with all four options, the key, and
+  the distractor built from the mix-up; 25, her caught-and-cut question 7; 27,
+  all three finished feedback starters). New slide 29 ends the lab on the
+  finished product: her rubric, her vetted bank, and her starters as one
+  completed assessment, before slide 30 turns the inventory back to the room.
+- The right-hand teal exemplar cards from the 2026-08-12 retrofit are gone; the
+  same exemplar content is now primary, full-width slide content.
+Teaching content, timings, step names, the 45-minute cuts, and the locked
+founders' note are unchanged. No manual title/kicker width overrides were added;
+the helpers' chip-zone clamp does that work.
+
+**Script kept in sync.** Slide cues renumbered (old 19-24 became 19-30, old 25-30
+became 31-36), segment headings and the 0:54 timing checkpoint updated, new cues
+written for the six added slides with clocks between the existing ones, and every
+`.rivera-line` re-synced: a script-versus-deck check confirms all 36 chip lines
+match their slide exactly and that the six chip-exempt slides (1, 9, 14, 20, 23,
+36) carry no line. Script runs 13 pages (was 11); the cover's "keyed to all 36
+slides" and the References entry pointing at the five-hours slide (now 32) were
+corrected and both files rebuilt. One pagination defect appeared and was fixed:
+a stage note could strand at a page bottom with its spoken block overleaf,
+because brand.css pins the cue and the Rivera line to what follows but not the
+stage note that sits after them; a scoped `.stage { break-after: avoid; }` in
+this kit's script restores the standard's cue-plus-stage-plus-first-block rule.
+A programmatic pass confirms no slide cue is now separated from its spoken block.
+
+**Verification.** `check_overlap.py` reports the deck clean. Every rebuilt PDF
+extracts text on every page (deck 36/36, script 13/13, references 2/2; minimum
+596 characters, so no glyph-less build), and the script's last page carries real
+content plus the legal block. Every changed or added slide was converted with
+LibreOffice and inspected as a rendered PNG, along with every changed script
+page; defects found and fixed in that pass were dead vertical space on the three
+lab step slides, two captions that wrapped to a stray second line (slides 21 and
+27), and three-card labels that wrapped on slide 29. Presentation upgrade only;
+no research claim, citation, or approved teaching content was changed.
