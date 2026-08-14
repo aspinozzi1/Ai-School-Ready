@@ -112,3 +112,19 @@ inspected as a rendered PNG; script and cover rebuilt, cover merged, 12 pages
 (cover + 11), every page extracts well over 100 characters, every page ends on a
 completed sentence and no cue is separated from its first spoken block.
 Presentation upgrade only; Batch 2 content approval not reopened.
+
+## Owner audit fixes 2026-08-14 (finished artifact, chat-card boundary)
+Two findings from the owner's Kit 3 audit, both fixed here and pending
+propagation to the other kits.
+1. The lab's closing slide described the four finished versions instead of
+showing them. Teachers want to see what the finished product actually looks
+like. Replaced with two slides that show the work itself: her support version
+word for word (both sections at the leveled reading, plus the five-word
+vocabulary box, with the on-grade sentence beneath for contrast) and her three
+stretch prompts and four station directions as produced. Deck 34 to 35 slides;
+script renumbered to 35 cues with a new cue at 0:48; prep guide and script
+cover slide counts corrected.
+2. The paper card inside the chat window was narrower than the prompt text it
+held, so prompts printed across its right edge. The card ran to x 11.7 while
+the text ran to 12.0. Card now ends at 12.25, giving a real 0.25 margin on both
+sides and matching the approved kit04 slide 9 geometry.
