@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Kit 8 Presentation Deck · Building Your School's AI Culture (Track A capstone)
-   30 slides, locked AI-Ready School brand, speaker notes on every slide.
+   35 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit08/src/deck.js  → kits/kit08/Kit08_PresentationDeck.pptx */
 const pptxgen = require('pptxgenjs');
 const sharp = require('sharp');
@@ -44,10 +44,14 @@ const W = 13.33, H = 7.5;
     "Her never list: no policy lag, no mocked skeptics, no finish line.",
     "Her certificate: all eight kits, lived. The AI-Ready Educator Certificate of Completion.",
     "Her lab pick, one page all the way through: her school's culture page.",
+    "Her page, still blank: the same four blocks every school fills in.",
     "Her culture page, step 1: the five norms, in her building's words.",
+    null, null,
     "Her culture page, step 2: win-fail-steal calendared, round one owned.",
     "Her culture page, step 3: a Kit 1 owner named; skeptics recruited as reviewers.",
     "Her culture page, step 4: the semester strip, months and kit numbers written in.",
+    "Her culture page, finished: five norms in her faculty's words, signed.",
+    "Her page's other half: the routine dated, the owners named, the semester set.",
     "Her share-out: her culture page's privacy norm, read aloud.",
     "Her inventory, one culture page: norms, routine, onboarding, semester strip.",
     "Her honest limits: a document isn't a culture; consistency is. Leadership carries it.",
@@ -114,6 +118,42 @@ const W = 13.33, H = 7.5;
   function card(s, x, y, w, h, fill = PAPER, line) {
     s.addShape('roundRect', { x, y, w, h, rectRadius: 0.09, fill: { color: fill },
       line: line ? { color: line, width: 1 } : { color: fill } });
+  }
+  // The exemplar layout the owner approved (Kit 4 slide 9, carried into Kit 3): a
+  // full-width generic chat window, navy title bar with three dots, a paper inner
+  // card holding Ms. Rivera's actual prompt colour-coded by part, legend chips
+  // across the bottom. Prompts get this treatment in labs AND workshops.
+  const RIVERA_LABEL = 'AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)';
+  function chatWin(s, y, h, extra) {
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: y + 0.13, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText(RIVERA_LABEL + (extra || ''), {
+      x: 1.95, y, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+  }
+  // The paper card must always be WIDER than the text it holds, or the prompt
+  // prints across its edge (owner audit, 2026-08-14). Text sits at x 1.95 and
+  // runs 10.05 wide, ending at 12.0; the card runs to 12.25 so there is a real
+  // 0.25 margin on each side. Same geometry as the approved kit04 slide 9.
+  function chatPaper(s, y, h, inset = 1.0) {
+    s.addShape('roundRect', { x: 0.7 + inset, y: y + 0.65, w: 12.25 - (0.7 + inset), h: h - 0.9, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+  }
+  const PART_CHIPS = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+  const BLOCK_CHIPS = [['NORMS', TEAL], ['ROUTINE', NAVY], ['ONBOARDING', 'B07914'], ['SEMESTER', GOOD]];
+  function legend(s, y, chips) {
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
+  }
+  // A blank rule for the fill-in template slide: a drawn line, never underscores,
+  // so nothing competes with real text for space.
+  function blank(s, x, y, w) {
+    s.addShape('rect', { x, y, w, h: 0.014, fill: { color: 'C4CFD9' }, line: { color: 'C4CFD9' } });
+  }
+  function checkbox(s, x, y) {
+    s.addShape('roundRect', { x, y, w: 0.17, h: 0.17, rectRadius: 0.03, fill: { color: WHITE }, line: { color: '9FB2C2', width: 1 } });
   }
 
   // ============================== SLIDE 1 · TITLE ==============================
@@ -467,7 +507,65 @@ const W = 13.33, H = 7.5;
     s.addNotes('Dark slide. Groups of 3-4 (not pairs), mixed departments. Devices optional; this lab drafts text. Ms. Rivera drafts ONE culture page across all four steps: norms, routine, onboarding, semester strip, one page. Her page appears large on every step slide, so anyone lost can copy her structure.');
   }
 
-  // ============================== SLIDE 19 · LAB STEP 1 ==============================
+  // ============================== SLIDE 19 · THE CULTURE PAGE TEMPLATE ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the artifact · the page your school fills in');
+    title(s, 'One page, four blocks');
+    card(s, 0.7, 1.34, 12.0, 4.5, PAPER);
+    s.addShape('roundRect', { x: 0.7, y: 1.34, w: 0.12, h: 4.5, rectRadius: 0.05, fill: { color: TEAL }, line: { color: TEAL } });
+    s.addText('THE CULTURE PAGE · THE SAME TEMPLATE IN EVERY SCHOOL · BLANK', {
+      x: 1.05, y: 1.46, w: 11.3, h: 0.28, fontFace: FONT, fontSize: 11.5, bold: true, color: TEAL, charSpacing: 1.4, margin: 0, valign: 'middle' });
+    s.addText('How we use AI here', {
+      x: 1.05, y: 1.76, w: 6.0, h: 0.42, fontFace: FONT, fontSize: 22, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addText('School', { x: 7.15, y: 1.82, w: 0.7, h: 0.3, fontFace: FONT, fontSize: 12, color: MUTED, margin: 0, valign: 'middle' });
+    blank(s, 7.85, 2.06, 1.9);
+    s.addText('Adopted', { x: 9.9, y: 1.82, w: 0.9, h: 0.3, fontFace: FONT, fontSize: 12, color: MUTED, margin: 0, valign: 'middle' });
+    blank(s, 10.8, 2.06, 1.5);
+    // Block 1 · the five norms
+    s.addText('1 · OUR FIVE NORMS, ONE SENTENCE EACH', {
+      x: 1.05, y: 2.28, w: 5.5, h: 0.26, fontFace: FONT, fontSize: 11, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    ['Privacy', 'Review', 'Honesty', 'Sharing', 'Protected list'].forEach((lab, i) => {
+      const y = 2.62 + i * 0.42;
+      s.addText(lab, { x: 1.05, y, w: 1.55, h: 0.3, fontFace: FONT, fontSize: 12.5, bold: true, color: INK, margin: 0, valign: 'middle' });
+      blank(s, 2.7, y + 0.26, 3.65);
+    });
+    // Block 2 · the routine
+    s.addText('2 · OUR SHARING ROUTINE', {
+      x: 1.05, y: 4.78, w: 5.5, h: 0.26, fontFace: FONT, fontSize: 11, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText('five minutes: win · fail · steal', { x: 4.25, y: 4.78, w: 2.6, h: 0.26, fontFace: FONT, fontSize: 10.5, color: MUTED, margin: 0, valign: 'middle' });
+    s.addText('Rhythm', { x: 1.05, y: 5.1, w: 1.0, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    blank(s, 2.1, 5.36, 4.25);
+    s.addText('Round one, date', { x: 1.05, y: 5.5, w: 1.6, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    blank(s, 2.7, 5.76, 1.35);
+    s.addText('Owner', { x: 4.2, y: 5.5, w: 0.8, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    blank(s, 5.05, 5.76, 1.3);
+    // Block 3 · onboarding and skeptic partners
+    s.addText('3 · NEW COLLEAGUES · SKEPTIC PARTNERS', {
+      x: 6.75, y: 2.28, w: 5.6, h: 0.26, fontFace: FONT, fontSize: 11, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText('Kit 1 in month one, run by', { x: 6.75, y: 2.62, w: 2.55, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    blank(s, 9.35, 2.88, 2.95);
+    s.addText('Welcome folder holds', { x: 6.75, y: 3.04, w: 2.1, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    checkbox(s, 8.95, 3.11);
+    s.addText('this page', { x: 9.2, y: 3.04, w: 1.0, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    checkbox(s, 10.25, 3.11);
+    s.addText('a library tour', { x: 10.5, y: 3.04, w: 1.5, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    s.addText('Skeptic partners', { x: 6.75, y: 3.46, w: 1.65, h: 0.3, fontFace: FONT, fontSize: 12.5, color: INK, margin: 0, valign: 'middle' });
+    blank(s, 8.45, 3.72, 3.85);
+    // Block 4 · next semester
+    s.addText('4 · NEXT SEMESTER, ONE LINE PER MONTH', {
+      x: 6.75, y: 3.94, w: 5.6, h: 0.26, fontFace: FONT, fontSize: 11, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    ['Jan', 'Feb', 'Mar', 'Apr', 'May'].forEach((m, i) => {
+      const y = 4.28 + i * 0.32;
+      s.addText(m, { x: 6.75, y, w: 0.6, h: 0.26, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, margin: 0, valign: 'middle' });
+      blank(s, 7.4, y + 0.22, 4.9);
+    });
+    s.addText('Same four blocks in every building. The words inside them are yours.', {
+      x: 0.7, y: 6.0, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is the page, blank, and it is the same template in every school that runs this kit: five norms, one routine with a date and an owner, onboarding plus skeptic partners, and a five-line semester strip. The four lab steps fill the four blocks in order, so at the end of twenty minutes your group is holding a finished page, not notes. The handout carries every one of these blanks, so you can draft straight onto it. Ms. Rivera fills this exact template through the lab, and you will see her finished page before the share-out.');
+  }
+
+  // ============================== SLIDE 20 · LAB STEP 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 1 of 4 · 7 minutes');
@@ -488,10 +586,66 @@ const W = 13.33, H = 7.5;
       { text: 'Protected: ', options: { bold: true, color: NAVY } }, { text: 'people work stays people.\n\n', options: { color: INK } },
       { text: '"Sounds like us, not like a policy."', options: { italic: true, color: MUTED } },
     ], { x: 7.15, y: 2.35, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 18, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
-    s.addNotes('7 protected minutes. Circulate; push for the building\'s own words, not policy-speak. Rivera\'s culture page is the running exemplar for the whole lab; this card is its top half, five norms in her building\'s voice. Anyone stuck can copy her structure and swap in their own words.');
+    s.addNotes('7 protected minutes. Circulate; push for the building\'s own words, not policy-speak. Rivera\'s culture page is the running exemplar for the whole lab; this card is its top half, five norms in her building\'s voice. Anyone stuck can copy her structure and swap in their own words. Her actual merge prompt is on the next slide.');
   }
 
-  // ============================== SLIDE 20 · LAB STEP 2 ==============================
+  // ============================== SLIDE 21 · HER PROMPT ON SCREEN ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · the prompt she types to merge the drafts');
+    title(s, 'What she actually typed');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '“Write our school some AI norms.”', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    chatWin(s, 1.95, 3.85, ' · four drafts');
+    chatPaper(s, 1.95, 3.85);
+    s.addText([
+      { text: '“You are a school leader writing for teachers, in plain words, not policy language. ', options: { color: TEAL, bold: true } },
+      { text: 'Merge the four groups’ norm drafts below into one page: five norms, one sentence each, no repeats, nothing dropped. ', options: { color: NAVY, bold: true } },
+      { text: 'Forty-two teachers will sign this page and it gets posted in the workroom, so it has to sound like us: we say kids, not learners. Keep all five jobs and do not soften the privacy line. ', options: { color: 'B07914', bold: true } },
+      { text: 'A one-word label, then one sentence under 30 words, for each norm. Under them, a signature line and the date we revisit it.”  [paste the four drafts]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.05, PART_CHIPS);
+    s.addNotes('Say: the merge is a real job somebody has to do this week, and here is Ms. Rivera doing it, with the same four parts from Kit 2: role in teal, task in navy, context in amber, format in green. Compare it to the before line at the top; "write our school some AI norms" gets you a stranger\'s policy. The part worth pointing at is the context: forty-two people sign this page, we say kids not learners, and do not soften the privacy line. That sentence is what keeps the page in the building\'s own voice instead of a vendor\'s. Whoever owns the merge in your building can copy this shape tonight.');
+  }
+
+  // ============================== SLIDE 22 · HER ITERATIONS ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · her follow-ups, one chat, one page');
+    title(s, 'What she typed next, and what changed');
+    chatWin(s, 1.40, 4.55, ' · follow-ups, nothing re-pasted');
+    chatPaper(s, 1.40, 4.55, 0.3);
+    s.addText('SHE TYPED NEXT', { x: 3.75, y: 2.12, w: 4.75, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('WHAT CHANGED', { x: 8.75, y: 2.12, w: 3.35, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    const iters = [
+      ['NORMS', TEAL,
+        '“Rewrite norm 1 the way a teacher would say it out loud. No ‘shall,’ no ‘personally identifiable.’”',
+        'It became: we never put a student into a chatbot. Two groups wrote it that way already.'],
+      ['ROUTINE', NAVY,
+        '“Add the sharing routine as one line: every other PLC, five minutes, win, fail, steal, with blanks for date and owner.”',
+        'A good idea became a line with a date and a name on it.'],
+      ['ONBOARDING', 'B07914',
+        '“Add two lines: who runs Kit 1 for a new hire in month one, and who our skeptic partners are.”',
+        'The January hire is covered on paper; the doubters have a named job.'],
+      ['SEMESTER', GOOD,
+        '“Add a five-line strip: one month, one refresher kit, January through May.”',
+        'Next semester fits on five lines, all from 30-day plans she already owns.'],
+    ];
+    iters.forEach(([badge, c, typed, changed], i) => {
+      const y = 2.40 + i * 0.82;
+      s.addShape('roundRect', { x: 1.35, y: y + 0.04, w: 1.72, h: 0.34, rectRadius: 0.17, fill: { color: c }, line: { color: c } });
+      s.addText(badge, { x: 1.35, y: y + 0.04, w: 1.72, h: 0.34, fontFace: FONT, fontSize: 11, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 1 });
+      s.addText(typed, { x: 3.35, y, w: 5.0, h: 0.76, fontFace: FONT, fontSize: 14, italic: true, color: NAVY, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+      s.addShape('rect', { x: 8.58, y: y + 0.06, w: 0.014, h: 0.64, fill: { color: 'DCE3EA' }, line: { color: 'DCE3EA' } });
+      s.addText(changed, { x: 8.75, y, w: 3.35, h: 0.76, fontFace: FONT, fontSize: 14, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+    });
+    legend(s, 6.15, BLOCK_CHIPS);
+    s.addNotes('Say: iteration is not failure, it is the work, and each follow-up fills one block of the page: norms, routine, onboarding, semester. Nothing was re-pasted; it is one chat. Read the right-hand column aloud, because that column is what each follow-up bought her. The honest timing: this whole thread ran in about six minutes, which is roughly what your group is spending on step one right now. The page she ends up with is two slides away.');
+  }
+
+  // ============================== SLIDE 23 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 4 minutes');
@@ -503,12 +657,12 @@ const W = 13.33, H = 7.5;
     ], { x: 0.7, y: 1.7, w: 5.9, h: 4.4, fontSize: 17 });
     card(s, 6.85, 1.7, 5.9, 3.4, 'EAF5F3');
     s.addText('MS. RIVERA\'S CULTURE PAGE · STEP 2', { x: 7.15, y: 1.9, w: 5.4, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
-    s.addText('Every other PLC.\nFive minutes: win · fail · steal.\nRound one: Tuesday, hers.', {
+    s.addText('Every other PLC.\nFive minutes: win · fail · steal.\nRound one: Tuesday, Dec 1.\nOwner: Ms. Rivera.', {
       x: 7.15, y: 2.35, w: 5.35, h: 2.55, fontFace: FONT, fontSize: 22, bold: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addNotes('4 minutes. A routine without a date and an owner is a wish; insist on both. Rivera\'s card is the same culture page gaining its routine line: rhythm picked, five minutes, round one dated and owned.');
   }
 
-  // ============================== SLIDE 21 · LAB STEP 3 ==============================
+  // ============================== SLIDE 24 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 4 · 4 minutes');
@@ -532,7 +686,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('4 minutes. 45-min cut: fold into step 4\'s block. Rivera\'s page now carries its onboarding owner and its skeptic partners; recruiting skeptics respectfully is the culture\'s best quality-control hire.');
   }
 
-  // ============================== SLIDE 22 · LAB STEP 4 ==============================
+  // ============================== SLIDE 25 · LAB STEP 4 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 4 of 4 · 4 minutes');
@@ -549,10 +703,89 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 2.35, w: 5.35, h: 2.9, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addText('New-hire Kit 1, whenever the hire arrives.', {
       x: 7.15, y: 5.45, w: 5.35, h: 0.5, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, margin: 0, valign: 'top' });
-    s.addNotes('4 minutes. The 30-day plans are the refresher material; nothing new to write, just dates to claim. Rivera\'s page finishes with its semester strip: months and kit numbers, one line each. That completes her one-page culture draft.');
+    s.addNotes('4 minutes. The 30-day plans are the refresher material; nothing new to write, just dates to claim. Rivera\'s page finishes with its semester strip: months and kit numbers, one line each. That completes her one-page culture draft, and the next two slides show that page word for word.');
   }
 
-  // ============================== SLIDE 23 · SHARE-OUT ==============================
+  // ============================== SLIDE 26 · HER CULTURE PAGE, WORD FOR WORD (NORMS) ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the finished product · the page her faculty signed');
+    title(s, 'What actually came out');
+    card(s, 0.7, 1.3, 12.0, 4.68, PAPER);
+    s.addShape('roundRect', { x: 0.7, y: 1.3, w: 0.12, h: 4.68, rectRadius: 0.05, fill: { color: TEAL }, line: { color: TEAL } });
+    s.addText('THE CULTURE PAGE · MS. RIVERA’S SCHOOL, A COMPOSITE EXAMPLE · BLOCK 1 OF 4', {
+      x: 1.05, y: 1.42, w: 11.3, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: TEAL, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText('How we use AI here', {
+      x: 1.05, y: 1.72, w: 7.0, h: 0.44, fontFace: FONT, fontSize: 24, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addText('Signed by 42 teachers · posted in the workroom', {
+      x: 8.2, y: 1.76, w: 4.15, h: 0.36, fontFace: FONT, fontSize: 12, color: MUTED, align: 'right', margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'Privacy.  ', options: { bold: true, color: NAVY } },
+      { text: 'We never put a student’s name, work, or personal information into a public AI tool. When we need help with student work, we describe the situation instead.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
+      { text: 'Review.  ', options: { bold: true, color: NAVY } },
+      { text: 'Nothing an AI drafted reaches a student or a family until a teacher has read every word of it and fixed what is wrong. AI drafts, the teacher decides.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
+      { text: 'Honesty.  ', options: { bold: true, color: NAVY } },
+      { text: 'We say what we use. Every assignment carries its lane label, and a note home that started as a draft is still signed by the person who sends it.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
+      { text: 'Sharing.  ', options: { bold: true, color: NAVY } },
+      { text: 'A prompt that works belongs to the building. It goes in the staff library the same week, with a name on it, so nobody solves the same problem twice.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
+      { text: 'The protected list.  ', options: { bold: true, color: NAVY } },
+      { text: 'Some work stays human by decision: the hard conversation, the note after a loss, the recommendation letter. We keep that list, and we keep it short.', options: { color: INK } },
+    ], { x: 1.05, y: 2.22, w: 11.3, h: 2.85, fontFace: FONT, fontSize: 14.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    s.addShape('rect', { x: 1.05, y: 5.42, w: 11.3, h: 0.014, fill: { color: 'DCE3EA' }, line: { color: 'DCE3EA' } });
+    s.addText([
+      { text: 'Signed:  ', options: { bold: true, color: NAVY } },
+      { text: 'every teacher, on the day we drafted it.   ', options: { color: INK } },
+      { text: 'Revisited:  ', options: { bold: true, color: NAVY } },
+      { text: 'first faculty meeting of each semester.', options: { color: INK } },
+    ], { x: 1.05, y: 5.5, w: 11.3, h: 0.4, fontFace: FONT, fontSize: 14, margin: 0, valign: 'middle' });
+    s.addText('No “shall.” No “stakeholders.” Five sentences a teacher would actually say out loud.', {
+      x: 0.7, y: 6.15, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is the thing itself, not a description of it. Read norm one aloud, then norm five. Notice that every sentence is one a teacher could say in a hallway, and that the privacy norm did not get softened in the merge. This is what your merged page looks like next week, and it is the reason we drafted rather than described today. If anyone is wondering what they signed up for, it is these five sentences plus the half of the page on the next slide.');
+  }
+
+  // ============================== SLIDE 27 · HER CULTURE PAGE, WORD FOR WORD (THE REST) ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the finished product · blocks 2, 3, and 4');
+    title(s, 'The other half, word for word');
+    card(s, 0.7, 1.3, 5.85, 1.9, PAPER);
+    s.addText('2 · OUR SHARING ROUTINE', { x: 1.0, y: 1.44, w: 5.25, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: 'B07914', charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'Five minutes at every other PLC: one win, one fail, one steal.\n', options: { color: INK } },
+      { text: 'Round one: ', options: { bold: true, color: NAVY } },
+      { text: 'Tuesday, December 1, 7:35 a.m.\n', options: { color: INK } },
+      { text: 'Owner: ', options: { bold: true, color: NAVY } },
+      { text: 'Ms. Rivera. Each round names who runs the next one.', options: { color: INK } },
+    ], { x: 1.0, y: 1.78, w: 5.25, h: 1.55, fontFace: FONT, fontSize: 14, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    card(s, 0.7, 3.35, 5.85, 2.1, PAPER);
+    s.addText('3 · NEW COLLEAGUES · SKEPTIC PARTNERS', { x: 1.0, y: 3.49, w: 5.25, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'Every new colleague runs Kit 1 in month one with our PLC lead. Welcome folder: this page and a library tour.\n', options: { color: INK } },
+      { text: 'Skeptic partners: ', options: { bold: true, color: NAVY } },
+      { text: 'our 8th grade math lead and our media specialist. They read first.', options: { color: INK } },
+    ], { x: 1.0, y: 3.83, w: 5.25, h: 1.5, fontFace: FONT, fontSize: 14, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    card(s, 6.85, 1.3, 5.85, 4.15, PAPER);
+    s.addText('4 · NEXT SEMESTER, ONE LINE PER MONTH', { x: 7.15, y: 1.44, w: 5.25, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: GOOD, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    [['Jan', 'the norms page revisited, first faculty meeting'],
+     ['Feb', 'Kit 2 refresher, 10 minutes: the four-part formula'],
+     ['Mar', 'Kit 5 refresher, 10 minutes: lane labels'],
+     ['Apr', 'Kit 7 refresher, 10 minutes: the protected list'],
+     ['May', 'Kit 4 refresher, 10 minutes: rubrics and question banks']].forEach(([m, txt], i) => {
+      const y = 1.85 + i * 0.62;
+      s.addText(m, { x: 7.15, y, w: 0.7, h: 0.55, fontFace: FONT, fontSize: 16, bold: true, color: TEAL, margin: 0, valign: 'middle' });
+      s.addText(txt, { x: 7.95, y, w: 4.5, h: 0.55, fontFace: FONT, fontSize: 13.5, color: INK, margin: 0, valign: 'middle' });
+    });
+    s.addText('New-hire Kit 1 whenever a hire arrives, in or out of this strip.', {
+      x: 7.15, y: 4.95, w: 5.3, h: 0.36, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, margin: 0, valign: 'middle' });
+    card(s, 0.7, 5.68, 12.0, 0.72, NAVY);
+    s.addText([
+      { text: 'One page, four blocks.  ', options: { bold: true, color: TEAL } },
+      { text: 'A date, an owner, a name in every blank: that is what a school adopts.', options: { color: WHITE } },
+    ], { x: 1.05, y: 5.68, w: 11.3, h: 0.72, fontFace: FONT, fontSize: 15, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: the rest of her page, also word for word. Point at the two things that make it real rather than nice: a date, Tuesday the first, and an owner, her. Everything else on the page is written to survive her leaving the building. The semester strip costs fifty minutes across five months and it is all drawn from 30-day plans you already own. Your group has this exact page in front of it right now; the only difference is whose words are in the blanks.');
+  }
+
+  // ============================== SLIDE 28 · SHARE-OUT ==============================
   {
     const s = base();
     kicker(s, 'Lab · share-out · 4 voices, 1 minute each');
@@ -565,7 +798,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('4 voices. 45-min cut: two. Collect every draft; the merge is this week\'s 30-minute job with a named owner.');
   }
 
-  // ============================== SLIDE 24 · INVENTORY ==============================
+  // ============================== SLIDE 29 · INVENTORY ==============================
   {
     const s = base();
     kicker(s, 'A different kind of inventory');
@@ -578,7 +811,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Let it land. This inventory is the school\'s, not any one classroom\'s.');
   }
 
-  // ============================== SLIDE 25 · HONEST LIMITS ==============================
+  // ============================== SLIDE 30 · HONEST LIMITS ==============================
   {
     const s = base();
     kicker(s, 'One last time, honestly');
@@ -591,7 +824,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The series has never oversold; don\'t start at the finish line. The leadership line is said to leadership, warmly and directly.');
   }
 
-  // ============================== SLIDE 26 · COMMITMENTS ==============================
+  // ============================== SLIDE 31 · COMMITMENTS ==============================
   {
     const s = base(true);
     s.addText('THE FINAL THREE COMMITMENTS', { x: 0.9, y: 1.1, w: 11.5, h: 0.5, fontFace: FONT, fontSize: 15, bold: true, color: AMBER, charSpacing: 3, margin: 0 });
@@ -611,7 +844,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Dark slide. The last nod of the series; let it be a little ceremonial.');
   }
 
-  // ============================== SLIDE 27 · WHERE THIS GOES ==============================
+  // ============================== SLIDE 32 · WHERE THIS GOES ==============================
   {
     const s = base();
     kicker(s, 'Track A complete · the library keeps growing');
@@ -632,7 +865,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The culture drafted today is what makes each future kit land in a week instead of a semester.');
   }
 
-  // ============================== SLIDE 28 · FIRST 48 ==============================
+  // ============================== SLIDE 33 · FIRST 48 ==============================
   {
     const s = base();
     kicker(s, 'Before Friday');
@@ -653,7 +886,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Hand the sheet out as you talk. Eight weeks of work deserves its moment; take it.');
   }
 
-  // ============================== SLIDE 29 · EXIT TICKET ==============================
+  // ============================== SLIDE 34 · EXIT TICKET ==============================
   {
     const s = base();
     kicker(s, 'The last one of Track A');
@@ -667,7 +900,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The worries steer what leadership protects first. Collect at the door; this ticket completes the certificate documentation.');
   }
 
-  // ============================== SLIDE 30 · CLOSE ==============================
+  // ============================== SLIDE 35 · CLOSE ==============================
   {
     const s = base(true);
     s.addText('Eight weeks ago, AI was a headline\nand a hallway worry.', {
@@ -685,5 +918,5 @@ const W = 13.33, H = 7.5;
 
   const out = path.resolve(__dirname, '../Kit08_PresentationDeck.pptx');
   await p.writeFile({ fileName: out });
-  console.log('wrote', out, '· 30 slides');
+  console.log('wrote', out, '· 35 slides');
 })();
