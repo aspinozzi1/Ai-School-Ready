@@ -366,9 +366,9 @@ const W = 13.33, H = 7.5;
       s.addText(t, { x: 2.15, y: y + 0.08, w: 10.2, h: 0.9, fontFace: FONT, fontSize: 16.5, color: INK, margin: 0, valign: 'middle' });
     });
     card(s, 0.7, 5.5, 12.0, 1.0, 'EAF5F3');
-    s.addText('The tool made the blank page cheap. The sentence that lands is still yours: that\'s the mechanism the research measured.', {
+    s.addText('The tool made the blank page cheap. The sentence that lands is still yours, and individualized messages are what the study actually tested.', {
       x: 1.05, y: 5.62, w: 11.3, h: 0.8, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addNotes('Say: this is Kraft & Rogers turned into five minutes a week: improvement-focused, individualized, personalized by you. The personalizing step is not optional; it\'s the mechanism. The lab takes one message start to finish, so the batch is homework: the prompt is on the handout, and it\'s Send 2 on the First 48 Hours sheet.');
+    s.addNotes('Say: this is Kraft & Rogers turned into five minutes a week: improvement-focused, individualized, personalized by you. Be precise if asked: the study tested a bundle, weekly individualized messages with improvement framing, and did not isolate personalization as the single active ingredient. Keep the personalizing step because it is part of what was tested, not because the research proved it is the one thing that works. The lab takes one message start to finish, so the batch is homework: the prompt is on the handout, and it\'s Send 2 on the First 48 Hours sheet.');
   }
 
   // ============================== SLIDE 12 · PRACTICE: DIAGNOSE ==============================

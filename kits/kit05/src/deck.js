@@ -181,7 +181,7 @@ const W = 13.33, H = 7.5;
     card(s, 6.85, 1.75, 5.75, 3.7, PAPER);
     s.addText('WHAT SCHOOLS HAVE TOLD THEM', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('Not much', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 44, bold: true, color: MUTED, align: 'center', margin: 0 });
-    s.addText('RAND finds student AI use at 54% while school guidance lags far behind adoption. Most students are guessing at the rules. (RAND, 2025)', {
+    s.addText('RAND finds student AI use at 54% while school guidance lags far behind adoption. Most students have had little explicit instruction or written guidance. (RAND, 2025)', {
       x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('The silence is the problem we can fix today.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
@@ -283,7 +283,7 @@ const W = 13.33, H = 7.5;
     s.addText('>50%', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: BAD, align: 'center', margin: 0 });
     s.addText('of real essays by non-native English speakers were misclassified as AI by commercial detectors. Native speakers: almost never. (Liang et al., Patterns, 2023)', {
       x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 15.5, color: INK, align: 'center', margin: 0 });
-    s.addText('A detector score is not evidence.', {
+    s.addText('A detector score alone is not evidence enough to accuse.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
     s.addNotes('Both stats verified. Land the equity point: think about which students get accused under detector policing. This slide sets up the session red line on the next slide.');
   }

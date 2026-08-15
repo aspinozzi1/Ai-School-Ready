@@ -182,7 +182,7 @@ const W = 13.33, H = 7.5;
     card(s, 6.85, 1.75, 5.75, 3.7, 'FBEFED');
     s.addText('BURNOUT, RANKED BY INDUSTRY', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: BAD, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('#1: K-12', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: BAD, align: 'center', margin: 0 });
-    s.addText('44% of K-12 workers, and 52% of teachers, feel burned out "always" or "very often": the highest of any U.S. industry, vs. 30% of all other workers. (Gallup, 2022)', {
+    s.addText('In Gallup\'s February 2022 workforce survey, 44% of K-12 workers and 52% of teachers reported feeling burned out "always" or "very often": the highest of the industries measured, against 30% of all other workers. (Gallup, 2022)', {
       x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
     s.addText('The pile is not a personal failing. It\'s the job\'s design flaw, and today we go after it.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });

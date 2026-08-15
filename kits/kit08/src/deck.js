@@ -205,15 +205,15 @@ const W = 13.33, H = 7.5;
     kicker(s, 'The honest threat');
     title(s, 'The fade risk');
     card(s, 0.7, 1.75, 5.75, 3.7, PAPER);
-    s.addText('WHAT THE PD RESEARCH SAYS', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
+    s.addText('WHAT MAKES PD STICK', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('It fades', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 44, bold: true, color: BAD, align: 'center', margin: 0 });
-    s.addText('Without sustained routines and collaboration, professional learning evaporates. Not from apathy: from October. (Darling-Hammond et al., 2017)', {
-      x: 1.0, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
+    s.addText('Across 35 rigorous studies, effective PD shares sustained duration, collaboration, active learning, and time to reflect. Our read: strip those out and it fades, not from apathy, from October. (Darling-Hammond et al., 2017)', {
+      x: 1.0, y: 3.35, w: 5.15, h: 2.0, fontFace: FONT, fontSize: 14.5, color: INK, align: 'center', margin: 0 });
     card(s, 6.85, 1.75, 5.75, 3.7, PAPER);
     s.addText('WHAT MOST SCHOOLS HAVE WRITTEN', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('Not much', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 44, bold: true, color: MUTED, align: 'center', margin: 0 });
-    s.addText('Adoption everywhere, guidance lagging; about 28 states have published guidance while most buildings still run on vibes. (RAND, 2025; AI for Education tracker)', {
-      x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
+    s.addText('45% of principals reported any school or district AI policy or guidance in 2025, against 53% teacher and 54% student use. 34 states and Puerto Rico have state-level guidance. (RAND, 2025; AI for Education tracker, checked Aug 2026)', {
+      x: 7.15, y: 3.35, w: 5.15, h: 2.0, fontFace: FONT, fontSize: 14, color: INK, align: 'center', margin: 0 });
     s.addText('You\'re one faculty meeting away from being the exception. This is that meeting.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
     s.addNotes('Both claims verified in earlier logs and reconfirmed. The closing line is the session\'s pitch; land it.');
