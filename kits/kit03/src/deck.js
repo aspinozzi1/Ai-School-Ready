@@ -87,10 +87,15 @@ const W = 13.33, H = 7.5;
   function title(s, txt, opts = {}) {
     // Chip-zone rule: Ms. Rivera's tracker chip owns x >= 9.55, so a titled
     // slide that carries a chip stops at 9.3 and long titles step down a size.
+    // A title long enough to wrap must also drop clear of the kicker: a
+    // middle-aligned two-line block grows upward into it (owner audit,
+    // 2026-08-14). Long titles step down a size, start lower, and top-align.
+    const longTitle = chipOn && txt.length > 29;
     s.addText(txt, Object.assign({
-      x: 0.6, y: 0.42, w: chipOn ? 8.7 : W - 1.2, h: 0.85, fontFace: FONT,
-      fontSize: chipOn && txt.length > 34 ? 28 : 32,
-      bold: true, color: NAVY, margin: 0, valign: 'middle',
+      x: 0.6, y: longTitle ? 0.50 : 0.42, w: chipOn ? 8.7 : W - 1.2,
+      h: longTitle ? 1.0 : 0.85, fontFace: FONT,
+      fontSize: longTitle ? 28 : 32,
+      bold: true, color: NAVY, margin: 0, valign: longTitle ? 'top' : 'middle',
     }, opts));
   }
   function kicker(s, txt, opts = {}) {
