@@ -296,7 +296,7 @@ const W = 13.33, H = 7.5;
     });
     s.addText('Options were always UDL’s cost problem. Generating options is the thing AI does fastest.\nAI generates the menu; you order for your class. (CAST UDL 3.0; Capp, 2017)', {
       x: 0.7, y: 5.1, w: 12.0, h: 1.0, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0, lineSpacingMultiple: 1.15 });
-    s.addNotes('CAST’s UDL Guidelines 3.0; Capp’s 2017 meta-analysis found UDL effective for improving learning across the board. If asked “is this learning styles?”: no; UDL builds flexible materials, it does not sort kids into types.');
+    s.addNotes('CAST’s UDL Guidelines 3.0; Capp’s 2017 meta-analysis found UDL effective for improving the learning PROCESS for all students, and said plainly that impact on educational outcomes had not been demonstrated. If someone asks whether UDL raises test scores, that is the honest answer: not shown yet. If asked “is this learning styles?”: no; UDL builds flexible materials, it does not sort kids into types.');
   }
 
   // ============================== SLIDE 9 · THE WORKFLOW ==============================

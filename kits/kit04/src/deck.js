@@ -215,23 +215,23 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 3 · THE PARADOX ==============================
   {
     const s = base();
-    kicker(s, 'High leverage, barely touched');
-    title(s, 'The most powerful lever, the least-tapped use', { w: 8.7, fontSize: 28 });
+    kicker(s, 'High leverage, and still new to most desks');
+    title(s, 'A powerful lever, newly delegable', { w: 8.7, fontSize: 28 });
     card(s, 0.7, 1.75, 5.75, 3.7, 'EAF5F3');
     s.addText('THE POWER OF FEEDBACK', { x: 0.7, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: TEAL, align: 'center', charSpacing: 2, margin: 0 });
     s.addText('0.79', { x: 0.7, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: TEAL, align: 'center', margin: 0 });
     s.addText('Feedback’s average effect size on student achievement. (Hattie & Timperley, 2007)', {
       x: 1.0, y: 3.35, w: 5.15, h: 0.75, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
-    s.addText('“Effect size” is how researchers put very different practices on one scale, so they can be compared. Most things schools try land near 0.40. Feedback runs about double that.', {
+    s.addText('“Effect size” is how researchers put very different practices on one scale, so they can be compared. Across the influences researchers have measured, the average is about 0.40. Feedback sits at roughly double that.', {
       x: 1.0, y: 4.15, w: 5.15, h: 1.15, fontFace: FONT, fontSize: 13, color: MUTED, align: 'center', margin: 0 });
     card(s, 6.85, 1.75, 5.75, 3.7, PAPER);
-    s.addText('HOW MANY TEACHERS TAP IT WITH AI', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 13, bold: true, color: MUTED, align: 'center', charSpacing: 2, margin: 0 });
-    s.addText('≤15%', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: MUTED, align: 'center', margin: 0 });
-    s.addText('Of teachers who already used AI in 2023–24, 15% or fewer used it for writing assessments: the least-tapped use, sitting under the highest-leverage work. (RAND, 2025)', {
-      x: 7.15, y: 3.4, w: 5.15, h: 1.9, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
-    s.addText('Feedback’s power varies with how it’s given. That skill is yours; the drafting is delegable.', {
-      x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: define the number before you use it. An effect size is just a way to compare practices that are otherwise hard to compare, on one scale. Across everything schools try, the average is around 0.40. Feedback comes in at 0.79, about double, which puts it among the most powerful things we do. Say the same review is clear the impact swings widely with how feedback is given. RAND: assessment writing is the least-tapped use among AI-using teachers. That gap is why this hour exists.');
+    s.addText('HOW MANY BROUGHT AI TO THE PLANNING WORK', { x: 6.85, y: 1.95, w: 5.75, h: 0.35, fontFace: FONT, fontSize: 12, bold: true, color: MUTED, align: 'center', charSpacing: 1.4, margin: 0 });
+    s.addText('1 in 5', { x: 6.85, y: 2.3, w: 5.75, h: 1.05, fontFace: FONT, fontSize: 52, bold: true, color: MUTED, align: 'center', margin: 0 });
+    s.addText('About one in five teachers used AI to plan their instruction at all in 2023–24. Among those who did, about a quarter used it to help assess students, most often to build assessments, quizzes, and rubrics. (RAND, 2025)', {
+      x: 7.15, y: 3.35, w: 5.15, h: 2.0, fontFace: FONT, fontSize: 15, color: INK, align: 'center', margin: 0 });
+    s.addText('Our stance: assessment drafting is worth delegating because the workload is real and your review stays explicit.', {
+      x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('Say: define the number before you use it. An effect size is just a way to compare practices that are otherwise hard to compare, on one scale. Across the influences researchers have measured the average is about 0.40, and feedback sits at 0.79, which puts it among the most powerful things we do. Say the same review is clear the impact swings widely with how feedback is given. On the RAND side, be precise: about one in five teachers used AI for instructional planning at all that year, and among those who did, roughly a quarter used it to help assess students. Assessment was in fact their second most common use after generating lesson materials. So this is not an untouched frontier; it is real work that most teachers have not yet brought AI to, and the point of the hour is doing it well rather than doing it first.');
   }
 
   // ============================== SLIDE 4 · AGENDA ==============================
@@ -280,8 +280,8 @@ const W = 13.33, H = 7.5;
     kicker(s, 'Evidence piece two');
     title(s, 'Rubrics aren’t paperwork');
     bullets(s, [
-      '2023 meta-analysis (Panadero et al.): rubric use has a positive, moderate effect on performance',
-      'Same finding for self-regulated learning and self-efficacy',
+      '2023 meta-analysis (Panadero et al.): rubric use has a moderate positive effect on academic performance',
+      'Smaller, less certain effects on self-regulated learning and self-efficacy',
       'When students can see the target, they aim at it, and start coaching themselves toward it',
     ], { y: 1.6, h: 2.7 });
     card(s, 0.7, 4.5, 12.0, 1.6, 'EAF5F3');

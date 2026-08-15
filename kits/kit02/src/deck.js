@@ -280,11 +280,11 @@ const W = 13.33, H = 7.5;
     title(s, 'Specific in, specific out');
     card(s, 0.7, 1.8, 12.0, 3.2, PAPER);
     s.addText('+50%', { x: 0.7, y: 2.2, w: 12.0, h: 1.4, fontFace: FONT, fontSize: 72, bold: true, color: TEAL, align: 'center', margin: 0 });
-    s.addText('Researchers testing structured, principled prompts against casual ones measured response-quality improvements of more than half on the strongest models. (Bsharat et al., 2024, preprint)', {
-      x: 1.4, y: 3.7, w: 10.5, h: 1.1, fontFace: FONT, fontSize: 16, color: INK, align: 'center', margin: 0 });
+    s.addText('On the benchmark its authors built, a set of 26 prompt-design principles raised GPT-4 response-quality scores by about 58%. One benchmark, not a universal rule, but the direction is clear. (Bsharat et al., 2024, preprint)', {
+      x: 1.4, y: 3.65, w: 10.5, h: 1.25, fontFace: FONT, fontSize: 15, color: INK, align: 'center', margin: 0 });
     s.addText('The formula is just a reliable way to be specific.', {
       x: 0.7, y: 5.5, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Benchmark study: 26 prompt-design principles improved GPT-4 response quality by 57.7% on average (accuracy by 36.4%). Labeled a preprint in the References. Keep it one beat; don’t oversell.');
+    s.addNotes('Benchmark study: 26 prompt-design principles improved GPT-4 response quality by 57.7% on average (accuracy by 36.4%) on the authors\' own ATLAS benchmark. Say the scope out loud: this is a benchmark result on one model family, not a measured effect for ordinary classroom prompting. Labeled a preprint in the References. Keep it one beat; don\'t oversell.');
   }
 
   // ============================== SLIDE 8 · WHAT PROMPTS CAN'T FIX ==============================

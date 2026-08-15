@@ -146,6 +146,15 @@ admins ("five teachers, one answer").
 
 ## Research
 Every citation verified against the live source before writing (existence AND claim).
+**Read the whole finding, not the headline number** (added 2026-08-15 after an external
+citation audit found three real errors). Two traps caught there: reporting a
+meta-analysis's strongest outcome as if it covered all its outcomes, and turning a
+benchmark result into a general effect. Check what a study measured, on whom, and what
+it says it did NOT establish; a paper's own stated limitation ships with its claim.
+**Match the verb to the evidence:** surveys "reported"; observational comparisons "were
+associated with" or "were lower"; experiments and meta-analyses carry effect language;
+and our own judgments say "we treat" or "our stance," never borrowing a researcher's
+voice. Any sentence that reads like a finding must be traceable to one.
 Each kit: 5–10 sources logged in `RESEARCH_LOG.md` with the exact figure used and where.
 Numbers appear with plain attributions in speech ("that's from RAND"), full APA in the
 References file. Claims that can't be sourced get softened to professional judgment or cut.
