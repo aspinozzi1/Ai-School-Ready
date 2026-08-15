@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Kit 5 Presentation Deck · AI & Academic Integrity: Setting Clear Expectations with Students
-   30 slides, locked AI-Ready School brand, speaker notes on every slide.
+   35 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit05/src/deck.js  → kits/kit05/Kit05_PresentationDeck.pptx */
 const pptxgen = require('pptxgenjs');
 const sharp = require('sharp');
@@ -44,8 +44,13 @@ const W = 13.33, H = 7.5;
     "Her never list: no confession-first, no score-only, never public.",
     "Her why: six values a false accusation breaks and clear rules build.",
     "Her lab pick, one assignment all the way through: next week's persuasive essay.",
-    "Her essay's lanes, on screen big: research 3, outline 2, final draft 1.", null, "Her essay's upgrade, on screen: outline due Thursday, worth ten points.",
+    "Her essay's lanes, on screen big: research 3, outline 2, final draft 1.",
+    "Her starting artifact, in full: the essay assignment, with no AI rules on it yet.",
+    null, null, null,
+    "Her essay's upgrade, on screen: outline due Thursday, worth ten points.",
     "Her essay plan's last piece, two sentences: written calm, filed for later.",
+    "Her finished AI Box: printed on Monday's assignment, in her students' words.",
+    "Her Disclosure block, come back filled in: twenty seconds to read, nothing to argue.",
     "Her share-out: her essay's AI Box, read aloud, in student words.",
     "Her inventory, one essay: lane, Box, one upgrade, two sentences.",
     "Her honesty: some will still cheat. Honest kids now know the rules.",
@@ -112,6 +117,34 @@ const W = 13.33, H = 7.5;
   function card(s, x, y, w, h, fill = PAPER, line) {
     s.addShape('roundRect', { x, y, w, h, rectRadius: 0.09, fill: { color: fill },
       line: line ? { color: line, width: 1 } : { color: fill } });
+  }
+  // The exemplar layout the owner approved (Kit 4 slide 9, Kit 3 slides 23–24):
+  // a full-width generic chat window, navy title bar with three dots, a paper
+  // inner card holding Ms. Rivera's actual prompt colour-coded by part, legend
+  // chips across the bottom. Prompts live here in labs and in workshops alike.
+  const RIVERA_LABEL = 'AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)';
+  function chatWin(s, y, h, extra) {
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
+    s.addShape('roundRect', { x: 0.7, y, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: y + 0.13, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText(RIVERA_LABEL + (extra || ''), {
+      x: 1.95, y, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+  }
+  // The paper card must always be WIDER than the text it holds, or the prompt
+  // prints across its edge (owner audit, 2026-08-14). Text sits at x 1.95 and
+  // runs 10.05 wide, ending at 12.0; the card runs to 12.25 so there is a real
+  // 0.25 margin on each side. Same geometry as the approved kit04 slide 9.
+  function chatPaper(s, y, h, inset = 1.0) {
+    s.addShape('roundRect', { x: 0.7 + inset, y: y + 0.65, w: 12.25 - (0.7 + inset), h: h - 0.9, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+  }
+  const PART_CHIPS = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+  const ROUND_CHIPS = [['PLAIN WORDS', TEAL], ['GRAY AREA', NAVY], ['SOFT LANDING', 'B07914'], ['LOOPHOLE TEST', GOOD]];
+  function legend(s, y, chips) {
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
   }
 
   // ============================== SLIDE 1 · TITLE ==============================
@@ -474,7 +507,7 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.95, y: y + 0.06, w: 0.55, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', margin: 0, valign: 'middle' });
       s.addText(r, { x: 1.75, y, w: 10.8, h: 0.7, fontFace: FONT, fontSize: 21, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Dark slide. Pairs formed inside two minutes. This lab is thinking and writing, not prompting; Wi-Fi optional. Protect every minute. Ms. Rivera builds ONE persuasive essay across all four steps; her exemplar appears large on every step slide, so anyone lost can copy her structure.');
+    s.addNotes('Say: nineteen minutes, one real assignment, four things to build. Dark slide. Pairs formed inside two minutes. This lab is thinking and writing, not prompting; Wi-Fi optional. Protect every minute. Ms. Rivera builds ONE persuasive essay across all four steps, and you see it through to completion: the assignment she starts with (slide 20), her Box being filled in (slide 21), the prompt she types to get the wording right (slide 22), her follow-ups and what each changed (slide 23), and the finished pair a student actually receives and returns (slides 26 and 27). Anyone lost can copy her structure.');
   }
 
   // ============================== SLIDE 19 · LAB STEP 1 ==============================
@@ -496,10 +529,37 @@ const W = 13.33, H = 7.5;
       { text: 'Final draft', options: { bold: true, color: NAVY } }, { text: '  \u2192  Lane 1\n\n', options: { color: INK } },
       { text: '"I\'m grading the argument, not the typing."', options: { italic: true, color: MUTED } },
     ], { x: 7.15, y: 2.35, w: 5.35, h: 3.5, fontFace: FONT, fontSize: 22, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
-    s.addNotes('3 minutes. Circulate. Rivera\'s essay is the running exemplar for the whole lab: three parts, three lanes, one defense sentence. The common stall is an assignment with parts in different lanes; the fix is naming a lane per part, exactly as her card shows.');
+    s.addNotes('Say: step one, three minutes, name the lane, and if the assignment has parts, name a lane per part. Circulate. Rivera\'s essay is the running exemplar for the whole lab: three parts, three lanes, one defense sentence. The common stall is an assignment with parts in different lanes; the fix is naming a lane per part, exactly as her card shows. The next slide is that assignment in full, so nobody has to imagine it.');
   }
 
-  // ============================== SLIDE 20 · LAB STEP 2 ==============================
+  // ============================== SLIDE 20 · HER STARTING ARTIFACT ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · Ms. Rivera\'s assignment as it stands today');
+    title(s, 'The assignment she starts with');
+    card(s, 0.7, 1.34, 12.0, 4.05, PAPER);
+    s.addShape('roundRect', { x: 0.7, y: 1.34, w: 0.12, h: 4.05, rectRadius: 0.05, fill: { color: TEAL }, line: { color: TEAL } });
+    s.addText('MS. RIVERA\'S CORE ARTIFACT · 7TH GRADE ELA · GOES OUT NEXT WEEK', {
+      x: 1.1, y: 1.48, w: 11.2, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('Persuasive Essay: "Should our school day start later?"', {
+      x: 1.1, y: 1.82, w: 11.2, h: 0.5, fontFace: FONT, fontSize: 25, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'The task\n', options: { bold: true, color: TEAL, fontSize: 14 } },
+      { text: 'Take a position and defend it in four paragraphs. Support it with at least three pieces of evidence, and answer one objection someone who disagrees with you would raise.\n\n', options: { color: INK, fontSize: 16.5 } },
+      { text: 'Sources\n', options: { bold: true, color: TEAL, fontSize: 14 } },
+      { text: 'Use the start-time survey we ran in class on Tuesday, one point a classmate made in that discussion, and at least two sources from outside the class packet.\n\n', options: { color: INK, fontSize: 16.5 } },
+      { text: 'Due\n', options: { bold: true, color: TEAL, fontSize: 14 } },
+      { text: 'Friday, typed, 500 to 700 words. Bring your notes to Thursday\'s conference.', options: { color: INK, fontSize: 16.5 } },
+    ], { x: 1.1, y: 2.35, w: 11.2, h: 2.95, fontFace: FONT, margin: 0, valign: 'top', lineSpacingMultiple: 1.12 });
+    card(s, 0.7, 5.48, 12.0, 0.98, 'FBEFED');
+    s.addText([
+      { text: 'WHAT IS MISSING   ', options: { bold: true, color: BAD, charSpacing: 1.2 } },
+      { text: 'Not one word about AI. A student reading this cannot tell whether asking a chatbot for a counterargument is smart preparation or a referral. That is the gap the next twelve minutes close.', options: { color: INK } },
+    ], { x: 1.05, y: 5.48, w: 11.3, h: 0.98, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'middle', lineSpacingMultiple: 1.1 });
+    s.addNotes('Say: this is the assignment Ms. Rivera is about to label, in full, so nobody has to imagine it. It is a good assignment already: clear task, local anchor, real deadline. Read the red strip out loud, because it is the honest state of most assignments in most buildings right now: everything is spelled out except the one thing half the class will do tonight. Keep this up while pairs get their own assignment in front of them.');
+  }
+
+  // ============================== SLIDE 21 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 6 minutes · the heart of the lab');
@@ -534,10 +594,66 @@ const W = 13.33, H = 7.5;
     ], { x: 5.8, y: 2.15, w: 6.65, h: 3.4, fontFace: FONT, fontSize: 17.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addText('The test: could a ninth grader read your box and know exactly what\'s okay tonight?', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: the school template on the left is the one from slide 11; the big card is Ms. Rivera\'s finished Box for her persuasive essay, the same essay from step 1. Mimic her box with your own assignment: at worst, copy its shape line for line. 6 minutes. Push for student language, not policy language. 45-min cut: check the lane boxes and fill the okay line only.');
+    s.addNotes('Say: the school template on the left is the one from slide 11; the big card is Ms. Rivera\'s Box for her persuasive essay, the same essay from step 1. Mimic her box with your own assignment: at worst, copy its shape line for line. 6 minutes. Push for student language, not policy language. The next two slides show how she got that wording: the prompt she typed, then every follow-up and what it changed. 45-min cut: check the lane boxes and fill the okay line only.');
   }
 
-  // ============================== SLIDE 21 · LAB STEP 3 ==============================
+  // ============================== SLIDE 22 · HER PROMPT ON SCREEN ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 2 · the prompt she types into the chat');
+    title(s, 'What she actually typed');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '"Write my AI policy for this essay."', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    chatWin(s, 1.95, 3.85);
+    chatPaper(s, 1.95, 3.85);
+    s.addText([
+      { text: '"You are a 7th grade ELA teacher writing for 12 year olds. ', options: { color: TEAL, bold: true } },
+      { text: 'Turn my three AI rules for next week\'s persuasive essay into the Okay line and the Not okay line of the AI Box that prints on the assignment. ', options: { color: NAVY, bold: true } },
+      { text: 'My rules: for research they can use AI to compare sources, for the outline they can use it to brainstorm and get feedback, and the final draft has to be their own sentences. My students ask me "is this cheating?" and I never want them to have to guess. ', options: { color: 'B07914', bold: true } },
+      { text: 'Two lines, under 25 words each, in words a 12 year old uses out loud. No policy language. Then list anything my rules still leave unclear."', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.05, PART_CHIPS);
+    s.addNotes('Say: the Box is hers, the rules are hers, and the wording is the part that used to take an evening. This is Kit 2\'s four-part formula aimed at her own policy language: role in teal, task in navy, context in amber, format in green. Two things to point at. The context part is where her three rules go in, unedited, which is why what comes back is her policy and not a generic one. And the last sentence of the format part, asking what the rules still leave unclear, is the honest move: it hands her the gray areas before a student finds them. AI drafts, the teacher decides; she rewrote the Not okay line herself.');
+  }
+
+  // ============================== SLIDE 23 · HER ITERATIONS ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 2 · her follow-ups, one chat, nothing re-pasted');
+    title(s, 'What she typed next, and what changed');
+    chatWin(s, 1.40, 4.55, ' · follow-ups');
+    chatPaper(s, 1.40, 4.55, 0.3);
+    s.addText('SHE TYPED NEXT', { x: 3.75, y: 2.12, w: 4.75, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('WHAT CHANGED', { x: 8.75, y: 2.12, w: 3.35, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    const iters = [
+      ['PLAIN WORDS', TEAL,
+        '"Cite responsibly" is not a 7th grade phrase. Say both lines the way my students say them.',
+        'Policy voice out, student voice in: "may utilize" became "you can ask."'],
+      ['GRAY AREA', NAVY,
+        '"They will ask about spellcheck and grammar tools. Answer that in one line, not a paragraph."',
+        'The Not okay line got specific: fixing grammar is fine, borrowed sentences are not.'],
+      ['SOFT LANDING', 'B07914',
+        '"Add what happens if something looks off. It has to sound like a conversation, not a courtroom."',
+        'The last line of the Box now promises a talk, so honesty stays cheaper than hiding.'],
+      ['LOOPHOLE TEST', GOOD,
+        '"Now read it back as a 7th grader hunting for a loophole. What would you try?"',
+        'It found two. She closed one in the Box and saved the other for Monday\'s class.'],
+    ];
+    iters.forEach(([badge, c, typed, changed], i) => {
+      const y = 2.40 + i * 0.82;
+      s.addShape('roundRect', { x: 1.35, y: y + 0.04, w: 1.85, h: 0.34, rectRadius: 0.17, fill: { color: c }, line: { color: c } });
+      s.addText(badge, { x: 1.35, y: y + 0.04, w: 1.85, h: 0.34, fontFace: FONT, fontSize: 10.5, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 1 });
+      s.addText(typed, { x: 3.45, y, w: 4.9, h: 0.76, fontFace: FONT, fontSize: 14, italic: true, color: NAVY, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+      s.addShape('rect', { x: 8.58, y: y + 0.06, w: 0.014, h: 0.64, fill: { color: 'DCE3EA' }, line: { color: 'DCE3EA' } });
+      s.addText(changed, { x: 8.75, y, w: 3.35, h: 0.76, fontFace: FONT, fontSize: 14, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+    });
+    legend(s, 6.15, ROUND_CHIPS);
+    s.addNotes('Say: four follow-ups, one chat, nothing re-pasted, and the whole thread ran about four minutes. Read the right-hand column out loud; that is what each follow-up actually bought her. Two of these are worth naming. The soft-landing round is the one that keeps the whole system working: a Box that ends in a threat teaches the class to hide. And the loophole test is a move any teacher can steal on any assignment: ask the tool to attack your own rules before a student does. She still typed the final wording herself.');
+  }
+
+  // ============================== SLIDE 24 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 4 · 6 minutes');
@@ -558,7 +674,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('6 minutes. One upgrade only. Rivera\'s pick is a visible-thinking checkpoint on the same essay. Weakest results come from bolting on a quiz; strongest from anchoring to the room and collecting the thinking.');
   }
 
-  // ============================== SLIDE 22 · LAB STEP 4 ==============================
+  // ============================== SLIDE 25 · LAB STEP 4 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 4 of 4 · 4 minutes · alone, quiet');
@@ -572,10 +688,91 @@ const W = 13.33, H = 7.5;
       x: 7.15, y: 2.4, w: 5.35, h: 1.9, fontFace: FONT, fontSize: 22, italic: true, color: NAVY, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
     s.addText('Write the sentences you\'d want said to your own child.', {
       x: 0.7, y: 4.95, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 21, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('4 minutes, quiet writing, alone. This is the step people thank you for later. The handout has a box for it. Rivera\'s sentences stay on screen as the model: curiosity first, no accusation anywhere.');
+    s.addNotes('Say: last step, four minutes, alone and quiet: write the first two sentences you will say when work feels wrong. This is the step people thank you for later. The handout has a box for it. Rivera\'s sentences stay on screen as the model: curiosity first, no accusation anywhere. When the writing winds down, the next two slides are her finished pair, the sheet that goes out and the block that comes back.');
   }
 
-  // ============================== SLIDE 23 · SHARE-OUT ==============================
+  // ============================== SLIDE 26 · THE FINISHED PRODUCT · HER AI BOX ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the finished product · her AI Box, word for word');
+    title(s, 'What prints on Monday\'s assignment');
+    card(s, 0.7, 1.3, 12.0, 0.6, NAVY);
+    s.addText([
+      { text: 'PERSUASIVE ESSAY  ·  "SHOULD OUR SCHOOL DAY START LATER?"  ·  ', options: { color: WHITE, bold: true } },
+      { text: 'DUE FRIDAY', options: { color: TEAL, bold: true } },
+    ], { x: 1.05, y: 1.3, w: 11.3, h: 0.6, fontFace: FONT, fontSize: 13, charSpacing: 0.8, margin: 0, valign: 'middle' });
+    card(s, 0.7, 2.0, 12.0, 3.92, PAPER, NAVY);
+    s.addText('AI BOX', { x: 1.1, y: 2.12, w: 3.0, h: 0.3, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 2, margin: 0, valign: 'middle' });
+    const lanes = [
+      ['Research', 2, '☐ 1 AI-free', '☐ 2 AI-assisted', '☒ 3 AI-included'],
+      ['Outline', 1, '☐ 1 AI-free', '☒ 2 AI-assisted', '☐ 3 AI-included'],
+      ['Final draft', 0, '☒ 1 AI-free', '☐ 2 AI-assisted', '☐ 3 AI-included'],
+    ];
+    lanes.forEach(([part, picked, a, b, c], i) => {
+      const y = 2.50 + i * 0.40;
+      s.addText(part + ':', { x: 1.1, y, w: 1.55, h: 0.34, fontFace: FONT, fontSize: 16, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+      [a, b, c].forEach((opt, j) => {
+        s.addText(opt, { x: 2.8 + j * 2.75, y, w: 2.6, h: 0.34, fontFace: FONT, fontSize: 16,
+          bold: picked === j, color: picked === j ? TEAL : MUTED, margin: 0, valign: 'middle' });
+      });
+    });
+    const boxLines = [
+      [3.74, 0.6, 'Okay:', 'Use AI to compare sources while you research, and to react to your outline. Fixing your spelling and grammar is fine.'],
+      [4.32, 0.5, 'Not okay:', 'Sentences you did not write. If the AI wrote it, it does not go in your final draft.'],
+      [4.84, 0.42, 'Disclosure:', 'Fill in the AI Disclosure block at the end of your essay. Every time.'],
+      [5.24, 0.58, 'If something seems off:', 'I\'ll ask you to walk me through your work. That\'s a conversation, not an accusation.'],
+    ];
+    boxLines.forEach(([y, h, label, body]) => {
+      s.addText([
+        { text: label + ' ', options: { bold: true, color: NAVY } },
+        { text: body, options: { color: INK } },
+      ], { x: 1.1, y, w: 11.2, h, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.08 });
+    });
+    card(s, 0.7, 6.02, 12.0, 0.66, 'EAF5F3');
+    s.addText([
+      { text: 'ALSO PRINTED ON IT   ', options: { bold: true, color: TEAL, charSpacing: 1.2 } },
+      { text: 'Outline due Thursday, worth 10 points, before drafting begins. Her one upgrade, on the page where students will actually meet it.', options: { color: INK } },
+    ], { x: 1.05, y: 6.02, w: 11.3, h: 0.66, fontFace: FONT, fontSize: 15, margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is the thing itself, not a description of it. Everything on this slide is printable as it stands, and it is what her students will hold on Monday. Walk the three lane rows first: research is lane 3, the outline is lane 2, the final draft is lane 1, which is the per-part answer from step 1 turned into checkboxes. Then read the Okay and Not okay lines out loud and let the room hear that there is not one policy word in either of them. Point at the last line: the Box ends with a promise of a conversation, which is the soft landing doing its job before anything has gone wrong. If a teacher only copies one screen from this hour, it is this one.');
+  }
+
+  // ============================== SLIDE 27 · THE FINISHED PRODUCT · HER DISCLOSURE BLOCK ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the finished product · the student\'s half, filled in');
+    title(s, 'The Disclosure block that comes back');
+    card(s, 0.7, 1.34, 6.55, 4.05, 'EAF5F3');
+    s.addText('AT THE END OF ONE ESSAY, HANDED IN FRIDAY', { x: 1.0, y: 1.5, w: 5.95, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: TEAL, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'AI DISCLOSURE ', options: { bold: true, color: NAVY, fontSize: 17 } },
+      { text: '(check all that apply)\n', options: { color: MUTED, fontSize: 13 } },
+      { text: '☐ No AI used\n', options: { color: MUTED, fontSize: 16 } },
+      { text: '☒ AI helped me brainstorm or outline\n', options: { color: NAVY, bold: true, fontSize: 16 } },
+      { text: '☒ AI gave me feedback on a draft\n', options: { color: NAVY, bold: true, fontSize: 16 } },
+      { text: '☐ AI drafted text that I revised\n', options: { color: MUTED, fontSize: 16 } },
+      { text: 'Tool I used: ', options: { bold: true, color: NAVY, fontSize: 15 } },
+      { text: 'a free AI chat site, on my phone\n', options: { color: INK, fontSize: 15 } },
+      { text: 'What I asked it to do: ', options: { bold: true, color: NAVY, fontSize: 15 } },
+      { text: '"what would someone who disagrees with me say," and whether my outline was missing anything', options: { color: INK, fontSize: 15 } },
+    ], { x: 1.0, y: 1.88, w: 5.95, h: 2.75, fontFace: FONT, margin: 0, valign: 'top', lineSpacingMultiple: 1.16 });
+    s.addText('No name line: the block travels at the end of the student\'s own work.', {
+      x: 1.0, y: 4.72, w: 5.95, h: 0.45, fontFace: FONT, fontSize: 13, italic: true, color: MUTED, margin: 0, valign: 'middle' });
+    card(s, 7.55, 1.34, 5.1, 4.05, PAPER);
+    s.addText('WHAT SHE DOES WITH IT · 20 SECONDS', { x: 7.85, y: 1.5, w: 4.5, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: NAVY, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText([
+      { text: 'Both checks sit inside lane 2, where the outline lives. Nothing to discuss. She grades the essay.\n\n', options: { color: INK } },
+      { text: 'The tool line tells her what her class is actually using, which beats any survey she could run.\n\n', options: { color: INK } },
+      { text: 'If box four were checked against the final draft, that is a coaching conversation, not a referral. Honesty gets a soft landing, every time.', options: { bold: true, color: NAVY } },
+    ], { x: 7.85, y: 1.9, w: 4.5, h: 3.3, fontFace: FONT, fontSize: 14.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.14 });
+    card(s, 0.7, 5.55, 12.0, 0.95, NAVY);
+    s.addText([
+      { text: 'The teacher\'s half prints on Monday. The student\'s half comes back on Friday.', options: { bold: true, color: TEAL, breakLine: true } },
+      { text: 'Same two blocks, every classroom, all year.', options: { color: WHITE } },
+    ], { x: 1.05, y: 5.55, w: 11.3, h: 0.95, fontFace: FONT, fontSize: 15, align: 'center', margin: 0, valign: 'middle', lineSpacingMultiple: 1.15 });
+    s.addNotes('Say: here is the other half of the system, filled in, exactly as it comes back at the end of a student\'s essay. Notice how little it costs anybody: four checkboxes and two short lines for the student, twenty seconds for the teacher. No names on it, because the block travels with the work. Read the right-hand card\'s last paragraph out loud, because it is the rule that keeps disclosure honest: a checked box is never the evidence in a case against a kid. This block is on your handout as a fixed template; do not let it drift into "write me two honest sentences," because thirty students will hand you thirty different things.');
+  }
+
+  // ============================== SLIDE 28 · SHARE-OUT ==============================
   {
     const s = base();
     kicker(s, 'Lab · share-out · 4 voices, 1 minute each');
@@ -588,7 +785,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('45-min cut: two voices. If a box is excellent, name it as the staff model on the spot.');
   }
 
-  // ============================== SLIDE 24 · WHAT YOU JUST BUILT ==============================
+  // ============================== SLIDE 29 · WHAT YOU JUST BUILT ==============================
   {
     const s = base();
     kicker(s, 'Nineteen minutes of work, on the record');
@@ -601,7 +798,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Let the inventory land. The consistency point is the school-level win.');
   }
 
-  // ============================== SLIDE 25 · HONEST LIMITS ==============================
+  // ============================== SLIDE 30 · HONEST LIMITS ==============================
   {
     const s = base();
     kicker(s, 'This series doesn\'t oversell');
@@ -615,7 +812,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The honest-limits slide every kit carries. End on the relationships line; it\'s the one they\'ll repeat.');
   }
 
-  // ============================== SLIDE 26 · THREE COMMITMENTS ==============================
+  // ============================== SLIDE 31 · THREE COMMITMENTS ==============================
   {
     const s = base(true);
     s.addText('OUR THREE COMMITMENTS', { x: 0.9, y: 1.1, w: 11.5, h: 0.5, fontFace: FONT, fontSize: 15, bold: true, color: AMBER, charSpacing: 3, margin: 0 });
@@ -635,7 +832,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Dark slide. Read all three, then the closing line. These commitments echo Kit 1\'s format on purpose.');
   }
 
-  // ============================== SLIDE 27 · WHERE THIS GOES ==============================
+  // ============================== SLIDE 32 · WHERE THIS GOES ==============================
   {
     const s = base();
     kicker(s, 'The 30-day plan, in one slide');
@@ -656,7 +853,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The Week 4 classroom agreement is where this takes root; flag it as the destination.');
   }
 
-  // ============================== SLIDE 28 · FIRST 48 HOURS ==============================
+  // ============================== SLIDE 33 · FIRST 48 HOURS ==============================
   {
     const s = base();
     kicker(s, 'Before Friday');
@@ -677,7 +874,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Hand the sheet out as you talk. Small actions; the difference between a PD hour and a changed school.');
   }
 
-  // ============================== SLIDE 29 · EXIT TICKET ==============================
+  // ============================== SLIDE 34 · EXIT TICKET ==============================
   {
     const s = base();
     kicker(s, 'Two minutes, at the door');
@@ -691,7 +888,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The gray-area answers set follow-up #2\'s calibration case. Collect at the door.');
   }
 
-  // ============================== SLIDE 30 · CLOSE ==============================
+  // ============================== SLIDE 35 · CLOSE ==============================
   {
     const s = base(true);
     s.addText('The schools that get this right won\'t be\nthe ones with the best detectors.', {
@@ -707,5 +904,5 @@ const W = 13.33, H = 7.5;
 
   const out = path.resolve(__dirname, '../Kit05_PresentationDeck.pptx');
   await p.writeFile({ fileName: out });
-  console.log('wrote', out, '· 30 slides');
+  console.log('wrote', out, '·', slideNo, 'slides');
 })();

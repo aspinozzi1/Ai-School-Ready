@@ -36,3 +36,50 @@ handout; (3) "design moves" de-jargonized to four plain assignment upgrades;
 Ms. Rivera's one persuasive essay tracked through every step, her artifact
 displayed large as primary slide content on steps 1-4. Rebuilt and visually
 verified after the pass.
+
+## Exemplar-layout upgrade (2026-08-15)
+
+Applied the owner-approved Kit 3 exemplar pattern to the deck (30 → 35
+slides), on the two rulings that teachers need to see a finished prompted
+product word for word, and that prompts belong in the full-width chat
+window with four-part colour coding and legend chips.
+
+- **New slide 20, her starting artifact in full:** Ms. Rivera's persuasive
+  essay assignment ("Should our school day start later?", 7th grade ELA) as
+  it stands today, with the strip that names what is missing: not one word
+  about AI.
+- **New slides 22 and 23, the chat-window treatment:** the prompt she types
+  to turn her three AI rules into the Box's Okay / Not okay lines in student
+  words (ROLE teal · TASK navy · CONTEXT #B07914 · FORMAT green, four legend
+  chips), then her four follow-ups as a labelled thread with what each one
+  changed (plain words · gray area · soft landing · loophole test). Chat
+  helpers copied verbatim from kits/kit03/src/deck.js, including the paper
+  card ending at x 12.25 against prompt text at x 1.95 w 10.05, so no prompt
+  prints across the card edge.
+- **New slides 26 and 27, the finished product shown, not described:** her
+  completed AI Box exactly as it prints on Monday's assignment (lane
+  checkboxes per part: research 3, outline 2, final draft 1; her Okay and
+  Not okay lines; the disclosure reminder; the conversation-not-accusation
+  line; her upgrade printed with it), and the fixed Disclosure block as it
+  comes back filled in at the end of a student's essay, beside what she does
+  with it in twenty seconds. No student name anywhere; the block travels
+  with the work.
+- Untouched by design: the three lanes, slide 11's two-template teaching,
+  the Disclosure block as a fixed checkbox template, per-part lanes, all
+  timings, step names, and teaching content.
+- Script kept in sync: cues renumbered 20 → 35, five new cues written with
+  stage directions and spoken blocks, segment headings and the 0:54 timing
+  checkpoint updated, every `.rivera-line` re-verified against the deck's
+  RIVERA array (35/35 match, with no line where the chip is suppressed).
+  Prep guide and script cover updated from "30 slides" to "35 slides".
+- Defects found and fixed in this pass: the navy assignment header and the
+  Box's closing line printed past their card edges on slide 26 (both
+  re-fitted); slide 27's footer strip wrapped mid-phrase (set as two
+  deliberate lines); slide 20's red strip sat tight against its card (card
+  deepened); and the script lacked kit 3's `.rivera-line + .stage` pagination
+  rule, which had split slide 19's cue from its first spoken block across a
+  page break (rule added, seam re-verified).
+- Verified: `check_overlap.py` clean on the rebuilt deck; every rebuilt PDF
+  page extracts text (script 13 pp, min 605 chars; prep guide 3 pp, min 1775);
+  cover rebuilt and re-merged; slides 18-28 and 29/35 inspected as rendered
+  PNGs; script pages 1-13 inspected for split blocks.
