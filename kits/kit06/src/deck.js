@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Kit 6 Presentation Deck · AI for Communication: Parent Messages and Tone
-   30 slides, locked AI-Ready School brand, speaker notes on every slide.
+   35 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit06/src/deck.js  → kits/kit06/Kit06_PresentationDeck.pptx */
 const pptxgen = require('pptxgenjs');
 const sharp = require('sharp');
@@ -44,10 +44,14 @@ const W = 13.33, H = 7.5;
     "Her human-only list: safety, discipline, grief, IEP news. She calls first.",
     "Her trust ledger: every reviewed, personal message is a deposit.",
     "Her lab plan: the Friday newsletter, from blank page to scheduled send.",
-    "Her newsletter, v1: all four parts in. Beige, and the slip is at the bottom.",
+    "Her raw material: five fragments on a sticky note, and twenty minutes.",
+    "Her starting point, in full: the Friday notes she has to turn into a newsletter.",
+    null, null,
     "Her newsletter, v2: it sounds like her now. The slip is still buried.",
+    null,
     "Her newsletter, v3: the permission-slip nag rewritten warm, plain, and guilt-free.",
-    "Her newsletter, final: action items on top, under 150 words, scheduled for Friday at 3:00.",
+    "Her newsletter, final: action items on top, plain words, scheduled for Friday at 3:00.",
+    "Her finished newsletter, word for word: what a family opens on Friday at 3:00.",
     "Her share-out: v1's opening read against the final. Same facts; now it's her.",
     "Her inventory: newsletter scheduled; batch prompt queued; 24-hour rule armed.",
     "Her honest limits: AI can't know the family or repair trust it didn't build.",
@@ -115,12 +119,39 @@ const W = 13.33, H = 7.5;
     s.addShape('roundRect', { x, y, w, h, rectRadius: 0.09, fill: { color: fill },
       line: line ? { color: line, width: 1 } : { color: fill } });
   }
-  // Lab exemplar: Ms. Rivera's message at its current stage, shown LARGE as primary content.
+  // ONE window treatment for every screen in this deck (reconciled with the
+  // approved kit03 pattern, 2026-08-15). msgWindow places it anywhere, at any
+  // size, for Ms. Rivera's message at its current stage, shown LARGE as primary
+  // content; chatWin is the full-width prompt variant with her standing label.
+  // Same navy title bar, same three dots, same grey label, same geometry.
   function msgWindow(s, x, y, w, h, label) {
     s.addShape('roundRect', { x, y, w, h, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
     s.addShape('roundRect', { x, y, w, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
-    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: x + 0.22 + i * 0.27, y: y + 0.13, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
-    s.addText(label, { x: x + 1.15, y, w: w - 1.3, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: x + 0.25 + i * 0.27, y: y + 0.13, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
+    s.addText(label, { x: x + 1.25, y, w: w - 1.4, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
+  }
+  // The exemplar layout the owner approved: a full-width generic chat window,
+  // navy title bar with three dots, a paper inner card holding Ms. Rivera's
+  // actual prompt colour-coded by part, legend chips across the bottom.
+  const RIVERA_LABEL = 'AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)';
+  function chatWin(s, y, h, extra) {
+    msgWindow(s, 0.7, y, 12.0, h, RIVERA_LABEL + (extra || ''));
+  }
+  // The paper card must always be WIDER than the text it holds, or the prompt
+  // prints across its edge (owner audit, 2026-08-14). Text sits at x 1.95 and
+  // runs 10.05 wide, ending at 12.0; the card runs to 12.25 so there is a real
+  // 0.25 margin on each side. Do not narrow the card without moving the text.
+  function chatPaper(s, y, h, inset = 1.0) {
+    s.addShape('roundRect', { x: 0.7 + inset, y: y + 0.65, w: 12.25 - (0.7 + inset), h: h - 0.9, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+  }
+  const PART_CHIPS = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
+  const REPAIR_CHIPS = [['VOICE PASS', TEAL], ['HARD SENTENCE', NAVY], ['ACTION ITEMS UP', 'B07914'], ['PLAIN & SHORT', GOOD]];
+  function legend(s, y, chips) {
+    chips.forEach(([t, c], i) => {
+      const x = 0.7 + i * 3.08;
+      s.addShape('roundRect', { x, y, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
   }
 
   // ============================== SLIDE 1 · TITLE ==============================
@@ -282,25 +313,16 @@ const W = 13.33, H = 7.5;
       { text: 'BEFORE   ', options: { bold: true, color: BAD } },
       { text: '"Write my newsletter."', options: { italic: true, color: MUTED } },
     ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
-    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 3.85, rectRadius: 0.1, fill: { color: WHITE }, line: { color: 'DCE3EA', width: 1.5 } });
-    s.addShape('roundRect', { x: 0.7, y: 1.95, w: 12.0, h: 0.42, rectRadius: 0.1, fill: { color: NAVY }, line: { color: NAVY } });
-    ['E8837A', AMBER, GOOD].forEach((c, i) => s.addShape('ellipse', { x: 0.95 + i * 0.27, y: 2.08, w: 0.16, h: 0.16, fill: { color: c }, line: { color: c } }));
-    s.addText('AI chat tool (any of them) · Ms. Rivera, our running example teacher (a composite, not a real person)', {
-      x: 1.95, y: 1.95, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 11, color: '9FB2C2', margin: 0, valign: 'middle' });
-    s.addShape('roundRect', { x: 1.7, y: 2.6, w: 10.55, h: 2.95, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    chatWin(s, 1.95, 3.85);
+    chatPaper(s, 1.95, 3.85);
     s.addText([
       { text: '"You are a warm, organized teacher. ', options: { color: TEAL, bold: true } },
       { text: 'Draft this week\'s family newsletter for my class. ', options: { color: NAVY, bold: true } },
       { text: 'Context: we finished our fractions unit, the science fair is Thursday at 6 p.m. in the gym, picture day is Friday, and the blue permission slip is due Wednesday. ', options: { color: 'B07914', bold: true } },
       { text: 'Format: under 150 words, warm but skimmable on a phone, action items as a short bulleted list, one positive line about the class\'s week."', options: { color: GOOD, bold: true } },
     ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
-    const chips = [['ROLE', TEAL], ['TASK', NAVY], ['CONTEXT', 'B07914'], ['FORMAT', GOOD]];
-    chips.forEach(([t, c], i) => {
-      const x = 0.7 + i * 3.08;
-      s.addShape('roundRect', { x, y: 6.05, w: 2.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
-      s.addText(t, { x, y: 6.05, w: 2.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
-    });
-    s.addNotes('Say: count the four color-coded parts with me: role in teal, task in navy, context in amber (look how much she gives it), format in green. Ninety seconds of typing; the draft comes back needing only her voice pass. This is the shape to mimic in lab step 1.');
+    legend(s, 6.05, PART_CHIPS);
+    s.addNotes('Say: count the four color-coded parts with me: role in teal, task in navy, context in amber (look how much she gives it), format in green. Ninety seconds of typing; the draft comes back needing only her voice pass. This is the shape to mimic in lab step 1, where she runs this same prompt on her own Friday notes (slide 21).');
   }
 
   // ============================== SLIDE 10 · MAKEOVER 2: THE DIFFICULT EMAIL ==============================
@@ -308,17 +330,22 @@ const W = 13.33, H = 7.5;
     const s = base();
     kicker(s, 'Makeover #2 · the email you shouldn\'t send');
     title(s, 'The difficult email');
-    card(s, 0.7, 1.6, 12.0, 1.5, 'FBEFED');
-    s.addText('WHAT SHE WANTED TO WRITE, 9 P.M.', { x: 1.0, y: 1.75, w: 8, h: 0.35, fontFace: FONT, fontSize: 11.5, bold: true, color: BAD, charSpacing: 1.5, margin: 0 });
-    s.addText('Honest in exactly the way careers end. The vent draft gets deleted, never sent.', {
-      x: 1.0, y: 2.12, w: 11.4, h: 0.85, fontFace: FONT, fontSize: 17, italic: true, color: INK, margin: 0 });
-    card(s, 0.7, 3.35, 12.0, 2.3, 'EAF5F3');
-    s.addText('WHAT SHE ASKED THE TOOL INSTEAD (NO NAMES)', { x: 1.0, y: 3.5, w: 9, h: 0.35, fontFace: FONT, fontSize: 11.5, bold: true, color: GOOD, charSpacing: 1.5, margin: 0 });
-    s.addText('"Draft a calm, professional reply to a frustrated parent who believes their child\'s grade is unfair. Acknowledge the frustration, explain that specifics belong in a conversation, offer two meeting times, under 120 words, firm and warm."', {
-      x: 1.0, y: 3.9, w: 11.4, h: 1.65, fontFace: FONT, fontSize: 17, italic: true, color: INK, margin: 0 });
-    s.addText('The tool absorbs the heat. The 24-hour rule handles the rest: written angry waits a day.', {
-      x: 0.7, y: 5.95, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: let the tool absorb the heat; the emotion comes out, the relationship stays intact. Specifics and names get added in her own email. The 24-hour rule needs no AI: it\'s wisdom with a timestamp.');
+    card(s, 0.7, 1.34, 12.0, 1.26, 'FBEFED');
+    s.addText('WHAT SHE WANTED TO WRITE, 9 P.M.', { x: 1.05, y: 1.42, w: 8, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: BAD, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Honest in exactly the way careers end. The vent draft gets deleted, never sent. ', options: { italic: true, color: INK, breakLine: true } },
+      { text: 'The 24-hour rule handles the rest: written angry waits a day, unless safety can\'t wait.', options: { italic: true, color: MUTED } },
+    ], { x: 1.05, y: 1.74, w: 11.3, h: 0.8, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.08 });
+    chatWin(s, 2.70, 3.35, ' · no names, no student details');
+    chatPaper(s, 2.70, 3.35);
+    s.addText([
+      { text: '"You are a calm, experienced teacher who has handled this conversation a hundred times. ', options: { color: TEAL, bold: true } },
+      { text: 'Draft a reply to a frustrated parent who believes their child\'s grade is unfair. ', options: { color: NAVY, bold: true } },
+      { text: 'The situation only, no names: I am not going to argue the grade over email, and I do want the meeting to happen. ', options: { color: 'B07914', bold: true } },
+      { text: 'Under 120 words. Acknowledge the frustration in the first line, say that specifics belong in a conversation, offer two meeting times, firm and warm."', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 3.47, w: 10.05, h: 2.2, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.18, PART_CHIPS);
+    s.addNotes('Say: makeover two is the email you shouldn\'t send, and the same four parts do the work: role in teal, task in navy, context in amber, format in green. Let the tool absorb the heat; the emotion comes out and the relationship stays intact. Read the amber part aloud, because it is the part that keeps her honest: the situation only, never the child, and specifics and names get added later in her own email. The 24-hour rule needs no AI: it\'s wisdom with a timestamp.');
   }
 
   // ============================== SLIDE 11 · MAKEOVER 3: THE NOTE BATCH ==============================
@@ -496,15 +523,87 @@ const W = 13.33, H = 7.5;
       { text: 'All four parts; be generous with context: what happened, what\'s coming, what to do and by when', options: { bullet: { color: TEAL }, breakLine: true, paraSpaceAfter: 10 } },
       { text: 'A beige first draft is normal. The next three steps make it yours.', options: { bullet: { color: TEAL }, bold: true } },
     ], { x: 0.7, y: 1.55, w: 4.5, h: 4.6, fontFace: FONT, fontSize: 17, color: INK, valign: 'top' });
-    msgWindow(s, 5.45, 1.55, 7.25, 4.85, 'Ms. Rivera\'s Friday newsletter · v1, straight from the slide 9 prompt');
-    s.addText('"Hello families! We had a wonderful week concluding our fractions unit. The students demonstrated excellent growth. The science fair will take place on Thursday at 6:00 p.m. in the gymnasium, and picture day is Friday. Please be advised that the blue permission slip is due Wednesday. Thank you for your continued support!"', {
-      x: 5.8, y: 2.2, w: 6.55, h: 3.0, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 });
-    s.addText('Close, but not her yet ("demonstrated excellent growth"), and the slip is the last line.', {
-      x: 5.8, y: 5.5, w: 6.55, h: 0.75, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, margin: 0, valign: 'top' });
-    s.addNotes('Say: draft the message you actually owe families, all four parts, generous context. On screen, Ms. Rivera\'s first draft: notice it\'s close and notice it isn\'t her yet, and the one thing families must act on sits in the last line. That\'s normal for a first draft. 6 minutes (45-min cut: 5). Circulate; weak drafts lack context.');
+    card(s, 5.45, 1.55, 7.25, 4.85, 'EAF5F3');
+    s.addText('MS. RIVERA\'S NEWSLETTER · STEP 1', { x: 5.8, y: 1.78, w: 6.6, h: 0.32, fontFace: FONT, fontSize: 12.5, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addText([
+      { text: 'Her pick: ', options: { bold: true, color: NAVY } },
+      { text: 'the Friday family newsletter, the one real message she owes families this week.\n\n', options: { color: INK } },
+      { text: 'What she is holding: ', options: { bold: true, color: NAVY } },
+      { text: 'five fragments on a sticky note. No sentences, no draft, twenty minutes before the buses.\n\n', options: { color: INK } },
+      { text: 'What she does: ', options: { bold: true, color: NAVY } },
+      { text: 'types the four-part prompt with those notes pasted in, and reads what comes back like an editor.\n\n', options: { color: INK } },
+      { text: '"The note is on the next slide. The prompt I type is the one after that."', options: { italic: true, color: MUTED } },
+    ], { x: 5.8, y: 2.22, w: 6.55, h: 4.0, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.18 });
+    s.addNotes('Say: draft the message you actually owe families, all four parts, generous context. The card on the right is Ms. Rivera\'s step 1: one artifact, her Friday newsletter, carried through every step of this lab. The next three slides are her whole step 1 in order, the notes she starts from, the prompt she types, and the draft that comes back, so anyone who feels lost can copy her structure exactly. 6 minutes (45-min cut: 5). Circulate; weak drafts lack context.');
   }
 
-  // ============================== SLIDE 20 · LAB STEP 2 ==============================
+  // ============================== SLIDE 20 · WHAT SHE STARTS FROM ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · Ms. Rivera\'s starting point');
+    title(s, 'What she starts from');
+    card(s, 0.7, 1.34, 12.0, 4.3, PAPER);
+    s.addShape('roundRect', { x: 0.7, y: 1.34, w: 0.12, h: 4.3, rectRadius: 0.05, fill: { color: TEAL }, line: { color: TEAL } });
+    s.addText('MS. RIVERA\'S RAW MATERIAL · FRIDAY, 2:40 P.M. · BEFORE ANY DRAFT EXISTS', {
+      x: 1.1, y: 1.5, w: 11.2, h: 0.3, fontFace: FONT, fontSize: 12, bold: true, color: TEAL, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('The sticky note on her monitor', {
+      x: 1.1, y: 1.85, w: 11.2, h: 0.5, fontFace: FONT, fontSize: 26, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    card(s, 1.1, 2.45, 7.3, 2.85, WHITE);
+    s.addText([
+      { text: 'fractions unit done · they finally got equivalent fractions\n', options: {} },
+      { text: 'sci fair THURS 6:00 gym · tell them to come\n', options: {} },
+      { text: 'picture day Fri\n', options: {} },
+      { text: 'blue slips !! still missing a bunch · due Weds\n', options: {} },
+      { text: 'say something nice, they worked hard', options: {} },
+    ], { x: 1.4, y: 2.6, w: 6.75, h: 2.55, fontFace: FONT, fontSize: 17, italic: true, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.45 });
+    s.addText('THE SITUATION', { x: 8.75, y: 2.6, w: 3.5, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText('Friday, 2:40 p.m. Buses in twenty minutes. The newsletter goes out at 3:00 and not one word of it is written.\n\nNo greeting, no order, no sentences. This is what the blank page actually looks like on a Friday afternoon.', {
+      x: 8.75, y: 2.95, w: 3.5, h: 2.35, fontFace: FONT, fontSize: 14.5, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 });
+    s.addText('Every fact in the finished message comes from this note. The tool supplies the shape; it never supplies the facts.', {
+      x: 0.7, y: 5.85, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is where she actually starts, so nobody has to imagine it. Five fragments on a sticky note, in her own shorthand, and twenty minutes. Read them aloud; the room will recognize their own Friday. Point at the bottom line, because it is the honest rule of this whole hour: every fact in the finished message came off this note. The tool never invented a date, a time, or a compliment. Keep this up while pairs write down their own raw material.');
+  }
+
+  // ============================== SLIDE 21 · THE PROMPT SHE TYPES ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · the prompt she types into the chat');
+    title(s, 'What she actually typed');
+    s.addText([
+      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
+      { text: '"Write my Friday newsletter."', options: { italic: true, color: MUTED } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
+    chatWin(s, 1.95, 3.85, ' · notes pasted in');
+    chatPaper(s, 1.95, 3.85);
+    s.addText([
+      { text: '"You are me: a warm, organized teacher writing to families I see every day. ', options: { color: TEAL, bold: true } },
+      { text: 'Turn the notes below into this week\'s family newsletter. ', options: { color: NAVY, bold: true } },
+      { text: 'We finished fractions and they worked hard at it. Science fair is Thursday at 6:00 in the gym, picture day is Friday, and the blue permission slip is due Wednesday with a lot of them still out. Nobody should feel scolded about the slip. ', options: { color: 'B07914', bold: true } },
+      { text: 'Under 150 words. Action items first, as a short list with dates, then one warm line about the week. Plain words, short sentences, easy to read on a phone. Sign it Ms. Rivera."  [paste sticky note]', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.75, w: 10.05, h: 2.7, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'top', lineSpacingMultiple: 1.1 });
+    legend(s, 6.05, PART_CHIPS);
+    s.addNotes('Say: this is the lab on one screen. It is the same four parts from slide 9, aimed at the sticky note you just read: role in teal, task in navy, context in amber, format in green. Two clauses are worth pointing at. In amber, "nobody should feel scolded about the slip" is the sentence that saves her the tone repair later. In green, "action items first" is what moves the permission slip off the bottom of the message. At worst, copy this shape with your own notes and you will finish the lab.');
+  }
+
+  // ============================== SLIDE 22 · THE DRAFT THAT CAME BACK ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · step 1 · what came back, four seconds later');
+    title(s, 'The draft the tool sent back');
+    chatWin(s, 1.35, 4.15, ' · draft 1, unedited');
+    chatPaper(s, 1.35, 4.15);
+    s.addText('MS. RIVERA\'S FRIDAY NEWSLETTER · V1, STRAIGHT BACK', {
+      x: 1.95, y: 2.08, w: 10.05, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('"Hello families! We had a wonderful week concluding our fractions unit. The students demonstrated excellent growth. The science fair will take place on Thursday at 6:00 p.m. in the gymnasium, and picture day is Friday. Please be advised that the blue permission slip is due Wednesday. Thank you for your continued support!"', {
+      x: 1.95, y: 2.5, w: 10.05, h: 2.6, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 });
+    s.addText('It is close. It is not her. And the one thing families must DO is the last line.', {
+      x: 0.7, y: 5.7, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, align: 'center', margin: 0, valign: 'middle' });
+    s.addText('Normal for a first draft. The next three steps are how it becomes hers.', {
+      x: 0.7, y: 6.3, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: four seconds later, this comes back, and every fact in it is right because every fact came off her note. Read it aloud in a flat voice; the room hears the beige. Then name the two problems out loud: "demonstrated excellent growth" and "please be advised" are nobody\'s sentences, and the permission slip, the one thing families must act on, is sitting in the last line. Nobody should be discouraged by a beige draft, including the people looking at their own screen right now. Steps 2 through 4 are the fix.');
+  }
+
+  // ============================== SLIDE 23 · LAB STEP 2 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 2 of 4 · 4 minutes');
@@ -514,15 +613,50 @@ const W = 13.33, H = 7.5;
       { text: 'Every sentence your mouth wouldn\'t say: retype it the way you\'d say it, or ask for warmer, shorter, plainer', options: { bullet: { color: TEAL }, breakLine: true, paraSpaceAfter: 10 } },
       { text: 'If it doesn\'t sound like you, it isn\'t done.', options: { bullet: { color: TEAL }, bold: true } },
     ], { x: 0.7, y: 1.55, w: 4.5, h: 4.6, fontFace: FONT, fontSize: 17, color: INK, valign: 'top' });
-    msgWindow(s, 5.45, 1.55, 7.25, 4.85, 'Ms. Rivera\'s Friday newsletter · v2, after the voice pass');
+    msgWindow(s, 5.45, 1.55, 7.25, 4.05, 'Ms. Rivera\'s Friday newsletter · v2, after the voice pass');
     s.addText('"Hi families, happy Friday! We wrapped up fractions this week, and I was proud of how your kids stuck with the tricky parts. The science fair is Thursday at 6 in the gym, and picture day is Friday. The blue permission slip is due Wednesday. See you Thursday!"', {
-      x: 5.8, y: 2.2, w: 6.55, h: 3.0, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 });
+      x: 5.8, y: 2.2, w: 6.55, h: 2.4, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 });
     s.addText('"Demonstrated excellent growth" became her own sentence. One thing is still wrong: the slip is still buried.', {
-      x: 5.8, y: 5.5, w: 6.55, h: 0.75, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, margin: 0, valign: 'top' });
-    s.addNotes('Say: read it aloud to your partner; every sentence your mouth wouldn\'t say gets retyped the way you\'d say it. On screen, the same newsletter, v2: it sounds like her now, and one thing is still wrong. 4 minutes. 45-min cut: fold step 4 in here (one read-aloud fixes voice and order together).');
+      x: 5.8, y: 4.6, w: 6.55, h: 0.75, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, margin: 0, valign: 'top' });
+    s.addNotes('Say: read it aloud to your partner; every sentence your mouth wouldn\'t say gets retyped the way you\'d say it. On screen, the same newsletter, v2: it sounds like her now, and one thing is still wrong. The next slide shows every follow-up she types from here and what each one buys her. 4 minutes. 45-min cut: fold step 4 in here (one read-aloud fixes voice and order together).');
   }
 
-  // ============================== SLIDE 21 · LAB STEP 3 ==============================
+  // ============================== SLIDE 24 · HER ITERATIONS ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · steps 2–4 · her follow-ups, one chat, nothing re-pasted');
+    title(s, 'What she typed next, and what changed');
+    chatWin(s, 1.40, 4.55, ' · follow-ups, same chat');
+    chatPaper(s, 1.40, 4.55, 0.3);
+    s.addText('SHE TYPED NEXT', { x: 3.75, y: 2.12, w: 4.75, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    s.addText('WHAT CHANGED', { x: 8.75, y: 2.12, w: 3.35, h: 0.24, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0, valign: 'middle' });
+    const iters = [
+      ['VOICE PASS', TEAL,
+        '"Rewrite it the way I would say it out loud, and lose \'demonstrated excellent growth.\'"',
+        'Beige became hers: "proud of how your kids stuck with it."'],
+      ['HARD SENTENCE', NAVY,
+        '"Rewrite the permission-slip line warm and guilt-free, ending with what to do and by when."',
+        'The nag became an invitation. Same deadline, no sting.'],
+      ['ACTION ITEMS UP', 'B07914',
+        '"Move everything families have to do to the top, as three bullets with dates."',
+        'A skimming parent sees all three in the first four lines.'],
+      ['PLAIN & SHORT', GOOD,
+        '"Plainer, and under 150 words. No school words: say science fair, not culminating event."',
+        'Throat-clearing gone. It fits on one phone screen.'],
+    ];
+    iters.forEach(([badge, c, typed, changed], i) => {
+      const y = 2.40 + i * 0.82;
+      s.addShape('roundRect', { x: 1.35, y: y + 0.04, w: 1.85, h: 0.34, rectRadius: 0.17, fill: { color: c }, line: { color: c } });
+      s.addText(badge, { x: 1.35, y: y + 0.04, w: 1.85, h: 0.34, fontFace: FONT, fontSize: 10, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 1 });
+      s.addText(typed, { x: 3.45, y, w: 4.95, h: 0.76, fontFace: FONT, fontSize: 14, italic: true, color: NAVY, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+      s.addShape('rect', { x: 8.58, y: y + 0.06, w: 0.014, h: 0.64, fill: { color: 'DCE3EA' }, line: { color: 'DCE3EA' } });
+      s.addText(changed, { x: 8.75, y, w: 3.35, h: 0.76, fontFace: FONT, fontSize: 14, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.05 });
+    });
+    legend(s, 6.15, REPAIR_CHIPS);
+    s.addNotes('Say: iteration is not failure, it is the work. Four follow-ups, one chat, nothing re-pasted, and each one is a move you already have: the voice pass, the hard sentence, the access pass, the plain-language check. Read the right-hand column out loud, because that column is what each follow-up actually bought her. Tell the room the honest timing: this whole thread ran in about six minutes, and they are doing the same thing on their own message right now.');
+  }
+
+  // ============================== SLIDE 25 · LAB STEP 3 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 3 of 4 · 4 minutes · the deep-practice step');
@@ -542,7 +676,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Say: find the sentence you\'ve been avoiding and rewrite it warm, plain, and guilt-free, ending with what to do and by when. Ms. Rivera\'s was the permission-slip line: same requirement, zero sting. If yours came out a little angry, this is where the 24-hour rule gets its workout. 4 minutes; protect this step. Circulate for the sentence people are avoiding.');
   }
 
-  // ============================== SLIDE 22 · LAB STEP 4 ==============================
+  // ============================== SLIDE 26 · LAB STEP 4 ==============================
   {
     const s = base();
     kicker(s, 'Lab · step 4 of 4 · 4 minutes');
@@ -553,18 +687,54 @@ const W = 13.33, H = 7.5;
       { text: 'Swap: your partner reads it as a tired parent on a phone at 9 p.m.', options: { bullet: { color: TEAL }, breakLine: true, paraSpaceAfter: 10 } },
       { text: 'Clean? Schedule the send: pick the day and time now.', options: { bullet: { color: TEAL }, bold: true } },
     ], { x: 0.7, y: 1.55, w: 4.5, h: 4.6, fontFace: FONT, fontSize: 17, color: INK, valign: 'top' });
-    msgWindow(s, 5.45, 1.55, 7.25, 4.85, 'Ms. Rivera\'s Friday newsletter · final, scheduled for Friday at 3:00');
-    s.addText([
-      { text: '"Hi families, happy Friday! Three quick things:\n', options: {} },
-      { text: '• Blue permission slip: back by Wednesday (need a copy? just reply)\n• Science fair: Thursday, 6:00, in the gym\n• Picture day: Friday\n', options: { bold: true } },
-      { text: 'We wrapped up fractions this week, and I was proud of how your kids stuck with the tricky parts. See you Thursday!"', options: {} },
-    ], { x: 5.8, y: 2.15, w: 6.55, h: 3.35, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.12 });
-    s.addText('Action items on top, under 150 words, sounds like her. Done means it sends.', {
-      x: 5.8, y: 5.6, w: 6.55, h: 0.65, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, margin: 0, valign: 'top' });
-    s.addNotes('Say: pull every action item to the top with dates, keep it plain and under about 150 words, then trade one last time: your partner reads it as a tired parent on a phone and flags anything unclear. When it comes back clean, schedule the send right now. 4 minutes. 45-min cut: folded into step 2.');
+    msgWindow(s, 5.45, 1.55, 7.25, 4.85, 'Ms. Rivera\'s Friday newsletter · what the access pass changed');
+    const passes = [
+      ['Action items to the top', 'Three bullets, slip first, each carrying its own date'],
+      ['Plain words', '"Culminating activity" became "science fair"'],
+      ['Her partner\'s one flag', '"Thursday at 6" now reads "Thursday, 6:00 p.m."'],
+    ];
+    passes.forEach(([h, b], i) => {
+      const y = 2.2 + i * 1.02;
+      s.addText('✓', { x: 5.8, y, w: 0.4, h: 0.4, fontFace: FONT, fontSize: 17, bold: true, color: GOOD, margin: 0, valign: 'middle' });
+      s.addText(h, { x: 6.3, y, w: 6.05, h: 0.4, fontFace: FONT, fontSize: 16.5, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+      s.addText(b, { x: 6.3, y: y + 0.4, w: 6.05, h: 0.55, fontFace: FONT, fontSize: 14.5, color: INK, margin: 0, valign: 'top' });
+    });
+    card(s, 5.8, 5.25, 6.55, 0.6, 'EAF5F3');
+    s.addText('Scheduled: Friday, 3:00 p.m.', { x: 5.8, y: 5.25, w: 6.55, h: 0.6, fontFace: FONT, fontSize: 16, bold: true, color: GOOD, align: 'center', margin: 0, valign: 'middle' });
+    s.addText('Done means it sends. The finished message is next, word for word.', {
+      x: 5.8, y: 5.92, w: 6.55, h: 0.4, fontFace: FONT, fontSize: 12.5, italic: true, color: MUTED, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: pull every action item to the top with dates, keep it plain and under about 150 words, then trade one last time: your partner reads it as a tired parent on a phone and flags anything unclear. When it comes back clean, schedule the send right now. On screen, the three things the access pass changed on Ms. Rivera\'s newsletter, including the one thing her partner caught: "Thursday at 6" could be read as morning. Then the next slide shows the message itself. 4 minutes. 45-min cut: folded into step 2.');
   }
 
-  // ============================== SLIDE 23 · SHARE-OUT ==============================
+  // ============================== SLIDE 27 · THE FINISHED MESSAGE, WORD FOR WORD ==============================
+  {
+    const s = base();
+    kicker(s, 'Lab · the finished product · word for word');
+    title(s, 'What a family opens on Friday');
+    msgWindow(s, 0.7, 1.28, 12.0, 4.75, 'Her sent message · reviewed, personalized, and signed before it left her outbox');
+    s.addText('FROM: MS. RIVERA  ·  TO: ROOM 12 FAMILIES  ·  SENT FRIDAY, 3:00 P.M.', {
+      x: 1.1, y: 1.8, w: 11.1, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.2, margin: 0, valign: 'middle' });
+    s.addText('Subject: This week in Room 12: three quick things', {
+      x: 1.1, y: 2.1, w: 11.1, h: 0.4, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    card(s, 1.0, 2.52, 11.4, 3.35, PAPER);
+    s.addText([
+      { text: 'Hi families, happy Friday!\n\n', options: { color: INK } },
+      { text: 'Three quick things:\n', options: { color: INK } },
+      { text: '•  Blue permission slip: back by Wednesday. Need a fresh copy? Just reply.\n', options: { bold: true, color: NAVY } },
+      { text: '•  Science fair: Thursday, 6:00 p.m., in the gym.\n', options: { bold: true, color: NAVY } },
+      { text: '•  Picture day: Friday.\n\n', options: { bold: true, color: NAVY } },
+      { text: 'We finished fractions this week, and I was proud of how your kids stuck with the tricky parts.\n\n', options: { color: INK } },
+      { text: 'See you Thursday,\nMs. Rivera', options: { color: INK } },
+    ], { x: 1.3, y: 2.64, w: 10.8, h: 3.15, fontFace: FONT, fontSize: 15, margin: 0, valign: 'top', lineSpacingMultiple: 1.12 });
+    card(s, 0.7, 6.18, 12.0, 0.62, NAVY);
+    s.addText([
+      { text: 'Eighteen minutes, one message.  ', options: { bold: true, color: TEAL } },
+      { text: 'Every fact came off her sticky note. The tool supplied the shape; she supplied the voice and read every word before it sent.', options: { color: WHITE } },
+    ], { x: 1.05, y: 6.18, w: 11.3, h: 0.62, fontFace: FONT, fontSize: 14, align: 'center', margin: 0, valign: 'middle' });
+    s.addNotes('Say: this is the thing itself, not a description of it, and it is what the whole hour was for. Read it aloud exactly as a family would read it on a phone. Then point at the three things that make it work: the action items are in the first four lines with their dates, the permission slip asks instead of scolds, and the warm sentence at the end is hers, not the tool\'s. Finally, read the strip at the bottom: every fact came off the sticky note on slide 20. That is the standard for every message anybody in this room sends.');
+  }
+
+  // ============================== SLIDE 28 · SHARE-OUT ==============================
   {
     const s = base();
     kicker(s, 'Lab · share-out · 3 voices, 1 minute each');
@@ -580,12 +750,12 @@ const W = 13.33, H = 7.5;
       x: 1.0, y: 4.48, w: 5.3, h: 1.65, fontFace: FONT, fontSize: 16, italic: true, color: INK, margin: 0, valign: 'top' });
     card(s, 6.85, 3.95, 5.9, 2.3, 'EAF5F3');
     s.addText('MS. RIVERA\'S AFTER', { x: 7.15, y: 4.12, w: 5.3, h: 0.32, fontFace: FONT, fontSize: 11.5, bold: true, color: GOOD, charSpacing: 1.5, margin: 0 });
-    s.addText('"Hi families, happy Friday! Three quick things: the slip, the science fair, picture day. And I was proud of your kids this week."', {
-      x: 7.15, y: 4.48, w: 5.3, h: 1.65, fontFace: FONT, fontSize: 16, italic: true, color: INK, margin: 0, valign: 'top' });
-    s.addNotes('3 voices, one minute each. 45-min cut: two voices. Same facts on both cards; the after is simply her. The voice diversity IS the lesson; name it.');
+    s.addText('"Hi families, happy Friday! Three quick things: blue permission slip back by Wednesday, science fair Thursday at 6:00, picture day Friday."', {
+      x: 7.15, y: 4.48, w: 5.3, h: 1.65, fontFace: FONT, fontSize: 15, italic: true, color: INK, margin: 0, valign: 'top' });
+    s.addNotes('3 voices, one minute each. 45-min cut: two voices. Same facts on both cards; the after is simply her, and it is the opening of the finished message on slide 27. The voice diversity IS the lesson; name it.');
   }
 
-  // ============================== SLIDE 24 · WHAT YOU JUST BUILT ==============================
+  // ============================== SLIDE 29 · WHAT YOU JUST BUILT ==============================
   {
     const s = base();
     kicker(s, 'Eighteen minutes of work, on the record');
@@ -598,7 +768,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Let the inventory land. The message on it actually sends this week; that\'s what separates this from PD that evaporates.');
   }
 
-  // ============================== SLIDE 25 · HONEST LIMITS ==============================
+  // ============================== SLIDE 30 · HONEST LIMITS ==============================
   {
     const s = base();
     kicker(s, 'This series doesn\'t oversell');
@@ -611,7 +781,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The honest-limits slide every kit carries. The middle bullet restates the red line as a limit, not a rule. End on the consistency line.');
   }
 
-  // ============================== SLIDE 26 · THREE COMMITMENTS ==============================
+  // ============================== SLIDE 31 · THREE COMMITMENTS ==============================
   {
     const s = base(true);
     s.addText('OUR THREE COMMITMENTS', { x: 0.9, y: 1.1, w: 11.5, h: 0.5, fontFace: FONT, fontSize: 15, bold: true, color: AMBER, charSpacing: 3, margin: 0 });
@@ -631,7 +801,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Dark slide. Read all three, ask for the visible nod, same ritual as every kit.');
   }
 
-  // ============================== SLIDE 27 · WHERE THIS GOES ==============================
+  // ============================== SLIDE 32 · WHERE THIS GOES ==============================
   {
     const s = base();
     kicker(s, 'The 30-day plan, in one slide');
@@ -652,7 +822,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('All inside existing PLC time. The makeover swap runs on the tone kit: warmer, shorter, plainer, read it aloud.');
   }
 
-  // ============================== SLIDE 28 · FIRST 48 HOURS ==============================
+  // ============================== SLIDE 33 · FIRST 48 HOURS ==============================
   {
     const s = base();
     kicker(s, 'Before Friday');
@@ -673,7 +843,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('Hand the sheet out as you talk. Three sends, and families actually feel this PD.');
   }
 
-  // ============================== SLIDE 29 · EXIT TICKET ==============================
+  // ============================== SLIDE 34 · EXIT TICKET ==============================
   {
     const s = base();
     kicker(s, 'Two minutes, at the door');
@@ -687,7 +857,7 @@ const W = 13.33, H = 7.5;
     s.addNotes('The "still want help with" answers set the follow-ups\' agenda. Collect at the door.');
   }
 
-  // ============================== SLIDE 30 · CLOSE ==============================
+  // ============================== SLIDE 35 · CLOSE ==============================
   {
     const s = base(true);
     s.addText('Nobody remembers a beige newsletter.\nNobody forgets the teacher who sent home\none true sentence about their kid.', {
@@ -703,5 +873,5 @@ const W = 13.33, H = 7.5;
 
   const out = path.resolve(__dirname, '../Kit06_PresentationDeck.pptx');
   await p.writeFile({ fileName: out });
-  console.log('wrote', out, '· 30 slides');
+  console.log('wrote', out, '· 35 slides');
 })();
