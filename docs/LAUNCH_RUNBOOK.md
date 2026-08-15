@@ -34,6 +34,29 @@ Phase 1 — parallel, owner is the critical path
       the owner caught the slide-23 chip overlap and the slides 19/20 lane
       contradiction). Kit 6's founders' note was reworded during its
       revision and needs an explicit read.
+- [x] OWNER AUDIT PASS (2026-08-14) — COMPLETE across all eight kits and
+      both TpT editions. Four findings, all closed:
+      (1) Overlapping text: one structural cause, titles and kickers running
+      into Ms. Rivera's tracker chip. Fixed in the deck helpers, not slide by
+      slide, so it cannot recur; long titles also step down a size and drop
+      clear of the kicker. kits/tooling/check_overlap.py now renders a deck
+      and reports colliding text, and is a required build step.
+      (2) Kit 1's participant handout split its starter-prompt set across a
+      page break, in both editions. Fixed.
+      (3) Kit 4 used a 0.79 effect size without saying what an effect size is.
+      Now defined on the slide, in the script, and on the admin one-pager.
+      (4) Labs and workshops now use the full-width color-coded prompt window,
+      and every lab ends by SHOWING its finished artifact word for word
+      rather than describing it. Deck sizes grew to 33-36 slides; every
+      facilitator script was renumbered to match and verified chip by chip.
+      Artifact per kit: Kit 1 the sent newsletter blurb, Kit 2 the saved
+      prompt template, Kit 3 the leveled passage plus stretch prompts and
+      stations, Kit 4 the rubric descriptors, bank question and starters,
+      Kit 5 the printed AI Box and returned Disclosure block, Kit 6 the sent
+      family message, Kit 7 both bracketed templates, Kit 8 the signed
+      culture page.
+      OWNER GATE: Kits 1-4 audited and passed 2026-08-14. Kits 5-8 built to
+      the same pattern and awaiting the owner's read.
 - [x] UNIVERSAL LAB-EXEMPLAR RETROFIT — COMPLETE 2026-08-12, all ten
       editions. Owner directive from the Kit 5 audit: Ms. Rivera follows one
       artifact through every lab step, shown large as primary slide content

@@ -115,6 +115,25 @@ newsletter, Kit 7 her week audit, Kit 8 her culture page. Kits 1 and 2
 carry the same artifact in their TpT editions. New kits build to this
 model from the start; there is nothing left to retrofit.
 
+**Show the finished product (owner rule, 2026-08-14, from the Kit 3 audit):**
+A lab that ends by DESCRIBING what Ms. Rivera built has not finished. The
+owner's words: "Teachers are going to want to see what a finalized prompted
+product will look like." The last lab slides show the artifact itself, word
+for word, at full size: the leveled passage, the sent message, the printed
+AI Box, the saved template, the signed culture page. Summary cards that
+characterize the work ("vocabulary box, five sentence starters") fail this
+rule; print the sentences instead. Every kit ends this way as of 2026-08-14.
+
+**The prompt window (owner rule, 2026-08-14):**
+Wherever Ms. Rivera types a prompt, in labs and in workshops alike, it appears
+in the full-width generic chat window with each part color-coded (ROLE teal ·
+TASK navy · CONTEXT dark amber #B07914 · FORMAT green) and the four legend
+chips beneath. Reference implementation: `kits/kit03/src/deck.js` helpers
+`chatWin` / `chatPaper` / `legend`. **The paper card must always be wider than
+the text it holds**: the card ends at x 12.25 while prompt text runs x 1.95
+w 10.05, ending at 12.0. The owner rejected a build whose prompts printed
+across the card's edge, so keep that quarter-inch margin on both sides.
+
 ## School-wide templates (owner rule, 2026-08-12)
 Any recurring fixture a kit asks teachers or students to produce (an AI
 disclosure at the bottom of assignments, an AI-expectation box printed on an
