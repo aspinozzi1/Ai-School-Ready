@@ -89,10 +89,10 @@ export const tracks: TrackMeta[] = [
         slug: "academic-integrity",
         title: "AI & Academic Integrity: Setting Clear Expectations with Students",
         summary:
-          "The session every faculty asks for. Why detection cannot save you, why the panic is misplaced, and the one change that makes an assignment worth doing again: ask for one thing AI cannot hand in. Teachers leave with their next assignment rebuilt.",
+          "The session every faculty asks for. Where the line sits between AI-assisted learning and cheating, how to set expectations students actually follow, and how to design assignments that make honest work the easy path.",
         objectives: [
-          "Rebuild one real assignment so AI cannot do it for a student",
-          "Say plainly on the assignment what AI use is allowed",
+          "Set clear, teachable AI-use expectations for students",
+          "Redesign one assignment to be resilient to AI shortcuts",
           "Handle suspected AI use without accusations you can't support",
         ],
         status: "released",
