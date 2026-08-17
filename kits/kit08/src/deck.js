@@ -252,7 +252,7 @@ const W = 13.33, H = 7.5;
     s.addText('Culture is what a new hire learns by watching, before anyone tells them anything.', {
       x: 1.1, y: 1.95, w: 11.2, h: 1.7, fontFace: FONT, fontSize: 25, bold: true, color: WHITE, margin: 0, valign: 'middle' });
     bullets(s, [
-      'They\'d see: prompts shared openly · drafts reviewed before shipping · lanes labeled · no student names near a chatbot',
+      'They\'d see: prompts shared openly · drafts reviewed before shipping · assignments saying what AI use is allowed · no student names near a chatbot',
       { text: 'If they\'d have to be told, you have a policy. Policies inform; cultures train.', options: { bold: true } },
     ], { y: 4.2, h: 1.9, fontSize: 20 });
     s.addNotes('Everything today aims at the watching version. This test returns in the lab and the triage practice.');
@@ -266,7 +266,7 @@ const W = 13.33, H = 7.5;
     const norms = [
       ['Privacy', 'No student information in public AI tools, ever', 'Kit 1'],
       ['Review', 'Nothing AI-drafted reaches a student or family unread', 'Kits 1–6'],
-      ['Honesty', 'We say what we use; assignments carry lane labels', 'Kit 5'],
+      ['Honesty', 'We say what we use; every assignment says what AI use is allowed', 'Kit 5'],
       ['Sharing', 'Working prompts go in the library; nobody solves twice', 'Kits 2, 7'],
       ['The protected list', 'The relational work stays human, by decision', 'Kit 7'],
     ];
@@ -442,7 +442,7 @@ const W = 13.33, H = 7.5;
     bullets(s, [
       'Every tool in every headline will change: interfaces, vendors, capabilities',
       'Notice what this series never depended on: a specific product',
-      { text: 'The rules, the formula, the review habit, the lanes, the protected list: all of it transfers to whatever arrives next. That\'s the design.', options: { bold: true } },
+      { text: 'The rules, the formula, the review habit, the one line on every assignment, the protected list: all of it transfers to whatever arrives next. That\'s the design.', options: { bold: true } },
     ], { y: 1.55, h: 2.9 });
     card(s, 0.7, 4.7, 12.0, 1.5, 'EAF5F3');
     s.addText('Cultures outlive tools. That\'s the whole reason to build one.', {
@@ -725,7 +725,7 @@ const W = 13.33, H = 7.5;
       { text: 'Review.  ', options: { bold: true, color: NAVY } },
       { text: 'Nothing an AI drafted reaches a student or a family until a teacher has read every word of it and fixed what is wrong. AI drafts, the teacher decides.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
       { text: 'Honesty.  ', options: { bold: true, color: NAVY } },
-      { text: 'We say what we use. Every assignment carries its lane label, and a note home that started as a draft is still signed by the person who sends it.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
+      { text: 'We say what we use. Every assignment says what AI use is allowed, and a note home that started as a draft is still signed by the person who sends it.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
       { text: 'Sharing.  ', options: { bold: true, color: NAVY } },
       { text: 'A prompt that works belongs to the building. It goes in the staff library the same week, with a name on it, so nobody solves the same problem twice.', options: { color: INK, breakLine: true, paraSpaceAfter: 6 } },
       { text: 'The protected list.  ', options: { bold: true, color: NAVY } },
@@ -768,7 +768,7 @@ const W = 13.33, H = 7.5;
     s.addText('4 · NEXT SEMESTER, ONE LINE PER MONTH', { x: 7.15, y: 1.44, w: 5.25, h: 0.3, fontFace: FONT, fontSize: 11, bold: true, color: GOOD, charSpacing: 1.2, margin: 0, valign: 'middle' });
     [['Jan', 'the norms page revisited, first faculty meeting'],
      ['Feb', 'Kit 2 refresher, 10 minutes: the four-part formula'],
-     ['Mar', 'Kit 5 refresher, 10 minutes: lane labels'],
+     ['Mar', 'Kit 5 refresher, 10 minutes: the one thing AI cannot hand in'],
      ['Apr', 'Kit 7 refresher, 10 minutes: the protected list'],
      ['May', 'Kit 4 refresher, 10 minutes: rubrics and question banks']].forEach(([m, txt], i) => {
       const y = 1.85 + i * 0.62;

@@ -89,10 +89,10 @@ export const tracks: TrackMeta[] = [
         slug: "academic-integrity",
         title: "AI & Academic Integrity: Setting Clear Expectations with Students",
         summary:
-          "The session every faculty asks for. Where the line sits between AI-assisted learning and cheating, how to set expectations students actually follow, and how to design assignments that make honest work the easy path.",
+          "The session every faculty asks for. Why detection cannot save you, why the panic is misplaced, and the one change that makes an assignment worth doing again: ask for one thing AI cannot hand in. Teachers leave with their next assignment rebuilt.",
         objectives: [
-          "Set clear, teachable AI-use expectations for students",
-          "Redesign one assignment to be resilient to AI shortcuts",
+          "Rebuild one real assignment so AI cannot do it for a student",
+          "Say plainly on the assignment what AI use is allowed",
           "Handle suspected AI use without accusations you can't support",
         ],
         status: "released",
@@ -102,11 +102,11 @@ export const tracks: TrackMeta[] = [
         slug: "ai-for-communication",
         title: "AI for Communication: Parent Messages and Tone",
         summary:
-          "Newsletters, difficult emails, and tone repair, with plain-language drafting, the review rule, and family privacy at the center.",
+          "The message before the message. AI carries the ordinary, specific, positive contact almost nobody sustains by hand, which is what earns a family's trust before you need it. The hard message you still write yourself, and this session teaches how.",
         objectives: [
-          "Draft family communication faster without losing your voice",
-          "Write plain-language messages every family can read, human-reviewed before sending",
-          "Keep every message personal, and deliver hard news by voice",
+          "Build a weekly routine that reaches families when nothing is wrong",
+          "Add the one true detail per child that proves someone was looking",
+          "Write the hard message yourself, and deliver hard news by voice",
         ],
         status: "released",
       },
