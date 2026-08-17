@@ -36,7 +36,7 @@ const W = 13.33, H = 7.5;
     "Her red line, adopted: no accusation on a detector score alone.",
     "Her framework: three lanes. AI-free, AI-assisted, AI-included.",
     "Her labels, ready to print: one line per lane, in student words.",
-    "Her system: the AI Box on the assignment, the Disclosure block at the end. Fixed, school-wide.",
+    "Her system: the AI Box on the assignment, the Disclosure block at the end. Her room first.",
     "Her calls: quiz lane 1, essay lane 2, research lane 3, homework = the upgrades.",
     "Her upgrades so far: collect the outline, anchor to Tuesday's class.",
     "Her other upgrades: a two-minute live defense; the process in the rubric.",
@@ -215,7 +215,7 @@ const W = 13.33, H = 7.5;
     title(s, 'Agenda, and one promise');
     const rows = [
       ['0:05', 'What\'s actually happening, and the two traps'],
-      ['0:12', 'The three lanes + the two school-wide boxes'],
+      ['0:12', 'The three lanes + the two ready-made boxes'],
       ['0:20', 'Assignment upgrades + the hard conversation'],
       ['0:30', 'Lab: the integrity plan for a real assignment'],
       ['0:49', 'Making it stick + first 48 hours'],
@@ -345,7 +345,7 @@ const W = 13.33, H = 7.5;
   // ============================== SLIDE 11 · ONE SYSTEM, TWO BOXES ==============================
   {
     const s = base();
-    kicker(s, 'Fixed templates, identical in every classroom');
+    kicker(s, 'Written out for you, so you never draft them');
     title(s, 'One system, two boxes', { w: 8.7 });
     card(s, 0.7, 1.6, 5.9, 4.45, PAPER);
     s.addText('THE AI BOX · PRINTS ON THE ASSIGNMENT (TEACHER\'S HALF)', { x: 1.0, y: 1.78, w: 5.4, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: TEAL, charSpacing: 1.2, margin: 0 });
@@ -371,9 +371,9 @@ const W = 13.33, H = 7.5;
       { text: 'What I asked it to do: ', options: { bold: true, color: NAVY } },
       { text: '____________', options: { color: INK } },
     ], { x: 7.15, y: 2.2, w: 5.35, h: 3.6, fontFace: FONT, fontSize: 16, margin: 0, valign: 'top', lineSpacingMultiple: 1.25 });
-    s.addText('Checkboxes beat "write two honest sentences": ten seconds to fill, identical in every room. And honesty gets a soft landing.', {
+    s.addText('Checkboxes beat "write two honest sentences": ten seconds to fill, ten to read. Try them on one assignment before anyone calls them policy.', {
       x: 0.7, y: 6.2, w: 12.0, h: 0.55, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Why fixed templates instead of free writing: ask thirty students for two honest sentences and you get thirty different things. Checkboxes make honesty the same size for everyone and identical building-wide. The soft landing is load-bearing: punish disclosure once and the whole class learns to hide. Say that sentence explicitly. Both templates are on the handout, copy-ready.');
+    s.addNotes('Why fixed templates instead of free writing: ask thirty students for two honest sentences and you get thirty different things. Checkboxes make honesty the same size for everyone. Be careful not to oversell this as policy: the ask today is one assignment in their own room, and wider adoption is a decision leadership makes later, if it ever does. The soft landing is load-bearing: punish disclosure once and the whole class learns to hide. Say that sentence explicitly. Both templates are on the handout, copy-ready.');
   }
 
   // ============================== SLIDE 12 · PRACTICE: CALL THE LANE ==============================
@@ -767,7 +767,7 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 5.55, 12.0, 0.95, NAVY);
     s.addText([
       { text: 'The teacher\'s half prints on Monday. The student\'s half comes back on Friday.', options: { bold: true, color: TEAL, breakLine: true } },
-      { text: 'Same two blocks, every classroom, all year.', options: { color: WHITE } },
+      { text: 'Start in your room this week. Wider adoption is a decision for later.', options: { color: WHITE } },
     ], { x: 1.05, y: 5.55, w: 11.3, h: 0.95, fontFace: FONT, fontSize: 15, align: 'center', margin: 0, valign: 'middle', lineSpacingMultiple: 1.15 });
     s.addNotes('Say: here is the other half of the system, filled in, exactly as it comes back at the end of a student\'s essay. Notice how little it costs anybody: four checkboxes and two short lines for the student, twenty seconds for the teacher. No names on it, because the block travels with the work. Read the right-hand card\'s last paragraph out loud, because it is the rule that keeps disclosure honest: a checked box is never the evidence in a case against a kid. This block is on your handout as a fixed template; do not let it drift into "write me two honest sentences," because thirty students will hand you thirty different things.');
   }

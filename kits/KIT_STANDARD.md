@@ -200,14 +200,19 @@ new collisions mean a hand-placed text box, not a helper.
 
 ## Single-sheet legal-line verification (added 2026-08-10, from the legal audit)
 
-Every single-sheet PDF (admin one-pager, exit ticket, First 48 Hours) must pass
-BOTH checks before shipping: (1) text extraction finds the sheet's required
-legal text, which is "not legal advice" on the one-pager and First 48 Hours and
-the "local credit" line on the exit ticket (the exit ticket is a student-free
-documentation sheet and carries the credit line, not the counsel line, per
-Legal fixtures above; flagged 2026-08-12 because this section previously read
-as requiring both on every sheet, which no kit has ever done); (2) a rendered
-PNG shows the full legal line above the footer band. Text can survive in the extraction layer while being
+Every single-sheet PDF must pass BOTH checks before shipping: (1) text
+extraction finds the sheet's required legal text, and (2) a rendered PNG shows
+that text in full above the footer band. Which text belongs on which sheet
+follows Legal fixtures above, and nothing more:
+  - **Admin one-pager**: "not legal advice" plus the district-counsel line.
+  - **Exit ticket**: the "local credit" line. It is a documentation sheet, not
+    a counsel sheet.
+  - **First 48 Hours**: no legal block is required. It is three timed actions
+    and makes no claim that needs one.
+Corrected 2026-08-15 and again 2026-08-17. This paragraph twice drifted into
+demanding lines the Legal fixtures rule never asked for, which sent a session
+hunting a nonexistent gap across seven kits. If this check and Legal fixtures
+ever disagree again, Legal fixtures is right. Text can survive in the extraction layer while being
 visually clipped. Never fix an overflow by removing the legal footer; trim
 marketing copy (lede, callouts, citation lists) instead.
 
