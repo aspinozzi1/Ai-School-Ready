@@ -17,6 +17,21 @@ it can act on, and continues. Sessions UPDATE THE STATUS BOARD in this file
     Credentials for this session: [see "Credentials by task" below for what
     the next task needs]
 
+## PIVOT, 2026-08-17: TpT only
+
+The owner has moved entirely to Teachers Pay Teachers. The direct-sales motion in this
+file is CANCELLED, not paused: Stripe live keys, Supabase Pro, the SSO cutover, the
+member site's prompt library / progress / certificate, school invoicing and PO handling,
+and the NJ principal outreach list. The code stays in the repo; none of it launches.
+
+Read **docs/TPT_LAUNCH.md** for the launch sequence and **docs/TPT_PROFITABILITY.md**
+for where the money comes from. Those two files are the live plan. What remains true in
+this runbook: the quality gates, the Swipe Test, the kit standard, and the brand rules.
+
+Entity note: the AI-Ready School LLC is no longer the owner's; it was repurposed for
+another of his businesses. The brand name is still used. Nothing in the kits claims an
+LLC, so no product edits are needed, but the TpT W-9 must NOT use the old EIN.
+
 ## Status board (sessions: keep this current)
 
 Phase 1 — parallel, owner is the critical path
