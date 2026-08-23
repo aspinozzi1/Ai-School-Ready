@@ -787,10 +787,10 @@ const W = 13.33, H = 7.5;
     });
     card(s, 0.7, 4.6, 12.0, 1.6, NAVY);
     s.addText([
-      { text: 'Finish all eight → the AI-Ready Educator Certificate of Completion (school membership).', options: { bold: true, color: WHITE } },
+      { text: 'All eight sessions are available in our TpT store, individually or bundled.', options: { bold: true, color: WHITE } },
       { text: '  Real documentation of real professional learning. Follow-ups run inside existing PLC time; nothing new to schedule.', options: { color: 'C9D4DE' } },
     ], { x: 1.05, y: 4.8, w: 11.3, h: 1.2, fontFace: FONT, fontSize: 18, margin: 0, valign: 'middle' });
-    s.addNotes('Next up is Kit 2, Prompting Basics: consistently useful results instead of occasionally lucky ones. Progress tracking and the certificate run through an AI-Ready School membership (ai-readyschool.com). Certificate language is exactly "Certificate of Completion"; check with your district whether it qualifies for local credit.');
+    s.addNotes('Next up is Kit 2, Prompting Basics: consistently useful results instead of occasionally lucky ones. The rest of the series is in our TpT store whenever this staff is ready. The exit ticket doubles as documentation of this hour; check with your district whether it qualifies for local credit.');
   }
 
   // ============================== SLIDE 30 · CLOSE ==============================

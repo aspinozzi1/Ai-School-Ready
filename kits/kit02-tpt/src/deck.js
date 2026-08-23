@@ -695,7 +695,7 @@ const W = 13.33, H = 7.5;
       { text: 'Next: Kit 3, Planning & Differentiation. ', options: { bold: true, color: WHITE } },
       { text: 'Your reusable prompt comes with you; the formula starts doing heavy lifting: leveled texts, scaffolds, materials for the range of learners actually in your room.', options: { color: 'C9D4DE' } },
     ], { x: 1.05, y: 4.8, w: 11.3, h: 1.2, fontFace: FONT, fontSize: 17, margin: 0, valign: 'middle' });
-    s.addNotes('With a school membership at ai-readyschool.com, completing all eight kits earns the AI-Ready Educator Certificate of Completion; check with your district or state whether it qualifies for local credit.');
+    s.addNotes('Say: the rest of the series is available whenever this staff is ready for it. The exit ticket doubles as documentation of this hour; check with your district or state whether it qualifies for local credit.');
   }
 
   // ============================== SLIDE 31 · FIRST 48 ==============================
