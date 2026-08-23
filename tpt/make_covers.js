@@ -10,6 +10,16 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'tpt/covers');
 
 const PRODUCTS = [
+  { file: 'kit1',                  badge: 'Complete PD Session',
+    kicker: 'AI professional development · session 1 of 8',
+    title: 'AI Foundations & Safety:', accent: 'The One Hard Rule',
+    lede: 'A ready-to-run 45-60 minute staff training any teacher-leader can present cold. Word-for-word script included.',
+    chips: ['34-slide editable deck', 'Full script', 'Handouts', '30-day plan'] },
+  { file: 'kit2',                  badge: 'Complete PD Session',
+    kicker: 'AI professional development · session 2 of 8',
+    title: 'Prompting Basics:', accent: 'Useful Results Every Time',
+    lede: 'The session every staff asks for. Teachers build a reusable prompt template for a task they do every week.',
+    chips: ['33-slide editable deck', 'Full script', 'Handouts', '30-day plan'] },
   { file: 'free-ten-prompts',      badge: 'Free',
     kicker: 'Free resource · grades K-12',
     title: '10 Copy-Paste AI Prompts', accent: 'for Teachers',

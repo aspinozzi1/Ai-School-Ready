@@ -127,8 +127,9 @@ whole-staff purchase happen, and a staff purchase is the actual business.
 - **File:** `02-paid/AI-Ready-School-Kit-01.zip` · **Cover:** `kit1-cover.png`
 - **Price:** $24 · **Additional licenses: $10** · **Grades:** Staff / PD
 - **Types:** Professional Development, Staff Meeting, Presentations
+- **Format:** ZIP (8 PDFs + editable PowerPoint)
 - **Title:** AI Professional Development for Teachers | Complete Staff PD Session | AI
-  Foundations & Safety with Script, Slides & Handouts
+  Foundations & Safety with Editable Slides, Script & Handouts
 - **Description:**
   > Run a complete, professional AI training for your staff THIS MONTH, with no
   > consultant and no prep marathon. This is Session 1 of the AI Foundations series:
@@ -136,11 +137,12 @@ whole-staff purchase happen, and a staff purchase is the actual business.
   > every educator must follow.
   >
   > Any confident teacher-leader can present it cold. The script is word for word, the
-  > 30-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab
+  > 34-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab
   > is a teaching gift rather than a failure.
   >
-  > INCLUDED (9 components): facilitator prep guide (15-minute read) · word-for-word
-  > script · 30-slide presentation deck · participant handout · first-48-hours action
+  > INCLUDED (9 files): facilitator prep guide (15-minute read) · word-for-word
+  > script · **34-slide PowerPoint deck, fully editable, with speaker notes on every
+  > slide** · participant handout · first-48-hours action
   > sheet · 30-day implementation plan with PLC follow-ups · exit ticket that doubles as
   > PD documentation · admin one-pager · full APA references with every statistic
   > verified against the live source.
@@ -151,15 +153,16 @@ whole-staff purchase happen, and a staff purchase is the actual business.
   > Built and audited by a husband-and-wife team of certified teachers with 20+ combined
   > years in classrooms.
 - **Tags:** ai professional development, ai pd, staff training, chatgpt for teachers,
-  ai safety, student privacy, ferpa, staff meeting, back to school, presentation
+  ai safety, student privacy, ferpa, staff meeting, back to school, editable powerpoint
 
 ## PAID 2 · Kit 2 — Prompting Basics · $24
 
 - **File:** `02-paid/AI-Ready-School-Kit-02.zip` · **Cover:** `kit2-cover.png`
 - **Price:** $24 · **Additional licenses: $10** · **Grades:** Staff / PD
 - **Types:** Professional Development, Staff Meeting, Presentations
+- **Format:** ZIP (8 PDFs + editable PowerPoint)
 - **Title:** ChatGPT & AI Prompting PD for Teachers | Complete Staff Training Session |
-  Prompt Writing Workshop with Script, Slides & Handouts
+  Editable Slides, Script & Handouts
 - **Description:**
   > The session every staff asks for: how to get consistently useful results from
   > ChatGPT, Claude, Gemini, or Copilot instead of occasionally lucky ones.
@@ -168,8 +171,9 @@ whole-staff purchase happen, and a staff purchase is the actual business.
   > a reusable prompt template for a task they do every week, in a hands-on lab with a
   > word-for-word facilitator script.
   >
-  > INCLUDED (9 components): facilitator prep guide · word-for-word script · 30-slide
-  > presentation deck · participant handout · first-48-hours action sheet · 30-day plan ·
+  > INCLUDED (9 files): facilitator prep guide · word-for-word script · **33-slide
+  > PowerPoint deck, fully editable, with speaker notes on every slide** · participant
+  > handout · first-48-hours action sheet · 30-day plan ·
   > exit ticket · admin one-pager · full APA references.
   >
   > RUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept
@@ -178,7 +182,7 @@ whole-staff purchase happen, and a staff purchase is the actual business.
   > Session 2 of the AI Foundations series. Pairs with Session 1 or runs on its own for
   > staff who know the basics. Built and audited by two certified teachers.
 - **Tags:** chatgpt for teachers, ai prompts, prompt engineering, teacher pd,
-  staff training, ai workshop, time savers, professional development, presentation
+  staff training, ai workshop, professional development, editable powerpoint
 
 ---
 
