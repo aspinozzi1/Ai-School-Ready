@@ -107,7 +107,7 @@ const insidePage = l => `<div class="page ink">
   <div class="inside-list" style="top:3.5in">
     ${l.previewInside.map(t => `<div class="item"><i>✓</i><span>${t}</span></div>`).join('')}
   </div>
-  <div class="license">Running it with your whole staff? Additional teacher licenses are a flat $10, and we accept purchase orders through TpT for Schools.</div>
+  <div class="license">Running it with your whole staff? Additional teacher licenses are just $${l.licenses}, and we accept purchase orders through TpT for Schools.</div>
   <div class="close-intern">${intern(150, 158)}</div>
   ${rainbow()}
 </div>`;

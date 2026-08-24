@@ -16,9 +16,9 @@ Read this top to bottom before producing anything.
    A series label is fine when the other items already exist in the store.
 4. **Provenance line stays**: "Built and audited by two certified teachers."
    It is true, and it is the trust signal that sells on TPT.
-5. **TPT-native monetization only**: $24 kits, $10 additional licenses,
-   $39 bundle, POs through TpT for Schools. All of it runs inside TPT with
-   zero owner effort.
+5. **TPT-native monetization only**: $24 kits, discounted additional
+   licenses, bundles, POs through TpT for Schools. All of it runs inside
+   TPT with zero owner effort.
 6. **W-9 is the owner's SSN** (individual), never the old LLC EIN.
 
 ## The brand (unchanged)
@@ -104,6 +104,14 @@ a slow season, never for the frees.
    - covers are 1000×1000 with the rainbow bar present (pixel-check the
      bottom rows — the headless renderer once silently dropped it);
    - listing titles are ≤80 characters;
+   - **no stale derived assets** — run `python3 kits/tooling/check_fresh.py`
+     from the repo root: every pinsrc render, preview PDF, thumbnail, and
+     drop zip must be newer than the product PDF it was made from (owner
+     caught a live listing showing a pre-fix preview, 2026-08-24 — fixing a
+     product PDF means rebuilding pinsrc renders → extras → previews →
+     drops, in that order, every time);
+   - additional-license price is about half the product price and never at
+     or above it;
    - no external URLs outside the References PDFs' citations.
 7. Mark the backlog item shipped (date), commit, push, and send the owner
    the drop zip with a two-line summary.
@@ -134,9 +142,11 @@ Every listing ships a sneak-peek preview (owner directive, 2026-08-24):
 real pages behind a SNEAK PEEK band, and a what's-inside close with the
 license line; free items get the cover plus up to two real pages; bundles
 skip it (TPT shows the component previews). The Video Preview slot and
-Education Standards are skipped by policy. Multiple Licenses is always $10
-on paid items. Tax Code: the standard digital
-download option in TPT's dropdown.
+Education Standards are skipped by policy. **Multiple Licenses is about
+half the product price, never at or above it** (owner correction
+2026-08-24: $10 on a $24 kit, $6 on $12, $4 on $8 — TPT rejects a license
+price above the product's). Tax Code: the standard digital download
+option in TPT's dropdown.
 
 ## The economics (why the calendar looks like this)
 
@@ -157,9 +167,9 @@ tail. The plan is built on five levers:
    (typically early Aug + late Feb) are the traffic spikes; **school PO
    season (Apr–Jun)** is when districts spend remaining budget — the big
    bundles exist for exactly that window.
-4. **The staff-purchase multiplier.** $10 additional licenses + POs via
-   TpT for Schools turn one $24 sale into a $100–300 order with zero
-   owner effort. Every paid listing keeps the whole-staff paragraph.
+4. **The staff-purchase multiplier.** Half-price additional licenses +
+   POs via TpT for Schools turn one $24 sale into a $100–300 order with
+   zero owner effort. Every paid listing keeps the whole-staff paragraph.
 5. **Optimize the winners.** Quarterly optimize weeks push the top sellers
    harder instead of diluting effort across weak new listings.
 

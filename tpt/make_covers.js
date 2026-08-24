@@ -87,7 +87,7 @@ const PRODUCTS = [
     title: 'AI or Teacher?', accent: 'Three Questions Decide',
     lede: 'The delegation poster: what AI drafts, what stays yours, and the two rules that keep every yes safe.',
     chips: ['Poster + guide', 'Decision flow', 'Print & post', 'Free'] },
-  { file: 'parent-messages',       badge: 'Teacher favorite',
+  { file: 'parent-messages',       badge: 'Template pack',
     kicker: 'AI time savers · family communication',
     title: 'Parent Message Makeovers:', accent: '12 Hard Emails, Drafted',
     lede: 'The twelve emails you rewrite four times at 9 p.m. — each with a safe, ready-to-run AI prompt and the tone formula that makes it land.',

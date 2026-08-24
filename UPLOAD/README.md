@@ -14,6 +14,14 @@ Current state:
   AI Setup Pack $8 (09), five new frees (10–14: AI Vocabulary · 10-Minute
   AI Habit · Don't Type That poster · Emergency Sub Plans · AI or
   Teacher? poster), and Parent Message Makeovers $12 (15).
+- **2026-08-24 corrections to the already-published BTS listing (09):**
+  the product PDF, preview, and both thumbnails were rebuilt after a
+  page-break fix (the family letter no longer splits across pages). On
+  the live listing, replace the Downloadable File, the Preview, and both
+  Thumbnails from the new drop-09 zip — and change Multiple Licenses
+  from $10 to **$4** (a license price must sit below the product price;
+  now about half price on every paid listing: $4 on $8, $6 on $12,
+  $10 on $24).
 
 The other folders are the raw pieces the drops are built from
 (via `node tpt/make_drops.js` reading `tpt/listings.json`):

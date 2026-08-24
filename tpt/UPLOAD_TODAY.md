@@ -12,7 +12,9 @@ AI-Ready School LLC EIN, which is now a different business.
 
 **Store name:** AI-Ready School
 
-**On every paid listing, set additional licenses to $10.** TpT defaults to 10% off, which
+**On every paid listing, set the additional-license price to about half the product price**
+($10 on a $24 kit, $4 on an $8 pack, $6 on a $12 pack — never at or above the product price).
+TpT defaults to 10% off, which
 on a $24 kit is $21.60 and no principal buys twenty of those. Ten dollars is what makes a
 whole-staff purchase happen, and a staff purchase is the actual business.
 
