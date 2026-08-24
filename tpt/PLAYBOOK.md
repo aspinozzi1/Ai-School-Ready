@@ -29,11 +29,11 @@ mascot, the three-layer loudness rule, rainbow bar on every cover.
 Canva masters live in the "Bright Scholar — TPT Brand" folder
 (see `tpt/canva/README.md` for design ids).
 
-## The weekly cycle (owner directive, 2026-08-24)
+## The weekly cycle (owner directive, 2026-08-24; expanded same day)
 
-Every **Monday** a production run builds a **collection**, not a single
-item:
+Every **Monday** a production run builds a **collection in two lanes**:
 
+**Lane 1 · Classroom (teachers & staff):**
 - **5 free resources** — the traffic engine. Each targets a real search
   teachers type, is genuinely useful on its own (print-and-go, 1–3
   pages), and funnels to the store's paid items with one store-internal
@@ -45,13 +45,33 @@ item:
   Shorts, full kits/kit retrofits, deep template packs, or a bundle
   assembled from existing listings.
 
-That's ~7–8 upload-ready products per Monday, every one built for
+**Lane 2 · Homeschool AI + Young Entrepreneurs (owner expansion,
+2026-08-24 — line launched same day, see Launch state):**
+- **2 free resources** targeting homeschool/family/kid-entrepreneur
+  searches, and
+- **1 paid product** ($8–12), alternating weekly between the Homeschool
+  AI and Young Entrepreneurs categories (or serving both).
+- Lane-2 design law, always: **the grown-up holds the keyboard** —
+  chatbots are 13+, AI coaches the parent, kids think and decide, child
+  identity never enters a prompt, anything online is adult-run.
+- Lane-2 backlog to draw from (intel brief refines each week):
+  ages-4–5 dedicated unplugged pack · co-op group editions · seasonal
+  venture packs (holiday craft fair, spring plant sale) · homeschool
+  record-keeping/portfolio pack · AI read-aloud & library companion ·
+  family AI literacy night kit · Launch It level 3 (12s nearing 13:
+  "almost-your-own-account" readiness) · homeschool co-op teaching packs.
+
+That's ~10–11 upload-ready products per Monday, every one built for
 maximum TPT SEO and sellability, every one through the full quality
-gates so the owner uploads with **zero editing**. Content is chosen by
-two filters: (a) what teachers need *right now* on the school calendar,
-and (b) trailblazer-niche positioning — AI-for-teachers angles nobody
-else covers yet, but phrased in the search terms teachers already use
-(sub plans, parent communication, report cards — plus "with AI").
+gates so the owner uploads with **zero editing**. More uploads is fine
+(owner, 2026-08-24); thin quality is not — if a week can't fill both
+lanes at standard, ship lane 1 complete and say so in the summary
+rather than shipping filler. Content is chosen by
+two filters: (a) what the audience needs *right now* on the school-year
+calendar, and (b) trailblazer-niche positioning — AI angles nobody
+else covers yet, phrased in the search terms buyers already use
+(sub plans, parent communication, homeschool curriculum, kids business —
+plus "with AI").
 
 Weekly batches are themed so the frees cross-sell that week's paid items.
 Recurring batch ingredients (fold into the weekly 5+1+2 rather than
@@ -194,7 +214,12 @@ competition, school budgets) rather than betting on any single item.
 
 ## Year-1 batch calendar (top pending row = next Monday)
 
-Each row is one Monday's collection: **5 frees + 1 mid + 1–2 high**.
+Each row is one Monday's **lane-1** collection: **5 frees + 1 mid +
+1–2 high**. Every week ALSO ships the lane-2 slice (2 frees + 1 paid
+from Homeschool AI / Young Entrepreneurs, alternating categories —
+pick from the lane-2 backlog above, seasonally adjusted by the intel
+brief: holiday ventures in Oct–Nov, new-semester homeschool planning in
+Dec–Jan, spring ventures Mar–May, summer homeschool prep Jun–Aug).
 The Theme column drives cross-sell: the week's frees funnel to the
 week's paid items. Free ideas are named for the next quarter and
 thematic after that — the producing session picks the 5 best-searchable
