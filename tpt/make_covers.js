@@ -1,30 +1,42 @@
 #!/usr/bin/env node
-/* TpT cover generator. 1000x1000 PNG per product, locked brand.
+/* TpT cover generator — Bright Scholar edition. 1000x1000 PNG per product.
    Build: node tpt/make_covers.js   -> tpt/covers/*.png
-   Matches the hand-built kit1/kit2/deid covers so the store reads as one set. */
-const { chromium } = require('playwright');
+   Layer 2 of the loudness system (tpt/BRAND_THEME.md): ink ground, Fredoka
+   display, sunny badge, rainbow bar, the intern bottom-right. Matches the
+   Canva cover templates (tpt/canva/covers.html) pixel for pixel.
+
+   Renders with the preinstalled headless chromium — no npm deps. Fonts come
+   from Google Fonts by default; set FONTS_CSS=/path/to/local/fonts.css to
+   render offline (URLs inside it must be resolvable from that directory). */
+const { execFileSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'tpt/covers');
+const CHROME = process.env.CHROME_BIN || '/opt/pw-browsers/chromium';
 
 const PRODUCTS = [
   { file: 'kit1',                  badge: 'Complete PD Session',
     kicker: 'AI professional development · session 1 of 8',
     title: 'AI Foundations & Safety:', accent: 'The One Hard Rule',
-    lede: 'A ready-to-run 45-60 minute staff training any teacher-leader can present cold. Word-for-word script included.',
+    lede: 'A ready-to-run 45–60 minute staff training any teacher-leader can present cold. Word-for-word script included.',
     chips: ['34-slide editable deck', 'Full script', 'Handouts', '30-day plan'] },
   { file: 'kit2',                  badge: 'Complete PD Session',
     kicker: 'AI professional development · session 2 of 8',
     title: 'Prompting Basics:', accent: 'Useful Results Every Time',
     lede: 'The session every staff asks for. Teachers build a reusable prompt template for a task they do every week.',
     chips: ['33-slide editable deck', 'Full script', 'Handouts', '30-day plan'] },
+  { file: 'deid',                  badge: 'Free',
+    kicker: 'Free resource · staff / PD',
+    title: 'AI Student Privacy Practice:', accent: '20 De-Identification Drills',
+    lede: 'Twenty before-and-after prompt makeovers that build the no-student-data habit in ten seconds a drill.',
+    chips: ['20 drills', 'Pocket checklist', 'FERPA-friendly', 'Free'] },
   { file: 'free-ten-prompts',      badge: 'Free',
-    kicker: 'Free resource · grades K-12',
+    kicker: 'Free resource · grades K–12',
     title: '10 Copy-Paste AI Prompts', accent: 'for Teachers',
     lede: 'Ten prompts that work on the first try, for the tasks that eat your evenings.',
-    chips: ['Print & go', 'No signup', '3 pages', 'K-12'] },
+    chips: ['Print & go', 'No signup', '3 pages', 'K–12'] },
   { file: 'free-one-hard-rule',    badge: 'Free',
     kicker: 'Free resource · staff room poster',
     title: 'The One Hard Rule', accent: 'AI & Student Privacy',
@@ -32,7 +44,7 @@ const PRODUCTS = [
     chips: ['1-page poster', 'Print & go', 'Staff room', 'Free'] },
   { file: 'free-tool-safety',      badge: 'Free',
     kicker: 'Free resource · for any AI tool',
-    title: 'AI Tool Safety Checklist', accent: 'Vet Any Tool in 5 Minutes',
+    title: 'AI Tool Safety Checklist:', accent: 'Vet Any Tool in 5 Minutes',
     lede: 'What to check before you or your students touch a new AI tool.',
     chips: ['Checklist', 'Privacy', '5 minutes', 'Free'] },
   { file: 'free-parents-ai',       badge: 'Free',
@@ -47,59 +59,69 @@ const PRODUCTS = [
     chips: ['Leadership', 'Planning', '1 page', 'Free'] },
 ];
 
-const NAVY = '#13293D', TEAL = '#2A9D8F', AMBER = '#F4A825', MIST = '#9FB2C2';
+const INTERN = fs.readFileSync(path.join(ROOT, 'public/brand/ai-buddy.svg'), 'utf8');
+const internAt = (w, h, stemColor) =>
+  INTERN.replace('<svg ', `<svg width="${w}" height="${h}" `)
+        .replace('<path d="M100 38V22" />', `<path d="M100 38V22" stroke="${stemColor}"/>`);
 
-function html(p, logo) {
+const FONTS = process.env.FONTS_CSS
+  ? `file://${path.resolve(process.env.FONTS_CSS)}`
+  : 'https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700;800&display=swap';
+
+function html(p) {
   return `<!doctype html><html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="${FONTS}" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{width:1000px;height:1000px;background:${NAVY};font-family:Inter,sans-serif;position:relative;overflow:hidden}
-  .top{display:flex;align-items:center;justify-content:space-between;padding:52px 56px 0}
-  .brand{display:flex;align-items:center;gap:14px}
-  .brand img{width:44px;height:40px}
-  .brand span{font-size:26px;font-weight:700;color:#fff}
-  .brand span b{color:${TEAL};font-weight:700}
-  .badge{background:${AMBER};color:${NAVY};font-weight:700;font-size:23px;padding:14px 30px;border-radius:34px}
-  .body{padding:78px 56px 0}
-  .kicker{color:${AMBER};font-weight:700;font-size:25px;letter-spacing:2.4px;text-transform:uppercase;line-height:1.35}
-  h1{font-size:78px;line-height:1.06;font-weight:800;color:#fff;margin-top:22px;letter-spacing:-1.5px}
-  h1 em{font-style:normal;color:${TEAL};display:block}
-  .lede{color:${MIST};font-size:31px;line-height:1.42;margin-top:30px;max-width:880px}
-  .chips{display:flex;gap:13px;flex-wrap:wrap;margin-top:40px}
-  .chip{border:2px solid #2A4A63;color:#fff;font-weight:600;font-size:22px;padding:14px 22px;border-radius:12px}
-  .foot{position:absolute;bottom:0;left:0;right:0;background:${TEAL};padding:30px 56px;display:flex;
-        align-items:center;justify-content:space-between}
-  .foot b{color:#fff;font-size:26px;font-weight:700}
-  .foot span{color:#EAF5F3;font-size:25px}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1000px; height: 1000px; background: #17293B; position: relative;
+         overflow: hidden; font-family: 'Nunito', sans-serif; }
+  .brand { position: absolute; left: 56px; top: 48px; display: flex; align-items: center; gap: 16px; }
+  .brand span { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 30px; color: #FFFDF8; }
+  .brand span b { color: #17BEBB; font-weight: 600; }
+  .badge { position: absolute; right: 56px; top: 48px; background: #FFC43D; color: #17293B;
+           font-weight: 800; font-size: 23px; padding: 15px 32px; border-radius: 34px; }
+  .body { position: absolute; left: 56px; top: 190px; width: 880px; }
+  .kicker { color: #FFC43D; font-weight: 800;
+            font-size: 24px; letter-spacing: 2.4px; text-transform: uppercase; }
+  h1 { margin-top: 26px; width: 880px; font-family: 'Fredoka', sans-serif;
+       font-weight: 600; font-size: 76px; line-height: 1.08; color: #FFFDF8; letter-spacing: -0.5px; }
+  h1 em { font-style: normal; color: #17BEBB; display: block; }
+  .lede { margin-top: 36px; width: 640px; color: #C9D6E2;
+          font-size: 29px; line-height: 1.42; font-weight: 400; }
+  .chips { margin-top: 44px; width: 660px; display: flex; gap: 13px; flex-wrap: wrap; }
+  .chip { border: 2px solid #3A5878; color: #FFFDF8; font-weight: 700; font-size: 22px;
+          padding: 14px 22px; border-radius: 12px; }
+  .intern { position: absolute; right: 44px; bottom: 53px; }
+  .foot { position: absolute; left: 56px; bottom: 52px; color: #FFFDF8; font-weight: 800; font-size: 25px; }
+  .foot span { color: #9FB2C2; font-weight: 700; margin-left: 18px; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 28px; display: flex; }
+  .bar i { flex: 1; }
+  .b1 { background: #E4572E; } .b2 { background: #FFC43D; } .b3 { background: #17BEBB; } .b4 { background: #2D6CB5; }
 </style></head><body>
-  <div class="top">
-    <div class="brand"><img src="${logo}"><span><b>AI-Ready</b> School</span></div>
-    <div class="badge">${p.badge}</div>
-  </div>
+  <div class="brand">${internAt(46, 48, '#FFFDF8')}<span><b>AI-Ready</b> School</span></div>
+  <div class="badge">${p.badge}</div>
   <div class="body">
     <div class="kicker">${p.kicker}</div>
     <h1>${p.title}<em>${p.accent}</em></h1>
     <div class="lede">${p.lede}</div>
     <div class="chips">${p.chips.map(c => `<div class="chip">${c}</div>`).join('')}</div>
   </div>
-  <div class="foot"><b>Built by two certified teachers</b><span>AI-Ready School</span></div>
+  <div class="intern">${internAt(210, 221, '#FFFDF8')}</div>
+  <div class="foot">Built by two certified teachers<span>·&nbsp;&nbsp;AI-Ready School</span></div>
+  <div class="bar"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
 </body></html>`;
 }
 
-(async () => {
-  fs.mkdirSync(OUT, { recursive: true });
-  const markPath = path.join(ROOT, 'public/brand/mark.svg');
-  const mark = fs.readFileSync(markPath).toString().replace(/#13293D/g, '#FFFFFF');
-  const logo = 'data:image/svg+xml;base64,' + Buffer.from(mark).toString('base64');
-
-  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
-  const page = await browser.newPage({ viewport: { width: 1000, height: 1000 } });
-  for (const p of PRODUCTS) {
-    await page.setContent(html(p, logo), { waitUntil: 'networkidle' });
-    const out = path.join(OUT, p.file + '-cover.png');
-    await page.screenshot({ path: out });
-    console.log('built', path.relative(ROOT, out));
-  }
-  await browser.close();
-})();
+fs.mkdirSync(OUT, { recursive: true });
+const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'covers-'));
+for (const p of PRODUCTS) {
+  const page = path.join(tmp, p.file + '.html');
+  fs.writeFileSync(page, html(p));
+  const out = path.join(OUT, p.file + '-cover.png');
+  execFileSync(CHROME, [
+    '--headless=new', '--no-sandbox', '--disable-gpu', '--hide-scrollbars',
+    '--force-device-scale-factor=1', '--window-size=1000,1000',
+    '--virtual-time-budget=8000', `--screenshot=${out}`, `file://${page}`,
+  ], { stdio: 'pipe' });
+  console.log('built', path.relative(ROOT, out));
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Describe the Need, Not the Child: 20 De-Identification Drills</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .drill { margin: 0 0 7pt; break-inside: avoid; }
+  .drill .num { font-weight: 700; color: var(--teal); font-size: 9.5pt; letter-spacing: 1px; text-transform: uppercase; }
+  .drill h3 { margin: 2pt 0 4pt; font-size: 11pt; }
+  .unsafe, .safe { border-radius: 8px; padding: 6pt 10pt; margin: 3pt 0; font-size: 9.5pt; }
+  .unsafe { background: #FBEDEB; border-left: 4px solid var(--error); }
+  .safe { background: #EAF5F3; border-left: 4px solid var(--success); }
+  .unsafe b { color: var(--error); font-size: 8.5pt; letter-spacing: 1.5px; }
+  .safe b { color: var(--success); font-size: 8.5pt; letter-spacing: 1.5px; }
+  .why { font-size: 8.5pt; color: var(--muted); margin: 2pt 0 0 2pt; }
+</style>
+</head>
+<body>
+
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Teacher Skill Builder<b>De-Identification Drills</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">A ten-second habit that keeps you safe with AI, practiced twenty times</div>
+    <h1>Describe the Need, Not the Child</h1>
+    <p class="lede">Twenty before-and-after prompt makeovers that train the one skill every
+    AI-using teacher needs: getting real help from AI without ever putting a student's identity
+    into it.</p>
+
+    <div class="callout rule">
+      <div class="rule-label">The One Hard Rule</div>
+      <div class="rule-text">Never put student personally identifiable information<br>into a public AI tool. <em>Not a name. Not a detail. Ever.</em></div>
+    </div>
+
+    <h2>How to use this booklet</h2>
+    <p>Each drill shows an unsafe prompt, the kind that gets typed in real classrooms every day.
+    <strong>Cover the green box, rewrite the prompt in your head, then compare.</strong> Do four
+    drills a day for a week, or all twenty with a coffee. By the last page the rewrite happens in
+    about ten seconds without thinking, which is the point: a habit, not a policy you have to
+    remember.</p>
+    <div class="cols">
+      <div class="card paper">
+        <h3 style="margin-top:0">The three moves</h3>
+        <ul style="margin-bottom:0">
+          <li><strong>Strip identity.</strong> Names, initials, IDs: out.</li>
+          <li><strong>Generalize.</strong> "A 7th grader," not which one.</li>
+          <li><strong>Describe the need.</strong> The reading level, the format, the goal: that's all AI ever needed.</li>
+        </ul>
+      </div>
+      <div class="card paper">
+        <h3 style="margin-top:0">The ten-second test</h3>
+        <p style="margin-bottom:0">Before you press enter, ask: <strong>could anyone who knows our
+        school tell who this is?</strong> If yes, keep rewriting. If no, go.</p>
+      </div>
+    </div>
+    <div class="callout teal"><strong>Every name in this booklet is fictional.</strong> The unsafe
+    examples exist so you can practice catching them; no real student appears anywhere in these
+    pages. That is also exactly how your own prompts should read when you're done.</div>
+
+    <h2>Part 1 · Family communication</h2>
+
+    <div class="drill">
+      <div class="num">Drill 1</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Write an email to Marcus Bell's mom about how he keeps disrupting my 3rd period science class."</div>
+      <p class="why">Full name, class period, and a behavior record: three identifiers in one sentence, plus a judgment now stored on someone else's server.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Write a warm, professional email to a parent about their middle schooler's repeated disruptions in class. Tone: concerned but partnership-focused, not punitive. Under 150 words. I will add the specifics myself."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 2</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Translate this note into Spanish for Valeria Cruz's parents: Valeria has been falling asleep in class and missed two homework assignments this week."</div>
+      <p class="why">The name rides into the translation along with attendance and performance details. Translation prompts leak identity constantly because the whole note goes in.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Translate this note into warm, natural Spanish for a family: 'Your child has seemed very tired in class this week and missed two assignments. I want to check in and make a plan together.' I will add the name after the translation comes back."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 3</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Draft a positive call-home script about Jaylen Okafor in 2nd grade, the one with the IEP for speech, who read aloud in front of the class for the first time today."</div>
+      <p class="why">A name plus an IEP status is the most protected combination there is. The good news doesn't need either.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Draft a short, joyful call-home script for an elementary student who overcame a personal challenge and read aloud in front of the class for the first time today. Leave a blank where I will say the specifics."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 4</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Help me respond to this angry email from Dana Whitfield's father about her grade on the essay. Here's his email: [pasted email with names and grade]."</div>
+      <p class="why">Pasting the parent's email puts the family's words, the student's name, and a grade into the tool at once. Paste-ins are where most accidental disclosure happens.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"A parent wrote an angry email disputing their high schooler's essay grade. Help me draft a calm, professional reply that stands by the rubric, offers a meeting, and lowers the temperature. I will summarize their three complaints for you myself: [your de-identified summary]."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 5</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Write a newsletter blurb congratulating Priya Raman for winning the district spelling bee."</div>
+      <p class="why">The trap: celebrations feel harmless. But a public AI tool is not your newsletter; the name goes in your final draft, not in the prompt.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Write a 60-word newsletter blurb congratulating one of our students for winning the district spelling bee. Use [STUDENT] where the name goes. Warm, proud, and readable on a phone."</div>
+    </div>
+
+    <h2>Part 2 · Planning and differentiation</h2>
+
+    <div class="drill">
+      <div class="num">Drill 6</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Make an easier version of this worksheet for Tommy Nguyen, my lowest reader in 4th grade."</div>
+      <p class="why">Names a child and labels him. The worksheet doesn't care who it's for; it cares about the reading level.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Rewrite this worksheet at roughly a 2nd grade reading level, keeping the same science vocabulary: [paste worksheet]. Shorter sentences, one instruction per line."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 7</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"I have a student, Aisha, newly arrived from Syria with very little English. Plan tomorrow's social studies lesson so she can participate."</div>
+      <p class="why">Name plus national origin plus language status identifies a real child, and a rare detail like "newly arrived from Syria" can identify her even without the name.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Plan supports for a middle school social studies lesson so a newcomer English learner at a beginning proficiency level can participate: visual supports, a sentence frame, and one low-language partner task. Topic: [topic]."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 8</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Here's my class roster with reading scores. Group them into leveled centers: [pasted roster]."</div>
+      <p class="why">A roster with scores is a full data breach in one paste, twenty-some children at once. The grouping logic is the reusable part; the names never needed to leave your gradebook.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"I have 24 students at three rough reading levels: 6 below, 13 on, 5 above. Design a 4-center rotation for a 45-minute literacy block where each level gets one targeted center and the rest are mixed. I will assign the actual kids myself."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 9</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Adapt this lab for Chris Delgado, who's in a wheelchair and can't reach the standard lab bench."</div>
+      <p class="why">A physical description narrows to one child in the building. The accommodation is what matters, and it generalizes cleanly.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Adapt this chemistry lab so every station can be run while seated, with all materials reachable from a lower work surface: [paste lab]. Keep the same learning objective and data table."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 10</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Suggest enrichment for Mia K., my gifted 2nd grader who finished the whole math unit in two days."</div>
+      <p class="why">Initials do not anonymize. In a class of 22, "Mia K." is one child, and everyone at school knows which one.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Suggest three enrichment paths for an early-elementary student who has already mastered a place-value unit and needs depth, not more pages: one project, one puzzle track, one peer-teaching role."</div>
+    </div>
+
+    <h2>Part 3 · Notes, documentation, and behavior</h2>
+
+    <div class="drill">
+      <div class="num">Drill 11</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Clean up my incident notes: Deshawn shoved Ryan P. at recess after an argument about the game, second incident this month."</div>
+      <p class="why">Two named children and a discipline history. Incident documentation belongs in your district system, never in a public tool.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Turn rough notes into one calm, factual paragraph for an incident report. Style: objective, no speculation about motive, times and actions only. My notes with names removed: 'Student A shoved Student B at recess after a game dispute.' I will restore identities inside our district system."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 12</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Summarize Leo Martinez's IEP goals so I can share them with his elective teachers: [pasted IEP excerpt]."</div>
+      <p class="why">An IEP is among the most protected documents in the building. Pasting any part of it into a public tool is the exact scenario the One Hard Rule exists for.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>Don't rewrite this one; retype it. Ask AI only for the container: "Give me a one-page template for summarizing a student's learning goals and accommodations for elective teachers: sections, plain-language headers, a what-helps / what-hinders table." Then fill it in yourself, inside your district system.</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 13</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Write progress-report comments for these five kids: Ava (great effort, weak fractions), Ben (talks too much), Carmen (improved a lot), Dev (missing work), Ella (quiet, strong writer)."</div>
+      <p class="why">A batch of names with judgments attached is a gradebook page in prompt form.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Give me five reusable progress-report comment frames: strong effort with a specific skill gap; social chattiness affecting focus; marked improvement; missing-work pattern; quiet student with a standout strength. Kind, specific, growth-framed, two sentences each. I will personalize each one myself."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 14</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"How should I handle a meeting with Mr. and Mrs. Kowalski? Their daughter Sofia has been self-harming and the counselor and I are meeting them Friday."</div>
+      <p class="why">Health information is the hardest red line there is. This conversation belongs with your counselor and administrator, full stop.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Outline a compassionate structure for a difficult parent meeting about a sensitive student wellbeing concern, led jointly with a school counselor: how to open, how to listen, what commitments to make, how to close with a plan. No details about any student; I need the structure only."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 15</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Draft an email to my principal explaining why Jordan T. should be moved out of my homeroom."</div>
+      <p class="why">Initials again, plus a placement judgment that will follow a real child. Internal personnel-style requests stay internal.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Draft a professional email to an administrator requesting a student schedule change. Structure: the pattern I have documented, the interventions already tried, why a fresh placement serves the student. Neutral tone, no blame. I will add all specifics in our system."</div>
+    </div>
+
+    <h2>Part 4 · The sneaky ones</h2>
+    <p class="small" style="margin-top:-2pt">No names in any of these. All five still fail the ten-second test. This is the page that makes the habit real.</p>
+
+    <div class="drill">
+      <div class="num">Drill 16</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Write a get-well card message from the class to our student who broke both legs in the car accident on Route 9 last weekend."</div>
+      <p class="why">No name needed: the event identifies the child to anyone in town. Rare, public details are identifiers.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Write a warm get-well message from an elementary class to a classmate recovering from an injury. Cheerful, not medical, 60 words, room for every student to sign."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 17</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"My only 8th grade student with a nut allergy is going on the DC trip. Draft the note the chaperones need."</div>
+      <p class="why">"My only" turns a category into a person. Small-group plus rare condition equals identified.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Draft a chaperone information sheet for managing a student's severe food allergy on an overnight trip: meal checks, epinephrine location and handoff, emergency steps, contact tree. Generic template; our nurse will attach specifics through the proper channel."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 18</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"One of my juniors just told me she's pregnant and scared to tell her parents. What resources should I suggest in our next conversation?"</div>
+      <p class="why">Even anonymous, this puts a student's confided crisis into a commercial tool, and in a small school the details narrow fast. Confidences go to counselors, not chatbots.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"What is a teacher's appropriate role when a student shares a serious personal disclosure: what to say in the moment, what must be referred to counselors, and what boundaries protect both student and teacher? General professional guidance only."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 19</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Analyze this photo of my students' lab groups and suggest better seating: [uploaded class photo]."</div>
+      <p class="why">Faces are PII. Uploading student photos to a public tool is the rule broken with one tap, no typing required.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"Suggest three seating arrangements for a lab class of 28 with six 4-person benches: one optimized for equipment sharing, one for keeping chatty clusters apart, one for peer support. Text only; I know my room."</div>
+    </div>
+
+    <div class="drill">
+      <div class="num">Drill 20</div>
+      <div class="unsafe"><b>UNSAFE</b><br>"Compare these two essays and tell me if the second one was written by the same student or plagiarized: [two pasted student essays]."</div>
+      <p class="why">Student work is student data, and detector-style verdicts are unreliable enough to be unfair. Two problems in one prompt.</p>
+      <div class="safe"><b>SAFE REWRITE</b><br>"What observable, defensible signs distinguish a student's authentic writing voice across assignments? Give me a short checklist I can apply myself when work seems inconsistent, and the fair next step: a conversation, not an accusation."</div>
+    </div>
+
+    <h2>The pocket checklist</h2>
+    <div class="cols">
+      <div class="card paper">
+        <h3 style="margin-top:0">Before you press enter</h3>
+        <ul class="checklist" style="margin-bottom:0">
+          <li>No names, no initials, no student IDs</li>
+          <li>No grades, scores, IEP or health details</li>
+          <li>No family information or confided anything</li>
+          <li>No photos of students, no pasted student work with names</li>
+          <li>No rare detail that narrows to one child</li>
+        </ul>
+      </div>
+      <div class="card paper">
+        <h3 style="margin-top:0">The whole skill in one line</h3>
+        <p>AI never needed to know <em>who</em>. It only ever needed the level, the format, and the goal.</p>
+        <p style="margin-bottom:0"><strong>Describe the need, not the child, and you can use these tools every day without ever breaking the one rule that matters.</strong></p>
+      </div>
+    </div>
+
+    <div class="callout teal" style="margin-top:8pt"><strong>Want the full staff version?</strong>
+    This skill is the heart of Kit 1 of our 8-session AI Foundations PD series: a complete, scripted
+    45-minute session any colleague can run, with a word-for-word script, a 30-slide deck, and every
+    handout. Find it, and the rest of the series, in the AI-Ready School store on TpT.</div>
+
+    <p class="legal" style="margin-bottom:0">© Adam &amp; Katelyn Spinozzi · AI-Ready School. Free resource, licensed to the downloading educator (TpT single-user license); share the store link, not the file. Every name in this resource is fictional; the unsafe examples are demonstrations for practice.
+    This resource is provided for informational purposes by educators, not attorneys, and is not legal advice. Follow your district's policies; where district guidance differs, it wins.</p>
+
+  </td></tr></tbody>
+</table>
+
+<div class="fixed-foot"><div class="foot">
+  <div class="brand-line">AI-Ready <span>School</span> · Built by Adam &amp; Katelyn Spinozzi · certified educators</div>
+  <div>De-Identification Drills</div>
+</div></div>
+
+</body>
+</html>
