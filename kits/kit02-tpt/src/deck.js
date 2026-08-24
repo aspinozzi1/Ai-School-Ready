@@ -424,7 +424,7 @@ const W = 13.33, H = 7.5;
       s.addText(h, { x: 0.9, y, w: 2.3, h: 0.6, fontFace: FONT, fontSize: 20, bold: true, color: TEAL, margin: 0, valign: 'middle' });
       s.addText(e, { x: 3.3, y, w: 9.3, h: 0.6, fontFace: FONT, fontSize: 18, italic: true, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('This formalizes Kit 1’s "push back twice" into a system. Content, then voice, then details.');
+    s.addNotes('This builds on Kit 1’s lesson that the first draft is never the finished draft: in Kit 1 a first draft invented a conference that never happened. Today improving the draft becomes a system: content, then voice, then details.');
   }
 
   // ============================== SLIDE 16 · ITERATE VS START OVER ==============================
