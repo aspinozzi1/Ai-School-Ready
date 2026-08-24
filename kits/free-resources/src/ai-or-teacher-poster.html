@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI or Teacher? The Delegation Poster</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .poster { background: var(--navy); color: #fff; display: flex; flex-direction: column; }
+  .poster .poster-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 0.8in; }
+  .poster .label { color: var(--amber); font-weight: 700; font-size: 14pt; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.1in; text-align: center; }
+  .poster h1p { display: block; color: #fff; font-size: 30pt; font-weight: 700; line-height: 1.2; text-align: center; margin-bottom: 0.3in; }
+  .qs { display: flex; flex-direction: column; gap: 10pt; }
+  .q { display: flex; gap: 12pt; align-items: stretch; background: rgba(255,255,255,.06);
+       border: 1px solid rgba(220,227,234,.22); border-radius: 12px; padding: 11pt 14pt; }
+  .q .ask { flex: 1.25; font-size: 13pt; font-weight: 700; line-height: 1.35; color: #E8EEF4; align-self: center; }
+  .q .ask span { display: block; font-weight: 400; font-size: 9.5pt; color: #9FB2C2; margin-top: 2pt; }
+  .q .then { flex: 1; border-left: 2px solid rgba(220,227,234,.25); padding-left: 12pt; align-self: center; }
+  .q .then .yes { font-size: 10.5pt; font-weight: 700; line-height: 1.35; }
+  .q.stop .then .yes { color: #FF9B7A; }
+  .q.go .then .yes { color: var(--teal); }
+  .verdict { margin-top: 0.28in; text-align: center; color: var(--teal); font-size: 15.5pt; font-weight: 700; }
+  .verdict em { color: #C9D4DE; font-style: normal; font-weight: 400; font-size: 11pt; display: block; margin-top: 3pt; }
+  .poster .credit { padding: 0.24in 0.8in 0.36in; color: #9FB2C2; font-size: 9pt; border-top: 1px solid rgba(220,227,234,.18); display: flex; justify-content: space-between; align-items: center; }
+  .poster .credit img { height: 0.32in; display: block; }
+  .two-col { display: flex; gap: 12pt; }
+  .two-col > div { flex: 1; }
+  .list-card { break-inside: avoid; padding: 8pt 11pt; }
+  .list-card h3 { margin-top: 0; }
+  .list-card li { margin-bottom: 2pt; font-size: 9.2pt; }
+  .doc h2 { margin-top: 8pt; margin-bottom: 3pt; }
+  table.doc > tbody > tr > td.content-cell { padding-bottom: 0.08in; }
+</style>
+</head>
+<body>
+
+<div class="sheet poster">
+  <div class="poster-body">
+    <div class="label">Before you open the chatbot</div>
+    <h1p>AI or teacher? Three questions decide.</h1p>
+    <div class="qs">
+      <div class="q stop">
+        <div class="ask">1 · Does it touch a student's identity?<span>A name, a diagnosis, a family situation, a story only one child fits</span></div>
+        <div class="then"><div class="yes">STOP — that stays out of public AI tools, always. De-identify it or keep it in your own docs.</div></div>
+      </div>
+      <div class="q stop">
+        <div class="ask">2 · Is it a judgment about a child?<span>Grades, IEP decisions, discipline, who needs what</span></div>
+        <div class="then"><div class="yes">YOURS — AI can format your thinking, but the professional judgment was never a typing problem.</div></div>
+      </div>
+      <div class="q go">
+        <div class="ask">3 · Is it a drafting or formatting task?<span>First drafts, leveling a text, question banks, rubrics, letters home</span></div>
+        <div class="then"><div class="yes">DELEGATE THE DRAFT — then edit like the professional you are. Nothing goes out unread.</div></div>
+      </div>
+    </div>
+    <div class="verdict">AI drafts. You decide.
+      <em>Every yes to question 3 is an evening hour back — as long as questions 1 and 2 stay a no.</em>
+    </div>
+  </div>
+  <div class="credit">
+    <img src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+    <div>Built by Adam &amp; Katelyn Spinozzi · certified educators · free to print and post</div>
+  </div>
+</div>
+
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Free Resource · AI-Ready School<b>AI or Teacher? · Guide</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">The back of the poster: lists you can act on</div>
+    <h1>Delegate the draft, keep the judgment</h1>
+    <p class="lede">The fastest teachers with AI aren't the ones using it for everything — they're
+    the ones who decided <em>once</em> what it's for. Post the three questions; when a task passes,
+    here's what delegating actually looks like.</p>
+
+    <div class="two-col">
+      <div class="card list-card">
+        <h3 style="color: var(--success)">Delegate the first draft</h3>
+        <ul style="margin-bottom:0">
+          <li>Letters and newsletters home</li>
+          <li>Leveling a passage up or down</li>
+          <li>Question banks, exit tickets, diagnostics</li>
+          <li>Rubrics a student can self-assess with</li>
+          <li>Sub plans and activity directions</li>
+          <li>Three versions of one task (scaffold / on-level / extension)</li>
+          <li>Icebreakers, brain breaks, station directions</li>
+          <li>Making your syllabus student-friendly</li>
+        </ul>
+      </div>
+      <div class="card list-card">
+        <h3 style="color: var(--error)">Never delegate</h3>
+        <ul style="margin-bottom:0">
+          <li>Anything with a student's name or story in it</li>
+          <li>Grades, feedback presented as yours but unread</li>
+          <li>IEP, 504, or placement decisions</li>
+          <li>Discipline calls and parent phone conversations</li>
+          <li>Seating charts and "who needs what" choices</li>
+          <li>What's worth teaching — the curriculum is a promise you make, not a prompt</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>What "delegate" means (and doesn't)</h2>
+    <p>Delegating a draft means the AI produces the <strong>first version</strong> and you produce the
+    final one. You'll keep maybe seventy percent, rewrite the rest in your voice, and catch the
+    one thing that's wrong — still faster than a blank page. What it never means: sending an
+    unread draft to a student or family. The read-through is non-negotiable.</p>
+
+    <h2>The two rules that make every "yes" safe</h2>
+    <div class="callout rule">
+      <div class="rule-label">Rule one</div>
+      <div class="rule-text" style="font-size:12.5pt">Never put student personally identifiable information into a public AI tool.<br><em>Describe the need, not the child.</em></div>
+    </div>
+    <div class="callout navy" style="margin-top:6pt"><strong>Rule two:</strong> a human reviews everything
+    before it reaches a student or family. AI is the intern; you're the teacher of record.</div>
+
+    <div class="callout teal"><strong>Bring this to a staff meeting:</strong> our complete AI
+    Foundations &amp; Safety PD session — script, editable slides, and hands-on labs — turns
+    these posters into a whole-staff norm. In our TpT store.</div>
+
+    <p class="legal" style="margin-bottom:0">© Adam &amp; Katelyn Spinozzi · AI-Ready School. Free resource: print and
+    share within your school; please don't resell or repost online. Drafted with AI assistance,
+    the same way we teach educators to use it, then researched, revised, and approved by two
+    certified teachers.</p>
+
+  </td></tr></tbody>
+</table>
+</body>
+</html>

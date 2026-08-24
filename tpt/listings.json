@@ -1,349 +1,555 @@
 {
-  "_comment": "Single source of truth for TPT listings. node tpt/make_drops.js reads this and builds UPLOAD/drops/. Subjects are best-match suggestions for TPT's dropdown; pick the closest label the form actually offers. Tags max 6 (TPT form limit).",
-  "listings": [
-    {
-      "id": "ten-ai-prompts",
-      "order": 1,
-      "name": "10 Copy-Paste AI Prompts for Teachers",
-      "product": "UPLOAD/01-free/ten-ai-prompts-for-teachers.pdf",
-      "cover": "tpt/covers/free-ten-prompts-cover.png",
-      "thumbnails": [],
-      "title": "10 Copy-Paste AI Prompts for Teachers | ChatGPT Time Savers | Free",
-      "description": "Ten AI prompts that work on the first try, for the tasks that actually eat your evenings: parent emails, leveled passages, rubrics, quiz questions, and newsletter blurbs.\n\nCopy, paste, change the bracket, done. No account, no signup, no tool required beyond whatever chatbot you already have.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms. If these save you an evening, our full PD sessions are in the store.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "ai for teachers",
-        "chatgpt for teachers",
-        "ai prompts",
-        "teacher time savers",
-        "teacher productivity",
-        "back to school"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "one-hard-rule",
-      "order": 2,
-      "name": "The One Hard Rule Poster",
-      "product": "UPLOAD/01-free/one-hard-rule-poster.pdf",
-      "cover": "tpt/covers/free-one-hard-rule-cover.png",
-      "thumbnails": [],
-      "title": "AI Student Privacy Poster | The One Hard Rule | Staff Room Printable | Free",
-      "description": "One rule, printed big enough to end the argument: never put student personally identifiable information into a public AI tool. Not a name. Not a detail. Ever.\n\nPrint it for the staff room, the copier, or the back of your own door. It covers every tool your staff will ever use, including the ones that do not exist yet.\n\nBuilt and audited by two certified teachers.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific",
-        "Adult Education"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas",
-        "Classroom Management"
-      ],
-      "tags": [
-        "ai privacy",
-        "student data privacy",
-        "ferpa",
-        "staff room poster",
-        "ai policy",
-        "professional development"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "tool-safety",
-      "order": 3,
-      "name": "AI Tool Safety Checklist",
-      "product": "UPLOAD/01-free/ai-tool-safety-checklist.pdf",
-      "cover": "tpt/covers/free-tool-safety-cover.png",
-      "thumbnails": [],
-      "title": "AI Tool Safety Checklist for Teachers | Vet Any AI Tool in 5 Minutes | Free",
-      "description": "A new AI tool lands in your inbox every week. This is what to check before you or your students touch it: what it does with data, who owns what you type, what it asks for, and the questions worth taking to your district.\n\nOne page, five minutes, works on any tool.\n\nBuilt and audited by two certified teachers.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "ai tools",
-        "edtech",
-        "student privacy",
-        "ferpa",
-        "teacher checklist",
-        "ai safety"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "parents-ai",
-      "order": 4,
-      "name": "Talking to Parents About AI",
-      "product": "UPLOAD/01-free/talking-to-parents-about-ai.pdf",
-      "cover": "tpt/covers/free-parents-ai-cover.png",
-      "thumbnails": [],
-      "title": "Talking to Parents About AI | Family Communication Guide for Teachers | Free",
-      "description": "Plain answers to the questions families actually ask: is my child using AI, is that cheating, is their data safe, and what is the school doing about it.\n\nReady to send, ready to say out loud at conferences, written so nobody needs a technology background to follow it.\n\nBuilt and audited by two certified teachers.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific"
-      ],
-      "subjects": [
-        "For All Subject Areas",
-        "Computer Science - Technology"
-      ],
-      "tags": [
-        "parent communication",
-        "family engagement",
-        "ai for teachers",
-        "back to school",
-        "conferences",
-        "parent letter"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "leader-readiness",
-      "order": 5,
-      "name": "AI Readiness Checklist for School Leaders",
-      "product": "UPLOAD/01-free/ai-readiness-checklist-for-leaders.pdf",
-      "cover": "tpt/covers/free-leader-readiness-cover.png",
-      "thumbnails": [],
-      "title": "AI Readiness Checklist for School Leaders | Principal Planning Tool | Free",
-      "description": "Where your building actually stands on AI, in one honest page: what your staff is already doing, what is written down, what is not, and what to do first.\n\nBuilt for principals and instructional coaches who need a starting point rather than a strategy deck.\n\nBuilt and audited by two certified teachers.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific",
-        "Adult Education"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "school leadership",
-        "principal",
-        "instructional coach",
-        "ai policy",
-        "professional development",
-        "school improvement"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "deid-drills",
-      "order": 6,
-      "name": "20 De-Identification Drills",
-      "product": "UPLOAD/01-free/de-identification-drills.pdf",
-      "cover": "tpt/covers/deid-cover.png",
-      "thumbnails": [],
-      "title": "AI Student Privacy Practice | 20 De-Identification Drills | FERPA | Free",
-      "description": "The one AI skill every teacher needs and nobody practices: getting real help from AI without ever putting a student's identity into it.\n\nTwenty before-and-after prompt makeovers, from parent emails to IEP-adjacent requests to the sneaky no-name prompts that still identify a child. Cover the answer, rewrite it in your head, compare. Ten seconds per prompt by the last page.\n\nIncludes the three de-identification moves, the ten-second test, and a printable pocket checklist. Every name is fictional; the unsafe examples exist for practice.\n\nBuilt and audited by two certified teachers.",
-      "price": 0,
-      "licenses": null,
-      "grades": [
-        "Not Grade Specific",
-        "Adult Education"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "student privacy",
-        "ferpa",
-        "ai safety",
-        "chatgpt rules",
-        "digital citizenship",
-        "professional development"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "Free AI Library"
-    },
-    {
-      "id": "kit1",
-      "order": 7,
-      "name": "Kit 1 — AI Foundations & Safety",
-      "product": "UPLOAD/02-paid/AI-Ready-School-Kit-01.zip",
-      "cover": "tpt/covers/kit1-cover.png",
-      "thumbnails": [
-        "tpt/extras/kit1-whats-inside.png",
-        "tpt/extras/kit1-real-pages.png"
-      ],
-      "title": "AI Foundations & Safety PD | Complete Staff Training | Editable Slides & Script",
-      "description": "Run a complete, professional AI training for your staff THIS MONTH, with no consultant and no prep marathon. This is Session 1 of the AI Foundations series: what AI actually is, what it is good and bad at, and the one student-privacy rule every educator must follow.\n\nAny confident teacher-leader can present it cold. The script is word for word, the 34-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab is a teaching gift rather than a failure.\n\nINCLUDED (9 files): facilitator prep guide (15-minute read) · word-for-word script · 34-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day implementation plan with PLC follow-ups · exit ticket that doubles as PD documentation · admin one-pager · full APA references with every statistic verified against the live source.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by a husband-and-wife team of certified teachers with 20+ combined years in classrooms.",
-      "price": 24,
-      "licenses": 10,
-      "grades": [
-        "Not Grade Specific",
-        "Adult Education"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "ai professional development",
-        "staff training",
-        "chatgpt for teachers",
-        "ai safety",
-        "student privacy",
-        "staff meeting"
-      ],
-      "formats": [
-        "Zip",
-        "PDF",
-        "PowerPoint"
-      ],
-      "customCategory": "AI PD Sessions",
-      "previewShots": [
-        "k1_script.png",
-        "k1_handout.png",
-        "k1_plan.png"
-      ],
-      "previewInside": [
-        "Facilitator prep guide — a 15-minute read",
-        "Word-for-word facilitator script",
-        "<b>34-slide editable PowerPoint</b> with speaker notes on every slide",
-        "Participant handout",
-        "First-48-hours action sheet",
-        "30-day implementation plan with PLC follow-ups",
-        "Exit ticket that doubles as PD documentation",
-        "Admin one-pager",
-        "Full APA references, every statistic verified"
-      ]
-    },
-    {
-      "id": "kit2",
-      "order": 8,
-      "name": "Kit 2 — Prompting Basics",
-      "product": "UPLOAD/02-paid/AI-Ready-School-Kit-02.zip",
-      "cover": "tpt/covers/kit2-cover.png",
-      "thumbnails": [
-        "tpt/extras/kit2-whats-inside.png",
-        "tpt/extras/kit2-real-pages.png"
-      ],
-      "title": "ChatGPT & AI Prompting PD | Complete Staff Training | Editable Slides & Script",
-      "description": "The session every staff asks for: how to get consistently useful results from ChatGPT, Claude, Gemini, or Copilot instead of occasionally lucky ones.\n\nTeachers learn the four-part prompt formula, watch live prompt makeovers, and build a reusable prompt template for a task they do every week, in a hands-on lab with a word-for-word facilitator script.\n\nINCLUDED (9 files): facilitator prep guide · word-for-word script · 33-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day plan · exit ticket · admin one-pager · full APA references.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nSession 2 of the AI Foundations series. Pairs with Session 1 or runs on its own for staff who know the basics. Built and audited by two certified teachers.",
-      "price": 24,
-      "licenses": 10,
-      "grades": [
-        "Not Grade Specific",
-        "Adult Education"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "chatgpt for teachers",
-        "ai prompts",
-        "prompt engineering",
-        "teacher pd",
-        "staff training",
-        "ai workshop"
-      ],
-      "formats": [
-        "Zip",
-        "PDF",
-        "PowerPoint"
-      ],
-      "customCategory": "AI PD Sessions",
-      "previewShots": [
-        "k2_script.png",
-        "k2_handout.png",
-        "k2_plan.png"
-      ],
-      "previewInside": [
-        "Facilitator prep guide",
-        "Word-for-word facilitator script",
-        "<b>33-slide editable PowerPoint</b> with speaker notes on every slide",
-        "Participant handout",
-        "First-48-hours action sheet",
-        "30-day plan",
-        "Exit ticket",
-        "Admin one-pager",
-        "Full APA references"
-      ]
-    },
-    {
-      "id": "bts-setup",
-      "order": 9,
-      "name": "Back-to-School AI Setup Pack",
-      "product": "UPLOAD/02-paid/Back-to-School-AI-Setup-Pack.pdf",
-      "cover": "tpt/covers/bts-setup-cover.png",
-      "thumbnails": [
-        "tpt/extras/bts-whats-inside.png",
-        "tpt/extras/bts-real-pages.png"
-      ],
-      "title": "Back to School AI Setup for Teachers | First Week Checklist, Prompts & Letter",
-      "description": "Set up AI for your whole year in one planning period, during the week you have the least time.\n\nINSIDE (5 pages): the First-Week AI Setup Checklist (ten boxes, about 45 minutes end to end) · a ready-to-send family letter explaining how you'll use AI this year, written to build trust at open house · ten back-to-school prompts that are safe exactly as written, from the welcome letter to your day-one diagnostic · the make-it-safe habit on one page for your desk.\n\nEvery prompt describes the need, never the child: no student information ever goes into an AI tool. Fill the brackets, review the draft like the professional you are, done.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
-      "price": 8,
-      "licenses": 10,
-      "grades": [
-        "Not Grade Specific"
-      ],
-      "subjects": [
-        "Computer Science - Technology",
-        "For All Subject Areas"
-      ],
-      "tags": [
-        "back to school",
-        "ai for teachers",
-        "chatgpt for teachers",
-        "first week of school",
-        "parent letter",
-        "teacher checklist"
-      ],
-      "formats": [
-        "PDF"
-      ],
-      "customCategory": "AI Time Savers",
-      "previewShots": [
-        "bts_p2.png",
-        "bts_p3.png",
-        "bts_p4.png"
-      ],
-      "previewInside": [
-        "The First-Week AI Setup Checklist — ten boxes, one planning period",
-        "Ready-to-send family letter about how you'll use AI this year",
-        "<b>Ten back-to-school prompts</b>, safe exactly as written",
-        "The make-it-safe habit — 3 moves + the ten-second test, on one page"
-      ],
-      "previewUnit": "the full pack is 5 pages",
-      "filesBadge": "5 pages",
-      "insideHeading": "What's inside the full pack"
-    }
-  ]
+ "_comment": "Single source of truth for TPT listings. node tpt/make_drops.js reads this and builds UPLOAD/drops/. Subjects are best-match suggestions for TPT's dropdown; pick the closest label the form actually offers. Tags max 6 (TPT form limit).",
+ "listings": [
+  {
+   "id": "ten-ai-prompts",
+   "order": 1,
+   "name": "10 Copy-Paste AI Prompts for Teachers",
+   "product": "UPLOAD/01-free/ten-ai-prompts-for-teachers.pdf",
+   "cover": "tpt/covers/free-ten-prompts-cover.png",
+   "thumbnails": [],
+   "title": "10 Copy-Paste AI Prompts for Teachers | ChatGPT Time Savers | Free",
+   "description": "Ten AI prompts that work on the first try, for the tasks that actually eat your evenings: parent emails, leveled passages, rubrics, quiz questions, and newsletter blurbs.\n\nCopy, paste, change the bracket, done. No account, no signup, no tool required beyond whatever chatbot you already have.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms. If these save you an evening, our full PD sessions are in the store.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "ai for teachers",
+    "chatgpt for teachers",
+    "ai prompts",
+    "teacher time savers",
+    "teacher productivity",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "one-hard-rule",
+   "order": 2,
+   "name": "The One Hard Rule Poster",
+   "product": "UPLOAD/01-free/one-hard-rule-poster.pdf",
+   "cover": "tpt/covers/free-one-hard-rule-cover.png",
+   "thumbnails": [],
+   "title": "AI Student Privacy Poster | The One Hard Rule | Staff Room Printable | Free",
+   "description": "One rule, printed big enough to end the argument: never put student personally identifiable information into a public AI tool. Not a name. Not a detail. Ever.\n\nPrint it for the staff room, the copier, or the back of your own door. It covers every tool your staff will ever use, including the ones that do not exist yet.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific",
+    "Adult Education"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas",
+    "Classroom Management"
+   ],
+   "tags": [
+    "ai privacy",
+    "student data privacy",
+    "ferpa",
+    "staff room poster",
+    "ai policy",
+    "professional development"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "tool-safety",
+   "order": 3,
+   "name": "AI Tool Safety Checklist",
+   "product": "UPLOAD/01-free/ai-tool-safety-checklist.pdf",
+   "cover": "tpt/covers/free-tool-safety-cover.png",
+   "thumbnails": [],
+   "title": "AI Tool Safety Checklist for Teachers | Vet Any AI Tool in 5 Minutes | Free",
+   "description": "A new AI tool lands in your inbox every week. This is what to check before you or your students touch it: what it does with data, who owns what you type, what it asks for, and the questions worth taking to your district.\n\nOne page, five minutes, works on any tool.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "ai tools",
+    "edtech",
+    "student privacy",
+    "ferpa",
+    "teacher checklist",
+    "ai safety"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "parents-ai",
+   "order": 4,
+   "name": "Talking to Parents About AI",
+   "product": "UPLOAD/01-free/talking-to-parents-about-ai.pdf",
+   "cover": "tpt/covers/free-parents-ai-cover.png",
+   "thumbnails": [],
+   "title": "Talking to Parents About AI | Family Communication Guide for Teachers | Free",
+   "description": "Plain answers to the questions families actually ask: is my child using AI, is that cheating, is their data safe, and what is the school doing about it.\n\nReady to send, ready to say out loud at conferences, written so nobody needs a technology background to follow it.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas",
+    "Computer Science - Technology"
+   ],
+   "tags": [
+    "parent communication",
+    "family engagement",
+    "ai for teachers",
+    "back to school",
+    "conferences",
+    "parent letter"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "leader-readiness",
+   "order": 5,
+   "name": "AI Readiness Checklist for School Leaders",
+   "product": "UPLOAD/01-free/ai-readiness-checklist-for-leaders.pdf",
+   "cover": "tpt/covers/free-leader-readiness-cover.png",
+   "thumbnails": [],
+   "title": "AI Readiness Checklist for School Leaders | Principal Planning Tool | Free",
+   "description": "Where your building actually stands on AI, in one honest page: what your staff is already doing, what is written down, what is not, and what to do first.\n\nBuilt for principals and instructional coaches who need a starting point rather than a strategy deck.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific",
+    "Adult Education"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "school leadership",
+    "principal",
+    "instructional coach",
+    "ai policy",
+    "professional development",
+    "school improvement"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "deid-drills",
+   "order": 6,
+   "name": "20 De-Identification Drills",
+   "product": "UPLOAD/01-free/de-identification-drills.pdf",
+   "cover": "tpt/covers/deid-cover.png",
+   "thumbnails": [],
+   "title": "AI Student Privacy Practice | 20 De-Identification Drills | FERPA | Free",
+   "description": "The one AI skill every teacher needs and nobody practices: getting real help from AI without ever putting a student's identity into it.\n\nTwenty before-and-after prompt makeovers, from parent emails to IEP-adjacent requests to the sneaky no-name prompts that still identify a child. Cover the answer, rewrite it in your head, compare. Ten seconds per prompt by the last page.\n\nIncludes the three de-identification moves, the ten-second test, and a printable pocket checklist. Every name is fictional; the unsafe examples exist for practice.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific",
+    "Adult Education"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "student privacy",
+    "ferpa",
+    "ai safety",
+    "chatgpt rules",
+    "digital citizenship",
+    "professional development"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "kit1",
+   "order": 7,
+   "name": "Kit 1 — AI Foundations & Safety",
+   "product": "UPLOAD/02-paid/AI-Ready-School-Kit-01.zip",
+   "cover": "tpt/covers/kit1-cover.png",
+   "thumbnails": [
+    "tpt/extras/kit1-whats-inside.png",
+    "tpt/extras/kit1-real-pages.png"
+   ],
+   "title": "AI Foundations & Safety PD | Complete Staff Training | Editable Slides & Script",
+   "description": "Run a complete, professional AI training for your staff THIS MONTH, with no consultant and no prep marathon. This is Session 1 of the AI Foundations series: what AI actually is, what it is good and bad at, and the one student-privacy rule every educator must follow.\n\nAny confident teacher-leader can present it cold. The script is word for word, the 34-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab is a teaching gift rather than a failure.\n\nINCLUDED (9 files): facilitator prep guide (15-minute read) · word-for-word script · 34-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day implementation plan with PLC follow-ups · exit ticket that doubles as PD documentation · admin one-pager · full APA references with every statistic verified against the live source.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by a husband-and-wife team of certified teachers with 20+ combined years in classrooms.",
+   "price": 24,
+   "licenses": 10,
+   "grades": [
+    "Not Grade Specific",
+    "Adult Education"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "ai professional development",
+    "staff training",
+    "chatgpt for teachers",
+    "ai safety",
+    "student privacy",
+    "staff meeting"
+   ],
+   "formats": [
+    "Zip",
+    "PDF",
+    "PowerPoint"
+   ],
+   "customCategory": "AI PD Sessions",
+   "previewShots": [
+    "k1_script.png",
+    "k1_handout.png",
+    "k1_plan.png"
+   ],
+   "previewInside": [
+    "Facilitator prep guide — a 15-minute read",
+    "Word-for-word facilitator script",
+    "<b>34-slide editable PowerPoint</b> with speaker notes on every slide",
+    "Participant handout",
+    "First-48-hours action sheet",
+    "30-day implementation plan with PLC follow-ups",
+    "Exit ticket that doubles as PD documentation",
+    "Admin one-pager",
+    "Full APA references, every statistic verified"
+   ]
+  },
+  {
+   "id": "kit2",
+   "order": 8,
+   "name": "Kit 2 — Prompting Basics",
+   "product": "UPLOAD/02-paid/AI-Ready-School-Kit-02.zip",
+   "cover": "tpt/covers/kit2-cover.png",
+   "thumbnails": [
+    "tpt/extras/kit2-whats-inside.png",
+    "tpt/extras/kit2-real-pages.png"
+   ],
+   "title": "ChatGPT & AI Prompting PD | Complete Staff Training | Editable Slides & Script",
+   "description": "The session every staff asks for: how to get consistently useful results from ChatGPT, Claude, Gemini, or Copilot instead of occasionally lucky ones.\n\nTeachers learn the four-part prompt formula, watch live prompt makeovers, and build a reusable prompt template for a task they do every week, in a hands-on lab with a word-for-word facilitator script.\n\nINCLUDED (9 files): facilitator prep guide · word-for-word script · 33-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day plan · exit ticket · admin one-pager · full APA references.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nSession 2 of the AI Foundations series. Pairs with Session 1 or runs on its own for staff who know the basics. Built and audited by two certified teachers.",
+   "price": 24,
+   "licenses": 10,
+   "grades": [
+    "Not Grade Specific",
+    "Adult Education"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "chatgpt for teachers",
+    "ai prompts",
+    "prompt engineering",
+    "teacher pd",
+    "staff training",
+    "ai workshop"
+   ],
+   "formats": [
+    "Zip",
+    "PDF",
+    "PowerPoint"
+   ],
+   "customCategory": "AI PD Sessions",
+   "previewShots": [
+    "k2_script.png",
+    "k2_handout.png",
+    "k2_plan.png"
+   ],
+   "previewInside": [
+    "Facilitator prep guide",
+    "Word-for-word facilitator script",
+    "<b>33-slide editable PowerPoint</b> with speaker notes on every slide",
+    "Participant handout",
+    "First-48-hours action sheet",
+    "30-day plan",
+    "Exit ticket",
+    "Admin one-pager",
+    "Full APA references"
+   ]
+  },
+  {
+   "id": "bts-setup",
+   "order": 9,
+   "name": "Back-to-School AI Setup Pack",
+   "product": "UPLOAD/02-paid/Back-to-School-AI-Setup-Pack.pdf",
+   "cover": "tpt/covers/bts-setup-cover.png",
+   "thumbnails": [
+    "tpt/extras/bts-whats-inside.png",
+    "tpt/extras/bts-real-pages.png"
+   ],
+   "title": "Back to School AI Setup for Teachers | First Week Checklist, Prompts & Letter",
+   "description": "Set up AI for your whole year in one planning period, during the week you have the least time.\n\nINSIDE (5 pages): the First-Week AI Setup Checklist (ten boxes, about 45 minutes end to end) · a ready-to-send family letter explaining how you'll use AI this year, written to build trust at open house · ten back-to-school prompts that are safe exactly as written, from the welcome letter to your day-one diagnostic · the make-it-safe habit on one page for your desk.\n\nEvery prompt describes the need, never the child: no student information ever goes into an AI tool. Fill the brackets, review the draft like the professional you are, done.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+   "price": 8,
+   "licenses": 10,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "back to school",
+    "ai for teachers",
+    "chatgpt for teachers",
+    "first week of school",
+    "parent letter",
+    "teacher checklist"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "AI Time Savers",
+   "previewShots": [
+    "bts_p2.png",
+    "bts_p3.png",
+    "bts_p4.png"
+   ],
+   "previewInside": [
+    "The First-Week AI Setup Checklist — ten boxes, one planning period",
+    "Ready-to-send family letter about how you'll use AI this year",
+    "<b>Ten back-to-school prompts</b>, safe exactly as written",
+    "The make-it-safe habit — 3 moves + the ten-second test, on one page"
+   ],
+   "previewUnit": "the full pack is 5 pages",
+   "filesBadge": "5 pages",
+   "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "ai-vocab",
+   "order": 10,
+   "name": "AI Vocabulary for Teachers",
+   "product": "UPLOAD/01-free/ai-vocabulary-for-teachers.pdf",
+   "cover": "tpt/covers/free-ai-vocab-cover.png",
+   "thumbnails": [],
+   "title": "AI Vocabulary for Teachers | 30 AI Terms in Plain English | Free Cheat Sheet",
+   "description": "Thirty AI terms explained the way you'd explain them to a colleague in the hallway — no computer science degree, no marketing spin.\n\nINSIDE (2 pages): the basics (prompt, chatbot, LLM, iterating) · how it actually works, honestly (hallucination, bias, training data, context window) · the school-safety words every educator needs (PII, FERPA, COPPA, de-identification, district-approved vs. public tools, why AI detectors are unreliable) · and the buzzwords decoded (prompt engineering, AI literacy, agents, wrappers).\n\nPerfect for a staff-meeting handout, a PD folder, or the new teacher who keeps nodding along in AI conversations.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "ai for teachers",
+    "ai literacy",
+    "chatgpt",
+    "vocabulary",
+    "staff meeting",
+    "technology"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "ai-habit",
+   "order": 11,
+   "name": "The 10-Minute AI Habit",
+   "product": "UPLOAD/01-free/ten-minute-ai-habit.pdf",
+   "cover": "tpt/covers/free-ai-habit-cover.png",
+   "thumbnails": [],
+   "title": "10 Minute AI Habit for Teachers | Weekly Planner & Prompt Tracker | Free",
+   "description": "You don't learn AI in a summer workshop — you learn it ten minutes at a time, on real tasks, until it's just how you work.\n\nINSIDE (2 pages): the habit in three moves (same slot every week, one task, save what worked) · an eight-week starter ladder with a ready prompt for each week — parent messages, leveling texts, exit tickets, rubrics, sub plans, and your first reusable template · a printable tracker that lives in your planner.\n\nEvery prompt is safe as written: no student information ever goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "ai for teachers",
+    "chatgpt for teachers",
+    "teacher planner",
+    "time management",
+    "new teacher",
+    "professional development"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "dont-type-that",
+   "order": 12,
+   "name": "Don't Type That: Student PII Poster",
+   "product": "UPLOAD/01-free/dont-type-that-poster.pdf",
+   "cover": "tpt/covers/free-dont-type-that-cover.png",
+   "thumbnails": [],
+   "title": "Student Data Privacy Poster | 10 Things Never to Type Into AI | FERPA Friendly",
+   "description": "The poster for every wall near a device: ten things that count as student PII — names, IDs, IEP status, medical details, behavior stories, one-of-a-kind combinations — and the habit that replaces them: describe the need, not the child.\n\nINSIDE (2 pages): the printable poster (schoolhouse navy, reads from across the room) · a one-page guide with the three de-identification moves, a risky-vs-safe prompt table, and the ten-second test before you press enter.\n\nHang it by the copier, drop it in the PD folder, send it to the colleague who types first and thinks later.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "student privacy",
+    "ferpa",
+    "classroom poster",
+    "ai safety",
+    "digital citizenship",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "sub-plans",
+   "order": 13,
+   "name": "Emergency Sub Plans with AI",
+   "product": "UPLOAD/01-free/emergency-sub-plans-with-ai.pdf",
+   "cover": "tpt/covers/free-sub-plans-cover.png",
+   "thumbnails": [],
+   "title": "Emergency Sub Plans with AI | 15 Minute System & Prompts | Free for Teachers",
+   "description": "For the 5:30 a.m. you hoped wouldn't come: you're sick, and the sub folder is three units out of date.\n\nINSIDE (2 pages): the 15-minute system (run the master prompt, fix only what's wrong, send and go back to bed) · one master prompt that drafts a complete sub day for a stranger — bell-ringers, numbered directions, early-finisher tasks · four gap-fillers (no-tech backup, review day, day two, management notes) · and the once-a-semester list of what to keep printed, because seating charts and health notes belong in the folder, never in a chatbot.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "sub plans",
+    "substitute teacher",
+    "emergency sub plans",
+    "ai for teachers",
+    "chatgpt for teachers",
+    "time savers"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "ai-or-teacher",
+   "order": 14,
+   "name": "AI or Teacher? Delegation Poster",
+   "product": "UPLOAD/01-free/ai-or-teacher-poster.pdf",
+   "cover": "tpt/covers/free-ai-or-teacher-cover.png",
+   "thumbnails": [],
+   "title": "AI or Teacher Poster | What to Delegate to ChatGPT | Free Decision Guide",
+   "description": "The fastest teachers with AI decided once what it's for. This poster is that decision, on the wall: three questions that sort any task in seconds.\n\nDoes it touch a student's identity? Stays out. Is it a judgment about a child? Stays yours. Is it a drafting or formatting task? Delegate the draft — then edit like the professional you are.\n\nINSIDE (2 pages): the printable decision poster · a one-page guide with the delegate list (letters home, leveled texts, rubrics, sub plans) and the never-delegate list (grades, IEP decisions, seating charts, what's worth teaching).\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "ai for teachers",
+    "chatgpt",
+    "classroom poster",
+    "teacher workflow",
+    "professional development",
+    "time savers"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "parent-messages",
+   "order": 15,
+   "name": "Parent Message Makeovers",
+   "product": "UPLOAD/02-paid/Parent-Message-Makeovers.pdf",
+   "cover": "tpt/covers/parent-messages-cover.png",
+   "thumbnails": [
+    "tpt/extras/pm-whats-inside.png",
+    "tpt/extras/pm-real-pages.png"
+   ],
+   "title": "Parent Communication with AI | 12 Hard Email Makeovers | Ready to Use Prompts",
+   "description": "The hardest emails of the school year are the ones you rewrite four times at 9 p.m. This pack drafts every one of them in minutes — warm, factual, professional, and sounding like you.\n\nINSIDE (7 pages, 12 makeovers): the everyday five (missing work, grade drops, positive news home, attendance patterns, homework help) · the hard four (behavior incidents, angry-email replies, tough conference requests, the AI/academic-honesty conversation) · the whole-class three (logistics chasers, welcoming a student back, end-of-term updates) · plus the four-part tone formula behind them all, a build-your-own template for scenario thirteen, and the read-aloud test before every send.\n\nEvery prompt is safe by design: no student names or personal details ever go into the AI — you describe the situation, the AI drafts to \"a family,\" and personalization happens in your own email afterward.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+   "price": 12,
+   "licenses": 10,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "parent communication",
+    "parent teacher conferences",
+    "email templates",
+    "ai for teachers",
+    "chatgpt for teachers",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "AI Time Savers",
+   "previewShots": [
+    "pm_p3.png",
+    "pm_p4.png",
+    "pm_p6.png"
+   ],
+   "previewInside": [
+    "<b>12 ready-to-run email makeovers</b> — everyday, hard, and whole-class",
+    "The 4-part tone formula: warm open · facts · partnership · next step",
+    "Every prompt PII-safe by design — no student names ever typed",
+    "Build-your-own template + the read-aloud test before every send"
+   ],
+   "previewUnit": "the full pack is 7 pages",
+   "filesBadge": "7 pages",
+   "insideHeading": "What's inside the full pack"
+  }
+ ]
 }

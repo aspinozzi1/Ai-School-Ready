@@ -170,7 +170,7 @@ table.doc > tfoot > tr > td.foot-space { height: 0.72in; }
 /* Never split a sentence or paragraph across a page break (owner rule):
    every prose block moves to the next page whole. Lists may break BETWEEN
    items, never inside one. */
-p, li, .card, .callout, .stage, .say, .lede, .legal, .ref { break-inside: avoid; }
+p, li, .card, .callout, .stage, .say, .lede, .legal, .ref, .notes-box, .letter { break-inside: avoid; }
 h1, h2, h3 { break-after: avoid; }
 .slide-cue { break-inside: avoid; break-after: avoid; }
 .slide-cue + .stage { break-after: avoid; }  /* cue + stage + first spoken block stay together */

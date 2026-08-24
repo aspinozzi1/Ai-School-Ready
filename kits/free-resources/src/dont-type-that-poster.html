@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Don't Type That: Student Privacy Poster</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .poster { background: var(--navy); color: #fff; display: flex; flex-direction: column; }
+  .poster .poster-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 0.85in; }
+  .poster .label { color: var(--amber); font-weight: 700; font-size: 14pt; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.12in; text-align: center; }
+  .poster h1p { display: block; color: #fff; font-size: 30pt; font-weight: 700; line-height: 1.2; text-align: center; margin-bottom: 0.28in; }
+  .poster .grid { display: flex; flex-wrap: wrap; gap: 8pt; }
+  .poster .item { flex: 1 1 44%; background: rgba(255,255,255,.06); border: 1px solid rgba(220,227,234,.22); border-radius: 10px; padding: 9pt 12pt; display: flex; gap: 9pt; align-items: baseline; }
+  .poster .item .n { color: var(--amber); font-weight: 700; font-size: 12pt; }
+  .poster .item .x { font-size: 11pt; font-weight: 600; line-height: 1.35; color: #E8EEF4; }
+  .poster .item .x span { display: block; font-weight: 400; font-size: 8.8pt; color: #9FB2C2; margin-top: 1pt; }
+  .poster .instead { margin-top: 0.26in; text-align: center; color: var(--teal); font-size: 15pt; font-weight: 700; }
+  .poster .instead em { color: #C9D4DE; font-style: normal; font-weight: 400; font-size: 11pt; display: block; margin-top: 3pt; }
+  .poster .credit { padding: 0.24in 0.85in 0.36in; color: #9FB2C2; font-size: 9pt; border-top: 1px solid rgba(220,227,234,.18); display: flex; justify-content: space-between; align-items: center; }
+  .poster .credit img { height: 0.32in; display: block; }
+  .swap { font-size: 8.8pt; }
+  .swap td, .swap th { padding: 3pt 5.5pt; }
+  .swap td:first-child { color: var(--error); font-weight: 600; }
+  .swap td:last-child { color: var(--success); font-weight: 600; }
+  .doc h2 { margin-top: 10pt; margin-bottom: 4pt; }
+  .doc .card { padding: 8pt 11pt; }
+  table.doc > tbody > tr > td.content-cell { padding-bottom: 0.08in; }
+</style>
+</head>
+<body>
+
+<div class="sheet poster">
+  <div class="poster-body">
+    <div class="label">Using AI? Check the prompt first</div>
+    <h1p>Don't type that: 10 things that count as student PII</h1p>
+    <div class="grid">
+      <div class="item"><div class="n">1</div><div class="x">A student's name<span>First, last, nickname — or initials plus details</span></div></div>
+      <div class="item"><div class="n">2</div><div class="x">Student ID or login<span>Any number or account tied to one child</span></div></div>
+      <div class="item"><div class="n">3</div><div class="x">Grades or scores tied to a child<span>"Score this" is fine; "score Maya's essay" is not</span></div></div>
+      <div class="item"><div class="n">4</div><div class="x">IEP, 504, or disability status<span>Among the most protected data in your building</span></div></div>
+      <div class="item"><div class="n">5</div><div class="x">Medical or medication details<span>Diagnoses, allergies, counseling, hospital stays</span></div></div>
+      <div class="item"><div class="n">6</div><div class="x">Behavior incidents with detail<span>Discipline stories can identify a child fast</span></div></div>
+      <div class="item"><div class="n">7</div><div class="x">Family or home circumstances<span>Custody, housing, income, immigration status</span></div></div>
+      <div class="item"><div class="n">8</div><div class="x">Contact info or address<span>Theirs or their family's</span></div></div>
+      <div class="item"><div class="n">9</div><div class="x">Photos or student work with names<span>An image can carry PII as easily as text</span></div></div>
+      <div class="item"><div class="n">10</div><div class="x">A one-of-a-kind combination<span>"The only 6th grader who…" — unique details identify</span></div></div>
+    </div>
+    <div class="instead">Describe the need, not the child.
+      <em>"A 7th grader reading two levels below grade" gets the same help — and identifies no one.</em>
+    </div>
+  </div>
+  <div class="credit">
+    <img src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+    <div>Built by Adam &amp; Katelyn Spinozzi · certified educators · free to print and post</div>
+  </div>
+</div>
+
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Free Resource · AI-Ready School<b>Don't Type That · Guide</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">The one-minute version for the back of the poster</div>
+    <h1>Why this list, and what to type instead</h1>
+    <p class="lede">Public AI chatbots have no data agreement with your district, so student
+    details belong in your gradebook, never in the prompt. The good news: the safe version works
+    just as well — the AI never needed to know <em>who</em>, only <em>what kind of help</em>.</p>
+
+    <h2>The three moves</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>1 · Strip identity.</strong> No names, initials, IDs, photos, or one-of-a-kind details.</li>
+        <li><strong>2 · Generalize.</strong> "A 4th grader" · "several students" · "a parent" · "my third period."</li>
+        <li><strong>3 · Describe the need, not the child.</strong> The reading level, the behavior pattern, the format you want back — that's all the AI ever needed.</li>
+      </ul>
+    </div>
+
+    <h2>Instead of typing that… type this</h2>
+    <table class="swap">
+      <tr><th style="width:45%">Risky prompt</th><th>Safe prompt (works just as well)</th></tr>
+      <tr><td>"Write a comment for Maya Chen, who got a 61% and has ADHD."</td><td>"Write an encouraging progress comment for a student scoring in the low 60s who struggles with sustained focus."</td></tr>
+      <tr><td>"Email Jayden's mom about him pushing another student at recess."</td><td>"Draft a factual, non-judgmental note to a parent about a physical incident at recess, with a partnership tone and a clear next step."</td></tr>
+      <tr><td>"Simplify this reading for my student with an IEP, Marcus."</td><td>"Rewrite this passage at a 3rd grade reading level, keeping the key vocabulary."</td></tr>
+      <tr><td>"Make a seating chart: Ava can't sit near Liam because…"</td><td>Keep seating charts out of AI entirely — that's judgment about specific kids. It was never a formatting problem.</td></tr>
+    </table>
+
+    <div class="callout rule">
+      <div class="rule-label">Before you press enter</div>
+      <div class="rule-text" style="font-size:11.5pt">Could anyone who knows your school tell which child this is?<br><em>If yes — strip, generalize, describe the need.</em></div>
+    </div>
+
+    <p class="small" style="margin-top:6pt">Names go back in <strong>after</strong> the draft comes back — into your own email, never into the tool.</p>
+
+    <div class="callout teal"><strong>Train the whole staff in one session:</strong> our complete
+    AI Foundations &amp; Safety PD — script, editable slides, and practice labs on exactly this
+    skill — is in our TpT store.</div>
+
+    <p class="legal" style="margin-bottom:0">© Adam &amp; Katelyn Spinozzi · AI-Ready School. Free resource: print and
+    share within your school; please don't resell or repost online. Drafted with AI assistance, then researched, revised, and
+    approved by two certified teachers. Not legal advice — follow your district's policies.</p>
+
+  </td></tr></tbody>
+</table>
+</body>
+</html>

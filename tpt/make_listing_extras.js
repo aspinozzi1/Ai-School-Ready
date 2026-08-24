@@ -168,6 +168,14 @@ const IMAGES = [
     'The make-it-safe habit — 3 moves + the ten-second test',
   ], '5 pages')],
   ['bts-real-pages',   realPages('#E4572E', ['bts_p2.png', 'bts_p3.png', 'bts_p4.png'], '5 pages')],
+  ['pm-whats-inside', whatsInside('Parent Message', 'Makeovers', [
+    '<b>12 ready-to-run email makeovers</b> — everyday, hard, whole-class',
+    'The 4-part tone formula: warm open · facts · partnership · next step',
+    'Angry-email replies, behavior incidents, the AI-honesty talk',
+    'Every prompt PII-safe by design — no student names ever typed',
+    'Build-your-own template + the read-aloud test before every send',
+  ], '7 pages')],
+  ['pm-real-pages',   realPages('#17BEBB', ['pm_p3.png', 'pm_p4.png', 'pm_p6.png'], '7 pages')],
   ['whole-staff-license', license()],
 ];
 

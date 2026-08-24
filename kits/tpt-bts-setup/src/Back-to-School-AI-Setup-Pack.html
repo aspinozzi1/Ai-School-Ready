@@ -13,10 +13,12 @@
     font-size: 9.8pt;
     margin-top: 4pt;
   }
+  .card, .callout, h2 + .card { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
   .check-row { display: flex; gap: 8pt; align-items: flex-start; margin-bottom: 7pt; break-inside: avoid; }
   .check-box { flex: none; width: 11pt; height: 11pt; border: 1.5pt solid var(--navy); border-radius: 3pt; margin-top: 1.5pt; }
   .check-row .mins { color: var(--muted); font-size: 8.5pt; font-weight: 700; white-space: nowrap; margin-left: auto; padding-left: 8pt; }
-  .letter { border: 1.5pt solid var(--navy); border-radius: 10px; padding: 12pt 14pt; background: #fff; }
+  .letter { break-inside: avoid; border: 1.5pt solid var(--navy); border-radius: 10px; padding: 12pt 14pt; background: #fff; }
   .letter p { margin-bottom: 7pt; font-size: 10pt; line-height: 1.5; }
   .bracket { font-weight: 700; color: var(--teal); }
 </style>
