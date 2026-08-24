@@ -6,6 +6,7 @@
    TPT "Upload New Product" form top to bottom:
      LISTING.txt          every field, in form order, paste-ready
      <product file>       Files -> Downloadable File (keeps its buyer-facing name)
+     5-PREVIEW.pdf        Files -> Product Previews -> Preview (sneak-peek flipbook)
      2-MAIN-COVER.png     Thumbnails -> Main Cover
      3-THUMBNAIL-1.png    Thumbnails -> Thumbnail (paid kits only)
      4-THUMBNAIL-2.png    Thumbnails -> Thumbnail (paid kits only)
@@ -20,6 +21,10 @@ const OUT = path.join(ROOT, 'UPLOAD/drops');
 const { listings } = JSON.parse(fs.readFileSync(path.join(ROOT, 'tpt/listings.json'), 'utf8'));
 
 function listingTxt(l) {
+  const previewLine = l.product
+    ? `Preview ............ 5-PREVIEW.pdf   <- upload in the LEFT "Preview" box (up to 30 MB)
+Video Preview ...... skip (the right box)`
+    : 'Skip both boxes: a bundle shows its component listings\' previews.';
   const productName = l.product
     ? `${path.basename(l.product)}   (in this zip)`
     : `none — build this in TPT's bundle tool from: ${l.bundleOf.join(' + ')}`;
@@ -47,7 +52,9 @@ ${l.title}
 
 ${productName}
 
-Product Previews ... skip (both slots)
+--- FILES > PRODUCT PREVIEWS ---
+
+${previewLine}
 
 --- THUMBNAILS ("Upload thumbnails now") ---
 
@@ -80,6 +87,7 @@ for (const l of [...listings].sort((a, b) => a.order - b.order)) {
   const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'drop-'));
   fs.writeFileSync(path.join(stage, 'LISTING.txt'), listingTxt(l));
   if (l.product) fs.copyFileSync(path.join(ROOT, l.product), path.join(stage, path.basename(l.product)));
+  if (l.product) fs.copyFileSync(path.join(ROOT, `tpt/previews/${l.id}-preview.pdf`), path.join(stage, '5-PREVIEW.pdf'));
   fs.copyFileSync(path.join(ROOT, l.cover), path.join(stage, '2-MAIN-COVER.png'));
   l.thumbnails.forEach((t, i) =>
     fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${3 + i}-THUMBNAIL-${i + 1}.png`)));

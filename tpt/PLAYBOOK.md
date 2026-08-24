@@ -55,8 +55,8 @@ Week types:
 
 ### Production steps
 
-1. Pick the top unshipped item from the **Backlog** below (respect the
-   free/paid alternation against what shipped last).
+1. Pick this week's item from the **Year-1 production calendar** below
+   (top pending row; seasonal items may jump per the override above).
 2. Author or retrofit the content:
    - **Micro-products** (free PDFs, drill packs, template packs): write
      src HTML in the Bright Scholar layer-3 interior style
@@ -69,6 +69,9 @@ Week types:
 3. Add a `PRODUCTS` entry to `tpt/make_covers.js` and render the cover.
    Paid products also get what's-inside + real-pages images via
    `tpt/make_listing_extras.js` (put page renders in `tpt/pinsrc/`).
+   Then build the sneak-peek preview with `node tpt/make_previews.js`
+   (paid listings need `previewShots` + `previewInside` in listings.json;
+   free PDFs are sampled automatically).
 4. Add the listing to `tpt/listings.json`: title, description, price,
    licenses, grades, subjects, ≤6 tags, formats. Copy rules: keyword-rich
    title with pipes, description in plain paragraphs, provenance line at
@@ -80,6 +83,8 @@ Week types:
    - any claimed number (slide count, page count, drill count) matches the
      actual file;
    - zips pass integrity check;
+   - every non-bundle drop contains `5-PREVIEW.pdf` and it opens (a listing
+     without a sneak peek does not ship);
    - covers are 1000×1000 with the rainbow bar present (pixel-check the
      bottom rows — the headless renderer once silently dropped it);
    - no external URLs outside the References PDFs' citations.
@@ -102,12 +107,18 @@ New Product" form top to bottom, so the owner never thinks:
 |---|---|
 | `LISTING.txt` | every field, in the form's order, paste-ready |
 | product file (original buyer-facing name) | Files → Downloadable File |
+| `5-PREVIEW.pdf` | Files → Product Previews → Preview (the sneak-peek flipbook buyers browse) |
 | `2-MAIN-COVER.png` | Thumbnails → Main Cover |
 | `3-THUMBNAIL-1.png` (paid only) | Thumbnails → Thumbnail (Optional) |
 | `4-THUMBNAIL-2.png` (paid only) | Thumbnails → Thumbnail (Optional) |
 
-Product Previews and Education Standards are skipped by policy. Multiple
-Licenses is always $10 on paid items. Tax Code: the standard digital
+Every listing ships a sneak-peek preview (owner directive, 2026-08-24):
+`node tpt/make_previews.js` builds it — paid kits get a branded cover, three
+real pages behind a SNEAK PEEK band, and a what's-inside close with the
+license line; free items get the cover plus up to two real pages; bundles
+skip it (TPT shows the component previews). The Video Preview slot and
+Education Standards are skipped by policy. Multiple Licenses is always $10
+on paid items. Tax Code: the standard digital
 download option in TPT's dropdown.
 
 ## The economics (why the calendar looks like this)
