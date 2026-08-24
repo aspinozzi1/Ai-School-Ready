@@ -45,7 +45,7 @@ const brandRow = (accent = '#17BEBB') => `<div class="brand">${intern(46, 48, '#
 const rainbow = () => `<div class="bar"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>`;
 
 /* ---- shape 1: what's inside ---- */
-function whatsInside(kitName, accent, items) {
+function whatsInside(kitName, accent, items, badge = '9 files') {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link href="${FONTS}" rel="stylesheet"><style>${BASE}
   body { background: #17293B; }
@@ -64,7 +64,7 @@ function whatsInside(kitName, accent, items) {
   .intern { position: absolute; right: 48px; bottom: 56px; }
 </style></head><body>
   ${brandRow()}
-  <div class="badge">9 files</div>
+  <div class="badge">${badge}</div>
   <div class="head">
     <div class="kicker">What's inside</div>
     <h1>${kitName} <em>${accent}</em></h1>
@@ -76,7 +76,7 @@ function whatsInside(kitName, accent, items) {
 }
 
 /* ---- shape 2: real pages collage ---- */
-function realPages(field, shots) {
+function realPages(field, shots, badge = '9 files') {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link href="${FONTS}" rel="stylesheet"><style>${BASE}
   body { background: ${field}; }
@@ -95,7 +95,7 @@ function realPages(field, shots) {
             font-size: 25px; font-weight: 800; color: #FFFFFF; }
 </style></head><body>
   ${brandRow('#17293B')}
-  <div class="badge">9 files</div>
+  <div class="badge">${badge}</div>
   <h1>Real pages from the kit</h1>
   <div class="sub">Printed straight from the files you download</div>
   <div class="shot s1"><img src="${b64(shots[0])}"></div>
@@ -160,6 +160,14 @@ const IMAGES = [
   ['kit1-real-pages',   realPages('#17BEBB', ['k1_script.png', 'k1_handout.png', 'k1_plan.png'])],
   ['kit2-whats-inside', whatsInside('Kit 2 ·', 'Prompting Basics', KIT_ITEMS(33))],
   ['kit2-real-pages',   realPages('#2D6CB5', ['k2_script.png', 'k2_handout.png', 'k2_plan.png'])],
+  ['bts-whats-inside', whatsInside('Back-to-School', 'AI Setup Pack', [
+    'The First-Week AI Setup Checklist — ten boxes, one planning period',
+    'Ready-to-send family letter about how you\u2019ll use AI this year',
+    '<b>Ten back-to-school prompts</b>, safe exactly as written',
+    'From the welcome letter to your day-one diagnostic',
+    'The make-it-safe habit — 3 moves + the ten-second test',
+  ], '5 pages')],
+  ['bts-real-pages',   realPages('#E4572E', ['bts_p2.png', 'bts_p3.png', 'bts_p4.png'], '5 pages')],
   ['whole-staff-license', license()],
 ];
 

@@ -74,7 +74,9 @@ Week types:
    free PDFs are sampled automatically).
 4. Add the listing to `tpt/listings.json`: title, description, price,
    licenses, grades, subjects, ≤6 tags, formats. Copy rules: keyword-rich
-   title with pipes, description in plain paragraphs, provenance line at
+   title with pipes, **≤80 characters — TPT cuts longer titles**
+   (owner-verified 2026-08-24), most-searched keywords first; description
+   in plain paragraphs, provenance line at
    the end, no external references, free items may point to "our full PD
    sessions are in the store" (store-internal only).
 5. `node tpt/make_drops.js` → builds/refreshes drop zips in `UPLOAD/drops/`.
@@ -87,6 +89,7 @@ Week types:
      without a sneak peek does not ship);
    - covers are 1000×1000 with the rainbow bar present (pixel-check the
      bottom rows — the headless renderer once silently dropped it);
+   - listing titles are ≤80 characters;
    - no external URLs outside the References PDFs' citations.
 7. Mark the backlog item shipped (date), commit, push, and send the owner
    the drop zip with a two-line summary.
@@ -165,7 +168,7 @@ handout, $12, same kit tooling at smaller scale.
 
 | Wk | Monday | Item | Tier | Status |
 |---|---|---|---|---|
-| 1 | Aug 24 | Back-to-School AI Setup Pack — first-week checklist, parent letter, 10 BTS prompts | Paid $8 | pending |
+| 1 | Aug 24 | Back-to-School AI Setup Pack — first-week checklist, parent letter, 10 BTS prompts | Paid $8 | shipped 2026-08-24 |
 | 2 | Aug 31 | Parent Message Makeovers — editable template pack (Kit 6 derivative) | Paid $8 | pending |
 | 3 | Sep 07 | The AI Mistake Gallery — failure-first funnel piece | Free | pending |
 | 4 | Sep 14 | Kit 3 retrofit (`kits/kit03/`) | Paid $24 | pending |

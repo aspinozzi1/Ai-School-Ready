@@ -88,9 +88,9 @@ const coverPage = (l, sub) => `<div class="page ink">
   ${rainbow()}
 </div>`;
 
-const kitSample = (png, n, total) => `<div class="page">
+const kitSample = (png, n, total, unit) => `<div class="page">
   <div class="shot"><img src="${b64(png)}"></div>
-  <div class="diag">SNEAK PEEK · the full kit is 9 files</div>
+  <div class="diag">SNEAK PEEK · ${unit}</div>
   <div class="strip">Real page ${n} of ${total} shown · printed straight from the files you download · <b>AI-Ready School</b></div>
 </div>`;
 
@@ -101,8 +101,8 @@ const freeSample = png => `<div class="page">
 
 const insidePage = l => `<div class="page ink">
   ${brand()}
-  <div class="peek-badge">9 files</div>
-  <div class="cover-body" style="top:1.7in"><div class="kicker">What's inside the full kit</div>
+  <div class="peek-badge">${l.filesBadge || '9 files'}</div>
+  <div class="cover-body" style="top:1.7in"><div class="kicker">${l.insideHeading || "What's inside the full kit"}</div>
     <h1 style="font-size:30pt">${l.name}</h1></div>
   <div class="inside-list" style="top:3.5in">
     ${l.previewInside.map(t => `<div class="item"><i>✓</i><span>${t}</span></div>`).join('')}
@@ -117,10 +117,11 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'previews-'));
 for (const l of [...listings].sort((a, b) => a.order - b.order)) {
   if (!l.product) continue; // bundles: TPT shows component previews
   let pages;
-  if (l.product.endsWith('.zip')) {
+  if (l.previewShots) {
+    const unit = l.previewUnit || 'the full kit is 9 files';
     const shots = l.previewShots.map(f => path.join(SRC, f));
-    pages = [coverPage(l, 'Three real pages from the kit, straight off the shipping files, plus everything the full download includes.'),
-      ...shots.map((p, i) => kitSample(p, i + 1, 3)), insidePage(l)];
+    pages = [coverPage(l, 'Three real pages, straight off the shipping files, plus everything the full download includes.'),
+      ...shots.map((p, i) => kitSample(p, i + 1, shots.length, unit)), insidePage(l)];
   } else {
     // free pdf: render up to 2 real pages at 2x
     const rendered = execFileSync('python3', ['-c', `
