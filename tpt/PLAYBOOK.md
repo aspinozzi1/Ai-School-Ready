@@ -246,3 +246,16 @@ thin against that bar, fix the kit, not the price.
   10-Minute AI Habit · Don't Type That poster · Emergency Sub Plans ·
   AI or Teacher? poster), Back-to-School AI Setup Pack $8, Parent
   Message Makeovers $12. Drops 09–15 in `UPLOAD/drops/`.
+- **2026-08-24 (line launch)**: **Homeschool AI + Young Entrepreneurs**
+  line shipped (owner directive; niche analysis in
+  `tpt/intel/homeschool-entrepreneur-niche.md`) — 5 frees (What Is AI?
+  Unplugged 4–8 · Family AI Rules poster · Homeschool AI Quick-Start ·
+  My First Business Idea 6–10 · Is It True? 9–12) + 3 paid (Homeschool
+  AI Planning Pack $8 · My First Business workbook $8, ages 6–10 ·
+  Launch It $10, ages 9–12). Drops 16–23. New custom categories:
+  "Homeschool AI", "Young Entrepreneurs". **The line's design law:
+  the grown-up holds the keyboard** — chatbots are 13+, AI coaches the
+  parent, kids think and decide, child identity never enters a prompt,
+  anything online is adult-run. Weekly batches may now draw from this
+  line (seasonal venture packs, co-op editions, age-4–5 unplugged pack)
+  when the intel brief supports it.

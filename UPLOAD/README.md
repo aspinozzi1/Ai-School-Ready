@@ -14,6 +14,12 @@ Current state:
   AI Setup Pack $8 (09), five new frees (10–14: AI Vocabulary · 10-Minute
   AI Habit · Don't Type That poster · Emergency Sub Plans · AI or
   Teacher? poster), and Parent Message Makeovers $12 (15).
+- **drops 16–23** — the Homeschool AI + Young Entrepreneurs line
+  (2026-08-24): five frees (What Is AI? Unplugged · Family AI Rules
+  poster · Homeschool AI Quick-Start · My First Business Idea · Is It
+  True?) and three paid (Homeschool AI Planning Pack $8 · My First
+  Business $8 · Launch It $10). Two new custom categories to create
+  once in the store: "Homeschool AI" and "Young Entrepreneurs".
 - **2026-08-24 corrections to the already-published BTS listing (09):**
   the product PDF, preview, and both thumbnails were rebuilt after a
   page-break fix (the family letter no longer splits across pages). On

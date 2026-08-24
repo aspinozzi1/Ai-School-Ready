@@ -176,6 +176,27 @@ const IMAGES = [
     'Build-your-own template + the read-aloud test before every send',
   ], '7 pages')],
   ['pm-real-pages',   realPages('#17BEBB', ['pm_p3.png', 'pm_p4.png', 'pm_p6.png'], '7 pages')],
+  ['hsp-whats-inside', whatsInside('Homeschool AI', 'Planning Pack', [
+    '<b>20 subject-organized prompts</b> — LA, math, science, history',
+    'The unit study builder — fill it in, feed the master prompt',
+    'Weekly rhythm planner with room for the rabbit holes',
+    'The family data-safety habit: describe the learner, never the child',
+  ], '4 pages')],
+  ['hsp-real-pages',   realPages('#2D6CB5', ['hsp_p2.png', 'hsp_p3.png', 'hsp_p4.png'], '4 pages')],
+  ['yfb-whats-inside', whatsInside('My First Business', 'Ages 6–10', [
+    '<b>6 steps from idea to profit</b> — kid box + parent AI coach each',
+    'The Rule of Three: how real sellers price, at kid scale',
+    'Sale-day tally sheet and the subtractions that reveal PROFIT',
+    'Grown-ups hold the keyboard and run anything online',
+  ], '4 pages')],
+  ['yfb-real-pages',   realPages('#FFC43D', ['yfb_p2.png', 'yfb_p3.png', 'yfb_p4.png'], '4 pages')],
+  ['yli-whats-inside', whatsInside('Launch It', 'Ages 9–12', [
+    '<b>The one-page business plan</b> + mentor-check AI prompt',
+    'Market research: 3 sharp questions, 5 real humans',
+    'Pitch practice vs. an AI customer with kid-gentle objections',
+    'The ledger and the online-safety contract you both sign',
+  ], '6 pages')],
+  ['yli-real-pages',   realPages('#E4572E', ['yli_p2.png', 'yli_p3.png', 'yli_p5.png'], '6 pages')],
   ['whole-staff-license', license()],
 ];
 

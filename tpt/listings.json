@@ -550,6 +550,322 @@
    "previewUnit": "the full pack is 7 pages",
    "filesBadge": "7 pages",
    "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "what-is-ai",
+   "order": 16,
+   "name": "What Is AI? Unplugged First Lesson",
+   "product": "UPLOAD/01-free/what-is-ai-unplugged.pdf",
+   "cover": "tpt/covers/free-what-is-ai-cover.png",
+   "thumbnails": [],
+   "title": "What Is AI? Unplugged Lesson for Kids Ages 4-8 | Homeschool & K-2 | Free",
+   "description": "Your child hears \"AI\" everywhere. This is the first lesson — three kitchen-table games, zero screens.\n\nINSIDE (2 pages): the sorting machine, the pattern guesser, and the robot parent — unplugged games with read-aloud scripts that teach an age-honest picture of AI: it learns from examples, it guesses (and guesses can be wrong), and people are in charge. Plus the honest answer for \"can I talk to it?\" — chatbots are built for 13 and up, and the grown-up holds the keyboard.\n\nPerfect for homeschool mornings, K-2 classrooms, co-op days, and any family whose kids are asking.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "PreK",
+    "Kindergarten",
+    "1st",
+    "2nd"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "ai for kids",
+    "homeschool",
+    "digital citizenship",
+    "unplugged activities",
+    "technology",
+    "ai literacy"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "family-ai-rules",
+   "order": 17,
+   "name": "Our Family AI Rules Poster",
+   "product": "UPLOAD/01-free/family-ai-rules-poster.pdf",
+   "cover": "tpt/covers/free-family-ai-rules-cover.png",
+   "thumbnails": [],
+   "title": "Family AI Rules Poster | Kids AI Safety Agreement | Homeschool & Home | Free",
+   "description": "Five family AI rules worth signing together, sized for the fridge, the desk, and the co-op wall:\n\n1. Grown-ups hold the keyboard (chatbots are 13+)\n2. AI guesses; it doesn't know — we check\n3. Our names and photos stay ours\n4. AI helps us think — it doesn't think for us\n5. We talk about the weird stuff\n\nINSIDE (2 pages): the printable sign-together poster with kid and grown-up signature lines, plus a parent guide with the thinking behind each rule in words that survive follow-up questions.\n\nRe-sign it every school year — the conversation is the real product.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "ai safety",
+    "digital citizenship",
+    "homeschool",
+    "family",
+    "classroom poster",
+    "internet safety"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "hs-quickstart",
+   "order": 18,
+   "name": "AI Quick-Start for Homeschool Parents",
+   "product": "UPLOAD/01-free/homeschool-ai-quick-start.pdf",
+   "cover": "tpt/covers/free-hs-quickstart-cover.png",
+   "thumbnails": [],
+   "title": "AI Prompts for Homeschool Parents | 10 Planning Time Savers | Free Quick Start",
+   "description": "You're the teacher, the principal, and the curriculum department. AI can't replace any of that — but it can draft the time-eating parts in minutes.\n\nINSIDE (3 pages): ten ready-to-run prompts for the jobs that eat homeschool evenings — the weekly plan, the unit study builder, leveled readings, quizzes, spelling lists, field trips, the sick-parent day, portfolio entries, and the co-op class you volunteered for. Fill the brackets, review like the parent-teacher you are, keep what works.\n\nEvery prompt follows the one habit that keeps families safe: describe the learner, never the child — no names, ever. And the grown-up holds the keyboard.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "homeschool",
+    "homeschool curriculum",
+    "ai for teachers",
+    "chatgpt",
+    "lesson planning",
+    "unit studies"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "first-biz-idea",
+   "order": 19,
+   "name": "My First Business Idea",
+   "product": "UPLOAD/01-free/my-first-business-idea.pdf",
+   "cover": "tpt/covers/free-first-biz-idea-cover.png",
+   "thumbnails": [],
+   "title": "My First Business Idea Worksheet | Entrepreneurship for Kids 6-10 | Free",
+   "description": "Every business starts the same way: somebody notices a thing people want and makes it for them. Today that somebody is your kid.\n\nINSIDE (2 pages): a draw-or-write worksheet where kids ages 6-10 capture their first business idea — what to make, who would want it, what it needs, the sign, and the selling sentence — plus a grown-up coach page with two safe AI prompts that grow the idea and play the practice customer.\n\nThe rule the whole line is built on: kids do the thinking, grown-ups hold the keyboard (AI chatbots are 13+), and a child's name never goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "1st",
+    "2nd",
+    "3rd",
+    "4th"
+   ],
+   "subjects": [
+    "Economics",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "entrepreneurship",
+    "financial literacy",
+    "homeschool",
+    "pbl",
+    "business for kids",
+    "economics"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs"
+  },
+  {
+   "id": "is-it-true",
+   "order": 20,
+   "name": "Is It True? Fact-Checking AI",
+   "product": "UPLOAD/01-free/is-it-true-fact-check.pdf",
+   "cover": "tpt/covers/free-is-it-true-cover.png",
+   "thumbnails": [],
+   "title": "Is It True? AI Fact Checking Lesson for Kids 9-12 | Media Literacy | Free",
+   "description": "The most important AI skill for a 9-to-12-year-old isn't prompting — it's doubting well.\n\nINSIDE (2 pages): the three-step check (does it name a source? can I find it in two places? does it survive the \"wait, what?\" test) and Two Truths and an AI — a replayable family game where the grown-up generates two true facts and one believable fake, and the learner out-checks the machine.\n\nKids who've personally caught AI being wrong are permanently harder to fool — by chatbots, by videos, by anything with a confident voice.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "4th",
+    "5th",
+    "6th",
+    "7th"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "media literacy",
+    "critical thinking",
+    "ai literacy",
+    "homeschool",
+    "digital citizenship",
+    "fact checking"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "hs-planning",
+   "order": 21,
+   "name": "Homeschool AI Planning Pack",
+   "product": "UPLOAD/02-paid/Homeschool-AI-Planning-Pack.pdf",
+   "cover": "tpt/covers/hs-planning-cover.png",
+   "thumbnails": [
+    "tpt/extras/hsp-whats-inside.png",
+    "tpt/extras/hsp-real-pages.png"
+   ],
+   "title": "Homeschool AI Planning Pack | Unit Study Builder, 20 Prompts, Weekly Planner",
+   "description": "You're the whole school. This is your planning department.\n\nINSIDE (4 pages): twenty subject-organized AI prompts — language arts (copywork from your own units, narration questions, the gentle writing conference), math (word problems set in your kid's current obsession, explain-it-three-ways, five-minute fact drills), science and social studies (kitchen experiments, living-books hunts, wall timelines) · a fill-in unit study builder that feeds one master prompt · a printable weekly rhythm planner with a column for the rabbit hole you followed · and the family data-safety habit on one page.\n\nEvery prompt follows the rule that keeps this safe: describe the learner, never the child. No names, ever — and grown-ups hold the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+   "price": 8,
+   "licenses": 4,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "homeschool",
+    "homeschool curriculum",
+    "unit studies",
+    "ai for teachers",
+    "lesson planning",
+    "charlotte mason"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI",
+   "previewShots": [
+    "hsp_p2.png",
+    "hsp_p3.png",
+    "hsp_p4.png"
+   ],
+   "previewInside": [
+    "<b>20 subject-organized prompts</b> — language arts, math, science, history",
+    "The unit study builder — fill it in, feed the master prompt",
+    "Weekly rhythm planner with room for the rabbit holes",
+    "The family data-safety habit: describe the learner, never the child"
+   ],
+   "previewUnit": "the full pack is 4 pages",
+   "filesBadge": "4 pages",
+   "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "ye-first-business",
+   "order": 22,
+   "name": "My First Business Workbook",
+   "product": "UPLOAD/02-paid/My-First-Business-Workbook.pdf",
+   "cover": "tpt/covers/ye-first-business-cover.png",
+   "thumbnails": [
+    "tpt/extras/yfb-whats-inside.png",
+    "tpt/extras/yfb-real-pages.png"
+   ],
+   "title": "My First Business | Young Entrepreneur Workbook Ages 6-10 | Money Math & More",
+   "description": "A real business, kid-sized: pick an idea, figure the costs, price it with the Rule of Three, make the sign, sell to real people, count real profit.\n\nINSIDE (4 pages, 6 steps): My Big Idea (with naming help) · What Will It Cost Me (supply table and cost-of-one math) · the Rule of Three pricing boxes (supplies + your work + a little extra) · Tell the World (design-your-sign space and kid-safe marketing) · Sale Day (tally sheet and the two big subtractions to find PROFIT) · What I Learned (the founder's debrief).\n\nEvery step pairs a kid box with a grown-up AI-coach prompt — because in this line, kids do the thinking and grown-ups hold the keyboard (AI chatbots are 13+). Includes the stated-once safety frame: selling happens to people you know, and anything online is grown-up-run with no child names or photos, ever.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+   "price": 8,
+   "licenses": 4,
+   "grades": [
+    "1st",
+    "2nd",
+    "3rd",
+    "4th"
+   ],
+   "subjects": [
+    "Economics",
+    "Math",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "entrepreneurship",
+    "financial literacy",
+    "money math",
+    "pbl",
+    "homeschool",
+    "economics"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs",
+   "previewShots": [
+    "yfb_p2.png",
+    "yfb_p3.png",
+    "yfb_p4.png"
+   ],
+   "previewInside": [
+    "<b>6 steps from idea to profit</b> — each with a kid box and a parent AI coach",
+    "The Rule of Three: how real sellers price, at kid scale",
+    "Sale-day tally sheet and the two subtractions that reveal PROFIT",
+    "The safety frame: grown-ups hold the keyboard and run anything online"
+   ],
+   "previewUnit": "the full workbook is 4 pages",
+   "filesBadge": "4 pages",
+   "insideHeading": "What's inside the full workbook"
+  },
+  {
+   "id": "ye-launch-it",
+   "order": 23,
+   "name": "Launch It: Young Entrepreneur Kit",
+   "product": "UPLOAD/02-paid/Launch-It-Entrepreneur-Kit.pdf",
+   "cover": "tpt/covers/ye-launch-it-cover.png",
+   "thumbnails": [
+    "tpt/extras/yli-whats-inside.png",
+    "tpt/extras/yli-real-pages.png"
+   ],
+   "title": "Launch It | Young Entrepreneur Kit Ages 9-12 | Business Plan, Pricing, Pitch",
+   "description": "The real thing, sized for ages 9-12: plan it, research it, price it, pitch it, launch it — and let the ledger tell the truth.\n\nINSIDE (6 pages, 5 parts + debrief): the one-page business plan real mentors would recognize · market research with three interview questions and five real humans · Rule of Three pricing with profit math for 5, 10, and 20 sales · pitch practice against an AI customer who raises real objections (\"that seems expensive\") gently enough for a kid and firmly enough to be great practice · the running ledger · the online-safety contract both of you sign (grown-ups run anything online; names, faces, school, and street stay off the internet) · and the founder's debrief.\n\nThe grown-up runs every AI prompt — chatbots are 13+ — and the young founder does every bit of the thinking. Pairs with our free \"Is It True?\" fact-checking lesson.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($5 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+   "price": 10,
+   "licenses": 5,
+   "grades": [
+    "4th",
+    "5th",
+    "6th",
+    "7th"
+   ],
+   "subjects": [
+    "Economics",
+    "Math",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "entrepreneurship",
+    "financial literacy",
+    "business plan",
+    "pbl",
+    "homeschool",
+    "project based learning"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs",
+   "previewShots": [
+    "yli_p2.png",
+    "yli_p3.png",
+    "yli_p5.png"
+   ],
+   "previewInside": [
+    "<b>The one-page business plan</b> — plus a mentor-check AI prompt",
+    "Market research: 3 sharp questions, 5 real humans, 1 honest revision",
+    "Pitch practice vs. an AI customer with real (kid-gentle) objections",
+    "The ledger and the online-safety contract you both sign"
+   ],
+   "previewUnit": "the full kit is 6 pages",
+   "filesBadge": "6 pages",
+   "insideHeading": "What's inside the full kit"
   }
  ]
 }
