@@ -31,11 +31,27 @@ Canva masters live in the "Bright Scholar — TPT Brand" folder
 
 ## The weekly cycle
 
-Every **Monday** a production run creates ONE new product, finished to the
-quality gates, packaged as a **drop zip** the owner can upload in under ten
-minutes. Cadence: alternate **free funnel piece** and **paid product** —
-free pieces grow followers; paid pieces convert them. Never ship two paid
-weeks in a row while the store is young.
+Every **Monday** a production run creates ONE item from the **Year-1
+calendar** below, finished to the quality gates, packaged as a **drop
+zip** the owner can upload in under ten minutes. The calendar encodes the
+free/paid mix, seasonality, bundle milestones, and optimize weeks — follow
+it in order, with one override: a **seasonal item may jump the queue** if
+its buying window would otherwise close (back-to-school, conferences,
+report cards, testing, PO season).
+
+Week types:
+- **New product** — the normal case; full production steps below.
+- **Bundle week** — no new content. Produce the bundle's listing copy,
+  cover, and a LISTING.txt-only drop; the owner assembles it in TPT's
+  bundle tool from the named existing listings.
+- **Optimize week** (quarterly, placed in low-buying weeks) — no new
+  content. Refresh the 2–3 best-selling listings: sharpen titles/tags
+  against TPT search, re-render covers if the brand evolved, check prices,
+  and report what's selling vs. dead. Optimizing winners outearns a weak
+  52nd product.
+- **Refresh week** — second edition of an existing product (update stats,
+  tool names, screenshots). Buyers get it as a free update; TPT surfaces
+  updated products and it earns reviews and follower goodwill.
 
 ### Production steps
 
@@ -94,21 +110,106 @@ Product Previews and Education Standards are skipped by policy. Multiple
 Licenses is always $10 on paid items. Tax Code: the standard digital
 download option in TPT's dropdown.
 
-## Backlog (top = next Monday)
+## The economics (why the calendar looks like this)
 
-| # | Item | Tier | Source | Status |
+TPT is a search marketplace: revenue scales with **catalog size × search
+visibility × seasonal timing**, concentrated in a few winners plus a long
+tail. The plan is built on five levers:
+
+1. **Catalog compounding.** ~50 listings by Week 52 (8 at launch + ~44
+   produced). Every listing is a permanent lottery ticket in TPT search.
+2. **Price ladder.** Free funnel (grow followers) → $8–12 micro packs
+   (volume, impulse) → $24 kits (flagship) → $12 "PD Shorts" (30-minute
+   mini-sessions, a repeatable line) → bundles $19–149 (raise average
+   order; what schools buy).
+3. **Seasonality.** Back-to-school (Jul–Sep) and TPT's sitewide sale weeks
+   (typically early Aug + late Feb) are the traffic spikes; **school PO
+   season (Apr–Jun)** is when districts spend remaining budget — the big
+   bundles exist for exactly that window.
+4. **The staff-purchase multiplier.** $10 additional licenses + POs via
+   TpT for Schools turn one $24 sale into a $100–300 order with zero
+   owner effort. Every paid listing keeps the whole-staff paragraph.
+5. **Optimize the winners.** Quarterly optimize weeks push the top sellers
+   harder instead of diluting effort across weak new listings.
+
+**Honest revenue outlook at Premium's 80% royalty** (net per sale: micro
+≈ $6.50–9.50, kit ≈ $19, bundles ≈ $31–119). Twelve months in, with ~35
+paid listings live:
+
+| Scenario | Assumes | ≈ Monthly net |
+|---|---|---|
+| Conservative | 0.5 sales/paid listing/mo, no PO orders | $200–300 |
+| Base | 1.5 sales/listing/mo + 1–2 small POs | $600–900 |
+| Strong | one kit ranks for "AI PD", PO season lands | $1,500–3,000+ |
+
+The spread is real: outcomes hinge on whether one flagship ranks. The
+calendar maximizes at-bats in the highest-value niche (staff PD, weak
+competition, school budgets) rather than betting on any single item.
+
+## Year-1 production calendar (top = next Monday)
+
+Statuses: pending → shipped YYYY-MM-DD. Seasonal items may jump the queue
+if their window is closing. PD Shorts = 15-ish slides + script + one
+handout, $12, same kit tooling at smaller scale.
+
+| Wk | Monday | Item | Tier | Status |
 |---|---|---|---|---|
-| 1 | Parent Message Makeovers — template pack (Kit 6 derivative, swipe-test: tangible classroom documentation) | Paid $8–12 | new src | pending |
-| 2 | "The AI Mistake Gallery" — failure-first free piece | Free | new src | pending |
-| 3 | Kit 3 retrofit → TPT kit + listing | Paid $24 | `kits/kit03/` | pending |
-| 4 | Sub-plan builder pack | Paid $8–12 | new src | pending |
-| 5 | "You Don't Have to Like AI" — skeptic wedge | Free | new src | pending |
-| 6 | Kit 4 retrofit → TPT kit + listing | Paid $24 | `kits/kit04/` | pending |
-| 7 | Rubric pack (AI-assisted rubric templates) | Paid $8–12 | new src | pending |
-| 8 | Kit 5 retrofit (needs `REBUILD_SPEC.md` pass) | Paid $24 | `kits/kit05/` | pending |
-| 9–12 | Kits 6–8 retrofits, then seasonal freebies | mixed | `kits/kit0N/` | pending |
+| 1 | Aug 24 | Back-to-School AI Setup Pack — first-week checklist, parent letter, 10 BTS prompts | Paid $8 | pending |
+| 2 | Aug 31 | Parent Message Makeovers — editable template pack (Kit 6 derivative) | Paid $8 | pending |
+| 3 | Sep 07 | The AI Mistake Gallery — failure-first funnel piece | Free | pending |
+| 4 | Sep 14 | Kit 3 retrofit (`kits/kit03/`) | Paid $24 | pending |
+| 5 | Sep 21 | Sub-Plan Builder pack | Paid $10 | pending |
+| 6 | Sep 28 | BUNDLE: "AI Time-Savers Toolkit" = W1 + W2 + W5 | Bundle $19 | pending |
+| 7 | Oct 05 | Conference-Season Pack — AI-prepped talking points + de-identified summaries | Paid $8 | pending |
+| 8 | Oct 12 | Kit 4 retrofit (`kits/kit04/`) | Paid $24 | pending |
+| 9 | Oct 19 | "You Don't Have to Like AI" — skeptic wedge | Free | pending |
+| 10 | Oct 26 | Newsletter & Family Communications pack | Paid $8 | pending |
+| 11 | Nov 02 | Kit 5 retrofit (`kits/kit05/` — run its REBUILD_SPEC pass first) | Paid $24 | pending |
+| 12 | Nov 09 | BUNDLE: "AI PD Library, Sessions 1–5" | Bundle $79 | pending |
+| 13 | Nov 16 | Report Card Comment Helper — de-identified comment banks + prompts | Paid $10 | pending |
+| 14 | Nov 23 | OPTIMIZE WEEK 1 (Thanksgiving lull) — refresh top 3 listings | Optimize | pending |
+| 15 | Nov 30 | PD Short: "Grading & Feedback with AI" | Paid $12 | pending |
+| 16 | Dec 07 | Winter family letter + break-time AI guide | Free | pending |
+| 17 | Dec 14 | Kit 6 retrofit (`kits/kit06/` — run its REBUILD_SPEC pass first) | Paid $24 | pending |
+| 18 | Dec 21 | PD Short: "AI & Academic Integrity" (January demand, listed early) | Paid $12 | pending |
+| 19 | Dec 28 | OPTIMIZE WEEK 2 (dead week) — annual audit + Feb-sale prep list | Optimize | pending |
+| 20 | Jan 04 | New-Semester AI Reset — fresh-start checklist | Free | pending |
+| 21 | Jan 11 | Kit 7 retrofit (`kits/kit07/`) | Paid $24 | pending |
+| 22 | Jan 18 | Rubric pack — editable AI-assisted rubric templates | Paid $10 | pending |
+| 23 | Jan 25 | PD Short: "De-Identification Deep Dive" (paid sequel to the free drills) | Paid $12 | pending |
+| 24 | Feb 01 | BUNDLE refresh for TPT Feb sale: "AI PD Library, Sessions 1–7" | Bundle $99 | pending |
+| 25 | Feb 08 | Differentiation with AI — leveled-text prompt template pack | Paid $10 | pending |
+| 26 | Feb 15 | Kit 8 retrofit (`kits/kit08/`) — series complete | Paid $24 | pending |
+| 27 | Feb 22 | BUNDLE: "Complete AI Staff PD — All 8 Sessions" (the PO flagship) | Bundle $119 | pending |
+| 28 | Mar 01 | Multilingual family communications pack | Paid $10 | pending |
+| 29 | Mar 08 | Testing-Season Pack — AI-safe review generators + question banks | Paid $10 | pending |
+| 30 | Mar 15 | AI for Instructional Coaches — observation & feedback pack | Paid $10 | pending |
+| 31 | Mar 22 | Post-testing brain-break prompt pack | Free | pending |
+| 32 | Mar 29 | OPTIMIZE WEEK 3 — PO-season storefront prep | Optimize | pending |
+| 33 | Apr 05 | Admin Toolkit — AI policy starter + staff-meeting one-pagers | Paid $15 | pending |
+| 34 | Apr 12 | PD Short: "Running an AI PLC" | Paid $12 | pending |
+| 35 | Apr 19 | IEP-Adjacent Safe Writing pack (de-identification line extension) | Paid $10 | pending |
+| 36 | Apr 26 | BUNDLE: "Whole-School AI Launch" = 8 sessions + Admin Toolkit + drills | Bundle $149 | pending |
+| 37 | May 03 | End-of-year family letter + summer AI guide | Free | pending |
+| 38 | May 10 | End-of-Year Survival pack — comments, awards, newsletters | Paid $10 | pending |
+| 39 | May 17 | PD Short: "AI Tool Vetting Workshop" (builds on the free checklist) | Paid $12 | pending |
+| 40 | May 24 | "AI-Ready by August" — self-paced 4-week summer PD plan | Paid $12 | pending |
+| 41 | May 31 | OPTIMIZE WEEK 4 — year-in-review: reprice, kill/merge dead listings | Optimize | pending |
+| 42 | Jun 07 | New-Teacher AI Starter pack (new hires + June grads) | Paid $8 | pending |
+| 43 | Jun 14 | Kit 1 second edition — refresh stats/tools, free update to buyers | Refresh | pending |
+| 44 | Jun 21 | Kit 2 second edition | Refresh | pending |
+| 45 | Jun 28 | "100 Teacher AI Prompts" compendium (aggregates the year's prompts) | Paid $12 | pending |
+| 46 | Jul 05 | BTS-2027 poster freebie: "3 AI Rules for the New Year" | Free | pending |
+| 47 | Jul 12 | Back-to-School Setup Pack 2.0 (W1 updated for 2027) | Paid $8 | pending |
+| 48 | Jul 19 | Classroom AI Stations pack — student-facing, privacy-safe | Paid $10 | pending |
+| 49 | Jul 26 | BUNDLE: "First 30 Days AI-Ready" = BTS pack + parent comms + posters | Bundle $24 | pending |
+| 50 | Aug 02 | PD Short: "Your First Staff AI Session" quickstart | Paid $12 | pending |
+| 51 | Aug 09 | BTS staff-meeting icebreaker freebie | Free | pending |
+| 52 | Aug 16 | Year-2 planning — draft next calendar from 12 months of sales data | Planning | pending |
 
-Paid micro-products must pass the **Swipe Test**: tangible classroom-usable
+Mix check: 8 new free (14 total with launch), ~26 paid products, 6
+bundles, 4 optimize weeks, 2 refreshes, 1 planning week. Paid
+micro-products must pass the **Swipe Test**: tangible classroom-usable
 documentation (templates, planning tools, lesson materials) — training
 info and infographics are free-tier funnel material.
 

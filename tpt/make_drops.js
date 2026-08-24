@@ -20,7 +20,9 @@ const OUT = path.join(ROOT, 'UPLOAD/drops');
 const { listings } = JSON.parse(fs.readFileSync(path.join(ROOT, 'tpt/listings.json'), 'utf8'));
 
 function listingTxt(l) {
-  const productName = path.basename(l.product);
+  const productName = l.product
+    ? `${path.basename(l.product)}   (in this zip)`
+    : `none — build this in TPT's bundle tool from: ${l.bundleOf.join(' + ')}`;
   const thumbs = l.thumbnails.length
     ? `Main Cover ......... 2-MAIN-COVER.png
 Thumbnail 1 ........ 3-THUMBNAIL-1.png
@@ -43,7 +45,7 @@ ${l.title}
 
 --- FILES > DOWNLOADABLE FILE ---
 
-${productName}   (in this zip)
+${productName}
 
 Product Previews ... skip (both slots)
 
@@ -77,7 +79,7 @@ fs.mkdirSync(OUT, { recursive: true });
 for (const l of [...listings].sort((a, b) => a.order - b.order)) {
   const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'drop-'));
   fs.writeFileSync(path.join(stage, 'LISTING.txt'), listingTxt(l));
-  fs.copyFileSync(path.join(ROOT, l.product), path.join(stage, path.basename(l.product)));
+  if (l.product) fs.copyFileSync(path.join(ROOT, l.product), path.join(stage, path.basename(l.product)));
   fs.copyFileSync(path.join(ROOT, l.cover), path.join(stage, '2-MAIN-COVER.png'));
   l.thumbnails.forEach((t, i) =>
     fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${3 + i}-THUMBNAIL-${i + 1}.png`)));
