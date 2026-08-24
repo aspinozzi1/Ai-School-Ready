@@ -62,9 +62,14 @@ a slow season, never for the frees.
 
 ### Production steps (run once per product, 7–8× per Monday)
 
+0. **Read the newest brief in `tpt/intel/` first** (see its README). It
+   is produced automatically every Sunday and may override the calendar
+   row: chase live demand, retitle toward proven search phrases, swap a
+   planned free for one the data supports. A brief older than 14 days is
+   stale — proceed on the calendar and say so in the ship summary.
 1. Pick this week's batch from the **Year-1 batch calendar** below
    (top pending row; a seasonal batch may jump the queue if its buying
-   window would otherwise close).
+   window would otherwise close), adjusted by the intel brief.
 2. Author or retrofit the content:
    - **Micro-products** (free PDFs, drill packs, template packs): write
      src HTML in the Bright Scholar layer-3 interior style
@@ -200,7 +205,7 @@ Statuses: pending → shipped YYYY-MM-DD.
 | Wk | Monday | Theme | Mid ($8–12) | High ($12+) | Free direction (pick 5) | Status |
 |---|---|---|---|---|---|---|
 | 1 | Aug 24 | Back to school with AI | BTS AI Setup Pack $8 | Parent Message Makeovers $12 | vocabulary cheat sheet · 10-min habit · PII poster · emergency sub plans · delegate-or-teacher poster | shipped 2026-08-24 |
-| 2 | Aug 31 | Routines that stick | Sub-Plan Builder pack $10 | PD Short: "Your First Staff AI Session" $12 | seating/routine prompts · first-quiz generator guide · gradebook-safe comment starters · staff-meeting one-pager · AI myths poster | pending |
+| 2 | Aug 31 | Routines that stick | Sub-Plan Builder pack $8 | PD Short: "Your First Staff AI Session" $12 | seating/routine prompts · first-quiz generator guide · gradebook-safe comment starters · staff-meeting one-pager · AI myths poster | pending |
 | 3 | Sep 07 | Newsletters & families | Newsletter & Family Comms pack $8 | Kit 3 retrofit $24 (`kits/kit03/`) | newsletter prompt sheet · open-house talking points · translation-request guide · family FAQ handout · positive-note generator card | pending |
 | 4 | Sep 14 | Assessment, safely | Rubric pack $10 | PD Short: "Grading & Feedback with AI" $12 | rubric starter · exit-ticket prompts · feedback sentence stems · academic-integrity one-pager · quiz-leveling guide | pending |
 | 5 | Sep 21 | Time-saver consolidation | Conference-Season Pack $8 (early) | BUNDLE "AI Time-Savers Toolkit" $19 = W1 mid + W2 mid + W5 mid | conference prep checklist · talking-points prompts · de-identified summary guide · scheduling email templates · "what to tell families about AI" card | pending |
@@ -220,6 +225,18 @@ Standing rules for every batch: paid items must pass the **Swipe Test**
 (tangible classroom-usable documentation — training info and
 infographics are free-tier funnel material); every free names one paid
 item in its store-internal callout; seasonal windows beat the row order.
+
+**Pricing doctrine (owner directive, 2026-08-24): when in doubt, price
+lower.** Overpricing relative to content is the one pricing mistake that
+kills a listing — it draws refunds, bad reviews, and dead rank. Before
+setting any price: check the intel brief's niche pricing scan, compare
+page count and editability against what competitors charge, and ask "would
+a teacher who just downloaded this feel they got more than they paid
+for?" If the honest answer is "about even," drop a tier ($12 → $10 → $8).
+Under-priced listings earn reviews and followers that raise the whole
+store; overpriced ones cost more than they earn. Kits stay $24 only
+because they are 9-file, script-included sessions — if a kit ever feels
+thin against that bar, fix the kit, not the price.
 
 ## Launch state
 
