@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" fill="none">
+  <!-- AI-Ready School mascot: "the intern".
+       The kits already call AI a first-year intern who drafts fast, knows
+       nothing about your students, and never gets the final say. This is that
+       character. Flat fills, one heavy ink outline, friendly but not babyish. -->
+  <g stroke="#17293B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- antenna + AI sparkle -->
+    <path d="M100 38V22" />
+    <path d="M100 4l4.6 11.4L116 20l-11.4 4.6L100 36l-4.6-11.4L84 20l11.4-4.6z" fill="#F2A413"/>
+
+    <!-- head -->
+    <rect x="38" y="38" width="124" height="94" rx="26" fill="#17BEBB"/>
+    <!-- face plate: the lighter inset that makes the eyes read from far away -->
+    <rect x="52" y="52" width="96" height="66" rx="18" fill="#EAFBFA"/>
+    <!-- eyes -->
+    <circle cx="79" cy="82" r="11" fill="#17293B" stroke="none"/>
+    <circle cx="121" cy="82" r="11" fill="#17293B" stroke="none"/>
+    <circle cx="83" cy="78" r="3.4" fill="#fff" stroke="none"/>
+    <circle cx="125" cy="78" r="3.4" fill="#fff" stroke="none"/>
+    <!-- smile -->
+    <path d="M84 100q16 12 32 0"/>
+
+    <!-- ears -->
+    <rect x="22" y="70" width="16" height="32" rx="7" fill="#0E8C8A"/>
+    <rect x="162" y="70" width="16" height="32" rx="7" fill="#0E8C8A"/>
+
+    <!-- body -->
+    <path d="M62 132h76a20 20 0 0 1 20 20v34a20 20 0 0 1-20 20H62a20 20 0 0 1-20-20v-34a20 20 0 0 1 20-20z" fill="#2D6CB5"/>
+    <!-- chest badge: a pencil, because the intern drafts -->
+    <rect x="82" y="150" width="36" height="36" rx="10" fill="#FFD43B"/>
+    <path d="M93 176l3-9 14-14 6 6-14 14z" fill="#17293B" stroke="none"/>
+  </g>
+</svg>
