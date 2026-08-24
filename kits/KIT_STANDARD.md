@@ -1,0 +1,229 @@
+# The Kit Standard — locked design decisions (one page)
+
+Established with the approved Kit 1 exemplar. Every kit after Kit 1 follows this
+document exactly. Change it only with the owners' sign-off.
+
+## Voice
+A respected, warm colleague. Plain language, zero hype, zero jargon, honest about AI's
+limits. Teachers are the experts; AI is the eager intern. The five-word posture appears
+in every kit: **AI drafts, the teacher decides.** Skeptics are treated as assets.
+Banned cadence: "delve," "furthermore," "moreover," "in today's rapidly evolving
+landscape," "it's important to note," "harness the power," "game-changer," hype-"unlock,"
+uniform sentence rhythm. Concrete beats abstract. No death or violence metaphors for
+editing work (owner rule, 2026-08-08): weak questions are "caught and cut," never
+"killed," and nothing "dies by your hand."
+**Em dashes (owner rule, 2026-08-07): almost never.** The em dash is the most visible AI
+tell. Default to periods, colons, commas, semicolons, and parentheses; an em dash is
+allowed only where the hard break IS the point (a spoken pushback line, a signature
+close), and a document earns at most one or two. Labels and titles use ":" or "·",
+never "—". En dashes in numeric ranges (45–60 min, 2023–24) are fine.
+
+## Session shape (45–60 min)
+Welcome/why-now (≤4 min) → concept teaching (≤20 min) → guided practice (≈8 min) →
+**hands-on lab ≥15 min (protected — cut discussion, never the lab)** → honest limits +
+commitments (≈7 min) → First-48-Hours + exit ticket (≈3 min). A running clock in the
+script; a printed 45-minute cut. The one-hard-rule privacy stance appears wherever
+students or data are discussed.
+
+## Components & lengths (9 files, exactly)
+| # | File | Form | Length |
+|---|---|---|---|
+| 1 | `KitXX_FacilitatorPrepGuide.pdf` | flow doc | 3 pp |
+| 2 | `KitXX_PresentationDeck.pptx` | deck | 25–40 slides, notes on every slide |
+| 3 | `KitXX_FacilitatorScript.pdf` | cover + flow doc | ~10 pp, keyed to slide numbers, stage directions, running clock |
+| 4 | `KitXX_ParticipantHandout.pdf` | flow doc | 2–4 pp |
+| 5 | `KitXX_First48Hours.pdf` | single sheet | 1 p, 3 actions × ≤15 min |
+| 6 | `KitXX_30DayPlan.pdf` | flow doc | 3 pp, 3 × 10-min PLC follow-ups |
+| 7 | `KitXX_ExitTicket.pdf` | single sheet | 1 p, doubles as PD documentation |
+| 8 | `KitXX_AdminOnePager.pdf` | single sheet | 1 p |
+| 9 | `KitXX_References.pdf` | flow doc | 2 pp, APA + "used for" note per source + 3–5 further reading |
+
+## Pagination (owner rule, 2026-08-07)
+No sentence or paragraph is ever split across a page break. Prose blocks, list
+items, cards, callouts, and reference entries move to the next page whole; lists
+may break between items only; a slide cue, its stage direction, and its first
+spoken block stay together; headings never sit alone at a page bottom. Enforced
+in `kits/tooling/brand.css` (break-inside/break-after rules); a slightly ragged
+page bottom is always preferred over a split. Breathing room is non-negotiable:
+~0.5in clear space below the navy band on every page (continuation pages included) and
+~0.35in above the footer band; when content and whitespace compete, whitespace wins;
+add a page instead of compressing. (Component page counts flex by one page for this.)
+
+## Look (locked brand)
+Navy `#13293D` band top of every page with the white/teal logo; navy footer strip with
+credit line. Teal `#2A9D8F` accents, amber `#F4A825` sparingly (rule blocks, founder
+slots), paper `#F7F5F0` cards, Inter only (Bold heads / Semibold labels / Regular body,
+1.6 line height). Rounded corners (10–12px), no gradients, no clip-art, no stock filler.
+Slide titles ≥32pt, body ≥20pt (16pt floor inside cards); title/rule/lab/commitment
+slides go dark-navy full-bleed. Kit covers: navy, teal spark-circle kit number, amber
+track line, title ≤2 lines, founders' credit block. Deck footer: mark + wordmark left,
+"Kit X · title | slide #" right.
+
+## Self-standing decks (owner rule, 2026-08-10)
+The deck must be able to direct the session without the script; a merely adequate
+presenter (or a reader flipping the file) must never be left in the dark. Tests,
+applied to every slide: teaching slides carry their full claim in complete phrases,
+never teaser fragments; every stat carries its context on the slide; practice slides
+show their answers on-slide (small, muted, bottom strip; the presenter reveals
+verbally first); lab slides show steps, timing, and ground rules; and every slide's
+speaker notes open with the content to deliver ("Say: …"), not only stage
+directions. The script remains the gold-standard delivery; the deck alone must
+still work.
+
+## The running exemplar: Ms. Rivera (owner rule, 2026-08-10)
+Every deck carries the same fictional teacher, **Ms. Rivera**, always labeled
+"our running example teacher (a composite, not a real person)." Her screen is a
+**generic** chat window (navy title bar, three dots, "AI chat tool (any of them)"),
+never the trade dress of a real product: tools are referenced factually with no
+endorsement, and the mock must not imitate any vendor's interface. On the flagship
+worked-prompt slide of each kit, her prompt's parts are color-coded and labeled
+with legend chips (ROLE teal · TASK navy · CONTEXT dark amber #B07914 · FORMAT
+green). Where the exemplar isn't a prompt (an expectation box, a rubric), show her
+finished artifact beside the template. The purpose is stated in the notes: at
+worst, a participant can mimic what's on the screen and still complete the lab.
+Every facilitator script introduces her with the same "Meet Ms. Rivera" teal
+callout in "How to use this script," so presenters meet her before the room does.
+**She is on every slide (owner rule, 2026-08-10):** a persistent tracker chip in
+the top-right of every content slide ("MS. RIVERA'S SCREEN · SO FAR", mini window
+with the three dots) shows her current state in one or two lines, updating with
+the session so the room never loses the thread. Exempt: the title slide, the
+closing slide, and slides where her full chat window is the content. The chip is
+peripheral chrome and is exempt from the 16pt card floor (it runs 8-10pt); titles
+long enough to reach the chip zone narrow to w:8.7. In deck code the chip is
+driven by a per-slide RIVERA state array and drawn automatically in base(). The
+facilitator script mirrors the chip: a `.rivera-line` under each slide cue shows
+the chip's exact text for that slide, so the presenter always knows what the room
+is reading.
+
+**The lab exemplar model (owner rule, 2026-08-12, from the Kit 5 audit):**
+In every kit's LAB segment, Ms. Rivera follows **one real artifact** through
+every lab step: one assignment, one message, one rubric — picked at lab setup
+and never switched mid-lab. Her exemplar at each step is displayed **large, as
+primary slide content** (a big card showing her actual work product at that
+stage), not only in the tracker chip; a participant who is lost can copy her
+structure and still finish. The chip stays, and its lab-step lines all
+reference that same artifact. The script's lab rivera-lines must name the same
+artifact at every step. Retrofit status (owner decision 2026-08-12): ALL
+kits get this model — Kits 5-8 at the Batch 3 gate, Kits 1-4 plus their TpT
+editions as a universal-corrections pass; rebuilt kits re-verify visually
+but do not reopen Batch 2's content approval beyond the lab slides.
+**Retrofit COMPLETE 2026-08-12** across all ten editions. The artifact per
+kit: Kit 1 her family newsletter blurb, Kit 2 her weekly review-questions
+prompt, Kit 3 her food webs reading passage, Kit 4 her persuasive essay
+assessment, Kit 5 her persuasive essay assignment, Kit 6 her Friday
+newsletter, Kit 7 her week audit, Kit 8 her culture page. Kits 1 and 2
+carry the same artifact in their TpT editions. New kits build to this
+model from the start; there is nothing left to retrofit.
+
+**Show the finished product (owner rule, 2026-08-14, from the Kit 3 audit):**
+A lab that ends by DESCRIBING what Ms. Rivera built has not finished. The
+owner's words: "Teachers are going to want to see what a finalized prompted
+product will look like." The last lab slides show the artifact itself, word
+for word, at full size: the leveled passage, the sent message, the printed
+AI Box, the saved template, the signed culture page. Summary cards that
+characterize the work ("vocabulary box, five sentence starters") fail this
+rule; print the sentences instead. Every kit ends this way as of 2026-08-14.
+
+**The prompt window (owner rule, 2026-08-14):**
+Wherever Ms. Rivera types a prompt, in labs and in workshops alike, it appears
+in the full-width generic chat window with each part color-coded (ROLE teal ·
+TASK navy · CONTEXT dark amber #B07914 · FORMAT green) and the four legend
+chips beneath. Reference implementation: `kits/kit03/src/deck.js` helpers
+`chatWin` / `chatPaper` / `legend`. **The paper card must always be wider than
+the text it holds**: the card ends at x 12.25 while prompt text runs x 1.95
+w 10.05, ending at 12.0. The owner rejected a build whose prompts printed
+across the card's edge, so keep that quarter-inch margin on both sides.
+
+## School-wide templates (owner rule, 2026-08-12)
+Any recurring fixture a kit asks teachers or students to produce (an AI
+disclosure at the bottom of assignments, an AI-expectation box printed on an
+assignment) ships as a **defined, fixed template** used identically across the
+whole school: checkbox-and-blank layouts, copy-ready in the handout, shown
+full-size on a slide. Never "write two lines in your own words" for anything
+meant to be school-wide: free-form production yields uneven results across
+students and defeats consistency, which is the product's core promise to
+admins ("five teachers, one answer").
+
+## Research
+Every citation verified against the live source before writing (existence AND claim).
+**Read the whole finding, not the headline number** (added 2026-08-15 after an external
+citation audit found three real errors). Two traps caught there: reporting a
+meta-analysis's strongest outcome as if it covered all its outcomes, and turning a
+benchmark result into a general effect. Check what a study measured, on whom, and what
+it says it did NOT establish; a paper's own stated limitation ships with its claim.
+**Match the verb to the evidence:** surveys "reported"; observational comparisons "were
+associated with" or "were lower"; experiments and meta-analyses carry effect language;
+and our own judgments say "we treat" or "our stance," never borrowing a researcher's
+voice. Any sentence that reads like a finding must be traceable to one.
+Each kit: 5–10 sources logged in `RESEARCH_LOG.md` with the exact figure used and where.
+Numbers appear with plain attributions in speech ("that's from RAND"), full APA in the
+References file. Claims that can't be sourced get softened to professional judgment or cut.
+
+## Human co-authorship (per kit, non-negotiable)
+One **"From the founders"** passage at the front of the facilitator script (after "How
+to use this script," before Segment 1), identical setup across every kit (owner
+directive, 2026-08-08). The note is **Why-only**: two paragraphs in Adam and Katelyn's
+first-person voice — (1) why this kit matters for educational success in the classroom,
+(2) the valuable lessons they believe the kit will teach. **No personal stories,
+anecdotes, or examples in the note, and none sprinkled through the script body.** It is
+presenter-facing and explicitly optional to share: read aloud, retold, or kept as
+background; the session is complete either way. The whole section is wrapped in a
+`break-inside:avoid` div so it never splits across pages. Classroom examples that carry
+teaching load in labs may remain in the body but unattributed ("a real prompt from a
+carpentry classroom"). Deck speaker notes may point to the founders' note as an
+optional moment, never instruct reading it. AI-drafted notes are marked for owner
+review in PROVENANCE.md until approved.
+`PROVENANCE.md` per kit; `kits/tooling/HUMANIZATION_CHECKLIST.md` accompanies every
+draft; owners' edits always win over draft polish. Transparency statement on the
+References back page, verbatim.
+
+## Legal fixtures (every kit)
+Footer credit: "Built by Adam & Katelyn Spinozzi — certified educators." Legal block on
+prep guide, script, 30-day plan, one-pager: informational-not-legal-advice + district
+counsel line. Exit ticket carries "check with your district or state whether this PD
+qualifies for local credit." Third-party tools referenced factually with no-endorsement
+note. Certificates named only "Certificate of Completion." No student PII anywhere —
+including in examples, which use invented but realistic names *only inside "unsafe
+prompt" demonstrations*.
+
+## Build (mechanical)
+HTML sources in `kits/kitXX/src/` + `kits/tooling/brand.css` → `bash kits/tooling/build_kit.sh kits/kitXX`.
+Deck via `kits/kitXX/src/deck.js` (pptxgenjs). Every artifact is rendered and visually
+inspected before presenting — no exceptions.
+**Overlap check (owner audit, 2026-08-14):** pptxgenjs never wraps or shrinks text
+to fit its box, so an overlong title, kicker, or card line prints straight through
+whatever sits beneath it, and the eye misses it at thumbnail size. Run
+`python3 kits/tooling/check_overlap.py kits/kitXX/KitXX_PresentationDeck.pptx`
+after every deck build; it must come back clean. The chip-zone rule is now enforced
+in code (title/kicker clamp to w:8.7 whenever the slide carries a Rivera chip), so
+new collisions mean a hand-placed text box, not a helper.
+
+## Single-sheet legal-line verification (added 2026-08-10, from the legal audit)
+
+Every single-sheet PDF must pass BOTH checks before shipping: (1) text
+extraction finds the sheet's required legal text, and (2) a rendered PNG shows
+that text in full above the footer band. Which text belongs on which sheet
+follows Legal fixtures above, and nothing more:
+  - **Admin one-pager**: "not legal advice" plus the district-counsel line.
+  - **Exit ticket**: the "local credit" line. It is a documentation sheet, not
+    a counsel sheet.
+  - **First 48 Hours**: no legal block is required. It is three timed actions
+    and makes no claim that needs one.
+Corrected 2026-08-15 and again 2026-08-17. This paragraph twice drifted into
+demanding lines the Legal fixtures rule never asked for, which sent a session
+hunting a nonexistent gap across seven kits. If this check and Legal fixtures
+ever disagree again, Legal fixtures is right. Text can survive in the extraction layer while being
+visually clipped. Never fix an overflow by removing the legal footer; trim
+marketing copy (lede, callouts, citation lists) instead.
+
+Two more build checks, both added 2026-08-12 after live catches:
+**Text layer.** Confirm every rebuilt PDF actually extracts text. A build that
+starts before the Inter webfont is cached produces a file with correct colors,
+cards, and bands but no glyphs at all; it looks plausible in a thumbnail and is
+worthless in a customer's hands. One line catches it: any page extracting under
+~100 characters means rebuild, then re-check.
+**Trailing pages.** Confirm the last page carries real content, not just the
+footer band. Longer edition-specific text (a TpT license line) can push a
+sheet onto a page that holds nothing, which is what happened to Kit 1's TpT
+handout. Fix by shortening a notes box or trimming marketing copy, never the
+legal line.

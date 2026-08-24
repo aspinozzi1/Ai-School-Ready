@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Kit 1 Presentation Deck · AI Foundations & Safety: The One Hard Rule
-   30 slides, locked AI-Ready School brand, speaker notes on every slide.
+   34 slides, locked AI-Ready School brand, speaker notes on every slide.
    Build: node kits/kit01-tpt/src/deck.js  → kits/kit01-tpt/Kit01_PresentationDeck.pptx (TpT edition) */
 const pptxgen = require('pptxgenjs');
 const sharp = require('sharp');
@@ -46,12 +46,12 @@ const W = 13.33, H = 7.5;
     "Her relief: the work she wants help with never needed identities anyway.", null, "Her swap: the reading level and format, never the diagnosis.",
     "Her 3 moves, automatic: strip identity, generalize, describe the need.",
     "Her eye: initials + context still identify. Rare details identify too.",
-    "Her lab pick, one artifact all the way through: the family newsletter blurb.",
-    "Her pick: option A, filled in with her fall book fair. Her screen is next.",
+    "Her lab artifact: the slide-16 parent email, run safely end to end.",
+    "Her pick: option A, the parent email. Her three moves are next.",
     null, null,
-    "Her blurb, draft 1: beige. She pushes back twice, one word at a time.",
+    "Her safe draft is back, no name in sight. Now the sneaky ones.",
     null, null,
-    "Her newsletter blurb's arc: beige v1, two pushbacks, usable. One error caught.",
+    "Her email's arc: 3 moves, safe draft, name added back in her inbox. One invented detail caught.",
     "Her rule for what leaves her desk: nothing AI-drafted goes out unread.",
     "Her guardrails: keep her own voice; drafts never become decisions.",
     "Her scope today: adult use only. Student use is Kit 5's hour.",
@@ -522,9 +522,9 @@ const W = 13.33, H = 7.5;
     s.addText('Pair up · one screen per pair · open the tool we’re using today', {
       x: 0.7, y: 2.55, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 20, color: 'C9D4DE', margin: 0 });
     const rules = [
-      ['1', 'No student information: we practice like we play'],
+      ['1', 'The rule is live: zero student information, real tasks anyway'],
       ['2', 'Nothing has to be good; this is a sandbox'],
-      ['3', 'When it gives you something mediocre, don’t settle'],
+      ['3', 'If a prompt only works with a child’s identity in it, it isn’t ready'],
     ];
     rules.forEach(([n, r], i) => {
       const y = 3.4 + i * 0.95;
@@ -532,54 +532,64 @@ const W = 13.33, H = 7.5;
       s.addText(n, { x: 0.9, y, w: 0.62, h: 0.62, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
       s.addText(r, { x: 1.75, y: y - 0.05, w: 10.8, h: 0.72, fontFace: FONT, fontSize: 21, color: WHITE, margin: 0, valign: 'middle' });
     });
-    s.addNotes('Say: this is the moment the session exists for; everything so far was preparation for you actually typing. Nothing has to be good, it\'s a sandbox, and we practice like we play: zero student information. Ms. Rivera builds ONE artifact all the way through this lab on screen: her family newsletter blurb, option A. The next six slides are her whole arc, in order: the prompt she types, the draft that comes back, the pushbacks, the invented detail she catches, and the version she actually sends. Tell the room: if you ever feel lost, copy her structure. Announce the tool by name. Energy up; pairs formed inside two minutes.');
+    s.addNotes('Say: this is the moment the session exists for, and the lab IS the rule in practice: fifteen minutes of real tasks with zero student information, because if a prompt only works with a child\'s identity in it, it isn\'t ready. Ms. Rivera takes the parent email from slide 16, the one she almost typed the unsafe way, and runs it safely end to end on screen: the three moves, the draft that comes back, and the step where the name goes back in. Tell the room: if you ever feel lost, copy her. Announce the tool by name. Energy up; pairs formed inside two minutes.');
   }
 
   // ============================== SLIDE 21 · LAB TASK 1 ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 1 of 2 · 6 minutes');
-    title(s, 'Your first useful prompt: pick one');
+    title(s, 'Make it safe, then make it work');
     const opts = [
-      ['A', 'Families', '“Write a warm, professional newsletter blurb for families about [any upcoming school event], under 120 words.”'],
-      ['B', 'Assessment', '“Create a five-question review quiz on [any topic you teach], mixed difficulty, with an answer key.”'],
-      ['C', 'Differentiation', '“Rewrite this paragraph at three different reading levels.” Then paste any paragraph you already have.'],
-      ['D', 'CTE & electives', '“Create a five-question tool safety check for the miter saw station, mixed question formats, with an answer key.” Swap in any station, lab, kitchen, or instrument.'],
+      ['A', 'Families', 'an email about [name]’s missing work and rough day',
+        '“Write a warm, professional email to a parent about a middle schooler with several missing assignments and a recent difficult day. Firm but supportive; end by inviting a conversation.”'],
+      ['B', 'Support', 'what to do about [name], who has shut down in class',
+        '“Give me five re-engagement strategies for a student who has stopped participating in class, each under two sentences, usable this week.”'],
+      ['C', 'Differentiation', 'rewrite this for [name]’s IEP',
+        '“Rewrite this passage at a 2nd-grade reading level, same key ideas, and add a five-word picture-supported vocabulary list: [paste].”'],
+      ['D', 'CTE & electives', 'a write-up about [name]’s close call at the saw',
+        '“Draft a two-minute safety refresher for the miter saw station after a close call. No blame; three checks students repeat back. Swap in any station or lab.”'],
     ];
-    opts.forEach(([ltr, tag, txt], i) => {
-      const y = 1.5 + i * 1.17;
-      card(s, 0.7, y, 12.0, 1.05, PAPER);
-      s.addShape('ellipse', { x: 0.95, y: y + 0.3, w: 0.45, h: 0.45, fill: { color: TEAL }, line: { color: TEAL } });
-      s.addText(ltr, { x: 0.95, y: y + 0.3, w: 0.45, h: 0.45, fontFace: FONT, fontSize: 17, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
-      s.addText(tag.toUpperCase(), { x: 1.6, y: y + 0.1, w: 4.0, h: 0.26, fontFace: FONT, fontSize: 10, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
-      s.addText(txt, { x: 1.6, y: y + 0.38, w: 10.55, h: 0.6, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top' });
+    opts.forEach(([ltr, tag, unsafe, safe], i) => {
+      const y = 1.45 + i * 1.22;
+      card(s, 0.7, y, 12.0, 1.12, PAPER);
+      s.addShape('ellipse', { x: 0.95, y: y + 0.33, w: 0.45, h: 0.45, fill: { color: TEAL }, line: { color: TEAL } });
+      s.addText(ltr, { x: 0.95, y: y + 0.33, w: 0.45, h: 0.45, fontFace: FONT, fontSize: 17, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
+      s.addText([
+        { text: tag.toUpperCase() + '   ', options: { bold: true, color: TEAL, fontSize: 10, charSpacing: 1.5 } },
+        { text: 'instead of: ' + unsafe, options: { italic: true, color: BAD, fontSize: 10.5 } },
+      ], { x: 1.6, y: y + 0.08, w: 10.9, h: 0.26, fontFace: FONT, margin: 0 });
+      s.addText(safe, { x: 1.6, y: y + 0.36, w: 10.9, h: 0.72, fontFace: FONT, fontSize: 13.5, color: INK, margin: 0, valign: 'top' });
     });
-    s.addText('Pick whichever is closest to your real job. Type it. Read what comes back.', {
-      x: 0.7, y: 6.25, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Say: pick whichever prompt is closest to your real job, type it, and read what comes back. Option A works for every role in the building, so point stuck pairs there. Ms. Rivera picks A and fills it in with her fall book fair; her screen is the next three slides, so anyone who feels lost can copy her structure exactly. Circulate. Deputize power users to float. Option D comes from a real carpentry classroom; invite electives staff to swap in their station or lab.');
+    s.addText('Say the unsafe version in your head. Strip it with the 3 moves. Type only the safe version.', {
+      x: 0.7, y: 6.35, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 15, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Say: pick the task closest to your real job. First say the prompt in your head the way you would naturally say it, with the student in it. Then strip it with the three moves from slide 18 and type only the safe version. Option A is Ms. Rivera\'s pick and works for every role in the building, so point stuck pairs there; her rewrite is the next slide. Option D comes from a real carpentry classroom; invite electives staff to swap in their own station or lab. Circulate. Deputize power users to float. The point pairs should feel: the safe version does the whole job.');
   }
 
-  // ============================== SLIDE 22 · HER PROMPT, COLOR-CODED ==============================
+  // ============================== SLIDE 22 · HER REWRITE, MOVE BY MOVE ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 1 · on Ms. Rivera’s screen');
-    title(s, 'The prompt she actually types');
+    title(s, 'The rewrite she does in ten seconds');
     s.addText([
-      { text: 'BEFORE   ', options: { bold: true, color: BAD } },
-      { text: '“Write something for the book fair.”', options: { italic: true, color: MUTED } },
-    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.4, fontFace: FONT, fontSize: 16, margin: 0, valign: 'middle' });
-    msgWindow(s, 0.7, 1.95, 12.0, 3.4);
-    s.addShape('roundRect', { x: 1.7, y: 2.55, w: 10.55, h: 2.65, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+      { text: 'WHAT SHE ALMOST TYPED   ', options: { bold: true, color: BAD, fontSize: 11, charSpacing: 1.5 } },
+      { text: '“Write an email to Jayden Miller’s mom about his three missing assignments and his outburst in class Tuesday.”', options: { italic: true, color: MUTED, fontSize: 15 } },
+    ], { x: 0.7, y: 1.42, w: 12.0, h: 0.62, fontFace: FONT, margin: 0, valign: 'top' });
+    msgWindow(s, 0.7, 2.15, 12.0, 3.15);
+    s.addShape('roundRect', { x: 1.7, y: 2.75, w: 10.55, h: 2.35, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
     s.addText([
-      { text: '“You are a warm, experienced 4th grade teacher writing to families. ', options: { color: TEAL, bold: true } },
-      { text: 'Write a newsletter blurb about our fall book fair. ', options: { color: NAVY, bold: true } },
-      { text: 'It is in the school library, families come with their readers and pick books together, our theme is “find your next favorite,” and our families are busy, so plain and friendly beats fancy. ', options: { color: 'B07914', bold: true } },
-      { text: 'Under 120 words, one paragraph, no bullet points, ending with a line that invites families to stop by.”', options: { color: GOOD, bold: true } },
-    ], { x: 1.95, y: 2.62, w: 10.05, h: 2.5, fontFace: FONT, fontSize: 17, margin: 0, valign: 'middle', lineSpacingMultiple: 1.1 });
-    s.addText('Four parts, and the middle two are the ones only you can supply.', {
-      x: 0.7, y: 5.5, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    promptLegend(s);
-    s.addNotes('Say: this is Ms. Rivera\'s screen, our running composite example, and this is what she typed instead of "write something for the book fair." Read the colors off the slide: who the AI should be (role, teal), the job (task, navy), everything about her room and her families (context, amber), and the shape she wants back (format, green). Nobody has to memorize that today; Kit 2 turns it into a formula. Today it is just a picture: at worst, copy what is on this screen and swap in your own event, and your task 1 is done.');
+      { text: '“Write a warm, professional email to a parent ', options: { color: TEAL, bold: true } },
+      { text: 'about a middle schooler with several missing assignments and a recent difficult day in class. ', options: { color: 'B07914', bold: true } },
+      { text: 'Firm but supportive; end by inviting a conversation.”', options: { color: GOOD, bold: true } },
+    ], { x: 1.95, y: 2.82, w: 10.05, h: 2.2, fontFace: FONT, fontSize: 18, margin: 0, valign: 'middle', lineSpacingMultiple: 1.12 });
+    s.addText('Three moves, ten seconds, and nothing the email needed was lost.', {
+      x: 0.7, y: 5.52, w: 12.0, h: 0.42, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
+    [['STRIP IDENTITY', TEAL], ['GENERALIZE', 'B07914'], ['DESCRIBE THE NEED', GOOD]].forEach(([t, c], i) => {
+      const x = 0.7 + i * 4.12;
+      s.addShape('roundRect', { x, y: 6.08, w: 3.85, h: 0.5, rectRadius: 0.25, fill: { color: c }, line: { color: c } });
+      s.addText(t, { x, y: 6.08, w: 3.85, h: 0.5, fontFace: FONT, fontSize: 14, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0, charSpacing: 2 });
+    });
+    s.addNotes('Say: this is Ms. Rivera\'s screen, and this is slide 16 happening for real. The unsafe version named Jayden, his missing assignments, and Tuesday\'s outburst. Watch the three moves land, and read the colors off the slide: the name becomes "a parent" and "a middle schooler" (strip identity, teal), the specifics become "several missing assignments and a recent difficult day" (generalize, amber), and the rest describes exactly what she needs back (describe the need, green). Ten seconds of editing, and nothing the email needed was lost. At worst, copy her shape and swap in your own task.');
   }
 
   // ============================== SLIDE 23 · THE DRAFT THAT COMES BACK ==============================
@@ -590,92 +600,95 @@ const W = 13.33, H = 7.5;
     msgWindow(s, 0.7, 1.5, 12.0, 3.75);
     s.addText('DRAFT 1, STRAIGHT BACK', { x: 1.7, y: 2.02, w: 10.55, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0 });
     s.addShape('roundRect', { x: 1.7, y: 2.35, w: 10.55, h: 2.7, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
-    s.addText('“Dear Families, we are thrilled to announce our upcoming Book Fair! This wonderful event promises something for every reader in our school community. The fair runs all week, 8:00 to 3:00, in the library. We sincerely appreciate your continued support of our reading program!”', {
-      x: 1.95, y: 2.45, w: 10.05, h: 2.5, fontFace: FONT, fontSize: 20, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.15 });
-    s.addText('Beige, and it sounds like nobody. Keep your own draft 1 on screen: task 2 works on this exact text.', {
+    s.addText('“Dear Parent, I wanted to reach out about your child’s missing assignments and a difficult day we had in class recently. As we discussed at last week’s conference, steady homework routines make a real difference. I know stretches like this can be hard, and I’d welcome the chance to talk about how we can support your child together. Please let me know a time that works for you.”', {
+      x: 1.95, y: 2.45, w: 10.05, h: 2.5, fontFace: FONT, fontSize: 17, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.12 });
+    s.addText('Warm, specific, usable. And notice what is NOT in it: no name, no identity, nothing missing.', {
       x: 0.7, y: 5.45, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addText('One detail in this draft came from nowhere. Nobody has spotted it yet.', {
+    s.addText('One sentence in this draft came from nowhere. Nobody has spotted it yet.', {
       x: 0.7, y: 6.05, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: four seconds later, this comes back. It is polished, it is grammatical, and it sounds like nobody: that beige is what a first draft always sounds like. Read the last line of the slide out loud and stop there; do not point at the invented hours yet, because catching it is the payoff on slide 26. Everyone should have their own draft 1 on screen before you move on.');
+    s.addNotes('Say: four seconds later, this comes back. Warm, specific, usable, and look at what is NOT in it: no name, no identity, and nothing missing. The tool needed the situation, never the child. Read the last line of the slide out loud and stop there; do not point at the invented conference yet, because catching it is the payoff on slide 26. Everyone should have their own safe draft on screen before you move on.');
   }
 
-  // ============================== SLIDE 24 · LAB TASK 2 ==============================
+  // ============================== SLIDE 24 · LAB TASK 2 · THE SNEAKY ONES ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 2 of 2 · 6 minutes');
-    title(s, 'Now push back: twice, minimum');
-    s.addText('Don’t accept the first draft. Tell it what’s wrong, the way you would tell an intern:', {
-      x: 0.7, y: 1.4, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 19, color: INK, margin: 0, valign: 'middle' });
-    const cmds = ['“Warmer.”', '“Shorter.”', '“A 5th grader wouldn’t know three of these words. Fix that.”', '“Make question four harder and add a diagram question.”'];
-    cmds.forEach((c, i) => {
-      const x = 0.7 + (i % 2) * 6.15, y = 2.05 + Math.floor(i / 2) * 1.2;
-      s.addShape('roundRect', { x, y, w: 5.85, h: 1.0, rectRadius: 0.12, fill: { color: 'EAF5F3' }, line: { color: 'EAF5F3' } });
-      s.addText(c, { x: x + 0.3, y, w: 5.25, h: 1.0, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, margin: 0, valign: 'middle' });
+    title(s, 'The sneaky ones, live');
+    s.addText('Each one identifies a child without a name. Pick one, fix it with the 3 moves, type the safe version:', {
+      x: 0.7, y: 1.4, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'middle' });
+    const sneaky = [
+      ['A', '“Draft an apology note to K.R.’s dad about the mix-up with her medication schedule.”'],
+      ['B', '“Write a welcome-back note for the family of the student returning from a six-week hospital stay.”'],
+      ['C', '“Draft a behavior plan for the twins in 3rd period whose parents are separating.”'],
+      ['D', '“Summarize this IEP meeting recording for my files.”  — pasting a document counts as typing it'],
+    ];
+    sneaky.forEach(([ltr, txt], i) => {
+      const y = 1.98 + i * 0.97;
+      s.addShape('roundRect', { x: 0.7, y, w: 0.75, h: 0.82, rectRadius: 0.08, fill: { color: NAVY }, line: { color: NAVY } });
+      s.addText(ltr, { x: 0.7, y, w: 0.75, h: 0.82, fontFace: FONT, fontSize: 24, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
+      card(s, 1.6, y, 11.1, 0.82, PAPER);
+      s.addText(txt, { x: 1.9, y: y + 0.04, w: 10.5, h: 0.74, fontFace: FONT, fontSize: 16.5, italic: true, color: INK, margin: 0, valign: 'middle' });
     });
-    card(s, 0.7, 4.65, 12.0, 1.35, PAPER);
-    s.addText('Short and blunt is fine: the tool has no feelings, and vague feedback gets you a vague draft. Two rounds minimum, one instruction at a time.', {
-      x: 1.05, y: 4.65, w: 11.3, h: 1.35, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'middle' });
-    s.addText('The first draft is the intern’s. The third one is yours.', {
-      x: 0.7, y: 6.2, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 19, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('Say: don\'t accept the first draft. Tell it what\'s wrong, like you would an intern: short and blunt, one instruction at a time, because the tool has no feelings and vague feedback gets a vague draft. Two rounds minimum on your own draft 1, right now. Ms. Rivera types the first two on this slide; her screen is next. 45-minute version: skip this task and go straight to the debrief. This is the move that separates people who get real value from people who quit in a week.');
+    card(s, 0.7, 5.95, 12.0, 0.85, 'EAF5F3');
+    s.addText([
+      { text: 'The ten-second test:  ', options: { bold: true, color: NAVY } },
+      { text: 'could anyone who knows our school tell who this is? Initials, one-of-a-kind details, rare combinations, and pasted documents all fail it.', options: { color: INK } },
+    ], { x: 1.05, y: 5.95, w: 11.3, h: 0.85, fontFace: FONT, fontSize: 15.5, margin: 0, valign: 'middle' });
+    s.addNotes('Say: task two. Remember the sneaky ones from slide 12? Here are four fresh ones, and this time you fix them. None uses a name, and every one still identifies a child: initials plus a detail, a one-of-a-kind detail, a rare combination, a pasted document. Pick one, run the ten-second test, fix it with the three moves, and type the safe version to check the draft still does the job. The IEP recording is a trap on purpose: pasting or uploading counts as typing. 45-minute version: skip this task and go straight to the debrief. Ms. Rivera\'s next step, the one everyone asks about, is on the next slide.');
   }
 
-  // ============================== SLIDE 25 · HER PUSHBACKS ==============================
+  // ============================== SLIDE 25 · WHERE THE NAME GOES BACK IN ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 2 · on Ms. Rivera’s screen');
-    title(s, 'Two pushbacks later');
-    msgWindow(s, 0.7, 1.5, 12.0, 4.2);
-    s.addText('SHE TYPES, ONE AT A TIME', { x: 1.7, y: 2.0, w: 10.55, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
-    [['“Warmer.”', 1.7], ['“Shorter.”', 4.6]].forEach(([t, x]) => {
-      s.addShape('roundRect', { x, y: 2.34, w: 2.7, h: 0.6, rectRadius: 0.14, fill: { color: 'EAF5F3' }, line: { color: 'EAF5F3' } });
-      s.addText(t, { x, y: 2.34, w: 2.7, h: 0.6, fontFace: FONT, fontSize: 17, bold: true, color: NAVY, align: 'center', valign: 'middle', margin: 0 });
-    });
-    s.addText('THE BLURB, TWO ROUNDS LATER', { x: 1.7, y: 3.08, w: 10.55, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: MUTED, charSpacing: 1.5, margin: 0 });
-    s.addShape('roundRect', { x: 1.7, y: 3.4, w: 10.55, h: 2.05, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
-    s.addText('“Families, our fall book fair is almost here. Stop by the library with your reader and help them pick a book they’ll actually love. We’re open all week, 8:00 to 3:00. Happy reading!”', {
-      x: 1.95, y: 3.48, w: 10.05, h: 1.88, fontFace: FONT, fontSize: 19, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.15 });
-    s.addText('It finally sounds like her: two rounds of pushback, about forty seconds of typing.', {
-      x: 0.7, y: 5.85, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: here is the same blurb after two pushbacks. Warmer, then shorter, one word at a time, and it finally sounds like a person who knows these families. That took her about forty seconds. Point out that she changed nothing by hand yet; she only told it what was wrong. Then hold the room here: the sentence that matters is still hiding in this draft, and the next slide is where she finds it.');
+    title(s, 'Where the name goes back in');
+    msgWindow(s, 0.7, 1.5, 12.0, 4.2, 'Her school email account · drafts folder · not the AI tool');
+    s.addText('PASTED FROM THE AI TOOL, THEN EDITED IN HER OWN INBOX', { x: 1.7, y: 2.02, w: 10.55, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: TEAL, charSpacing: 1.5, margin: 0 });
+    s.addShape('roundRect', { x: 1.7, y: 2.35, w: 10.55, h: 3.1, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
+    s.addText('“Hi Ms. Miller, I wanted to reach out about Jayden’s three missing assignments and the difficult moment he had in class on Tuesday. As we discussed at last week’s conference, steady routines make a real difference. I know stretches like this can be hard, and I’d welcome the chance to talk about how we can support Jayden together. Please let me know a time that works for you.”', {
+      x: 1.95, y: 2.45, w: 10.05, h: 2.9, fontFace: FONT, fontSize: 16.5, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.12 });
+    s.addText('Identity goes in last, in her own tools, never in theirs. The AI never met Jayden.', {
+      x: 0.7, y: 5.95, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
+    s.addNotes('Say: and here is the answer to the question half of you are holding: "but the email needs Jayden\'s name." It does. So watch where it goes in. She pastes the safe draft into her own school email, and there, and only there, she adds his name, the real assignments, and what actually happened Tuesday. Identity goes in last, in your tools, never in theirs; the AI never met Jayden. Then hold the room: one sentence in this draft is still riding along from the AI, and the next slide is where she finds it.');
   }
 
-  // ============================== SLIDE 26 · THE CATCH AND THE FINISHED BLURB ==============================
+  // ============================== SLIDE 26 · THE READ-THROUGH CATCH ==============================
   {
     const s = base();
     kicker(s, 'Lab · task 2 · the read-through');
     title(s, 'The one thing she caught');
     card(s, 0.7, 1.42, 12.0, 1.62, 'FBEFED');
-    s.addText('CAUGHT ON THE READ-THROUGH · SHE NEVER TYPED A SCHEDULE', { x: 1.05, y: 1.52, w: 11.3, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: BAD, charSpacing: 1.5, margin: 0 });
-    s.addText('Both drafts said the fair “runs all week, 8:00 to 3:00.” That was in neither her prompt nor the real flyer: the fair runs Tuesday and Thursday, 3:00 to 6:30, so working families can come after school. The intern filled a gap with something plausible, and it survived two rounds of pushback.', {
-      x: 1.05, y: 1.85, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 16.5, color: INK, margin: 0, valign: 'top' });
-    msgWindow(s, 0.7, 3.25, 12.0, 2.75);
+    s.addText('CAUGHT ON THE READ-THROUGH · A CONFERENCE THAT NEVER HAPPENED', { x: 1.05, y: 1.52, w: 11.3, h: 0.3, fontFace: FONT, fontSize: 11.5, bold: true, color: BAD, charSpacing: 1.5, margin: 0 });
+    s.addText('Both drafts said “as we discussed at last week’s conference.” She never typed that, and there was no conference. The intern predicted likely words and filled the gap, and the invented sentence survived the three moves, the personalization, and two readings. In an email to a family, an invented shared memory costs the exact trust the email exists to build.', {
+      x: 1.05, y: 1.85, w: 11.3, h: 1.1, fontFace: FONT, fontSize: 15.5, color: INK, margin: 0, valign: 'top' });
+    msgWindow(s, 0.7, 3.25, 12.0, 2.75, 'Her school email account · sent');
     s.addText('WHAT SHE SENT · EVERY DETAIL CHECKED FIRST', { x: 1.7, y: 3.75, w: 10.55, h: 0.28, fontFace: FONT, fontSize: 11, bold: true, color: GOOD, charSpacing: 1.5, margin: 0 });
     s.addShape('roundRect', { x: 1.7, y: 4.08, w: 10.55, h: 1.72, rectRadius: 0.12, fill: { color: PAPER }, line: { color: PAPER } });
-    s.addText('“Families, our fall book fair is almost here. Stop by the library with your reader and help them pick a book they’ll actually love. We’re open Tuesday and Thursday, 3:00 to 6:30, so you can come together after school. Happy reading!”', {
-      x: 1.95, y: 4.15, w: 10.05, h: 1.56, fontFace: FONT, fontSize: 18, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.15 });
+    s.addText('“Hi Ms. Miller, I wanted to reach out about Jayden’s three missing assignments and the difficult moment he had in class on Tuesday. I know stretches like this can be hard, and I’d welcome the chance to talk about how we can support Jayden together. Please let me know a time that works for you.”', {
+      x: 1.95, y: 4.15, w: 10.05, h: 1.56, fontFace: FONT, fontSize: 15.5, color: INK, margin: 0, valign: 'middle', lineSpacingMultiple: 1.12 });
     s.addText('Nothing left in it she didn’t verify. That read-through has your name on it.', {
       x: 0.7, y: 6.18, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 18, bold: true, color: NAVY, align: 'center', margin: 0 });
-    s.addNotes('Say: before she sent it, she read it once, slowly, and found the sentence she never typed: the fair "runs all week, 8:00 to 3:00." She checked the real flyer, fixed the hours to Tuesday and Thursday, 3:00 to 6:30, and sent it. This is slide 6 happening in a real classroom task: the tool predicts likely words, so it fills a gap with something plausible, and two rounds of pushback will not catch that for you. Tell the room to read their own draft the same way before the debrief, and to say "got one" out loud if they find something.');
+    s.addNotes('Say: before she sent it, she read it once, slowly, and found the sentence she never typed: "as we discussed at last week\'s conference." There was no conference. This is slide 6 happening in a real family email: the tool predicts likely words, fills gaps with something plausible, and neither the three moves nor the personalization will catch that for you. She cut it, checked every remaining detail, and sent it. Tell the room to read their own draft the same way before the debrief, and to say "got one" out loud if they find something.');
   }
 
-  // ============================== SLIDE 23 · DEBRIEF ==============================
+  // ============================== SLIDE 27 · DEBRIEF ==============================
   {
     const s = base();
     kicker(s, 'Debrief · 3–4 voices');
     title(s, 'What did you notice?');
     bullets(s, [
-      'What surprised you?',
-      'What was better than you expected, and what was worse?',
-      { text: 'Did anyone catch it being wrong?', options: { bold: true, color: NAVY } },
+      'What did the safe version cost you? (Usually: nothing.)',
+      'What surprised you about how little the tool needed to know?',
+      { text: 'Did anyone catch a detail it invented?', options: { bold: true, color: NAVY } },
     ], { y: 1.6, h: 2.4, fontSize: 23 });
     card(s, 0.7, 4.3, 12.0, 2.0, PAPER);
     s.addText([
       { text: 'Two patterns worth naming:  ', options: { bold: true, color: NAVY } },
-      { text: 'the first draft is rarely the good draft; the value shows up when you push back. And everything you just made still needs your eyes: it’s fast, it’s fluent, and it’s unsigned until a professional signs it.', options: { color: INK } },
+      { text: 'the work never needed the child — describe the need and the draft gets better, not worse, which is why the rule costs nothing in practice. And everything you just made still needs your eyes: it’s fast, it’s fluent, and it’s unsigned until a professional signs it.', options: { color: INK } },
     ], { x: 1.05, y: 4.55, w: 11.3, h: 1.6, fontFace: FONT, fontSize: 19, margin: 0, valign: 'middle' });
-    s.addNotes('Say: what surprised you, what was better than you expected, what was worse, and did anyone catch it being wrong? If the room saw an AI mistake, spotlight it warmly; it’s the best possible outcome of the lab. If nobody caught one, point back at Ms. Rivera’s invented book-fair hours on slide 26; the read-through is where errors surface. Take 3–4 voices, a minute each.');
+    s.addNotes('Say: what did the safe version cost you (usually nothing), what surprised you about how little the tool needed to know, and did anyone catch a detail it invented? If the room caught one, spotlight it warmly; it\'s the best possible outcome of the lab. If nobody did, point back at Ms. Rivera\'s invented conference on slide 26; the read-through is where inventions surface. Take 3–4 voices, a minute each.');
   }
+
 
   // ============================== SLIDE 24 · HUMAN IN CHARGE ==============================
   {

@@ -1,0 +1,278 @@
+/* AI-Ready School — print brand v2, "the teacher's book".
+   Drop-in replacement for brand.css: identical class names, new design language.
+   Warm cream page, white cards floating on it, Fraunces display over Plus Jakarta
+   body, and a clay accent that gives the all-cool navy/teal palette a warm side. */
+
+/* ---- display: Fraunces (warm editorial serif) ---- */
+@font-face { font-family: 'Fraunces'; font-weight: 400; src: url('../../node_modules/@fontsource/fraunces/files/fraunces-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-weight: 600; src: url('../../node_modules/@fontsource/fraunces/files/fraunces-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-weight: 700; src: url('../../node_modules/@fontsource/fraunces/files/fraunces-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Fraunces'; font-weight: 900; src: url('../../node_modules/@fontsource/fraunces/files/fraunces-latin-900-normal.woff2') format('woff2'); }
+
+/* ---- body: Plus Jakarta Sans (warm humanist sans) ---- */
+@font-face { font-family: 'Jakarta'; font-weight: 400; src: url('../../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Jakarta'; font-weight: 500; src: url('../../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Jakarta'; font-weight: 600; src: url('../../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Jakarta'; font-weight: 700; src: url('../../node_modules/@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2') format('woff2'); }
+
+:root {
+  --navy:  #17293B;   /* ink spine — the credibility anchor, kept from v1 */
+  --teal:  #17857A;   /* deepened for contrast on cream */
+  --amber: #F2A413;   /* sun */
+  --clay:  #C4573A;   /* NEW — the warm side of the palette */
+  --paper: #FBF7F0;   /* warm cream page */
+  --sand:  #F3EDE2;   /* second cream, for zebra rows and quiet fills */
+  --ink:   #1E242B;
+  --mist:  #E4DCCF;   /* warm border, replaces the cool gray rule */
+  --sage:  #EAF3EF;
+  --blush: #FBEEE9;
+  --sun-tint: #FDF3DC;
+  --success: #2E7D5B;
+  --error:   #B4453A;
+  --muted:   #6B6459; /* warm gray */
+}
+
+@page { size: Letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  font-family: 'Jakarta', sans-serif;
+  color: var(--ink);
+  font-size: 10.5pt;
+  line-height: 1.62;
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- page frame ---- */
+.sheet {
+  width: 8.5in;
+  height: 11in;
+  position: relative;
+  page-break-after: always;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.sheet:last-child { page-break-after: auto; }
+
+/* header band: slimmer than v1, with a clay hairline that warms the whole page */
+.band {
+  background: var(--navy);
+  color: #fff;
+  padding: 0.2in 0.55in;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  border-bottom: 3pt solid var(--clay);
+}
+.band .logo { height: 0.32in; display: block; }
+.band .doc-tag { font-size: 8pt; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #A9B8C6; text-align: right; }
+.band .doc-tag b { display: block; color: #fff; letter-spacing: 0.8px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 9.5pt; text-transform: none; }
+
+/* footer: v1 used a second heavy navy slab on every sheet, which is most of what
+   made these read as corporate. A hairline and small warm type does the same job. */
+.foot {
+  background: var(--paper);
+  color: var(--muted);
+  border-top: 1px solid var(--mist);
+  padding: 0.11in 0.55in;
+  font-size: 7.5pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.foot .brand-line { font-weight: 600; letter-spacing: 0.3px; color: var(--navy); }
+.foot .brand-line span { color: var(--clay); }
+
+.body {
+  padding: 0.5in 0.55in 0.4in;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+/* ---- type scale ---- */
+h1 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy); font-size: 23pt; font-weight: 700;
+  letter-spacing: -0.2px; line-height: 1.18; margin-bottom: 7pt;
+}
+/* h2 carries a clay tick in the margin: wayfinding for a teacher flipping
+   mid-session, without touching document semantics. */
+h2 {
+  font-family: 'Fraunces', serif;
+  color: var(--navy); font-size: 14.5pt; font-weight: 700;
+  margin: 16pt 0 6pt; padding-left: 11pt; position: relative; line-height: 1.3;
+}
+h2::before {
+  content: ''; position: absolute; left: 0; top: 0.18em;
+  width: 4pt; height: 0.78em; border-radius: 2pt; background: var(--clay);
+}
+h3 { font-family: 'Jakarta', sans-serif; color: var(--navy); font-size: 10.8pt; font-weight: 700; margin: 11pt 0 3pt; letter-spacing: -0.1px; }
+p  { margin-bottom: 7pt; }
+.kicker { color: var(--clay); font-weight: 700; font-size: 8.5pt; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5pt; }
+.lede { font-size: 11.5pt; color: var(--muted); margin-bottom: 11pt; line-height: 1.55; }
+.small { font-size: 8.5pt; color: var(--muted); }
+
+ul, ol { margin: 0 0 8pt 15pt; }
+li { margin-bottom: 4pt; padding-left: 2pt; }
+li::marker { color: var(--clay); font-weight: 700; }
+strong { font-weight: 700; color: var(--navy); }
+em { font-style: italic; }
+
+/* ---- components ---- */
+.callout {
+  border-left: 4px solid var(--amber);
+  background: var(--sun-tint);
+  border-radius: 0 9px 9px 0;
+  padding: 9pt 13pt;
+  margin: 11pt 0;
+}
+.callout.teal { border-left-color: var(--teal); background: var(--sage); }
+.callout.navy { border-left-color: var(--clay); background: var(--blush); }
+
+/* the hard-rule slab: the single loudest object in the kits. Fraunces at scale,
+   sun label, teal emphasis — it should read from across a staff room. */
+.callout.rule {
+  border: none;
+  border-radius: 12px;
+  background: var(--navy);
+  color: #fff;
+  padding: 15pt 18pt;
+  text-align: center;
+  box-shadow: inset 0 0 0 3pt rgba(244,168,37,.16);
+}
+.callout.rule .rule-label { color: var(--amber); font-weight: 700; font-size: 8.5pt; letter-spacing: 2.6px; text-transform: uppercase; }
+.callout.rule .rule-text { font-family: 'Fraunces', serif; font-size: 15.5pt; font-weight: 700; line-height: 1.36; margin-top: 3pt; }
+.callout.rule .rule-text em { color: var(--amber); font-style: normal; }
+
+/* cards are white and float on the cream page — that contrast is what gives
+   the interior pages depth v1 never had. */
+.card {
+  background: #fff;
+  border: 1px solid var(--mist);
+  border-radius: 11px;
+  padding: 11pt 13pt;
+  margin-bottom: 9pt;
+  break-inside: avoid;
+}
+.card.paper { background: var(--sand); border-color: transparent; }
+/* meaning-carrying variants: a teacher should know what kind of block this is
+   before reading a word of it. */
+.card.do    { border-top: 4pt solid var(--teal); }
+.card.watch { border-top: 4pt solid var(--clay); }
+.card.evidence { border-top: 4pt solid var(--amber); }
+
+table { width: 100%; border-collapse: collapse; margin: 9pt 0; font-size: 9.5pt; background: #fff; border-radius: 9px; overflow: hidden; }
+th { background: var(--navy); color: #fff; font-weight: 600; text-align: left; padding: 6pt 9pt; font-size: 9pt; letter-spacing: 0.3px; }
+td { border-bottom: 1px solid var(--mist); padding: 6pt 9pt; vertical-align: top; }
+tr:nth-child(even) td { background: var(--sand); }
+tr:last-child td { border-bottom: none; }
+
+.cols { display: flex; gap: 14pt; }
+.cols > * { flex: 1; }
+
+.badge {
+  display: inline-block; background: var(--teal); color: #fff;
+  border-radius: 20px; padding: 2pt 10pt; font-size: 8pt; font-weight: 700; letter-spacing: 0.4px;
+}
+.badge.amber { background: var(--amber); color: var(--navy); }
+.badge.navy  { background: var(--navy); }
+.badge.clay  { background: var(--clay); }
+
+.checklist { list-style: none; margin-left: 0; }
+.checklist li { padding-left: 20pt; position: relative; margin-bottom: 5.5pt; }
+.checklist li::before {
+  content: ''; position: absolute; left: 0; top: 2.6pt;
+  width: 10pt; height: 10pt; border: 1.6pt solid var(--teal); border-radius: 3pt; background: #fff;
+}
+/* yes/no lists: ✓ and ✕ carry the meaning that generic dots throw away */
+.yes, .no { list-style: none; margin-left: 0; }
+.yes li, .no li { padding-left: 17pt; position: relative; }
+.yes li::before { content: '✓'; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+.no  li::before { content: '✕'; position: absolute; left: 0; color: var(--clay); font-weight: 700; }
+
+/* notebook rules — dotted, not solid: it reads as "write here", not "form field" */
+.writein { border-bottom: 1.2pt dotted var(--muted); display: block; height: 17pt; }
+.notes-box {
+  border: 1px solid var(--mist); border-radius: 9px; min-height: 70pt; padding: 9pt; background: #fff;
+  background-image: repeating-linear-gradient(transparent, transparent 17pt, var(--mist) 17pt, var(--mist) 17.6pt);
+}
+
+.timing { display: flex; gap: 7pt; align-items: baseline; margin-bottom: 4pt; }
+.timing .t { flex: 0 0 58pt; font-weight: 700; color: var(--clay); font-size: 9.5pt; }
+
+.legal {
+  font-size: 7.8pt; color: var(--muted); border-top: 1px solid var(--mist);
+  padding-top: 6pt; margin-top: 11pt; line-height: 1.45;
+}
+
+/* ---- flow layout (multi-page docs): repeating band, pinned footer, no clipping ---- */
+table.doc { width: 8.5in; border-collapse: collapse; background: var(--paper); }
+table.doc > thead > tr > td,
+table.doc > tbody > tr > td,
+table.doc > tfoot > tr > td { padding: 0; border: none; background: none !important; }
+table.doc > thead > tr > td { padding-bottom: 0.28in; }
+table.doc > tbody > tr > td.content-cell { padding: 0.18in 0.55in 0.28in; }
+table.doc > tfoot > tr > td.foot-space { height: 0.62in; }
+.fixed-foot { position: fixed; bottom: 0; left: 0; right: 0; background: var(--paper); }
+.fixed-foot .foot { padding: 0.1in 0.55in; }
+.foot { white-space: nowrap; }
+.foot .brand-line { overflow: hidden; text-overflow: ellipsis; }
+
+/* Never split a sentence or paragraph across a page break (owner rule). */
+p, li, .card, .callout, .stage, .say, .lede, .legal, .ref { break-inside: avoid; }
+h1, h2, h3 { break-after: avoid; }
+.slide-cue { break-inside: avoid; break-after: avoid; }
+.slide-cue + .stage { break-after: avoid; }
+table tr { break-inside: avoid; }
+
+/* ---- script-specific ---- */
+.slide-cue {
+  display: flex; align-items: center; gap: 9pt; margin: 15pt 0 6pt;
+  break-after: avoid; border-bottom: 1px solid var(--mist); padding-bottom: 4pt;
+}
+.slide-cue .num {
+  background: var(--clay); color: #fff; border-radius: 7px; padding: 2.5pt 9pt;
+  font-family: 'Fraunces', serif; font-weight: 700; font-size: 10pt; white-space: nowrap;
+}
+.slide-cue .title { font-family: 'Fraunces', serif; font-weight: 700; color: var(--navy); font-size: 11.5pt; }
+.slide-cue .clock { margin-left: auto; color: var(--muted); font-weight: 700; font-size: 8.5pt; white-space: nowrap; }
+.say { margin-bottom: 7pt; }
+.stage {
+  color: var(--muted); font-style: italic; font-size: 9.5pt;
+  background: var(--sand); border-radius: 7px; padding: 5pt 10pt; margin-bottom: 7pt;
+}
+.stage::before { content: '⟶  '; color: var(--clay); font-style: normal; font-weight: 700; }
+
+/* ---- cover ---- */
+.cover { background: var(--navy); color: #fff; display: flex; flex-direction: column; position: relative; }
+.cover::after {
+  /* warm base bar: stops the cover reading as one cold navy slab */
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 0.22in; background: var(--clay);
+}
+.cover .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 0.9in; }
+.cover .spark-badge {
+  width: 0.92in; height: 0.92in; border-radius: 50%; background: var(--amber);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 24pt; font-weight: 700; color: var(--navy); margin-bottom: 0.3in;
+}
+.cover .track { color: var(--amber); font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; font-size: 9.5pt; margin-bottom: 9pt; }
+.cover h1 { font-family: 'Fraunces', serif; color: #fff; font-size: 33pt; line-height: 1.14; margin-bottom: 11pt; }
+.cover .cover-sub { color: #CFD9E2; font-size: 12.5pt; max-width: 6in; line-height: 1.5; }
+.cover .component-name { margin-top: 0.35in; display: inline-block; }
+.cover .component-name .badge { font-size: 10pt; padding: 4.5pt 15pt; }
+.cover .credit { padding: 0.3in 0.9in 0.5in; color: #A9B8C6; font-size: 9pt; border-top: 1px solid rgba(228,220,207,.2); }
+.cover .credit b { color: #fff; display: block; font-size: 10.5pt; font-family: 'Fraunces', serif; font-weight: 700; }
+
+/* ---- Ms. Rivera tracker line in scripts ---- */
+.rivera-line {
+  font-size: 8.5pt; color: var(--muted); background: var(--blush);
+  border: 1px solid #F0DCD4; border-radius: 7px;
+  padding: 3.5pt 9pt; margin: -1pt 0 7pt;
+  break-inside: avoid; break-after: avoid;
+}
+.rivera-line b { color: var(--clay); letter-spacing: 1px; font-size: 7.5pt; }
