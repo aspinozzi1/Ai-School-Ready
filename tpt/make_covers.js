@@ -120,8 +120,10 @@ for (const p of PRODUCTS) {
   const out = path.join(OUT, p.file + '-cover.png');
   execFileSync(CHROME, [
     '--headless=new', '--no-sandbox', '--disable-gpu', '--hide-scrollbars',
-    '--force-device-scale-factor=1', '--window-size=1000,1000',
+    '--force-device-scale-factor=1', '--window-size=1000,1200',
     '--virtual-time-budget=8000', `--screenshot=${out}`, `file://${page}`,
   ], { stdio: 'pipe' });
+  execFileSync('python3', ['-c',
+    `from PIL import Image; im = Image.open(${JSON.stringify(out)}); im.crop((0, 0, 1000, 1000)).save(${JSON.stringify(out)})`]);
   console.log('built', path.relative(ROOT, out));
 }
