@@ -79,7 +79,14 @@ Custom Category .... ${l.customCategory}   <- create once in your store, reuse a
 --- EDUCATION STANDARDS ---
 
 Skip.
-`;
+${l.easelSetup ? `
+--- EASEL (after publishing) ---
+
+This product suits a digital Easel version (students type into it
+online, and the listing earns the "Easel Activity included" badge).
+Once the listing is live, follow 6-EASEL-SETUP.txt in this zip —
+about 10 minutes in TPT's own editor, one time.
+` : ''}`;
 }
 
 fs.mkdirSync(OUT, { recursive: true });
@@ -88,6 +95,7 @@ for (const l of [...listings].sort((a, b) => a.order - b.order)) {
   fs.writeFileSync(path.join(stage, 'LISTING.txt'), listingTxt(l));
   if (l.product) fs.copyFileSync(path.join(ROOT, l.product), path.join(stage, path.basename(l.product)));
   if (l.product) fs.copyFileSync(path.join(ROOT, `tpt/previews/${l.id}-preview.pdf`), path.join(stage, '5-PREVIEW.pdf'));
+  if (l.easelSetup) fs.copyFileSync(path.join(ROOT, l.easelSetup), path.join(stage, '6-EASEL-SETUP.txt'));
   fs.copyFileSync(path.join(ROOT, l.cover), path.join(stage, '2-MAIN-COVER.png'));
   l.thumbnails.forEach((t, i) =>
     fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${3 + i}-THUMBNAIL-${i + 1}.png`)));

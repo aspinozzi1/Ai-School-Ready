@@ -813,7 +813,8 @@
    ],
    "previewUnit": "the full workbook is 4 pages",
    "filesBadge": "4 pages",
-   "insideHeading": "What's inside the full workbook"
+   "insideHeading": "What's inside the full workbook",
+   "easelSetup": "tpt/easel/ye-first-business-easel.txt"
   },
   {
    "id": "ye-launch-it",
@@ -865,7 +866,8 @@
    ],
    "previewUnit": "the full kit is 6 pages",
    "filesBadge": "6 pages",
-   "insideHeading": "What's inside the full kit"
+   "insideHeading": "What's inside the full kit",
+   "easelSetup": "tpt/easel/ye-launch-it-easel.txt"
   }
  ]
 }
