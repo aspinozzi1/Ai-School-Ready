@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Uploader's Handbook</title>
+<link rel="stylesheet" href="../kits/tooling/brand.css">
+<style>
+  .step { display: flex; gap: 10pt; margin-bottom: 7pt; break-inside: avoid; }
+  .step .n { flex: none; width: 19pt; height: 19pt; border-radius: 50%; background: var(--teal);
+             color: #fff; font-weight: 700; font-size: 10.5pt; display: flex; align-items: center;
+             justify-content: center; margin-top: 1pt; }
+  .card { padding: 8pt 11pt; margin-bottom: 6pt; }
+  h2 { margin-top: 8pt; margin-bottom: 3pt; }
+  .card li { margin-bottom: 3pt; font-size: 9.5pt; }
+  table.slots td { font-size: 9.3pt; }
+  table.slots td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  table.doc > tbody > tr > td.content-cell { padding-bottom: 0.08in; }
+  .newpage { break-before: page; margin-top: 0 !important; }
+</style>
+</head>
+<body>
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">AI-Ready School · Internal<b>The Uploader's Handbook</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">For the person who presses publish</div>
+    <h1>The Uploader's Handbook</h1>
+    <p class="lede">Everything arrives finished. Your job is the last mile: open a drop, work down
+    one text file, press publish, next drop. This page is the whole ritual — and page two is what
+    to do when something looks off, because your eyes are the final quality gate this whole
+    factory answers to.</p>
+
+    <h2>What arrives, and when</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>Every Monday morning</strong> a phone notification and an email say the week's batch is
+        ready. The files are attached in the Claude session the notification links to — about
+        10–11 products: classroom frees and paid items, plus the homeschool / young-entrepreneur
+        slice.</li>
+        <li><strong>Each product = one drop zip</strong>, numbered in upload order: <code>drop-24-…zip</code>,
+        <code>drop-25-…zip</code>, and so on.</li>
+        <li><strong>One pins zip</strong> rides along each week — Pinterest images plus their own
+        copy-paste sheet.</li>
+        <li>Everything is also archived in the GitHub repo under <code>UPLOAD/drops/</code>, forever, in
+        case a download is lost.</li>
+      </ul>
+    </div>
+
+    <h2>The upload ritual (per drop, about 4 minutes)</h2>
+    <div class="step"><div class="n">1</div><div><strong>Unzip the drop and open <code>LISTING.txt</code>.</strong> It lists every field in the exact
+    order TPT's "Upload New Product" page shows them, top to bottom. You never have to decide anything — just copy, paste, and pick.</div></div>
+    <div class="step"><div class="n">2</div><div><strong>Work down the file.</strong> Every other file in the zip is named for the form slot it
+    belongs to (the table below). Paste the title, upload the files where named, paste the
+    description exactly as written, set the price and license price it states.</div></div>
+    <div class="step"><div class="n">3</div><div><strong>Pick the dropdown categories</strong> — grades, subjects, tags — from the list in
+    LISTING.txt. TPT's labels sometimes differ slightly; choose the closest one.</div></div>
+    <div class="step"><div class="n">4</div><div><strong>Publish. Next drop.</strong> After the drops, open the pins zip and its
+    <code>PINS.txt</code> — same idea, but for Pinterest's Create Pin form. You can upload all the pin
+    images at once and work through the drafts list.</div></div>
+
+    <h2>Which file goes in which TPT slot</h2>
+    <table class="slots">
+      <tr><th>File in the zip</th><th>Where it goes on TPT</th></tr>
+      <tr><td>LISTING.txt</td><td>Nowhere — it's your script. Keep it open beside the form.</td></tr>
+      <tr><td>The product PDF or ZIP</td><td>Files → <strong>Downloadable File</strong> (this is what buyers get)</td></tr>
+      <tr><td>5-PREVIEW.pdf</td><td>Files → Product Previews → the LEFT <strong>"Preview"</strong> box</td></tr>
+      <tr><td>2-MAIN-COVER.png</td><td>Thumbnails → <strong>Main Cover</strong></td></tr>
+      <tr><td>3-THUMBNAIL-1.png · 4-THUMBNAIL-2.png</td><td>Thumbnails → the two optional slots (paid products only)</td></tr>
+    </table>
+
+    <h2 class="newpage">You are the last quality gate</h2>
+    <p class="lede" style="margin-bottom:8pt">Before a drop reaches you it has passed automated checks — page
+    breaks, file integrity, honest page counts, pricing rules, preview freshness. But the line on
+    every product says <em>"built and audited by two certified teachers,"</em> and you're one of
+    them. That line is a promise, and it's kept at your desk.</p>
+
+    <div class="card">
+      <p style="margin-bottom:4pt"><strong>The 60-second teacher read, per product:</strong></p>
+      <ul style="margin-bottom:0">
+        <li><strong>Flip the product PDF once.</strong> Does it look like something you'd be glad to
+        download? Any page that makes you wince — cramped, cut off, half-empty, off-tone?</li>
+        <li><strong>Spot-check one claim.</strong> If the cover says "10 prompts" or "5 pages," count once.</li>
+        <li><strong>Read one paragraph out loud.</strong> Does it sound like a real teacher wrote it for a
+        real teacher? That voice is the brand.</li>
+        <li><strong>Trust your classroom instincts over the checklist.</strong> If something feels
+        pedagogically off or unsafe — especially anything involving students or kids and AI —
+        that overrules everything.</li>
+      </ul>
+    </div>
+
+    <h2>If something looks wrong</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>Don't fix it by hand, and don't upload it.</strong> Skip that drop, publish the rest.</li>
+        <li><strong>Say what you saw</strong> in the Claude session (or tell Adam to): a screenshot and one
+        sentence — "the letter on page 3 is cut off" — is plenty. The fix gets made at the
+        source, every derived file (preview, thumbnails, pins) gets rebuilt, and a corrected
+        drop comes back. Hand-fixed uploads drift out of sync with the factory; reported ones
+        make the factory smarter — several of the automated gates exist because someone
+        spotted something once.</li>
+      </ul>
+    </div>
+
+    <h2>House rules worth knowing (the "why" behind odd details)</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>Additional licenses are about half the product price</strong> ($4 on $8, $6 on $12, $10
+        on $24) — TPT rejects a license priced at or above the product, and half-price is what
+        makes whole-staff purchases happen.</li>
+        <li><strong>Titles are under 80 characters</strong> because TPT cuts longer ones mid-word.</li>
+        <li><strong>We never promise future content</strong> in a listing — no "part 2 coming soon."</li>
+        <li><strong>Nothing links outside TPT.</strong> No website, no email list — the store is the whole
+        operation.</li>
+        <li><strong>Kid-facing products (ages 4–12) never have children using chatbots</strong> — the
+        grown-up holds the keyboard, always. If you ever see a page that breaks this, that's
+        the most important catch you can make.</li>
+        <li><strong>On Pinterest, the "Mark as AI-Modified" toggle goes ON.</strong> It's the honest
+        disclosure, and honesty is the brand's whole trust strategy.</li>
+      </ul>
+    </div>
+
+    <div class="callout teal"><strong>That's the entire job:</strong> open, paste, publish, glance with
+    teacher eyes, flag anything weird. The research, writing, design, pricing, and packaging all
+    happen upstream — and every Monday it starts again.</div>
+
+    <p class="legal" style="margin-bottom:0">AI-Ready School internal document · not for sale or upload. Questions
+    or catches: drop them in the Claude session and the factory adjusts.</p>
+
+  </td></tr></tbody>
+</table>
+<div class="fixed-foot">
+  <div class="foot">
+    <div class="brand-line">AI-Ready School<span> · </span>The Uploader's Handbook</div>
+    <div>Internal · v1</div>
+  </div>
+</div>
+</body>
+</html>
