@@ -113,6 +113,16 @@ a slow season, never for the frees.
    the end, no external references, free items may point to "our full PD
    sessions are in the store" (store-internal only).
 5. `node tpt/make_drops.js` → builds/refreshes drop zips in `UPLOAD/drops/`.
+5b. **Pinterest pins (owner directive, 2026-08-24)**: add a `PIN_COPY`
+   entry for every new listing in `tpt/make_pins.js` (headline stack,
+   palette, board, keyword-rich description), then `node tpt/make_pins.js`
+   → one 1000×1500 pin per listing in `tpt/pins/` plus `PINS.txt` (the
+   upload sheet: board, title, description per pin; owner pastes the
+   listing URL). Needs `npm i --no-save playwright @fontsource/luckiest-guy
+   @fontsource/baloo-2` in a fresh session. Ship the week's new pins +
+   PINS.txt as a `PINS-*.zip` alongside the drops. Pin copy rules: real
+   pages only in mockups, honest badges, seasonal pins 30–45 days early,
+   frees pinned hardest (they are the click engine).
 6. **Quality gates (all must pass):**
    - every PDF opens (pypdf) and page counts are recorded;
    - **no section, paragraph, card, or write-in box splits across a page

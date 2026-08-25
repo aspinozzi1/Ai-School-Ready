@@ -1,0 +1,998 @@
+==================================================================
+PINTEREST UPLOAD SHEET — one pin per listing
+Fields below follow Pinterest's "Create Pin" form top to bottom.
+Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
+Time Savers · Parent Communication · Back to School · Homeschool AI ·
+Young Entrepreneurs
+Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
+through the drafts list on the left, one per listing.
+==================================================================
+
+------------------------------------------------------------------
+10 COPY-PASTE AI PROMPTS FOR TEACHERS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ten-ai-prompts-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+10 Copy-Paste AI Prompts for Teachers | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI prompts for teachers: 10 copy-paste ChatGPT prompts for lesson hooks, sub plans, rubrics, leveled readings, and parent messages. Safe as written — no student data. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for teachers · chatgpt for teachers · ai prompts   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE ONE HARD RULE POSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+one-hard-rule-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Student Privacy Poster | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI student privacy poster for the staff room: the one hard rule for teachers using ChatGPT and AI tools, FERPA-friendly, print and post. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai privacy · student data privacy · ferpa   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+AI TOOL SAFETY CHECKLIST
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+tool-safety-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Tool Safety Checklist for Teachers | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI tool safety checklist for teachers: vet any classroom AI or edtech tool in 5 minutes — data privacy, student safety, and the questions worth taking to your district.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai tools · edtech · student privacy   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+TALKING TO PARENTS ABOUT AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+parents-ai-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Talking to Parents About AI | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free guide for talking to parents about AI in the classroom: ready-to-send answers to the questions families actually ask teachers. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Parent Communication   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent communication · family engagement · ai for teachers   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+AI READINESS CHECKLIST FOR SCHOOL LEADERS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+leader-readiness-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Readiness Checklist for School Leaders | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI readiness checklist for school leaders: where your building stands on AI policy, staff training, and student privacy — one honest page for principals and instructional coaches.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI Staff PD   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: school leadership · principal · instructional coach   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+20 DE-IDENTIFICATION DRILLS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+deid-drills-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Student Privacy Practice | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free FERPA-friendly AI practice for teachers: 20 de-identification drills that build the no-student-data habit — before-and-after prompt makeovers, ten seconds each.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: student privacy · ferpa · ai safety   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+KIT 1 — AI FOUNDATIONS & SAFETY
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+kit1-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Foundations & Safety PD | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Complete AI professional development kit for schools: a ready-to-run 45-60 minute staff training on AI foundations and student privacy — word-for-word facilitator script, 34 editable slides, handouts, 30-day plan. Built by two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI Staff PD   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai professional development · staff training · chatgpt for teachers   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+KIT 2 — PROMPTING BASICS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+kit2-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+ChatGPT & AI Prompting PD | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+ChatGPT prompting PD for teachers: a complete staff training where every teacher builds a reusable AI prompt template — word-for-word script, 33 editable slides, handouts. Built by two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI Staff PD   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: chatgpt for teachers · ai prompts · prompt engineering   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+BACK-TO-SCHOOL AI SETUP PACK
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+bts-setup-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Back to School AI Setup for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Back to school AI setup for teachers: a first-week checklist, a ready-to-send family letter about AI, and ten safe back-to-school prompts — one planning period, done. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Back to School   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: back to school · ai for teachers · chatgpt for teachers   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+AI VOCABULARY FOR TEACHERS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ai-vocab-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Vocabulary for Teachers | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI vocabulary cheat sheet for teachers: 30 AI terms explained in plain English — hallucination, FERPA, prompts, AI detectors — for staff meetings and PD folders.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for teachers · ai literacy · chatgpt   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE 10-MINUTE AI HABIT
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ai-habit-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+10 Minute AI Habit for Teachers | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free 10-minute AI habit system for teachers: one calendar slot, one task a week, one doc of prompts that worked — with an 8-week starter ladder and printable tracker.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for teachers · chatgpt for teachers · teacher planner   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+DON'T TYPE THAT: STUDENT PII POSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+dont-type-that-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Student Data Privacy Poster | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free student data privacy poster: 10 things teachers should never type into AI tools — FERPA-friendly, with the safe-prompt guide on the back. Print and post.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: student privacy · ferpa · classroom poster   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+EMERGENCY SUB PLANS WITH AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+sub-plans-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Emergency Sub Plans with AI | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free emergency sub plans system with AI: one master prompt drafts a complete substitute day in 15 minutes — bell-ringers, numbered directions, early-finisher tasks. For the morning you hoped would never come.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Sub Plans & Time Savers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: sub plans · substitute teacher · emergency sub plans   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+AI OR TEACHER? DELEGATION POSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ai-or-teacher-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI or Teacher Poster | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI delegation poster for teachers: three questions that sort any task — what AI can draft, what stays yours, and the two rules that keep every yes safe.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for teachers · chatgpt · classroom poster   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PARENT MESSAGE MAKEOVERS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+parent-messages-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Parent Communication with AI | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Parent communication templates with AI: 12 hard email makeovers — missing work, behavior incidents, angry replies, conferences — each with a safe ready-to-run prompt and the 4-part tone formula. PII-safe by design.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Parent Communication   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent communication · parent teacher conferences · email templates   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+WHAT IS AI? UNPLUGGED FIRST LESSON
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+what-is-ai-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+What Is AI? Unplugged Lesson for Kids Ages 4-8 | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free unplugged AI lesson for kids ages 4-8: three kitchen-table games that teach what AI really is — no screens, no chatbots, read-aloud script included. Perfect for homeschool and K-2.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for kids · homeschool · digital citizenship   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+OUR FAMILY AI RULES POSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+family-ai-rules-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Family AI Rules Poster | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free family AI rules poster: five kid-safe AI rules to sign together — grown-ups hold the keyboard, AI guesses, our names stay ours. With a parent guide for the follow-up questions.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai safety · digital citizenship · homeschool   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+AI QUICK-START FOR HOMESCHOOL PARENTS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+hs-quickstart-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+AI Prompts for Homeschool Parents | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI prompts for homeschool parents: 10 ready-to-run planning prompts — weekly plans, unit studies, leveled readings, quizzes, co-op classes. Describe the learner, never the child.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool · homeschool curriculum · ai for teachers   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+MY FIRST BUSINESS IDEA
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+first-biz-idea-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+My First Business Idea Worksheet | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free entrepreneurship worksheet for kids ages 6-10: capture the first business idea — what to make, who wants it, the sign, the selling sentence — plus a parent AI-coach page. Kids think; grown-ups hold the keyboard.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship · financial literacy · homeschool   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IS IT TRUE? FACT-CHECKING AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+is-it-true-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Is It True? AI Fact Checking Lesson for Kids 9-12 | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free AI fact-checking lesson for kids 9-12: the three-step check and Two Truths and an AI — the family game that makes confident-sounding nonsense easy to catch. Media literacy that sticks.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: media literacy · critical thinking · ai literacy   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOMESCHOOL AI PLANNING PACK
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+hs-planning-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Homeschool AI Planning Pack | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Homeschool AI planning pack: 20 subject-organized prompts, a fill-in unit study builder, and a weekly rhythm planner. AI drafts; the parent-teacher decides. Includes the family data-safety habit.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool · homeschool curriculum · unit studies   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+MY FIRST BUSINESS WORKBOOK
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ye-first-business-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+My First Business | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Young entrepreneur workbook for kids ages 6-10: a real kid-sized business from idea to profit — Rule of Three pricing, money math, sale-day tally, and a grown-up AI coach prompt at every step.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship · financial literacy · money math   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+LAUNCH IT: YOUNG ENTREPRENEUR KIT
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ye-launch-it-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Launch It | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Entrepreneurship kit for kids ages 9-12: a one-page business plan, market research with real humans, Rule of Three pricing, pitch practice against an AI customer, a ledger, and the online-safety contract.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship · financial literacy · business plan   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
