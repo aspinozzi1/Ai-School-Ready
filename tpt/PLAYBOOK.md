@@ -113,6 +113,14 @@ a slow season, never for the frees.
    the end, no external references, free items may point to "our full PD
    sessions are in the store" (store-internal only).
 5. `node tpt/make_drops.js` → builds/refreshes drop zips in `UPLOAD/drops/`.
+5a. **Easel (owner directive, 2026-08-24)**: student-facing products
+   (kid workbooks, worksheets, exit tickets) are designed Easel-ready —
+   clear write-in lines and boxes on clean Letter pages — and ship with a
+   `6-EASEL-SETUP.txt` build script in the drop (see `tpt/easel/`;
+   listings gain an `easelSetup` path and make_drops packages it). The
+   Easel activity itself is built by the owner in TPT's editor after
+   publishing; the "includes digital Easel version" description line is
+   added only once it's live. Teacher/parent-facing products skip Easel.
 5b. **Pinterest pins (owner directive, 2026-08-24)**: add a `PIN_COPY`
    entry for every new listing in `tpt/make_pins.js` (headline stack,
    palette, board, keyword-rich description), then `node tpt/make_pins.js`
