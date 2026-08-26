@@ -29,9 +29,19 @@ mascot, the three-layer loudness rule, rainbow bar on every cover.
 Canva masters live in the "Bright Scholar — TPT Brand" folder
 (see `tpt/canva/README.md` for design ids).
 
-## The weekly cycle (owner directive, 2026-08-24; expanded same day)
+## The weekly cycle (owner directives 2026-08-24; two drop days 2026-08-26)
 
-Every **Monday** a production run builds a **collection in two lanes**:
+The week has **two drops** and a research rhythm that feeds them
+(see "Research cadence" below):
+
+- **Monday drop — AI for schools & homeschool**: classroom lane +
+  homeschool lane.
+- **Wednesday drop — Young Entrepreneurs & Deaf Education**: the YE
+  lane + the Deaf Ed lane (`tpt/intel/deaf-ed-niche.md` holds that
+  line's binding design laws — accuracy and respect, pedagogy never
+  audiology, doubled privacy, the owner's family never referenced).
+
+### Monday drop lanes
 
 **Lane 1 · Classroom (teachers & staff):**
 - **5 free resources** — the traffic engine. Each targets a real search
@@ -45,23 +55,35 @@ Every **Monday** a production run builds a **collection in two lanes**:
   Shorts, full kits/kit retrofits, deep template packs, or a bundle
   assembled from existing listings.
 
-**Lane 2 · Homeschool AI + Young Entrepreneurs (owner expansion,
-2026-08-24 — line launched same day, see Launch state):**
-- **2 free resources** targeting homeschool/family/kid-entrepreneur
-  searches, and
-- **1 paid product** ($8–12), alternating weekly between the Homeschool
-  AI and Young Entrepreneurs categories (or serving both).
-- Lane-2 design law, always: **the grown-up holds the keyboard** —
-  chatbots are 13+, AI coaches the parent, kids think and decide, child
-  identity never enters a prompt, anything online is adult-run.
-- Lane-2 backlog to draw from (intel brief refines each week):
-  ages-4–5 dedicated unplugged pack · co-op group editions · seasonal
-  venture packs (holiday craft fair, spring plant sale) · homeschool
-  record-keeping/portfolio pack · AI read-aloud & library companion ·
-  family AI literacy night kit · Launch It level 3 (12s nearing 13:
-  "almost-your-own-account" readiness) · homeschool co-op teaching packs.
+**Lane 2 · Homeschool AI:**
+- **2 free resources** targeting homeschool/family searches, and
+- **1 paid product** ($8–12) in the Homeschool AI category.
+- Design law, always: **the grown-up holds the keyboard** — chatbots
+  are 13+, AI coaches the parent, kids think and decide, child identity
+  never enters a prompt, anything online is adult-run.
+- Homeschool backlog: ages-4–5 dedicated unplugged pack · co-op group
+  editions · record-keeping/portfolio pack · AI read-aloud & library
+  companion · family AI literacy night kit · co-op teaching packs.
 
-That's ~10–11 upload-ready products per Monday, every one built for
+### Wednesday drop lanes (owner directive 2026-08-26)
+
+**Lane 3 · Young Entrepreneurs:**
+- **2 free + 1 paid** ($8–12). Same grown-up-holds-the-keyboard law.
+- YE backlog: seasonal venture packs (holiday craft fair, spring plant
+  sale) · Launch It level 3 (12s nearing 13: "almost-your-own-account"
+  readiness) · service-business edition (pet care, yard help) ·
+  co-op/classroom market-day kit.
+
+**Lane 4 · Deaf Education** (ToDs, itinerants, and gen-ed teachers of
+DHH students):
+- **2–3 free + up to 1 paid** ($8–12) — free-heavy early while the
+  audience builds; the paid slot fills as the line matures rather than
+  weekly filler. AI can feature but doesn't have to.
+- Design laws and first-wave backlog: `tpt/intel/deaf-ed-niche.md`
+  (binding). Seasonal peak: Aug–Sep in-service season, spring IEP
+  season.
+
+That's ~8 products Monday + ~6 Wednesday, every one built for
 maximum TPT SEO and sellability, every one through the full quality
 gates so the owner uploads with **zero editing**. More uploads is fine
 (owner, 2026-08-24); thin quality is not — if a week can't fill both
@@ -80,7 +102,27 @@ taking a week off): **bundle assembly** when 3+ related listings exist,
 of aging winners — each of these can stand in for a higher-priced slot in
 a slow season, never for the frees.
 
-### Production steps (run once per product, 7–8× per Monday)
+### Research cadence (owner directive 2026-08-26)
+
+Research is spread across the week so limited daily API allotments
+(Mangools KWFinder free tier, Semrush units when available) compound
+instead of bottlenecking one session:
+
+- **Daily pulse (Mon–Sat, ~15 min, silent)**: a short automated check
+  appending to `tpt/intel/pulse-YYYY-Www.md` — each weekday focuses on
+  one lane's keywords/competitors/pricing, spending that day's free
+  Mangools lookups (KWFinder API, key in the `MANGOOLS_API_KEY` env var
+  once the owner configures it; WebSearch fallback otherwise).
+- **Tuesday pulse additionally compiles the Wednesday brief**
+  (`tpt/intel/YYYY-Www-wed-brief.md`, same owner analysis spec) for
+  lanes 3–4 from the week's pulses so far.
+- **Sunday deep dive** compiles everything into the Monday brief
+  (`tpt/intel/YYYY-Www-brief.md`) for lanes 1–2.
+
+The factories read their day's brief before building; briefs may
+override the calendar row per the standing rules.
+
+### Production steps (run once per product, each drop day)
 
 0. **Read the newest brief in `tpt/intel/` first** (see its README). It
    is produced automatically every Sunday and may override the calendar
@@ -237,11 +279,12 @@ competition, school budgets) rather than betting on any single item.
 ## Year-1 batch calendar (top pending row = next Monday)
 
 Each row is one Monday's **lane-1** collection: **5 frees + 1 mid +
-1–2 high**. Every week ALSO ships the lane-2 slice (2 frees + 1 paid
-from Homeschool AI / Young Entrepreneurs, alternating categories —
-pick from the lane-2 backlog above, seasonally adjusted by the intel
-brief: holiday ventures in Oct–Nov, new-semester homeschool planning in
-Dec–Jan, spring ventures Mar–May, summer homeschool prep Jun–Aug).
+1–2 high**. Every Monday ALSO ships the homeschool slice (lane 2), and every
+**Wednesday** ships lanes 3–4 (Young Entrepreneurs + Deaf Education)
+from their backlogs, steered by the Tuesday brief. Seasonal logic:
+holiday ventures Oct–Nov, new-semester homeschool planning Dec–Jan,
+spring ventures Mar–May, summer homeschool prep Jun–Aug, deaf-ed
+in-service season Aug–Sep and IEP season in spring.
 The Theme column drives cross-sell: the week's frees funnel to the
 week's paid items. Free ideas are named for the next quarter and
 thematic after that — the producing session picks the 5 best-searchable
