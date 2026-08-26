@@ -41,12 +41,15 @@ teachers who have DHH (deaf/hard-of-hearing) students in their classes.
 3. **Student privacy doubled.** DHH students are a small, identifiable
    population — the describe-the-learner-never-the-child rule matters
    even more, and every AI-prompt product in this line repeats it.
-4. **The owner's family stays private.** The line exists because of
-   lived experience, but no listing references the owner's son or any
-   identifiable family details. If the owner ever wants a provenance
-   line like "built by the parents of a deaf child," that is their
-   explicit call to make, in their words — never assumed, and never
-   with the child's name or details.
+4. **Provenance line (owner-approved 2026-08-26).** Every Deaf
+   Education product and listing carries:
+   "Built and audited by two certified teachers — and the parents of
+   a deaf child."
+   That sentence is the whole disclosure: the child is never named,
+   and no age, school, device, communication mode, or any other
+   identifying detail about the owner's family ever appears in a
+   product, listing, pin, or preview. The lived experience is the
+   trust signal; the privacy is absolute.
 5. **AI rides along, doesn't lead.** Some products are pure deaf-ed
    resources (the in-service handout, self-advocacy scaffolds); AI
    prompt packs are one strand, not the whole line. Every AI use in
