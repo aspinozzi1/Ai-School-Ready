@@ -79,3 +79,118 @@ where the best long-tail titles come from.
 - Lesson that generalizes: **qualify a big phrase, don't invent a niche
   one.** Ride "digital citizenship" and "artificial intelligence"; skip
   invented compounds nobody types.
+
+---
+
+# TPT Keywords pull #2 — 2026-08-26 (owner-run). PRIMARY METER.
+
+## Seed: digital citizenship — 2,644 searches · 3K–8K resources · **Strong**
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| library | 5,735 | 75K–150K | Moderate |
+| computer science | 2,349 | 75K–150K | Moderate |
+| technology | 1,485 | 150K–300K | Challenging |
+| **internet safety** | **760** | **3K–8K** | **Promising** |
+| **digital footprint** | **572** | **1K–3K** | **Promising** |
+| digital literacy | 486 | 150K–300K | Challenging |
+| **online safety** | **386** | **3K–8K** | **Promising** |
+| digital citizenship worksheets | 104 | 1K–3K | Moderate |
+| digital citizenship worksheet | 33 | 3K–8K | Challenging |
+
+## Seed: artificial intelligence — 733 searches · 3K–8K · **Promising**
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| ai | 848 | 40K–75K | Moderate |
+| coding | 793 | 20K–40K | Moderate |
+| **ai and ay worksheets** | **522** | 3K–8K | Promising |
+| ai literacy | 170 | 8K–20K | Moderate |
+| ai lesson | 60 | 8K–20K | Challenging |
+| ai lessons | 25 | 8K–20K | Very Difficult |
+| ai worksheets | 24 | 8K–20K | Very Difficult |
+| artificial intelligence activities | 16 | 3K–8K | Challenging |
+| artificial intelligence worksheet | 3 | 1K–3K | Challenging |
+
+## Seed: ai ethics — 101 searches · 1K–3K · Moderate
+
+---
+
+# What this data changes (read before planning any batch)
+
+## 1. THE "ai" TRAP — do not target bare "ai" on TPT
+
+**"ai and ay worksheets" — 522 searches** — is a *phonics* query. "ai"
+and "ay" are vowel teams; primary teachers search them constantly. That
+contamination explains the whole shape of the "ai" row: 848 searches
+against 40K–75K resources, most of which are phonics worksheets we will
+never outrank and whose searchers do not want us.
+
+**Rules that follow:**
+- Never lead a title or tag with bare **"ai"**. Always **"artificial
+  intelligence"** or a qualified phrase ("AI for teachers", "ChatGPT").
+- Ignore the "ai" search count in every future analysis — it is not our
+  audience.
+- Audit existing tags for bare "ai" and replace them.
+
+## 2. AI-qualified long-tails are traps, confirmed by TPT's own ratings
+
+"ai lesson" (60/Challenging), "ai lessons" (25/**Very Difficult**),
+"ai worksheets" (24/Very Difficult), "artificial intelligence
+activities" (16/Challenging), "artificial intelligence worksheet"
+(3/Challenging). Tiny demand, brutal competition. **Do not build for
+these phrases.** The pattern holds from pull #1: qualify a big phrase,
+never invent a small one.
+
+## 3. The real door into this catalog is DIGITAL CITIZENSHIP
+
+Four phrases in one family, all Promising-or-Strong, all in reachable
+competition buckets:
+
+| Phrase | Searches | Resources | Verdict |
+|---|---|---|---|
+| digital citizenship | 2,644 | 3K–8K | Strong |
+| internet safety | 760 | 3K–8K | Promising |
+| **digital footprint** | **572** | **1K–3K** | **best ratio in all our data** |
+| online safety | 386 | 3K–8K | Promising |
+
+That is **~4,300 monthly searches** in a family our student-privacy and
+AI-safety material legitimately belongs to — versus 733 for
+"artificial intelligence" and effectively nothing for teacher-PD phrasing.
+
+**"digital footprint" is the single best opportunity we have found:**
+572 searches against only 1K–3K competing resources.
+
+## 4. The strategic correction: we are missing the student-facing side
+
+These are searches by teachers shopping for **classroom resources for
+students**. Our catalog is overwhelmingly **adult-facing** (staff PD,
+teacher planning, parent letters) — genuinely valuable, sold to a buyer
+who mostly does not arrive through TPT search.
+
+We should not abandon the PD line; it is the high-margin flagship and
+serves admins and coaches. But the **traffic engine must include
+student-facing digital-citizenship-plus-AI resources**, which is exactly
+the trailblazer intersection we already own the expertise for:
+
+- AI + digital footprint (what AI tools do with what you type)
+- AI + internet safety (chatbots, deepfakes, what's real)
+- AI + online safety for the AI era
+- AI honesty/academic integrity for students (student-facing version of
+  what we teach staff)
+
+## 5. Immediate retitle/retag candidates (existing catalog)
+
+These already-published frees belong to the digital-citizenship family
+and are currently titled away from it:
+
+- **Don't Type That: 10 Things That Count as Student PII** → carry
+  "digital citizenship" and "internet safety" in tags; consider a title
+  that includes digital citizenship wording.
+- **Is It True? Teaching Kids to Fact-Check AI** (ages 9–12) → this is a
+  digital-citizenship/media-literacy product; tag accordingly.
+- **AI Tool Safety Checklist** → "online safety", "internet safety".
+- **Our Family AI Rules poster** → "internet safety", "digital citizenship".
+
+Retagging costs minutes and may matter more than any single new product
+this month.
