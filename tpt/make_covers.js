@@ -134,6 +134,47 @@ const PRODUCTS = [
     chips: ['12 makeovers', 'Tone formula', 'PII-safe', '7 pages'] },
 ];
 
+/* ---- school-accent layer (owner directive 2026-08-25): every Main Cover
+   carries the fun schoolhouse accents — colored line-art doodles, confetti,
+   sparkles — in the safe zones only (top-center gap and the right column),
+   never over title, lede, chips, badge, intern, or footer. Colors rotate
+   per product so the catalog looks lively but consistent. */
+const DOODLES = {
+  star:  '<path d="M50 15 L61 40 L88 43 L68 62 L74 88 L50 75 L26 88 L32 62 L12 43 L39 40 Z"/>',
+  spark: '<path d="M50 12 L58 42 L88 50 L58 58 L50 88 L42 58 L12 50 L42 42 Z"/>',
+  bulb:  '<path d="M35 42a15 15 0 1 1 30 0c0 10-8 13-8 22H43c0-9-8-12-8-22Z"/><path d="M43 76h14"/>',
+  plane: '<path d="M10 55 L90 20 L55 85 L45 60 Z"/><path d="M45 60 L90 20"/>',
+  pencil:'<path d="M22 78 30 56 68 18l14 14-38 38-22 8Z"/><path d="M62 24l14 14"/>',
+  apple: '<path d="M50 34c-14-10-32-2-32 16 0 16 12 32 24 32 4 0 6-2 8-2s4 2 8 2c12 0 24-16 24-32 0-18-18-26-32-16Z"/><path d="M50 34c0-8 4-14 10-16"/>',
+  ruler: '<rect x="14" y="40" width="72" height="20" rx="4"/><path d="M28 40v8M42 40v10M56 40v8M70 40v10"/>',
+  book:  '<path d="M50 25c-10-8-26-8-34-3v55c8-5 24-5 34 3 10-8 26-8 34-3V22c-8-5-24-5-34 3Z"/><path d="M50 25v55"/>',
+  note:  '<path d="M38 75V25l34-8v50"/><circle cx="30" cy="75" r="9"/><circle cx="64" cy="67" r="9"/>',
+  globe: '<circle cx="50" cy="50" r="34"/><ellipse cx="50" cy="50" rx="14" ry="34"/><path d="M16 50h68M22 32h56M22 68h56"/>',
+  atom:  '<ellipse cx="50" cy="50" rx="38" ry="15"/><ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="38" ry="15" transform="rotate(120 50 50)"/><circle cx="50" cy="50" r="5"/>',
+  smile: '<circle cx="50" cy="50" r="32"/><circle cx="39" cy="42" r="3"/><circle cx="61" cy="42" r="3"/><path d="M36 58c8 10 20 10 28 0"/>',
+};
+const ACCENT_COLORS = ['#FFC43D', '#17BEBB', '#E4572E', '#2D6CB5'];
+const dood = (x, y, r, size, color, op, shape) =>
+  `<svg style="position:absolute;left:${x}px;top:${y}px;transform:rotate(${r}deg);opacity:${op}"
+        width="${size}" height="${size}" viewBox="0 0 100 100" fill="none"
+        stroke="${color}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">${shape}</svg>`;
+function accents(idx) {
+  const names = Object.keys(DOODLES);
+  const pick = n => DOODLES[names[(idx + n) % names.length]];
+  const col = n => ACCENT_COLORS[(idx + n) % 4];
+  const dots = [[470, 70, col(0)], [530, 118, col(1)], [945, 252, col(2)],
+                [760, 118, col(3)], [944, 618, col(0)], [500, 906, col(1)],
+                [700, 912, col(2)], [920, 170, col(3)]]
+    .map(([x, y, c]) => `<div style="position:absolute;left:${x}px;top:${y}px;width:13px;height:13px;border-radius:50%;background:${c};opacity:.55"></div>`).join('');
+  return `
+  ${dood(560, 58, -12 + (idx % 5) * 5, 82, col(0), .5, pick(0))}
+  ${dood(660, 96, 10, 62, col(1), .45, pick(1))}
+  ${dood(874, 432, 8 - (idx % 4) * 4, 74, col(2), .45, pick(2))}
+  ${dood(880, 592, -10, 66, col(3), .4, pick(3))}
+  <div style="position:absolute;left:583px;top:902px;font-family:'Fredoka',sans-serif;font-size:34px;color:${col(0)};opacity:.8">\u2726</div>
+  ${dots}`;
+}
+
 const INTERN = fs.readFileSync(path.join(ROOT, 'public/brand/ai-buddy.svg'), 'utf8');
 const internAt = (w, h, stemColor) =>
   INTERN.replace('<svg ', `<svg width="${w}" height="${h}" `)
@@ -143,7 +184,7 @@ const FONTS = process.env.FONTS_CSS
   ? `file://${path.resolve(process.env.FONTS_CSS)}`
   : 'https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;700;800&display=swap';
 
-function html(p) {
+function html(p, idx) {
   return `<!doctype html><html><head><meta charset="utf-8">
 <link href="${FONTS}" rel="stylesheet">
 <style>
@@ -173,6 +214,7 @@ function html(p) {
   .bar i { flex: 1; }
   .b1 { background: #E4572E; } .b2 { background: #FFC43D; } .b3 { background: #17BEBB; } .b4 { background: #2D6CB5; }
 </style></head><body>
+  ${accents(idx)}
   <div class="brand">${internAt(46, 48, '#FFFDF8')}<span><b>AI-Ready</b> School</span></div>
   <div class="badge">${p.badge}</div>
   <div class="body">
@@ -189,9 +231,9 @@ function html(p) {
 
 fs.mkdirSync(OUT, { recursive: true });
 const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'covers-'));
-for (const p of PRODUCTS) {
+for (const [idx, p] of PRODUCTS.entries()) {
   const page = path.join(tmp, p.file + '.html');
-  fs.writeFileSync(page, html(p));
+  fs.writeFileSync(page, html(p, idx));
   const out = path.join(OUT, p.file + '-cover.png');
   execFileSync(CHROME, [
     '--headless=new', '--no-sandbox', '--disable-gpu', '--hide-scrollbars',

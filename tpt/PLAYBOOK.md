@@ -145,7 +145,11 @@ a slow season, never for the frees.
    - every non-bundle drop contains `5-PREVIEW.pdf` and it opens (a listing
      without a sneak peek does not ship);
    - covers are 1000×1000 with the rainbow bar present (pixel-check the
-     bottom rows — the headless renderer once silently dropped it);
+     bottom rows — the headless renderer once silently dropped it) AND
+     carry the school-accent layer (owner directive 2026-08-25: colored
+     doodles/confetti/sparkle, built into make_covers.js — accents live in
+     the safe zones only, never over title, lede, chips, badge, intern, or
+     footer; eyeball any cover whose title runs unusually long);
    - listing titles are ≤80 characters;
    - **no stale derived assets** — run `python3 kits/tooling/check_fresh.py`
      from the repo root: every pinsrc render, preview PDF, thumbnail, and
