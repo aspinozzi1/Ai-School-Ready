@@ -34,12 +34,18 @@ in the cloud environment's Environment variables field, `.env` format:
 - SERPChecker / SiteProfiler tools also appear in `tools/list` for
   competitor-page analysis.
 
-## Pacing (important)
+## Pacing (measured 2026-08-26, not guessed)
 
-Mangools allows **only a few calls per short period** and related-keyword
-calls consume paid quota. This is exactly why research is spread across
-daily pulses: 3–5 phrases per day, every day, instead of one session
-burning the allotment. Space calls a few seconds apart.
+The free tier allows roughly **two related-keyword calls per short
+window**; the third returns HTTP 429 ("only a few requests per short
+period") even with 45 seconds between calls. Measured: 2 succeeded,
+2 rate-limited in one session.
+
+**Therefore: budget 1–2 Mangools lookups per daily pulse**, which across
+Mon–Sat still validates 8–12 phrases a week — enough for the weekly
+product load when combined with the free meters. Never plan a session
+around 3+ calls; if a 429 appears, stop calling and finish on TPT
+Keywords data and WebSearch rather than retrying.
 
 ## Standing finding from the first live lookup (2026-08-26)
 
