@@ -224,3 +224,42 @@ this month.
    AI-side seed we have pulled (2,553–2,644 searches, Strong, every
    time). TPT's own co-search graph is telling us where AI-safety
    material belongs in this marketplace. Build there.
+
+---
+
+# Pull #3 — sub plans family (owner-run, 2026-08-26). This is the Week-2 jackpot.
+
+Seed (sub plans): **20,817 searches** · 300K–500K resources · Promising
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| back to school | 266,393 | >500K | Strong |
+| **sub binder** | **13,284** | **8K–20K** | **Strong** |
+| **emergency sub plans** | **10,258** | 40K–75K | Promising |
+| **substitute binder** | **5,631** | **3K–8K** | **Promising** |
+| sub plans template | 3,313 | 20K–40K | Promising |
+| sub plans first grade | 1,044 | 150K–300K | Challenging |
+| sub plans 2nd grade | 915 | 75K–150K | Moderate |
+| sub plans kindergarten | 747 | 75K–150K | Challenging |
+
+## What this decides for Monday's (Week 2) drop — binding
+
+1. **"substitute binder" is the best volume-to-competition ratio of any
+   phrase we've validated**: 5,631 searches vs 3K–8K resources,
+   Promising. "sub binder" is 2.3× bigger (13,284, Strong) at 8K–20K.
+   **The Week-2 mid product IS a substitute binder** — retitle the
+   planned "Sub-Plan Builder" to lead with binder wording, e.g.
+   "Substitute Binder with AI | Build Your Emergency Sub Plans in 15
+   Minutes" (validate ≤80 chars at build). Carry: sub binder, substitute
+   binder, emergency sub plans, sub plans template in tags.
+2. **"emergency sub plans" (10,258, Promising)** — our existing FREE
+   emergency-sub-plans resource sits on a genuinely huge phrase. Its
+   title already leads with it; add "sub binder" cross-tags and make it
+   funnel hard to the new paid binder.
+3. **Grade-qualified sub plans are the same trap as ai-* compounds**
+   (Challenging at 75K–300K resources): don't chase them.
+4. Product shape guidance: buyers want a BINDER — printable
+   tabbed/sectioned, fill-in pages, plus our differentiator (the AI
+   master prompts that draft the day). Editable > static where feasible.
+5. "back to school" (266K, Strong) is a seasonal tag to ride on every
+   relevant listing this month, not a phrase to title against.
