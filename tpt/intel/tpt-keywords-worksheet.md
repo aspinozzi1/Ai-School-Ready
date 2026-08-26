@@ -194,3 +194,33 @@ and are currently titled away from it:
 
 Retagging costs minutes and may matter more than any single new product
 this month.
+
+---
+
+# Pull #2b — related list from the AI-side seeds (same session)
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| digital citizenship | 2,553 | 3K–8K | **Strong** |
+| **fluency passages 3rd grade** | **1,087** | 20K–40K | Moderate |
+| ai | 848 | 40K–75K | Moderate |
+| ai literacy | 170 | 8K–20K | Moderate |
+| ai prompts | 101 | 3K–8K | Moderate |
+| ai grade 7 | 7 | 3K–8K | Challenging |
+| emergency ai sub plans | 5 | < 1K | Moderate |
+| ai bellringers | 4 | 3K–8K | Challenging |
+
+**Two confirmations:**
+
+1. **The phonics contamination is real and large.** "fluency passages
+   3rd grade" (1,087 searches) surfacing as a co-search alongside AI
+   seeds — together with "ai and ay worksheets" (522) — means a
+   substantial share of TPT's "ai" traffic is primary reading teachers,
+   not artificial-intelligence shoppers. Bare "ai" is confirmed dead to
+   us as a target term.
+
+2. **TPT itself keeps pairing our subject with digital citizenship.**
+   "digital citizenship" appears as a top related keyword from *every*
+   AI-side seed we have pulled (2,553–2,644 searches, Strong, every
+   time). TPT's own co-search graph is telling us where AI-safety
+   material belongs in this marketplace. Build there.
