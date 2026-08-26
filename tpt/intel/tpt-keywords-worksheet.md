@@ -263,3 +263,175 @@ Seed (sub plans): **20,817 searches** · 300K–500K resources · Promising
    master prompts that draft the day). Editable > static where feasible.
 5. "back to school" (266K, Strong) is a seasonal tag to ride on every
    relevant listing this month, not a phrase to title against.
+
+---
+
+# Pull #4 — classroom procedures + parent communication (owner-run, 2026-08-26)
+
+## Seed: classroom procedures — 4,293 searches · 20K–40K resources · Promising
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| first day of school activities | 220,997 | >500K | Strong |
+| meet the teacher | 115,102 | >500K | Strong |
+| classroom rules | 18,509 | 150K–300K | Promising |
+| classroom expectations | 8,655 | — | Moderate |
+| **classroom procedures and routines powerpoint** | **3,997** | **3K–8K** | **Strong** |
+| **classroom procedures checklist** | **1,598** | **1K–3K** | **Strong** |
+| classroom procedures slides | 742 | 8K–20K | Moderate |
+| classroom procedures visuals | 234 | 3K–8K | Moderate |
+
+## Seed: parent communication — 1,195 searches · 75K–150K resources · Moderate
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| **parent questionnaire back to school** | **12,534** | **3K–8K** | **Strong** |
+| take home folder | 11,603 | 8K–20K | Strong |
+| **parent communication log** | **7,570** | **3K–8K** | **Strong** |
+| happy mail | 4,488 | 3K–8K | Strong |
+| communication log | 4,254 | 8K–20K | Promising |
+| **parent contact log** | **2,348** | **3K–8K** | **Strong** |
+| parent communication folder | 325 | 3K–8K | Promising |
+| parent communication form | 204 | 75K–150K | Very Difficult |
+
+## What pull #4 decides — binding
+
+1. **"classroom procedures checklist" (1,598 · 1K–3K · Strong) is a
+   perfect open phrase** — real volume, under the 3,000-resource line,
+   Strong. Checklists are native to our format. → Week-2/3 Lane-1 FREE:
+   a classroom procedures checklist (with an AI twist in the body, not
+   the title). Tag-carry: classroom procedures, classroom expectations,
+   classroom rules.
+2. **Slides demand is real**: "classroom procedures and routines
+   powerpoint" (3,997 · 3K–8K · Strong). We ship PDFs today; an
+   *editable slides* variant of the routines material goes on the
+   calendar as a paid product. (Matches the Mangools pulse finding —
+   editable slides/posters is where the money sits in this family.)
+3. **Parent Message Makeovers is titled against the wrong phrase.**
+   Its head phrase "parent communication" is weak (1,195 searches vs
+   75K–150K resources). The traffic is in the LOG family: parent
+   communication log 7,570/3K–8K/Strong + parent contact log
+   2,348/3K–8K/Strong + communication log 4,254. → Retag the $12 kit
+   toward the log family, and **build a Parent Communication Log
+   (printable + editable) as a companion product** — strongly validated,
+   natural funnel into Makeovers.
+4. **"parent questionnaire back to school" (12,534 · 3K–8K · Strong)**
+   — huge seasonal phrase, low competition, tiny product to make.
+   Fast-track a free (or $3–4) parent questionnaire while the BTS
+   window is open; funnel to Parent Message Makeovers.
+5. "meet the teacher" (115K) and "first day of school activities"
+   (221K) are seasonal tag-riders on relevant listings, never title
+   targets.
+
+---
+
+# Pull #5 — entrepreneurship + financial literacy (owner-run, 2026-08-26). Lane-3 validation.
+
+## Seed: entrepreneurship — 1,153 searches · 3K–8K resources · Promising
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| personal finance | 1,560 | 8K–20K | Promising |
+| business | 753 | 75K–150K | Moderate |
+| marketing | 649 | 20K–40K | Challenging |
+| intro to business | 511 | 8K–20K | Moderate |
+| denise leigh | 485 | < 1K | Promising |
+| **shark tank** | **403** | **3K–8K** | **Promising** |
+| **entrepreneurship activities** | **367** | **3K–8K** | **Promising** |
+| entrepreneurship curriculum | 74 | 1K–3K | Moderate |
+| entrepreneurship posters | 26 | < 1K | Moderate |
+| entrepreneurship interactive notebook | 11 | < 1K | Moderate |
+
+## Seed: financial literacy — 1,986 searches · 40K–75K resources · Moderate
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| money | 5,557 | 300K–500K | Moderate |
+| economics | 1,849 | 75K–150K | Moderate |
+| personal finance | 1,560 | 8K–20K | Promising |
+| budgeting | 943 | 8K–20K | Promising |
+| financial literacy high school | 881 | 20K–40K | Moderate |
+| consumer math | 644 | 8K–20K | Moderate |
+| **personal finance curriculum** | **601** | **1K–3K** | **Promising** |
+| financial literacy middle school | 502 | 20K–40K | Moderate |
+| **financial literacy curriculum** | **388** | **3K–8K** | **Promising** |
+
+## What pull #5 decides — binding
+
+1. **The seed itself is the title phrase.** "entrepreneurship"
+   (1,153 · 3K–8K · Promising) is directly usable — unlike "ai" it is
+   clean and low-competition. Lane-3 paid titles lead with
+   *entrepreneurship / entrepreneur*, never "business" (753 vs
+   75K–150K = trap) or "marketing" (Challenging).
+2. **Shark-tank pitch demand is validated** (403 · 3K–8K · Promising).
+   Launch-It already ends in a pitch day — add "shark tank" style
+   wording to its tags/description, and a dedicated *pitch competition
+   kit* joins the Lane-3 backlog.
+3. **The money bridge**: personal finance (1,560 · 8K–20K · Promising),
+   budgeting (943 · Promising), and the open phrase **"personal finance
+   curriculum" (601 · 1K–3K · Promising)** — a kids' money/budgeting
+   unit inside the YE line is strongly validated. Backlog: "My First
+   Budget" (ages 9–12) targeting personal finance + budgeting.
+4. "financial literacy" head term is a tag, not a title (40K–75K
+   resources). Grade-qualified financial literacy = Moderate at
+   20K–40K, skip as titles.
+
+---
+
+# Pull #6 — deaf and hard of hearing + self advocacy (owner-run, 2026-08-26). Lane-4 validation.
+
+## Seed: deaf and hard of hearing — 46 searches · 3K–8K resources · Challenging
+
+Related keywords are all micro-volume: DHH games 5, DHH itinerant 5,
+writing worksheets for DHH 5, asl back to school for DHH 4, DHH pass 4,
+teacher of the deaf and hard of hearing back to school 4, DHH
+activities 3 (1K–3K, Challenging), DHH bulletin board 3, DHH speech
+therapy 3 (1K–3K, Challenging), iep goals and DHH 3 — everything else
+< 1K resources, Moderate. Chart note: DHH searches were near zero all
+summer and only started ramping Aug 17 — classic itinerant-TOD
+back-to-school pattern.
+
+## Seed: self advocacy — 1,237 searches · 8K–20K resources · Promising
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| social skills | 6,169 | >500K | Moderate |
+| **executive functioning** | **3,440** | **8K–20K** | **Promising** |
+| emotional regulation | 3,357 | 40K–75K | Moderate |
+| problem solving | 2,070 | >500K | Challenging |
+| perspective taking | 1,575 | 8K–20K | Promising |
+| asking for help | 607 | 40K–75K | Challenging |
+| **self advocacy activities** | **382** | **3K–8K** | **Promising** |
+| **self advocacy worksheets** | **358** | **1K–3K** | **Promising** |
+| self advocacy game | 94 | < 1K | Promising |
+
+## What pull #6 decides — binding for the Deaf Education lane
+
+1. **DHH is a service niche, not a search niche — and that's fine.**
+   46 searches/month on the head term means nobody wins deaf-ed on
+   search volume. The lane's discovery strategy is therefore:
+   **title against the "self advocacy" family, tag against the DHH
+   long-tails.** Self-advocacy IS the core curriculum for DHH students
+   in general education — the market and the mission point at the same
+   product.
+2. **"self advocacy worksheets" (358 · 1K–3K · Promising) is the
+   lane's open phrase**, with "self advocacy activities"
+   (382 · 3K–8K) beside it and the seed (1,237 · 8K–20K · Promising)
+   as the head. First-wave deaf-ed titles lead with self-advocacy
+   wording, e.g. "Self-Advocacy Worksheets for Deaf & Hard of Hearing
+   Students | Classroom Kit" — DHH in the subtitle half, never the
+   lead.
+3. **Own every DHH long-tail with tags.** They are all < 1K–3K
+   resources; with 13 tag slots per listing we can blanket: deaf and
+   hard of hearing, teacher of the deaf, DHH itinerant, iep goals deaf
+   and hard of hearing, hearing device check, asl back to school. Cost:
+   zero. Ceiling: the whole micro-market.
+4. **"executive functioning" (3,440 · 8K–20K · Promising) is the
+   crossover door** — an executive-functioning/self-advocacy checklist
+   product serves DHH students, the broader SPED market, and our
+   checklist house style at once. Backlog it for Lane 4.
+5. **Timing confirms Wednesday Sep 2 is right**: DHH search interest
+   turned on Aug 17 and is climbing — itinerant TODs are planning
+   caseloads NOW. First wave ships into a rising curve.
+6. "asking for help", "social skills", "problem solving" = tags only
+   (Challenging or >500K resources).
