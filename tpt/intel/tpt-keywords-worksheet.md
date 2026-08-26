@@ -435,3 +435,36 @@ back-to-school pattern.
    caseloads NOW. First wave ships into a rising curve.
 6. "asking for help", "social skills", "problem solving" = tags only
    (Challenging or >500K resources).
+
+---
+
+# Pull #7 — homeschool curriculum (owner-run, 2026-08-26). Lane-2 validation.
+
+## Seed: homeschool curriculum — 289 searches · 300K–500K resources · Challenging
+
+| Related keyword | Searches | Resources | Opportunity |
+|---|---|---|---|
+| homeschool | 3,177 | >500K | Challenging |
+| **homeschool planner** | **2,415** | **20K–40K** | **Promising** |
+| preschool curriculum | 2,327 | 150K–300K | Moderate |
+| curriculum | 2,107 | >500K | Challenging |
+| full year curriculum | 910 | 20K–40K | Moderate |
+| homeschool schedule | 841 | 20K–40K | Moderate |
+| back to school | 266,393 | >500K | Strong |
+
+## What pull #7 decides — binding for the Homeschool lane
+
+1. **Homeschool head terms are traps on TPT.** "homeschool" (3,177 vs
+   >500K, Challenging) and "homeschool curriculum" (289 vs 300K–500K,
+   Challenging) confirm TPT's core buyers are classroom teachers;
+   homeschoolers search here less and face a wall of inventory.
+2. **The one door is the PLANNER: "homeschool planner"
+   (2,415 · 20K–40K · Promising)**, backed by "homeschool schedule"
+   (841 · Moderate). Lane-2 titles lead with *planner / planning*
+   wording — which our "Homeschool AI Planning Pack" already does.
+   → Retag it toward: homeschool planner, homeschool schedule, full
+   year curriculum; keep "homeschool curriculum" only as a tag.
+3. Lane-2 sizing check: this family is 5–10× smaller than the
+   classroom families (procedures, sub plans, parent comm). Keeps its
+   Monday slot, but Lane 1 stays the revenue engine — matches the
+   existing 5-free/1-mid/1-high vs 2-free/1-paid split. No change.
