@@ -37,6 +37,36 @@ SEOLumina — screenshots or CSVs) into this folder or into chat at any
 time; fold them into the next brief. None of those tools has an API, so
 their data arrives only when the owner volunteers it — never require it.
 
+
+## Per-product keyword validation (owner directive 2026-08-26) — BINDING
+
+**Every product in every drop — Monday and Wednesday, free and paid,
+all four lanes — must trace to a keyword-validated phrase before it
+ships.** Not just the niche lines; all of them.
+
+How the week covers ~14 products without burning Mangools' pacing
+limits: the **daily pulses** run 3–5 lookups a day against the
+*planned* products for the coming drops (see `mangools-howto.md` for
+the proven call shape), so by Sunday/Tuesday the compile has data for
+every planned item. Spread the calls; never batch them into one run.
+
+Every brief must therefore carry a **validation table**, one row per
+planned product:
+
+| Product | Validated phrase | Volume | KD | Meter | Drafted title (≤80) |
+|---|---|---|---|---|---|
+
+- **Meter** is `google` (Mangools volume is meaningful — broad teacher
+  and parent phrases) or `tpt/pinterest` (hyper-niche lines where
+  Google volume is the wrong yardstick — see the standing finding in
+  `mangools-howto.md`). Never judge a niche title by Google volume
+  alone; never claim TPT demand from a Google number.
+- A product with **no validated row does not ship** unless the factory
+  runs one lookup for it during the build (pacing permitting) or
+  records "unvalidated — reason" in the ship summary.
+- The validated phrase drives the **title, the first tags, and the
+  description's opening keywords** — in the buyer's own wording.
+
 ## Rules
 
 - Briefs inform **titles, tags, descriptions, and which free to build**.
