@@ -29,19 +29,20 @@ mascot, the three-layer loudness rule, rainbow bar on every cover.
 Canva masters live in the "Bright Scholar — TPT Brand" folder
 (see `tpt/canva/README.md` for design ids).
 
-## The weekly cycle (owner directives 2026-08-24; two drop days 2026-08-26)
+## The weekly cycle (owner directives 2026-08-24; two drop days 2026-08-26;
+## drop days moved to Sunday + Wednesday 2026-08-28)
 
 The week has **two drops** and a research rhythm that feeds them
 (see "Research cadence" below):
 
-- **Monday drop — AI for schools & homeschool**: classroom lane +
+- **Sunday drop — AI for schools & homeschool**: classroom lane +
   homeschool lane.
 - **Wednesday drop — Young Entrepreneurs & Deaf Education**: the YE
   lane + the Deaf Ed lane (`tpt/intel/deaf-ed-niche.md` holds that
   line's binding design laws — accuracy and respect, pedagogy never
   audiology, doubled privacy, the owner's family never referenced).
 
-### Monday drop lanes
+### Sunday drop lanes
 
 **Lane 1 · Classroom (teachers & staff):**
 - **5 free resources** — the traffic engine. Each targets a real search
@@ -83,7 +84,7 @@ DHH students):
   (binding). Seasonal peak: Aug–Sep in-service season, spring IEP
   season.
 
-That's ~8 products Monday + ~6 Wednesday, every one built for
+That's ~8 products Sunday + ~6 Wednesday, every one built for
 maximum TPT SEO and sellability, every one through the full quality
 gates so the owner uploads with **zero editing**. More uploads is fine
 (owner, 2026-08-24); thin quality is not — if a week can't fill both
@@ -108,16 +109,26 @@ Research is spread across the week so limited daily API allotments
 (Mangools KWFinder free tier, Semrush units when available) compound
 instead of bottlenecking one session:
 
-- **Daily pulse (Mon–Sat, ~15 min, silent)**: a short automated check
+- **Daily pulse (Mon–Fri, ~15 min, silent)**: a short automated check
   appending to `tpt/intel/pulse-YYYY-Www.md` — each weekday focuses on
   one lane's keywords/competitors/pricing, spending that day's free
-  Mangools lookups (KWFinder API, key in the `MANGOOLS_API_KEY` env var
-  once the owner configures it; WebSearch fallback otherwise).
+  Mangools lookups (token in the `MANGOOLS_TOKEN` env var; note it and
+  continue on other meters when unset — verified unset in fresh
+  containers as of 2026-08-28).
+- **List days (the pulse messages the owner):**
+  - **FRIDAY** → `lookups-YYYY-Www-sunday.md`, the TPT Keywords
+    worksheet for **Sunday's** lanes 1–2.
+  - **MONDAY** → `lookups-YYYY-Www-wednesday.md`, for **Wednesday's**
+    lanes 3–4.
 - **Tuesday pulse additionally compiles the Wednesday brief**
   (`tpt/intel/YYYY-Www-wed-brief.md`, same owner analysis spec) for
   lanes 3–4 from the week's pulses so far.
-- **Sunday deep dive** compiles everything into the Monday brief
+- **Saturday deep dive** compiles everything into the Sunday brief
   (`tpt/intel/YYYY-Www-brief.md`) for lanes 1–2.
+
+**File-week convention:** intel files are keyed to the ISO week of the
+**Wednesday** drop; the Sunday drop that precedes that Wednesday shares
+the same file (so Sun 2026-08-30 and Wed 2026-09-02 are both W36).
 
 The factories read their day's brief before building; briefs may
 override the calendar row per the standing rules.
@@ -125,7 +136,8 @@ override the calendar row per the standing rules.
 ### Production steps (run once per product, each drop day)
 
 0. **Read the newest brief in `tpt/intel/` first** (see its README). It
-   is produced automatically every Sunday and may override the calendar
+   is produced automatically every Saturday (Sunday drop) or Tuesday
+   (Wednesday drop) and may override the calendar
    row: chase live demand, retitle toward proven search phrases, swap a
    planned free for one the data supports. A brief older than 14 days is
    stale — proceed on the calendar and say so in the ship summary.
@@ -243,7 +255,7 @@ TPT is a search marketplace: revenue scales with **catalog size × search
 visibility × seasonal timing**, concentrated in a few winners plus a long
 tail. The plan is built on five levers:
 
-1. **Catalog compounding.** At ~7–8 products per Monday batch, the
+1. **Catalog compounding.** At ~7–8 products per Sunday batch, the
    catalog reaches ~100 listings by Thanksgiving and 300+ by Week 52 —
    roughly ⅔ free (the follower/search engine) and ⅓ paid. Every listing
    is a permanent lottery ticket in TPT search, and free downloads are
@@ -276,10 +288,10 @@ The spread is real: outcomes hinge on whether one flagship ranks. The
 calendar maximizes at-bats in the highest-value niche (staff PD, weak
 competition, school budgets) rather than betting on any single item.
 
-## Year-1 batch calendar (top pending row = next Monday)
+## Year-1 batch calendar (top pending row = next Sunday)
 
-Each row is one Monday's **lane-1** collection: **5 frees + 1 mid +
-1–2 high**. Every Monday ALSO ships the homeschool slice (lane 2), and every
+Each row is one Sunday's **lane-1** collection: **5 frees + 1 mid +
+1–2 high**. Every Sunday ALSO ships the homeschool slice (lane 2), and every
 **Wednesday** ships lanes 3–4 (Young Entrepreneurs + Deaf Education)
 from their backlogs, steered by the Tuesday brief. Seasonal logic:
 holiday ventures Oct–Nov, new-semester homeschool planning Dec–Jan,
@@ -292,7 +304,7 @@ frees inside the theme on the day, using what's current. PD Shorts =
 15-ish slides + script + one handout, $12, kit tooling at smaller scale.
 Statuses: pending → shipped YYYY-MM-DD.
 
-| Wk | Monday | Theme | Mid ($8–12) | High ($12+) | Free direction (pick 5) | Status |
+| Wk | Sunday | Theme | Mid ($8–12) | High ($12+) | Free direction (pick 5) | Status |
 |---|---|---|---|---|---|---|
 | 1 | Aug 24 | Back to school with AI | BTS AI Setup Pack $8 | Parent Message Makeovers $12 | vocabulary cheat sheet · 10-min habit · PII poster · emergency sub plans · delegate-or-teacher poster | shipped 2026-08-24 |
 | 2 | Aug 31 | Routines that stick | Sub-Plan Builder pack $8 | PD Short: "Your First Staff AI Session" $12 | seating/routine prompts · first-quiz generator guide · gradebook-safe comment starters · staff-meeting one-pager · AI myths poster | pending |
