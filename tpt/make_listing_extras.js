@@ -197,6 +197,27 @@ const IMAGES = [
     'The ledger and the online-safety contract you both sign',
   ], '6 pages')],
   ['yli-real-pages',   realPages('#E4572E', ['yli_p2.png', 'yli_p3.png', 'yli_p5.png'], '6 pages')],
+  ['sba-whats-inside', whatsInside('Substitute Binder', 'with AI', [
+    '<b>The 6-tab binder system</b> — exactly what goes behind each divider',
+    'The master day-drafter prompt — one prompt, a complete sub day',
+    'Five section-fill prompts, one per divider',
+    'The quarterly refresh checklist — 15 min, 4 times a year',
+  ], '4 pages')],
+  ['sba-real-pages',   realPages('#2D6CB5', ['sba_p2.png', 'sba_p3.png', 'sba_p4.png'], '4 pages')],
+  ['pcl-whats-inside', whatsInside('Parent Communication', 'Log', [
+    'The individual contact log — one page per student',
+    'The incident/behavior documentation log',
+    '<b>The class quick-tracker</b> — whole class, one page, at a glance',
+    'The AI safe-prompt companion — never types a student’s name',
+  ], '3 pages')],
+  ['pcl-real-pages',   realPages('#17BEBB', ['pcl_p1.png', 'pcl_p2.png', 'pcl_p3.png'], '3 pages')],
+  ['hfp-whats-inside', whatsInside('Full-Year Homeschool', 'Planner with AI', [
+    '<b>Year-at-a-glance grid</b> — twelve months, one page',
+    'The monthly planning page — photocopy it for every month',
+    'Weekly rhythm planner + subject tracker',
+    'The AI planning-prompt library',
+  ], '4 pages')],
+  ['hfp-real-pages',   realPages('#FFC43D', ['hfp_p2.png', 'hfp_p3.png', 'hfp_p4.png'], '4 pages')],
   ['whole-staff-license', license()],
 ];
 

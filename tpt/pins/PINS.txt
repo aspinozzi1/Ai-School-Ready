@@ -120,7 +120,7 @@ AI for Teachers   <- create once, reuse forever
 
 --- TAGGED TOPICS ---
 
-Try: ai tools · edtech · student privacy   <- pick whatever Pinterest's search suggests closest
+Try: ai tools · digital citizenship · student privacy   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 
@@ -636,7 +636,7 @@ Parent Communication   <- create once, reuse forever
 
 --- TAGGED TOPICS ---
 
-Try: parent communication · parent teacher conferences · email templates   <- pick whatever Pinterest's search suggests closest
+Try: parent communication log · parent contact log · email templates   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 
@@ -981,6 +981,436 @@ Young Entrepreneurs   <- create once, reuse forever
 --- TAGGED TOPICS ---
 
 Try: entrepreneurship · financial literacy · business plan   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+SUBSTITUTE BINDER WITH AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+sub-binder-ai-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Substitute Binder with AI | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Substitute binder system for teachers: build a 6-tab sub binder with AI in 15 minutes — the master day-drafter prompt, five section-fill prompts, and a quarterly refresh checklist so it never goes stale.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Sub Plans & Time Savers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: substitute binder · sub plans · emergency sub plans   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PARENT COMMUNICATION LOG
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+parent-comm-log-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Parent Communication Log | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Printable parent communication log for teachers: an individual contact log, an incident/behavior documentation log, and a whole-class quick-tracker, plus safe AI prompts for turning entries into family emails.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Parent Communication   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent communication log · parent contact log · parent communication   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+BACK TO SCHOOL PARENT QUESTIONNAIRE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+parent-questionnaire-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Back to School Parent Questionnaire | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free back to school parent questionnaire: a get-to-know-you form families fill out at home, covering how a child learns best, what excites or worries them, and the best way to reach you. Print and send home week one.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Back to School   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent questionnaire · back to school · meet the teacher   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+CLASSROOM PROCEDURES CHECKLIST
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+procedures-checklist-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Classroom Procedures Checklist | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free classroom procedures checklist: entering, transitions, turning in work, and dismissal routines to explicitly teach and re-teach, plus an AI prompt that turns any row into poster-ready wording.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Classroom Management   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: classroom procedures checklist · classroom routines · classroom rules and procedures   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+SUB BINDER STARTER PAGES
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+sub-binder-starter-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Sub Binder Starter Pages | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free substitute binder starter pages: a printable cover, five dividers (schedule, rosters, emergency procedures, backup activity, routines), and the shortlist of what to gather before you print.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Sub Plans & Time Savers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: emergency sub plans · sub binder · substitute teacher   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+MY DIGITAL FOOTPRINT
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+digital-footprint-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+My Digital Footprint | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free digital footprint mini-lesson for grades 3-6: a 10-minute activity that makes digital citizenship visible, with a green light/red light sort and discussion questions — includes the AI-chatbot angle.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: digital footprint · digital citizenship · internet safety   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+INTERNET SAFETY WITH AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+internet-safety-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Internet Safety with AI | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free internet safety with AI poster for the classroom: five kid-safe rules — a grown-up in the loop, never type your real info, AI can be wrong, tell a grown-up, strangers stay strangers — plus a talking-points guide.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: internet safety · digital citizenship · ai safety   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+FULL-YEAR HOMESCHOOL PLANNER WITH AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+hs-full-planner-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Full-Year Homeschool Planner with AI | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Full-year homeschool planner with AI: a year-at-a-glance grid, a photocopy-ready monthly planning page, a weekly rhythm planner, a subject tracker, and an AI prompt library for year and monthly planning.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool planner · homeschool schedule · homeschool curriculum   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOMESCHOOL WEEKLY SCHEDULE CARDS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+hs-schedule-cards-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Homeschool Weekly Schedule Cards | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free homeschool weekly schedule cards: 12 cut-apart routine cards for a pocket chart or magnet board, plus a fill-in weekly grid — a visual rhythm kids can arrange themselves.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool schedule · homeschool planner · routine cards   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOMESCHOOL AI PLANNING PROMPTS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+hs-planning-prompts-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Homeschool AI Planning Prompts | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free homeschool AI planning prompts: five copy-paste prompts for the weekly plan, unit study starter, leveled reading passages, sick-parent days, and field trip prep. Describe the learner, never the child.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool planner · homeschool curriculum · ai prompts   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 

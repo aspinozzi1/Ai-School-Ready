@@ -85,7 +85,7 @@
    ],
    "tags": [
     "ai tools",
-    "edtech",
+    "digital citizenship",
     "student privacy",
     "ferpa",
     "teacher checklist",
@@ -525,8 +525,8 @@
     "For All Subject Areas"
    ],
    "tags": [
-    "parent communication",
-    "parent teacher conferences",
+    "parent communication log",
+    "parent contact log",
     "email templates",
     "ai for teachers",
     "chatgpt for teachers",
@@ -868,6 +868,366 @@
    "filesBadge": "6 pages",
    "insideHeading": "What's inside the full kit",
    "easelSetup": "tpt/easel/ye-launch-it-easel.txt"
+  },
+  {
+   "id": "sub-binder-ai",
+   "order": 24,
+   "name": "Substitute Binder with AI",
+   "product": "UPLOAD/02-paid/Substitute-Binder-with-AI.pdf",
+   "cover": "tpt/covers/sub-binder-ai-cover.png",
+   "thumbnails": [
+    "tpt/extras/sba-whats-inside.png",
+    "tpt/extras/sba-real-pages.png"
+   ],
+   "title": "Substitute Binder with AI | Build Emergency Sub Plans in 15 Minutes",
+   "description": "Not another sub-plan template — the whole binder system, built with AI in fifteen minutes.\n\nINSIDE (4 pages): the 6-tab binder system (exactly what goes behind each divider, and why) · the master day-drafter prompt that writes a complete sub day for a stranger · five section-fill prompts, one per divider, for the content that changes every time · the quarterly refresh checklist so the binder never goes stale · a print &amp; assembly guide from PDF to a binder by the door.\n\nEvery prompt is safe by design: rosters and seating charts stay on paper, in the binder — never in the AI.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+   "price": 8,
+   "licenses": 4,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "substitute binder",
+    "sub plans",
+    "emergency sub plans",
+    "ai for teachers",
+    "chatgpt for teachers",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "AI Time Savers",
+   "previewShots": [
+    "sba_p2.png",
+    "sba_p3.png",
+    "sba_p4.png"
+   ],
+   "previewInside": [
+    "<b>The 6-tab binder system</b> — exactly what goes behind each divider",
+    "The master day-drafter prompt — one prompt, a complete sub day",
+    "Five section-fill prompts, one per divider",
+    "The quarterly refresh checklist — fifteen minutes, four times a year"
+   ],
+   "previewUnit": "the full pack is 4 pages",
+   "filesBadge": "4 pages",
+   "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "parent-comm-log",
+   "order": 25,
+   "name": "Parent Communication Log",
+   "product": "UPLOAD/02-paid/Parent-Communication-Log.pdf",
+   "cover": "tpt/covers/parent-comm-log-cover.png",
+   "thumbnails": [
+    "tpt/extras/pcl-whats-inside.png",
+    "tpt/extras/pcl-real-pages.png"
+   ],
+   "title": "Parent Communication Log | Printable Parent Contact & Documentation Pack",
+   "description": "\"Did I already tell them about this?\" stops being a guess. Print one contact log per student and never lose track of a conversation again.\n\nINSIDE (3 pages): the individual contact log — one page per student, every call, email, and note in one place · the incident/behavior documentation log for the harder conversations · the class quick-tracker — one page, whole class, at-a-glance contact status · the AI safe-prompt companion for turning a log entry into a family email without ever typing a student's name.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+   "price": 6,
+   "licenses": 3,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "parent communication log",
+    "parent contact log",
+    "parent communication",
+    "documentation",
+    "ai for teachers",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "AI Time Savers",
+   "previewShots": [
+    "pcl_p1.png",
+    "pcl_p2.png",
+    "pcl_p3.png"
+   ],
+   "previewInside": [
+    "The individual contact log — one page per student",
+    "The incident/behavior documentation log, for the harder conversations",
+    "<b>The class quick-tracker</b> — whole class, one page, at a glance",
+    "The AI safe-prompt companion — never types a student's name"
+   ],
+   "previewUnit": "the full pack is 3 pages",
+   "filesBadge": "3 pages",
+   "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "parent-questionnaire",
+   "order": 26,
+   "name": "Back to School Parent Questionnaire",
+   "product": "UPLOAD/01-free/parent-questionnaire-back-to-school.pdf",
+   "cover": "tpt/covers/free-parent-questionnaire-cover.png",
+   "thumbnails": [],
+   "title": "Back to School Parent Questionnaire | Get to Know Your Students Form",
+   "description": "Send this home the first week. Fifteen minutes at the kitchen table gives you more useful information than most of what shows up in a cumulative file — straight from the person who knows the child best.\n\nINSIDE (2 pages): about your child (what they like to be called, three describing words, what's exciting or worrying about this year) · how they learn best · the practical stuff (best way and time to reach a family) · three fast ways to use the answers you get back.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "parent questionnaire",
+    "back to school",
+    "meet the teacher",
+    "first day of school activities",
+    "get to know you",
+    "parent communication"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "procedures-checklist",
+   "order": 27,
+   "name": "Classroom Procedures Checklist",
+   "product": "UPLOAD/01-free/classroom-procedures-checklist.pdf",
+   "cover": "tpt/covers/free-procedures-checklist-cover.png",
+   "thumbnails": [],
+   "title": "Classroom Procedures Checklist | FREE Routines Setup List for Any Grade",
+   "description": "Every classroom runs on about twenty small procedures nobody teaches on purpose — until the year one teacher does.\n\nINSIDE (2 pages): entering &amp; starting, during the lesson, transitions &amp; movement, and turning in &amp; wrapping up — checked off as you explicitly teach, model, and practice each one, with a date-taught column so you know when it's time to re-teach · the routines-to-poster AI prompt that turns any row into wall-ready wording.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "classroom procedures checklist",
+    "classroom routines",
+    "classroom rules and procedures",
+    "back to school",
+    "classroom management",
+    "teacher checklist"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "sub-binder-starter",
+   "order": 28,
+   "name": "Sub Binder Starter Pages",
+   "product": "UPLOAD/01-free/sub-binder-starter-pages.pdf",
+   "cover": "tpt/covers/free-sub-binder-starter-cover.png",
+   "thumbnails": [],
+   "title": "Sub Binder Starter Pages | FREE Dividers, Cover & Emergency Plans List",
+   "description": "A binder cover, five printable dividers, and the shortlist of what to gather before you slide it all into a three-ring binder by the door.\n\nINSIDE (2 pages): the cover page (slides right into a binder's front pocket) · five dividers to print and tab — daily schedule, rosters &amp; seating, emergency procedures, ready-to-grab activity, class routines &amp; culture · what to gather before you print · print &amp; assembly tips.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "emergency sub plans",
+    "sub binder",
+    "substitute teacher",
+    "sub plans",
+    "back to school",
+    "ai for teachers"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "digital-footprint",
+   "order": 29,
+   "name": "My Digital Footprint",
+   "product": "UPLOAD/01-free/my-digital-footprint.pdf",
+   "cover": "tpt/covers/free-digital-footprint-cover.png",
+   "thumbnails": [],
+   "title": "My Digital Footprint | FREE Digital Citizenship Mini Lesson & Activity",
+   "description": "Every game, app, video, and AI chatbot a kid uses leaves footprints. This ten-minute lesson makes an invisible idea visible, then hands students a habit that works on anything with a login, including AI.\n\nINSIDE (2 pages): the big idea, taught in five minutes · sort it — footprint or not? table · the green light / red light activity · the rule to remember · talk-about-it discussion questions.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "3rd",
+    "4th",
+    "5th",
+    "6th"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "digital footprint",
+    "digital citizenship",
+    "internet safety",
+    "ai literacy",
+    "media literacy",
+    "technology"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "internet-safety",
+   "order": 30,
+   "name": "Internet Safety with AI",
+   "product": "UPLOAD/01-free/internet-safety-with-ai.pdf",
+   "cover": "tpt/covers/free-internet-safety-cover.png",
+   "thumbnails": [],
+   "title": "Internet Safety with AI | FREE Digital Citizenship One-Pager for Class",
+   "description": "The five-rule poster for any device, any grade: a grown-up is always in the loop, never type your real info, AI can be confidently wrong, tell a grown-up if it feels weird, and strangers online stay strangers.\n\nINSIDE (2 pages): the printable poster · a one-page guide with talking points for each rule and how to make it stick.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Computer Science - Technology",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "internet safety",
+    "digital citizenship",
+    "ai safety",
+    "classroom poster",
+    "technology",
+    "back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Free AI Library"
+  },
+  {
+   "id": "hs-full-planner",
+   "order": 31,
+   "name": "Full-Year Homeschool Planner with AI",
+   "product": "UPLOAD/02-paid/Full-Year-Homeschool-Planner-with-AI.pdf",
+   "cover": "tpt/covers/hs-full-planner-cover.png",
+   "thumbnails": [
+    "tpt/extras/hfp-whats-inside.png",
+    "tpt/extras/hfp-real-pages.png"
+   ],
+   "title": "Full-Year Homeschool Planner with AI | Schedule & Planning Pages",
+   "description": "A year-at-a-glance grid, a monthly planning page you can photocopy twelve times, a weekly rhythm planner, and a subject tracker so nothing falls through in June.\n\nINSIDE (4 pages): the year-at-a-glance grid — twelve months, one page · the monthly planning page template · the weekly rhythm planner · a subject tracker (scope-and-sequence checklist per subject) · the AI planning-prompt library — year overview, monthly themes, and the re-plan-when-life-happens prompt · quarterly review checkpoints.\n\nEvery prompt describes the learner, never the child — no names, ever — and the grown-up always holds the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+   "price": 8,
+   "licenses": 4,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "homeschool planner",
+    "homeschool schedule",
+    "homeschool curriculum",
+    "unit studies",
+    "lesson planning",
+    "ai for teachers"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI",
+   "previewShots": [
+    "hfp_p2.png",
+    "hfp_p3.png",
+    "hfp_p4.png"
+   ],
+   "previewInside": [
+    "<b>Year-at-a-glance grid</b> — twelve months, one page",
+    "The monthly planning page — photocopy it for every month",
+    "Weekly rhythm planner, with a column for the rabbit hole you followed",
+    "Subject tracker + the AI planning-prompt library"
+   ],
+   "previewUnit": "the full pack is 4 pages",
+   "filesBadge": "4 pages",
+   "insideHeading": "What's inside the full pack"
+  },
+  {
+   "id": "hs-schedule-cards",
+   "order": 32,
+   "name": "Homeschool Weekly Schedule Cards",
+   "product": "UPLOAD/01-free/homeschool-weekly-schedule-cards.pdf",
+   "cover": "tpt/covers/free-hs-schedule-cards-cover.png",
+   "thumbnails": [],
+   "title": "Homeschool Weekly Schedule Cards | FREE Printable Routine Cards",
+   "description": "Cut these apart and arrange them on a pocket chart, magnet board, or table — a visual weekly rhythm your kids can see and move themselves, no clock-watching required.\n\nINSIDE (2 pages): twelve cut-apart routine cards (morning basket, math, reading, writing, science, and more, plus a write-your-own card) · a fill-in weekly grid · tips for laminating and reusing the set all year.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "homeschool schedule",
+    "homeschool planner",
+    "routine cards",
+    "homeschool curriculum",
+    "visual schedule",
+    "homeschool"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "hs-planning-prompts",
+   "order": 33,
+   "name": "Homeschool AI Planning Prompts",
+   "product": "UPLOAD/01-free/homeschool-ai-planning-prompts.pdf",
+   "cover": "tpt/covers/free-hs-planning-prompts-cover.png",
+   "thumbnails": [],
+   "title": "Homeschool AI Planning Prompts | FREE Copy-Paste Prompt Sampler",
+   "description": "Five ready-to-run prompts for the planning that eats homeschool evenings — the weekly plan, the unit study starter, leveled reading passages, the sick-parent day, and field trip prep.\n\nINSIDE (2 pages): the five prompts, fill-in-the-brackets ready · how to use this sampler · the family data-safety habit.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "For All Subject Areas",
+    "Professional Development"
+   ],
+   "tags": [
+    "homeschool planner",
+    "homeschool curriculum",
+    "ai prompts",
+    "lesson planning",
+    "unit studies",
+    "homeschool"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Homeschool AI"
   }
  ]
 }

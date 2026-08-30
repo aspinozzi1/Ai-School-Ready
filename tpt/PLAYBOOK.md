@@ -307,7 +307,7 @@ Statuses: pending → shipped YYYY-MM-DD.
 | Wk | Sunday | Theme | Mid ($8–12) | High ($12+) | Free direction (pick 5) | Status |
 |---|---|---|---|---|---|---|
 | 1 | Aug 24 | Back to school with AI | BTS AI Setup Pack $8 | Parent Message Makeovers $12 | vocabulary cheat sheet · 10-min habit · PII poster · emergency sub plans · delegate-or-teacher poster | shipped 2026-08-24 |
-| 2 | Aug 30 | Routines that stick | Sub-Plan Builder pack $8 | PD Short: "Your First Staff AI Session" $12 | seating/routine prompts · first-quiz generator guide · gradebook-safe comment starters · staff-meeting one-pager · AI myths poster | pending |
+| 2 | Aug 30 | Binders, routines & parent contact (brief override, see 2026-W36 brief) | Substitute Binder with AI $8 | Parent Communication Log $6 | back to school parent questionnaire · classroom procedures checklist · sub binder starter pages · my digital footprint · internet safety with AI | shipped 2026-08-30 |
 | 3 | Sep 6 | Newsletters & families | Newsletter & Family Comms pack $8 | Kit 3 retrofit $24 (`kits/kit03/`) | newsletter prompt sheet · open-house talking points · translation-request guide · family FAQ handout · positive-note generator card | pending |
 | 4 | Sep 13 | Assessment, safely | Rubric pack $10 | PD Short: "Grading & Feedback with AI" $12 | rubric starter · exit-ticket prompts · feedback sentence stems · academic-integrity one-pager · quiz-leveling guide | pending |
 | 5 | Sep 20 | Time-saver consolidation | Conference-Season Pack $8 (early) | BUNDLE "AI Time-Savers Toolkit" $19 = W1 mid + W2 mid + W5 mid | conference prep checklist · talking-points prompts · de-identified summary guide · scheduling email templates · "what to tell families about AI" card | pending |
@@ -361,3 +361,17 @@ thin against that bar, fix the kit, not the price.
   anything online is adult-run. Weekly batches may now draw from this
   line (seasonal venture packs, co-op editions, age-4–5 unplugged pack)
   when the intel brief supports it.
+- **2026-08-30 (Week 2 Sunday drop)**: shipped — every product traces to
+  the 2026-W36 brief's validation table (TPT Keywords primary meter).
+  **Lane 1**: 5 frees (Back to School Parent Questionnaire · Classroom
+  Procedures Checklist · Sub Binder Starter Pages · My Digital Footprint
+  · Internet Safety with AI) + Substitute Binder with AI $8 (mid) +
+  Parent Communication Log $6 (high — the brief's validated price,
+  raised from the calendar's placeholder). **Lane 2 (Homeschool AI)**:
+  2 frees (Homeschool Weekly Schedule Cards · Homeschool AI Planning
+  Prompts) + Full-Year Homeschool Planner with AI $8. Retagged per the
+  brief: Parent Message Makeovers onto the parent-communication-log
+  family; Don't Type That / Is It True? / Tool Safety / Family AI Rules
+  into the digital-citizenship family. Drops 24–33 in `UPLOAD/drops/`.
+  The brief overrode the calendar's "Routines that stick" theme (see
+  `tpt/intel/2026-W36-brief.md`) — the Week-2 PD Short slides to Week 3.
