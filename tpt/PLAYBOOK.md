@@ -175,22 +175,54 @@ override the calendar row per the standing rules.
    Easel activity itself is built by the owner in TPT's editor after
    publishing; the "includes digital Easel version" description line is
    added only once it's live. Teacher/parent-facing products skip Easel.
-5b. **Pinterest pins (owner directive, 2026-08-24)**: add a `PIN_COPY`
-   entry for every new listing in `tpt/make_pins.js` (headline stack,
-   palette, board, keyword-rich description), then `node tpt/make_pins.js`
-   → one 1000×1500 pin per listing in `tpt/pins/` plus `PINS.txt` (the
-   upload sheet: board, title, description per pin; owner pastes the
-   listing URL). Needs `npm i --no-save playwright @fontsource/luckiest-guy
-   @fontsource/baloo-2` in a fresh session. Ship the week's new pins +
-   PINS.txt as a `PINS-*.zip` alongside the drops. Pin copy rules: real
-   pages only in mockups, honest badges, seasonal pins 30–45 days early,
-   frees pinned hardest (they are the click engine).
+5b. **Pinterest pins (owner directive, 2026-08-24; pin design rebuilt
+   2026-08-30 — binding)**: add a `PIN_COPY` entry for every new listing
+   in `tpt/make_pins.js` (headline stack, palette, board, keyword-rich
+   description), then `node tpt/make_pins.js` → one 1000×1500 pin per
+   listing in `tpt/pins/` plus `PINS.txt` (the upload sheet: board,
+   title, description per pin; owner pastes the listing URL). Needs
+   `npm i --no-save playwright @fontsource/luckiest-guy @fontsource/baloo-2`
+   in a fresh session. Ship **every** pin (not just the week's new ones)
+   + `PINS.txt` as a `PINS-*.zip` alongside the drops — `make_pins.js`
+   regenerates the full catalog every run, so a partial zip leaves the
+   owner's board inconsistent.
+   **Pin design law (owner correction 2026-08-30 — "cleaner, more fun,
+   actual pages large"): at most 2 real-page shots per pin, shown big
+   (own `shotsFor()` caps at 2 and sizes them ~520–600px wide on the
+   1000px canvas) — never the old 3-small-pages-in-a-row layout, which
+   read cluttered and made the page content unreadable at pin size.**
+   Any layout change to the shot/foot/badge zones must re-verify the
+   footer CTA button is never covered by a page image (`.foot` needs
+   `z-index` above the shot images, or shot heights tuned so their
+   bottom edge clears the footer zone) — check a rendered sample before
+   shipping. Pin copy rules: real pages only in mockups, honest badges,
+   seasonal pins 30–45 days early, frees pinned hardest (they are the
+   click engine).
 6. **Quality gates (all must pass):**
    - every PDF opens (pypdf) and page counts are recorded;
    - **no section, paragraph, card, or write-in box splits across a page
      break** — run `python3 kits/tooling/check_breaks.py <pdfs>` (owner
-     directive 2026-08-24; the checker pair-matches clipped boxes and
-     flags orphan headings / split paragraphs — zero flags to ship);
+     directive 2026-08-24; the checker pair-matches clipped boxes, flags
+     orphan headings / split paragraphs, an "ORPHAN SECTION" — a heading
+     stranded with its one-line description while the table/card it
+     introduces starts fresh on the next page — and a `.sheet poster`
+     page is excluded from that check since it's deliberately one fixed
+     page by design; zero flags to ship). **Binding authoring pattern
+     (owner correction 2026-08-30, after two real ships — a table split
+     mid-row with no repeated header, and a heading orphaned from its
+     content two pages running):** wrap every "heading + description +
+     table/card" section in `<div class="sect">…</div>` with
+     `.sect { break-inside: avoid }` in the doc's own `<style>` block —
+     the whole section moves to the next page as one unit rather than
+     splitting. Give every multi-row `<table>` a real `<thead>` (not a
+     bare first `<tr>`) so a header still repeats on the rare case a
+     table is too tall for the wrapping to help (a year-long grid, a
+     log). After wrapping, always re-render and eyeball every page — a
+     `.sect` block that doesn't fit remaining space jumps whole to the
+     next page, which can strand a wasteful blank gap on the page above
+     it; rebalance (tighten table row padding, not just row height,
+     which does nothing once padding+line-height already exceeds it) so
+     pages land full, not just non-splitting;
    - no page ends more than ~⅓ empty unless it is a deliberate poster or
      section end — eyeball a contact sheet of every new PDF;
    - any claimed number (slide count, page count, drill count) matches the
@@ -375,3 +407,19 @@ thin against that bar, fix the kit, not the price.
   into the digital-citizenship family. Drops 24–33 in `UPLOAD/drops/`.
   The brief overrode the calendar's "Routines that stick" theme (see
   `tpt/intel/2026-W36-brief.md`) — the Week-2 PD Short slides to Week 3.
+- **2026-08-30 (post-ship corrections, same day)**: the owner caught a
+  table splitting mid-row with no repeated header (Parent Communication
+  Log), a parent-facing form sharing a page with teacher-only notes
+  (Parent Questionnaire), and — on a deeper pass after the pattern
+  repeated — a heading orphaned from its own content across a page
+  break (Full-Year Homeschool Planner) that also affected an
+  **already-live Week-1 listing, Back-to-School AI Setup Pack**
+  (drop-09; its checklist heading was stranded with an empty page below
+  it — this is a re-upload of the Downloadable File on an existing
+  listing, not a new product). Root-caused, fixed, and turned into the
+  standing `.sect` pagination rule and repeating-`<thead>` rule now in
+  quality gate 6 and `brand.css` (see `check_breaks.py`'s ORPHAN SECTION
+  check). Also rebuilt the Pinterest pin template per owner correction:
+  at most 2 real-page shots per pin, shown large, not 3 small ones (see
+  step 5b) — regenerated all 33 existing pins, not just the week's new
+  ones.

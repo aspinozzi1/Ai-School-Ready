@@ -219,7 +219,10 @@ const CHECK = '<path d="M22 52 42 72 80 28"/>';
 const PENCIL= '<path d="M22 78 30 56 68 18l14 14-38 38-22 8Z"/><path d="M62 24l14 14"/>';
 
 function shotsFor(l) {
-  if (l.previewShots && l.previewShots.length >= 3) return l.previewShots.slice(0, 3);
+  // Cap at 2 real pages, shown large — a crowded row of 3 small pages reads
+  // busy and the page content is unreadable at pin size (owner directive
+  // 2026-08-30: cleaner, more fun, actual pages large).
+  if (l.previewShots && l.previewShots.length >= 2) return l.previewShots.slice(0, 2);
   // free PDFs: render first two pages once, reuse until the PDF changes
   const pdf = path.join(ROOT, l.product);
   const outs = [1, 2].map(n => `${l.id}_pin${n}.png`);
@@ -247,14 +250,13 @@ function badgeFor(l) {
 function html(l, c) {
   const shots = shotsFor(l);
   const badge = badgeFor(l);
-  const shotHtml = shots.length === 1
-    ? `<div class="shot o1"><img src="${b64(shots[0])}"></div>`
-    : shots.length === 2
-    ? `<div class="shot t1"><img src="${b64(shots[0])}"></div>
-       <div class="shot t2"><img src="${b64(shots[1])}"></div>`
-    : `<div class="shot s1"><img src="${b64(shots[0])}"></div>
-       <div class="shot s2"><img src="${b64(shots[1])}"></div>
-       <div class="shot s3"><img src="${b64(shots[2])}"></div>`;
+  // Two shapes only, both large: a single big hero page, or a big hero with
+  // a second page peeking out behind it. No more three-across small pages —
+  // the point of a pin is a reader can actually make out what's on the page.
+  const shotHtml = shots.length >= 2
+    ? `<div class="shot h2"><img src="${b64(shots[1])}"></div>
+       <div class="shot h1"><img src="${b64(shots[0])}"></div>`
+    : `<div class="shot h0"><img src="${b64(shots[0])}"></div>`;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
 ${font('Luckiest', 'luckiest-guy/files/luckiest-guy-latin-400-normal.woff2')}
 ${font('Baloo', 'baloo-2/files/baloo-2-latin-700-normal.woff2')}
@@ -263,43 +265,44 @@ ${font('Baloo8', 'baloo-2/files/baloo-2-latin-800-normal.woff2')}
 body{width:1000px;height:1500px;background:${c.pal.field};font-family:Baloo,sans-serif;
      position:relative;overflow:hidden}
 .doodles{position:absolute;inset:0}
-.head{position:relative;padding:66px 60px 0;text-align:center}
-.top{font-family:Baloo8,sans-serif;font-size:52px;color:#fff;line-height:1.06;text-shadow:0 3px 0 rgba(0,0,0,.18)}
-.mid{font-family:Baloo8,sans-serif;font-size:52px;color:${c.pal.cta};line-height:1.06;text-shadow:0 3px 0 rgba(0,0,0,.18)}
-.big{font-family:Luckiest,cursive;font-size:78px;line-height:.98;color:#fff;margin-top:18px;
-     -webkit-text-stroke:9px #17293B;paint-order:stroke fill;letter-spacing:.5px}
-.sub{margin:26px auto 0;max-width:790px;background:#fff;border:5px solid #17293B;border-radius:20px;
-     padding:16px 24px;font-size:29px;font-weight:700;color:#17293B;line-height:1.3}
-.stage{position:absolute;left:0;right:0;top:610px;height:600px}
-.shot{position:absolute;border:5px solid #17293B;border-radius:10px;background:#fff;
-      box-shadow:0 22px 40px rgba(0,0,0,.32);overflow:hidden}
+.dot{position:absolute;border-radius:50%}
+.head{position:relative;padding:52px 60px 0;text-align:center}
+.top{font-family:Baloo8,sans-serif;font-size:46px;color:#fff;line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+.mid{font-family:Baloo8,sans-serif;font-size:46px;color:${c.pal.cta};line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+.big{font-family:Luckiest,cursive;font-size:68px;line-height:.98;color:#fff;margin-top:14px;
+     -webkit-text-stroke:8px #17293B;paint-order:stroke fill;letter-spacing:.5px}
+.sub{margin:20px auto 0;max-width:800px;background:#fff;border:5px solid #17293B;border-radius:18px;
+     padding:13px 22px;font-size:25px;font-weight:700;color:#17293B;line-height:1.3}
+.stage{position:absolute;left:0;right:0;top:452px;height:842px}
+.shot{position:absolute;border:6px solid #17293B;border-radius:14px;background:#fff;
+      box-shadow:0 26px 48px rgba(0,0,0,.35);overflow:hidden}
 .shot img{display:block;width:100%}
-.s1{width:300px;left:78px;top:52px;transform:rotate(-8deg)}
-.s2{width:340px;left:330px;top:8px;z-index:3}
-.s3{width:300px;left:622px;top:52px;transform:rotate(8deg)}
-.t1{width:360px;left:120px;top:24px;transform:rotate(-6deg)}
-.t2{width:380px;left:500px;top:8px;z-index:3;transform:rotate(4deg)}
-.o1{width:420px;left:290px;top:8px;transform:rotate(-3deg)}
-.badge{position:absolute;right:56px;top:576px;z-index:6;width:138px;height:138px;border-radius:50%;
-       background:${c.pal.cta};border:6px solid #17293B;display:flex;flex-direction:column;
-       align-items:center;justify-content:center;transform:rotate(11deg)}
-.badge b{font-family:Luckiest,cursive;font-size:${badge.b.length > 3 ? 30 : 38}px;color:#17293B;line-height:.9}
-.badge span{font-size:19px;font-weight:800;color:#17293B;margin-top:2px}
-.foot{position:absolute;left:0;right:0;bottom:0;padding:0 60px 46px;text-align:center}
+.h0{width:600px;left:200px;top:40px;transform:rotate(-1.5deg);z-index:3}
+.h1{width:560px;left:230px;top:90px;transform:rotate(2deg);z-index:3}
+.h2{width:520px;left:40px;top:0px;transform:rotate(-9deg);z-index:2;filter:brightness(.96)}
+.badge{position:absolute;right:38px;top:410px;z-index:6;width:150px;height:150px;border-radius:50%;
+       background:${c.pal.cta};border:7px solid #17293B;display:flex;flex-direction:column;
+       align-items:center;justify-content:center;transform:rotate(11deg);
+       box-shadow:0 10px 0 rgba(0,0,0,.15)}
+.badge b{font-family:Luckiest,cursive;font-size:${badge.b.length > 3 ? 32 : 41}px;color:#17293B;line-height:.9}
+.badge span{font-size:20px;font-weight:800;color:#17293B;margin-top:2px}
+.foot{position:absolute;left:0;right:0;bottom:0;padding:0 60px 44px;text-align:center;z-index:20}
 .cta{display:inline-block;background:${c.pal.cta};color:${c.pal.ctaInk};border:6px solid #17293B;
-     border-radius:52px;padding:20px 62px;font-family:Luckiest,cursive;font-size:42px;
+     border-radius:52px;padding:19px 60px;font-family:Luckiest,cursive;font-size:40px;
      box-shadow:0 9px 0 #17293B}
-.byline{margin-top:26px;font-size:26px;font-weight:800;color:#fff;letter-spacing:.6px}
-.store{margin-top:6px;font-size:23px;font-weight:700;color:rgba(255,255,255,.86)}
+.byline{margin-top:24px;font-size:25px;font-weight:800;color:#fff;letter-spacing:.6px}
+.store{margin-top:5px;font-size:22px;font-weight:700;color:rgba(255,255,255,.86)}
 </style></head><body>
   <div class="doodles">
-    ${doodle(-30, 250, -18, 190, SPARK)}
-    ${doodle(880, 120, 22, 170, STAR)}
-    ${doodle(60, 1120, 12, 150, BULB)}
-    ${doodle(830, 1180, -14, 165, CHAT)}
-    ${doodle(430, 1290, 8, 140, CHECK)}
-    ${doodle(-20, 620, 26, 150, PENCIL)}
-    ${doodle(890, 700, -20, 140, SPARK)}
+    ${doodle(-30, 200, -18, 160, SPARK)}
+    ${doodle(870, 90, 22, 150, STAR)}
+    ${doodle(-25, 1330, 12, 140, BULB)}
+    ${doodle(60, 1390, -14, 110, CHAT)}
+    ${doodle(895, 1360, -20, 130, PENCIL)}
+    ${[[60,340,'#fff',.5,13],[920,300,c.pal.cta,.9,10],[45,1250,c.pal.cta,.85,11],
+       [935,1230,'#fff',.45,9],[500,60,'#fff',.35,8],[70,780,'#fff',.3,16],
+       [930,900,'#fff',.3,14]].map(([x,y,col,op,r]) =>
+      `<div class="dot" style="left:${x}px;top:${y}px;width:${r}px;height:${r}px;background:${col};opacity:${op}"></div>`).join('')}
   </div>
   <div class="head">
     <div class="top">${c.top}</div>
@@ -307,8 +310,8 @@ body{width:1000px;height:1500px;background:${c.pal.field};font-family:Baloo,sans
     <div class="big">${c.big}</div>
     <div class="sub">${c.sub}</div>
   </div>
-  <div class="badge"><b>${badge.b}</b><span>${badge.s}</span></div>
   <div class="stage">${shotHtml}</div>
+  <div class="badge"><b>${badge.b}</b><span>${badge.s}</span></div>
   <div class="foot">
     <div class="cta">${l.price === 0 ? 'FREE ON TPT' : 'SEE IT ON TPT'}</div>
     <div class="byline">Built by two certified teachers</div>

@@ -11,7 +11,7 @@
   h2, h3 { break-after: avoid; }
   table.yr { font-size: 8.6pt; }
   table.yr th { font-size: 8pt; }
-  table.yr td { height: 18pt; }
+  table.yr td { height: 12pt; padding-top: 3pt; padding-bottom: 3pt; }
   .subjrow { display: flex; gap: 8pt; align-items: center; margin-bottom: 6pt; break-inside: avoid; }
   .subjrow .box { flex: none; width: 11pt; height: 11pt; border: 1.5pt solid var(--navy); border-radius: 3pt; }
   .subjrow .writein { flex: 1; height: 14pt; margin-left: 8pt; }
@@ -20,6 +20,11 @@
   table.wk td { height: 24pt; }
   table.yr thead, table.wk thead { display: table-header-group; }
   table.yr thead tr, table.wk thead tr { break-inside: avoid; break-after: avoid; }
+  /* Every section (heading + description + its table/card) moves as one
+     unit — never split a heading from its content, never split a table
+     mid-row across a page. If a section doesn't fit what's left on the
+     page, the whole section moves to the next page instead. */
+  .sect { break-inside: avoid; }
 </style>
 </head>
 <body>
@@ -40,6 +45,7 @@
     drafts the theme ideas and the scope-and-sequence starter; the calendar itself is yours,
     filled in by hand.</p>
 
+    <div class="sect">
     <h2>What's in this pack</h2>
     <div class="card">
       <ul style="margin-bottom:0">
@@ -50,7 +56,9 @@
         <li><strong>The AI planning-prompt library</strong> — year overview, monthly themes, and the re-plan-when-life-happens prompt.</li>
       </ul>
     </div>
+    </div>
 
+    <div class="sect">
     <h2>Year-at-a-glance</h2>
     <p class="small" style="margin-bottom:6pt">Fill in a theme or focus per month and mark breaks — the whole year on one page, for the fridge or your planner's front cover.</p>
     <table class="yr">
@@ -70,7 +78,9 @@
       <tr><td>July</td><td></td><td></td><td></td></tr>
       </tbody>
     </table>
+    </div>
 
+    <div class="sect">
     <h2>The monthly planning page</h2>
     <p class="small" style="margin-bottom:6pt">Photocopy this page for each month — one template, used twelve times.</p>
     <div class="card">
@@ -82,7 +92,9 @@
       <p style="margin:6pt 0 4pt"><strong>One thing to look forward to this month:</strong></p>
       <span class="writein"></span>
     </div>
+    </div>
 
+    <div class="sect">
     <h2>Weekly rhythm planner</h2>
     <p class="small" style="margin-bottom:6pt">The repeatable week — copy it, or laminate one and use dry-erase.</p>
     <table class="wk">
@@ -95,7 +107,9 @@
       <tr><td>The rabbit hole we followed</td><td></td><td></td><td></td><td></td><td></td></tr>
       </tbody>
     </table>
+    </div>
 
+    <div class="sect">
     <h2>Subject tracker</h2>
     <p class="small" style="margin-bottom:6pt">One row per subject, checked off as you cover it — no more wondering in June whether you ever got to fractions.</p>
     <div class="card">
@@ -106,13 +120,16 @@
       <div class="subjrow"><div class="box"></div><div>History / social studies<span class="writein"></span></div></div>
       <div class="subjrow"><div class="box"></div><div>Other (art, PE, foreign language...)<span class="writein"></span></div></div>
     </div>
+    </div>
 
+    <div class="sect">
     <h2>The AI planning-prompt library</h2>
     <div class="card prompt-card">
       <h3 style="margin-top:0">The year-overview prompt</h3>
       <div class="prompt-text">"Suggest 12 monthly themes for a [GRADE-LEVEL] homeschool year
       covering [SUBJECTS/INTERESTS], loosely tied to the seasons where it makes sense. One line
       per month explaining the idea."</div>
+    </div>
     </div>
     <div class="card prompt-card">
       <h3 style="margin-top:0">The monthly-theme starter</h3>
@@ -127,13 +144,16 @@
       of the term without cutting corners on [PRIORITY SUBJECT]."</div>
     </div>
 
+    <div class="sect">
     <h2>The family data-safety habit</h2>
     <div class="card">
       <p style="margin-bottom:0">Every prompt above describes the learner, never the child — no
       names, ages tied to a name, or identifying details. And the grown-up always holds the
       keyboard: AI drafts ideas for you to adapt, never a conversation your child has alone.</p>
     </div>
+    </div>
 
+    <div class="sect">
     <h2>Quarterly review checkpoints</h2>
     <p class="small" style="margin-bottom:6pt">Four short check-ins beat one overwhelming June review — pencil in a date for each.</p>
     <div class="card">
@@ -142,13 +162,16 @@
       <div class="subjrow"><div class="box"></div><div>Quarter 3 review — any subject due for the re-plan prompt?<span class="writein"></span></div></div>
       <div class="subjrow"><div class="box"></div><div>Quarter 4 review — what carries into next year's plan?<span class="writein"></span></div></div>
     </div>
+    </div>
 
+    <div class="sect">
     <h2>Make it a rhythm, not a rulebook</h2>
     <div class="card">
       <p style="margin-bottom:0">The grid on page one is a plan, not a promise — real weeks run
       short on sleep, long on illness, and off-script more often than not. The point of a
       year-at-a-glance page isn't to follow it exactly; it's to know, at a glance, how far off you
       actually are, and to have a system for closing that gap without guilt.</p>
+    </div>
     </div>
 
     <div class="callout teal"><strong>Need the prompts for the day-to-day, not just the year?</strong>

@@ -175,6 +175,17 @@ h1, h2, h3 { break-after: avoid; }
 .slide-cue { break-inside: avoid; break-after: avoid; }
 .slide-cue + .stage { break-after: avoid; }  /* cue + stage + first spoken block stay together */
 table tr { break-inside: avoid; }
+table thead { display: table-header-group; }  /* repeat the header if a table does split */
+table thead tr { break-after: avoid; }
+/* Wrap every "heading + description + table/card" as <div class="sect">
+   (owner correction 2026-08-30: a table split mid-row with no repeated
+   header, then a heading orphaned from its own content on the next
+   page — twice, in two different products). h2/h3's break-after:avoid
+   above only stops a heading being the page's LAST line; it does not
+   stop a short heading+description PAIR from being left behind while
+   the card/table they introduce starts fresh on the next page. .sect
+   makes the whole section move together instead. */
+.sect { break-inside: avoid; }
 
 /* ---- script-specific ---- */
 .slide-cue {

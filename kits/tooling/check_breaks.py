@@ -12,7 +12,15 @@ Heuristics (tuned to the brand.css layout, Letter with header/footer bands):
 - mid-paragraph split: last content line does not end in terminal
   punctuation (.!?:;") and the next page's first content line starts with a
   lowercase letter or is an obvious continuation;
-- orphan heading: the page's last content line is heading-sized text.
+- orphan heading: the page's last content line is heading-sized text;
+- orphan section: the page ends with a heading immediately followed by its
+  one-line description (a "h2 + p.small" pair), with the section's actual
+  table/card stranded on the next page — the heading itself isn't the last
+  line, so the plain orphan-heading check misses it (caught this shipping
+  live in the Full-Year Homeschool Planner, 2026-08-30: "Subject tracker"
+  sat alone at the bottom of a page with its checklist card starting fresh
+  on the next page). Fix by wrapping "heading + description + content" in
+  one break-inside:avoid unit (see the `.sect` pattern in brand.css).
 
 Exit code 1 when anything is flagged, so it can gate a build. Expect to eye
 each flag before "fixing": list items and table rows can false-positive.
@@ -53,6 +61,21 @@ def is_plate(page):
             pass
     return False
 
+NAVY = (0.0745, 0.1608, 0.2392)  # brand.css --navy: #13293D
+
+def is_fixed_sheet(page):
+    # a `.sheet poster`/`.cover` page (brand.css): a full-page navy
+    # background rect. These are deliberately one self-contained fixed page
+    # (poster front, cover) that always hands off to a fresh page next —
+    # not a flowing table.doc content page, so a heading/line landing near
+    # its bottom is by design, not an accidental split.
+    for d in page.get_drawings():
+        r = d['rect']
+        fill = d.get('fill')
+        if r.width > 590 and r.height > 770 and fill and all(abs(fill[k] - NAVY[k]) < 0.01 for k in range(3)):
+            return True
+    return False
+
 def split_cards(page, nxt):
     # A split card/callout/letter renders as a box clipped at the bottom of
     # the content area (brand.css table layout: y1 ~= FOOT_Y; plain layouts:
@@ -76,7 +99,7 @@ flags = 0
 for path in sys.argv[1:]:
     doc = pymupdf.open(path)
     for i in range(len(doc) - 1):
-        if is_plate(doc[i]) or is_plate(doc[i + 1]):
+        if is_plate(doc[i]) or is_plate(doc[i + 1]) or is_fixed_sheet(doc[i]):
             continue
         for r in split_cards(doc[i], doc[i + 1]):
             print(f'{path} p{i+1}->p{i+2}  SPLIT CARD/BOX at y={r.y0:.0f} (h={r.height:.0f})')
@@ -90,6 +113,12 @@ for path in sys.argv[1:]:
             print(f'{path} p{i+1}->p{i+2}  ORPHAN HEADING: "{last_text[:70]}"')
             flags += 1
             continue
+        if len(cur) >= 2:
+            prev_y, prev_text, prev_size = cur[-2]
+            if prev_size >= 13.5 and last_size < 12 and (last_y - prev_y) < 45:
+                print(f'{path} p{i+1}->p{i+2}  ORPHAN SECTION: "{prev_text[:50]}" + "{last_text[:50]}" stranded, content starts on next page')
+                flags += 1
+                continue
         if not TERMINAL.search(last_text) and (first_text[:1].islower() or last_text.endswith('-')):
             print(f'{path} p{i+1}->p{i+2}  SPLIT PARAGRAPH: "...{last_text[-60:]}" -> "{first_text[:60]}..."')
             flags += 1
