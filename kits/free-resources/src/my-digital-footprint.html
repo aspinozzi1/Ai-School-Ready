@@ -8,6 +8,8 @@
   .tracker { width: 100%; }
   .tracker th { font-size: 8.8pt; }
   .tracker td { font-size: 9pt; }
+  .tracker thead { display: table-header-group; }
+  .tracker thead tr { break-inside: avoid; break-after: avoid; }
   .sort { display: flex; gap: 10pt; margin: 8pt 0; }
   .sort > div { flex: 1; border-radius: 10px; padding: 10pt 12pt; break-inside: avoid; }
   .sort .green { background: #EAF5F3; border: 1px solid var(--teal); }
@@ -47,7 +49,8 @@
     <h2>Sort it: footprint or not?</h2>
     <p class="small" style="margin-bottom:6pt">Read each one aloud. Thumbs up if it leaves a footprint, thumbs down if it doesn't.</p>
     <table class="tracker">
-      <tr><th style="width:65%">Does this leave a digital footprint?</th><th>Footprint?</th></tr>
+      <thead><tr><th style="width:65%">Does this leave a digital footprint?</th><th>Footprint?</th></tr></thead>
+      <tbody>
       <tr><td>Typing your full name into a website's sign-up form</td><td>Yes</td></tr>
       <tr><td>Asking a search engine a question</td><td>Yes</td></tr>
       <tr><td>Thinking about a question in your head</td><td>No</td></tr>
@@ -55,6 +58,7 @@
       <tr><td>Talking to a friend at recess, out loud</td><td>No</td></tr>
       <tr><td>Posting a comment or a photo online</td><td>Yes</td></tr>
       <tr><td>Writing in a paper journal you keep at home</td><td>No</td></tr>
+      </tbody>
     </table>
 
     <h2>Activity: green light, red light</h2>

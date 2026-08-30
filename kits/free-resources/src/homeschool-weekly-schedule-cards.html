@@ -13,6 +13,8 @@
   .grid { width: 100%; }
   .grid th, .grid td { text-align: center; font-size: 9pt; }
   .grid td { height: 26pt; }
+  .grid thead { display: table-header-group; }
+  .grid thead tr { break-inside: avoid; break-after: avoid; }
 </style>
 </head>
 <body>
@@ -51,10 +53,12 @@
     <h2>This week's grid</h2>
     <p class="small" style="margin-bottom:6pt">Or skip cutting and just fill in the grid — write a card name in each box.</p>
     <table class="grid">
-      <tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th></tr>
+      <thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th></tr></thead>
+      <tbody>
       <tr><td>Morning</td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td>Midday</td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td>Afternoon</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
     </table>
 
     <h2>Tips for using these cards</h2>

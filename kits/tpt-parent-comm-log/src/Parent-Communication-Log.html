@@ -16,6 +16,8 @@
   table.logtbl { font-size: 8.6pt; }
   table.logtbl th { font-size: 8pt; }
   table.logtbl td { height: 20pt; }
+  table.logtbl thead { display: table-header-group; }
+  table.logtbl thead tr { break-inside: avoid; break-after: avoid; }
 </style>
 </head>
 <body>
@@ -54,23 +56,27 @@
       <div class="f"><label>Best contact method</label><span class="writein"></span></div>
     </div>
     <table class="logtbl">
-      <tr><th style="width:11%">Date</th><th style="width:12%">Method</th><th style="width:20%">Topic</th><th style="width:32%">Notes / outcome</th><th style="width:13%">Follow-up?</th><th style="width:12%">Done</th></tr>
+      <thead><tr><th style="width:11%">Date</th><th style="width:12%">Method</th><th style="width:20%">Topic</th><th style="width:32%">Notes / outcome</th><th style="width:13%">Follow-up?</th><th style="width:12%">Done</th></tr></thead>
+      <tbody>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
     </table>
 
     <h2>Incident / behavior documentation log</h2>
     <p class="small" style="margin-bottom:6pt">Use for anything you might need to reference again — this is the version with room for detail, dates, and who was notified.</p>
     <table class="logtbl">
-      <tr><th style="width:10%">Date</th><th style="width:38%">What happened (facts, not judgment)</th><th style="width:22%">Action taken</th><th style="width:15%">Parent notified?</th><th style="width:15%">Follow-up date</th></tr>
+      <thead><tr><th style="width:10%">Date</th><th style="width:38%">What happened (facts, not judgment)</th><th style="width:22%">Action taken</th><th style="width:15%">Parent notified?</th><th style="width:15%">Follow-up date</th></tr></thead>
+      <tbody>
       <tr><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
     </table>
     <p class="small">Keep this log for the students who need it — you don't have to run one for
     every child, just the ones where a pattern or a paper trail matters.</p>
@@ -78,7 +84,8 @@
     <h2>Class quick-tracker</h2>
     <p class="small" style="margin-bottom:6pt">One page, whole class, updated weekly — instantly see who you haven't reached lately.</p>
     <table class="logtbl">
-      <tr><th style="width:30%">Student</th><th style="width:23%">Last contact date</th><th style="width:23%">Topic</th><th style="width:24%">Next contact planned</th></tr>
+      <thead><tr><th style="width:30%">Student</th><th style="width:23%">Last contact date</th><th style="width:23%">Topic</th><th style="width:24%">Next contact planned</th></tr></thead>
+      <tbody>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td></tr>
@@ -86,6 +93,7 @@
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td><td></td></tr>
+      </tbody>
     </table>
 
     <h2>The AI safe-prompt companion</h2>
