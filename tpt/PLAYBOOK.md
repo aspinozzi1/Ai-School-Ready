@@ -182,22 +182,37 @@ override the calendar row per the standing rules.
    listing in `tpt/pins/` plus `PINS.txt` (the upload sheet: board,
    title, description per pin; owner pastes the listing URL). Needs
    `npm i --no-save playwright @fontsource/luckiest-guy @fontsource/baloo-2`
-   in a fresh session. Ship **every** pin (not just the week's new ones)
-   + `PINS.txt` as a `PINS-*.zip` alongside the drops — `make_pins.js`
-   regenerates the full catalog every run, so a partial zip leaves the
-   owner's board inconsistent.
+   in a fresh session.
+   **Ship only the week's new (or content-fixed) pins** + `PINS.txt` as
+   a `PINS-*.zip` alongside the drops (owner correction 2026-08-30 — a
+   design-only change is not a reason to make the owner re-post pins
+   already live on Pinterest boards). Footgun: `make_pins.js` regenerates
+   *every* listing's PNG on each run, not just the new ones, because
+   `shotsFor()`'s freshness check only looks at each product's own PDF
+   mtime — so after running it, `git status` will show all 33 changed
+   even though only the week's products actually changed content. Before
+   staging: `git diff --stat tpt/pins/` and `git checkout -- ` (or
+   `git restore --source <prior commit> --`) any `*-pin.png` whose
+   listing isn't part of this week's batch and didn't get a real content
+   fix, so only the intended pins actually change in git and in the
+   zip. A listing whose *product PDF* changed for a real reason (a
+   content bug fix, not just this template) still needs a fresh pin —
+   don't revert those, the stale old pin would show outdated content.
    **Pin design law (owner correction 2026-08-30 — "cleaner, more fun,
    actual pages large"): at most 2 real-page shots per pin, shown big
    (own `shotsFor()` caps at 2 and sizes them ~520–600px wide on the
    1000px canvas) — never the old 3-small-pages-in-a-row layout, which
    read cluttered and made the page content unreadable at pin size.**
-   Any layout change to the shot/foot/badge zones must re-verify the
-   footer CTA button is never covered by a page image (`.foot` needs
-   `z-index` above the shot images, or shot heights tuned so their
-   bottom edge clears the footer zone) — check a rendered sample before
-   shipping. Pin copy rules: real pages only in mockups, honest badges,
-   seasonal pins 30–45 days early, frees pinned hardest (they are the
-   click engine).
+   This design applies to every pin built from now on (new listings,
+   and any existing listing whose pin gets regenerated for a real
+   reason) — it is not itself a reason to touch pins that aren't
+   otherwise changing. Any layout change to the shot/foot/badge zones
+   must re-verify the footer CTA button is never covered by a page
+   image (`.foot` needs `z-index` above the shot images, or shot
+   heights tuned so their bottom edge clears the footer zone) — check a
+   rendered sample before shipping. Pin copy rules: real pages only in
+   mockups, honest badges, seasonal pins 30–45 days early, frees pinned
+   hardest (they are the click engine).
 6. **Quality gates (all must pass):**
    - every PDF opens (pypdf) and page counts are recorded;
    - **no section, paragraph, card, or write-in box splits across a page
