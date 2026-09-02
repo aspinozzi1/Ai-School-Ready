@@ -450,3 +450,38 @@ thin against that bar, fix the kit, not the price.
   at most 2 real-page shots per pin, shown large, not 3 small ones (see
   step 5b) — regenerated all 33 existing pins, not just the week's new
   ones.
+- **2026-09-02 (Week 2 Wednesday drop — first Deaf Education wave)**:
+  shipped — every product traces to the 2026-W36 Wednesday brief's
+  validation table (TPT Keywords primary meter). **Lane 3 (Young
+  Entrepreneurs)**: Entrepreneurship Unit with AI $8 (a new 5-day
+  classroom/co-op market-day unit, distinct from the existing solo
+  workbooks — brainstorm, Rule-of-Three pricing, sign & pitch, market
+  day logistics, profit math, one grown-up AI Helper Prompt per day)
+  + 2 frees (Shark Tank Pitch Day · Business Idea Starter, ages 9–12).
+  **Lane 4 (Deaf Education, first wave — new custom category
+  "Deaf Education")**: DHH Self-Advocacy Pack $6 (license $3, per the
+  brief's low-entry-price call) + 3 frees (Self-Advocacy Scripts "I
+  Need..." Cards · Classroom Access Checklist · Executive Functioning
+  Checklists). Every lane-4 product and listing carries the
+  owner-approved provenance line verbatim ("Built and audited by two
+  certified teachers — and the parents of a deaf child.") and the
+  pedagogy-not-audiology legal note; diversity language (ASL/spoken
+  language/bimodal/devices-or-none) runs through every product; no
+  age, school, device, or communication mode of the owner's own child
+  appears anywhere. Easel setup added for the two kid-facing paid
+  items (the Entrepreneurship Unit's "My Role & My Price" worksheet
+  page and the full DHH Self-Advocacy Pack). New Pinterest board
+  "Deaf Education" for lane-4 pins. Drops 34–40 in `UPLOAD/drops/`;
+  `PINS-2026-09-02.zip` ships only this week's 7 new pins (the
+  `make_pins.js` full-regen footgun reverted 22 unrelated pins whose
+  byte-diff was render-noise, not content). Two numeric-claim
+  mismatches caught on the pre-ship contact-sheet eyeball and fixed
+  before drops were built: the DHH Self-Advocacy Pack's lede claimed
+  "five pages" (product is 3 physical pages, 4 worksheets — reworded
+  to "four reusable worksheets"), and the Executive Functioning
+  Checklists' lede claimed "three pages" (product is 2 pages, 3
+  checklists — reworded to "three reusable checklists"); the Business
+  Idea Starter free was also under-filled on both pages at first pass
+  (~40–45% empty) and gained a fourth activity ("Rate your idea") to
+  meet the ⅓-empty quality gate. All check_breaks.py flags: 0;
+  check_fresh.py stale/missing: 0.

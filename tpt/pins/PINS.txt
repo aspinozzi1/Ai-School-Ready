@@ -3,7 +3,7 @@ PINTEREST UPLOAD SHEET — one pin per listing
 Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
-Young Entrepreneurs
+Young Entrepreneurs · Deaf Education
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================
@@ -1411,6 +1411,307 @@ Homeschool AI   <- create once, reuse forever
 --- TAGGED TOPICS ---
 
 Try: homeschool planner · homeschool curriculum · ai prompts   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+ENTREPRENEURSHIP UNIT WITH AI
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ye-market-day-unit-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Entrepreneurship for Kids | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Entrepreneurship unit for kids ages 8-12: a five-day classroom or co-op market-day unit — idea brainstorm, Rule of Three pricing, sign & pitch, market day logistics, profit math — with a grown-up AI helper prompt for every step.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship · business unit · market day   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+SHARK TANK PITCH DAY
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+pitch-day-kit-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Shark Tank Pitch Day | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free Shark Tank pitch day kit for kids: a business pitch planner and a four-category judge’s rubric, plus a grown-up AI coach page for gentle practice questions. Ages 8-12.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: shark tank · entrepreneurship · business for kids   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+BUSINESS IDEA STARTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+biz-idea-activities-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Entrepreneurship Activities | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free entrepreneurship activities for kids ages 9-12: the problem hunt, a community-need checklist, rate-your-idea self-check, and selling it in one sentence — independent-work business idea starter.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Young Entrepreneurs   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship activities · entrepreneurship · business for kids   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+DHH SELF-ADVOCACY PACK
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+dhh-self-advocacy-pack-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Self-Advocacy Worksheets for Deaf & Hard of Hearing Students | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Self-advocacy worksheets for Deaf and hard of hearing (DHH) students: "I need..." sentence starters, a weekly self-check, a meeting-a-new-teacher script builder, and real-situation practice scenarios. Built and audited by two certified teachers — and the parents of a deaf child.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Deaf Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: self advocacy worksheets · deaf and hard of hearing · teacher of the deaf   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+SELF-ADVOCACY SCRIPTS: "I NEED..." CARDS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+dhh-advocacy-scripts-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Self-Advocacy Scripts | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free self-advocacy cards for Deaf and hard of hearing (DHH) students: eight cut-apart "I need..." cards for real classroom moments, plus a teacher quick-reference for how to respond to each one.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Deaf Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: self advocacy activities · deaf and hard of hearing · dhh resources   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+CLASSROOM ACCESS CHECKLIST
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+dhh-access-checklist-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Classroom Access Checklist | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free classroom access checklist for Deaf and hard of hearing (DHH) students in gen ed: seating, captions, communication repair, and a before-day-one checklist for the itinerant Teacher of the Deaf to hand any gen-ed teacher.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Deaf Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: teacher of the deaf · deaf and hard of hearing · dhh itinerant   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+EXECUTIVE FUNCTIONING CHECKLISTS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+dhh-exec-functioning-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Executive Functioning Checklists | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free executive functioning checklists for Deaf and hard of hearing (DHH) students: a task-planning checklist, a materials checklist, and a three-question self-check-in card for the planning load a missed direction adds.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Deaf Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: executive functioning · deaf and hard of hearing · self advocacy   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 
