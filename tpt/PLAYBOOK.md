@@ -36,7 +36,7 @@ The week has **two drops** and a research rhythm that feeds them
 (see "Research cadence" below):
 
 - **Sunday drop — AI for schools & homeschool**: classroom lane +
-  homeschool lane + classical-education lane.
+  homeschool lane + open-demand lane.
 - **Wednesday drop — Young Entrepreneurs & Deaf Education**: the YE
   lane + the Deaf Ed lane (`tpt/intel/deaf-ed-niche.md` holds that
   line's binding design laws — accuracy and respect, pedagogy never
@@ -56,17 +56,17 @@ The week has **two drops** and a research rhythm that feeds them
   Shorts, full kits/kit retrofits, deep template packs, or a bundle
   assembled from existing listings.
 
-**Lane 5 · Classical Education (owner directive 2026-09-01):**
-- **2 free + 1 paid** ($8–12) from the backlog in
-  `tpt/intel/classical-ed-niche.md`, which holds this lane's binding
-  design laws. The short version: classical education currently frames
-  itself as the *antidote* to AI, so lane 5 sells **teacher-side prep
-  only** — Socratic question banks, memory-work scheduling, Latin drill
-  drafting with a proofing step, narration and copywork planning. AI
-  never touches the student's encounter with the text. Speak the
-  tradition's vocabulary exactly; stay denominationally neutral.
-- Nothing ships in this lane until the owner's TPT Keywords data comes
-  back for it.
+**Lane 5 · Open Demand (owner directive 2026-09-01):**
+- **1–2 products** built on the highest **win score** phrase not yet
+  served — see `tpt/intel/winnable-niches.md`, which holds the standing
+  ranking and the scoring rule (searches ÷ resource-bucket midpoint ×
+  1000, Strong/Promising badges only).
+- This lane has no audience and no theme. It exists to catch the items
+  teachers most want that we can still rank for as a young store.
+- Next two open targets: **take home folder** (11,603 · 8K–20K ·
+  Strong) and **happy mail** (4,488 · 3K–8K · Strong).
+- (The Classical Education lane proposed 2026-09-01 was cut by the
+  owner the same day — poor fit. See git history for the analysis.)
 
 **Lane 2 · Homeschool AI:**
 - **2 free resources** targeting homeschool/family searches, and
