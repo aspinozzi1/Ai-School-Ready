@@ -204,6 +204,41 @@ const PIN_COPY = {
     sub: 'Weekly plan · unit starter · leveled reading · more. Free.',
     board: 'Homeschool AI',
     desc: 'Free homeschool AI planning prompts: five copy-paste prompts for the weekly plan, unit study starter, leveled reading passages, sick-parent days, and field trip prep. Describe the learner, never the child.' },
+  'ye-market-day-unit': { pal: P.coral,
+    top: 'Five days,', mid: 'one market day', big: 'START A BUSINESS UNIT',
+    sub: 'Brainstorm · pricing · pitch · logistics · AI helper prompts · $8',
+    board: 'Young Entrepreneurs',
+    desc: 'Entrepreneurship unit for kids ages 8-12: a five-day classroom or co-op market-day unit — idea brainstorm, Rule of Three pricing, sign & pitch, market day logistics, profit math — with a grown-up AI helper prompt for every step.' },
+  'pitch-day-kit': { pal: P.turq,
+    top: 'Plan it. Practice it.', mid: 'Pitch it in', big: '30 SECONDS',
+    sub: 'Kid pitch planner + judge’s rubric, ages 8–12. Free.',
+    board: 'Young Entrepreneurs',
+    desc: 'Free Shark Tank pitch day kit for kids: a business pitch planner and a four-category judge’s rubric, plus a grown-up AI coach page for gentle practice questions. Ages 8-12.' },
+  'biz-idea-activities': { pal: P.grass,
+    top: 'Ages 9–12,', mid: 'work through it', big: 'ON YOUR OWN',
+    sub: 'The problem hunt, a need checklist, sell it in one sentence. Free.',
+    board: 'Young Entrepreneurs',
+    desc: 'Free entrepreneurship activities for kids ages 9-12: the problem hunt, a community-need checklist, rate-your-idea self-check, and selling it in one sentence — independent-work business idea starter.' },
+  'dhh-self-advocacy-pack': { pal: P.blue,
+    top: 'Self-advocacy', mid: 'a student can', big: 'GROW WITH',
+    sub: '"I need..." starters · self-check · scripts · scenarios · $6',
+    board: 'Deaf Education',
+    desc: 'Self-advocacy worksheets for Deaf and hard of hearing (DHH) students: "I need..." sentence starters, a weekly self-check, a meeting-a-new-teacher script builder, and real-situation practice scenarios. Built and audited by two certified teachers — and the parents of a deaf child.' },
+  'dhh-advocacy-scripts': { pal: P.grape,
+    top: 'When the words', mid: 'are the hardest part', big: '"I NEED..." CARDS',
+    sub: '8 cut-apart self-advocacy cards for DHH & SPED students. Free.',
+    board: 'Deaf Education',
+    desc: 'Free self-advocacy cards for Deaf and hard of hearing (DHH) students: eight cut-apart "I need..." cards for real classroom moments, plus a teacher quick-reference for how to respond to each one.' },
+  'dhh-access-checklist': { pal: P.coral,
+    top: 'A DHH student', mid: 'is joining your class', big: 'THE SETUP CHECKLIST',
+    sub: 'Before day one + every day, for the gen-ed room. Free.',
+    board: 'Deaf Education',
+    desc: 'Free classroom access checklist for Deaf and hard of hearing (DHH) students in gen ed: seating, captions, communication repair, and a before-day-one checklist for the itinerant Teacher of the Deaf to hand any gen-ed teacher.' },
+  'dhh-exec-functioning': { pal: P.grass,
+    mid: 'a direction shouldn’t mean', top: 'Missing', big: 'MISSING THE WORK',
+    sub: 'Task-planning checklist + self-check card for DHH students. Free.',
+    board: 'Deaf Education',
+    desc: 'Free executive functioning checklists for Deaf and hard of hearing (DHH) students: a task-planning checklist, a materials checklist, and a three-question self-check-in card for the planning load a missed direction adds.' },
 };
 
 const doodle = (x, y, r, s, d) =>
@@ -376,7 +411,7 @@ PINTEREST UPLOAD SHEET — one pin per listing
 Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
-Young Entrepreneurs
+Young Entrepreneurs · Deaf Education
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================

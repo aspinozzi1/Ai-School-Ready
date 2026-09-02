@@ -1228,6 +1228,269 @@
     "PDF"
    ],
    "customCategory": "Homeschool AI"
+  },
+  {
+   "id": "ye-market-day-unit",
+   "order": 34,
+   "name": "Entrepreneurship Unit with AI",
+   "product": "UPLOAD/02-paid/Entrepreneurship-Unit-with-AI.pdf",
+   "cover": "tpt/covers/ye-market-day-unit-cover.png",
+   "thumbnails": [
+    "tpt/extras/yeu-whats-inside.png",
+    "tpt/extras/yeu-real-pages.png"
+   ],
+   "title": "Entrepreneurship for Kids | Start a Business Unit with AI Helper Prompts",
+   "description": "A whole class or co-op, five days, one market day — built for the grown-up running group entrepreneurship, not just one kid's workbook.\n\nINSIDE (7 pages): Day 1 idea brainstorm & problem-spotting · Day 2 pricing with the Rule of Three · Day 3 making a sign & the pitch · a one-page \"My Role & My Price\" worksheet every kid fills out by hand · Day 4 market day logistics (roles, float, timeline) · Day 5 debrief & profit math — plus a grown-up AI Helper Prompt for every day that needs one.\n\nYou run every AI prompt — chatbots are 13+ — and a child's name, photo, school, or street never goes into one; describe the group generically (\"a class of 9-year-olds\"), never who.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+   "price": 8,
+   "licenses": 4,
+   "grades": [
+    "3rd",
+    "4th",
+    "5th",
+    "6th"
+   ],
+   "subjects": [
+    "Economics",
+    "Math",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "entrepreneurship",
+    "business unit",
+    "market day",
+    "financial literacy",
+    "project based learning",
+    "homeschool"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs",
+   "previewShots": [
+    "yeu_p2.png",
+    "yeu_p4.png",
+    "yeu_p7.png"
+   ],
+   "previewInside": [
+    "<b>Five days, one market day</b> — brainstorm, pricing, sign & pitch, logistics, profit math",
+    "A grown-up AI Helper Prompt for every day that needs one",
+    "The \"My Role & My Price\" worksheet every kid fills out by hand",
+    "Sample day-of timeline and a ready-made roles table for market day"
+   ],
+   "previewUnit": "the full unit is 7 pages",
+   "filesBadge": "7 pages",
+   "insideHeading": "What's inside the full unit",
+   "easelSetup": "tpt/easel/ye-market-day-unit-easel.txt"
+  },
+  {
+   "id": "pitch-day-kit",
+   "order": 35,
+   "name": "Shark Tank Pitch Day",
+   "product": "UPLOAD/01-free/shark-tank-pitch-day.pdf",
+   "cover": "tpt/covers/free-pitch-day-kit-cover.png",
+   "thumbnails": [],
+   "title": "Shark Tank Pitch Day | FREE Kid Entrepreneur Pitch Planner & Rubric",
+   "description": "Turn a business idea into a thirty-second pitch a real judge could listen to — planned, practiced, and rated.\n\nINSIDE (2 pages): a five-question pitch planner (business name, what I'm selling, why it's great, my price, my 30-second pitch) · a four-category judge's rubric (idea, presentation, pricing, teamwork) · a grown-up coach page with two safe AI prompts for gentle judge questions and practice objections.\n\nThe same rule as every product in this line: the grown-up runs the AI, kids do the thinking, and a child's name, photo, school, or street never goes into a prompt.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "3rd",
+    "4th",
+    "5th",
+    "6th"
+   ],
+   "subjects": [
+    "Economics",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "shark tank",
+    "entrepreneurship",
+    "business for kids",
+    "public speaking",
+    "pitch",
+    "homeschool"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs"
+  },
+  {
+   "id": "biz-idea-activities",
+   "order": 36,
+   "name": "Business Idea Starter",
+   "product": "UPLOAD/01-free/entrepreneurship-activities.pdf",
+   "cover": "tpt/covers/free-biz-idea-activities-cover.png",
+   "thumbnails": [],
+   "title": "Entrepreneurship Activities | FREE Business Idea Starter for Ages 9-12",
+   "description": "For kids ready to work through it on their own: four independent activities that turn noticing a problem into a sentence worth saying out loud.\n\nINSIDE (2 pages): the problem hunt (three real annoyances, three fix-it ideas) · a ten-item community-need checklist · \"rate your idea\" — a four-question self-check · sell it in one sentence, three tries, each shorter than the last — plus one optional AI prompt for the grown-up to run for more ideas.\n\nLess hand-holding than our ages 6-10 \"My First Business Idea\" worksheet — built for kids who can work more independently.\n\nBuilt and audited by two certified teachers.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "4th",
+    "5th",
+    "6th",
+    "7th"
+   ],
+   "subjects": [
+    "Economics",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "entrepreneurship activities",
+    "entrepreneurship",
+    "business for kids",
+    "financial literacy",
+    "project based learning",
+    "homeschool"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Young Entrepreneurs"
+  },
+  {
+   "id": "dhh-self-advocacy-pack",
+   "order": 37,
+   "name": "DHH Self-Advocacy Pack",
+   "product": "UPLOAD/02-paid/DHH-Self-Advocacy-Pack.pdf",
+   "cover": "tpt/covers/dhh-self-advocacy-pack-cover.png",
+   "thumbnails": [
+    "tpt/extras/dsa-whats-inside.png",
+    "tpt/extras/dsa-real-pages.png"
+   ],
+   "title": "Self-Advocacy Worksheets for Deaf & Hard of Hearing Students | Full Kit",
+   "description": "Scaffolds a student can grow with: four reusable worksheets a Teacher of the Deaf, itinerant ToD, or case manager works through with a student, upper-elementary through high school.\n\nINSIDE (3 pages): eight \"I need...\" sentence-starter prompts for real classroom moments · a six-item weekly self-check with room for notes · a \"meeting a new teacher\" script builder · four real-situation practice scenarios (group work, fire drills, uncaptioned video, an unfamiliar substitute).\n\nHowever a student communicates — ASL, spoken language, a hearing device, or a combination — these pages adapt to that student, not the other way around. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nRUNNING THIS ACROSS A CASELOAD? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+   "price": 6,
+   "licenses": 3,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Special Education",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "self advocacy worksheets",
+    "deaf and hard of hearing",
+    "teacher of the deaf",
+    "special education",
+    "dhh itinerant",
+    "iep goals deaf and hard of hearing"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Deaf Education",
+   "previewShots": [
+    "dsa_p1.png",
+    "dsa_p2.png",
+    "dsa_p3.png"
+   ],
+   "previewInside": [
+    "<b>Eight \"I need...\" sentence starters</b> for real classroom moments",
+    "A weekly self-check + notes page — not a replacement for the IEP",
+    "The \"meeting a new teacher\" script builder",
+    "Four real-situation practice scenarios, ToD- or family-guided"
+   ],
+   "previewUnit": "the full pack is 3 pages",
+   "filesBadge": "3 pages",
+   "insideHeading": "What's inside the full pack",
+   "easelSetup": "tpt/easel/dhh-self-advocacy-pack-easel.txt"
+  },
+  {
+   "id": "dhh-advocacy-scripts",
+   "order": 38,
+   "name": "Self-Advocacy Scripts: \"I Need...\" Cards",
+   "product": "UPLOAD/01-free/dhh-self-advocacy-scripts.pdf",
+   "cover": "tpt/covers/free-dhh-advocacy-scripts-cover.png",
+   "thumbnails": [],
+   "title": "Self-Advocacy Scripts | FREE \"I Need...\" Cards for DHH & SPED Students",
+   "description": "Eight ready-to-cut cards that put a self-advocacy request into a student's hand, for the moment finding the words is the hardest part.\n\nINSIDE (2 pages): eight cut-apart \"I need...\" cards (repeat that, captions on, move seats, a device or support isn't working, in writing too, face me, a different way, a writing partner) · how to use the cards (laminate, lanyard or desk ring, reintroduce each term) · a quick-reference table pairing each card to what the adult does.\n\nWritten with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who needs to self-advocate for access. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Special Education",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "self advocacy activities",
+    "deaf and hard of hearing",
+    "dhh resources",
+    "special education",
+    "iep goals deaf and hard of hearing",
+    "asl back to school"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Deaf Education"
+  },
+  {
+   "id": "dhh-access-checklist",
+   "order": 39,
+   "name": "Classroom Access Checklist",
+   "product": "UPLOAD/01-free/dhh-classroom-access-checklist.pdf",
+   "cover": "tpt/covers/free-dhh-access-checklist-cover.png",
+   "thumbnails": [],
+   "title": "Classroom Access Checklist | FREE Setup Guide for DHH Students in Gen Ed",
+   "description": "The classic itinerant in-service one-pager, reshaped as something a gen-ed teacher can actually check off before and after a DHH student joins the room.\n\nINSIDE (2 pages): before day one (seating, lighting, confirmed accommodations, who to contact) · every day (face the class, repeat and rephrase, captions on, private check-ins) · communication repair when a message doesn't land · a common-accommodations quick-reference table · a short note on remote microphone/FM systems that keeps this checklist on the pedagogy side of the room.\n\nStudents get to this list however they communicate — ASL, spoken language, a hearing device, or a combination. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Special Education",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "teacher of the deaf",
+    "deaf and hard of hearing",
+    "dhh itinerant",
+    "special education",
+    "iep goals deaf and hard of hearing",
+    "classroom management"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Deaf Education"
+  },
+  {
+   "id": "dhh-exec-functioning",
+   "order": 40,
+   "name": "Executive Functioning Checklists",
+   "product": "UPLOAD/01-free/dhh-executive-functioning-checklists.pdf",
+   "cover": "tpt/covers/free-dhh-exec-functioning-cover.png",
+   "thumbnails": [],
+   "title": "Executive Functioning Checklists | FREE Self-Advocacy & Planning Pages",
+   "description": "Missing a spoken direction shouldn't mean missing the assignment. Three reusable checklists that connect self-advocacy to the planning skills that make it stick.\n\nINSIDE (2 pages): a task-planning checklist that breaks any multi-step assignment into checked-off steps · a \"materials I need today\" checklist · a three-question self-check-in card (did I understand the directions? do I need a repeat? do I know what to do first?) · a note for the adult in the room on why a missed direction adds real executive-functioning load.\n\nBuilt with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who loses track after missing auditory information. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+   "price": 0,
+   "licenses": null,
+   "grades": [
+    "Not Grade Specific"
+   ],
+   "subjects": [
+    "Special Education",
+    "For All Subject Areas"
+   ],
+   "tags": [
+    "executive functioning",
+    "deaf and hard of hearing",
+    "self advocacy",
+    "special education",
+    "dhh itinerant",
+    "iep goals deaf and hard of hearing"
+   ],
+   "formats": [
+    "PDF"
+   ],
+   "customCategory": "Deaf Education"
   }
  ]
 }

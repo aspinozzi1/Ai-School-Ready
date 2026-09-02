@@ -218,6 +218,20 @@ const IMAGES = [
     'The AI planning-prompt library',
   ], '4 pages')],
   ['hfp-real-pages',   realPages('#FFC43D', ['hfp_p2.png', 'hfp_p3.png', 'hfp_p4.png'], '4 pages')],
+  ['yeu-whats-inside', whatsInside('Entrepreneurship Unit', 'with AI', [
+    '<b>Five days, one market day</b> — idea, pricing, sign & pitch, logistics, profit',
+    'A grown-up AI Helper Prompt for every day that needs one',
+    'The "My Role & My Price" worksheet every kid fills out by hand',
+    'Ready-made roles table and sample day-of timeline for market day',
+  ], '7 pages')],
+  ['yeu-real-pages',   realPages('#FFC43D', ['yeu_p2.png', 'yeu_p4.png', 'yeu_p7.png'], '7 pages')],
+  ['dsa-whats-inside', whatsInside('DHH Self-Advocacy', 'Pack', [
+    '<b>Eight "I need..." sentence starters</b> for real classroom moments',
+    'A weekly self-check + notes page — not a replacement for the IEP',
+    'The "meeting a new teacher" script builder',
+    'Four real-situation practice scenarios, ToD- or family-guided',
+  ], '3 pages')],
+  ['dsa-real-pages',   realPages('#2D6CB5', ['dsa_p1.png', 'dsa_p2.png', 'dsa_p3.png'], '3 pages')],
   ['whole-staff-license', license()],
 ];
 
