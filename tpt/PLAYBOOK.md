@@ -36,7 +36,7 @@ The week has **two drops** and a research rhythm that feeds them
 (see "Research cadence" below):
 
 - **Sunday drop — AI for schools & homeschool**: classroom lane +
-  homeschool lane.
+  homeschool lane + classical-education lane.
 - **Wednesday drop — Young Entrepreneurs & Deaf Education**: the YE
   lane + the Deaf Ed lane (`tpt/intel/deaf-ed-niche.md` holds that
   line's binding design laws — accuracy and respect, pedagogy never
@@ -55,6 +55,18 @@ The week has **two drops** and a research rhythm that feeds them
 - **1–2 higher-priced products** ($12–24+) — the revenue engine: PD
   Shorts, full kits/kit retrofits, deep template packs, or a bundle
   assembled from existing listings.
+
+**Lane 5 · Classical Education (owner directive 2026-09-01):**
+- **2 free + 1 paid** ($8–12) from the backlog in
+  `tpt/intel/classical-ed-niche.md`, which holds this lane's binding
+  design laws. The short version: classical education currently frames
+  itself as the *antidote* to AI, so lane 5 sells **teacher-side prep
+  only** — Socratic question banks, memory-work scheduling, Latin drill
+  drafting with a proofing step, narration and copywork planning. AI
+  never touches the student's encounter with the text. Speak the
+  tradition's vocabulary exactly; stay denominationally neutral.
+- Nothing ships in this lane until the owner's TPT Keywords data comes
+  back for it.
 
 **Lane 2 · Homeschool AI:**
 - **2 free resources** targeting homeschool/family searches, and
