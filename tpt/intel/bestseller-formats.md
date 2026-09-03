@@ -80,3 +80,42 @@ and dividers so it *becomes* a binder on the teacher's shelf · clear
 skill-by-skill organization · bundle-ability across skills or grades ·
 editable where it matters. Our additions: the Growth Eval page, the
 brand's visual quality, and honest sequencing.
+
+---
+
+## Friday = the compete lane (owner directive 2026-09-03)
+
+The store now runs three drops:
+
+| Day | Game | Lanes |
+|---|---|---|
+| **Sunday** | WIN — own the niche | classroom · homeschool · open demand |
+| **Wednesday** | WIN — own the niche | Young Entrepreneurs · Deaf Education |
+| **Friday** | **COMPETE** — proven formats, AI differentiator | Best-Seller line |
+
+Friday's selection rule is the inverse of the other two days. We do NOT
+require a low resource count — these families are crowded by definition.
+We require:
+
+1. **Demand** — a large, durable search family (not a seasonal spike).
+2. **Price ceiling** — comparables selling at $15+ so the format
+   supports our pricing.
+3. **A real Growth Eval** — the activity must produce something
+   *scoreable*. If a teacher can't get a number or a pattern out of it,
+   the eval page is decoration and the product doesn't belong on Friday.
+4. **We can author it honestly** — original content, correct content,
+   and a citable basis (see the authoring standard above).
+
+### Cadence — the sustainable shape
+
+A 40–60 page academic build every single week is not realistic at our
+quality bar. Friday therefore ships **one unit per week (8–14 pages)**
+from an in-progress binder, each unit a complete standalone product with
+its own probe, data sheet and Growth Eval — then, when the units are
+done, a **bundle listing** at the full price. This is TPT-native
+(bundles convert well), it de-risks the format (weak seller = stop after
+unit 2), and it gives Friday a shippable product every week.
+
+Example, first binder: Unit 1 short a → Unit 2 short i → Unit 3 short o
+→ Unit 4 short u → Unit 5 short e → **bundle: Short-Vowel CVC
+Intervention Binder, $18** (units $4–5 each, bundle saves ~25%).

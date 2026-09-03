@@ -35,8 +35,11 @@ Canva masters live in the "Bright Scholar — TPT Brand" folder
 The week has **two drops** and a research rhythm that feeds them
 (see "Research cadence" below):
 
-- **Sunday drop — AI for schools & homeschool**: classroom lane +
-  homeschool lane + open-demand lane.
+- **Sunday drop — AI for schools & homeschool** (WIN lane): classroom +
+  homeschool + open-demand.
+- **Friday drop — Best-Sellers with the AI Growth Eval** (COMPETE lane,
+  owner directive 2026-09-03): proven high-volume formats rebuilt as
+  original Bright Scholar content. Spec: `tpt/intel/bestseller-formats.md`.
 - **Wednesday drop — Young Entrepreneurs & Deaf Education**: the YE
   lane + the Deaf Ed lane (`tpt/intel/deaf-ed-niche.md` holds that
   line's binding design laws — accuracy and respect, pedagogy never
@@ -144,6 +147,23 @@ the same file (so Sun 2026-08-30 and Wed 2026-09-02 are both W36).
 
 The factories read their day's brief before building; briefs may
 override the calendar row per the standing rules.
+
+### Win lanes vs the compete lane (owner directive 2026-09-03)
+
+Two different games, deliberately:
+
+- **WIN (Sunday, Wednesday)** — phrases under ~3,000 competing products
+  where a new store can rank on merit. Judged by **win score**
+  (`winnable-niches.md`). Patience: these compound.
+- **COMPETE (Friday)** — proven, crowded, high-value formats where we
+  will *not* out-rank incumbents on keywords alone. We enter anyway,
+  differentiated by the **AI Growth Eval** and by design quality. Judged
+  by demand and price ceiling, not by low competition. Every Friday
+  listing leads its description with the Growth Eval, because that is
+  the only reason a buyer picks us over a seller with 9,800 reviews.
+
+Friday never cannibalises the win lanes: if a phrase is winnable, it
+belongs on Sunday, not Friday.
 
 ### The AI Growth Eval — brand signature on EVERY product (2026-09-03)
 
