@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Short-Vowel CVC Intervention Binder — Sample</title>
+<link href="file:///tmp/claude-0/-home-user-Ai-School-Ready/200946d1-7977-5a20-a815-01a2f2327970/scratchpad/fonts/fonts.css" rel="stylesheet">
+<style>
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;background:var(--cream)}
+.sheet:last-child{page-break-after:auto}
+.rainbow{position:absolute;left:0;right:0;height:.2in;display:flex}.rainbow i{flex:1}
+.r1{background:var(--tomato)}.r2{background:var(--sunny)}.r3{background:var(--teal)}.r4{background:var(--blue)}
+.top{top:0}.bot{bottom:0}
+.pad{position:absolute;left:0;right:0;top:.2in;bottom:.2in;padding:.42in .6in .6in}
+.eyebrow{font-family:'Fredoka',sans-serif;font-weight:600;font-size:10.5pt;letter-spacing:2.4px;text-transform:uppercase;color:var(--teal)}
+h1{font-family:'Luckiest Guy',cursive;font-size:30pt;line-height:1.06;letter-spacing:.4px}
+h2{font-family:'Fredoka',sans-serif;font-weight:600;font-size:15pt;color:var(--blue)}
+.sub{font-size:11pt;font-weight:700;color:#5B6B7A;margin-top:5pt;line-height:1.5}
+.pill{display:inline-block;background:var(--sunny);font-weight:800;font-size:10.5pt;padding:5pt 13pt;border-radius:20pt;margin:4pt 4pt 0 0}
+.pill.t{background:var(--teal);color:#fff}.pill.b{background:var(--blue);color:#fff}.pill.g{background:var(--leaf);color:#fff}
+.foot{position:absolute;left:.6in;right:.6in;bottom:.34in;font-size:8.5pt;font-weight:700;color:var(--grey);display:flex;justify-content:space-between}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:16pt;padding:14pt 17pt}
+.doodle{position:absolute}
+/* cover */
+.covbox{background:#fff;border:3pt solid var(--ink);border-radius:20pt;padding:24pt 26pt;box-shadow:9pt 9pt 0 var(--sunny)}
+.badge{position:absolute;right:.6in;top:.82in;background:var(--tomato);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:12pt;padding:7pt 16pt;border-radius:24pt;transform:rotate(-3deg);white-space:nowrap}
+.inside{display:flex;gap:9pt;margin-top:15pt}
+.inside > div{flex:1;background:#fff;border:2.5pt solid var(--ink);border-radius:14pt;padding:11pt 9pt;text-align:center}
+.inside .n{font-family:'Luckiest Guy',cursive;font-size:23pt;color:var(--blue);line-height:1}
+.inside .l{font-size:9pt;font-weight:800;color:var(--grey);margin-top:3pt;line-height:1.3}
+/* practice */
+.wrow{display:flex;align-items:center;gap:9pt;background:#fff;border:2.5pt solid var(--ink);border-radius:15pt;padding:8pt 11pt;margin-bottom:8pt}
+.pic{flex:none;width:44pt;height:44pt;border-radius:11pt;background:var(--cream);border:2pt solid #E0E9F0;display:flex;align-items:center;justify-content:center}
+.word{font-family:'Fredoka',sans-serif;font-weight:600;font-size:22pt;width:82pt;letter-spacing:2px}
+.boxes{display:flex;gap:4pt}.bx{width:25pt;height:29pt;border:2pt dashed #9FB2C2;border-radius:6pt;background:var(--cream)}
+.wline{flex:1;border-bottom:2.5pt dotted #9FB2C2;height:25pt;margin-left:7pt}
+.hdr3{display:flex;font-family:'Fredoka',sans-serif;font-weight:600;font-size:9.5pt;color:var(--grey);text-transform:uppercase;letter-spacing:1.4px;margin:0 0 6pt 62pt}
+/* tables */
+table.dat{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:2.5pt solid var(--ink);border-radius:15pt;overflow:hidden}
+table.dat th{background:var(--ink);color:#fff;font-family:'Fredoka',sans-serif;font-weight:600;font-size:10pt;padding:7pt 6pt;text-align:left}
+table.dat td{border-top:1.5pt solid #E8EFF4;padding:7.5pt 6pt;font-size:10.5pt;font-weight:700}
+table.dat td.c{text-align:center;color:#A9BAC8}
+/* eval */
+.evalrow{display:flex;background:#fff;border:2.5pt solid var(--ink);border-radius:15pt;overflow:hidden;margin-bottom:9pt}
+.band{flex:none;width:74pt;color:#fff;font-family:'Luckiest Guy',cursive;font-size:20pt;display:flex;align-items:center;justify-content:center}
+.b-low{background:var(--tomato)}.b-mid{background:var(--sunny);color:var(--ink)}.b-hi{background:var(--leaf)}
+.evalbody{padding:9pt 12pt}.evalbody .means{font-weight:800;font-size:11pt;margin-bottom:3pt}
+.evalbody ul{margin-left:13pt;font-size:9.5pt;line-height:1.45}
+.promptbox{background:var(--ink);color:var(--cream);border-radius:15pt;padding:13pt 15pt}
+.promptbox .lbl{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--sunny);font-size:9.5pt;letter-spacing:2px;text-transform:uppercase;margin-bottom:5pt}
+.promptbox .p{background:#22405C;border-radius:9pt;padding:9pt 11pt;font-size:9.5pt;line-height:1.5;font-style:italic}
+.note{font-size:9pt;color:var(--grey);font-weight:700;margin-top:7pt;line-height:1.45}
+.ref{font-size:8.5pt;color:var(--grey);font-weight:600;line-height:1.5}
+</style></head><body>
+
+<!-- 1 COVER -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <svg class="doodle" style="right:2.9in;top:.95in" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2.2" stroke-linejoin="round"><path d="M12 2.6l2.5 6.2 6.7.5-5.1 4.3 1.6 6.5L12 16.6 6.3 20.1l1.6-6.5L2.8 9.3l6.7-.5z"/></svg>
+  <svg class="doodle" style="left:.6in;bottom:2.55in" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2.2" stroke-linecap="round"><path d="M4 19.5l2.6-.9L18 7.2l-1.7-1.7L4.9 16.9z"/><path d="M16.3 5.5l1.8-1.8 1.7 1.7-1.8 1.8z"/></svg>
+  <svg class="doodle" style="right:.75in;bottom:2.9in" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#2D6CB5" stroke-width="2.2" stroke-linejoin="round"><path d="M3 5.2h6.6a2.6 2.6 0 012.4 2.6v11a2.4 2.4 0 00-2.2-1.5H3z"/><path d="M21 5.2h-6.6A2.6 2.6 0 0012 7.8v11a2.4 2.4 0 012.2-1.5H21z"/></svg>
+  <svg class="doodle" style="left:3.55in;bottom:.42in" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E4572E" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"/></svg>
+  <div style="position:absolute;left:.6in;top:.95in"><div class="eyebrow">Bright Scholar · Reading Intervention</div></div>
+  <div class="badge">40 pages + Growth Eval</div>
+  <div style="position:absolute;left:.6in;right:.6in;top:1.85in">
+    <div class="covbox">
+      <h1 style="font-size:44pt">Short-Vowel<br>CVC Binder</h1>
+      <div class="sub" style="font-size:13.5pt;margin-top:11pt">Read it · Build it · Write it — a no-prep intervention binder<br>for beginning and struggling readers.</div>
+      <div style="margin-top:12pt"><span class="pill">Grades K–2</span><span class="pill t">No prep</span><span class="pill b">Print &amp; reuse</span><span class="pill g">Data sheets</span></div>
+    </div>
+    <div class="inside">
+      <div><div class="n">5</div><div class="l">short-vowel<br>units</div></div>
+      <div><div class="n">30</div><div class="l">practice<br>pages</div></div>
+      <div><div class="n">5</div><div class="l">probes +<br>data sheets</div></div>
+      <div><div class="n">2</div><div class="l">AI Growth<br>Eval pages</div></div>
+    </div>
+    <div style="background:var(--ink);color:var(--cream);border-radius:16pt;padding:14pt 18pt;margin-top:14pt;display:flex;align-items:center;gap:13pt">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l5-5 4 3 8-8"/><path d="M15 7h5v5"/></svg>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:13pt;line-height:1.35">Ends with an <b style="color:var(--sunny)">AI Growth Eval</b> — turn the scores<br>you collected into this week's next three moves.</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:.6in;right:.6in;bottom:.85in;display:flex;gap:9pt">
+    <div class="card" style="flex:1;padding:12pt 13pt">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2.1" stroke-linejoin="round"><path d="M4 4.6h16v14.8H4z"/><path d="M4 9.2h16M9.2 4.6v14.8"/></svg>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-top:4pt">Print once, reuse</div>
+      <div style="font-size:9pt;font-weight:700;color:var(--grey);line-height:1.4">Sleeve it, hand out a dry-erase marker, use it all year.</div>
+    </div>
+    <div class="card" style="flex:1;padding:12pt 13pt">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#2D6CB5" stroke-width="2.1" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h9"/></svg>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-top:4pt">Sequence printed inside</div>
+      <div style="font-size:9pt;font-weight:700;color:var(--grey);line-height:1.4">So you can slot it into the program you already teach.</div>
+    </div>
+    <div class="card" style="flex:1;padding:12pt 13pt">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#4CAF6D" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-top:4pt">Cited, not guessed</div>
+      <div style="font-size:9pt;font-weight:700;color:var(--grey);line-height:1.4">The research behind it is named on the last page.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Built and audited by two certified teachers</span><span>AI-Ready School</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 2 TAB DIVIDER -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">Unit 1 of 5 · Tab divider</div>
+    <div style="display:flex;align-items:center;gap:22pt;margin-top:8pt">
+      <div style="font-family:'Luckiest Guy',cursive;font-size:112pt;color:var(--tomato);line-height:.92">a</div>
+      <div><h1 style="font-size:32pt">Short a</h1>
+      <div class="sub" style="font-size:12pt">cat · map · sad · pan · bag · hat<br>Consonant–vowel–consonant. No blends, no digraphs.</div></div>
+    </div>
+    <h2 style="margin-top:16pt">The sequence in this binder</h2>
+    <div style="display:flex;gap:5pt;margin-top:7pt;flex-wrap:wrap">
+      <span class="pill t">1 · short a</span><span class="pill" style="background:#fff;border:2pt solid #D8E3EC;color:var(--grey)">2 · short i</span>
+      <span class="pill" style="background:#fff;border:2pt solid #D8E3EC;color:var(--grey)">3 · short o</span><span class="pill" style="background:#fff;border:2pt solid #D8E3EC;color:var(--grey)">4 · short u</span>
+      <span class="pill" style="background:#fff;border:2pt solid #D8E3EC;color:var(--grey)">5 · short e</span><span class="pill" style="background:#fff;border:2pt solid #D8E3EC;color:var(--grey)">6 · mixed review</span>
+    </div>
+    <div class="card" style="margin-top:15pt">
+      <h2 style="font-size:13.5pt;margin-bottom:5pt">How to use this unit</h2>
+      <div style="font-size:10.5pt;line-height:1.6">Print the practice pages once and slide them into sleeves — students write with a dry-erase
+      marker and the binder lasts all year. Teach the unit, practice daily, then give the ten-word probe on the data sheet.
+      Take the score to the Growth Eval page and it tells you whether to hold or move.</div>
+    </div>
+    <div class="card" style="margin-top:11pt">
+      <h2 style="font-size:13.5pt;margin-bottom:5pt">Why the sequence is printed here</h2>
+      <div style="font-size:10.5pt;line-height:1.6">So you can slot this into whatever phonics program you already use instead of guessing what it
+      assumes. Short <b>a</b> comes first because it is the most common short vowel in early decodable words, and <b>e</b>
+      comes last because <b>e</b> and <b>i</b> are the pair students most often confuse — separating them reduces that
+      collision. Every word in this unit is a true CVC word: one consonant, one short vowel, one consonant.</div>
+    </div>
+    <div style="background:var(--sunny);border-radius:15pt;padding:12pt 16pt;margin-top:11pt">
+      <div style="font-weight:800;font-size:10.5pt;line-height:1.55">Structure follows the IES practice guide's two strong-evidence recommendations for K–3: link speech
+      sounds to letters, and teach students to decode, write, and recognize words. Full citation on the last page.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Unit 1 · Short a</span><span>Bright Scholar · AI-Ready School</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 3 STUDENT PAGE -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">Short a · Practice page 1</div>
+    <h1 style="margin-top:3pt">Read it. Build it. Write it.</h1>
+    <div class="sub">Say the word out loud. Push a letter into each box. Then write it on the line.</div>
+    <div class="hdr3" style="margin-top:13pt"><span style="width:91pt">Read</span><span style="width:100pt">Build</span><span>Write</span></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E4572E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9L4 4l4 2.4h8L20 4l-1 5"/><path d="M5 9v4a7 7 0 0014 0V9"/><path d="M9.5 12.5h.01M14.5 12.5h.01"/><path d="M12 15.2v1.3M12 16.5l-2 1M12 16.5l2 1"/></svg></div>
+      <div class="word">cat</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2D6CB5" stroke-width="2" stroke-linejoin="round"><path d="M3 6.5l6-2.2 6 2.2 6-2.2v13.2l-6 2.2-6-2.2-6 2.2z"/><path d="M9 4.3v15.4M15 6.5v15"/></svg></div>
+      <div class="word">map</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8367C7" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><path d="M8.4 15.6s1.4-1.7 3.6-1.7 3.6 1.7 3.6 1.7"/><path d="M9 9.6h.01M15 9.6h.01"/></svg></div>
+      <div class="word">sad</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10h12v3.5a6 6 0 01-12 0z"/><path d="M15.5 11.2h4a1.6 1.6 0 010 3.2h-4"/></svg></div>
+      <div class="word">pan</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4CAF6D" stroke-width="2" stroke-linejoin="round"><path d="M5 8.5h14l-1.2 11.2H6.2z"/><path d="M9 8.5V6.6a3 3 0 016 0v1.9"/></svg></div>
+      <div class="word">bag</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div class="wrow"><div class="pic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M6.5 14.5C6.5 9.8 8.9 6.5 12 6.5s5.5 3.3 5.5 8"/><path d="M3.2 14.6h17.6v2.6H3.2z"/></svg></div>
+      <div class="word">hat</div><div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div><div class="wline"></div></div>
+    <div style="display:flex;gap:11pt;align-items:center;background:var(--teal);border-radius:15pt;padding:11pt 15pt;margin-top:10pt;color:#fff">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><path d="M8.4 14s1.4 1.8 3.6 1.8S15.6 14 15.6 14"/><path d="M9 9.8h.01M15 9.8h.01"/></svg>
+      <div style="font-weight:800;font-size:10.5pt">Challenge: pick two words and say a whole sentence for each, out loud.</div>
+    </div>
+    <div style="display:flex;gap:9pt;margin-top:9pt">
+      <div class="card" style="flex:1;padding:11pt 14pt">
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;color:var(--blue);margin-bottom:4pt">Colour a star for each word you read on your own</div>
+        <div style="display:flex;gap:7pt;margin-top:2pt">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#FFC43D" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.4 5.8 6.2.5-4.7 4 1.4 6-5.3-3.2L6.7 19.3l1.4-6-4.7-4 6.2-.5z"/></svg>
+        </div>
+      </div>
+      <div class="card" style="flex:none;width:2.05in;padding:11pt 13pt;text-align:center">
+        <div style="font-size:9pt;font-weight:800;color:var(--grey)">Teacher tally</div>
+        <div style="font-family:'Luckiest Guy',cursive;font-size:26pt;color:var(--blue);line-height:1.15">___ / 6</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Name: ______________________  Date: ____________</span><span>Bright Scholar</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 4 DATA SHEET -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">Progress monitoring</div>
+    <h1 style="margin-top:3pt">Unit 1 probe · data sheet</h1>
+    <div class="sub">Ten words, read aloud, once a week. Circle each one read correctly. Score out of 10 — then take the score to the Growth Eval.</div>
+    <table class="dat" style="margin-top:12pt">
+      <tr><th style="width:30%">Probe word</th><th>Week 1</th><th>Week 2</th><th>Week 3</th><th>Week 4</th></tr>
+      <tr><td>cat</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>map</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>sad</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>pan</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>bag</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>hat</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>tap</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>rag</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>jam</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td>van</td><td class="c">○</td><td class="c">○</td><td class="c">○</td><td class="c">○</td></tr>
+      <tr><td style="font-family:'Fredoka',sans-serif;color:var(--blue)">Score / 10</td><td class="c">___</td><td class="c">___</td><td class="c">___</td><td class="c">___</td></tr>
+    </table>
+    <div class="card" style="margin-top:12pt">
+      <h2 style="font-size:13pt;margin-bottom:4pt">What did you notice? (the eval page uses this)</h2>
+      <div style="font-size:10pt;color:var(--grey);font-weight:700">Which sound slipped · speed or accuracy · did the miss change week to week · did they self-correct</div>
+      <div style="border-bottom:2pt dotted #9FB2C2;height:20pt;margin-top:9pt"></div>
+      <div style="border-bottom:2pt dotted #9FB2C2;height:20pt"></div>
+      <div style="border-bottom:2pt dotted #9FB2C2;height:20pt"></div>
+    </div>
+    <div style="background:var(--sunny);border-radius:15pt;padding:12pt 16pt;margin-top:11pt">
+      <div style="font-weight:800;font-size:10.5pt;line-height:1.55">Move-on signal: <b>8 of 10 across two probes in a row.</b> Mastery criteria in phonics research
+      commonly sit at 80–90% accuracy; we use 80% twice rather than 90% once, so a single good day doesn't
+      look like mastery.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Student: ______________________</span><span>Bright Scholar · Unit 1</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 5 AI GROWTH EVAL -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">The Bright Scholar difference</div>
+    <h1 style="margin-top:3pt">AI Growth Eval · one student</h1>
+    <div class="sub">Find the score from the data sheet. Read across. No technology needed for any of this.</div>
+    <div style="margin-top:12pt">
+      <div class="evalrow"><div class="band b-low">0–4</div><div class="evalbody">
+        <div class="means">The sound isn't secure yet.</div>
+        <ul><li>Drop back to letter–sound work with just <b>a</b> — three minutes daily.</li>
+        <li>Use two-sound words (at, am) before three-sound words.</li>
+        <li>Re-probe in one week with the same ten words.</li></ul></div></div>
+      <div class="evalrow"><div class="band b-mid">5–7</div><div class="evalbody">
+        <div class="means">Blending is emerging but not automatic.</div>
+        <ul><li>Stay in the unit and keep the Build-It step — don't skip to writing.</li>
+        <li>Time one page: if accuracy is fine, the gap is speed, not the sound.</li>
+        <li>Re-probe in one week; move at 8 twice in a row.</li></ul></div></div>
+      <div class="evalrow"><div class="band b-hi">8–10</div><div class="evalbody">
+        <div class="means">Short <b>a</b> is solid. Move.</div>
+        <ul><li>Start Unit 2 (short i); keep short a alive in mixed review.</li>
+        <li>Spot-check short a again in three weeks.</li></ul></div></div>
+    </div>
+    <div class="promptbox" style="margin-top:3pt">
+      <div class="lbl">Optional · if you use an AI assistant</div>
+      <div class="p">"I teach 2nd grade. A student scored 6 out of 10 on a short-vowel CVC probe. The misses were
+      all words ending in -g and -m, and they self-corrected twice. Give me three specific next steps for this
+      week and one way to check whether it worked."</div>
+      <div style="font-size:9pt;font-weight:700;margin-top:8pt;color:#BBD0E2">Describe the grade and the pattern — never a name, never a class list. The student never uses the tool.</div>
+    </div>
+    <div class="note">Honest limits: ten words is a signal, not a diagnosis. Use it to choose this week's move, alongside everything else you know about the reader.</div>
+  </div>
+  <div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar · AI-Ready School</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 6 CLASS DATA SYNTHESIS -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">Data, synthesised</div>
+    <h1 style="margin-top:3pt">Group snapshot · who needs what</h1>
+    <div class="sub">Record the group by student number — S1, S2, S3 — not by name. The pattern across the group tells you how to
+    split your minutes next week — that is the decision this page exists to make.</div>
+    <table class="dat" style="margin-top:12pt">
+      <tr><th style="width:20%">Student</th><th>Score /10</th><th style="width:44%">Which words missed</th><th>Group</th></tr>
+      <tr><td>1.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+      <tr><td>2.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+      <tr><td>3.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+      <tr><td>4.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+      <tr><td>5.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+      <tr><td>6.</td><td class="c">___</td><td class="c">_______________________</td><td class="c">___</td></tr>
+    </table>
+    <div style="display:flex;gap:9pt;margin-top:11pt">
+      <div class="card" style="flex:1;border-color:var(--tomato)"><div style="font-family:'Luckiest Guy',cursive;font-size:17pt;color:var(--tomato)">Re-teach</div><div style="font-size:9.5pt;font-weight:700;color:var(--grey);margin-top:3pt">0–4 · daily sound work</div></div>
+      <div class="card" style="flex:1;border-color:var(--sunny)"><div style="font-family:'Luckiest Guy',cursive;font-size:17pt;color:#D89B00">Practise</div><div style="font-size:9.5pt;font-weight:700;color:var(--grey);margin-top:3pt">5–7 · stay in unit</div></div>
+      <div class="card" style="flex:1;border-color:var(--leaf)"><div style="font-family:'Luckiest Guy',cursive;font-size:17pt;color:var(--leaf)">Move on</div><div style="font-size:9.5pt;font-weight:700;color:var(--grey);margin-top:3pt">8–10 twice · next unit</div></div>
+    </div>
+    <div class="promptbox" style="margin-top:11pt">
+      <div class="lbl">Optional · let AI do the sorting</div>
+      <div class="p">"Here are short-vowel CVC probe scores for a 2nd-grade group, out of 10, with the words each one
+      missed. S1: 6 (bag, rag, jam, van). S2: 9 (jam). S3: 7 (bag, rag, jam). S4: 6 (rag, jam, bag, van). S5: 9 (rag).
+      S6: 4 (bag, rag, jam, van, sad, hat). Group them into re-teach / practise / move on, tell me the sound pattern
+      most of the group is missing, and suggest how to split 20 minutes of small-group time across the three groups
+      tomorrow."</div>
+      <div style="font-size:9pt;font-weight:700;margin-top:8pt;color:#BBD0E2">Student numbers only — S1, S2, S3. No names, no initials, nothing about the child beyond the score and the words missed.</div>
+    </div>
+    <div class="note">Why this works: the words each student missed carry more information than the score. In the example
+    above, five of six students read cat, map, pan, sad, hat and tap correctly and missed bag, rag or jam — the vowel is
+    the same in every one of those words, so the short <b>a</b> is not the problem. The final sounds -g and -m are. That is
+    a fifteen-minute lesson, not a re-teach of the whole unit.</div>
+  </div>
+  <div class="foot"><span>Group snapshot · Unit 1</span><span>Bright Scholar · AI-Ready School</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+
+<!-- 7 HOW THIS IS BUILT / CITATIONS -->
+<div class="sheet">
+  <div class="rainbow top"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+  <div class="pad">
+    <div class="eyebrow">For the teacher</div>
+    <h1 style="margin-top:3pt">How this binder is built</h1>
+    <div class="sub">What we based it on, what we are claiming, and what we are not.</div>
+    <div class="card" style="margin-top:12pt">
+      <h2 style="font-size:13.5pt;margin-bottom:5pt">The instructional structure</h2>
+      <div style="font-size:10.5pt;line-height:1.6">Each unit links speech sounds to letters and then asks the student to decode, build, and write the
+      same words. That mirrors the two <b>strong-evidence</b> recommendations in the IES/What Works Clearinghouse practice
+      guide for K–3 foundational skills: <i>"Develop awareness of the segments of sounds in speech and how they link to
+      letters"</i> and <i>"Teach students to decode words, analyze word parts, and write and recognize words."</i></div>
+    </div>
+    <div class="card" style="margin-top:10pt">
+      <h2 style="font-size:13.5pt;margin-bottom:5pt">The 8-of-10 move-on signal</h2>
+      <div style="font-size:10.5pt;line-height:1.6">Mastery criteria in phonics commonly sit between 80% and 100% accuracy, with 90% often cited.
+      We ask for 80% on two consecutive probes rather than 90% once, because repeating the criterion is what separates a
+      good day from a secure skill. Adjust it to match whatever your school already uses — the data sheet works either way.</div>
+    </div>
+    <div class="card" style="margin-top:10pt">
+      <h2 style="font-size:13.5pt;margin-bottom:5pt">What we are not claiming</h2>
+      <div style="font-size:10.5pt;line-height:1.6">This binder is not aligned to, affiliated with, or a substitute for any named phonics program, and
+      it is not a diagnostic assessment. It is practice material and a ten-word progress check. Every word in Unit 1 is a
+      true short-<b>a</b> CVC word — one consonant, one short vowel, one consonant — with no blends or digraphs, so the
+      probe measures the one thing it says it measures.</div>
+    </div>
+    <div class="card" style="margin-top:10pt">
+      <h2 style="font-size:13.5pt;margin-bottom:6pt">References</h2>
+      <div class="ref">Foorman, B., Beyler, N., Borradaile, K., Coyne, M., Denton, C. A., Dimino, J., Furgeson, J., Hayes, L.,
+      Henke, J., Justice, L., Keating, B., Lewis, W., Sattar, S., Streke, A., Wagner, R., &amp; Wissel, S. (2016).
+      <i>Foundational skills to support reading for understanding in kindergarten through 3rd grade</i> (NCEE 2016-4008).
+      National Center for Education Evaluation and Regional Assistance, Institute of Education Sciences, U.S. Department
+      of Education. Revised December 2019.<br><br>
+      Phonics Hero. <i>Mastery in phonics learning.</i> — summary of criterion levels used in phonics research (80–100%,
+      with 90% most commonly cited).</div>
+    </div>
+    <div style="background:var(--ink);color:var(--cream);border-radius:15pt;padding:13pt 16pt;margin-top:11pt">
+      <div style="font-weight:800;font-size:10.5pt;line-height:1.55">Built and audited by two certified teachers. If you find an error in any word list or probe,
+      email us through TPT and we will fix it and re-upload the same day — you keep the updated file free.</div>
+    </div>
+  </div>
+  <div class="foot"><span>How this binder is built</span><span>Bright Scholar · AI-Ready School</span></div>
+  <div class="rainbow bot"><i class="r1"></i><i class="r2"></i><i class="r3"></i><i class="r4"></i></div>
+</div>
+</body></html>
