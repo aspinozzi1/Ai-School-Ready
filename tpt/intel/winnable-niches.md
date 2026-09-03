@@ -35,6 +35,8 @@ new store; above 1,000 is a genuine opening.
 | Phrase | Searches | Resources | Badge | Win score | Status |
 |---|---|---|---|---|---|
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
+| **iep goal tracking** | 4,768 | 3K–8K | Strong | **867** | **OPEN — new #1 target (pull #10)** |
+| **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **OPEN — pairs with the row above** |
 | **parent communication log** | 7,570 | 3K–8K | Strong | **1,376** | shipped 08-30 ($6) |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
 | sub binder | 13,284 | 8K–20K | Strong | 949 | served by the binder |
@@ -61,6 +63,18 @@ new store; above 1,000 is a genuine opening.
 | parent communication | 1,195 | 75K–150K | Moderate | 11 | **retag away from this** |
 
 ## The next two builds this ranking picks
+*(superseded 2026-09-03 by pull #10 — the data-tracking family below now
+outranks both. Take Home Folder and Happy Mail move to third and fourth.)*
+
+**New #1: IEP Goal & Progress Monitoring Tracker.** "iep goal tracking"
+4,768 · 3K–8K · Strong (score 867) plus "progress monitoring tracking
+sheet" 4,174 · 3K–8K · Strong (score 759). It is also the closest
+possible fit to our differentiator: goal pages, weekly data sheets,
+graphs, and an AI synthesis page that reads six weeks of de-identified
+scores and drafts the progress-report sentence. Guardrail: it is a
+tracking tool, never advice on what a goal should say or whether a
+student qualifies.
+
 
 1. **Take-Home Folder system** — 11,603 searches at 8K–20K, Strong.
    Big real demand, and the artifact is squarely in our wheelhouse:

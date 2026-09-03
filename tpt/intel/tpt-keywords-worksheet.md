@@ -547,3 +547,76 @@ we need demand and buyer intent, not low competition.
 6. Ignore "my nerdy teacher" and "flying through phonics ufli" as
    targets — those are a store name and a specific product line; people
    searching them want that seller, not us.
+
+---
+
+# Pulls #9–#10 — sight words + progress monitoring (owner-run, 2026-09-03)
+
+## Seed: sight words — 15,043 · 150K–300K · Moderate
+
+| Related | Searches | Resources | Opportunity |
+|---|---|---|---|
+| **morning work** | **70,345** | >500K | **Promising** |
+| cvc words | 10,043 | 150K–300K | Moderate |
+| sight word practice | 6,043 | 150K–300K | Moderate |
+| sight words worksheets | 2,579 | 75K–150K | Moderate |
+| sight words kindergarten | 1,325 | 150K–300K | Challenging |
+| sight word list | 1,246 | 20K–40K | Moderate |
+| sight word flash cards | 967 | 20K–40K | Moderate |
+| sight words list | 373 | 20K–40K | Challenging |
+| sight words free | 180 | 20K–40K | Challenging |
+
+**Verdict: sight words is the weaker twin of CVC.** Every phrase in the
+family is Moderate or Challenging — not one Promising. This confirms
+leading Friday with the CVC family instead. Sight words stays a tag.
+
+**"morning work" (70,345 · Promising despite >500K resources, score 117)**
+is a genuine compete-lane target and matches the "Morning Adapted Work
+Binder" among the owner's screenshotted best-sellers. Backlog it as a
+Friday format.
+
+## Seed: progress monitoring — 2,010 · 20K–40K · Moderate
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **iep goal tracking** | **4,768** | **3K–8K** | **Strong** | **867** |
+| **progress monitoring tracking sheet** | **4,174** | **3K–8K** | **Strong** | **759** |
+| data tracker | 7,386 | 20K–40K | Strong | 246 |
+| progress monitoring forms special education | 1,300 | 3K–8K | Promising | 236 |
+| progress monitoring google sheets | 319 | 1K–3K | Promising | 160 |
+| iep progress monitoring | 859 | 8K–20K | Promising | 61 |
+| data tracking | 1,596 | 40K–75K | Moderate | 27 |
+| data collection | 1,357 | 40K–75K | Moderate | 24 |
+| progress monitoring iep | 35 | 3K–8K | Challenging | 6 |
+| progress monitoring math | 61 | 8K–20K | Challenging | 4 |
+
+## What pulls #9–#10 decide — this is the biggest finding since pull #4
+
+1. **"iep goal tracking" (4,768 · 3K–8K · Strong) scores 867 — the second
+   highest number in the entire dataset**, behind only the parent
+   questionnaire (2,279). **"progress monitoring tracking sheet"
+   (4,174 · 3K–8K · Strong) scores 759.** Both clear the under-3,000
+   filter comfortably on the badge and sit in a resource band we can
+   rank in.
+2. **This family is the closest possible fit to what makes us different.**
+   Our whole differentiator is turning collected data into next steps —
+   the Growth Eval and the Group Snapshot already exist and already work.
+   A data-tracking product is that capability sold directly, instead of
+   bolted onto a phonics binder.
+3. **These belong on SUNDAY, not Friday.** They are win-lane scores, not
+   compete-lane. Put them at the top of `winnable-niches.md`, above take
+   home folder (829) and happy mail (816).
+4. Recommended first build: an **IEP Goal & Progress Monitoring Tracker**
+   — goal pages, weekly data sheets, graph pages, plus the AI synthesis
+   page ("here are six weeks of scores on this goal, de-identified —
+   summarise the trend, say whether the goal is on pace, and draft the
+   progress-report sentence"). That last step is the exact chore SPED
+   teachers dread most, and no competitor is doing it.
+5. **Caveat before building:** IEP work touches legally-binding
+   documents. The product must be a *tracking tool*, never advice about
+   what a goal should say or whether a student qualifies, and the AI
+   half must stay de-identified. Same posture as the deaf-ed lane:
+   pedagogy and paperwork support, never a legal or clinical opinion.
+6. "data tracker" (7,386 · 20K–40K · Strong) is the broad-audience
+   sibling — bigger, more crowded, worth a second product once the IEP
+   one lands.
