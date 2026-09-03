@@ -148,6 +148,16 @@ the same file (so Sun 2026-08-30 and Wed 2026-09-02 are both W36).
 The factories read their day's brief before building; briefs may
 override the calendar row per the standing rules.
 
+### The concentration rule (owner approved 2026-09-03)
+
+**Prefer a second product in a family we already hold over a first
+product in a new one**, unless the new one outranks everything currently
+open on win score. Three drop days produce ~14 products a week; without
+this rule the catalog sprawls and nothing gets deep enough to rank.
+Sunday owns the data-tracking family, Wednesday owns YE + Deaf Ed,
+Friday builds one binder unit by unit until it bundles. Full sequence
+and reasoning: `tpt/intel/roadmap-2026-09.md`.
+
 ### Win lanes vs the compete lane (owner directive 2026-09-03)
 
 Two different games, deliberately:

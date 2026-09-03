@@ -35,8 +35,8 @@ new store; above 1,000 is a genuine opening.
 | Phrase | Searches | Resources | Badge | Win score | Status |
 |---|---|---|---|---|---|
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
-| **iep goal tracking** | 4,768 | 3K–8K | Strong | **867** | **OPEN — new #1 target (pull #10)** |
-| **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **OPEN — pairs with the row above** |
+| **iep goal tracking** | 4,768 | 3K–8K | Strong | **867** | **BUILDING Sun 09-06** |
+| **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **BUILDING Sun 09-06 (same product)** |
 | **parent communication log** | 7,570 | 3K–8K | Strong | **1,376** | shipped 08-30 ($6) |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
 | sub binder | 13,284 | 8K–20K | Strong | 949 | served by the binder |
