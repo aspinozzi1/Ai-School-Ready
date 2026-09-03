@@ -56,17 +56,17 @@ The week has **two drops** and a research rhythm that feeds them
   Shorts, full kits/kit retrofits, deep template packs, or a bundle
   assembled from existing listings.
 
-**Lane 5 · Open Demand (owner directive 2026-09-01):**
-- **1–2 products** built on the highest **win score** phrase not yet
-  served — see `tpt/intel/winnable-niches.md`, which holds the standing
-  ranking and the scoring rule (searches ÷ resource-bucket midpoint ×
-  1000, Strong/Promising badges only).
-- This lane has no audience and no theme. It exists to catch the items
-  teachers most want that we can still rank for as a young store.
-- Next two open targets: **take home folder** (11,603 · 8K–20K ·
-  Strong) and **happy mail** (4,488 · 3K–8K · Strong).
-- (The Classical Education lane proposed 2026-09-01 was cut by the
-  owner the same day — poor fit. See git history for the analysis.)
+**Lane 5 · Best-Sellers + Open Demand (owner directives 2026-09-01,
+2026-09-03):**
+- Primary job now: the **Best-Seller line** — proven TPT formats rebuilt
+  as original Bright Scholar content, each ending in the **AI Growth
+  Eval** page. Binding spec and the five owner decisions:
+  `tpt/intel/bestseller-formats.md`. First build is ONE format at 40–60
+  pages, priced **$15–20**, and it may author real academic
+  student-facing content (see that file's authoring standard).
+- When no best-seller build is in flight, the lane falls back to the
+  highest open **win score** row in `tpt/intel/winnable-niches.md`
+  (currently: take home folder 829, happy mail 816).
 
 **Lane 2 · Homeschool AI:**
 - **2 free resources** targeting homeschool/family searches, and
@@ -144,6 +144,15 @@ the same file (so Sun 2026-08-30 and Wed 2026-09-02 are both W36).
 
 The factories read their day's brief before building; briefs may
 override the calendar row per the standing rules.
+
+### The AI Growth Eval — brand signature on EVERY product (2026-09-03)
+
+Every product ends with a Growth Eval, scaled to its size: a printable
+**score band → what it means → next three moves** table, plus an
+optional copy-paste prompt using **de-identified data only** (never a
+name, never a child at a keyboard, never a roster in a chatbot). On a
+one-page free this is a short footer block; on a paid kit it is a full
+page. Existing catalog gets retrofitted over time, newest first.
 
 ### Production steps (run once per product, each drop day)
 
