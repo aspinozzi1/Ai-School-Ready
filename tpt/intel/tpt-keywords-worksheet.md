@@ -620,3 +620,45 @@ Friday format.
 6. "data tracker" (7,386 · 20K–40K · Strong) is the broad-audience
    sibling — bigger, more crowded, worth a second product once the IEP
    one lands.
+
+---
+
+# Pull #11 — special education (owner-run, 2026-09-03)
+
+## Seed: special education — 8,550 · >500K · Moderate
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| back to school | 259,703 | >500K | Strong | 433 |
+| first day of school activities | 238,492 | >500K | Strong | 397 |
+| all about me | 168,899 | 150K–300K | Strong | 751 |
+| life skills | 10,397 | >500K | Moderate | 17 |
+| autism | 4,648 | 150K–300K | Moderate | 21 |
+| **special education morning meeting slides** | **2,006** | **3K–8K** | **Promising** | **365** |
+| special education task boxes | 1,456 | 20K–40K | Moderate | 49 |
+| **special education teacher planner** | **874** | **8K–20K** | **Promising** | **62** |
+| special education visuals | 757 | 300K–500K | Challenging | 2 |
+| special education free | 151 | 75K–150K | Very Difficult | 1 |
+
+## What pull #11 decides
+
+1. **"special education" itself is a tag, never a title** — 8,550 searches
+   against >500K resources, Moderate. Confirms the deaf-ed lane's
+   existing strategy of titling on self-advocacy and tagging SPED.
+2. **"special education morning meeting slides" (2,006 · 3K–8K ·
+   Promising, score 365)** is the one open door in this family — and it
+   is the *third* independent signal this week pointing at **editable
+   slides** as a format we don't yet produce (after "classroom
+   procedures and routines powerpoint" 3,997/Strong and the general
+   slides demand). Three separate families asking for slides is now a
+   tooling decision, not a coincidence: **building a slides pipeline is
+   worth a week of engineering.**
+3. **"all about me" (168,899 · 150K–300K · Strong, score 751)** — enormous
+   volume with a Strong badge. It is seasonal (back-to-school) and
+   crowded, but the score is real. A compete-lane candidate for next
+   August, not now; noted so we don't rediscover it late.
+4. "special education teacher planner" (874 · 8K–20K · Promising) is a
+   modest but clean opening that pairs naturally with the IEP tracker.
+5. Confirmed traps: special education visuals (Challenging at
+   300K–500K), special education free (Very Difficult), life skills and
+   autism (Moderate at >150K).
