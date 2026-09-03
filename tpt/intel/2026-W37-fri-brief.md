@@ -24,44 +24,38 @@ sample to a complete unit.
 
 **12 pages. Price $5, additional license $2.50.**
 
-## Title (drafted, ≤80 chars — pick at build)
+## Title — VALIDATED 2026-09-03 (owner ran the lookups before the drop)
 
-1. `Short A CVC Intervention Binder | Unit 1 with Data Sheets & AI Growth Eval` — 74
-2. `Reading Intervention Binder | Short A CVC Words, Probe, Data & Growth Eval` — 74
+**`CVC Words Worksheets | Short A Intervention Binder with Data & AI Growth Eval`** (77 chars)
 
-Prefer #1 if the Wednesday worksheet confirms "cvc" pulls; prefer #2 if
-"reading intervention binder" is the stronger family. Both fit.
+- Lead phrase **"cvc words worksheets" — 7,473 searches · 40K–75K ·
+  Promising** (TPT Keywords, owner-run 2026-09-03). Best intent and best
+  badge in the family.
+- Deliberately NOT the bare head "cvc words" (10,412 · 150K–300K ·
+  Moderate): more volume, much worse odds, and less buyer intent.
+- Tail carries **"intervention binder"**, echoing "reading intervention
+  binder" (255 · 3K–8K · Promising) — the exact format phrase, low
+  competition, right as a secondary.
 
-Tags: cvc words · reading intervention · phonics intervention ·
-short a · progress monitoring · special education.
+Tags: cvc words worksheets · cvc word list · cvc words · reading
+intervention binder · phonics · sight words.
 
-## ⚠ Validation status — UNVALIDATED, and here is why
+## ✅ Validation status — VALIDATED
 
-No TPT Keywords data exists yet for this phrase family. The owner's
-first Friday-lane worksheet goes out **Wednesday 2026-09-09**, and the
-owner chose to ship before it returns. Per the binding rule this ships
-flagged: **"unvalidated — owner elected to launch the lane before the
-first Friday worksheet."**
+The earlier "unvalidated" flag is **withdrawn**. The owner ran the
+CVC / reading-intervention / phonics-intervention lookups on
+2026-09-03, before the drop. Full tables: `tpt-keywords-worksheet.md`
+pull #8. Every claim in this brief now traces to primary-meter data.
 
-What we do have is the **compete-lane test**, and this format passes all
-four gates:
+## Two findings for later, not for tomorrow
 
-1. **Durable demand** — CVC and reading-intervention material sells
-   year-round, not on a seasonal spike.
-2. **Price ceiling** — from the owner's own screenshot of live
-   best-sellers: Reading Intervention Binder for Beginning Readers
-   **$21.50** (4.9, 9.8K ratings) · No-Prep Intervention Binder BUNDLE
-   ELA + Math **$42.00** · Morning Adapted Work Binder **$10.00** ·
-   Kindergarten/1st CVC & Sight Word Practice **$8.50**. A $5 unit sits
-   well under all of them; the eventual 5-unit bundle at **$18** sits
-   under the $21.50 comparable.
-3. **Scoreable** — a 10-word probe produces a number and a miss pattern.
-   This is the cleanest possible Growth Eval input.
-4. **Authorable honestly** — word lists are mechanically checkable, and
-   the structure is citable to the IES/WWC practice guide.
-
-Retitle after the worksheet returns if the data says so. That is cheap
-on TPT and costs nothing but a listing edit.
+- **UFLI: 17,926 searches · 20K–40K · Strong** — a ~597 win score, about
+  5× our lead phrase, and the biggest opening in the dataset to date.
+  It is a named program and a trademark, so it needs an owner decision
+  before anything is built. See pull #8, finding 4.
+- **"addition and subtraction within 20": 15,959 · 40K–75K · Promising**
+  (score 278) — the math twin of this opening, and the natural second
+  Friday format once the CVC units are done.
 
 ## Build gates specific to this unit
 

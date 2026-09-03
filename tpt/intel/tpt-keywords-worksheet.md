@@ -468,3 +468,82 @@ back-to-school pattern.
    classroom families (procedures, sub plans, parent comm). Keeps its
    Monday slot, but Lane 1 stays the revenue engine — matches the
    existing 5-free/1-mid/1-high vs 2-free/1-paid split. No change.
+
+---
+
+# Pull #8 — CVC / reading intervention / phonics intervention (owner-run, 2026-09-03)
+Run for the **Friday compete lane**. Different question from the win lanes:
+we need demand and buyer intent, not low competition.
+
+## Seed: cvc words — 10,412 · 150K–300K · Moderate
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **cvc words worksheets** | **7,473** | **40K–75K** | **Promising** | **130** |
+| addition and subtraction within 20 | 15,959 | 40K–75K | Promising | 278 |
+| sight words | 14,545 | 150K–300K | Moderate | 65 |
+| phonics | 13,705 | >500K | Moderate | 23 |
+| cvc | 6,411 | 150K–300K | Moderate | 28 |
+| letter sounds | 4,325 | 150K–300K | Moderate | 19 |
+| cvc worksheets | 2,961 | 40K–75K | Moderate | 52 |
+| **cvc word list** | **1,262** | **8K–20K** | **Promising** | **90** |
+| cvc words with pictures | 821 | 40K–75K | Moderate | 14 |
+| cvc words free | 207 | 8K–20K | Moderate | 15 |
+
+## Seed: reading intervention — 2,765 · 150K–300K · Moderate
+
+| Related | Searches | Resources | Opportunity |
+|---|---|---|---|
+| reading comprehension passages and questions | 34,571 | 300K–500K | Promising |
+| reading comprehension | 21,555 | >500K | Promising |
+| reading | 11,993 | >500K | Moderate |
+| science of reading | 2,983 | >500K | Challenging |
+| math intervention | 2,622 | 150K–300K | Moderate |
+| reading fluency | 2,619 | 150K–300K | Moderate |
+| intervention | 1,362 | >500K | Challenging |
+| phonics intervention | 751 | 75K–150K | Moderate |
+| **reading intervention binder** | **255** | **3K–8K** | **Promising** |
+
+## Seed: phonics intervention — 789 · 75K–150K · Moderate
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **ufli** | **17,926** | **20K–40K** | **Strong** | **597** |
+| **my nerdy teacher** | 10,720 | 1K–3K | Strong | 5,360 (a seller's store name) |
+| phonics worksheets | 6,141 | 150K–300K | Moderate | 27 |
+| phonics games | 1,805 | 150K–300K | Challenging | 8 |
+| **flying through phonics ufli** | 1,557 | <1K | Strong | (a specific product line) |
+| writing intervention | 546 | 75K–150K | Challenging | 5 |
+| free phonics intervention | 8 | 3K–8K | Challenging | 1 |
+
+## What pull #8 decides
+
+1. **Friday's lead phrase is "cvc words worksheets"** — 7,473 searches at
+   40K–75K, Promising. Highest intent + best badge in the CVC family.
+   The bare head "cvc words" (10,412) sits at 150K–300K/Moderate: more
+   volume, far worse odds. Title leads with the worksheets phrase.
+2. **"reading intervention binder" (255 · 3K–8K · Promising)** is tiny in
+   volume but is the exact format phrase at low competition — perfect as
+   a secondary phrase in the title tail and a tag, not the lead.
+3. **"cvc word list" (1,262 · 8K–20K · Promising)** — a genuinely open
+   companion phrase. A free CVC word-list download is a strong funnel
+   into the paid units. Backlog it.
+4. **UFLI is the single biggest opportunity in the entire dataset so far
+   — and it needs an owner decision.** 17,926 searches against only
+   20K–40K resources with a **Strong** badge is a win score of ~597,
+   roughly 5× "cvc words worksheets". UFLI Foundations is a real,
+   widely-adopted phonics program whose scope and sequence is published,
+   and a large TPT cottage industry sells supplements for it. Two things
+   make this a decision rather than a build: it is a **named program and
+   a trademark**, and our own authoring standard forbids claiming
+   alignment we have not actually grounded. Doing it properly means
+   working from the published sequence and labelling ourselves a
+   supplement, not an affiliate. Do not build against it until the owner
+   rules.
+5. **"addition and subtraction within 20" (15,959 · 40K–75K · Promising,
+   score 278)** — the math equivalent of our CVC opening, and the second
+   Friday format when the CVC binder is done. "math intervention" (2,622,
+   Moderate) is the weak head; the within-20 phrase is the door.
+6. Ignore "my nerdy teacher" and "flying through phonics ufli" as
+   targets — those are a store name and a specific product line; people
+   searching them want that seller, not us.
