@@ -189,3 +189,24 @@ Prompting note: the prompt describes the *convention* — bold uniform
 outline, flat solid fills, no gradients or shadows, literal colours — and
 never names another seller's brand. Naming a live competitor's style to
 reproduce it and then selling alongside them is not a road we go down.
+
+
+### Vowel order — settled 2026-09-04
+
+Units run **a, i, o, u, e**, not alphabetically. Short /e/ and short /i/
+are the two short vowels beginning readers most often confuse, and
+published phonics scope-and-sequences commonly separate them as far
+apart in the order as possible — so short e is taught last, four units
+from short i. Cited on the binder's own "How this is built" page
+(NJTSS / Reading Rockets sample scope and sequence), and labelled there
+as a **practitioner convention, not experimental evidence**, because
+that is what it is.
+
+The owner briefly asked for alphabetical order; when the reason for the
+existing order was verified against published sequences, they kept the
+pedagogy. Worth remembering: when a request would contradict something
+already printed in the product, check the claim before changing either.
+
+Display rule from the same pass: **vowel letters always render lowercase**
+(a, i, o, u, e). The display face's lowercase glyphs read as capitals, so
+single-letter displays use Fredoka rather than the heading face.

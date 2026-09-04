@@ -6,7 +6,14 @@ const { UNITS, css, sheet, icon, W, unitPages } = B;
 const head = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
 <title>Short-Vowel CVC Intervention Binder</title>
 <link href="file://${S}/fonts/fonts.css" rel="stylesheet">
-<style>${css}</style></head><body>\n`;
+<style>${css}
+.tight .card{padding:9pt 14pt}
+.tight h1{font-size:26pt}
+.tight .sub{margin-top:3pt;font-size:10pt}
+.tight .ref{font-size:8pt;line-height:1.42}
+.tight h2{font-size:12.5pt !important;margin-bottom:4pt !important}
+.tight .card div{font-size:10pt !important;line-height:1.5 !important}
+</style></head><body>\n`;
 
 const pages = [];
 
@@ -23,7 +30,7 @@ pages.push(`<div class="sheet">
     </div>
     <div style="display:flex;gap:8pt;margin-top:12pt">
       ${UNITS.map(u=>`<div style="flex:1;background:#fff;border:2.5pt solid var(--ink);border-radius:14pt;padding:9pt 4pt;text-align:center">
-        <div style="font-family:'Luckiest Guy',cursive;font-size:26pt;color:${u.colour};line-height:1">${u.v}</div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:28pt;color:${u.colour};line-height:1">${u.v}</div>
         <div style="font-size:8.5pt;font-weight:800;color:var(--grey)">${u.name.replace('Short ','short ')}</div></div>`).join('')}
     </div>
     <div style="display:flex;gap:9pt;margin-top:11pt">
@@ -62,10 +69,10 @@ pages.push(`<div class="sheet">
 pages.push(sheet(`
   <div class="eyebrow">Start here</div>
   <h1 style="margin-top:3pt">How to use this binder</h1>
-  <div class="sub">Five units, one short vowel each, in the order that keeps the confusable vowels apart.</div>
+  <div class="sub">Five units, one short vowel each, in the order that keeps the two confusable vowels apart.</div>
   <div style="display:flex;gap:9pt;margin-top:13pt">
     ${UNITS.map((u,i)=>`<div class="card" style="flex:1;text-align:center;padding:12pt 6pt">
-      <div style="font-family:'Luckiest Guy',cursive;font-size:34pt;color:${u.colour};line-height:1">${u.v}</div>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:36pt;color:${u.colour};line-height:1">${u.v}</div>
       <div style="font-size:9.5pt;font-weight:800;color:var(--grey);margin-top:3pt">Unit ${i+1}</div></div>`).join('')}
   </div>
   <div class="card" style="margin-top:13pt">
@@ -77,10 +84,14 @@ pages.push(sheet(`
   </div>
   <div class="card" style="margin-top:10pt">
     <h2 style="font-size:13.5pt;margin-bottom:5pt">Why this sequence</h2>
-    <div style="font-size:10.5pt;line-height:1.65">Short <b>a</b> comes first because it appears in more early decodable words than any
-    other short vowel. Short <b>e</b> comes last because <b>e</b> and <b>i</b> are the pair students most often confuse, and separating
-    them reduces that collision. The sequence is printed here so you can slot this into whatever phonics programme you already teach
-    instead of guessing what it assumes.</div>
+    <div style="font-size:10.5pt;line-height:1.65">The units run <b>a, i, o, u, e</b> rather than alphabetically. Short
+    <b>e</b> and short <b>i</b> are the two short vowels beginning readers most often confuse, and published phonics
+    scope-and-sequences commonly separate them as far apart in the order as possible for exactly that reason — so short
+    <b>e</b> comes last, four units away from short <b>i</b>. Short <b>a</b> comes first because it appears in more early
+    decodable words than any other short vowel.<br><br>
+    The sequence is printed here so you can slot this into whatever phonics programme you already teach instead of guessing
+    what it assumes. The units are independent — if your programme introduces the vowels in a different order, teach the
+    tabs in that order and the probes still work.</div>
   </div>
   <div class="card" style="margin-top:10pt">
     <h2 style="font-size:13.5pt;margin-bottom:5pt">What is in every unit</h2>
@@ -145,12 +156,25 @@ const grab = marker => {
 pages.push(grab('AI Growth Eval · one student'));
 pages.push(grab('Group snapshot · who needs what'));
 pages.push(grab('How this unit is built')
-  .replace('How this unit is built', 'How this binder is built')
+  .replace(/How this unit is built/g, 'How this binder is built')
   .replace('Unit 2 (short i) follows.', 'The mixed-review probe at the back checks all five vowels together.')
   .replace('Each unit links', 'Each of the five units links')
   .replace('Every target word in this\n      unit is a true short-<b>a</b> CVC word', 'Every target word in this binder is a true CVC word')
   .replace('true short-<b>a</b> CVC word', 'true CVC word')
-  .replace('This unit is not aligned', 'This binder is not aligned'));
+  .replace('This unit is not aligned', 'This binder is not aligned')
+  .replace('<div class="pad">', '<div class="pad tight">')
+  // add the scope-and-sequence citation the binder's vowel order rests on
+  .replace('Phonics Hero. <i>Mastery in phonics learning.</i>',
+    'NJTSS / Reading Rockets. <i>Sample phonics scope and sequence.</i> — one of several published sequences that order '
+  + 'the short vowels a, i, o, u, e so the easily confused short /i/ and short /e/ are kept apart. A widely used '
+  + 'practitioner convention, not a claim of experimental evidence.<br><br>Phonics Hero. <i>Mastery in phonics learning.</i>')
+  // the extra reference pushes the closing note into the footer — tighten it
+  .replace('padding:12pt 16pt;margin-top:10pt', 'padding:10pt 15pt;margin-top:5pt')
+  .replace('class="card" style="margin-top:9pt"', 'class="card" style="margin-top:7pt"')
+  .replace('Built and audited by two certified teachers. The mixed-review probe at the back checks all five\n      vowels together. If you find an error in any word\n      list or probe, message us through TPT and we will fix it and re-upload the same day \u2014 you keep the\n      updated file free.',
+           'Built and audited by two certified teachers. Find an error in any word list or probe? Message us through TPT \u2014 we fix it and re-upload the same day, and you keep the updated file free.')
+  .replace('margin-top:9pt">\n      <h2 style="font-size:13.5pt;margin-bottom:6pt">References</h2>',
+           'margin-top:8pt">\n      <h2 style="font-size:13pt;margin-bottom:5pt">References</h2>'));
 
 fs.writeFileSync(process.argv[2], head + pages.join('\n') + '\n</body></html>');
 console.log('pages emitted:', pages.length);
