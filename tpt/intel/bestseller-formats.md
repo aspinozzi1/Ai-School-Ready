@@ -119,3 +119,31 @@ unit 2), and it gives Friday a shippable product every week.
 Example, first binder: Unit 1 short a → Unit 2 short i → Unit 3 short o
 → Unit 4 short u → Unit 5 short e → **bundle: Short-Vowel CVC
 Intervention Binder, $18** (units $4–5 each, bundle saves ~25%).
+
+---
+
+## Shipped log
+
+- **2026-09-04 — Unit 1: Short A.** 12 pages, $5 / license $2.50.
+  Title `CVC Words Worksheets | Short A Intervention Binder with Data &
+  AI Growth Eval` (77 chars), lead phrase "cvc words worksheets"
+  (7,473 · 40K–75K · Promising, owner-run TPT Keywords 2026-09-03).
+  Mechanical check: `kits/tooling/check_cvc.py` — 53 target words, 23
+  unique, **0 violations** (every word three letters, middle `a`,
+  consonant either side, no blends or digraphs).
+  **Next: Unit 2 (short i), Friday 2026-09-11.** Units 3–5 follow, then
+  the bundle at $18.
+
+### Gate bug found and fixed during this build
+
+`check_breaks.py` only ever scanned files passed as arguments. Run with
+no arguments — which is how the playbook's gate list reads — it scanned
+nothing and printed `flags: 0`. **Every "flags: 0" from an argument-less
+run was a false all-clear.** It now defaults to every PDF under
+`UPLOAD/`, and the repo-wide run reports honestly.
+
+With that fixed, the true result for this unit is **2 flags**, both on
+the same pattern (a small teacher-tally box near a page bottom matched
+against a similar box near the next page top). Verified visually on the
+contact sheet and dismissed: every page is a fixed-height `.sheet` with
+`overflow:hidden`, so no content can flow across a page boundary.

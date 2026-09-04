@@ -239,6 +239,11 @@ const PIN_COPY = {
     sub: 'Task-planning checklist + self-check card for DHH students. Free.',
     board: 'Deaf Education',
     desc: 'Free executive functioning checklists for Deaf and hard of hearing (DHH) students: a task-planning checklist, a materials checklist, and a three-question self-check-in card for the planning load a missed direction adds.' },
+  'cvc-unit1-short-a': { pal: P.coral,
+    top: 'CVC worksheets', mid: 'that tell you what to do next', big: 'SCORE IT. THEN MOVE.',
+    sub: 'Six practice pages, a 10-word probe, and an AI Growth Eval.',
+    board: 'Reading Intervention',
+    desc: 'CVC words worksheets for short A: six no-prep practice pages, a ten-word probe and a four-week data sheet, plus an AI Growth Eval that turns the score into your next three moves. Grades K-2 reading intervention. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>

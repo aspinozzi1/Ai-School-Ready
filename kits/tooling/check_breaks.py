@@ -96,7 +96,14 @@ def split_cards(page, nxt):
     return hits
 
 flags = 0
-for path in sys.argv[1:]:
+paths = sys.argv[1:]
+if not paths:
+    # No args used to mean "check nothing" and still print flags: 0 — a false
+    # all-clear. Default to every shipping PDF instead.
+    import pathlib
+    paths = sorted(str(q) for q in pathlib.Path('UPLOAD').rglob('*.pdf'))
+    print(f"(no paths given — scanning {len(paths)} PDFs under UPLOAD/)")
+for path in paths:
     doc = pymupdf.open(path)
     for i in range(len(doc) - 1):
         if is_plate(doc[i]) or is_plate(doc[i + 1]) or is_fixed_sheet(doc[i]):

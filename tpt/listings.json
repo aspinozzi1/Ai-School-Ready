@@ -1,1496 +1,1547 @@
 {
- "_comment": "Single source of truth for TPT listings. node tpt/make_drops.js reads this and builds UPLOAD/drops/. Subjects are best-match suggestions for TPT's dropdown; pick the closest label the form actually offers. Tags max 6 (TPT form limit).",
- "listings": [
-  {
-   "id": "ten-ai-prompts",
-   "order": 1,
-   "name": "10 Copy-Paste AI Prompts for Teachers",
-   "product": "UPLOAD/01-free/ten-ai-prompts-for-teachers.pdf",
-   "cover": "tpt/covers/free-ten-prompts-cover.png",
-   "thumbnails": [],
-   "title": "10 Copy-Paste AI Prompts for Teachers | ChatGPT Time Savers | Free",
-   "description": "Ten AI prompts that work on the first try, for the tasks that actually eat your evenings: parent emails, leveled passages, rubrics, quiz questions, and newsletter blurbs.\n\nCopy, paste, change the bracket, done. No account, no signup, no tool required beyond whatever chatbot you already have.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms. If these save you an evening, our full PD sessions are in the store.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "ai for teachers",
-    "chatgpt for teachers",
-    "ai prompts",
-    "teacher time savers",
-    "teacher productivity",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "one-hard-rule",
-   "order": 2,
-   "name": "The One Hard Rule Poster",
-   "product": "UPLOAD/01-free/one-hard-rule-poster.pdf",
-   "cover": "tpt/covers/free-one-hard-rule-cover.png",
-   "thumbnails": [],
-   "title": "AI Student Privacy Poster | The One Hard Rule | Staff Room Printable | Free",
-   "description": "One rule, printed big enough to end the argument: never put student personally identifiable information into a public AI tool. Not a name. Not a detail. Ever.\n\nPrint it for the staff room, the copier, or the back of your own door. It covers every tool your staff will ever use, including the ones that do not exist yet.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific",
-    "Adult Education"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas",
-    "Classroom Management"
-   ],
-   "tags": [
-    "ai privacy",
-    "student data privacy",
-    "ferpa",
-    "staff room poster",
-    "ai policy",
-    "professional development"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "tool-safety",
-   "order": 3,
-   "name": "AI Tool Safety Checklist",
-   "product": "UPLOAD/01-free/ai-tool-safety-checklist.pdf",
-   "cover": "tpt/covers/free-tool-safety-cover.png",
-   "thumbnails": [],
-   "title": "AI Tool Safety Checklist for Teachers | Vet Any AI Tool in 5 Minutes | Free",
-   "description": "A new AI tool lands in your inbox every week. This is what to check before you or your students touch it: what it does with data, who owns what you type, what it asks for, and the questions worth taking to your district.\n\nOne page, five minutes, works on any tool.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "ai tools",
-    "digital citizenship",
-    "student privacy",
-    "ferpa",
-    "teacher checklist",
-    "ai safety"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "parents-ai",
-   "order": 4,
-   "name": "Talking to Parents About AI",
-   "product": "UPLOAD/01-free/talking-to-parents-about-ai.pdf",
-   "cover": "tpt/covers/free-parents-ai-cover.png",
-   "thumbnails": [],
-   "title": "Talking to Parents About AI | Family Communication Guide for Teachers | Free",
-   "description": "Plain answers to the questions families actually ask: is my child using AI, is that cheating, is their data safe, and what is the school doing about it.\n\nReady to send, ready to say out loud at conferences, written so nobody needs a technology background to follow it.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas",
-    "Computer Science - Technology"
-   ],
-   "tags": [
-    "parent communication",
-    "family engagement",
-    "ai for teachers",
-    "back to school",
-    "conferences",
-    "parent letter"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "leader-readiness",
-   "order": 5,
-   "name": "AI Readiness Checklist for School Leaders",
-   "product": "UPLOAD/01-free/ai-readiness-checklist-for-leaders.pdf",
-   "cover": "tpt/covers/free-leader-readiness-cover.png",
-   "thumbnails": [],
-   "title": "AI Readiness Checklist for School Leaders | Principal Planning Tool | Free",
-   "description": "Where your building actually stands on AI, in one honest page: what your staff is already doing, what is written down, what is not, and what to do first.\n\nBuilt for principals and instructional coaches who need a starting point rather than a strategy deck.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific",
-    "Adult Education"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "school leadership",
-    "principal",
-    "instructional coach",
-    "ai policy",
-    "professional development",
-    "school improvement"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "deid-drills",
-   "order": 6,
-   "name": "20 De-Identification Drills",
-   "product": "UPLOAD/01-free/de-identification-drills.pdf",
-   "cover": "tpt/covers/deid-cover.png",
-   "thumbnails": [],
-   "title": "AI Student Privacy Practice | 20 De-Identification Drills | FERPA | Free",
-   "description": "The one AI skill every teacher needs and nobody practices: getting real help from AI without ever putting a student's identity into it.\n\nTwenty before-and-after prompt makeovers, from parent emails to IEP-adjacent requests to the sneaky no-name prompts that still identify a child. Cover the answer, rewrite it in your head, compare. Ten seconds per prompt by the last page.\n\nIncludes the three de-identification moves, the ten-second test, and a printable pocket checklist. Every name is fictional; the unsafe examples exist for practice.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific",
-    "Adult Education"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "student privacy",
-    "ferpa",
-    "ai safety",
-    "chatgpt rules",
-    "digital citizenship",
-    "professional development"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "kit1",
-   "order": 7,
-   "name": "Kit 1 — AI Foundations & Safety",
-   "product": "UPLOAD/02-paid/AI-Ready-School-Kit-01.zip",
-   "cover": "tpt/covers/kit1-cover.png",
-   "thumbnails": [
-    "tpt/extras/kit1-whats-inside.png",
-    "tpt/extras/kit1-real-pages.png"
-   ],
-   "title": "AI Foundations & Safety PD | Complete Staff Training | Editable Slides & Script",
-   "description": "Run a complete, professional AI training for your staff THIS MONTH, with no consultant and no prep marathon. This is Session 1 of the AI Foundations series: what AI actually is, what it is good and bad at, and the one student-privacy rule every educator must follow.\n\nAny confident teacher-leader can present it cold. The script is word for word, the 34-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab is a teaching gift rather than a failure.\n\nINCLUDED (9 files): facilitator prep guide (15-minute read) · word-for-word script · 34-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day implementation plan with PLC follow-ups · exit ticket that doubles as PD documentation · admin one-pager · full APA references with every statistic verified against the live source.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by a husband-and-wife team of certified teachers with 20+ combined years in classrooms.",
-   "price": 24,
-   "licenses": 10,
-   "grades": [
-    "Not Grade Specific",
-    "Adult Education"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "ai professional development",
-    "staff training",
-    "chatgpt for teachers",
-    "ai safety",
-    "student privacy",
-    "staff meeting"
-   ],
-   "formats": [
-    "Zip",
-    "PDF",
-    "PowerPoint"
-   ],
-   "customCategory": "AI PD Sessions",
-   "previewShots": [
-    "k1_script.png",
-    "k1_handout.png",
-    "k1_plan.png"
-   ],
-   "previewInside": [
-    "Facilitator prep guide — a 15-minute read",
-    "Word-for-word facilitator script",
-    "<b>34-slide editable PowerPoint</b> with speaker notes on every slide",
-    "Participant handout",
-    "First-48-hours action sheet",
-    "30-day implementation plan with PLC follow-ups",
-    "Exit ticket that doubles as PD documentation",
-    "Admin one-pager",
-    "Full APA references, every statistic verified"
-   ]
-  },
-  {
-   "id": "kit2",
-   "order": 8,
-   "name": "Kit 2 — Prompting Basics",
-   "product": "UPLOAD/02-paid/AI-Ready-School-Kit-02.zip",
-   "cover": "tpt/covers/kit2-cover.png",
-   "thumbnails": [
-    "tpt/extras/kit2-whats-inside.png",
-    "tpt/extras/kit2-real-pages.png"
-   ],
-   "title": "ChatGPT & AI Prompting PD | Complete Staff Training | Editable Slides & Script",
-   "description": "The session every staff asks for: how to get consistently useful results from ChatGPT, Claude, Gemini, or Copilot instead of occasionally lucky ones.\n\nTeachers learn the four-part prompt formula, watch live prompt makeovers, and build a reusable prompt template for a task they do every week, in a hands-on lab with a word-for-word facilitator script.\n\nINCLUDED (9 files): facilitator prep guide · word-for-word script · 33-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day plan · exit ticket · admin one-pager · full APA references.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nSession 2 of the AI Foundations series. Pairs with Session 1 or runs on its own for staff who know the basics. Built and audited by two certified teachers.",
-   "price": 24,
-   "licenses": 10,
-   "grades": [
-    "Not Grade Specific",
-    "Adult Education"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "chatgpt for teachers",
-    "ai prompts",
-    "prompt engineering",
-    "teacher pd",
-    "staff training",
-    "ai workshop"
-   ],
-   "formats": [
-    "Zip",
-    "PDF",
-    "PowerPoint"
-   ],
-   "customCategory": "AI PD Sessions",
-   "previewShots": [
-    "k2_script.png",
-    "k2_handout.png",
-    "k2_plan.png"
-   ],
-   "previewInside": [
-    "Facilitator prep guide",
-    "Word-for-word facilitator script",
-    "<b>33-slide editable PowerPoint</b> with speaker notes on every slide",
-    "Participant handout",
-    "First-48-hours action sheet",
-    "30-day plan",
-    "Exit ticket",
-    "Admin one-pager",
-    "Full APA references"
-   ]
-  },
-  {
-   "id": "bts-setup",
-   "order": 9,
-   "name": "Back-to-School AI Setup Pack",
-   "product": "UPLOAD/02-paid/Back-to-School-AI-Setup-Pack.pdf",
-   "cover": "tpt/covers/bts-setup-cover.png",
-   "thumbnails": [
-    "tpt/extras/bts-whats-inside.png",
-    "tpt/extras/bts-real-pages.png"
-   ],
-   "title": "Back to School AI Setup for Teachers | First Week Checklist, Prompts & Letter",
-   "description": "Set up AI for your whole year in one planning period, during the week you have the least time.\n\nINSIDE (5 pages): the First-Week AI Setup Checklist (ten boxes, about 45 minutes end to end) · a ready-to-send family letter explaining how you'll use AI this year, written to build trust at open house · ten back-to-school prompts that are safe exactly as written, from the welcome letter to your day-one diagnostic · the make-it-safe habit on one page for your desk.\n\nEvery prompt describes the need, never the child: no student information ever goes into an AI tool. Fill the brackets, review the draft like the professional you are, done.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "back to school",
-    "ai for teachers",
-    "chatgpt for teachers",
-    "first week of school",
-    "parent letter",
-    "teacher checklist"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "AI Time Savers",
-   "previewShots": [
-    "bts_p2.png",
-    "bts_p3.png",
-    "bts_p4.png"
-   ],
-   "previewInside": [
-    "The First-Week AI Setup Checklist — ten boxes, one planning period",
-    "Ready-to-send family letter about how you'll use AI this year",
-    "<b>Ten back-to-school prompts</b>, safe exactly as written",
-    "The make-it-safe habit — 3 moves + the ten-second test, on one page"
-   ],
-   "previewUnit": "the full pack is 5 pages",
-   "filesBadge": "5 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "ai-vocab",
-   "order": 10,
-   "name": "AI Vocabulary for Teachers",
-   "product": "UPLOAD/01-free/ai-vocabulary-for-teachers.pdf",
-   "cover": "tpt/covers/free-ai-vocab-cover.png",
-   "thumbnails": [],
-   "title": "AI Vocabulary for Teachers | 30 AI Terms in Plain English | Free Cheat Sheet",
-   "description": "Thirty AI terms explained the way you'd explain them to a colleague in the hallway — no computer science degree, no marketing spin.\n\nINSIDE (2 pages): the basics (prompt, chatbot, LLM, iterating) · how it actually works, honestly (hallucination, bias, training data, context window) · the school-safety words every educator needs (PII, FERPA, COPPA, de-identification, district-approved vs. public tools, why AI detectors are unreliable) · and the buzzwords decoded (prompt engineering, AI literacy, agents, wrappers).\n\nPerfect for a staff-meeting handout, a PD folder, or the new teacher who keeps nodding along in AI conversations.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "ai for teachers",
-    "ai literacy",
-    "chatgpt",
-    "vocabulary",
-    "staff meeting",
-    "technology"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "ai-habit",
-   "order": 11,
-   "name": "The 10-Minute AI Habit",
-   "product": "UPLOAD/01-free/ten-minute-ai-habit.pdf",
-   "cover": "tpt/covers/free-ai-habit-cover.png",
-   "thumbnails": [],
-   "title": "10 Minute AI Habit for Teachers | Weekly Planner & Prompt Tracker | Free",
-   "description": "You don't learn AI in a summer workshop — you learn it ten minutes at a time, on real tasks, until it's just how you work.\n\nINSIDE (2 pages): the habit in three moves (same slot every week, one task, save what worked) · an eight-week starter ladder with a ready prompt for each week — parent messages, leveling texts, exit tickets, rubrics, sub plans, and your first reusable template · a printable tracker that lives in your planner.\n\nEvery prompt is safe as written: no student information ever goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "ai for teachers",
-    "chatgpt for teachers",
-    "teacher planner",
-    "time management",
-    "new teacher",
-    "professional development"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "dont-type-that",
-   "order": 12,
-   "name": "Don't Type That: Student PII Poster",
-   "product": "UPLOAD/01-free/dont-type-that-poster.pdf",
-   "cover": "tpt/covers/free-dont-type-that-cover.png",
-   "thumbnails": [],
-   "title": "Student Data Privacy Poster | 10 Things Never to Type Into AI | FERPA Friendly",
-   "description": "The poster for every wall near a device: ten things that count as student PII — names, IDs, IEP status, medical details, behavior stories, one-of-a-kind combinations — and the habit that replaces them: describe the need, not the child.\n\nINSIDE (2 pages): the printable poster (schoolhouse navy, reads from across the room) · a one-page guide with the three de-identification moves, a risky-vs-safe prompt table, and the ten-second test before you press enter.\n\nHang it by the copier, drop it in the PD folder, send it to the colleague who types first and thinks later.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "student privacy",
-    "ferpa",
-    "classroom poster",
-    "ai safety",
-    "digital citizenship",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "sub-plans",
-   "order": 13,
-   "name": "Emergency Sub Plans with AI",
-   "product": "UPLOAD/01-free/emergency-sub-plans-with-ai.pdf",
-   "cover": "tpt/covers/free-sub-plans-cover.png",
-   "thumbnails": [],
-   "title": "Emergency Sub Plans with AI | 15 Minute System & Prompts | Free for Teachers",
-   "description": "For the 5:30 a.m. you hoped wouldn't come: you're sick, and the sub folder is three units out of date.\n\nINSIDE (2 pages): the 15-minute system (run the master prompt, fix only what's wrong, send and go back to bed) · one master prompt that drafts a complete sub day for a stranger — bell-ringers, numbered directions, early-finisher tasks · four gap-fillers (no-tech backup, review day, day two, management notes) · and the once-a-semester list of what to keep printed, because seating charts and health notes belong in the folder, never in a chatbot.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "sub plans",
-    "substitute teacher",
-    "emergency sub plans",
-    "ai for teachers",
-    "chatgpt for teachers",
-    "time savers"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "ai-or-teacher",
-   "order": 14,
-   "name": "AI or Teacher? Delegation Poster",
-   "product": "UPLOAD/01-free/ai-or-teacher-poster.pdf",
-   "cover": "tpt/covers/free-ai-or-teacher-cover.png",
-   "thumbnails": [],
-   "title": "AI or Teacher Poster | What to Delegate to ChatGPT | Free Decision Guide",
-   "description": "The fastest teachers with AI decided once what it's for. This poster is that decision, on the wall: three questions that sort any task in seconds.\n\nDoes it touch a student's identity? Stays out. Is it a judgment about a child? Stays yours. Is it a drafting or formatting task? Delegate the draft — then edit like the professional you are.\n\nINSIDE (2 pages): the printable decision poster · a one-page guide with the delegate list (letters home, leveled texts, rubrics, sub plans) and the never-delegate list (grades, IEP decisions, seating charts, what's worth teaching).\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "ai for teachers",
-    "chatgpt",
-    "classroom poster",
-    "teacher workflow",
-    "professional development",
-    "time savers"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "parent-messages",
-   "order": 15,
-   "name": "Parent Message Makeovers",
-   "product": "UPLOAD/02-paid/Parent-Message-Makeovers.pdf",
-   "cover": "tpt/covers/parent-messages-cover.png",
-   "thumbnails": [
-    "tpt/extras/pm-whats-inside.png",
-    "tpt/extras/pm-real-pages.png"
-   ],
-   "title": "Parent Communication with AI | 12 Hard Email Makeovers | Ready to Use Prompts",
-   "description": "The hardest emails of the school year are the ones you rewrite four times at 9 p.m. This pack drafts every one of them in minutes — warm, factual, professional, and sounding like you.\n\nINSIDE (7 pages, 12 makeovers): the everyday five (missing work, grade drops, positive news home, attendance patterns, homework help) · the hard four (behavior incidents, angry-email replies, tough conference requests, the AI/academic-honesty conversation) · the whole-class three (logistics chasers, welcoming a student back, end-of-term updates) · plus the four-part tone formula behind them all, a build-your-own template for scenario thirteen, and the read-aloud test before every send.\n\nEvery prompt is safe by design: no student names or personal details ever go into the AI — you describe the situation, the AI drafts to \"a family,\" and personalization happens in your own email afterward.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are half price ($6 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
-   "price": 12,
-   "licenses": 6,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "parent communication log",
-    "parent contact log",
-    "email templates",
-    "ai for teachers",
-    "chatgpt for teachers",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "AI Time Savers",
-   "previewShots": [
-    "pm_p3.png",
-    "pm_p4.png",
-    "pm_p6.png"
-   ],
-   "previewInside": [
-    "<b>12 ready-to-run email makeovers</b> — everyday, hard, and whole-class",
-    "The 4-part tone formula: warm open · facts · partnership · next step",
-    "Every prompt PII-safe by design — no student names ever typed",
-    "Build-your-own template + the read-aloud test before every send"
-   ],
-   "previewUnit": "the full pack is 7 pages",
-   "filesBadge": "7 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "what-is-ai",
-   "order": 16,
-   "name": "What Is AI? Unplugged First Lesson",
-   "product": "UPLOAD/01-free/what-is-ai-unplugged.pdf",
-   "cover": "tpt/covers/free-what-is-ai-cover.png",
-   "thumbnails": [],
-   "title": "What Is AI? Unplugged Lesson for Kids Ages 4-8 | Homeschool & K-2 | Free",
-   "description": "Your child hears \"AI\" everywhere. This is the first lesson — three kitchen-table games, zero screens.\n\nINSIDE (2 pages): the sorting machine, the pattern guesser, and the robot parent — unplugged games with read-aloud scripts that teach an age-honest picture of AI: it learns from examples, it guesses (and guesses can be wrong), and people are in charge. Plus the honest answer for \"can I talk to it?\" — chatbots are built for 13 and up, and the grown-up holds the keyboard.\n\nPerfect for homeschool mornings, K-2 classrooms, co-op days, and any family whose kids are asking.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "PreK",
-    "Kindergarten",
-    "1st",
-    "2nd"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "ai for kids",
-    "homeschool",
-    "digital citizenship",
-    "unplugged activities",
-    "technology",
-    "ai literacy"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "family-ai-rules",
-   "order": 17,
-   "name": "Our Family AI Rules Poster",
-   "product": "UPLOAD/01-free/family-ai-rules-poster.pdf",
-   "cover": "tpt/covers/free-family-ai-rules-cover.png",
-   "thumbnails": [],
-   "title": "Family AI Rules Poster | Kids AI Safety Agreement | Homeschool & Home | Free",
-   "description": "Five family AI rules worth signing together, sized for the fridge, the desk, and the co-op wall:\n\n1. Grown-ups hold the keyboard (chatbots are 13+)\n2. AI guesses; it doesn't know — we check\n3. Our names and photos stay ours\n4. AI helps us think — it doesn't think for us\n5. We talk about the weird stuff\n\nINSIDE (2 pages): the printable sign-together poster with kid and grown-up signature lines, plus a parent guide with the thinking behind each rule in words that survive follow-up questions.\n\nRe-sign it every school year — the conversation is the real product.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "ai safety",
-    "digital citizenship",
-    "homeschool",
-    "family",
-    "classroom poster",
-    "internet safety"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "hs-quickstart",
-   "order": 18,
-   "name": "AI Quick-Start for Homeschool Parents",
-   "product": "UPLOAD/01-free/homeschool-ai-quick-start.pdf",
-   "cover": "tpt/covers/free-hs-quickstart-cover.png",
-   "thumbnails": [],
-   "title": "AI Prompts for Homeschool Parents | 10 Planning Time Savers | Free Quick Start",
-   "description": "You're the teacher, the principal, and the curriculum department. AI can't replace any of that — but it can draft the time-eating parts in minutes.\n\nINSIDE (3 pages): ten ready-to-run prompts for the jobs that eat homeschool evenings — the weekly plan, the unit study builder, leveled readings, quizzes, spelling lists, field trips, the sick-parent day, portfolio entries, and the co-op class you volunteered for. Fill the brackets, review like the parent-teacher you are, keep what works.\n\nEvery prompt follows the one habit that keeps families safe: describe the learner, never the child — no names, ever. And the grown-up holds the keyboard.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "homeschool",
-    "homeschool curriculum",
-    "ai for teachers",
-    "chatgpt",
-    "lesson planning",
-    "unit studies"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "first-biz-idea",
-   "order": 19,
-   "name": "My First Business Idea",
-   "product": "UPLOAD/01-free/my-first-business-idea.pdf",
-   "cover": "tpt/covers/free-first-biz-idea-cover.png",
-   "thumbnails": [],
-   "title": "My First Business Idea Worksheet | Entrepreneurship for Kids 6-10 | Free",
-   "description": "Every business starts the same way: somebody notices a thing people want and makes it for them. Today that somebody is your kid.\n\nINSIDE (2 pages): a draw-or-write worksheet where kids ages 6-10 capture their first business idea — what to make, who would want it, what it needs, the sign, and the selling sentence — plus a grown-up coach page with two safe AI prompts that grow the idea and play the practice customer.\n\nThe rule the whole line is built on: kids do the thinking, grown-ups hold the keyboard (AI chatbots are 13+), and a child's name never goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "1st",
-    "2nd",
-    "3rd",
-    "4th"
-   ],
-   "subjects": [
-    "Economics",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "entrepreneurship",
-    "financial literacy",
-    "homeschool",
-    "pbl",
-    "business for kids",
-    "economics"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs"
-  },
-  {
-   "id": "is-it-true",
-   "order": 20,
-   "name": "Is It True? Fact-Checking AI",
-   "product": "UPLOAD/01-free/is-it-true-fact-check.pdf",
-   "cover": "tpt/covers/free-is-it-true-cover.png",
-   "thumbnails": [],
-   "title": "Is It True? AI Fact Checking Lesson for Kids 9-12 | Media Literacy | Free",
-   "description": "The most important AI skill for a 9-to-12-year-old isn't prompting — it's doubting well.\n\nINSIDE (2 pages): the three-step check (does it name a source? can I find it in two places? does it survive the \"wait, what?\" test) and Two Truths and an AI — a replayable family game where the grown-up generates two true facts and one believable fake, and the learner out-checks the machine.\n\nKids who've personally caught AI being wrong are permanently harder to fool — by chatbots, by videos, by anything with a confident voice.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "4th",
-    "5th",
-    "6th",
-    "7th"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "media literacy",
-    "critical thinking",
-    "ai literacy",
-    "homeschool",
-    "digital citizenship",
-    "fact checking"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "hs-planning",
-   "order": 21,
-   "name": "Homeschool AI Planning Pack",
-   "product": "UPLOAD/02-paid/Homeschool-AI-Planning-Pack.pdf",
-   "cover": "tpt/covers/hs-planning-cover.png",
-   "thumbnails": [
-    "tpt/extras/hsp-whats-inside.png",
-    "tpt/extras/hsp-real-pages.png"
-   ],
-   "title": "Homeschool AI Planning Pack | Unit Study Builder, 20 Prompts, Weekly Planner",
-   "description": "You're the whole school. This is your planning department.\n\nINSIDE (4 pages): twenty subject-organized AI prompts — language arts (copywork from your own units, narration questions, the gentle writing conference), math (word problems set in your kid's current obsession, explain-it-three-ways, five-minute fact drills), science and social studies (kitchen experiments, living-books hunts, wall timelines) · a fill-in unit study builder that feeds one master prompt · a printable weekly rhythm planner with a column for the rabbit hole you followed · and the family data-safety habit on one page.\n\nEvery prompt follows the rule that keeps this safe: describe the learner, never the child. No names, ever — and grown-ups hold the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "homeschool",
-    "homeschool curriculum",
-    "unit studies",
-    "ai for teachers",
-    "lesson planning",
-    "charlotte mason"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI",
-   "previewShots": [
-    "hsp_p2.png",
-    "hsp_p3.png",
-    "hsp_p4.png"
-   ],
-   "previewInside": [
-    "<b>20 subject-organized prompts</b> — language arts, math, science, history",
-    "The unit study builder — fill it in, feed the master prompt",
-    "Weekly rhythm planner with room for the rabbit holes",
-    "The family data-safety habit: describe the learner, never the child"
-   ],
-   "previewUnit": "the full pack is 4 pages",
-   "filesBadge": "4 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "ye-first-business",
-   "order": 22,
-   "name": "My First Business Workbook",
-   "product": "UPLOAD/02-paid/My-First-Business-Workbook.pdf",
-   "cover": "tpt/covers/ye-first-business-cover.png",
-   "thumbnails": [
-    "tpt/extras/yfb-whats-inside.png",
-    "tpt/extras/yfb-real-pages.png"
-   ],
-   "title": "My First Business | Young Entrepreneur Workbook Ages 6-10 | Money Math & More",
-   "description": "A real business, kid-sized: pick an idea, figure the costs, price it with the Rule of Three, make the sign, sell to real people, count real profit.\n\nINSIDE (4 pages, 6 steps): My Big Idea (with naming help) · What Will It Cost Me (supply table and cost-of-one math) · the Rule of Three pricing boxes (supplies + your work + a little extra) · Tell the World (design-your-sign space and kid-safe marketing) · Sale Day (tally sheet and the two big subtractions to find PROFIT) · What I Learned (the founder's debrief).\n\nEvery step pairs a kid box with a grown-up AI-coach prompt — because in this line, kids do the thinking and grown-ups hold the keyboard (AI chatbots are 13+). Includes the stated-once safety frame: selling happens to people you know, and anything online is grown-up-run with no child names or photos, ever.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "1st",
-    "2nd",
-    "3rd",
-    "4th"
-   ],
-   "subjects": [
-    "Economics",
-    "Math",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "entrepreneurship",
-    "financial literacy",
-    "money math",
-    "pbl",
-    "homeschool",
-    "economics"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs",
-   "previewShots": [
-    "yfb_p2.png",
-    "yfb_p3.png",
-    "yfb_p4.png"
-   ],
-   "previewInside": [
-    "<b>6 steps from idea to profit</b> — each with a kid box and a parent AI coach",
-    "The Rule of Three: how real sellers price, at kid scale",
-    "Sale-day tally sheet and the two subtractions that reveal PROFIT",
-    "The safety frame: grown-ups hold the keyboard and run anything online"
-   ],
-   "previewUnit": "the full workbook is 4 pages",
-   "filesBadge": "4 pages",
-   "insideHeading": "What's inside the full workbook",
-   "easelSetup": "tpt/easel/ye-first-business-easel.txt"
-  },
-  {
-   "id": "ye-launch-it",
-   "order": 23,
-   "name": "Launch It: Young Entrepreneur Kit",
-   "product": "UPLOAD/02-paid/Launch-It-Entrepreneur-Kit.pdf",
-   "cover": "tpt/covers/ye-launch-it-cover.png",
-   "thumbnails": [
-    "tpt/extras/yli-whats-inside.png",
-    "tpt/extras/yli-real-pages.png"
-   ],
-   "title": "Launch It | Young Entrepreneur Kit Ages 9-12 | Business Plan, Pricing, Pitch",
-   "description": "The real thing, sized for ages 9-12: plan it, research it, price it, pitch it, launch it — and let the ledger tell the truth.\n\nINSIDE (6 pages, 5 parts + debrief): the one-page business plan real mentors would recognize · market research with three interview questions and five real humans · Rule of Three pricing with profit math for 5, 10, and 20 sales · pitch practice against an AI customer who raises real objections (\"that seems expensive\") gently enough for a kid and firmly enough to be great practice · the running ledger · the online-safety contract both of you sign (grown-ups run anything online; names, faces, school, and street stay off the internet) · and the founder's debrief.\n\nThe grown-up runs every AI prompt — chatbots are 13+ — and the young founder does every bit of the thinking. Pairs with our free \"Is It True?\" fact-checking lesson.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($5 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
-   "price": 10,
-   "licenses": 5,
-   "grades": [
-    "4th",
-    "5th",
-    "6th",
-    "7th"
-   ],
-   "subjects": [
-    "Economics",
-    "Math",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "entrepreneurship",
-    "financial literacy",
-    "business plan",
-    "pbl",
-    "homeschool",
-    "project based learning"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs",
-   "previewShots": [
-    "yli_p2.png",
-    "yli_p3.png",
-    "yli_p5.png"
-   ],
-   "previewInside": [
-    "<b>The one-page business plan</b> — plus a mentor-check AI prompt",
-    "Market research: 3 sharp questions, 5 real humans, 1 honest revision",
-    "Pitch practice vs. an AI customer with real (kid-gentle) objections",
-    "The ledger and the online-safety contract you both sign"
-   ],
-   "previewUnit": "the full kit is 6 pages",
-   "filesBadge": "6 pages",
-   "insideHeading": "What's inside the full kit",
-   "easelSetup": "tpt/easel/ye-launch-it-easel.txt"
-  },
-  {
-   "id": "sub-binder-ai",
-   "order": 24,
-   "name": "Substitute Binder with AI",
-   "product": "UPLOAD/02-paid/Substitute-Binder-with-AI.pdf",
-   "cover": "tpt/covers/sub-binder-ai-cover.png",
-   "thumbnails": [
-    "tpt/extras/sba-whats-inside.png",
-    "tpt/extras/sba-real-pages.png"
-   ],
-   "title": "Substitute Binder with AI | Build Emergency Sub Plans in 15 Minutes",
-   "description": "Not another sub-plan template — the whole binder system, built with AI in fifteen minutes.\n\nINSIDE (4 pages): the 6-tab binder system (exactly what goes behind each divider, and why) · the master day-drafter prompt that writes a complete sub day for a stranger · five section-fill prompts, one per divider, for the content that changes every time · the quarterly refresh checklist so the binder never goes stale · a print &amp; assembly guide from PDF to a binder by the door.\n\nEvery prompt is safe by design: rosters and seating charts stay on paper, in the binder — never in the AI.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "substitute binder",
-    "sub plans",
-    "emergency sub plans",
-    "ai for teachers",
-    "chatgpt for teachers",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "AI Time Savers",
-   "previewShots": [
-    "sba_p2.png",
-    "sba_p3.png",
-    "sba_p4.png"
-   ],
-   "previewInside": [
-    "<b>The 6-tab binder system</b> — exactly what goes behind each divider",
-    "The master day-drafter prompt — one prompt, a complete sub day",
-    "Five section-fill prompts, one per divider",
-    "The quarterly refresh checklist — fifteen minutes, four times a year"
-   ],
-   "previewUnit": "the full pack is 4 pages",
-   "filesBadge": "4 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "parent-comm-log",
-   "order": 25,
-   "name": "Parent Communication Log",
-   "product": "UPLOAD/02-paid/Parent-Communication-Log.pdf",
-   "cover": "tpt/covers/parent-comm-log-cover.png",
-   "thumbnails": [
-    "tpt/extras/pcl-whats-inside.png",
-    "tpt/extras/pcl-real-pages.png"
-   ],
-   "title": "Parent Communication Log | Printable Parent Contact & Documentation Pack",
-   "description": "\"Did I already tell them about this?\" stops being a guess. Print one contact log per student and never lose track of a conversation again.\n\nINSIDE (3 pages): the individual contact log — one page per student, every call, email, and note in one place · the incident/behavior documentation log for the harder conversations · the class quick-tracker — one page, whole class, at-a-glance contact status · the AI safe-prompt companion for turning a log entry into a family email without ever typing a student's name.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
-   "price": 6,
-   "licenses": 3,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "parent communication log",
-    "parent contact log",
-    "parent communication",
-    "documentation",
-    "ai for teachers",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "AI Time Savers",
-   "previewShots": [
-    "pcl_p1.png",
-    "pcl_p2.png",
-    "pcl_p3.png"
-   ],
-   "previewInside": [
-    "The individual contact log — one page per student",
-    "The incident/behavior documentation log, for the harder conversations",
-    "<b>The class quick-tracker</b> — whole class, one page, at a glance",
-    "The AI safe-prompt companion — never types a student's name"
-   ],
-   "previewUnit": "the full pack is 3 pages",
-   "filesBadge": "3 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "parent-questionnaire",
-   "order": 26,
-   "name": "Back to School Parent Questionnaire",
-   "product": "UPLOAD/01-free/parent-questionnaire-back-to-school.pdf",
-   "cover": "tpt/covers/free-parent-questionnaire-cover.png",
-   "thumbnails": [],
-   "title": "Back to School Parent Questionnaire | Get to Know Your Students Form",
-   "description": "Send this home the first week. Fifteen minutes at the kitchen table gives you more useful information than most of what shows up in a cumulative file — straight from the person who knows the child best.\n\nINSIDE (3 pages): a 2-page family form — about your child (what they like to be called, three describing words, what's exciting or worrying about this year), how they learn best, the practical stuff, and an open notes field — plus a 1-page teacher-only guide to using the answers, kept on a separate page so nothing meant for you accidentally goes home with the form.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "parent questionnaire",
-    "back to school",
-    "meet the teacher",
-    "first day of school activities",
-    "get to know you",
-    "parent communication"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "procedures-checklist",
-   "order": 27,
-   "name": "Classroom Procedures Checklist",
-   "product": "UPLOAD/01-free/classroom-procedures-checklist.pdf",
-   "cover": "tpt/covers/free-procedures-checklist-cover.png",
-   "thumbnails": [],
-   "title": "Classroom Procedures Checklist | FREE Routines Setup List for Any Grade",
-   "description": "Every classroom runs on about twenty small procedures nobody teaches on purpose — until the year one teacher does.\n\nINSIDE (2 pages): entering &amp; starting, during the lesson, transitions &amp; movement, and turning in &amp; wrapping up — checked off as you explicitly teach, model, and practice each one, with a date-taught column so you know when it's time to re-teach · the routines-to-poster AI prompt that turns any row into wall-ready wording.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "classroom procedures checklist",
-    "classroom routines",
-    "classroom rules and procedures",
-    "back to school",
-    "classroom management",
-    "teacher checklist"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "sub-binder-starter",
-   "order": 28,
-   "name": "Sub Binder Starter Pages",
-   "product": "UPLOAD/01-free/sub-binder-starter-pages.pdf",
-   "cover": "tpt/covers/free-sub-binder-starter-cover.png",
-   "thumbnails": [],
-   "title": "Sub Binder Starter Pages | FREE Dividers, Cover & Emergency Plans List",
-   "description": "A binder cover, five printable dividers, and the shortlist of what to gather before you slide it all into a three-ring binder by the door.\n\nINSIDE (2 pages): the cover page (slides right into a binder's front pocket) · five dividers to print and tab — daily schedule, rosters &amp; seating, emergency procedures, ready-to-grab activity, class routines &amp; culture · what to gather before you print · print &amp; assembly tips.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "emergency sub plans",
-    "sub binder",
-    "substitute teacher",
-    "sub plans",
-    "back to school",
-    "ai for teachers"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "digital-footprint",
-   "order": 29,
-   "name": "My Digital Footprint",
-   "product": "UPLOAD/01-free/my-digital-footprint.pdf",
-   "cover": "tpt/covers/free-digital-footprint-cover.png",
-   "thumbnails": [],
-   "title": "My Digital Footprint | FREE Digital Citizenship Mini Lesson & Activity",
-   "description": "Every game, app, video, and AI chatbot a kid uses leaves footprints. This ten-minute lesson makes an invisible idea visible, then hands students a habit that works on anything with a login, including AI.\n\nINSIDE (2 pages): the big idea, taught in five minutes · sort it — footprint or not? table · the green light / red light activity · the rule to remember · talk-about-it discussion questions.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "3rd",
-    "4th",
-    "5th",
-    "6th"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "digital footprint",
-    "digital citizenship",
-    "internet safety",
-    "ai literacy",
-    "media literacy",
-    "technology"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "internet-safety",
-   "order": 30,
-   "name": "Internet Safety with AI",
-   "product": "UPLOAD/01-free/internet-safety-with-ai.pdf",
-   "cover": "tpt/covers/free-internet-safety-cover.png",
-   "thumbnails": [],
-   "title": "Internet Safety with AI | FREE Digital Citizenship One-Pager for Class",
-   "description": "The five-rule poster for any device, any grade: a grown-up is always in the loop, never type your real info, AI can be confidently wrong, tell a grown-up if it feels weird, and strangers online stay strangers.\n\nINSIDE (2 pages): the printable poster · a one-page guide with talking points for each rule and how to make it stick.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Computer Science - Technology",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "internet safety",
-    "digital citizenship",
-    "ai safety",
-    "classroom poster",
-    "technology",
-    "back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Free AI Library"
-  },
-  {
-   "id": "hs-full-planner",
-   "order": 31,
-   "name": "Full-Year Homeschool Planner with AI",
-   "product": "UPLOAD/02-paid/Full-Year-Homeschool-Planner-with-AI.pdf",
-   "cover": "tpt/covers/hs-full-planner-cover.png",
-   "thumbnails": [
-    "tpt/extras/hfp-whats-inside.png",
-    "tpt/extras/hfp-real-pages.png"
-   ],
-   "title": "Full-Year Homeschool Planner with AI | Schedule & Planning Pages",
-   "description": "A year-at-a-glance grid, a monthly planning page you can photocopy twelve times, a weekly rhythm planner, and a subject tracker so nothing falls through in June.\n\nINSIDE (4 pages): the year-at-a-glance grid — twelve months, one page · the monthly planning page template · the weekly rhythm planner · a subject tracker (scope-and-sequence checklist per subject) · the AI planning-prompt library — year overview, monthly themes, and the re-plan-when-life-happens prompt · quarterly review checkpoints.\n\nEvery prompt describes the learner, never the child — no names, ever — and the grown-up always holds the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "homeschool planner",
-    "homeschool schedule",
-    "homeschool curriculum",
-    "unit studies",
-    "lesson planning",
-    "ai for teachers"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI",
-   "previewShots": [
-    "hfp_p2.png",
-    "hfp_p3.png",
-    "hfp_p4.png"
-   ],
-   "previewInside": [
-    "<b>Year-at-a-glance grid</b> — twelve months, one page",
-    "The monthly planning page — photocopy it for every month",
-    "Weekly rhythm planner, with a column for the rabbit hole you followed",
-    "Subject tracker + the AI planning-prompt library"
-   ],
-   "previewUnit": "the full pack is 4 pages",
-   "filesBadge": "4 pages",
-   "insideHeading": "What's inside the full pack"
-  },
-  {
-   "id": "hs-schedule-cards",
-   "order": 32,
-   "name": "Homeschool Weekly Schedule Cards",
-   "product": "UPLOAD/01-free/homeschool-weekly-schedule-cards.pdf",
-   "cover": "tpt/covers/free-hs-schedule-cards-cover.png",
-   "thumbnails": [],
-   "title": "Homeschool Weekly Schedule Cards | FREE Printable Routine Cards",
-   "description": "Cut these apart and arrange them on a pocket chart, magnet board, or table — a visual weekly rhythm your kids can see and move themselves, no clock-watching required.\n\nINSIDE (2 pages): twelve cut-apart routine cards (morning basket, math, reading, writing, science, and more, plus a write-your-own card) · a fill-in weekly grid · tips for laminating and reusing the set all year.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "homeschool schedule",
-    "homeschool planner",
-    "routine cards",
-    "homeschool curriculum",
-    "visual schedule",
-    "homeschool"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "hs-planning-prompts",
-   "order": 33,
-   "name": "Homeschool AI Planning Prompts",
-   "product": "UPLOAD/01-free/homeschool-ai-planning-prompts.pdf",
-   "cover": "tpt/covers/free-hs-planning-prompts-cover.png",
-   "thumbnails": [],
-   "title": "Homeschool AI Planning Prompts | FREE Copy-Paste Prompt Sampler",
-   "description": "Five ready-to-run prompts for the planning that eats homeschool evenings — the weekly plan, the unit study starter, leveled reading passages, the sick-parent day, and field trip prep.\n\nINSIDE (2 pages): the five prompts, fill-in-the-brackets ready · how to use this sampler · the family data-safety habit.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "For All Subject Areas",
-    "Professional Development"
-   ],
-   "tags": [
-    "homeschool planner",
-    "homeschool curriculum",
-    "ai prompts",
-    "lesson planning",
-    "unit studies",
-    "homeschool"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Homeschool AI"
-  },
-  {
-   "id": "ye-market-day-unit",
-   "order": 34,
-   "name": "Entrepreneurship Unit with AI",
-   "product": "UPLOAD/02-paid/Entrepreneurship-Unit-with-AI.pdf",
-   "cover": "tpt/covers/ye-market-day-unit-cover.png",
-   "thumbnails": [
-    "tpt/extras/yeu-whats-inside.png",
-    "tpt/extras/yeu-real-pages.png"
-   ],
-   "title": "Entrepreneurship for Kids | Start a Business Unit with AI Helper Prompts",
-   "description": "A whole class or co-op, five days, one market day — built for the grown-up running group entrepreneurship, not just one kid's workbook.\n\nINSIDE (7 pages): Day 1 idea brainstorm & problem-spotting · Day 2 pricing with the Rule of Three · Day 3 making a sign & the pitch · a one-page \"My Role & My Price\" worksheet every kid fills out by hand · Day 4 market day logistics (roles, float, timeline) · Day 5 debrief & profit math — plus a grown-up AI Helper Prompt for every day that needs one.\n\nYou run every AI prompt — chatbots are 13+ — and a child's name, photo, school, or street never goes into one; describe the group generically (\"a class of 9-year-olds\"), never who.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
-   "price": 8,
-   "licenses": 4,
-   "grades": [
-    "3rd",
-    "4th",
-    "5th",
-    "6th"
-   ],
-   "subjects": [
-    "Economics",
-    "Math",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "entrepreneurship",
-    "business unit",
-    "market day",
-    "financial literacy",
-    "project based learning",
-    "homeschool"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs",
-   "previewShots": [
-    "yeu_p2.png",
-    "yeu_p4.png",
-    "yeu_p7.png"
-   ],
-   "previewInside": [
-    "<b>Five days, one market day</b> — brainstorm, pricing, sign & pitch, logistics, profit math",
-    "A grown-up AI Helper Prompt for every day that needs one",
-    "The \"My Role & My Price\" worksheet every kid fills out by hand",
-    "Sample day-of timeline and a ready-made roles table for market day"
-   ],
-   "previewUnit": "the full unit is 7 pages",
-   "filesBadge": "7 pages",
-   "insideHeading": "What's inside the full unit",
-   "easelSetup": "tpt/easel/ye-market-day-unit-easel.txt"
-  },
-  {
-   "id": "pitch-day-kit",
-   "order": 35,
-   "name": "Shark Tank Pitch Day",
-   "product": "UPLOAD/01-free/shark-tank-pitch-day.pdf",
-   "cover": "tpt/covers/free-pitch-day-kit-cover.png",
-   "thumbnails": [],
-   "title": "Shark Tank Pitch Day | FREE Kid Entrepreneur Pitch Planner & Rubric",
-   "description": "Turn a business idea into a thirty-second pitch a real judge could listen to — planned, practiced, and rated.\n\nINSIDE (2 pages): a five-question pitch planner (business name, what I'm selling, why it's great, my price, my 30-second pitch) · a four-category judge's rubric (idea, presentation, pricing, teamwork) · a grown-up coach page with two safe AI prompts for gentle judge questions and practice objections.\n\nThe same rule as every product in this line: the grown-up runs the AI, kids do the thinking, and a child's name, photo, school, or street never goes into a prompt.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "3rd",
-    "4th",
-    "5th",
-    "6th"
-   ],
-   "subjects": [
-    "Economics",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "shark tank",
-    "entrepreneurship",
-    "business for kids",
-    "public speaking",
-    "pitch",
-    "homeschool"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs"
-  },
-  {
-   "id": "biz-idea-activities",
-   "order": 36,
-   "name": "Business Idea Starter",
-   "product": "UPLOAD/01-free/entrepreneurship-activities.pdf",
-   "cover": "tpt/covers/free-biz-idea-activities-cover.png",
-   "thumbnails": [],
-   "title": "Entrepreneurship Activities | FREE Business Idea Starter for Ages 9-12",
-   "description": "For kids ready to work through it on their own: four independent activities that turn noticing a problem into a sentence worth saying out loud.\n\nINSIDE (2 pages): the problem hunt (three real annoyances, three fix-it ideas) · a ten-item community-need checklist · \"rate your idea\" — a four-question self-check · sell it in one sentence, three tries, each shorter than the last — plus one optional AI prompt for the grown-up to run for more ideas.\n\nLess hand-holding than our ages 6-10 \"My First Business Idea\" worksheet — built for kids who can work more independently.\n\nBuilt and audited by two certified teachers.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "4th",
-    "5th",
-    "6th",
-    "7th"
-   ],
-   "subjects": [
-    "Economics",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "entrepreneurship activities",
-    "entrepreneurship",
-    "business for kids",
-    "financial literacy",
-    "project based learning",
-    "homeschool"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Young Entrepreneurs"
-  },
-  {
-   "id": "dhh-self-advocacy-pack",
-   "order": 37,
-   "name": "DHH Self-Advocacy Pack",
-   "product": "UPLOAD/02-paid/DHH-Self-Advocacy-Pack.pdf",
-   "cover": "tpt/covers/dhh-self-advocacy-pack-cover.png",
-   "thumbnails": [
-    "tpt/extras/dsa-whats-inside.png",
-    "tpt/extras/dsa-real-pages.png"
-   ],
-   "title": "Self-Advocacy Worksheets for Deaf & Hard of Hearing Students | Full Kit",
-   "description": "Scaffolds a student can grow with: four reusable worksheets a Teacher of the Deaf, itinerant ToD, or case manager works through with a student, upper-elementary through high school.\n\nINSIDE (3 pages): eight \"I need...\" sentence-starter prompts for real classroom moments · a six-item weekly self-check with room for notes · a \"meeting a new teacher\" script builder · four real-situation practice scenarios (group work, fire drills, uncaptioned video, an unfamiliar substitute).\n\nHowever a student communicates — ASL, spoken language, a hearing device, or a combination — these pages adapt to that student, not the other way around. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nRUNNING THIS ACROSS A CASELOAD? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
-   "price": 6,
-   "licenses": 3,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Special Education",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "self advocacy worksheets",
-    "deaf and hard of hearing",
-    "teacher of the deaf",
-    "special education",
-    "dhh itinerant",
-    "iep goals deaf and hard of hearing"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Deaf Education",
-   "previewShots": [
-    "dsa_p1.png",
-    "dsa_p2.png",
-    "dsa_p3.png"
-   ],
-   "previewInside": [
-    "<b>Eight \"I need...\" sentence starters</b> for real classroom moments",
-    "A weekly self-check + notes page — not a replacement for the IEP",
-    "The \"meeting a new teacher\" script builder",
-    "Four real-situation practice scenarios, ToD- or family-guided"
-   ],
-   "previewUnit": "the full pack is 3 pages",
-   "filesBadge": "3 pages",
-   "insideHeading": "What's inside the full pack",
-   "easelSetup": "tpt/easel/dhh-self-advocacy-pack-easel.txt"
-  },
-  {
-   "id": "dhh-advocacy-scripts",
-   "order": 38,
-   "name": "Self-Advocacy Scripts: \"I Need...\" Cards",
-   "product": "UPLOAD/01-free/dhh-self-advocacy-scripts.pdf",
-   "cover": "tpt/covers/free-dhh-advocacy-scripts-cover.png",
-   "thumbnails": [],
-   "title": "Self-Advocacy Scripts | FREE \"I Need...\" Cards for DHH & SPED Students",
-   "description": "Eight ready-to-cut cards that put a self-advocacy request into a student's hand, for the moment finding the words is the hardest part.\n\nINSIDE (2 pages): eight cut-apart \"I need...\" cards (repeat that, captions on, move seats, a device or support isn't working, in writing too, face me, a different way, a writing partner) · how to use the cards (laminate, lanyard or desk ring, reintroduce each term) · a quick-reference table pairing each card to what the adult does.\n\nWritten with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who needs to self-advocate for access. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Special Education",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "self advocacy activities",
-    "deaf and hard of hearing",
-    "dhh resources",
-    "special education",
-    "iep goals deaf and hard of hearing",
-    "asl back to school"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Deaf Education"
-  },
-  {
-   "id": "dhh-access-checklist",
-   "order": 39,
-   "name": "Classroom Access Checklist",
-   "product": "UPLOAD/01-free/dhh-classroom-access-checklist.pdf",
-   "cover": "tpt/covers/free-dhh-access-checklist-cover.png",
-   "thumbnails": [],
-   "title": "Classroom Access Checklist | FREE Setup Guide for DHH Students in Gen Ed",
-   "description": "The classic itinerant in-service one-pager, reshaped as something a gen-ed teacher can actually check off before and after a DHH student joins the room.\n\nINSIDE (2 pages): before day one (seating, lighting, confirmed accommodations, who to contact) · every day (face the class, repeat and rephrase, captions on, private check-ins) · communication repair when a message doesn't land · a common-accommodations quick-reference table · a short note on remote microphone/FM systems that keeps this checklist on the pedagogy side of the room.\n\nStudents get to this list however they communicate — ASL, spoken language, a hearing device, or a combination. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Special Education",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "teacher of the deaf",
-    "deaf and hard of hearing",
-    "dhh itinerant",
-    "special education",
-    "iep goals deaf and hard of hearing",
-    "classroom management"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Deaf Education"
-  },
-  {
-   "id": "dhh-exec-functioning",
-   "order": 40,
-   "name": "Executive Functioning Checklists",
-   "product": "UPLOAD/01-free/dhh-executive-functioning-checklists.pdf",
-   "cover": "tpt/covers/free-dhh-exec-functioning-cover.png",
-   "thumbnails": [],
-   "title": "Executive Functioning Checklists | FREE Self-Advocacy & Planning Pages",
-   "description": "Missing a spoken direction shouldn't mean missing the assignment. Three reusable checklists that connect self-advocacy to the planning skills that make it stick.\n\nINSIDE (2 pages): a task-planning checklist that breaks any multi-step assignment into checked-off steps · a \"materials I need today\" checklist · a three-question self-check-in card (did I understand the directions? do I need a repeat? do I know what to do first?) · a note for the adult in the room on why a missed direction adds real executive-functioning load.\n\nBuilt with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who loses track after missing auditory information. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
-   "price": 0,
-   "licenses": null,
-   "grades": [
-    "Not Grade Specific"
-   ],
-   "subjects": [
-    "Special Education",
-    "For All Subject Areas"
-   ],
-   "tags": [
-    "executive functioning",
-    "deaf and hard of hearing",
-    "self advocacy",
-    "special education",
-    "dhh itinerant",
-    "iep goals deaf and hard of hearing"
-   ],
-   "formats": [
-    "PDF"
-   ],
-   "customCategory": "Deaf Education"
-  }
- ]
+  "_comment": "Single source of truth for TPT listings. node tpt/make_drops.js reads this and builds UPLOAD/drops/. Subjects are best-match suggestions for TPT's dropdown; pick the closest label the form actually offers. Tags max 6 (TPT form limit).",
+  "listings": [
+    {
+      "id": "ten-ai-prompts",
+      "order": 1,
+      "name": "10 Copy-Paste AI Prompts for Teachers",
+      "product": "UPLOAD/01-free/ten-ai-prompts-for-teachers.pdf",
+      "cover": "tpt/covers/free-ten-prompts-cover.png",
+      "thumbnails": [],
+      "title": "10 Copy-Paste AI Prompts for Teachers | ChatGPT Time Savers | Free",
+      "description": "Ten AI prompts that work on the first try, for the tasks that actually eat your evenings: parent emails, leveled passages, rubrics, quiz questions, and newsletter blurbs.\n\nCopy, paste, change the bracket, done. No account, no signup, no tool required beyond whatever chatbot you already have.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms. If these save you an evening, our full PD sessions are in the store.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "ai for teachers",
+        "chatgpt for teachers",
+        "ai prompts",
+        "teacher time savers",
+        "teacher productivity",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "one-hard-rule",
+      "order": 2,
+      "name": "The One Hard Rule Poster",
+      "product": "UPLOAD/01-free/one-hard-rule-poster.pdf",
+      "cover": "tpt/covers/free-one-hard-rule-cover.png",
+      "thumbnails": [],
+      "title": "AI Student Privacy Poster | The One Hard Rule | Staff Room Printable | Free",
+      "description": "One rule, printed big enough to end the argument: never put student personally identifiable information into a public AI tool. Not a name. Not a detail. Ever.\n\nPrint it for the staff room, the copier, or the back of your own door. It covers every tool your staff will ever use, including the ones that do not exist yet.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas",
+        "Classroom Management"
+      ],
+      "tags": [
+        "ai privacy",
+        "student data privacy",
+        "ferpa",
+        "staff room poster",
+        "ai policy",
+        "professional development"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "tool-safety",
+      "order": 3,
+      "name": "AI Tool Safety Checklist",
+      "product": "UPLOAD/01-free/ai-tool-safety-checklist.pdf",
+      "cover": "tpt/covers/free-tool-safety-cover.png",
+      "thumbnails": [],
+      "title": "AI Tool Safety Checklist for Teachers | Vet Any AI Tool in 5 Minutes | Free",
+      "description": "A new AI tool lands in your inbox every week. This is what to check before you or your students touch it: what it does with data, who owns what you type, what it asks for, and the questions worth taking to your district.\n\nOne page, five minutes, works on any tool.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "ai tools",
+        "digital citizenship",
+        "student privacy",
+        "ferpa",
+        "teacher checklist",
+        "ai safety"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "parents-ai",
+      "order": 4,
+      "name": "Talking to Parents About AI",
+      "product": "UPLOAD/01-free/talking-to-parents-about-ai.pdf",
+      "cover": "tpt/covers/free-parents-ai-cover.png",
+      "thumbnails": [],
+      "title": "Talking to Parents About AI | Family Communication Guide for Teachers | Free",
+      "description": "Plain answers to the questions families actually ask: is my child using AI, is that cheating, is their data safe, and what is the school doing about it.\n\nReady to send, ready to say out loud at conferences, written so nobody needs a technology background to follow it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Computer Science - Technology"
+      ],
+      "tags": [
+        "parent communication",
+        "family engagement",
+        "ai for teachers",
+        "back to school",
+        "conferences",
+        "parent letter"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "leader-readiness",
+      "order": 5,
+      "name": "AI Readiness Checklist for School Leaders",
+      "product": "UPLOAD/01-free/ai-readiness-checklist-for-leaders.pdf",
+      "cover": "tpt/covers/free-leader-readiness-cover.png",
+      "thumbnails": [],
+      "title": "AI Readiness Checklist for School Leaders | Principal Planning Tool | Free",
+      "description": "Where your building actually stands on AI, in one honest page: what your staff is already doing, what is written down, what is not, and what to do first.\n\nBuilt for principals and instructional coaches who need a starting point rather than a strategy deck.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "school leadership",
+        "principal",
+        "instructional coach",
+        "ai policy",
+        "professional development",
+        "school improvement"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "deid-drills",
+      "order": 6,
+      "name": "20 De-Identification Drills",
+      "product": "UPLOAD/01-free/de-identification-drills.pdf",
+      "cover": "tpt/covers/deid-cover.png",
+      "thumbnails": [],
+      "title": "AI Student Privacy Practice | 20 De-Identification Drills | FERPA | Free",
+      "description": "The one AI skill every teacher needs and nobody practices: getting real help from AI without ever putting a student's identity into it.\n\nTwenty before-and-after prompt makeovers, from parent emails to IEP-adjacent requests to the sneaky no-name prompts that still identify a child. Cover the answer, rewrite it in your head, compare. Ten seconds per prompt by the last page.\n\nIncludes the three de-identification moves, the ten-second test, and a printable pocket checklist. Every name is fictional; the unsafe examples exist for practice.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "student privacy",
+        "ferpa",
+        "ai safety",
+        "chatgpt rules",
+        "digital citizenship",
+        "professional development"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "kit1",
+      "order": 7,
+      "name": "Kit 1 — AI Foundations & Safety",
+      "product": "UPLOAD/02-paid/AI-Ready-School-Kit-01.zip",
+      "cover": "tpt/covers/kit1-cover.png",
+      "thumbnails": [
+        "tpt/extras/kit1-whats-inside.png",
+        "tpt/extras/kit1-real-pages.png"
+      ],
+      "title": "AI Foundations & Safety PD | Complete Staff Training | Editable Slides & Script",
+      "description": "Run a complete, professional AI training for your staff THIS MONTH, with no consultant and no prep marathon. This is Session 1 of the AI Foundations series: what AI actually is, what it is good and bad at, and the one student-privacy rule every educator must follow.\n\nAny confident teacher-leader can present it cold. The script is word for word, the 34-slide deck matches it cue for cue, and a live AI mistake during the hands-on lab is a teaching gift rather than a failure.\n\nINCLUDED (9 files): facilitator prep guide (15-minute read) · word-for-word script · 34-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day implementation plan with PLC follow-ups · exit ticket that doubles as PD documentation · admin one-pager · full APA references with every statistic verified against the live source.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by a husband-and-wife team of certified teachers with 20+ combined years in classrooms.",
+      "price": 24,
+      "licenses": 10,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "ai professional development",
+        "staff training",
+        "chatgpt for teachers",
+        "ai safety",
+        "student privacy",
+        "staff meeting"
+      ],
+      "formats": [
+        "Zip",
+        "PDF",
+        "PowerPoint"
+      ],
+      "customCategory": "AI PD Sessions",
+      "previewShots": [
+        "k1_script.png",
+        "k1_handout.png",
+        "k1_plan.png"
+      ],
+      "previewInside": [
+        "Facilitator prep guide — a 15-minute read",
+        "Word-for-word facilitator script",
+        "<b>34-slide editable PowerPoint</b> with speaker notes on every slide",
+        "Participant handout",
+        "First-48-hours action sheet",
+        "30-day implementation plan with PLC follow-ups",
+        "Exit ticket that doubles as PD documentation",
+        "Admin one-pager",
+        "Full APA references, every statistic verified"
+      ]
+    },
+    {
+      "id": "kit2",
+      "order": 8,
+      "name": "Kit 2 — Prompting Basics",
+      "product": "UPLOAD/02-paid/AI-Ready-School-Kit-02.zip",
+      "cover": "tpt/covers/kit2-cover.png",
+      "thumbnails": [
+        "tpt/extras/kit2-whats-inside.png",
+        "tpt/extras/kit2-real-pages.png"
+      ],
+      "title": "ChatGPT & AI Prompting PD | Complete Staff Training | Editable Slides & Script",
+      "description": "The session every staff asks for: how to get consistently useful results from ChatGPT, Claude, Gemini, or Copilot instead of occasionally lucky ones.\n\nTeachers learn the four-part prompt formula, watch live prompt makeovers, and build a reusable prompt template for a task they do every week, in a hands-on lab with a word-for-word facilitator script.\n\nINCLUDED (9 files): facilitator prep guide · word-for-word script · 33-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day plan · exit ticket · admin one-pager · full APA references.\n\nRUNNING THIS WITH YOUR WHOLE STAFF? Additional licenses are $10 each, and we accept purchase orders through TpT for Schools.\n\nSession 2 of the AI Foundations series. Pairs with Session 1 or runs on its own for staff who know the basics. Built and audited by two certified teachers.",
+      "price": 24,
+      "licenses": 10,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "chatgpt for teachers",
+        "ai prompts",
+        "prompt engineering",
+        "teacher pd",
+        "staff training",
+        "ai workshop"
+      ],
+      "formats": [
+        "Zip",
+        "PDF",
+        "PowerPoint"
+      ],
+      "customCategory": "AI PD Sessions",
+      "previewShots": [
+        "k2_script.png",
+        "k2_handout.png",
+        "k2_plan.png"
+      ],
+      "previewInside": [
+        "Facilitator prep guide",
+        "Word-for-word facilitator script",
+        "<b>33-slide editable PowerPoint</b> with speaker notes on every slide",
+        "Participant handout",
+        "First-48-hours action sheet",
+        "30-day plan",
+        "Exit ticket",
+        "Admin one-pager",
+        "Full APA references"
+      ]
+    },
+    {
+      "id": "bts-setup",
+      "order": 9,
+      "name": "Back-to-School AI Setup Pack",
+      "product": "UPLOAD/02-paid/Back-to-School-AI-Setup-Pack.pdf",
+      "cover": "tpt/covers/bts-setup-cover.png",
+      "thumbnails": [
+        "tpt/extras/bts-whats-inside.png",
+        "tpt/extras/bts-real-pages.png"
+      ],
+      "title": "Back to School AI Setup for Teachers | First Week Checklist, Prompts & Letter",
+      "description": "Set up AI for your whole year in one planning period, during the week you have the least time.\n\nINSIDE (5 pages): the First-Week AI Setup Checklist (ten boxes, about 45 minutes end to end) · a ready-to-send family letter explaining how you'll use AI this year, written to build trust at open house · ten back-to-school prompts that are safe exactly as written, from the welcome letter to your day-one diagnostic · the make-it-safe habit on one page for your desk.\n\nEvery prompt describes the need, never the child: no student information ever goes into an AI tool. Fill the brackets, review the draft like the professional you are, done.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "back to school",
+        "ai for teachers",
+        "chatgpt for teachers",
+        "first week of school",
+        "parent letter",
+        "teacher checklist"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI Time Savers",
+      "previewShots": [
+        "bts_p2.png",
+        "bts_p3.png",
+        "bts_p4.png"
+      ],
+      "previewInside": [
+        "The First-Week AI Setup Checklist — ten boxes, one planning period",
+        "Ready-to-send family letter about how you'll use AI this year",
+        "<b>Ten back-to-school prompts</b>, safe exactly as written",
+        "The make-it-safe habit — 3 moves + the ten-second test, on one page"
+      ],
+      "previewUnit": "the full pack is 5 pages",
+      "filesBadge": "5 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "ai-vocab",
+      "order": 10,
+      "name": "AI Vocabulary for Teachers",
+      "product": "UPLOAD/01-free/ai-vocabulary-for-teachers.pdf",
+      "cover": "tpt/covers/free-ai-vocab-cover.png",
+      "thumbnails": [],
+      "title": "AI Vocabulary for Teachers | 30 AI Terms in Plain English | Free Cheat Sheet",
+      "description": "Thirty AI terms explained the way you'd explain them to a colleague in the hallway — no computer science degree, no marketing spin.\n\nINSIDE (2 pages): the basics (prompt, chatbot, LLM, iterating) · how it actually works, honestly (hallucination, bias, training data, context window) · the school-safety words every educator needs (PII, FERPA, COPPA, de-identification, district-approved vs. public tools, why AI detectors are unreliable) · and the buzzwords decoded (prompt engineering, AI literacy, agents, wrappers).\n\nPerfect for a staff-meeting handout, a PD folder, or the new teacher who keeps nodding along in AI conversations.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "ai for teachers",
+        "ai literacy",
+        "chatgpt",
+        "vocabulary",
+        "staff meeting",
+        "technology"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "ai-habit",
+      "order": 11,
+      "name": "The 10-Minute AI Habit",
+      "product": "UPLOAD/01-free/ten-minute-ai-habit.pdf",
+      "cover": "tpt/covers/free-ai-habit-cover.png",
+      "thumbnails": [],
+      "title": "10 Minute AI Habit for Teachers | Weekly Planner & Prompt Tracker | Free",
+      "description": "You don't learn AI in a summer workshop — you learn it ten minutes at a time, on real tasks, until it's just how you work.\n\nINSIDE (2 pages): the habit in three moves (same slot every week, one task, save what worked) · an eight-week starter ladder with a ready prompt for each week — parent messages, leveling texts, exit tickets, rubrics, sub plans, and your first reusable template · a printable tracker that lives in your planner.\n\nEvery prompt is safe as written: no student information ever goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "ai for teachers",
+        "chatgpt for teachers",
+        "teacher planner",
+        "time management",
+        "new teacher",
+        "professional development"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "dont-type-that",
+      "order": 12,
+      "name": "Don't Type That: Student PII Poster",
+      "product": "UPLOAD/01-free/dont-type-that-poster.pdf",
+      "cover": "tpt/covers/free-dont-type-that-cover.png",
+      "thumbnails": [],
+      "title": "Student Data Privacy Poster | 10 Things Never to Type Into AI | FERPA Friendly",
+      "description": "The poster for every wall near a device: ten things that count as student PII — names, IDs, IEP status, medical details, behavior stories, one-of-a-kind combinations — and the habit that replaces them: describe the need, not the child.\n\nINSIDE (2 pages): the printable poster (schoolhouse navy, reads from across the room) · a one-page guide with the three de-identification moves, a risky-vs-safe prompt table, and the ten-second test before you press enter.\n\nHang it by the copier, drop it in the PD folder, send it to the colleague who types first and thinks later.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "student privacy",
+        "ferpa",
+        "classroom poster",
+        "ai safety",
+        "digital citizenship",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "sub-plans",
+      "order": 13,
+      "name": "Emergency Sub Plans with AI",
+      "product": "UPLOAD/01-free/emergency-sub-plans-with-ai.pdf",
+      "cover": "tpt/covers/free-sub-plans-cover.png",
+      "thumbnails": [],
+      "title": "Emergency Sub Plans with AI | 15 Minute System & Prompts | Free for Teachers",
+      "description": "For the 5:30 a.m. you hoped wouldn't come: you're sick, and the sub folder is three units out of date.\n\nINSIDE (2 pages): the 15-minute system (run the master prompt, fix only what's wrong, send and go back to bed) · one master prompt that drafts a complete sub day for a stranger — bell-ringers, numbered directions, early-finisher tasks · four gap-fillers (no-tech backup, review day, day two, management notes) · and the once-a-semester list of what to keep printed, because seating charts and health notes belong in the folder, never in a chatbot.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "sub plans",
+        "substitute teacher",
+        "emergency sub plans",
+        "ai for teachers",
+        "chatgpt for teachers",
+        "time savers"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "ai-or-teacher",
+      "order": 14,
+      "name": "AI or Teacher? Delegation Poster",
+      "product": "UPLOAD/01-free/ai-or-teacher-poster.pdf",
+      "cover": "tpt/covers/free-ai-or-teacher-cover.png",
+      "thumbnails": [],
+      "title": "AI or Teacher Poster | What to Delegate to ChatGPT | Free Decision Guide",
+      "description": "The fastest teachers with AI decided once what it's for. This poster is that decision, on the wall: three questions that sort any task in seconds.\n\nDoes it touch a student's identity? Stays out. Is it a judgment about a child? Stays yours. Is it a drafting or formatting task? Delegate the draft — then edit like the professional you are.\n\nINSIDE (2 pages): the printable decision poster · a one-page guide with the delegate list (letters home, leveled texts, rubrics, sub plans) and the never-delegate list (grades, IEP decisions, seating charts, what's worth teaching).\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "ai for teachers",
+        "chatgpt",
+        "classroom poster",
+        "teacher workflow",
+        "professional development",
+        "time savers"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "parent-messages",
+      "order": 15,
+      "name": "Parent Message Makeovers",
+      "product": "UPLOAD/02-paid/Parent-Message-Makeovers.pdf",
+      "cover": "tpt/covers/parent-messages-cover.png",
+      "thumbnails": [
+        "tpt/extras/pm-whats-inside.png",
+        "tpt/extras/pm-real-pages.png"
+      ],
+      "title": "Parent Communication with AI | 12 Hard Email Makeovers | Ready to Use Prompts",
+      "description": "The hardest emails of the school year are the ones you rewrite four times at 9 p.m. This pack drafts every one of them in minutes — warm, factual, professional, and sounding like you.\n\nINSIDE (7 pages, 12 makeovers): the everyday five (missing work, grade drops, positive news home, attendance patterns, homework help) · the hard four (behavior incidents, angry-email replies, tough conference requests, the AI/academic-honesty conversation) · the whole-class three (logistics chasers, welcoming a student back, end-of-term updates) · plus the four-part tone formula behind them all, a build-your-own template for scenario thirteen, and the read-aloud test before every send.\n\nEvery prompt is safe by design: no student names or personal details ever go into the AI — you describe the situation, the AI drafts to \"a family,\" and personalization happens in your own email afterward.\n\nRUNNING THIS WITH YOUR WHOLE TEAM? Additional licenses are half price ($6 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+      "price": 12,
+      "licenses": 6,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "parent communication log",
+        "parent contact log",
+        "email templates",
+        "ai for teachers",
+        "chatgpt for teachers",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI Time Savers",
+      "previewShots": [
+        "pm_p3.png",
+        "pm_p4.png",
+        "pm_p6.png"
+      ],
+      "previewInside": [
+        "<b>12 ready-to-run email makeovers</b> — everyday, hard, and whole-class",
+        "The 4-part tone formula: warm open · facts · partnership · next step",
+        "Every prompt PII-safe by design — no student names ever typed",
+        "Build-your-own template + the read-aloud test before every send"
+      ],
+      "previewUnit": "the full pack is 7 pages",
+      "filesBadge": "7 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "what-is-ai",
+      "order": 16,
+      "name": "What Is AI? Unplugged First Lesson",
+      "product": "UPLOAD/01-free/what-is-ai-unplugged.pdf",
+      "cover": "tpt/covers/free-what-is-ai-cover.png",
+      "thumbnails": [],
+      "title": "What Is AI? Unplugged Lesson for Kids Ages 4-8 | Homeschool & K-2 | Free",
+      "description": "Your child hears \"AI\" everywhere. This is the first lesson — three kitchen-table games, zero screens.\n\nINSIDE (2 pages): the sorting machine, the pattern guesser, and the robot parent — unplugged games with read-aloud scripts that teach an age-honest picture of AI: it learns from examples, it guesses (and guesses can be wrong), and people are in charge. Plus the honest answer for \"can I talk to it?\" — chatbots are built for 13 and up, and the grown-up holds the keyboard.\n\nPerfect for homeschool mornings, K-2 classrooms, co-op days, and any family whose kids are asking.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "PreK",
+        "Kindergarten",
+        "1st",
+        "2nd"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "ai for kids",
+        "homeschool",
+        "digital citizenship",
+        "unplugged activities",
+        "technology",
+        "ai literacy"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "family-ai-rules",
+      "order": 17,
+      "name": "Our Family AI Rules Poster",
+      "product": "UPLOAD/01-free/family-ai-rules-poster.pdf",
+      "cover": "tpt/covers/free-family-ai-rules-cover.png",
+      "thumbnails": [],
+      "title": "Family AI Rules Poster | Kids AI Safety Agreement | Homeschool & Home | Free",
+      "description": "Five family AI rules worth signing together, sized for the fridge, the desk, and the co-op wall:\n\n1. Grown-ups hold the keyboard (chatbots are 13+)\n2. AI guesses; it doesn't know — we check\n3. Our names and photos stay ours\n4. AI helps us think — it doesn't think for us\n5. We talk about the weird stuff\n\nINSIDE (2 pages): the printable sign-together poster with kid and grown-up signature lines, plus a parent guide with the thinking behind each rule in words that survive follow-up questions.\n\nRe-sign it every school year — the conversation is the real product.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "ai safety",
+        "digital citizenship",
+        "homeschool",
+        "family",
+        "classroom poster",
+        "internet safety"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "hs-quickstart",
+      "order": 18,
+      "name": "AI Quick-Start for Homeschool Parents",
+      "product": "UPLOAD/01-free/homeschool-ai-quick-start.pdf",
+      "cover": "tpt/covers/free-hs-quickstart-cover.png",
+      "thumbnails": [],
+      "title": "AI Prompts for Homeschool Parents | 10 Planning Time Savers | Free Quick Start",
+      "description": "You're the teacher, the principal, and the curriculum department. AI can't replace any of that — but it can draft the time-eating parts in minutes.\n\nINSIDE (3 pages): ten ready-to-run prompts for the jobs that eat homeschool evenings — the weekly plan, the unit study builder, leveled readings, quizzes, spelling lists, field trips, the sick-parent day, portfolio entries, and the co-op class you volunteered for. Fill the brackets, review like the parent-teacher you are, keep what works.\n\nEvery prompt follows the one habit that keeps families safe: describe the learner, never the child — no names, ever. And the grown-up holds the keyboard.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "homeschool",
+        "homeschool curriculum",
+        "ai for teachers",
+        "chatgpt",
+        "lesson planning",
+        "unit studies"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "first-biz-idea",
+      "order": 19,
+      "name": "My First Business Idea",
+      "product": "UPLOAD/01-free/my-first-business-idea.pdf",
+      "cover": "tpt/covers/free-first-biz-idea-cover.png",
+      "thumbnails": [],
+      "title": "My First Business Idea Worksheet | Entrepreneurship for Kids 6-10 | Free",
+      "description": "Every business starts the same way: somebody notices a thing people want and makes it for them. Today that somebody is your kid.\n\nINSIDE (2 pages): a draw-or-write worksheet where kids ages 6-10 capture their first business idea — what to make, who would want it, what it needs, the sign, and the selling sentence — plus a grown-up coach page with two safe AI prompts that grow the idea and play the practice customer.\n\nThe rule the whole line is built on: kids do the thinking, grown-ups hold the keyboard (AI chatbots are 13+), and a child's name never goes into an AI tool.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "1st",
+        "2nd",
+        "3rd",
+        "4th"
+      ],
+      "subjects": [
+        "Economics",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "entrepreneurship",
+        "financial literacy",
+        "homeschool",
+        "pbl",
+        "business for kids",
+        "economics"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs"
+    },
+    {
+      "id": "is-it-true",
+      "order": 20,
+      "name": "Is It True? Fact-Checking AI",
+      "product": "UPLOAD/01-free/is-it-true-fact-check.pdf",
+      "cover": "tpt/covers/free-is-it-true-cover.png",
+      "thumbnails": [],
+      "title": "Is It True? AI Fact Checking Lesson for Kids 9-12 | Media Literacy | Free",
+      "description": "The most important AI skill for a 9-to-12-year-old isn't prompting — it's doubting well.\n\nINSIDE (2 pages): the three-step check (does it name a source? can I find it in two places? does it survive the \"wait, what?\" test) and Two Truths and an AI — a replayable family game where the grown-up generates two true facts and one believable fake, and the learner out-checks the machine.\n\nKids who've personally caught AI being wrong are permanently harder to fool — by chatbots, by videos, by anything with a confident voice.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "4th",
+        "5th",
+        "6th",
+        "7th"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "media literacy",
+        "critical thinking",
+        "ai literacy",
+        "homeschool",
+        "digital citizenship",
+        "fact checking"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "hs-planning",
+      "order": 21,
+      "name": "Homeschool AI Planning Pack",
+      "product": "UPLOAD/02-paid/Homeschool-AI-Planning-Pack.pdf",
+      "cover": "tpt/covers/hs-planning-cover.png",
+      "thumbnails": [
+        "tpt/extras/hsp-whats-inside.png",
+        "tpt/extras/hsp-real-pages.png"
+      ],
+      "title": "Homeschool AI Planning Pack | Unit Study Builder, 20 Prompts, Weekly Planner",
+      "description": "You're the whole school. This is your planning department.\n\nINSIDE (4 pages): twenty subject-organized AI prompts — language arts (copywork from your own units, narration questions, the gentle writing conference), math (word problems set in your kid's current obsession, explain-it-three-ways, five-minute fact drills), science and social studies (kitchen experiments, living-books hunts, wall timelines) · a fill-in unit study builder that feeds one master prompt · a printable weekly rhythm planner with a column for the rabbit hole you followed · and the family data-safety habit on one page.\n\nEvery prompt follows the rule that keeps this safe: describe the learner, never the child. No names, ever — and grown-ups hold the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "homeschool",
+        "homeschool curriculum",
+        "unit studies",
+        "ai for teachers",
+        "lesson planning",
+        "charlotte mason"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI",
+      "previewShots": [
+        "hsp_p2.png",
+        "hsp_p3.png",
+        "hsp_p4.png"
+      ],
+      "previewInside": [
+        "<b>20 subject-organized prompts</b> — language arts, math, science, history",
+        "The unit study builder — fill it in, feed the master prompt",
+        "Weekly rhythm planner with room for the rabbit holes",
+        "The family data-safety habit: describe the learner, never the child"
+      ],
+      "previewUnit": "the full pack is 4 pages",
+      "filesBadge": "4 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "ye-first-business",
+      "order": 22,
+      "name": "My First Business Workbook",
+      "product": "UPLOAD/02-paid/My-First-Business-Workbook.pdf",
+      "cover": "tpt/covers/ye-first-business-cover.png",
+      "thumbnails": [
+        "tpt/extras/yfb-whats-inside.png",
+        "tpt/extras/yfb-real-pages.png"
+      ],
+      "title": "My First Business | Young Entrepreneur Workbook Ages 6-10 | Money Math & More",
+      "description": "A real business, kid-sized: pick an idea, figure the costs, price it with the Rule of Three, make the sign, sell to real people, count real profit.\n\nINSIDE (4 pages, 6 steps): My Big Idea (with naming help) · What Will It Cost Me (supply table and cost-of-one math) · the Rule of Three pricing boxes (supplies + your work + a little extra) · Tell the World (design-your-sign space and kid-safe marketing) · Sale Day (tally sheet and the two big subtractions to find PROFIT) · What I Learned (the founder's debrief).\n\nEvery step pairs a kid box with a grown-up AI-coach prompt — because in this line, kids do the thinking and grown-ups hold the keyboard (AI chatbots are 13+). Includes the stated-once safety frame: selling happens to people you know, and anything online is grown-up-run with no child names or photos, ever.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "1st",
+        "2nd",
+        "3rd",
+        "4th"
+      ],
+      "subjects": [
+        "Economics",
+        "Math",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "entrepreneurship",
+        "financial literacy",
+        "money math",
+        "pbl",
+        "homeschool",
+        "economics"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs",
+      "previewShots": [
+        "yfb_p2.png",
+        "yfb_p3.png",
+        "yfb_p4.png"
+      ],
+      "previewInside": [
+        "<b>6 steps from idea to profit</b> — each with a kid box and a parent AI coach",
+        "The Rule of Three: how real sellers price, at kid scale",
+        "Sale-day tally sheet and the two subtractions that reveal PROFIT",
+        "The safety frame: grown-ups hold the keyboard and run anything online"
+      ],
+      "previewUnit": "the full workbook is 4 pages",
+      "filesBadge": "4 pages",
+      "insideHeading": "What's inside the full workbook",
+      "easelSetup": "tpt/easel/ye-first-business-easel.txt"
+    },
+    {
+      "id": "ye-launch-it",
+      "order": 23,
+      "name": "Launch It: Young Entrepreneur Kit",
+      "product": "UPLOAD/02-paid/Launch-It-Entrepreneur-Kit.pdf",
+      "cover": "tpt/covers/ye-launch-it-cover.png",
+      "thumbnails": [
+        "tpt/extras/yli-whats-inside.png",
+        "tpt/extras/yli-real-pages.png"
+      ],
+      "title": "Launch It | Young Entrepreneur Kit Ages 9-12 | Business Plan, Pricing, Pitch",
+      "description": "The real thing, sized for ages 9-12: plan it, research it, price it, pitch it, launch it — and let the ledger tell the truth.\n\nINSIDE (6 pages, 5 parts + debrief): the one-page business plan real mentors would recognize · market research with three interview questions and five real humans · Rule of Three pricing with profit math for 5, 10, and 20 sales · pitch practice against an AI customer who raises real objections (\"that seems expensive\") gently enough for a kid and firmly enough to be great practice · the running ledger · the online-safety contract both of you sign (grown-ups run anything online; names, faces, school, and street stay off the internet) · and the founder's debrief.\n\nThe grown-up runs every AI prompt — chatbots are 13+ — and the young founder does every bit of the thinking. Pairs with our free \"Is It True?\" fact-checking lesson.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($5 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 10,
+      "licenses": 5,
+      "grades": [
+        "4th",
+        "5th",
+        "6th",
+        "7th"
+      ],
+      "subjects": [
+        "Economics",
+        "Math",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "entrepreneurship",
+        "financial literacy",
+        "business plan",
+        "pbl",
+        "homeschool",
+        "project based learning"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs",
+      "previewShots": [
+        "yli_p2.png",
+        "yli_p3.png",
+        "yli_p5.png"
+      ],
+      "previewInside": [
+        "<b>The one-page business plan</b> — plus a mentor-check AI prompt",
+        "Market research: 3 sharp questions, 5 real humans, 1 honest revision",
+        "Pitch practice vs. an AI customer with real (kid-gentle) objections",
+        "The ledger and the online-safety contract you both sign"
+      ],
+      "previewUnit": "the full kit is 6 pages",
+      "filesBadge": "6 pages",
+      "insideHeading": "What's inside the full kit",
+      "easelSetup": "tpt/easel/ye-launch-it-easel.txt"
+    },
+    {
+      "id": "sub-binder-ai",
+      "order": 24,
+      "name": "Substitute Binder with AI",
+      "product": "UPLOAD/02-paid/Substitute-Binder-with-AI.pdf",
+      "cover": "tpt/covers/sub-binder-ai-cover.png",
+      "thumbnails": [
+        "tpt/extras/sba-whats-inside.png",
+        "tpt/extras/sba-real-pages.png"
+      ],
+      "title": "Substitute Binder with AI | Build Emergency Sub Plans in 15 Minutes",
+      "description": "Not another sub-plan template — the whole binder system, built with AI in fifteen minutes.\n\nINSIDE (4 pages): the 6-tab binder system (exactly what goes behind each divider, and why) · the master day-drafter prompt that writes a complete sub day for a stranger · five section-fill prompts, one per divider, for the content that changes every time · the quarterly refresh checklist so the binder never goes stale · a print &amp; assembly guide from PDF to a binder by the door.\n\nEvery prompt is safe by design: rosters and seating charts stay on paper, in the binder — never in the AI.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "substitute binder",
+        "sub plans",
+        "emergency sub plans",
+        "ai for teachers",
+        "chatgpt for teachers",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI Time Savers",
+      "previewShots": [
+        "sba_p2.png",
+        "sba_p3.png",
+        "sba_p4.png"
+      ],
+      "previewInside": [
+        "<b>The 6-tab binder system</b> — exactly what goes behind each divider",
+        "The master day-drafter prompt — one prompt, a complete sub day",
+        "Five section-fill prompts, one per divider",
+        "The quarterly refresh checklist — fifteen minutes, four times a year"
+      ],
+      "previewUnit": "the full pack is 4 pages",
+      "filesBadge": "4 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "parent-comm-log",
+      "order": 25,
+      "name": "Parent Communication Log",
+      "product": "UPLOAD/02-paid/Parent-Communication-Log.pdf",
+      "cover": "tpt/covers/parent-comm-log-cover.png",
+      "thumbnails": [
+        "tpt/extras/pcl-whats-inside.png",
+        "tpt/extras/pcl-real-pages.png"
+      ],
+      "title": "Parent Communication Log | Printable Parent Contact & Documentation Pack",
+      "description": "\"Did I already tell them about this?\" stops being a guess. Print one contact log per student and never lose track of a conversation again.\n\nINSIDE (3 pages): the individual contact log — one page per student, every call, email, and note in one place · the incident/behavior documentation log for the harder conversations · the class quick-tracker — one page, whole class, at-a-glance contact status · the AI safe-prompt companion for turning a log entry into a family email without ever typing a student's name.\n\nRUNNING THIS ACROSS A BUILDING? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers with 20+ combined years in classrooms.",
+      "price": 6,
+      "licenses": 3,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "parent communication log",
+        "parent contact log",
+        "parent communication",
+        "documentation",
+        "ai for teachers",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI Time Savers",
+      "previewShots": [
+        "pcl_p1.png",
+        "pcl_p2.png",
+        "pcl_p3.png"
+      ],
+      "previewInside": [
+        "The individual contact log — one page per student",
+        "The incident/behavior documentation log, for the harder conversations",
+        "<b>The class quick-tracker</b> — whole class, one page, at a glance",
+        "The AI safe-prompt companion — never types a student's name"
+      ],
+      "previewUnit": "the full pack is 3 pages",
+      "filesBadge": "3 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "parent-questionnaire",
+      "order": 26,
+      "name": "Back to School Parent Questionnaire",
+      "product": "UPLOAD/01-free/parent-questionnaire-back-to-school.pdf",
+      "cover": "tpt/covers/free-parent-questionnaire-cover.png",
+      "thumbnails": [],
+      "title": "Back to School Parent Questionnaire | Get to Know Your Students Form",
+      "description": "Send this home the first week. Fifteen minutes at the kitchen table gives you more useful information than most of what shows up in a cumulative file — straight from the person who knows the child best.\n\nINSIDE (3 pages): a 2-page family form — about your child (what they like to be called, three describing words, what's exciting or worrying about this year), how they learn best, the practical stuff, and an open notes field — plus a 1-page teacher-only guide to using the answers, kept on a separate page so nothing meant for you accidentally goes home with the form.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "parent questionnaire",
+        "back to school",
+        "meet the teacher",
+        "first day of school activities",
+        "get to know you",
+        "parent communication"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "procedures-checklist",
+      "order": 27,
+      "name": "Classroom Procedures Checklist",
+      "product": "UPLOAD/01-free/classroom-procedures-checklist.pdf",
+      "cover": "tpt/covers/free-procedures-checklist-cover.png",
+      "thumbnails": [],
+      "title": "Classroom Procedures Checklist | FREE Routines Setup List for Any Grade",
+      "description": "Every classroom runs on about twenty small procedures nobody teaches on purpose — until the year one teacher does.\n\nINSIDE (2 pages): entering &amp; starting, during the lesson, transitions &amp; movement, and turning in &amp; wrapping up — checked off as you explicitly teach, model, and practice each one, with a date-taught column so you know when it's time to re-teach · the routines-to-poster AI prompt that turns any row into wall-ready wording.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "classroom procedures checklist",
+        "classroom routines",
+        "classroom rules and procedures",
+        "back to school",
+        "classroom management",
+        "teacher checklist"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "sub-binder-starter",
+      "order": 28,
+      "name": "Sub Binder Starter Pages",
+      "product": "UPLOAD/01-free/sub-binder-starter-pages.pdf",
+      "cover": "tpt/covers/free-sub-binder-starter-cover.png",
+      "thumbnails": [],
+      "title": "Sub Binder Starter Pages | FREE Dividers, Cover & Emergency Plans List",
+      "description": "A binder cover, five printable dividers, and the shortlist of what to gather before you slide it all into a three-ring binder by the door.\n\nINSIDE (2 pages): the cover page (slides right into a binder's front pocket) · five dividers to print and tab — daily schedule, rosters &amp; seating, emergency procedures, ready-to-grab activity, class routines &amp; culture · what to gather before you print · print &amp; assembly tips.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "emergency sub plans",
+        "sub binder",
+        "substitute teacher",
+        "sub plans",
+        "back to school",
+        "ai for teachers"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "digital-footprint",
+      "order": 29,
+      "name": "My Digital Footprint",
+      "product": "UPLOAD/01-free/my-digital-footprint.pdf",
+      "cover": "tpt/covers/free-digital-footprint-cover.png",
+      "thumbnails": [],
+      "title": "My Digital Footprint | FREE Digital Citizenship Mini Lesson & Activity",
+      "description": "Every game, app, video, and AI chatbot a kid uses leaves footprints. This ten-minute lesson makes an invisible idea visible, then hands students a habit that works on anything with a login, including AI.\n\nINSIDE (2 pages): the big idea, taught in five minutes · sort it — footprint or not? table · the green light / red light activity · the rule to remember · talk-about-it discussion questions.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "3rd",
+        "4th",
+        "5th",
+        "6th"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "digital footprint",
+        "digital citizenship",
+        "internet safety",
+        "ai literacy",
+        "media literacy",
+        "technology"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "internet-safety",
+      "order": 30,
+      "name": "Internet Safety with AI",
+      "product": "UPLOAD/01-free/internet-safety-with-ai.pdf",
+      "cover": "tpt/covers/free-internet-safety-cover.png",
+      "thumbnails": [],
+      "title": "Internet Safety with AI | FREE Digital Citizenship One-Pager for Class",
+      "description": "The five-rule poster for any device, any grade: a grown-up is always in the loop, never type your real info, AI can be confidently wrong, tell a grown-up if it feels weird, and strangers online stay strangers.\n\nINSIDE (2 pages): the printable poster · a one-page guide with talking points for each rule and how to make it stick.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "internet safety",
+        "digital citizenship",
+        "ai safety",
+        "classroom poster",
+        "technology",
+        "back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Free AI Library"
+    },
+    {
+      "id": "hs-full-planner",
+      "order": 31,
+      "name": "Full-Year Homeschool Planner with AI",
+      "product": "UPLOAD/02-paid/Full-Year-Homeschool-Planner-with-AI.pdf",
+      "cover": "tpt/covers/hs-full-planner-cover.png",
+      "thumbnails": [
+        "tpt/extras/hfp-whats-inside.png",
+        "tpt/extras/hfp-real-pages.png"
+      ],
+      "title": "Full-Year Homeschool Planner with AI | Schedule & Planning Pages",
+      "description": "A year-at-a-glance grid, a monthly planning page you can photocopy twelve times, a weekly rhythm planner, and a subject tracker so nothing falls through in June.\n\nINSIDE (4 pages): the year-at-a-glance grid — twelve months, one page · the monthly planning page template · the weekly rhythm planner · a subject tracker (scope-and-sequence checklist per subject) · the AI planning-prompt library — year overview, monthly themes, and the re-plan-when-life-happens prompt · quarterly review checkpoints.\n\nEvery prompt describes the learner, never the child — no names, ever — and the grown-up always holds the keyboard.\n\nUSING THIS ACROSS A CO-OP? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "homeschool planner",
+        "homeschool schedule",
+        "homeschool curriculum",
+        "unit studies",
+        "lesson planning",
+        "ai for teachers"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI",
+      "previewShots": [
+        "hfp_p2.png",
+        "hfp_p3.png",
+        "hfp_p4.png"
+      ],
+      "previewInside": [
+        "<b>Year-at-a-glance grid</b> — twelve months, one page",
+        "The monthly planning page — photocopy it for every month",
+        "Weekly rhythm planner, with a column for the rabbit hole you followed",
+        "Subject tracker + the AI planning-prompt library"
+      ],
+      "previewUnit": "the full pack is 4 pages",
+      "filesBadge": "4 pages",
+      "insideHeading": "What's inside the full pack"
+    },
+    {
+      "id": "hs-schedule-cards",
+      "order": 32,
+      "name": "Homeschool Weekly Schedule Cards",
+      "product": "UPLOAD/01-free/homeschool-weekly-schedule-cards.pdf",
+      "cover": "tpt/covers/free-hs-schedule-cards-cover.png",
+      "thumbnails": [],
+      "title": "Homeschool Weekly Schedule Cards | FREE Printable Routine Cards",
+      "description": "Cut these apart and arrange them on a pocket chart, magnet board, or table — a visual weekly rhythm your kids can see and move themselves, no clock-watching required.\n\nINSIDE (2 pages): twelve cut-apart routine cards (morning basket, math, reading, writing, science, and more, plus a write-your-own card) · a fill-in weekly grid · tips for laminating and reusing the set all year.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "homeschool schedule",
+        "homeschool planner",
+        "routine cards",
+        "homeschool curriculum",
+        "visual schedule",
+        "homeschool"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "hs-planning-prompts",
+      "order": 33,
+      "name": "Homeschool AI Planning Prompts",
+      "product": "UPLOAD/01-free/homeschool-ai-planning-prompts.pdf",
+      "cover": "tpt/covers/free-hs-planning-prompts-cover.png",
+      "thumbnails": [],
+      "title": "Homeschool AI Planning Prompts | FREE Copy-Paste Prompt Sampler",
+      "description": "Five ready-to-run prompts for the planning that eats homeschool evenings — the weekly plan, the unit study starter, leveled reading passages, the sick-parent day, and field trip prep.\n\nINSIDE (2 pages): the five prompts, fill-in-the-brackets ready · how to use this sampler · the family data-safety habit.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development"
+      ],
+      "tags": [
+        "homeschool planner",
+        "homeschool curriculum",
+        "ai prompts",
+        "lesson planning",
+        "unit studies",
+        "homeschool"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Homeschool AI"
+    },
+    {
+      "id": "ye-market-day-unit",
+      "order": 34,
+      "name": "Entrepreneurship Unit with AI",
+      "product": "UPLOAD/02-paid/Entrepreneurship-Unit-with-AI.pdf",
+      "cover": "tpt/covers/ye-market-day-unit-cover.png",
+      "thumbnails": [
+        "tpt/extras/yeu-whats-inside.png",
+        "tpt/extras/yeu-real-pages.png"
+      ],
+      "title": "Entrepreneurship for Kids | Start a Business Unit with AI Helper Prompts",
+      "description": "A whole class or co-op, five days, one market day — built for the grown-up running group entrepreneurship, not just one kid's workbook.\n\nINSIDE (7 pages): Day 1 idea brainstorm & problem-spotting · Day 2 pricing with the Rule of Three · Day 3 making a sign & the pitch · a one-page \"My Role & My Price\" worksheet every kid fills out by hand · Day 4 market day logistics (roles, float, timeline) · Day 5 debrief & profit math — plus a grown-up AI Helper Prompt for every day that needs one.\n\nYou run every AI prompt — chatbots are 13+ — and a child's name, photo, school, or street never goes into one; describe the group generically (\"a class of 9-year-olds\"), never who.\n\nCO-OP OR CLASSROOM SETS? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "3rd",
+        "4th",
+        "5th",
+        "6th"
+      ],
+      "subjects": [
+        "Economics",
+        "Math",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "entrepreneurship",
+        "business unit",
+        "market day",
+        "financial literacy",
+        "project based learning",
+        "homeschool"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs",
+      "previewShots": [
+        "yeu_p2.png",
+        "yeu_p4.png",
+        "yeu_p7.png"
+      ],
+      "previewInside": [
+        "<b>Five days, one market day</b> — brainstorm, pricing, sign & pitch, logistics, profit math",
+        "A grown-up AI Helper Prompt for every day that needs one",
+        "The \"My Role & My Price\" worksheet every kid fills out by hand",
+        "Sample day-of timeline and a ready-made roles table for market day"
+      ],
+      "previewUnit": "the full unit is 7 pages",
+      "filesBadge": "7 pages",
+      "insideHeading": "What's inside the full unit",
+      "easelSetup": "tpt/easel/ye-market-day-unit-easel.txt"
+    },
+    {
+      "id": "pitch-day-kit",
+      "order": 35,
+      "name": "Shark Tank Pitch Day",
+      "product": "UPLOAD/01-free/shark-tank-pitch-day.pdf",
+      "cover": "tpt/covers/free-pitch-day-kit-cover.png",
+      "thumbnails": [],
+      "title": "Shark Tank Pitch Day | FREE Kid Entrepreneur Pitch Planner & Rubric",
+      "description": "Turn a business idea into a thirty-second pitch a real judge could listen to — planned, practiced, and rated.\n\nINSIDE (2 pages): a five-question pitch planner (business name, what I'm selling, why it's great, my price, my 30-second pitch) · a four-category judge's rubric (idea, presentation, pricing, teamwork) · a grown-up coach page with two safe AI prompts for gentle judge questions and practice objections.\n\nThe same rule as every product in this line: the grown-up runs the AI, kids do the thinking, and a child's name, photo, school, or street never goes into a prompt.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "3rd",
+        "4th",
+        "5th",
+        "6th"
+      ],
+      "subjects": [
+        "Economics",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "shark tank",
+        "entrepreneurship",
+        "business for kids",
+        "public speaking",
+        "pitch",
+        "homeschool"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs"
+    },
+    {
+      "id": "biz-idea-activities",
+      "order": 36,
+      "name": "Business Idea Starter",
+      "product": "UPLOAD/01-free/entrepreneurship-activities.pdf",
+      "cover": "tpt/covers/free-biz-idea-activities-cover.png",
+      "thumbnails": [],
+      "title": "Entrepreneurship Activities | FREE Business Idea Starter for Ages 9-12",
+      "description": "For kids ready to work through it on their own: four independent activities that turn noticing a problem into a sentence worth saying out loud.\n\nINSIDE (2 pages): the problem hunt (three real annoyances, three fix-it ideas) · a ten-item community-need checklist · \"rate your idea\" — a four-question self-check · sell it in one sentence, three tries, each shorter than the last — plus one optional AI prompt for the grown-up to run for more ideas.\n\nLess hand-holding than our ages 6-10 \"My First Business Idea\" worksheet — built for kids who can work more independently.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "4th",
+        "5th",
+        "6th",
+        "7th"
+      ],
+      "subjects": [
+        "Economics",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "entrepreneurship activities",
+        "entrepreneurship",
+        "business for kids",
+        "financial literacy",
+        "project based learning",
+        "homeschool"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Young Entrepreneurs"
+    },
+    {
+      "id": "dhh-self-advocacy-pack",
+      "order": 37,
+      "name": "DHH Self-Advocacy Pack",
+      "product": "UPLOAD/02-paid/DHH-Self-Advocacy-Pack.pdf",
+      "cover": "tpt/covers/dhh-self-advocacy-pack-cover.png",
+      "thumbnails": [
+        "tpt/extras/dsa-whats-inside.png",
+        "tpt/extras/dsa-real-pages.png"
+      ],
+      "title": "Self-Advocacy Worksheets for Deaf & Hard of Hearing Students | Full Kit",
+      "description": "Scaffolds a student can grow with: four reusable worksheets a Teacher of the Deaf, itinerant ToD, or case manager works through with a student, upper-elementary through high school.\n\nINSIDE (3 pages): eight \"I need...\" sentence-starter prompts for real classroom moments · a six-item weekly self-check with room for notes · a \"meeting a new teacher\" script builder · four real-situation practice scenarios (group work, fire drills, uncaptioned video, an unfamiliar substitute).\n\nHowever a student communicates — ASL, spoken language, a hearing device, or a combination — these pages adapt to that student, not the other way around. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nRUNNING THIS ACROSS A CASELOAD? Additional licenses are half price ($3 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+      "price": 6,
+      "licenses": 3,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "self advocacy worksheets",
+        "deaf and hard of hearing",
+        "teacher of the deaf",
+        "special education",
+        "dhh itinerant",
+        "iep goals deaf and hard of hearing"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Deaf Education",
+      "previewShots": [
+        "dsa_p1.png",
+        "dsa_p2.png",
+        "dsa_p3.png"
+      ],
+      "previewInside": [
+        "<b>Eight \"I need...\" sentence starters</b> for real classroom moments",
+        "A weekly self-check + notes page — not a replacement for the IEP",
+        "The \"meeting a new teacher\" script builder",
+        "Four real-situation practice scenarios, ToD- or family-guided"
+      ],
+      "previewUnit": "the full pack is 3 pages",
+      "filesBadge": "3 pages",
+      "insideHeading": "What's inside the full pack",
+      "easelSetup": "tpt/easel/dhh-self-advocacy-pack-easel.txt"
+    },
+    {
+      "id": "dhh-advocacy-scripts",
+      "order": 38,
+      "name": "Self-Advocacy Scripts: \"I Need...\" Cards",
+      "product": "UPLOAD/01-free/dhh-self-advocacy-scripts.pdf",
+      "cover": "tpt/covers/free-dhh-advocacy-scripts-cover.png",
+      "thumbnails": [],
+      "title": "Self-Advocacy Scripts | FREE \"I Need...\" Cards for DHH & SPED Students",
+      "description": "Eight ready-to-cut cards that put a self-advocacy request into a student's hand, for the moment finding the words is the hardest part.\n\nINSIDE (2 pages): eight cut-apart \"I need...\" cards (repeat that, captions on, move seats, a device or support isn't working, in writing too, face me, a different way, a writing partner) · how to use the cards (laminate, lanyard or desk ring, reintroduce each term) · a quick-reference table pairing each card to what the adult does.\n\nWritten with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who needs to self-advocate for access. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "self advocacy activities",
+        "deaf and hard of hearing",
+        "dhh resources",
+        "special education",
+        "iep goals deaf and hard of hearing",
+        "asl back to school"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Deaf Education"
+    },
+    {
+      "id": "dhh-access-checklist",
+      "order": 39,
+      "name": "Classroom Access Checklist",
+      "product": "UPLOAD/01-free/dhh-classroom-access-checklist.pdf",
+      "cover": "tpt/covers/free-dhh-access-checklist-cover.png",
+      "thumbnails": [],
+      "title": "Classroom Access Checklist | FREE Setup Guide for DHH Students in Gen Ed",
+      "description": "The classic itinerant in-service one-pager, reshaped as something a gen-ed teacher can actually check off before and after a DHH student joins the room.\n\nINSIDE (2 pages): before day one (seating, lighting, confirmed accommodations, who to contact) · every day (face the class, repeat and rephrase, captions on, private check-ins) · communication repair when a message doesn't land · a common-accommodations quick-reference table · a short note on remote microphone/FM systems that keeps this checklist on the pedagogy side of the room.\n\nStudents get to this list however they communicate — ASL, spoken language, a hearing device, or a combination. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "teacher of the deaf",
+        "deaf and hard of hearing",
+        "dhh itinerant",
+        "special education",
+        "iep goals deaf and hard of hearing",
+        "classroom management"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Deaf Education"
+    },
+    {
+      "id": "dhh-exec-functioning",
+      "order": 40,
+      "name": "Executive Functioning Checklists",
+      "product": "UPLOAD/01-free/dhh-executive-functioning-checklists.pdf",
+      "cover": "tpt/covers/free-dhh-exec-functioning-cover.png",
+      "thumbnails": [],
+      "title": "Executive Functioning Checklists | FREE Self-Advocacy & Planning Pages",
+      "description": "Missing a spoken direction shouldn't mean missing the assignment. Three reusable checklists that connect self-advocacy to the planning skills that make it stick.\n\nINSIDE (2 pages): a task-planning checklist that breaks any multi-step assignment into checked-off steps · a \"materials I need today\" checklist · a three-question self-check-in card (did I understand the directions? do I need a repeat? do I know what to do first?) · a note for the adult in the room on why a missed direction adds real executive-functioning load.\n\nBuilt with Deaf and hard-of-hearing (DHH) students in mind and just as useful for any student who loses track after missing auditory information. This resource is informational; follow your audiologist's and IEP team's guidance.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "executive functioning",
+        "deaf and hard of hearing",
+        "self advocacy",
+        "special education",
+        "dhh itinerant",
+        "iep goals deaf and hard of hearing"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Deaf Education"
+    },
+    {
+      "id": "cvc-unit1-short-a",
+      "order": 41,
+      "name": "CVC Words Worksheets · Short A",
+      "title": "CVC Words Worksheets | Short A Intervention Binder with Data & AI Growth Eval",
+      "product": "UPLOAD/02-paid/CVC-Words-Worksheets-Unit-1-Short-A.pdf",
+      "cover": "tpt/covers/cvc-unit1-short-a-cover.png",
+      "price": 5,
+      "licenses": 2.5,
+      "filesBadge": "12 pages",
+      "insideHeading": "What's inside unit 1",
+      "previewUnit": "unit 1 is 12 pages",
+      "previewShots": [
+        "cvc1_p2.png",
+        "cvc1_p6.png",
+        "cvc1_p10.png"
+      ],
+      "thumbnails": [
+        "tpt/extras/cvc1-whats-inside.png",
+        "tpt/extras/cvc1-real-pages.png"
+      ],
+      "previewInside": [
+        "<b>Six no-prep practice pages</b> — read it, build it, write it; sound boxes; picture match; word families; sentences",
+        "A <b>ten-word probe</b> on its own student page, plus a four-week data sheet",
+        "<b>AI Growth Eval</b> — score bands to next steps, with a de-identified prompt option",
+        "<b>Group snapshot</b> — sort a whole group into re-teach / practise / move on",
+        "The scope and sequence printed inside, and the research it is built on cited"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "grades": [
+        "Kindergarten",
+        "1st Grade",
+        "2nd Grade"
+      ],
+      "subjects": [
+        "English Language Arts",
+        "Phonics",
+        "Special Education"
+      ],
+      "tags": [
+        "cvc words worksheets",
+        "cvc word list",
+        "cvc words",
+        "reading intervention binder",
+        "phonics",
+        "sight words"
+      ],
+      "description": "ENDS WITH AN AI GROWTH EVAL — the page no other intervention binder has. Your student reads the ten-word probe, you record the score, and the Growth Eval tells you what that score means and the next three moves to make this week. It works with zero technology: score bands, plain next steps, printed on the page. If you do use an AI assistant, there is a ready-to-paste prompt that uses de-identified data only — a grade and a pattern, never a name, never a class list, and never the student at a keyboard.\n\nUNIT 1 OF 5 (12 pages): six practice pages — read it/build it/write it with pictures, then again without pictures, sound boxes, picture-and-word match, word-family sorting, and sentence reading · a ten-word probe on its own student-facing page · a four-week data sheet · the AI Growth Eval for one student · a group snapshot that sorts a whole small group into re-teach / practise / move on · and a page showing exactly what the unit is built on.\n\nNO PREP. Print once, slide the practice pages into sleeves, hand out a dry-erase marker, and the unit lasts all year.\n\nTHE SCOPE AND SEQUENCE IS PRINTED INSIDE so you can slot this into whatever phonics program you already teach instead of guessing what it assumes. Every target word is a true short-a CVC word — one consonant, one short vowel, one consonant, no blends or digraphs — verified by an automated check before publication.\n\nWHAT WE ARE NOT CLAIMING: this is not aligned to, affiliated with, or a substitute for any named phonics program, and it is not a diagnostic assessment. It is practice material and a ten-word progress check.\n\nUnits 2–5 (short i, o, u, e) follow, then the full bundle.\n\nUSING THIS WITH A TEAM? Additional licenses are half price ($2.50 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers."
+    }
+  ]
 }

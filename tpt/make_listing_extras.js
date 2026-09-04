@@ -233,6 +233,15 @@ const IMAGES = [
   ], '3 pages')],
   ['dsa-real-pages',   realPages('#2D6CB5', ['dsa_p1.png', 'dsa_p2.png', 'dsa_p3.png'], '3 pages')],
   ['whole-staff-license', license()],
+  ['cvc1-whats-inside', whatsInside('CVC Words ·', 'Short A Unit 1', [
+    'Six no-prep practice pages — pictures, sound boxes, word families, sentences',
+    'A ten-word probe on its own student page',
+    'A four-week data sheet with a notes block',
+    'The AI Growth Eval: score bands to next steps',
+    'A group snapshot that sorts a small group in one minute',
+    'Scope, sequence and citations printed inside',
+  ], '12 pages')],
+  ['cvc1-real-pages',   realPages('#E4572E', ['cvc1_p2.png', 'cvc1_p6.png', 'cvc1_p10.png'], '12 pages')],
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
