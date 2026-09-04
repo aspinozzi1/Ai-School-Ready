@@ -13,16 +13,23 @@ where connectors are live) produces each brief:
 
 1. Try Semrush first (keyword volume/competition for the coming week's
    topics). If Semrush has no API units, fall back to web research —
-   TPT browse pages, seasonal teacher searches, education trend coverage.
+   seasonal teacher searches, practitioner blogs, education trend
+   coverage. Not TPT browse pages: they return HTTP 403 to automated
+   fetches as of 2026-09-04.
 2. **The owner's analysis spec (2026-08-24)** — every brief must include:
    - **Top 3 low-competition, high-intent terms**: candidate phrases
      ranked by buyer intent, keeping only those with roughly **under
-     3,000 competing TPT products** (TPT browse pages show result
-     counts — fetch `teacherspayteachers.com/browse?search=<phrase>` and
-     read the count; when unfetchable, estimate from how specific the
-     phrase is and say it's an estimate). Buyer intent = phrases a
-     teacher types when they need a thing this week ("emergency sub
-     plans template") over browsing phrases ("teaching ideas").
+     3,000 competing TPT products**. Read this off the **Resources
+     bucket** in the owner's TPT Keywords pulls — that is the number,
+     and it is the primary meter.
+     (Superseded 2026-09-04: this used to say "fetch
+     `teacherspayteachers.com/browse?search=<phrase>` and read the
+     count." TPT now returns HTTP 403 to automated fetches, so that
+     fallback is gone. If no pull covers a phrase it is unvalidated —
+     say so plainly rather than estimating a count.)
+     Buyer intent = phrases a teacher types when they need a thing this
+     week ("emergency sub plans template") over browsing phrases
+     ("teaching ideas").
    - **A drafted, ≤80-char optimized title for each of the top 3**,
      ready to use or adapt in the batch.
    - **A pricing scan of the niche**: what the visible competitors
