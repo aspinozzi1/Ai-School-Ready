@@ -1,7 +1,7 @@
 /* Bright Scholar CVC picture set — filled, high-contrast illustrations sized
    for a 44pt tile. Every icon is drawn on a 0 0 64 64 viewBox so they share
-   optical weight. Colours are literal (a bug is not blue) because K-2 readers
-   use colour as a recognition cue. */
+   optical weight. Colors are literal (a bug is not blue) because K-2 readers
+   use color as a recognition cue. */
 const ICONS = {
 cat:`<circle cx="32" cy="36" r="19" fill="#F5A623"/><path d="M15 24 13 8l13 8z" fill="#F5A623"/><path d="M49 24 51 8l-13 8z" fill="#F5A623"/><path d="M17 22 16 13l7.5 4.6z" fill="#E4572E"/><path d="M47 22 48 13l-7.5 4.6z" fill="#E4572E"/><circle cx="25" cy="33" r="3.2" fill="#17293B"/><circle cx="39" cy="33" r="3.2" fill="#17293B"/><path d="M32 39.5 28.5 43h7z" fill="#E4572E"/><path d="M32 43v3.5M32 46.5c-2 2-5 2-6.5.5M32 46.5c2 2 5 2 6.5.5" stroke="#17293B" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M8 36h11M8 42h11M56 36H45M56 42H45" stroke="#17293B" stroke-width="1.8" stroke-linecap="round"/>`,
 hat:`<path d="M18 40c0-16 6-24 14-24s14 8 14 24z" fill="#2D6CB5"/><rect x="6" y="40" width="52" height="8" rx="4" fill="#17293B"/><path d="M18 34h28v6H18z" fill="#E4572E"/>`,

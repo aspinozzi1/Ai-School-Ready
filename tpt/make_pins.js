@@ -8,7 +8,7 @@
    the first two pages of the product PDF are rendered into tpt/pinsrc/ as
    <id>_pin1/2.png automatically. The mockups are always the real files.
 
-   Aesthetic follows the TpT-Pinterest vernacular: one saturated flat colour
+   Aesthetic follows the TpT-Pinterest vernacular: one saturated flat color
    field, heavy outlined display type, scattered doodle line art, real product
    pages at an angle, a count badge, and a call to action.
    Needs: npm i --no-save playwright @fontsource/luckiest-guy @fontsource/baloo-2 */

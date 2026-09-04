@@ -30,7 +30,7 @@ pages.push(`<div class="sheet">
     </div>
     <div style="display:flex;gap:8pt;margin-top:12pt">
       ${UNITS.map(u=>`<div style="flex:1;background:#fff;border:2.5pt solid var(--ink);border-radius:14pt;padding:9pt 4pt;text-align:center">
-        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:28pt;color:${u.colour};line-height:1">${u.v}</div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:28pt;color:${u.color};line-height:1">${u.v}</div>
         <div style="font-size:8.5pt;font-weight:800;color:var(--grey)">${u.name.replace('Short ','short ')}</div></div>`).join('')}
     </div>
     <div style="display:flex;gap:9pt;margin-top:11pt">
@@ -53,7 +53,7 @@ pages.push(`<div class="sheet">
     <div class="card" style="flex:1;padding:12pt 13pt">
       <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#2D6CB5" stroke-width="2.1" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h9"/></svg>
       <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-top:4pt">Sequence printed inside</div>
-      <div style="font-size:9pt;font-weight:700;color:var(--grey);line-height:1.4">Slot it into the programme you already teach.</div>
+      <div style="font-size:9pt;font-weight:700;color:var(--grey);line-height:1.4">Slot it into the program you already teach.</div>
     </div>
     <div class="card" style="flex:1;padding:12pt 13pt">
       <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#4CAF6D" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
@@ -72,7 +72,7 @@ pages.push(sheet(`
   <div class="sub">Five units, one short vowel each, in the order that keeps the two confusable vowels apart.</div>
   <div style="display:flex;gap:9pt;margin-top:13pt">
     ${UNITS.map((u,i)=>`<div class="card" style="flex:1;text-align:center;padding:12pt 6pt">
-      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:36pt;color:${u.colour};line-height:1">${u.v}</div>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:36pt;color:${u.color};line-height:1">${u.v}</div>
       <div style="font-size:9.5pt;font-weight:800;color:var(--grey);margin-top:3pt">Unit ${i+1}</div></div>`).join('')}
   </div>
   <div class="card" style="margin-top:13pt">
@@ -89,8 +89,8 @@ pages.push(sheet(`
     scope-and-sequences commonly separate them as far apart in the order as possible for exactly that reason — so short
     <b>e</b> comes last, four units away from short <b>i</b>. Short <b>a</b> comes first because it appears in more early
     decodable words than any other short vowel.<br><br>
-    The sequence is printed here so you can slot this into whatever phonics programme you already teach instead of guessing
-    what it assumes. The units are independent — if your programme introduces the vowels in a different order, teach the
+    The sequence is printed here so you can slot this into whatever phonics program you already teach instead of guessing
+    what it assumes. The units are independent — if your program introduces the vowels in a different order, teach the
     tabs in that order and the probes still work.</div>
   </div>
   <div class="card" style="margin-top:10pt">

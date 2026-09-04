@@ -4,28 +4,28 @@ const ICONS = require('./icons.js');
 const S = process.env.SCRATCH;
 
 const UNITS = [
-  { v:'a', name:'Short a', colour:'#E4572E',
+  { v:'a', name:'Short a', color:'#E4572E',
     pics:['cat','hat','bag','van','pan','map'],
     plain:['bat','jam','tap','ran','mad','wag'],
     sbox:['can','lap','fan','rat','gas','ham'],
     fams:[['-at',['cat','hat','bat','mat']],['-ap',['map','tap','nap','lap']],['-ag',['bag','rag','tag','wag']]],
     sents:[['The','cat','sat on my','hat'],['Dad had','jam','in a','pan'],['A','rat','ran','to the','van']],
     probe:['cat','map','sad','pan','bag','hat','tap','rag','jam','van'] },
-  { v:'i', name:'Short i', colour:'#2D6CB5',
+  { v:'i', name:'Short i', color:'#2D6CB5',
     pics:['pig','pin','six','lip','kid','bin'],
     plain:['fit','hit','rib','dig','mix','sit'],
     sbox:['win','tip','fig','him','rip','lit'],
     fams:[['-ig',['big','dig','fig','pig']],['-ip',['dip','lip','rip','tip']],['-in',['bin','fin','pin','win']]],
     sents:[['The','pig','sat in the','bin'],['A','kid','can','dig','in it'],['I','win','if I','hit','six']],
     probe:['pig','six','lip','kid','bin','pin','hit','dig','mix','sit'] },
-  { v:'o', name:'Short o', colour:'#4CAF6D',
+  { v:'o', name:'Short o', color:'#4CAF6D',
     pics:['dog','box','mop','log','pot','fox'],
     plain:['hop','top','rob','jog','cot','mom'],
     sbox:['hot','dot','sob','rod','job','nod'],
     fams:[['-og',['dog','fog','jog','log']],['-op',['hop','mop','pop','top']],['-ot',['dot','hot','pot','not']]],
     sents:[['The','dog','sat on a','log'],['Mom','put the','mop','in the','box'],['A','fox','can','hop','on','top']],
     probe:['dog','box','mop','log','pot','fox','hop','top','hot','job'] },
-  { v:'u', name:'Short u', colour:'#8367C7',
+  { v:'u', name:'Short u', color:'#8367C7',
     pics:['bug','sun','cup','bus','mug','rug'],
     plain:['run','hug','cut','tub','mud','gum'],
     sbox:['fun','bun','hut','rub','sum','dug'],
@@ -33,7 +33,7 @@ const UNITS = [
     sents:[['A','bug','sat on the','rug'],['The','sun','is','fun','for us'],['I','run','to the','bus']],
     probe:['bug','sun','cup','bus','mug','rug','run','hug','cut','tub'] },
 
-  { v:'e', name:'Short e', colour:'#17BEBB',
+  { v:'e', name:'Short e', color:'#17BEBB',
     pics:['bed','hen','ten','pen','jet','web'],
     plain:['red','net','leg','wet','hem','peg'],
     sbox:['bet','den','get','led','met','yes'],
@@ -87,7 +87,7 @@ function unitPages(u, n) {
   P.push(sheet(`
     <div class="eyebrow">Unit ${n+1} of 5 · Tab divider</div>
     <div style="display:flex;align-items:center;gap:20pt;margin-top:6pt">
-      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:104pt;color:${u.colour};line-height:.92">${u.v}</div>
+      <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:104pt;color:${u.color};line-height:.92">${u.v}</div>
       <div><h1 style="font-size:31pt">${u.name}</h1>
       <div class="sub" style="font-size:12pt">${u.pics.join(' · ')}<br>One consonant, one short vowel, one consonant.</div></div>
     </div>
@@ -118,10 +118,10 @@ function unitPages(u, n) {
       nothing else — no other vowel leaks in — so a miss here means this sound, not a mix-up with the last tab.</div>
     </div>
     <div style="display:flex;gap:9pt;margin-top:11pt">
-      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.colour};line-height:1.1">6</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">practice pages</div></div>
-      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.colour};line-height:1.1">10</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">probe words</div></div>
-      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.colour};line-height:1.1">4</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">weeks of data</div></div>
-      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.colour};line-height:1.1">8/10</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">to move on</div></div>
+      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.color};line-height:1.1">6</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">practice pages</div></div>
+      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.color};line-height:1.1">10</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">probe words</div></div>
+      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.color};line-height:1.1">4</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">weeks of data</div></div>
+      <div class="card" style="flex:1;text-align:center;padding:12pt 8pt"><div style="font-family:'Luckiest Guy',cursive;font-size:20pt;color:${u.color};line-height:1.1">8/10</div><div style="font-size:9pt;font-weight:800;color:var(--grey)">to move on</div></div>
     </div>`, `Unit ${n+1} · ${u.name}`, 'Bright Scholar · AI-Ready School'));
 
   // practice 1 pictures
@@ -137,7 +137,7 @@ function unitPages(u, n) {
     </div>
     <div style="display:flex;gap:9pt;margin-top:9pt">
       <div class="card" style="flex:1;padding:11pt 14pt">
-        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;color:var(--blue);margin-bottom:4pt">Colour a star for each word you read on your own</div>
+        <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;color:var(--blue);margin-bottom:4pt">Color a star for each word you read on your own</div>
         <div style="display:flex;gap:7pt">${stars(6)}</div>
       </div>
       <div class="card" style="flex:none;width:2.05in;padding:11pt 13pt;text-align:center">
