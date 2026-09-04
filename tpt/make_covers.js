@@ -221,7 +221,7 @@ const PRODUCTS = [
     kicker: 'CVC words worksheets · all 5 short vowels',
     title: 'Short-Vowel CVC:', accent: 'The Complete Binder',
     lede: '30 no-prep practice pages, six probes with data sheets, and an AI Growth Eval that turns the scores into next steps.',
-    chips: ['52 pages', 'Grades K-2', '6 probes + data', 'Growth Eval'] },
+    chips: ['52 pages', 'Grades K-2', 'Progress checks with data sheets', 'AI Growth Eval'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

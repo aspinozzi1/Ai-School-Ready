@@ -236,10 +236,10 @@ const IMAGES = [
   ['cvcb-whats-inside', whatsInside('Short-Vowel CVC ·', 'The Complete Binder', [
     'Five units — short a, i, o, u and e',
     'Thirty no-prep practice pages, six per unit',
-    'Six ten-word probes, each on its own student page',
-    'Six four-week data sheets plus a mixed review',
-    'The AI Growth Eval: a score in, three next moves out',
-    'A group snapshot that sorts a small group in a minute',
+    'Six ten-word progress checks, each on its own student page',
+    'Six four-week data sheets, plus a mixed review of all five vowels',
+    'The AI Growth Eval turns a score into the next three moves',
+    'A group snapshot that sorts a small group into three next steps',
   ], '52 pages')],
   ['cvcb-real-pages',   realPages('#E4572E', ['cvcb_p4.png', 'cvcb_p12.png', 'cvcb_p50.png'], '52 pages')],
 ];

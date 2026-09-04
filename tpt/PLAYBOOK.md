@@ -175,6 +175,33 @@ Two different games, deliberately:
 Friday never cannibalises the win lanes: if a phrase is winnable, it
 belongs on Sunday, not Friday.
 
+### Write it out. No shorthand. (owner directive 2026-09-04)
+
+**Binding on every word a buyer or a student can read** — product pages,
+listing titles and descriptions, thumbnails, previews, pin copy.
+
+Shorthand is a writer's convenience that costs the reader a second
+guess. A teacher scanning a listing on their phone between classes
+should never have to decode a phrase. Say the whole thing.
+
+Caught examples, and what they should have said:
+- "score bands to next steps" → "a student scores 6 out of 10, the page
+  tells you what that means and the next three things to do"
+- "a score in, three next moves out" → say what actually happens
+- "probes + data" → "six progress checks with data sheets"
+- "de-identified prompt option" → "a ready-to-paste prompt that uses
+  only a grade and a pattern, never a name"
+
+The test before anything ships: **read the sentence as a stranger who
+has never seen the product.** If any phrase needs the product to explain
+it, rewrite the phrase. Compressed nouns stacked together
+("score bands", "growth eval framework", "data-driven next steps") are
+the usual offenders.
+
+Two things stay short by design and are not shorthand: the product
+**title** (TPT caps it at 80 characters) and the **tags**, which must
+match the exact phrases buyers type.
+
 ### The AI Growth Eval — brand signature on EVERY product (2026-09-03)
 
 Every product ends with a Growth Eval, scaled to its size: a printable

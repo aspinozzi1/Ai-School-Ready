@@ -241,9 +241,9 @@ const PIN_COPY = {
     desc: 'Free executive functioning checklists for Deaf and hard of hearing (DHH) students: a task-planning checklist, a materials checklist, and a three-question self-check-in card for the planning load a missed direction adds.' },
   'cvc-binder': { pal: P.coral,
     top: 'CVC worksheets', mid: 'that tell you what to do next', big: 'SCORE IT. THEN MOVE.',
-    sub: 'All five short vowels, six probes, and an AI Growth Eval.',
+    sub: 'All five short vowels, six progress checks, and a page that tells you what to do next.',
     board: 'Reading Intervention',
-    desc: 'Short vowel CVC intervention binder: 30 no-prep CVC words worksheets across short a, i, o, u and e, six ten-word probes with data sheets, and an AI Growth Eval that turns each score into your next three moves. Grades K-2 reading intervention. From two certified teachers.' },
+    desc: 'Short vowel CVC intervention binder: 30 no-prep CVC words worksheets across short a, i, o, u and e, six ten-word progress checks with data sheets, and an AI Growth Eval page that turns each score into the next three things to do. Grades K-2 reading intervention. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>

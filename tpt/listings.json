@@ -1502,7 +1502,7 @@
       "price": 16,
       "licenses": 8,
       "filesBadge": "52 pages",
-      "insideHeading": "What's inside the binder",
+      "insideHeading": "What is inside the binder",
       "previewUnit": "the full binder is 52 pages",
       "previewShots": [
         "cvcb_p4.png",
@@ -1514,11 +1514,11 @@
         "tpt/extras/cvcb-real-pages.png"
       ],
       "previewInside": [
-        "<b>All five short vowels</b> — a, i, o, u, e — six practice pages each, 30 in total",
-        "<b>Six probes with data sheets</b>: one per unit plus a mixed review of all five vowels",
-        "<b>AI Growth Eval</b> — a student scores 6 of 10, the page tells you what that means and the next three things to do",
-        "<b>Group snapshot</b> — sort a whole small group into re-teach / practice / move on",
-        "The scope and sequence printed inside, and the research it is built on cited"
+        "<b>All five short vowels</b> — a, i, o, u and e — with six practice pages for each one, thirty pages in total",
+        "<b>Six progress checks, each with its own data sheet</b>: one for every vowel, plus a mixed review that covers all five together",
+        "<b>The AI Growth Eval</b> — a student scores 6 out of 10 and the page tells you what that score means and the next three things to do",
+        "<b>The group snapshot</b> — write down a small group's scores and sort them into re-teach, practice, or move on",
+        "<b>The teaching order is printed inside</b>, along with the research it is built on"
       ],
       "formats": [
         "PDF"
