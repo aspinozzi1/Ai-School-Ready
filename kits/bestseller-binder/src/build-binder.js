@@ -47,17 +47,23 @@ const css = CSSFILE.slice(CSSFILE.indexOf('<style>')+7, CSSFILE.indexOf('</style
 
 const fs_ = require('fs');
 const ART = __dirname + '/../art/cut';
+const ART_SM = __dirname + '/../art/cut-sm';
 const artCache = {};
+// One raster per placement size. 470px is 300dpi at the largest use (112pt);
+// the 34-52pt uses only need ~190px, and shipping the big one everywhere
+// tripled the file size for no visible gain.
 const icon = (w, size = 34) => {
-  const f = `${ART}/${w}.png`;
-  if (!(w in artCache)) {
-    artCache[w] = fs_.existsSync(f)
+  const dir = ART;  // one master: two sets meant 60 embedded images, not 30
+  const key = dir + '|' + w;
+  const f = `${dir}/${w}.png`;
+  if (!(key in artCache)) {
+    artCache[key] = fs_.existsSync(f)
       ? 'data:image/png;base64,' + fs_.readFileSync(f).toString('base64') : null;
   }
   // Licensed/commissioned art wins; the SVG set stays as the fallback so a
   // missing file degrades to a drawing rather than a blank cell.
-  return artCache[w]
-    ? `<img src="${artCache[w]}" width="${size}" height="${size}" style="display:block;margin:0 auto;object-fit:contain">`
+  return artCache[key]
+    ? `<img src="${artCache[key]}" width="${size}" height="${size}" style="display:block;margin:0 auto;object-fit:contain">`
     : (ICONS[w] ? `<svg viewBox="0 0 64 64" width="${size}" height="${size}">${ICONS[w]}</svg>` : '');
 };
 const W = w => `<span class="w">${w}</span>`;

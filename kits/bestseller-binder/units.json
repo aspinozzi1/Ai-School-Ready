@@ -1,0 +1,347 @@
+[
+  {
+    "v": "a",
+    "name": "Short a",
+    "pics": [
+      "cat",
+      "hat",
+      "bag",
+      "van",
+      "pan",
+      "map"
+    ],
+    "plain": [
+      "bat",
+      "jam",
+      "tap",
+      "ran",
+      "mad",
+      "wag"
+    ],
+    "sbox": [
+      "can",
+      "lap",
+      "fan",
+      "rat",
+      "gas",
+      "ham"
+    ],
+    "probe": [
+      "cat",
+      "map",
+      "sad",
+      "pan",
+      "bag",
+      "hat",
+      "tap",
+      "rag",
+      "jam",
+      "van"
+    ],
+    "fams": [
+      [
+        "-at",
+        [
+          "cat",
+          "hat",
+          "bat",
+          "mat"
+        ]
+      ],
+      [
+        "-ap",
+        [
+          "map",
+          "tap",
+          "nap",
+          "lap"
+        ]
+      ],
+      [
+        "-ag",
+        [
+          "bag",
+          "rag",
+          "tag",
+          "wag"
+        ]
+      ]
+    ]
+  },
+  {
+    "v": "i",
+    "name": "Short i",
+    "pics": [
+      "pig",
+      "pin",
+      "six",
+      "lip",
+      "kid",
+      "bin"
+    ],
+    "plain": [
+      "fit",
+      "hit",
+      "rib",
+      "dig",
+      "mix",
+      "sit"
+    ],
+    "sbox": [
+      "win",
+      "tip",
+      "fig",
+      "him",
+      "rip",
+      "lit"
+    ],
+    "probe": [
+      "pig",
+      "six",
+      "lip",
+      "kid",
+      "bin",
+      "pin",
+      "hit",
+      "dig",
+      "mix",
+      "sit"
+    ],
+    "fams": [
+      [
+        "-ig",
+        [
+          "big",
+          "dig",
+          "fig",
+          "pig"
+        ]
+      ],
+      [
+        "-ip",
+        [
+          "dip",
+          "lip",
+          "rip",
+          "tip"
+        ]
+      ],
+      [
+        "-in",
+        [
+          "bin",
+          "fin",
+          "pin",
+          "win"
+        ]
+      ]
+    ]
+  },
+  {
+    "v": "o",
+    "name": "Short o",
+    "pics": [
+      "dog",
+      "box",
+      "mop",
+      "log",
+      "pot",
+      "fox"
+    ],
+    "plain": [
+      "hop",
+      "top",
+      "rob",
+      "jog",
+      "cot",
+      "mom"
+    ],
+    "sbox": [
+      "hot",
+      "dot",
+      "sob",
+      "rod",
+      "job",
+      "nod"
+    ],
+    "probe": [
+      "dog",
+      "box",
+      "mop",
+      "log",
+      "pot",
+      "fox",
+      "hop",
+      "top",
+      "hot",
+      "job"
+    ],
+    "fams": [
+      [
+        "-og",
+        [
+          "dog",
+          "fog",
+          "jog",
+          "log"
+        ]
+      ],
+      [
+        "-op",
+        [
+          "hop",
+          "mop",
+          "pop",
+          "top"
+        ]
+      ],
+      [
+        "-ot",
+        [
+          "dot",
+          "hot",
+          "pot",
+          "not"
+        ]
+      ]
+    ]
+  },
+  {
+    "v": "u",
+    "name": "Short u",
+    "pics": [
+      "bug",
+      "sun",
+      "cup",
+      "bus",
+      "mug",
+      "rug"
+    ],
+    "plain": [
+      "run",
+      "hug",
+      "cut",
+      "tub",
+      "mud",
+      "gum"
+    ],
+    "sbox": [
+      "fun",
+      "bun",
+      "hut",
+      "rub",
+      "sum",
+      "dug"
+    ],
+    "probe": [
+      "bug",
+      "sun",
+      "cup",
+      "bus",
+      "mug",
+      "rug",
+      "run",
+      "hug",
+      "cut",
+      "tub"
+    ],
+    "fams": [
+      [
+        "-ug",
+        [
+          "bug",
+          "hug",
+          "mug",
+          "rug"
+        ]
+      ],
+      [
+        "-un",
+        [
+          "bun",
+          "fun",
+          "run",
+          "sun"
+        ]
+      ],
+      [
+        "-ut",
+        [
+          "but",
+          "cut",
+          "hut",
+          "nut"
+        ]
+      ]
+    ]
+  },
+  {
+    "v": "e",
+    "name": "Short e",
+    "pics": [
+      "bed",
+      "hen",
+      "ten",
+      "pen",
+      "jet",
+      "web"
+    ],
+    "plain": [
+      "red",
+      "net",
+      "leg",
+      "wet",
+      "hem",
+      "peg"
+    ],
+    "sbox": [
+      "bet",
+      "den",
+      "get",
+      "led",
+      "met",
+      "yes"
+    ],
+    "probe": [
+      "bed",
+      "hen",
+      "ten",
+      "pen",
+      "jet",
+      "web",
+      "red",
+      "leg",
+      "wet",
+      "get"
+    ],
+    "fams": [
+      [
+        "-ed",
+        [
+          "bed",
+          "fed",
+          "led",
+          "red"
+        ]
+      ],
+      [
+        "-en",
+        [
+          "den",
+          "hen",
+          "men",
+          "pen"
+        ]
+      ],
+      [
+        "-et",
+        [
+          "bet",
+          "get",
+          "net",
+          "wet"
+        ]
+      ]
+    ]
+  }
+]

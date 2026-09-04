@@ -8,6 +8,11 @@ Usage: check_cvc.py <src.html> [--units units.json]"""
 import sys, re, json, pathlib
 V = set('aeiou')
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
+if not args:
+    # No path given used to crash. Default to the binder source so a bare run
+    # checks something real instead of blowing up (or worse, passing silently).
+    args = ['kits/bestseller-binder/src/cvc-binder-full.html']
+    print(f"(no path given \u2014 checking {args[0]})")
 src = pathlib.Path(args[0]).read_text()
 found = re.findall(r'class="[^"]*\b(?:word|w)\b[^"]*"[^>]*>([a-z]+)<', src)
 bad = [w for w in found if not (len(w) == 3 and w[1] in V

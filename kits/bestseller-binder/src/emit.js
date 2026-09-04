@@ -177,4 +177,13 @@ pages.push(grab('How this unit is built')
            'margin-top:8pt">\n      <h2 style="font-size:13pt;margin-bottom:5pt">References</h2>'));
 
 fs.writeFileSync(process.argv[2], head + pages.join('\n') + '\n</body></html>');
+
+// Emit the word lists the CVC gate's vowel-purity pass reads, so the gate is
+// always checking the words this build actually shipped rather than a stale copy.
+fs.writeFileSync(__dirname + '/../units.json',
+  JSON.stringify(UNITS.map(u => ({
+    v: u.v, name: u.name, pics: u.pics, plain: u.plain,
+    sbox: u.sbox, probe: u.probe, fams: u.fams,
+  })), null, 2) + '\n');
+
 console.log('pages emitted:', pages.length);
