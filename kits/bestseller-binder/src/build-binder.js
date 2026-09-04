@@ -102,10 +102,15 @@ function unitPages(u, n) {
       works for every unit.</div>
     </div>
     <div class="card" style="margin-top:11pt">
-      <h2 style="font-size:13.5pt;margin-bottom:5pt">If a student is stuck here</h2>
-      <div style="font-size:10.5pt;line-height:1.6">Go back a step rather than forward. Practice 3 (sound boxes) before practice 1
-      rebuilds the sounds; practice 1 before practice 2 puts the picture support back. A student who cannot hear three separate sounds
-      in a word is not ready for the writing pages yet — that is a segmenting gap, and the Growth Eval says what to do about it.</div>
+      <h2 style="font-size:13.5pt;margin-bottom:6pt">If a student is stuck</h2>
+      <div style="font-size:10.5pt;line-height:1.5">
+        <div style="display:flex;gap:10pt;margin-bottom:6pt"><div style="flex:none;width:2.35in;font-weight:800">Can't say the three sounds in a word</div>
+        <div style="flex:1">Do the <b>sound-box page</b> on its own for a few days. It is the most basic task in the unit even though it sits third — segmenting comes before writing.</div></div>
+        <div style="display:flex;gap:10pt;margin-bottom:6pt"><div style="flex:none;width:2.35in;font-weight:800">Reads it with the picture, not without</div>
+        <div style="flex:1">The picture is doing the decoding. Cover the pictures on the first practice page and read the words again before moving on.</div></div>
+        <div style="display:flex;gap:10pt"><div style="flex:none;width:2.35in;font-weight:800">Accurate but slow, sound by sound</div>
+        <div style="flex:1">The sound is secure; blending speed is the gap. Re-read the same page daily for a week rather than adding new words.</div></div>
+      </div>
     </div>
     <div style="background:var(--sunny);border-radius:15pt;padding:12pt 16pt;margin-top:11pt">
       <div style="font-weight:800;font-size:10.5pt;line-height:1.55">Every word in this unit uses the short <b>${u.v}</b> sound and
