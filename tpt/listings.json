@@ -1493,31 +1493,31 @@
       "customCategory": "Deaf Education"
     },
     {
-      "id": "cvc-unit1-short-a",
+      "id": "cvc-binder",
       "order": 41,
-      "name": "CVC Words Worksheets · Short A",
-      "title": "CVC Words Worksheets | Short A Intervention Binder with Data & AI Growth Eval",
-      "product": "UPLOAD/02-paid/CVC-Words-Worksheets-Unit-1-Short-A.pdf",
-      "cover": "tpt/covers/cvc-unit1-short-a-cover.png",
-      "price": 5,
-      "licenses": 2.5,
-      "filesBadge": "12 pages",
-      "insideHeading": "What's inside unit 1",
-      "previewUnit": "unit 1 is 12 pages",
+      "name": "Short-Vowel CVC Intervention Binder",
+      "title": "Short Vowel CVC Intervention Binder | CVC Words Worksheets + AI Growth Eval",
+      "product": "UPLOAD/02-paid/Short-Vowel-CVC-Intervention-Binder.pdf",
+      "cover": "tpt/covers/cvc-binder-cover.png",
+      "price": 16,
+      "licenses": 8,
+      "filesBadge": "52 pages",
+      "insideHeading": "What's inside the binder",
+      "previewUnit": "the full binder is 52 pages",
       "previewShots": [
-        "cvc1_p2.png",
-        "cvc1_p6.png",
-        "cvc1_p10.png"
+        "cvcb_p4.png",
+        "cvcb_p12.png",
+        "cvcb_p50.png"
       ],
       "thumbnails": [
-        "tpt/extras/cvc1-whats-inside.png",
-        "tpt/extras/cvc1-real-pages.png"
+        "tpt/extras/cvcb-whats-inside.png",
+        "tpt/extras/cvcb-real-pages.png"
       ],
       "previewInside": [
-        "<b>Six no-prep practice pages</b> — read it, build it, write it; sound boxes; picture match; word families; sentences",
-        "A <b>ten-word probe</b> on its own student page, plus a four-week data sheet",
+        "<b>All five short vowels</b> — a, i, o, u, e — six practice pages each, 30 in total",
+        "<b>Six probes with data sheets</b>: one per unit plus a mixed review of all five vowels",
         "<b>AI Growth Eval</b> — score bands to next steps, with a de-identified prompt option",
-        "<b>Group snapshot</b> — sort a whole group into re-teach / practise / move on",
+        "<b>Group snapshot</b> — sort a whole small group into re-teach / practise / move on",
         "The scope and sequence printed inside, and the research it is built on cited"
       ],
       "formats": [
@@ -1536,12 +1536,12 @@
       "tags": [
         "cvc words worksheets",
         "cvc word list",
-        "cvc words",
         "reading intervention binder",
-        "phonics",
+        "cvc words",
+        "phonics intervention",
         "sight words"
       ],
-      "description": "ENDS WITH AN AI GROWTH EVAL — the page no other intervention binder has. Your student reads the ten-word probe, you record the score, and the Growth Eval tells you what that score means and the next three moves to make this week. It works with zero technology: score bands, plain next steps, printed on the page. If you do use an AI assistant, there is a ready-to-paste prompt that uses de-identified data only — a grade and a pattern, never a name, never a class list, and never the student at a keyboard.\n\nUNIT 1 OF 5 (12 pages): six practice pages — read it/build it/write it with pictures, then again without pictures, sound boxes, picture-and-word match, word-family sorting, and sentence reading · a ten-word probe on its own student-facing page · a four-week data sheet · the AI Growth Eval for one student · a group snapshot that sorts a whole small group into re-teach / practise / move on · and a page showing exactly what the unit is built on.\n\nNO PREP. Print once, slide the practice pages into sleeves, hand out a dry-erase marker, and the unit lasts all year.\n\nTHE SCOPE AND SEQUENCE IS PRINTED INSIDE so you can slot this into whatever phonics program you already teach instead of guessing what it assumes. Every target word is a true short-a CVC word — one consonant, one short vowel, one consonant, no blends or digraphs — verified by an automated check before publication.\n\nWHAT WE ARE NOT CLAIMING: this is not aligned to, affiliated with, or a substitute for any named phonics program, and it is not a diagnostic assessment. It is practice material and a ten-word progress check.\n\nUnits 2–5 (short i, o, u, e) follow, then the full bundle.\n\nUSING THIS WITH A TEAM? Additional licenses are half price ($2.50 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers."
+      "description": "ENDS WITH AN AI GROWTH EVAL — the page no other intervention binder has. Your student reads the ten-word probe, you record the score, and the Growth Eval tells you what that score means and the next three moves to make this week. It works with zero technology: score bands and plain next steps, printed on the page. If you do use an AI assistant, there is a ready-to-paste prompt that uses de-identified data only — a grade and a pattern, never a name, never a class list, and never the student at a keyboard. A second page does the same for a whole small group.\n\nTHE COMPLETE BINDER, 52 PAGES. Five units — short a, i, o, u, e — with six practice pages each: read it/build it/write it with pictures, then again without pictures, sound boxes, picture-and-word match, word-family sorting, and sentence reading. Every unit ends with a ten-word probe on its own student-facing page and a four-week data sheet. A mixed-review probe at the back checks all five vowels together, so you can see which one needs another pass.\n\nNO PREP. Print once, sleeve the practice pages, hand out a dry-erase marker, and the binder lasts all year.\n\nTHE SCOPE AND SEQUENCE IS PRINTED INSIDE so you can slot this into whatever phonics programme you already teach instead of guessing what it assumes. Short a first because it appears in more early decodable words than any other short vowel; short e last because e and i are the pair students most often confuse.\n\nEVERY TARGET WORD IS A TRUE CVC WORD — one consonant, one short vowel, one consonant, no blends and no digraphs — verified by an automated check before publication, and every unit checked so no word leaks in from another vowel.\n\nWHAT WE ARE NOT CLAIMING: this is not aligned to, affiliated with, or a substitute for any named phonics programme, and it is not a diagnostic assessment. It is practice material and a set of ten-word progress checks.\n\nUSING THIS WITH A TEAM? Additional licenses are half price ($8 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers."
     }
   ]
 }

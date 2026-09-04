@@ -25,8 +25,8 @@ Heuristics (tuned to the brand.css layout, Letter with header/footer bands):
 Exit code 1 when anything is flagged, so it can gate a build. Expect to eye
 each flag before "fixing": list items and table rows can false-positive.
 """
-import sys
 import re
+import sys
 import pymupdf
 
 TERMINAL = re.compile(r'[.!?:;"”’)\]]\s*$')
@@ -116,6 +116,11 @@ for path in paths:
             continue
         last_y, last_text, last_size = cur[-1]
         first_text = nxt[0][1]
+        # A blank score box ("___ / 10") is a designed form field, not a
+        # heading that got separated from its body. It is large type by
+        # design and can never be the start of a split.
+        if re.fullmatch(r'_+\s*/\s*\d+', last_text.strip()):
+            continue
         if last_size >= 13.5:
             print(f'{path} p{i+1}->p{i+2}  ORPHAN HEADING: "{last_text[:70]}"')
             flags += 1

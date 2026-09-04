@@ -217,11 +217,11 @@ const PRODUCTS = [
     title: 'Executive Functioning', accent: 'Self-Advocacy & Planning',
     lede: 'A task-planning checklist, a materials checklist, and a three-question self-check card for the extra load a missed direction adds.',
     chips: ['Task planner', 'Self-check card', 'Any grade', 'Free'] },
-  { file: 'cvc-unit1-short-a',   badge: 'Reading Intervention',
-    kicker: 'CVC words worksheets · unit 1 of 5',
-    title: 'Short A CVC:', accent: 'Read It, Build It, Write It',
-    lede: 'Six no-prep practice pages, a ten-word probe and a data sheet — then an AI Growth Eval that turns the score into next steps.',
-    chips: ['12 pages', 'Grades K–2', 'Probe + data', 'Growth Eval'] },
+  { file: 'cvc-binder',          badge: 'Reading Intervention',
+    kicker: 'CVC words worksheets · all 5 short vowels',
+    title: 'Short-Vowel CVC:', accent: 'The Complete Binder',
+    lede: '30 no-prep practice pages, six probes with data sheets, and an AI Growth Eval that turns the scores into next steps.',
+    chips: ['52 pages', 'Grades K-2', '6 probes + data', 'Growth Eval'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

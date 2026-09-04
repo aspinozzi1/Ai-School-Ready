@@ -106,19 +106,35 @@ We require:
 4. **We can author it honestly** — original content, correct content,
    and a citable basis (see the authoring standard above).
 
-### Cadence — the sustainable shape
+### Cadence — SHIP THE COMPLETE BINDER (owner directive 2026-09-04)
 
-A 40–60 page academic build every single week is not realistic at our
-quality bar. Friday therefore ships **one unit per week (8–14 pages)**
-from an in-progress binder, each unit a complete standalone product with
-its own probe, data sheet and Growth Eval — then, when the units are
-done, a **bundle listing** at the full price. This is TPT-native
-(bundles convert well), it de-risks the format (weak seller = stop after
-unit 2), and it gives Friday a shippable product every week.
+The unit-by-unit plan is **cancelled**. Owner: *"Teachers aren't going to
+buy one-offs and slowly build their binders."* That is right — the
+category is defined by completeness, and a partial binder asks the buyer
+to bet on a stranger finishing it.
 
-Example, first binder: Unit 1 short a → Unit 2 short i → Unit 3 short o
-→ Unit 4 short u → Unit 5 short e → **bundle: Short-Vowel CVC
-Intervention Binder, $18** (units $4–5 each, bundle saves ~25%).
+**Friday ships a complete product.** A binder is authored in full and
+listed whole. Where a build is genuinely too large for one Friday, it is
+built across two and listed on the second — never listed half-finished.
+
+Shipped this way: **Short-Vowel CVC Intervention Binder, 52 pages, $16**
+(license $8) — all five short vowels, six probes with data sheets, the
+mixed review, and the Growth Eval pages.
+
+### Picture standard (owner directive 2026-09-04)
+
+Owner: *"change your images to be actually good images when doing image
+word associations."* The first pass used thin line icons that were
+ambiguous at worksheet size — several were unidentifiable, which in a
+picture-word matching task is not a style problem, it is a correctness
+problem: the child cannot answer.
+
+Standard now: **filled, high-contrast, literal-coloured illustrations**
+(`kits/bestseller-binder/src/icons.js`, 30 words). Every picture must be
+identifiable at 44pt by a five-year-old, in one guess. Ambiguous drawings
+are not "polished" — the word is swapped for one that can be drawn
+clearly. Four were swapped during this build for exactly that reason:
+lid→kid, wig→lip, net→ten, bib→bin.
 
 ---
 
