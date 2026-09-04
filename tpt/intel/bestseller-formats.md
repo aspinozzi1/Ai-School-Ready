@@ -163,3 +163,29 @@ the same pattern (a small teacher-tally box near a page bottom matched
 against a similar box near the next page top). Verified visually on the
 contact sheet and dismissed: every page is a fixed-height `.sheet` with
 `overflow:hidden`, so no content can flow across a page boundary.
+
+### Art pipeline (established 2026-09-04)
+
+The owner generates the picture set as **five 3×2 grids, one per short
+vowel**, and commits the raw PNGs to `kits/bestseller-binder/art/`.
+`build-binder.js` slices, keys and embeds them; the hand-drawn SVG set in
+`icons.js` stays as a fallback so a missing file degrades to a drawing
+rather than a blank cell.
+
+Cutting rules that took three passes to get right, and are worth keeping:
+- **Key white from the border inward only.** A naive white-to-alpha pass
+  erases white *inside* objects — the hen's body, the mug's rim, the
+  numerals in 6 and 10.
+- **Inset each cell ~3.5% before keying.** Neighbouring objects bleed
+  over the grid lines.
+- **Drop components under 3% of the largest**, never components that
+  touch an edge. The edge rule looks right and silently deleted five
+  whole subjects (pan, kid, box, bus, bed) because wide objects legitimately
+  reach the cell boundary.
+- Trim to the alpha bounding box, pad 5%, resize to a common 512px square
+  so every picture carries the same optical weight on the page.
+
+Prompting note: the prompt describes the *convention* — bold uniform
+outline, flat solid fills, no gradients or shadows, literal colours — and
+never names another seller's brand. Naming a live competitor's style to
+reproduce it and then selling alongside them is not a road we go down.

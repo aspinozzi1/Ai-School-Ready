@@ -44,8 +44,21 @@ const UNITS = [
 const CSSFILE = require('fs').readFileSync(__dirname + '/cvc-unit1-short-a.html','utf8');
 const css = CSSFILE.slice(CSSFILE.indexOf('<style>')+7, CSSFILE.indexOf('</style>'));
 
-const icon = (w,size=34) => ICONS[w]
-  ? `<svg viewBox="0 0 64 64" width="${size}" height="${size}">${ICONS[w]}</svg>` : '';
+const fs_ = require('fs');
+const ART = __dirname + '/../art/cut';
+const artCache = {};
+const icon = (w, size = 34) => {
+  const f = `${ART}/${w}.png`;
+  if (!(w in artCache)) {
+    artCache[w] = fs_.existsSync(f)
+      ? 'data:image/png;base64,' + fs_.readFileSync(f).toString('base64') : null;
+  }
+  // Licensed/commissioned art wins; the SVG set stays as the fallback so a
+  // missing file degrades to a drawing rather than a blank cell.
+  return artCache[w]
+    ? `<img src="${artCache[w]}" width="${size}" height="${size}" style="display:block;margin:0 auto;object-fit:contain">`
+    : (ICONS[w] ? `<svg viewBox="0 0 64 64" width="${size}" height="${size}">${ICONS[w]}</svg>` : '');
+};
 const W = w => `<span class="w">${w}</span>`;
 
 const sheet = (inner, fl, fr) => `<div class="sheet">
@@ -56,7 +69,7 @@ const sheet = (inner, fl, fr) => `<div class="sheet">
 </div>`;
 
 const wrow = (i,w,withPic) => `<div class="wrow">${withPic
-  ? `<div class="pic">${icon(w)}</div>` : `<div class="wnum">${i+1}</div>`}
+  ? `<div class="pic">${icon(w,38)}</div>` : `<div class="wnum">${i+1}</div>`}
   <div class="word w">${w}</div>
   <div class="boxes"><div class="bx"></div><div class="bx"></div><div class="bx"></div></div>
   <div class="wline"></div></div>`;
@@ -79,7 +92,7 @@ function unitPages(u, n) {
     </div>
     <div style="display:flex;gap:5pt;margin-top:14pt;flex-wrap:wrap">${seqPills}</div>
     <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8pt;margin-top:14pt">
-      ${u.pics.map(w=>`<div class="card" style="text-align:center;padding:12pt 3pt">${icon(w,44)}
+      ${u.pics.map(w=>`<div class="card" style="text-align:center;padding:11pt 3pt">${icon(w,52)}
         <div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14pt;letter-spacing:1.5px;margin-top:4pt" class="w">${w}</div></div>`).join('')}
     </div>
     <div class="card" style="margin-top:14pt">
@@ -182,7 +195,7 @@ function unitPages(u, n) {
       <div class="bank">${[...u.pics].reverse().map(W).join('')}</div>
     </div>
     <div class="grid3" style="margin-top:13pt">
-      ${u.pics.map(w=>`<div class="card" style="padding:16pt 9pt;text-align:center">${icon(w,54)}
+      ${u.pics.map(w=>`<div class="card" style="padding:14pt 9pt;text-align:center">${icon(w,112)}
         <div style="border-bottom:2.5pt dotted #9FB2C2;height:22pt;margin:8pt 8pt 0"></div></div>`).join('')}
     </div>
     <div style="background:var(--sunny);border-radius:15pt;padding:11pt 15pt;margin-top:12pt">
