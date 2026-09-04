@@ -238,7 +238,7 @@ const IMAGES = [
     'Thirty no-prep practice pages, six per unit',
     'Six ten-word probes, each on its own student page',
     'Six four-week data sheets plus a mixed review',
-    'The AI Growth Eval: score bands to next steps',
+    'The AI Growth Eval: a score in, three next moves out',
     'A group snapshot that sorts a small group in a minute',
   ], '52 pages')],
   ['cvcb-real-pages',   realPages('#E4572E', ['cvcb_p4.png', 'cvcb_p12.png', 'cvcb_p50.png'], '52 pages')],
