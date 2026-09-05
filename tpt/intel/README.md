@@ -18,10 +18,17 @@ where connectors are live) produces each brief:
    fetches as of 2026-09-04.
 2. **The owner's analysis spec (2026-08-24)** — every brief must include:
    - **Top 3 low-competition, high-intent terms**: candidate phrases
-     ranked by buyer intent, keeping only those with roughly **under
-     3,000 competing TPT products**. Read this off the **Resources
-     bucket** in the owner's TPT Keywords pulls — that is the number,
-     and it is the primary meter.
+     ranked by the **win score** in `winnable-niches.md`, read off the
+     **Resources bucket** in the owner's TPT Keywords pulls.
+     (Superseded 2026-09-05: this used to say "keeping only those with
+     roughly under 3,000 competing TPT products." Taken literally that
+     cutoff rejects the two best phrases we have ever found — iep goal
+     tracking and progress monitoring tracking sheet both sit in the
+     3K–8K bucket and score 867 and 759. The owner's 2026-09-01 win-score
+     directive replaced the flat cutoff with two hard filters: the
+     Opportunity badge must be Strong or Promising, and we must be able
+     to build the artifact at quality in one build. Those govern. Reverse
+     this if the flat cutoff was meant to stand.)
      (Superseded 2026-09-04: this used to say "fetch
      `teacherspayteachers.com/browse?search=<phrase>` and read the
      count." TPT now returns HTTP 403 to automated fetches, so that
