@@ -3,7 +3,8 @@ PINTEREST UPLOAD SHEET — one pin per listing
 Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
-Young Entrepreneurs · Deaf Education
+Young Entrepreneurs · Deaf Education · Reading Intervention ·
+Classroom Management · Special Education
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================
@@ -1755,6 +1756,221 @@ Reading Intervention   <- create once, reuse forever
 --- TAGGED TOPICS ---
 
 Try: cvc words worksheets · cvc word list · reading intervention binder   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IEP AT A GLANCE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+iep-at-a-glance-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+IEP at a Glance | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+IEP at a glance student snapshot sheets: a one-page IEP summary for general education teachers, paraprofessionals, and substitutes — goals in plain language, accommodations, services, contacts, a binder cover, section tabs, and a guest-teacher quick-reference card with accommodations only, never a diagnosis. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep at a glance · iep snapshot · iep binder   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IEP GOAL TRACKING & DATA COLLECTION SHEETS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+iep-goal-tracking-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+IEP Goal Tracking & Data Collection Sheets | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+IEP goal tracking and progress monitoring data collection sheets: a goal-at-a-glance page, weekly and six-week data sheets, a hand-plotted graph page, a prompting-level recording sheet, and an AI Progress Summary page that drafts a progress-report sentence from de-identified scores. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep goal tracking · progress monitoring tracking sheet · progress monitoring forms special education   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+FREE BEHAVIOR TRACKER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+free-behavior-tracker-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Free Behavior Tracker | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free behavior tracker for teachers: a daily point sheet, a frequency tally for one specific behavior, and a weekly summary with plain-language bands — no login, no app, just paper. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: free behavior tracker · behavior tracker · behavior tracking sheet   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOMESCHOOL ATTENDANCE SHEET
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+homeschool-attendance-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Homeschool Attendance Sheet | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free homeschool attendance sheet: a monthly attendance grid to photocopy all year, a year-at-a-glance summary against your own target, and a simple subject log for portfolio review. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool attendance sheet · homeschool record keeping · homeschool planner   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PROGRESS MONITORING TRACKING SHEETS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+progress-monitoring-sheets-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Progress Monitoring Tracking Sheets | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free progress monitoring tracking sheets: a twelve-week weekly data sheet and a hand-plotted graph page with a target line, ready to print for any IEP goal. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: progress monitoring tracking sheet · progress monitoring forms special education · data tracker   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 

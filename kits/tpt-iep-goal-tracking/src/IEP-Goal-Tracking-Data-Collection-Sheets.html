@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IEP Goal Tracking &amp; Data Collection Sheets</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .sect { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  table.logtbl { font-size: 8.6pt; }
+  table.logtbl th { font-size: 7.8pt; }
+  table.logtbl td { height: 18pt; text-align: center; }
+  table.logtbl thead { display: table-header-group; }
+  table.logtbl thead tr { break-inside: avoid; break-after: avoid; }
+  .fieldrow { display: flex; gap: 12pt; margin-bottom: 8pt; flex-wrap: wrap; }
+  .fieldrow .f { flex: 1 1 auto; min-width: 120pt; }
+  .fieldrow label { display: block; font-size: 8pt; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2pt; }
+  .fieldrow .writein { height: 15pt; }
+  .grid-wrap { border: 1px solid var(--mist); border-radius: 8px; padding: 8pt 10pt 4pt; }
+  table.graph { border-collapse: collapse; width: 100%; }
+  table.graph th { background: none; color: var(--muted); font-size: 7.5pt; font-weight: 700; text-align: right; padding: 0 6pt 0 0; border: none; }
+  table.graph td { border: 1px solid var(--mist); width: 7%; height: 15pt; padding: 0; }
+  table.graph tr.target td { border-top: 1.5pt dashed var(--teal); }
+  .prompt-card .prompt-text { background: var(--paper); border-radius: 8px; padding: 8pt 10pt; font-size: 9.6pt; margin-top: 4pt; }
+  .worked { background: var(--paper); border-radius: 8px; padding: 9pt 12pt; margin: 6pt 0; font-size: 9.6pt; }
+  .worked b { color: var(--navy); }
+  .band-legend { display: flex; gap: 8pt; margin: 6pt 0 8pt; flex-wrap: wrap; }
+  .band-legend span { font-size: 8pt; font-weight: 700; padding: 2pt 8pt; border-radius: 10px; }
+  .roster td, .roster th { text-align: center; }
+  .roster td:first-child, .roster th:first-child { text-align: left; }
+</style>
+</head>
+<body>
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Special Education · Data Tracking<b>IEP Goal Tracking &amp; Data Collection Sheets</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">Print once per goal, reuse all year</div>
+    <h1>IEP Goal Tracking &amp; Data Collection Sheets</h1>
+    <p class="lede">Everything a case manager needs to collect, graph, and report progress-monitoring
+    data for one IEP goal &mdash; and the one page nothing else in this space offers: an AI page that
+    turns six weeks of scores into a drafted progress-report sentence, using student numbers only,
+    never a name.</p>
+
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>Goal-at-a-glance page</strong> &mdash; the goal text, baseline, target, and the
+        exact criterion for meeting it, all in one place.</li>
+        <li><strong>Weekly data sheet</strong> &mdash; twelve weeks of trials and percentage columns.</li>
+        <li><strong>A six-week short-cycle sheet</strong> &mdash; for a goal nearing mastery or a
+        shorter review window.</li>
+        <li><strong>Daily quick-tally sheet</strong> &mdash; for goals measured every session
+        instead of weekly.</li>
+        <li><strong>Prompting-level recording sheet</strong> &mdash; records which level of prompt a
+        response needed, cited to the standard hierarchy used in special education.</li>
+        <li><strong>Hand-plotted graph page</strong> with a target line you draw in yourself.</li>
+        <li><strong>"Is this goal on pace?" decision table</strong> &mdash; the zero-technology check.</li>
+        <li><strong>The AI Progress Summary page</strong> &mdash; the differentiator.</li>
+        <li><strong>Caseload group snapshot</strong> &mdash; every goal at a glance, by student number.</li>
+        <li><strong>Meeting-prep one-pager</strong> &mdash; what the data says, in plain sentences.</li>
+      </ul>
+    </div>
+
+    <div class="callout rule">
+      <div class="rule-label">Before you use any page in this pack</div>
+      <div class="rule-text" style="font-size:12.5pt">This is a <b style="color:var(--teal)">tracking
+      tool</b>, never a decision-maker.<br><em>It never states what a goal should say, whether a
+      student qualifies for services, or what placement is appropriate &mdash; those stay IEP-team
+      decisions, every time.</em></div>
+    </div>
+
+    <div class="sect">
+    <h2>Goal-at-a-glance</h2>
+    <p class="small" style="margin-bottom:8pt">Fill in once per goal, clip to the front of that
+    goal's data. Use a student number, never a name, on any page you photocopy for a coach, a
+    substitute case manager, or a district file.</p>
+    <div class="fieldrow">
+      <div class="f"><label>Student number</label><span class="writein"></span></div>
+      <div class="f"><label>Grade</label><span class="writein"></span></div>
+      <div class="f"><label>Goal area</label><span class="writein"></span></div>
+      <div class="f"><label>Goal start date</label><span class="writein"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f" style="flex:1 1 100%"><label>Goal text (copy from the IEP)</label><span class="writein" style="height:32pt"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f"><label>Baseline</label><span class="writein"></span></div>
+      <div class="f"><label>Target</label><span class="writein"></span></div>
+      <div class="f"><label>Criterion (e.g. "4 of 5 trials, 2 consecutive sessions")</label><span class="writein"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f"><label>How this will be measured</label><span class="writein"></span></div>
+      <div class="f"><label>How often data is collected</label><span class="writein"></span></div>
+      <div class="f"><label>Review date</label><span class="writein"></span></div>
+    </div>
+    </div>
+
+    <div class="sect">
+    <h2>Weekly data sheet &mdash; 12 weeks</h2>
+    <p class="small" style="margin-bottom:6pt">One row per week. Record the number of trials given,
+    the number correct, and the percentage &mdash; then carry the percentage to the graph page.</p>
+    <table class="logtbl">
+      <thead><tr><th style="width:14%">Week of</th><th style="width:14%">Trials given</th><th style="width:14%">Correct</th><th style="width:14%">Percent</th><th style="width:44%">Notes</th></tr></thead>
+      <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>9</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>10</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>11</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>12</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="sect">
+    <h2>Six-week short-cycle sheet</h2>
+    <p class="small" style="margin-bottom:6pt">Use this shorter version for a goal close to mastery,
+    a shorter review cycle, or a mid-quarter check on a new goal.</p>
+    <table class="logtbl">
+      <thead><tr><th style="width:16%">Week of</th><th style="width:16%">Trials given</th><th style="width:16%">Correct</th><th style="width:16%">Percent</th><th style="width:36%">Notes</th></tr></thead>
+      <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Same columns, half the rows &mdash; print this one when twelve weeks would sit
+    mostly blank.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Daily quick-tally sheet</h2>
+    <p class="small" style="margin-bottom:6pt">For a goal measured every session instead of every
+    week &mdash; mark one tally box per opportunity, circle a total at the end of the day.</p>
+    <table class="logtbl">
+      <thead><tr><th style="width:16%">Date</th><th style="width:56%">Tally (one box per opportunity)</th><th style="width:14%">Total</th><th style="width:14%">Percent</th></tr></thead>
+      <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="sect">
+    <h2>Prompting-level recording sheet</h2>
+    <p class="small" style="margin-bottom:6pt">Records which level of prompt a response needed &mdash;
+    it does not tell you which level to use with a student. This sheet follows the response-prompting
+    hierarchy used across special education and applied behavior analysis, described in Alberto,
+    P. A., &amp; Troutman, A. C., <em>Applied Behavior Analysis for Teachers</em> (Pearson): from most
+    help to least, full physical &middot; partial physical &middot; model &middot; gestural &middot;
+    verbal &middot; independent.</p>
+    <table class="logtbl">
+      <thead><tr><th style="width:12%">Trial</th><th style="width:14.6%">Independent</th><th style="width:14.6%">Verbal</th><th style="width:14.6%">Gestural</th><th style="width:14.6%">Model</th><th style="width:14.6%">Partial physical</th><th style="width:14.6%">Full physical</th></tr></thead>
+      <tbody>
+      <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Mark a check in the column that matches the help the student needed for that
+    trial. Which level to use in teaching stays the practitioner's and the IEP team's call &mdash;
+    this page only records what happened.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Graph page</h2>
+    <p class="small" style="margin-bottom:6pt">Draw your target line first &mdash; a straight line
+    across the row that matches the goal's criterion percentage. Then plot each week's percentage as
+    a dot and connect the dots as you go.</p>
+    <div class="grid-wrap">
+    <table class="graph">
+      <tbody>
+        <tr><th>100%</th><td colspan="12"></td></tr>
+        <tr><th>90%</th><td colspan="12"></td></tr>
+        <tr><th>80%</th><td colspan="12"></td></tr>
+        <tr class="target"><th>70%</th><td colspan="12"></td></tr>
+        <tr><th>60%</th><td colspan="12"></td></tr>
+        <tr><th>50%</th><td colspan="12"></td></tr>
+        <tr><th>40%</th><td colspan="12"></td></tr>
+        <tr><th>30%</th><td colspan="12"></td></tr>
+        <tr><th>20%</th><td colspan="12"></td></tr>
+        <tr><th>10%</th><td colspan="12"></td></tr>
+        <tr><th>0%</th><td colspan="12"></td></tr>
+      </tbody>
+    </table>
+    <div style="display:flex;justify-content:space-between;font-size:7.5pt;color:var(--muted);font-weight:700;margin-top:3pt">
+      <span>Wk 1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>Wk 12</span>
+    </div>
+    </div>
+    <p class="small" style="margin-top:6pt">The dashed line prints at 70% as a starting guide &mdash;
+    cross it out and redraw it at your own goal's criterion if that number is different.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Is this goal on pace? The zero-technology check</h2>
+    <p class="small" style="margin-bottom:6pt">No chart, no AI, no login &mdash; just read the last
+    three data points against the target and match your situation below.</p>
+    <table>
+      <thead><tr><th style="width:38%">What you're seeing</th><th style="width:30%">What it usually means</th><th style="width:32%">A reasonable next step</th></tr></thead>
+      <tbody>
+        <tr><td>Last three scores are flat or falling, well below target</td><td>The current approach may not be reaching this student</td><td>Bring the data to the team; consider a different teaching strategy or more frequent practice</td></tr>
+        <tr><td>Scores are rising, but slowly</td><td>Likely on pace, just early</td><td>Keep the current plan; re-check in two more weeks</td></tr>
+        <tr><td>Scores are rising quickly, near or at criterion</td><td>The goal may be close to met</td><td>Confirm with one more data point at criterion, then flag for the team to consider next steps</td></tr>
+        <tr><td>Scores bounce up and down with no clear direction</td><td>The measurement or the conditions may be inconsistent</td><td>Check that trials are given the same way each time before changing the goal itself</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="sect">
+    <h2>The AI Progress Summary page</h2>
+    <p class="small" style="margin-bottom:6pt">This is the page nothing else in this niche has: turn
+    six weeks of de-identified scores into a trend read and a drafted progress-report sentence. Use a
+    student number only. Never paste a name, a class roster, or a diagnosis.</p>
+
+    <div class="band-legend">
+      <span style="background:#FDECE6;color:var(--error)">Below pace</span>
+      <span style="background:#FDF6E7;color:#8a6d1a">On pace, early</span>
+      <span style="background:#EAF5F3;color:var(--success)">Meeting or near criterion</span>
+    </div>
+
+    <div class="worked">
+      <b>Worked example</b> &mdash; Student #14, two-digit addition with regrouping, criterion 8/10
+      correct on 2 consecutive weekly checks. Six weekly scores, out of 10: 4, 5, 5, 6, 7, 8.<br><br>
+      <b>Trend:</b> steady increase, +4 points over six weeks, no week scored lower than the one
+      before it.<br>
+      <b>Read against the criterion:</b> this week's score of 8/10 meets the criterion for the first
+      time. One more consecutive check at 8/10 or higher would meet the full two-check criterion.<br>
+      <b>What this is not:</b> not a claim that the goal is met, and not a recommendation about
+      whether to write a new goal &mdash; both stay the team's call once the second check comes in.
+    </div>
+
+    <div class="card prompt-card">
+      <h3 style="margin-top:0">Copy-paste prompt: trend read + a drafted sentence</h3>
+      <div class="prompt-text">"Here are a student's weekly progress-monitoring scores, most recent
+      last, out of a possible total: [PASTE SCORES ONLY &mdash; NO NAME, NO CLASS ROSTER, NO
+      DISABILITY LABEL]. The goal's criterion is: [PASTE THE CRITERION FROM THE GOAL-AT-A-GLANCE
+      PAGE]. In three sentences: describe the trend, say whether the scores are moving toward that
+      criterion, and draft one plain-language sentence a case manager could use in a progress
+      report. Do not state whether the goal has been met &mdash; only describe the data."</div>
+    </div>
+    <p class="small">The chatbot drafts a sentence from numbers. Whether the goal is met, whether it
+    changes, and what happens next stay the IEP team's decisions &mdash; every time, for every
+    student.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Caseload group snapshot</h2>
+    <p class="small" style="margin-bottom:6pt">One row per student on your caseload, by number,
+    for a fast read of who needs attention this week.</p>
+    <table class="logtbl roster">
+      <thead><tr><th style="width:14%">Student #</th><th style="width:22%">Goal area</th><th style="width:16%">Last score</th><th style="width:16%">3-week trend</th><th style="width:16%">On pace?</th><th style="width:16%">Flag for team</th></tr></thead>
+      <tbody>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Update this page weekly and you can answer "how is my caseload doing?" in the
+    hallway without opening a single folder.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Meeting-prep one-pager</h2>
+    <p class="small" style="margin-bottom:6pt">Fill this in the night before an IEP meeting so the
+    data walks in the room already turned into sentences.</p>
+    <div class="fieldrow">
+      <div class="f"><label>Student number</label><span class="writein"></span></div>
+      <div class="f"><label>Meeting date</label><span class="writein"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f" style="flex:1 1 100%"><label>In one sentence, what does the data show?</label><span class="writein" style="height:26pt"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f" style="flex:1 1 100%"><label>Is the current goal on pace, and how do you know?</label><span class="writein" style="height:26pt"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f" style="flex:1 1 100%"><label>One thing that's working and is worth continuing</label><span class="writein" style="height:26pt"></span></div>
+    </div>
+    <div class="fieldrow">
+      <div class="f" style="flex:1 1 100%"><label>Questions you want the team to discuss</label><span class="writein" style="height:26pt"></span></div>
+    </div>
+    </div>
+
+    <div class="sect">
+    <h2>Filing this pack</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>One folder per goal, not per student,</strong> if a student has more than one
+        goal you track closely &mdash; it keeps the graph and the data sheet for that goal together.</li>
+        <li><strong>Start a fresh weekly data sheet the moment one fills up</strong> rather than
+        squeezing extra weeks into the margin.</li>
+        <li><strong>File by student number</strong> in a locked cabinet or a password-protected
+        folder, matching your district's storage policy for special education records.</li>
+        <li><strong>Shred or securely delete</strong> a goal's working sheets once the official
+        progress report is filed, per your district's retention schedule.</li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="sect">
+    <h2>De-identification, always</h2>
+    <div class="callout rule">
+      <div class="rule-label">Before any page in this pack goes into a chatbot</div>
+      <div class="rule-text" style="font-size:12.5pt">Student number, grade, goal area, and scores
+      only.<br><em>Never a name, never a full roster, never a diagnosis or disability label.</em></div>
+    </div>
+    <p class="small">This applies to every prompt in this pack, including the AI Progress Summary
+    page. If a sentence you're about to paste would let a stranger identify the student, take out
+    the detail that does it before you paste.</p>
+
+    <h2>What this pack is not</h2>
+    <div class="card">
+      <ul style="margin-bottom:0">
+        <li><strong>Not an IEP.</strong> It tracks progress toward a goal the team already wrote.</li>
+        <li><strong>Not a compliance document.</strong> Follow your district's official progress-reporting
+        process and forms; use these pages as your own working data, not the official record unless
+        your district says otherwise.</li>
+        <li><strong>Not legal or clinical advice.</strong> It never states whether a student qualifies
+        for services, what a goal should say, or what placement is appropriate.</li>
+      </ul>
+    </div>
+
+    <div class="callout teal"><strong>Want the fast front door to this family?</strong> Our IEP at a
+    Glance pack builds the one-page student summary every gen-ed teacher and para keeps at hand.
+    In our TpT store.</div>
+
+    <p class="legal" style="margin-bottom:0">&copy; Adam &amp; Katelyn Spinozzi &middot; AI-Ready
+    School. Licensed to the purchasing educator (TpT single-user license); print for your own
+    caseload. Running this across a team or building? Additional licenses are half price, and we
+    accept purchase orders through TpT for Schools. This resource is informational; follow your
+    district's IEP and progress-reporting procedures. Prompt-level hierarchy cited to Alberto &amp;
+    Troutman, <em>Applied Behavior Analysis for Teachers</em> (Pearson). Built and audited by two
+    certified teachers.</p>
+
+  </td></tr></tbody>
+</table>
+</body>
+</html>

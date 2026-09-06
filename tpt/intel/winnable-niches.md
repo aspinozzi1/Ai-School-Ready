@@ -47,21 +47,21 @@ evidence.
 
 | Phrase | Searches | Resources | Badge | Win score | Status |
 |---|---|---|---|---|---|
-| **iep at a glance** | 9,199 | **1K–3K** | Strong | **4,600** | **NEW #1 (pull #12–#13, 09-05)** |
-| **iep snapshot** | 2,552 | **1K–3K** | Strong | **1,276** | **same artifact as above** |
-| **free behavior tracker** | 1,322 | **<1K** | Strong | **2,644** | **NEW #2 (pull #15, 09-05)** |
+| **iep at a glance** | 9,199 | **1K–3K** | Strong | **4,600** | **shipped 09-06 ($7) — best score the ranking has found** |
+| **iep snapshot** | 2,552 | **1K–3K** | Strong | **1,276** | shipped 09-06 — same artifact as above |
+| **free behavior tracker** | 1,322 | **<1K** | Strong | **2,644** | **shipped 09-06 (free)** |
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
-| **homeschool attendance sheet** | 655 | **<1K** | Promising | **1,310** | **NEW — lane 2's door (pull #16)** |
+| **homeschool attendance sheet** | 655 | **<1K** | Promising | **1,310** | **shipped 09-06 (free, lane 2)** |
 | **abc data sheet** | 2,152 | **1K–3K** | Strong | **1,076** | open — next lane-5 paid |
 | **behavior tracker** | 10,030 | 8K–20K | Strong | **716** | open — behavior family |
 | **behavior chart** | 19,284 | 20K–40K | Strong | **643** | open — behavior family |
-| **iep data collection sheets** | 4,438 | 3K–8K | Strong | **807** | **BUILDING Sun 09-06** |
+| **iep data collection sheets** | 4,438 | 3K–8K | Strong | **807** | shipped 09-06 — tag/title component on IEP Goal Tracking $9 |
 | **iep data tracker** | 1,586 | 1K–3K | Strong | **793** | open — title component |
 | **iep organization binder** | 408 | <1K | Promising | **816** | open — bundle name, not a title |
 | **iep binder** | 2,702 | 3K–8K | Strong | **491** | open — bundle framing |
-| iep binder cover | 930 | 1K–3K | Strong | 465 | open — companion |
-| **iep goal tracking** | 4,787 | 3K–8K | Strong | **870** | **BUILDING Sun 09-06** |
-| **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **BUILDING Sun 09-06 (same product)** |
+| iep binder cover | 930 | 1K–3K | Strong | 465 | open — companion; served by IEP at a Glance's binder cover + tabs |
+| **iep goal tracking** | 4,787 | 3K–8K | Strong | **870** | **shipped 09-06 ($9)** |
+| **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **shipped 09-06 — free standalone product + tag on IEP Goal Tracking $9** |
 | **parent communication log** | 7,545 | **8K–20K** | Strong | **539** | shipped 08-30 ($6) — **shelf filled: was 3K–8K/1,376 on 08-26** |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
 | **sub binder** | **16,738** | 8K–20K | Strong | **1,196** | served by the binder — **grew 26% since 08-26; retag the live listing to lead on this phrase** |

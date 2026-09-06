@@ -244,6 +244,31 @@ const PIN_COPY = {
     sub: 'All five short vowels, six progress checks, and a page that tells you what to do next.',
     board: 'Reading Intervention',
     desc: 'Short vowel CVC intervention binder: 30 no-prep CVC words worksheets across short a, i, o, u and e, six ten-word progress checks with data sheets, and an AI Growth Eval page that turns each score into the next three things to do. Grades K-2 reading intervention. From two certified teachers.' },
+  'iep-at-a-glance': { pal: P.blue,
+    top: 'IEP at a glance', mid: 'for gen ed teachers & paras', big: 'ONE PAGE, DAY ONE',
+    sub: 'Goals, accommodations, services & contacts — a guest-teacher card too. $7.',
+    board: 'Special Education',
+    desc: 'IEP at a glance student snapshot sheets: a one-page IEP summary for general education teachers, paraprofessionals, and substitutes — goals in plain language, accommodations, services, contacts, a binder cover, section tabs, and a guest-teacher quick-reference card with accommodations only, never a diagnosis. From two certified teachers.' },
+  'iep-goal-tracking': { pal: P.turq,
+    top: 'IEP goal tracking', mid: 'that drafts the sentence for you', big: 'DATA IN. SUMMARY OUT.',
+    sub: 'Weekly data, a graph page, and an AI progress summary. $9.',
+    board: 'Special Education',
+    desc: 'IEP goal tracking and progress monitoring data collection sheets: a goal-at-a-glance page, weekly and six-week data sheets, a hand-plotted graph page, a prompting-level recording sheet, and an AI Progress Summary page that drafts a progress-report sentence from de-identified scores. From two certified teachers.' },
+  'free-behavior-tracker': { pal: P.coral,
+    top: 'Free behavior tracker', mid: 'daily points + frequency tally', big: 'PRINT & GO',
+    sub: 'A weekly summary that turns five days of marks into one honest read. Free.',
+    board: 'Special Education',
+    desc: 'Free behavior tracker for teachers: a daily point sheet, a frequency tally for one specific behavior, and a weekly summary with plain-language bands — no login, no app, just paper. From two certified teachers.' },
+  'homeschool-attendance': { pal: P.grass,
+    top: 'Homeschool attendance', mid: 'record keeping, made simple', big: 'PRINT & TRACK',
+    sub: 'A monthly grid, a year-at-a-glance summary, and a subject log. Free.',
+    board: 'Homeschool AI',
+    desc: 'Free homeschool attendance sheet: a monthly attendance grid to photocopy all year, a year-at-a-glance summary against your own target, and a simple subject log for portfolio review. From two certified teachers.' },
+  'progress-monitoring-sheets': { pal: P.grape,
+    top: 'Progress monitoring', mid: 'sheets for any IEP goal', big: 'DATA + GRAPH, FREE',
+    sub: 'A 12-week data sheet and a hand-plotted graph page. Free.',
+    board: 'Special Education',
+    desc: 'Free progress monitoring tracking sheets: a twelve-week weekly data sheet and a hand-plotted graph page with a target line, ready to print for any IEP goal. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>
@@ -416,7 +441,8 @@ PINTEREST UPLOAD SHEET — one pin per listing
 Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
-Young Entrepreneurs · Deaf Education
+Young Entrepreneurs · Deaf Education · Reading Intervention ·
+Classroom Management · Special Education
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================

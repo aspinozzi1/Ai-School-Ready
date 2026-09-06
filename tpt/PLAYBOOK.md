@@ -433,7 +433,7 @@ Statuses: pending → shipped YYYY-MM-DD.
 |---|---|---|---|---|---|---|
 | 1 | Aug 24 | Back to school with AI | BTS AI Setup Pack $8 | Parent Message Makeovers $12 | vocabulary cheat sheet · 10-min habit · PII poster · emergency sub plans · delegate-or-teacher poster | shipped 2026-08-24 |
 | 2 | Aug 30 | Binders, routines & parent contact (brief override, see 2026-W36 brief) | Substitute Binder with AI $8 | Parent Communication Log $6 | back to school parent questionnaire · classroom procedures checklist · sub binder starter pages · my digital footprint · internet safety with AI | shipped 2026-08-30 |
-| 3 | Sep 6 | Newsletters & families | Newsletter & Family Comms pack $8 | Kit 3 retrofit $24 (`kits/kit03/`) | newsletter prompt sheet · open-house talking points · translation-request guide · family FAQ handout · positive-note generator card | **superseded 2026-09-05** — no item in this row ever got a primary-meter row; Sep 6 shipped the IEP tracker family (win scores 867/759) instead. See `tpt/intel/2026-W37-brief.md`. Theme returns when a pull supports it. |
+| 3 | Sep 6 | Newsletters & families | Newsletter & Family Comms pack $8 | Kit 3 retrofit $24 (`kits/kit03/`) | newsletter prompt sheet · open-house talking points · translation-request guide · family FAQ handout · positive-note generator card | **superseded — shipped 2026-09-06.** No item in this row ever got a primary-meter row; the brief's live pulls found a far stronger family (win scores up to 4,600). Sep 6 shipped IEP at a Glance $7, IEP Goal Tracking & Data Collection Sheets $9, Free Behavior Tracker (free), Homeschool Attendance Sheet (free, lane 2), and Progress Monitoring Tracking Sheets (free) instead. See `tpt/intel/2026-W37-brief.md`. Newsletter theme returns when a pull supports the editable format it actually needs. |
 | 4 | Sep 13 | Assessment, safely | Rubric pack $10 | PD Short: "Grading & Feedback with AI" $12 | rubric starter · exit-ticket prompts · feedback sentence stems · academic-integrity one-pager · quiz-leveling guide | pending |
 | 5 | Sep 20 | Time-saver consolidation | Conference-Season Pack $8 (early) | BUNDLE "AI Time-Savers Toolkit" $19 = W1 mid + W2 mid + W5 mid | conference prep checklist · talking-points prompts · de-identified summary guide · scheduling email templates · "what to tell families about AI" card | pending |
 | 6 | Sep 27 | Differentiation | Leveled-text prompt pack $10 | Kit 4 retrofit $24 (`kits/kit04/`) | leveling cheat sheet · scaffold/extension prompt card · IEP-safe writing poster · station-directions generator · reading-level guide | pending |
@@ -551,3 +551,43 @@ thin against that bar, fix the kit, not the price.
   (~40–45% empty) and gained a fourth activity ("Rate your idea") to
   meet the ⅓-empty quality gate. All check_breaks.py flags: 0;
   check_fresh.py stale/missing: 0.
+- **2026-09-06 (Week 3 Sunday drop, brief-overridden — the IEP/behavior
+  family)**: shipped — every product traces to `tpt/intel/2026-W37-brief.md`'s
+  validation table, revised six times overnight as new TPT Keywords pulls
+  (#8–#22) came in; the calendar's "Newsletters & families" row was
+  superseded because none of its seven planned items ever validated. Final
+  five, all scoring 759 or better on win score: **IEP at a Glance** $7
+  (license $3) — lead phrase "iep at a glance", 9,199 searches, 1K–3K
+  resources, score 4,600, the best number the ranking has ever found;
+  **IEP Goal Tracking & Data Collection Sheets** $9 (license $4) — "iep
+  goal tracking" score 870; **Free Behavior Tracker** — "free behavior
+  tracker" score 2,644; **Homeschool Attendance Sheet** (lane 2) —
+  "homeschool attendance sheet" score 1,310, replacing a third homeschool
+  planner re-cut the Saturday plan had ruled out; **Progress Monitoring
+  Tracking Sheets** — "progress monitoring tracking sheet" score 759. Two
+  cut from the Saturday plan as the data came in (IEP Meeting Prep
+  one-pager, score 191; Progress Monitoring Forms for Special Education,
+  score 236) in favor of the stronger targets above. Binding privacy
+  guardrails from the brief held on both paid products: IEP Goal Tracking's
+  AI Progress Summary page takes de-identified scores only (student number,
+  never a name) and never states whether a goal is met; IEP at a Glance
+  carries a dedicated confidentiality page, a guest-teacher
+  accommodations-only card with no diagnosis, an AI page that never touches
+  a completed (identified) sheet, and a "what this is not" page — the
+  strictest privacy posture built to date, per the brief's own assessment.
+  The IEP Goal Tracking pack's prompting-level recording sheet cites
+  Alberto & Troutman's *Applied Behavior Analysis for Teachers* for the
+  response-prompting hierarchy. All five products render in the flowing
+  `kits/tooling/brand.css` layer (matching every other shipped listing;
+  `brand-v3.css` remains unused by any live product). New custom category
+  "Special Education" for the four SPED-family listings. No Easel setup —
+  every product here is teacher/case-manager/parent-facing, not
+  student-facing. Drops 42–46 in `UPLOAD/drops/`; `PINS-2026-09-06.zip`
+  ships only this week's 5 new pins (new board "Special Education"; the
+  `make_covers.js`/`make_pins.js` full-regen footgun reverted all
+  unrelated covers/extras/previews/drops whose byte-diff was render-noise
+  from a local-font fallback, not content — pins matched byte-for-byte and
+  needed no revert). All check_breaks.py flags: 0; check_fresh.py
+  stale/missing: 0; check_us_english.py: 0. Not shipped today: lane 5's
+  prior top-open targets, take home folder (829) and happy mail (816) —
+  both remain open but were outranked this week; see `winnable-niches.md`.

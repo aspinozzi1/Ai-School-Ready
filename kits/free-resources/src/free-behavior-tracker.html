@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Free Behavior Tracker</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .sect { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  table.daytbl th, table.daytbl td { text-align: center; font-size: 9pt; }
+  table.daytbl td { height: 18pt; }
+  .scale { display: flex; gap: 8pt; flex-wrap: wrap; margin: 4pt 0 8pt; }
+  .scale span { font-size: 8.5pt; font-weight: 700; padding: 3pt 9pt; border-radius: 10px; background: var(--paper); border: 1px solid var(--mist); }
+  .band-legend { display: flex; gap: 8pt; margin: 6pt 0 8pt; flex-wrap: wrap; }
+  .band-legend span { font-size: 8pt; font-weight: 700; padding: 2pt 8pt; border-radius: 10px; }
+  .prompt-card .prompt-text { background: var(--paper); border-radius: 8px; padding: 8pt 10pt; font-size: 9.6pt; margin-top: 4pt; }
+  .cols2 { display: flex; gap: 16pt; align-items: flex-start; }
+</style>
+</head>
+<body>
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Free Resource · Special Education<b>Free Behavior Tracker</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">Print once a week, track all five days</div>
+    <h1>Free Behavior Tracker</h1>
+    <p class="lede">A daily point sheet, a frequency tally for one specific behavior, and a weekly
+    summary that turns five days of marks into one honest read &mdash; no login, no app, no
+    student data anywhere but the paper in your hand.</p>
+
+    <div class="sect cols2">
+    <div style="flex:1.3">
+    <h2 style="margin-top:0">Daily point sheet</h2>
+    <p class="small" style="margin-bottom:4pt">Rate each part of the day on the 1&ndash;4 scale
+    below.</p>
+    <div class="scale">
+      <span>1 &middot; needed a lot of support</span>
+      <span>2 &middot; getting there</span>
+      <span>3 &middot; good day</span>
+      <span>4 &middot; great day</span>
+    </div>
+    <table class="daytbl">
+      <thead><tr><th style="width:18%">Day</th><th style="width:16%">Morning</th><th style="width:16%">Midday</th><th style="width:16%">Afternoon</th><th style="width:14%">Total</th><th style="width:20%">Note</th></tr></thead>
+      <tbody>
+      <tr><td>Mon</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Tue</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Wed</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Thu</td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td>Fri</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:6pt"><strong>Rate the whole period, not the worst moment
+    in it</strong> &mdash; one rough five minutes in an otherwise solid morning is still a 3, not a
+    1.</p>
+    </div>
+    <div style="flex:1">
+    <h2 style="margin-top:0">Frequency tally</h2>
+    <p class="small" style="margin-bottom:4pt">Pick one specific behavior to count this week (out
+    of seat, calling out, a kind word to a peer). Make one tally mark each time it happens.</p>
+    <div style="margin-bottom:8pt"><label style="display:block;font-size:8pt;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2pt">Behavior counted this week</label><span class="writein"></span></div>
+    <table class="daytbl">
+      <thead><tr><th style="width:24%">Day</th><th style="width:50%">Tally</th><th style="width:26%">Total</th></tr></thead>
+      <tbody>
+      <tr><td>Mon</td><td></td><td></td></tr>
+      <tr><td>Tue</td><td></td><td></td></tr>
+      <tr><td>Wed</td><td></td><td></td></tr>
+      <tr><td>Thu</td><td></td><td></td></tr>
+      <tr><td>Fri</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div class="sect">
+    <h2>Weekly summary &amp; what it means</h2>
+    <p class="small" style="margin-bottom:6pt">Add up the week, then match your total against the
+    bands below for a fast read &mdash; no chart, no login required.</p>
+    <div class="band-legend">
+      <span style="background:#FDECE6;color:var(--error)">Needs a plan (below 30)</span>
+      <span style="background:#FDF6E7;color:#8a6d1a">Watching it (30&ndash;44)</span>
+      <span style="background:#EAF5F3;color:var(--success)">Solid week (45&ndash;60)</span>
+    </div>
+    <div class="fieldrow" style="display:flex;gap:12pt;margin-bottom:4pt">
+      <div style="flex:1"><label style="display:block;font-size:8pt;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2pt">Week's point total (out of 60)</label><span class="writein"></span></div>
+      <div style="flex:1"><label style="display:block;font-size:8pt;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2pt">Week's tally total</label><span class="writein"></span></div>
+    </div>
+    <p class="small">A total below 30 is worth bringing to a colleague, a coach, or a family
+    conversation this week rather than waiting it out. Thresholds are a starting guide &mdash;
+    trust your own read of the student over any number on this page.</p>
+
+    <div class="card">
+      <h3 style="margin-top:0">If it's a low week</h3>
+      <ul style="margin-bottom:0">
+        <li><strong>Look for a pattern before you look for a plan</strong> &mdash; same period each
+        day, same subject, same seat neighbor. The tally column often shows it before the point
+        total does.</li>
+        <li><strong>Bring the paper, not just the memory,</strong> to whoever you loop in &mdash; a
+        colleague, a coach, or the family. Numbers travel better than "it's been a rough week."</li>
+        <li><strong>Keep rating the good days too.</strong> A tracker that only comes out for bad
+        weeks stops being data and starts being a warning label.</li>
+      </ul>
+    </div>
+
+    <div class="card prompt-card">
+      <h3 style="margin-top:0">Copy-paste prompt: this week in one sentence</h3>
+      <div class="prompt-text">"A student's daily behavior points this week, out of 4 each period:
+      [PASTE THE FIFTEEN NUMBERS ONLY &mdash; NO NAME]. Describe the trend across the week in one
+      sentence, plain language, no diagnosis or judgment implied."</div>
+    </div>
+
+    <div class="callout teal"><strong>Tracking an IEP goal instead of a weekly behavior check?</strong>
+    Our IEP Goal Tracking &amp; Data Collection Sheets pack builds the weekly data, the graph, and
+    an AI progress summary for that. Our IEP at a Glance pack builds the one-page student summary
+    every gen-ed teacher and para keeps at hand. Both in our TpT store.</div>
+
+    <p class="legal" style="margin-bottom:0">&copy; Adam &amp; Katelyn Spinozzi &middot; AI-Ready
+    School. Free resource: print and share within your school; please don't resell or repost
+    online. Built and audited by two certified teachers.</p>
+    </div>
+
+  </td></tr></tbody>
+</table>
+</body>
+</html>

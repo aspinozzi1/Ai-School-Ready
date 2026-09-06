@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Homeschool Attendance Sheet</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+<style>
+  .sect { break-inside: avoid; }
+  h2, h3 { break-after: avoid; }
+  .daygrid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4pt; margin: 8pt 0; }
+  .daygrid .dow { text-align: center; font-size: 7.5pt; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+  .daygrid .day { border: 1px solid var(--mist); border-radius: 6px; height: 46pt; padding: 3pt 4pt; position: relative; }
+  .daygrid .day .num { font-size: 8pt; font-weight: 700; color: var(--muted); }
+  .fieldrow { display: flex; gap: 12pt; margin-bottom: 8pt; flex-wrap: wrap; }
+  .fieldrow .f { flex: 1 1 auto; min-width: 120pt; }
+  .fieldrow label { display: block; font-size: 8pt; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2pt; }
+  .fieldrow .writein { height: 15pt; }
+  table.logtbl th, table.logtbl td { font-size: 9pt; text-align: center; }
+  table.logtbl td { height: 18pt; }
+  table.logtbl td:first-child, table.logtbl th:first-child { text-align: left; }
+  .band-legend { display: flex; gap: 8pt; margin: 6pt 0 8pt; flex-wrap: wrap; }
+  .band-legend span { font-size: 8pt; font-weight: 700; padding: 2pt 8pt; border-radius: 10px; }
+</style>
+</head>
+<body>
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Free Resource · Homeschool<b>Homeschool Attendance Sheet</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <div class="kicker">Print once, photocopy every month</div>
+    <h1>Homeschool Attendance Sheet</h1>
+    <p class="lede">A monthly grid to mark each school day, a year-at-a-glance summary against
+    your own target, and a simple subject log &mdash; the paper record most states ask
+    homeschooling families to keep.</p>
+
+    <div class="callout rule">
+      <div class="rule-label">Before you use this page</div>
+      <div class="rule-text" style="font-size:12.5pt">Attendance rules differ by state and
+      change.<br><em>Check your own state's homeschool statute, or your state's page from the
+      Home School Legal Defense Association, before you rely on this for a legal requirement.</em></div>
+    </div>
+
+    <div class="sect">
+    <h2>Monthly attendance grid</h2>
+    <p class="small" style="margin-bottom:6pt">Photocopy this page for each month of your school
+    year. Mark P for a present day, X for absent, or leave it blank for a non-school day.</p>
+    <div class="fieldrow">
+      <div class="f"><label>Month / year</label><span class="writein"></span></div>
+      <div class="f"><label>Student</label><span class="writein"></span></div>
+    </div>
+    <div class="daygrid">
+      <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div><div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+      <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div>
+    </div>
+    <div class="fieldrow" style="margin-top:2pt">
+      <div class="f"><label>Days present this month</label><span class="writein"></span></div>
+      <div class="f"><label>Days absent this month</label><span class="writein"></span></div>
+      <div class="f"><label>Notes (illness, travel, breaks)</label><span class="writein"></span></div>
+    </div>
+    <p class="small">Write the days of the month into the empty boxes yourself &mdash; a blank
+    grid photocopies cleanly and fits any month's start day.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Year-at-a-glance summary</h2>
+    <p class="small" style="margin-bottom:6pt">Carry each month's total here as you go, and set
+    your own target for the year &mdash; from your state's requirement, your umbrella school, or
+    your own family's plan.</p>
+    <div class="fieldrow">
+      <div class="f"><label>My target days (or hours) for this school year</label><span class="writein"></span></div>
+      <div class="f"><label>Source of that target</label><span class="writein"></span></div>
+    </div>
+    <table class="logtbl">
+      <thead><tr><th style="width:34%">Month</th><th style="width:33%">Days present</th><th style="width:33%">Running total</th></tr></thead>
+      <tbody>
+      <tr><td>1</td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td></tr>
+      <tr><td>6</td><td></td><td></td></tr>
+      <tr><td>7</td><td></td><td></td></tr>
+      <tr><td>8</td><td></td><td></td></tr>
+      <tr><td>9</td><td></td><td></td></tr>
+      <tr><td>10</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Ten rows covers most school-year calendars; add a sticky note for an
+    eleventh or twelfth month if your family schools year-round.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Where you stand against your own target</h2>
+    <p class="small" style="margin-bottom:6pt">Divide your running total by your target and
+    match the percentage below &mdash; a plain math check, not a rule from any state.</p>
+    <div class="band-legend">
+      <span style="background:#FDECE6;color:var(--error)">Behind (under 80% of target for time elapsed)</span>
+      <span style="background:#FDF6E7;color:#8a6d1a">On track (80&ndash;100%)</span>
+      <span style="background:#EAF5F3;color:var(--success)">Ahead (over 100%)</span>
+    </div>
+    <p class="small">Behind isn't an emergency this early in the year &mdash; it's a nudge to add
+    a school day or two before the gap grows. Compare the percentage of the year elapsed against
+    the percentage of your target logged, not just the raw numbers.</p>
+    </div>
+
+    <div class="sect">
+    <h2>Simple subject log</h2>
+    <p class="small" style="margin-bottom:6pt">One line per week &mdash; a quick record of what
+    got covered, useful for a portfolio review or your own peace of mind. Twelve rows covers one
+    grading period; photocopy a fresh page for the next one.</p>
+    <table class="logtbl">
+      <thead><tr><th style="width:16%">Week of</th><th>Subjects covered</th></tr></thead>
+      <tbody>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      <tr><td></td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout teal"><strong>Want the AI side of your homeschool planning too?</strong>
+    Our Homeschool AI Planning Pack and Full-Year Homeschool Planner with AI build the weekly
+    rhythm and the subject-organized prompts this attendance sheet doesn't cover. In our TpT
+    store.</div>
+
+    <p class="legal" style="margin-bottom:0">&copy; Adam &amp; Katelyn Spinozzi &middot; AI-Ready
+    School. Free resource: print and share within your homeschool community; please don't resell
+    or repost online. This is a record-keeping tool, not legal advice &mdash; check your own
+    state's homeschool statute and HSLDA for your state's actual requirements. Built and
+    audited by two certified teachers.</p>
+    </div>
+
+  </td></tr></tbody>
+</table>
+</body>
+</html>

@@ -232,6 +232,20 @@ const IMAGES = [
     'Four real-situation practice scenarios, ToD- or family-guided',
   ], '3 pages')],
   ['dsa-real-pages',   realPages('#2D6CB5', ['dsa_p1.png', 'dsa_p2.png', 'dsa_p3.png'], '3 pages')],
+  ['iag-whats-inside', whatsInside('IEP at a Glance', 'Student Snapshot', [
+    'Two full snapshot layouts — compact and extended',
+    '<b>A guest-teacher card</b> with accommodations only, never a diagnosis',
+    'A binder cover, spine label, and five printable section tabs',
+    'An AI page built to never touch a completed, identified sheet',
+  ], '5 pages')],
+  ['iag-real-pages',   realPages('#2D6CB5', ['iag_p2.png', 'iag_p3.png', 'iag_p4.png'], '5 pages')],
+  ['igt-whats-inside', whatsInside('IEP Goal Tracking &', 'Data Collection Sheets', [
+    'Goal-at-a-glance, weekly, six-week, and daily data sheets',
+    'A hand-plotted graph page with a target line you draw in yourself',
+    '<b>The AI Progress Summary page</b> — a drafted sentence from de-identified scores',
+    'A caseload group snapshot and a meeting-prep one-pager',
+  ], '8 pages')],
+  ['igt-real-pages',   realPages('#17BEBB', ['igt_p2.png', 'igt_p6.png', 'igt_p7.png'], '8 pages')],
   ['whole-staff-license', license()],
   ['cvcb-whats-inside', whatsInside('Short-Vowel CVC ·', 'The Complete Binder', [
     'Five units — short a, i, o, u and e',
