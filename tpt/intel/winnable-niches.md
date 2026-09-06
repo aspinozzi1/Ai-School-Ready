@@ -36,7 +36,11 @@ new store; above 1,000 is a genuine opening.
 |---|---|---|---|---|---|
 | **iep at a glance** | 9,199 | **1K–3K** | Strong | **4,600** | **NEW #1 (pull #12–#13, 09-05)** |
 | **iep snapshot** | 2,552 | **1K–3K** | Strong | **1,276** | **same artifact as above** |
+| **free behavior tracker** | 1,322 | **<1K** | Strong | **2,644** | **NEW #2 (pull #15, 09-05)** |
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
+| **abc data sheet** | 2,152 | **1K–3K** | Strong | **1,076** | open — next lane-5 paid |
+| **behavior tracker** | 10,030 | 8K–20K | Strong | **716** | open — behavior family |
+| **behavior chart** | 19,284 | 20K–40K | Strong | **643** | open — behavior family |
 | **iep data collection sheets** | 4,438 | 3K–8K | Strong | **807** | **BUILDING Sun 09-06** |
 | **iep data tracker** | 1,586 | 1K–3K | Strong | **793** | open — title component |
 | **iep organization binder** | 408 | <1K | Promising | **816** | open — bundle name, not a title |

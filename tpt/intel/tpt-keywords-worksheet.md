@@ -745,3 +745,69 @@ re-pulling before it decides anything.
    sensitive artifact we have ever designed. See the brief for the
    handling requirements this imposes. The AI half in particular cannot
    work the way it does elsewhere.
+
+---
+
+# Pulls #14–#15 — iep meeting checklist · behavior tracking sheet (owner-run, 2026-09-05)
+
+## Seed: iep meeting checklist — 382 · 1K–3K · Promising · score **191**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **iep at a glance** | **9,199** | **1K–3K** | **Strong** | **4,600** |
+| **iep data collection sheets** | **4,397** | **3K–8K** | **Strong** | **799** |
+| **iep binder** | **2,685** | **3K–8K** | **Strong** | **488** |
+| iep meeting agenda | 236 | <1K | Promising | 472 |
+| iep checklist | 742 | 3K–8K | Promising | 135 |
+| iep meeting notes | 391 | 3K–8K | Promising | 71 |
+| iep | 2,887 | 40K–75K | Moderate | 50 |
+| iep meeting | 155 | 8K–20K | Moderate | 11 |
+
+**`iep at a glance` now appears in three separate seeds' related lists.**
+Not a fringe long-tail — it is how this family is searched.
+
+## Seed: behavior tracking sheet — 1,203 · 3K–8K · Promising · score **219**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **free behavior tracker** | **1,322** | **<1K** | **Strong** | **2,644** |
+| **abc data sheet** | **2,152** | **1K–3K** | **Strong** | **1,076** |
+| **behavior tracker** | **10,030** | **8K–20K** | **Strong** | **716** |
+| **behavior chart** | **19,284** | **20K–40K** | **Strong** | **643** |
+| behavior data tracking sheet | 1,085 | 3K–8K | Promising | 197 |
+| student behavior tracker | 952 | 3K–8K | Promising | 173 |
+| behavior tracking | 917 | 8K–20K | Promising | 66 |
+| behavior tracking sheet free | 10 | <1K | Moderate | 20 |
+| behavior sheet | 485 | 20K–40K | Challenging | 16 |
+
+## What pulls #14–#15 decide
+
+1. **The IEP-meeting free is dead — and the data killed it, not a hunch.**
+   `iep meeting checklist` scores **191**; the whole meeting cluster is
+   weak (agenda 472 on 236 searches, notes 71, meeting 11). Saturday's
+   brief guessed this was the free to cut if time ran short. It was
+   right, and now it is measured. **Cut it.**
+
+2. **`free behavior tracker` scores 2,644 — the second best number in the
+   entire dataset**, behind only `iep at a glance`. 1,322 searches
+   against **under 1,000 competing resources**, Strong badge.
+   The word *free* is in the query: these teachers are looking for a
+   free download, which is exactly what our free lane is for. A free
+   listing is the cheapest thing we build and this is the highest-scoring
+   free target we have ever found.
+
+3. **`abc data sheet` (2,152 · 1K–3K · Strong) scores 1,076.** ABC —
+   antecedent, behavior, consequence — is the standard structure for
+   recording an incident before writing a behavior plan. Thin shelf,
+   Strong badge, real professional need. A paid product in its own right.
+
+4. **The behavior family is broad as well as deep**: `behavior tracker`
+   10,030 (716) and `behavior chart` 19,284 (643) both carry Strong
+   badges at high volume. Compare `classroom rules` — 18,509 searches at
+   score 82. Similar volume, completely different opportunity.
+
+5. **This is a second family worth holding, not a one-off.** It sits
+   beside the IEP data family rather than competing with it: the same
+   special education and classroom-management buyer needs both, so the
+   two cross-sell. Recommend the behavior pack as the next lane-5 build
+   after today.
