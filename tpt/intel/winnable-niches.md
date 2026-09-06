@@ -38,6 +38,7 @@ new store; above 1,000 is a genuine opening.
 | **iep snapshot** | 2,552 | **1K–3K** | Strong | **1,276** | **same artifact as above** |
 | **free behavior tracker** | 1,322 | **<1K** | Strong | **2,644** | **NEW #2 (pull #15, 09-05)** |
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
+| **homeschool attendance sheet** | 655 | **<1K** | Promising | **1,310** | **NEW — lane 2's door (pull #16)** |
 | **abc data sheet** | 2,152 | **1K–3K** | Strong | **1,076** | open — next lane-5 paid |
 | **behavior tracker** | 10,030 | 8K–20K | Strong | **716** | open — behavior family |
 | **behavior chart** | 19,284 | 20K–40K | Strong | **643** | open — behavior family |
@@ -69,7 +70,7 @@ new store; above 1,000 is a genuine opening.
 | sub plans template | 3,313 | 20K–40K | Promising | 110 | tags only |
 | self advocacy | 1,237 | 8K–20K | Promising | 88 | lane 4 head term |
 | classroom rules | 18,509 | 150K–300K | Promising | 82 | tags only — the classic trap |
-| homeschool planner | 2,415 | 20K–40K | Promising | 81 | lane 2's only door |
+| homeschool planner | 2,034 | 20K–40K | Promising | 68 | **retired** — down 16% since 09-03; served twice, build nothing further on it |
 | financial literacy | 1,986 | 40K–75K | Moderate | 35 | tag only |
 | parent communication | 1,195 | 75K–150K | Moderate | 11 | **retag away from this** |
 

@@ -811,3 +811,53 @@ Not a fringe long-tail — it is how this family is searched.
    special education and classroom-management buyer needs both, so the
    two cross-sell. Recommend the behavior pack as the next lane-5 build
    after today.
+
+---
+
+# Pull #16 — homeschool record keeping (owner-run, 2026-09-05)
+
+## Seed: homeschool record keeping — 269 · 1K–3K · Promising · score **135**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **homeschool attendance sheet** | **655** | **<1K** | **Promising** | **1,310** |
+| homeschool planner | 2,034 | 20K–40K | Promising | 68 |
+| homeschool portfolio | 209 | 3K–8K | Moderate | 38 |
+| homeschool schedule | 667 | 20K–40K | Moderate | 22 |
+| homeschool daily log | 16 | 1K–3K | Challenging | 8 |
+| homeschool | 2,835 | >500K | Challenging | 5 |
+| homeschool trackers | 26 | 20K–40K | Very Difficult | 1 |
+
+## What pull #16 decides — lane 2 finally has a real door
+
+1. **`homeschool attendance sheet` (655 · <1K · Promising) scores
+   1,310** — **nineteen times** the planner it replaces. Under 1,000
+   competing resources is the thinnest shelf in our entire dataset
+   alongside `free behavior tracker`. Attendance records are legally
+   required for homeschoolers in many states, which is the kind of
+   must-do search that converts rather than browses.
+
+2. **The planner is not just weak, it is shrinking.** `homeschool
+   planner` reads **2,034** today against **2,415** in pull #7 on
+   2026-09-03 — down 16% — and its score has slipped from 81 to **68**.
+   We built two products against that phrase. Both keep their listings,
+   but nothing further should be built on it.
+
+3. **This reverses the lane-2 decision made hours earlier.** The
+   Saturday deep dive recommended lane 2 sit out this week, explicitly
+   because the three replacement doors were unrun and a third planner
+   re-cut was not worth shipping. One of those three came back at 1,310.
+   **Lane 2 is back in today's drop**, and the reasoning that put it out
+   is the same reasoning that puts it back: the ranking decides.
+
+4. **Keep the lane's size honest.** Pull #7's finding still holds — the
+   homeschool family is 5–10× smaller than the classroom families, and
+   655 searches is modest in absolute terms. The score is excellent
+   because the shelf is nearly bare, not because the demand is large.
+   The right response is a free or a low-priced item that owns an empty
+   shelf, not a flagship.
+
+5. Everything else in this seed is a trap: `homeschool` (5),
+   `homeschool trackers` (1, Very Difficult), `homeschool daily log`
+   (8, Challenging). The record-keeping seed itself scores 135 and is a
+   tag, not a title. **`attendance sheet` is the whole finding.**
