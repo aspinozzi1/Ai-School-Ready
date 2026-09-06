@@ -51,7 +51,7 @@ new store; above 1,000 is a genuine opening.
 | **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **BUILDING Sun 09-06 (same product)** |
 | **parent communication log** | 7,570 | 3K–8K | Strong | **1,376** | shipped 08-30 ($6) |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
-| sub binder | 13,284 | 8K–20K | Strong | 949 | served by the binder |
+| **sub binder** | **16,738** | 8K–20K | Strong | **1,196** | served by the binder — **grew 26% since 08-26; retag the live listing to lead on this phrase** |
 | **take home folder** | 11,603 | 8K–20K | Strong | **829** | **OPEN — top target** |
 | **happy mail** | 4,488 | 3K–8K | Strong | **816** | **OPEN — top target** |
 | classroom procedures checklist | 1,598 | 1K–3K | Strong | 799 | shipped 08-30 (free) |

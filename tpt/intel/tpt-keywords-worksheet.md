@@ -861,3 +861,73 @@ Not a fringe long-tail — it is how this family is searched.
    `homeschool trackers` (1, Very Difficult), `homeschool daily log`
    (8, Challenging). The record-keeping seed itself scores 135 and is a
    tag, not a title. **`attendance sheet` is the whole finding.**
+
+---
+
+# Pulls #17–#19 — service minute tracker · homeschool transcript · student data binder (owner-run, 2026-09-05)
+
+Three mostly negative results. They are worth as much as the positive
+ones: each closes an open question and prevents a wasted build.
+
+## Seed: service minute tracker — **13** · <1K · Moderate · score 26
+
+Dead. Thirteen searches in a month.
+
+**This was my speculative pick and it was wrong.** Friday's list put it
+in Priority 2 on the strength of back-to-school resource roundups
+pairing service minute tracking with progress monitoring. That signal
+did not survive contact with TPT's data. **A practitioner blog
+mentioning a chore is not evidence that teachers search for a product to
+solve it.** Worth remembering the next time a web roundup looks
+persuasive: the roundup is written by one person; the search data is
+thousands of teachers.
+
+## Seed: homeschool transcript — **50** · 1K–3K · Moderate · score 25
+
+Dead, and it settles lane 2. Friday's list ranked transcript as a
+serious contender against attendance sheet — "high-stakes document,
+parents pay for certainty." Wrong: 50 searches, Moderate.
+**`homeschool attendance sheet` (1,310) is lane 2's door, and it is the
+only one.** Transcript and record keeping (135) are both out.
+
+## Seed: student data binder — 1,465 · 8K–20K · Moderate · score **105**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **sub binder** | **16,738** | **8K–20K** | **Strong** | **1,196** |
+| data binder cover | 1,547 | 3K–8K | Promising | 281 |
+| data tracker | 7,316 | 20K–40K | Strong | 244 |
+| data binder | 2,170 | 8K–20K | Promising | 155 |
+| student data binder cover | 633 | 3K–8K | Promising | 115 |
+| free data binder | 220 | 1K–3K | Moderate | 110 |
+| student data tracker | 2,601 | 20K–40K | Promising | 87 |
+| student data tracking sheets | 1,062 | 8K–20K | Moderate | 76 |
+| teacher data binder | 407 | 8K–20K | Moderate | 29 |
+| student data | 748 | 300K–500K | Challenging | 2 |
+
+## What pulls #17–#19 decide
+
+1. **Do not widen the tracker to general education.** This was Friday's
+   question #8: does the IEP data product's frame stretch to any teacher
+   tracking any goal, tripling the audience? **No.** The general-ed
+   version of this family tops out at 281 (`data binder cover`) and its
+   head phrase carries a Moderate badge. The IEP version of the same
+   idea scores **4,600**. The specificity *is* the opportunity — widening
+   the title would trade a 4,600 phrase for a 105 one.
+
+2. **`sub binder` grew 26% and is in season.** 16,738 searches today
+   against 13,284 in the 08-26 pull, still 8K–20K and Strong — score up
+   to **1,196**. We already sell the Substitute Binder ($8, shipped
+   08-30). This is not a new build; it is a signal that an existing
+   listing's phrase is strengthening right when substitute season ramps.
+   **Action: refresh that listing's tags and description toward
+   `sub binder` as the lead phrase, and consider a seasonal push.**
+   Cheapest win available — the product already exists.
+
+3. **`data tracker` (7,316 · 20K–40K · Strong, 244)** holds up as the
+   broad sibling but is a tag, not a title. Unchanged from pull #10.
+
+4. **Three of Friday's fifteen phrases are now closed as dead ends**
+   (service minute tracker, homeschool transcript, student data binder).
+   That is a good evening's work: the list is doing its job when it
+   kills ideas as efficiently as it finds them.
