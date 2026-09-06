@@ -23,6 +23,19 @@ Read it as "searches per thousand competing products." A score above
 ~500 means real demand against inventory we can plausibly out-rank as a
 new store; above 1,000 is a genuine opening.
 
+**A win score is a snapshot, not a property of the phrase.** Other
+sellers are stocking these shelves while we read them. Two rows moved
+between 2026-08-26 and 2026-09-05 with flat search volume:
+
+| Phrase | Then | Now | Why |
+|---|---|---|---|
+| parent communication log | 3K–8K · **1,376** | 8K–20K · **539** | shelf filled up under us |
+| all about me | 150K–300K · **751** | 75K–150K · **1,489** | shelf thinned |
+
+So: **re-pull any score older than about three weeks before it decides a
+build**, and treat a row's date as part of the row. A stale score is not
+evidence.
+
 **Two hard filters before the score counts:**
 1. Opportunity badge must be **Strong** or **Promising**. Moderate,
    Challenging, and Very Difficult are out regardless of score.
@@ -49,7 +62,7 @@ new store; above 1,000 is a genuine opening.
 | iep binder cover | 930 | 1K–3K | Strong | 465 | open — companion |
 | **iep goal tracking** | 4,787 | 3K–8K | Strong | **870** | **BUILDING Sun 09-06** |
 | **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **BUILDING Sun 09-06 (same product)** |
-| **parent communication log** | 7,570 | 3K–8K | Strong | **1,376** | shipped 08-30 ($6) |
+| **parent communication log** | 7,545 | **8K–20K** | Strong | **539** | shipped 08-30 ($6) — **shelf filled: was 3K–8K/1,376 on 08-26** |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
 | **sub binder** | **16,738** | 8K–20K | Strong | **1,196** | served by the binder — **grew 26% since 08-26; retag the live listing to lead on this phrase** |
 | **take home folder** | 11,603 | 8K–20K | Strong | **829** | **OPEN — top target** |
@@ -58,7 +71,11 @@ new store; above 1,000 is a genuine opening.
 | **weekly newsletter template editable** | 6,688 | 3K–8K | Strong | **1,216** | **OPEN — needs editable pipeline** |
 | classroom procedures + routines powerpoint | 3,997 | 3K–8K | Strong | 727 | **OPEN — needs slides pipeline** |
 | **newsletter template editable** | 9,854 | 8K–20K | Strong | **704** | **OPEN — needs editable pipeline** |
-| back to school | 266,393 | >500K | Strong | 444 | seasonal tag only, never a title |
+| **parent teacher conference sign up** | 685 | **<1K** | Promising | **1,370** | **OPEN — build Sept/Oct, conferences are Oct–Nov** |
+| **open house stations** | 3,920 | **1K–3K** | Strong | **1,960** | **JULY QUEUE — season closing now** |
+| **all about me** | 167,556 | **75K–150K** | Strong | **1,489** | **JULY QUEUE** — was 150K–300K/751 on 09-03 |
+| **open house scavenger hunt** | 2,371 | **1K–3K** | Strong | **1,186** | **JULY QUEUE — season closing now** |
+| back to school | 242,633 | >500K | Strong | 404 | seasonal tag only, never a title |
 | parent contact log | 2,348 | 3K–8K | Strong | 427 | served by the log |
 | communication log | 4,254 | 8K–20K | Promising | 304 | served by the log |
 | personal finance curriculum | 601 | 1K–3K | Promising | 301 | open (lane 3 backlog) |

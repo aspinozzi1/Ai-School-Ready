@@ -994,3 +994,76 @@ only one.** Transcript and record keeping (135) are both out.
    requires an editable artifact we cannot yet produce. The newsletter
    theme comes back the week the pipeline ships, and it comes back
    titled on `editable`, not on `classroom newsletter`.
+
+---
+
+# Pulls #21–#22 — open house · parent teacher conference forms (owner-run, 2026-09-05)
+
+## Seed: open house — 19,358 · 40K–75K · Strong · score **337**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **open house stations** | **3,920** | **1K–3K** | **Strong** | **1,960** |
+| **all about me** | **167,556** | **75K–150K** | **Strong** | **1,489** |
+| **open house scavenger hunt** | **2,371** | **1K–3K** | **Strong** | **1,186** |
+| open house forms | 7,297 | 8K–20K | Strong | 521 |
+| back to school | 242,633 | >500K | Strong | 404 |
+| first day of school activities | 228,281 | >500K | Strong | 380 |
+| open house slides | 4,775 | 8K–20K | Promising | 341 |
+| meet the teacher | 66,280 | 150K–300K | Strong | 295 |
+| back to school night | 10,687 | 40K–75K | Promising | 186 |
+| open house activities | 1,693 | 8K–20K | Moderate | 121 |
+
+## Seed: parent teacher conference forms — 2,212 · 8K–20K · Promising · score **158**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **parent teacher conference sign up** | **685** | **<1K** | **Promising** | **1,370** |
+| parent communication log | 7,545 | 8K–20K | Strong | 539 |
+| conference sign up | 331 | 1K–3K | Promising | 166 |
+| parent teacher communication log | 705 | 3K–8K | Promising | 128 |
+| parent teacher conference form editable | 632 | 3K–8K | Promising | 115 |
+| parent teacher conference reminder | 136 | 1K–3K | Moderate | 68 |
+| parent teacher conference | 583 | 8K–20K | Moderate | 42 |
+| parent teacher conference forms free | 14 | 1K–3K | Challenging | 7 |
+| free parent teacher conference forms | 8 | 1K–3K | Challenging | 4 |
+
+## What pulls #21–#22 decide — two great families, opposite timing
+
+1. **Open house scores beautifully and we have missed the window.**
+   `open house stations` **1,960** and `open house scavenger hunt`
+   **1,186**, both Strong on a 1K–3K shelf. Excellent numbers. But look
+   at the trend line, not the total: searches peaked around Aug 19 at
+   ~1,250/day and have fallen to roughly 100/day by Sep 4. The 19,358
+   monthly figure is a receipt for a season that is closing, not a
+   forecast. **Building this today lands at the tail.**
+   → **Log for JULY.** Open house products must be listed by late July
+   to catch the ramp. Put it at the top of the summer queue with the
+   scores attached so next year's decision is already made.
+
+2. **Parent teacher conference sign up scores 1,370 and the timing is
+   exactly right.** 685 searches against **under 1K resources**.
+   Conferences run late October into November, so a September or early
+   October build lands ahead of the ramp rather than behind it.
+   → **Strong candidate for next Sunday's lane-1 build**, and it sits in
+   the family-communication cluster where we already hold two products.
+
+3. **Win scores move, and one of ours moved against us.** Our shipped
+   Parent Communication Log ($6) validated at 7,570 · **3K–8K** ·
+   Strong, score 1,376. Today the same phrase reads 7,545 · **8K–20K** ·
+   Strong — score **539**. Search volume is flat; the shelf filled up.
+   Meanwhile `all about me` moved the other way: 150K–300K in pull #11,
+   **75K–150K** today, score 751 → **1,489**.
+   **This is a real limitation of the method.** A win score is a
+   snapshot of a shelf that other sellers are actively stocking, not a
+   permanent property of a phrase. Any score older than a few weeks
+   should be re-pulled before it decides a build, and the ranking table
+   should carry the date each row was measured.
+
+4. **"Free" fails again, twice.** `parent teacher conference forms free`
+   14 searches, `free parent teacher conference forms` 8 — both
+   Challenging. Third and fourth confirmations that the behavior-tracker
+   result does not generalize.
+
+5. **`all about me` at 1,489 is now the strongest seasonal row we hold**,
+   but it is squarely an August product. Same July queue as open house.
