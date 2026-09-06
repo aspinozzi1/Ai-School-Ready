@@ -662,3 +662,86 @@ Friday format.
 5. Confirmed traps: special education visuals (Challenging at
    300K–500K), special education free (Very Difficult), life skills and
    autism (Moderate at >150K).
+
+---
+
+# Pulls #12–#13 — iep data collection sheets · iep binder (owner-run, 2026-09-05)
+Run against Friday's Priority 1 list. **These contain the largest single
+finding in the dataset to date.**
+
+## Seed: iep data collection sheets — 4,438 · 3K–8K · **Strong** · score **807**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **iep at a glance** | **9,199** | **1K–3K** | **Strong** | **4,600** |
+| **iep goal tracking** | **4,787** | **3K–8K** | **Strong** | **870** |
+| **iep data tracker** | **1,586** | **1K–3K** | **Strong** | **793** |
+| **iep binder** | **2,685** | **3K–8K** | **Strong** | **488** |
+| data collection sheets | 2,622 | 8K–20K | Promising | 187 |
+| iep data collection | 545 | 3K–8K | Moderate | 99 |
+| iep data collection sheets free | 30 | <1K | Moderate | 60 |
+| iep | 2,887 | 40K–75K | Moderate | 50 |
+
+## Seed: iep binder — 2,702 · 3K–8K · **Strong** · score **491**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **iep at a glance** | **9,199** | **1K–3K** | **Strong** | **4,600** |
+| **iep snapshot** | **2,552** | **1K–3K** | **Strong** | **1,276** |
+| **iep goal tracking** | **4,787** | **3K–8K** | **Strong** | **870** |
+| **iep organization binder** | **408** | **<1K** | **Promising** | **816** |
+| **iep data collection sheets** | **4,397** | **3K–8K** | **Strong** | **799** |
+| **iep binder cover** | **930** | **1K–3K** | **Strong** | **465** |
+| student iep binder | 285 | 3K–8K | Promising | 52 |
+| iep | 2,887 | 40K–75K | Moderate | 50 |
+| special education | 8,094 | >500K | Moderate | 13 |
+| special education binder | 402 | 20K–40K | Moderate | 13 |
+
+**Small drift between views, recorded rather than smoothed over:** the
+seed pages report `iep data collection sheets` at 4,438 and `iep binder`
+at 2,702, while the related-keyword tables show 4,397 and 2,685 for the
+same phrases. Under 1% either way — TPT is aggregating over slightly
+different windows. Seed-page numbers are treated as authoritative here.
+Also note `special education` reads 8,094 today against 8,550 in pull
+#11 two days ago; these figures move, so a stale number is worth
+re-pulling before it decides anything.
+
+## What pulls #12–#13 decide — bigger than pull #4
+
+1. **`iep at a glance` (9,199 · 1K–3K · Strong) scores 4,600 — double
+   the best number we had ever seen** (parent questionnaire, 2,279) and
+   more than five times the phrase we were about to build on. It appears
+   in *both* seeds' related lists, which means TPT sees it as central to
+   how this whole family is searched, not as a fringe long-tail.
+2. **`iep snapshot` (2,552 · 1K–3K · Strong, score 1,276) is the same
+   artifact under a different name.** Two independent phrases, both
+   Strong, both in the thin 1K–3K shelf, both describing a one-page
+   student summary. Combined they are the clearest opening in the
+   catalog.
+3. **The shelf is genuinely thin.** 1K–3K resources against 9,199
+   searches is the rarest shape in our data: real volume, little
+   inventory, Strong badge. Every other big number we have found sat
+   behind 20K+ competing products.
+4. **`iep organization binder` (408 · <1K · Promising) scores 816** on a
+   tiny search count, because almost nothing serves it. Worth a tag and
+   a bundle name, not a title of its own.
+5. **`iep binder` (2,702 · 3K–8K · Strong) scores 491** — respectable
+   and Strong-badged, but *not* the headline we hoped for on Friday. The
+   binder framing is justified by the price comparables ($37–$44 for
+   binder-shaped products), not by this phrase's score. Bundle framing:
+   yes. Lead title: no.
+6. **The title question from Friday is now answered properly, and my
+   Saturday reasoning on it was too confident.** The deep dive argued
+   against "data collection" wording from the bare head term
+   (`data collection`, 1,357 · 40K–75K · Moderate, score 24). The
+   long-tail behaves completely differently: `iep data collection
+   sheets` is 4,438 · 3K–8K · **Strong**, score **807** — nearly level
+   with `iep goal tracking` at 870. The conclusion survives (goal
+   tracking still leads by 63 points) but the reasoning behind it did
+   not: a weak head term says nothing reliable about its long-tail.
+   **Use both phrases in the title, not one.**
+7. **Guardrail note, and it is a serious one.** An at-a-glance sheet is
+   a container for a named student's confidential IEP data — the most
+   sensitive artifact we have ever designed. See the brief for the
+   handling requirements this imposes. The AI half in particular cannot
+   work the way it does elsewhere.

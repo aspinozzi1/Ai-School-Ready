@@ -34,8 +34,15 @@ new store; above 1,000 is a genuine opening.
 
 | Phrase | Searches | Resources | Badge | Win score | Status |
 |---|---|---|---|---|---|
+| **iep at a glance** | 9,199 | **1K–3K** | Strong | **4,600** | **NEW #1 (pull #12–#13, 09-05)** |
+| **iep snapshot** | 2,552 | **1K–3K** | Strong | **1,276** | **same artifact as above** |
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
-| **iep goal tracking** | 4,768 | 3K–8K | Strong | **867** | **BUILDING Sun 09-06** |
+| **iep data collection sheets** | 4,438 | 3K–8K | Strong | **807** | **BUILDING Sun 09-06** |
+| **iep data tracker** | 1,586 | 1K–3K | Strong | **793** | open — title component |
+| **iep organization binder** | 408 | <1K | Promising | **816** | open — bundle name, not a title |
+| **iep binder** | 2,702 | 3K–8K | Strong | **491** | open — bundle framing |
+| iep binder cover | 930 | 1K–3K | Strong | 465 | open — companion |
+| **iep goal tracking** | 4,787 | 3K–8K | Strong | **870** | **BUILDING Sun 09-06** |
 | **progress monitoring tracking sheet** | 4,174 | 3K–8K | Strong | **759** | **BUILDING Sun 09-06 (same product)** |
 | **parent communication log** | 7,570 | 3K–8K | Strong | **1,376** | shipped 08-30 ($6) |
 | **substitute binder** | 5,631 | 3K–8K | Promising | **1,024** | shipped 08-30 ($8) |
@@ -61,6 +68,30 @@ new store; above 1,000 is a genuine opening.
 | homeschool planner | 2,415 | 20K–40K | Promising | 81 | lane 2's only door |
 | financial literacy | 1,986 | 40K–75K | Moderate | 35 | tag only |
 | parent communication | 1,195 | 75K–150K | Moderate | 11 | **retag away from this** |
+
+## The finding that reset this table (2026-09-05, pulls #12–#13)
+
+**`iep at a glance` scores 4,600 — double anything we had ever seen, and
+five times the phrase we were about to lead with.** 9,199 searches
+against a 1K–3K shelf with a Strong badge. `iep snapshot` (1,276) is the
+same artifact under another name. Both appear in two different seeds'
+related lists, so this is central to how the family is searched.
+
+The shape is what makes it rare. Every other large number in this table
+sits behind 20K+ competing products; this one has real volume and almost
+no inventory. That combination is what the win score exists to find, and
+it has not turned up before.
+
+**What it is:** a one-page summary of a student's IEP — goals,
+accommodations, services, contacts, what to do in a hard moment — that
+general education teachers and paraprofessionals keep at hand. A blank
+form the case manager fills in. Squarely inside our guardrails: it is a
+template, never advice about what a goal or placement should be.
+
+**The catch, and it is real.** A completed at-a-glance sheet holds a
+named student's confidential special education data. It is the most
+sensitive artifact we have designed, and the AI half cannot work here
+the way it does elsewhere. Requirements are in `2026-W37-brief.md`.
 
 ## The next two builds this ranking picks
 *(superseded 2026-09-03 by pull #10 — the data-tracking family below now
