@@ -55,7 +55,9 @@ new store; above 1,000 is a genuine opening.
 | **take home folder** | 11,603 | 8K–20K | Strong | **829** | **OPEN — top target** |
 | **happy mail** | 4,488 | 3K–8K | Strong | **816** | **OPEN — top target** |
 | classroom procedures checklist | 1,598 | 1K–3K | Strong | 799 | shipped 08-30 (free) |
+| **weekly newsletter template editable** | 6,688 | 3K–8K | Strong | **1,216** | **OPEN — needs editable pipeline** |
 | classroom procedures + routines powerpoint | 3,997 | 3K–8K | Strong | 727 | **OPEN — needs slides pipeline** |
+| **newsletter template editable** | 9,854 | 8K–20K | Strong | **704** | **OPEN — needs editable pipeline** |
 | back to school | 266,393 | >500K | Strong | 444 | seasonal tag only, never a title |
 | parent contact log | 2,348 | 3K–8K | Strong | 427 | served by the log |
 | communication log | 4,254 | 8K–20K | Promising | 304 | served by the log |

@@ -931,3 +931,66 @@ only one.** Transcript and record keeping (135) are both out.
    (service minute tracker, homeschool transcript, student data binder).
    That is a good evening's work: the list is doing its job when it
    kills ideas as efficiently as it finds them.
+
+---
+
+# Pull #20 — classroom newsletter (owner-run, 2026-09-05)
+
+## Seed: classroom newsletter — 1,603 · 20K–40K · Moderate · score **53**
+
+| Related | Searches | Resources | Opportunity | Win score |
+|---|---|---|---|---|
+| **weekly newsletter template editable** | **6,688** | **3K–8K** | **Strong** | **1,216** |
+| **newsletter template editable** | **9,854** | **8K–20K** | **Strong** | **704** |
+| meet the teacher | 66,280 | 150K–300K | Strong | 295 |
+| weekly newsletter | 3,801 | 8K–20K | Promising | 272 |
+| newsletter | 8,597 | 40K–75K | Promising | 150 |
+| classroom newsletter template | 885 | 8K–20K | Promising | 63 |
+| teacher newsletter | 639 | 20K–40K | Moderate | 21 |
+| classroom newsletter free | 3 | 3K–8K | Challenging | 0.5 |
+| classroom news | 80 | 300K–500K | Very Difficult | 0.2 |
+
+## What pull #20 decides — the theme was right, the format was wrong
+
+1. **The head phrase is a trap, as expected.** `classroom newsletter`
+   scores **53** on a Moderate badge. It held one test slot on Friday's
+   list precisely so it could fail cheaply, and it did.
+
+2. **But one word changes everything: EDITABLE.**
+
+   | Phrase | Score | Badge |
+   |---|---|---|
+   | classroom newsletter | 53 | Moderate |
+   | newsletter template editable | **704** | **Strong** |
+   | weekly newsletter template editable | **1,216** | **Strong** |
+
+   Same topic, ~23× the score, and the badge flips from Moderate to
+   Strong. Teachers are not shopping for a newsletter. They are shopping
+   for a newsletter **they can type into**.
+
+3. **This is the fourth independent signal for editable formats**, and
+   the strongest yet:
+   - classroom procedures and routines powerpoint — 3,997 · Strong (727)
+   - special education morning meeting slides — 2,006 · Promising (365)
+   - newsletter template editable — 9,854 · Strong (**704**)
+   - weekly newsletter template editable — 6,688 · Strong (**1,216**)
+
+   Four families, four different audiences, one missing capability.
+   **We cannot ship any of them today** — we produce flat PDF. This is
+   now the clearest case in the data for the engineering week already
+   scheduled for 09-07.
+
+4. **"Free" is not a magic word.** `classroom newsletter free` returns
+   **3 searches** at Challenging, while `free behavior tracker` returns
+   1,322 at Strong. Teachers hunt for free *tools*; they do not hunt for
+   free *stationery*. Do not generalize the behavior-free finding into a
+   rule that prefixing "free" helps anywhere.
+
+5. **`meet the teacher` (66,280 · 150K–300K · Strong, 295)** — another
+   seasonal giant. Tag only, next August, same as `all about me` and
+   `back to school`. Recorded so we do not rediscover it late.
+
+6. **Nothing here changes today's drop.** Every phrase worth having
+   requires an editable artifact we cannot yet produce. The newsletter
+   theme comes back the week the pipeline ships, and it comes back
+   titled on `editable`, not on `classroom newsletter`.
