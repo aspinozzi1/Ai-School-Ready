@@ -52,7 +52,12 @@ evidence.
 | **free behavior tracker** | 1,322 | **<1K** | Strong | **2,644** | **shipped 09-06 (free)** |
 | **parent questionnaire back to school** | 12,534 | 3K–8K | Strong | **2,279** | shipped 08-30 (free) |
 | **homeschool attendance sheet** | 655 | **<1K** | Promising | **1,310** | **shipped 09-06 (free, lane 2)** |
-| **abc data sheet** | 2,152 | **1K–3K** | Strong | **1,076** | open — next lane-5 paid |
+| **abc data sheet** | 2,152 | **1K–3K** | Strong | **1,076** | **BUILDING Wed 09-09 ($6)** |
+| **deaf awareness month** | 274 | **<1K** | Promising | **274** | **BUILDING Wed 09-09 (free) — in season now** |
+| classroom economy | 1,022 | 8K–20K | Promising | 73 | lane 3 — too crowded to surface |
+| dhh | 135 | 1K–3K | Moderate | 68 | tag only — fails badge filter |
+| audiogram | 32 | <1K | Promising | 64 | tags + one page — empty room |
+| market day | 89 | 8K–20K | Moderate | **6** | **already built; will not be found** |
 | **behavior tracker** | 10,030 | 8K–20K | Strong | **716** | open — behavior family |
 | **behavior chart** | 19,284 | 20K–40K | Strong | **643** | open — behavior family |
 | **iep data collection sheets** | 4,438 | 3K–8K | Strong | **807** | shipped 09-06 — tag/title component on IEP Goal Tracking $9 |

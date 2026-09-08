@@ -1067,3 +1067,115 @@ only one.** Transcript and record keeping (135) are both out.
 
 5. **`all about me` at 1,489 is now the strongest seasonal row we hold**,
    but it is squarely an August product. Same July queue as open house.
+
+---
+
+# Pulls #23–#27 — Wednesday lanes 3 & 4 Priority 1 (owner-run, 2026-09-08)
+
+The list asked one question: **do lanes 3 and 4 have a thin shelf
+anywhere?** Answer: lane 3 no, lane 4 exactly one.
+
+| Seed | Searches | Resources | Badge | Score | Verdict |
+|---|---|---|---|---|---|
+| market day | 89 | 8K–20K | Moderate | **6** | dead |
+| classroom economy | 1,022 | 8K–20K | Promising | **73** | too crowded to surface |
+| dhh | 135 | 1K–3K | Moderate | **68** | fails the badge filter |
+| **deaf awareness month** | **274** | **<1K** | **Promising** | **274** | **BUILD — in season now** |
+| audiogram | 32 | <1K | Promising | **64** | empty room — tags, not a product |
+
+## Seed: market day — 89 · 8K–20K · Moderate · score 6
+`market day project` 4 · 1K–3K · Challenging (2).
+
+**We already built a Market Day unit.** The phrase gets 89 searches a
+month against an 8K–20K shelf. This is the clearest evidence in the
+whole dataset for why the validate-before-build rule exists, and it is
+our own product. Nothing to fix — the unit is decent and it stays
+listed — but it will not be found, and no further lane-3 work should
+assume market day is a door.
+
+## Seed: classroom economy — 1,022 · 8K–20K · Promising · score 73
+
+| Related | Searches | Resources | Badge | Score |
+|---|---|---|---|---|
+| classroom jobs | 28,414 | 40K–75K | Strong | 494 |
+| class economy | 366 | 3K–8K | Promising | 67 |
+| classroom economy system | 334 | 3K–8K | Promising | 61 |
+| classroom money | 1,123 | 150K–300K | Challenging | 5 |
+| classroom store | 497 | 150K–300K | Challenging | 3 |
+
+`classroom jobs` has the volume (28,414, Strong) but sits on a 40K–75K
+shelf — unreachable for an unranked store. Everything else is small or
+Challenging. **Lane 3 has no thin shelf.**
+
+## Seed: dhh — 135 · 1K–3K · Moderate · score 68
+Only two related terms returned: `deaf` 155 · 75K–150K · Very Difficult,
+and `back to school`.
+
+**The abbreviation hypothesis was half right.** The shelf under `dhh`
+*is* thin (1K–3K) — but the badge is Moderate and the volume is 135, so
+it fails the hard filter. Worth keeping as a tag, which we already do.
+Not worth a retitle.
+
+## Seed: deaf awareness month — 274 · **<1K** · **Promising** · score 274
+
+| Related | Searches | Resources | Badge | Score |
+|---|---|---|---|---|
+| **hispanic heritage month** | **30,720** | 20K–40K | Strong | **1,024** |
+| asl | 2,319 | 20K–40K | Promising | 116 |
+| asl posters | 274 | 3K–8K | Promising | 50 |
+| deaf culture | 106 | 3K–8K | Moderate | 35 |
+| deaf awareness | 161 | 3K–8K | Moderate | 29 |
+| american sign language | 492 | 20K–40K | Moderate | 25 |
+| deaf awareness month bulletin board | 5 | <1K | Moderate | 10 |
+| asl bulletin board | 24 | 3K–8K | Challenging | 8 |
+| deaf history | 33 | 20K–40K | Challenging | 2 |
+| deaf | 155 | 75K–150K | Very Difficult | 2 |
+
+**This is the one build.** Under 1K resources, Promising badge, and the
+trend line shows it going live *right now*: essentially flat through
+August, then climbing to roughly 50 searches/day between Aug 31 and
+Sep 4. September is Deaf Awareness Month. The demand is happening this
+week.
+
+Score 274 is modest by our recent standards, but on the corrected
+doctrine — a thin shelf is where an unranked store can actually appear —
+it beats every lane-3 row by a factor of four or more.
+
+## Seed: audiogram — 32 · <1K · Promising · score 64
+
+| Related | Searches | Resources | Badge | Score |
+|---|---|---|---|---|
+| speech banana audiogram | 36 | <1K | Promising | 72 |
+| audiograms | 10 | <1K | Moderate | 20 |
+| audiogram of familiar sounds | 7 | <1K | Moderate | 14 |
+| understanding audiogram | 5 | <1K | Moderate | 10 |
+| blank audiogram | 3 | <1K | Moderate | 6 |
+
+**Empty room, and the list predicted this exact failure mode**
+("does going more specific find open water, or just an empty room?").
+Every shelf is <1K, but the whole cluster is about 93 searches a month.
+Thin shelf plus no demand is not an opportunity.
+
+Two things worth keeping: `speech banana audiogram` (36) slightly
+*exceeds* its own head term, and the speech banana — the region of an
+audiogram where speech sounds fall — is a standard teacher-training
+visual. **It earns a page inside a gen-ed briefing, and the cluster
+earns tags. It does not earn a listing.**
+
+## Hispanic Heritage Month — recommending we do not build it
+
+`hispanic heritage month` returned **30,720 · 20K–40K · Strong, score
+1,024**, and it runs Sept 15 – Oct 15, starting in about a week.
+
+**Recommend no, on two grounds.**
+
+The business one: a 20K–40K shelf is not somewhere an unranked store
+surfaces, and one week is not enough time to build something good.
+
+The one that actually decides it: **this is outside our competence.**
+Our lines are AI practice, special education, deaf education and
+classroom operations. Hispanic Heritage Month content is culturally
+significant material that deserves authors with relevant expertise and
+lived experience. Producing it because a keyword scored well would be
+both bad business and disrespectful. Logged as *not our lane* rather
+than as a July backlog item.
