@@ -591,3 +591,51 @@ thin against that bar, fix the kit, not the price.
   stale/missing: 0; check_us_english.py: 0. Not shipped today: lane 5's
   prior top-open targets, take home folder (829) and happy mail (816) —
   both remain open but were outranked this week; see `winnable-niches.md`.
+- **2026-09-09 (Week 3 Wednesday drop — lane 3 pauses, lane 5 borrows a
+  second product)**: shipped — both products trace to
+  `tpt/intel/2026-W37-wed-brief.md`'s validation table (primary meter:
+  TPT Keywords). **Lane 4 (Deaf Education)**: Deaf Awareness Month
+  Classroom Pack, free — "deaf awareness month" (274 vol, <1K shelf,
+  Promising, score 274), in season now (flat through August, ~50
+  searches/day from Aug 31). Four pages: what Deaf Awareness Month is
+  (sourced to the World Federation of the Deaf and the National
+  Association of the Deaf), four ways people communicate (ASL,
+  listening-and-spoken-language, bimodal, no devices — presented as
+  equally valid, no hierarchy), communication-repair strategies,
+  classroom-access quick wins, a fingerspelling explainer (credits
+  Gallaudet University and the NAD for an accurate reference chart
+  rather than attempting hand-shape illustrations in-house — a
+  deliberate accuracy call, not a shortcut), and a "speech banana" page
+  (an original schematic illustration, explicitly labeled general/not
+  diagnostic) turning an audiology concept into classroom takeaways.
+  Provenance line carried verbatim; pedagogy-not-audiology legal note on
+  the hearing-technology content; the pack does not self-author Deaf
+  history or Deaf culture, crediting Deaf-led sources instead, matching
+  the brief's own competence boundary on Hispanic Heritage Month.
+  **Lane 3 (Young Entrepreneurs) shipped nothing** — the brief's own
+  pull found `market day` scores 6 (89 searches against an 8K–20K
+  shelf) even though we already hold a unit against it, the clearest
+  evidence yet for validate-before-build; the other tested lane-3
+  phrases (classroom economy, dhh as a YE angle) also came back
+  crowded or off-target. Per the brief, this is a signal for the owner,
+  not a factory decision to make unilaterally — logged here, not
+  papered over with filler. **Lane 5 borrows the second product**: ABC
+  Behavior Data Sheets, $6 (license $3) — "abc data sheet" (2,152 vol,
+  1K–3K shelf, Strong, score 1,076), the highest-scoring validated
+  target with nothing built against it yet. Five pages: an ABC
+  (antecedent-behavior-consequence) recording form cited to Cooper,
+  Heron & Heward; a frequency tally; a duration sheet; a weekly pattern
+  summary; a zero-technology "what the data suggests we try next"
+  table; and an AI Pattern Summary page working from de-identified
+  entries only (student number, never a name) that never diagnoses and
+  never drafts a behavior plan — the team decides. Cross-sells the Free
+  Behavior Tracker and the IEP Goal Tracking family. Drops 47–48 in
+  `UPLOAD/drops/`; `PINS-2026-09-09.zip` ships this week's 2 new pins
+  only (Deaf Education board carries the Deaf Awareness pin; Special
+  Education board carries ABC). The `make_covers.js`/
+  `make_listing_extras.js`/`make_previews.js`/`make_drops.js` full-regen
+  footgun reverted all unrelated covers/extras/previews/drops whose
+  byte-diff was render-noise, not content; `make_pins.js` this run
+  touched only the two new pins plus an append-only `PINS.txt` diff, no
+  revert needed. All check_breaks.py flags: 0; check_fresh.py
+  stale/missing: 0; check_us_english.py: 0.
