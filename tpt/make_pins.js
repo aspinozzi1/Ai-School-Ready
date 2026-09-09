@@ -269,6 +269,16 @@ const PIN_COPY = {
     sub: 'A 12-week data sheet and a hand-plotted graph page. Free.',
     board: 'Special Education',
     desc: 'Free progress monitoring tracking sheets: a twelve-week weekly data sheet and a hand-plotted graph page with a target line, ready to print for any IEP goal. From two certified teachers.' },
+  'deaf-awareness-month': { pal: P.blue,
+    top: 'Deaf Awareness Month', mid: 'activities for the gen-ed room', big: 'FREE CLASSROOM PACK',
+    sub: 'How people communicate, communication repair & the speech banana explained. Free.',
+    board: 'Deaf Education',
+    desc: 'Free Deaf Awareness Month classroom pack: how DHH people communicate (ASL, spoken language, bimodal, devices or none), communication-repair strategies, classroom-access quick wins, a fingerspelling explainer, and a speech banana page for teachers. Built and audited by two certified teachers — and the parents of a deaf child.' },
+  'abc-behavior-data-sheets': { pal: P.grape,
+    top: 'ABC data sheets', mid: 'that draft the pattern for you', big: 'RECORD IT. SEE THE PATTERN.',
+    sub: 'Recording form, tally, duration sheet + an AI Pattern Summary page. $6.',
+    board: 'Special Education',
+    desc: 'ABC behavior data sheets: an antecedent-behavior-consequence recording form, a frequency tally, a duration sheet, a weekly pattern summary, and an AI Pattern Summary page that turns de-identified entries into a plain-language pattern — never a diagnosis, never a behavior plan. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>

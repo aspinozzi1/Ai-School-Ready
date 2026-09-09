@@ -1730,6 +1730,85 @@
         "PDF"
       ],
       "customCategory": "Special Education"
+    },
+    {
+      "id": "deaf-awareness-month",
+      "order": 47,
+      "name": "Deaf Awareness Month Classroom Pack",
+      "product": "UPLOAD/01-free/deaf-awareness-month-classroom-pack.pdf",
+      "cover": "tpt/covers/deaf-awareness-month-cover.png",
+      "thumbnails": [],
+      "title": "Deaf Awareness Month Activities | FREE Classroom Pack for Hearing Students",
+      "description": "Deaf Awareness Month activities for the general-education classroom: how people communicate (ASL, listening and spoken language, bimodal, hearing devices or none — presented as equally valid, never a hierarchy), communication-repair strategies, classroom-access quick wins, a fingerspelling explainer, and a “speech banana” page that turns an audiology chart into plain teaching takeaways.\n\nTHIS PACK DESCRIBES DHH LEARNERS IN GENERAL. It is not about, and never names, any specific student, and it never gives medical or device advice — informational only; follow your audiologist's and IEP team's guidance.\n\nWE DO NOT TEACH DEAF HISTORY OR DEAF CULTURE OURSELVES: that material deserves Deaf authors and Deaf-led organizations, so this pack points to and credits sources like the National Association of the Deaf and Gallaudet University instead.\n\nBuilt and audited by two certified teachers — and the parents of a deaf child. Our DHH Self-Advocacy Pack and Classroom Access Checklist are also in the store.",
+      "price": 0,
+      "licenses": null,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "deaf awareness month",
+        "deaf awareness",
+        "deaf and hard of hearing",
+        "dhh",
+        "asl posters",
+        "american sign language"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Deaf Education"
+    },
+    {
+      "id": "abc-behavior-data-sheets",
+      "order": 48,
+      "name": "ABC Behavior Data Sheets",
+      "product": "UPLOAD/02-paid/ABC-Behavior-Data-Sheets.pdf",
+      "cover": "tpt/covers/abc-behavior-data-sheets-cover.png",
+      "thumbnails": [
+        "tpt/extras/abc-whats-inside.png",
+        "tpt/extras/abc-real-pages.png"
+      ],
+      "title": "ABC Data Sheets | Antecedent Behavior Consequence Forms + AI Pattern Summary",
+      "description": "ABC data sheets built around the standard antecedent-behavior-consequence structure: a recording form for several incidents, a frequency tally, a duration sheet for behaviors that last, and a weekly pattern summary that pulls a week of entries together.\n\nA “WHAT THE DATA SUGGESTS WE TRY NEXT” TABLE is the zero-technology half — match your pattern to a row for one reasonable next step to bring to the team, no login required.\n\nTHE AI PATTERN SUMMARY PAGE is the differentiator: paste a week of de-identified ABC entries — a student number and the entries only, never a name — and get back a plain-language pattern summary. It never names a disorder, never diagnoses, and never drafts a behavior plan as though it were the team's decision. You record and summarize; the team decides.\n\nWHAT THIS PACK IS NOT: not a functional behavior assessment, not a behavior intervention plan, and not a diagnosis — the official process still follows your district's procedures.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 6,
+      "licenses": 3,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "abc data sheet",
+        "behavior data tracking sheet",
+        "behavior tracker",
+        "student behavior tracker",
+        "behavior tracking sheet",
+        "special education"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Special Education",
+      "previewShots": [
+        "abc_p2.png",
+        "abc_p3.png",
+        "abc_p4.png"
+      ],
+      "previewInside": [
+        "<b>ABC recording form</b> — three columns, several incidents per page",
+        "Frequency tally, duration sheet, and a weekly pattern summary",
+        "A zero-technology “what the data suggests we try next” table",
+        "<b>The AI Pattern Summary page</b> — a plain-language pattern from de-identified entries, never a diagnosis"
+      ],
+      "previewUnit": "the full pack is 5 pages",
+      "filesBadge": "5 pages",
+      "insideHeading": "What's inside the full pack"
     }
   ]
 }

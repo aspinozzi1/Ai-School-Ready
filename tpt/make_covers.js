@@ -247,6 +247,16 @@ const PRODUCTS = [
     title: 'Progress Monitoring', accent: 'Tracking Sheets',
     lede: 'A 12-week data sheet and a hand-plotted graph page, ready to print for any goal you track.',
     chips: ['2 pages', 'Data + graph', 'Print & go', 'Free'] },
+  { file: 'deaf-awareness-month', badge: 'Deaf Education',
+    kicker: 'Free resource · Deaf Awareness Month · September',
+    title: 'Deaf Awareness Month:', accent: 'Classroom Pack',
+    lede: 'How people communicate, communication repair, classroom access, fingerspelling, and the speech banana explained for teachers.',
+    chips: ['4 pages', 'Deaf-authored sources credited', 'Gen-ed ready', 'Free'] },
+  { file: 'abc-behavior-data-sheets', badge: 'Behavior Data',
+    kicker: 'Special education · antecedent, behavior, consequence',
+    title: 'ABC Behavior', accent: 'Data Sheets',
+    lede: 'A recording form, a frequency tally, a duration sheet, and an AI page that drafts a pattern summary from de-identified entries.',
+    chips: ['5 pages', 'AI pattern summary', 'Team decides', '$6'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

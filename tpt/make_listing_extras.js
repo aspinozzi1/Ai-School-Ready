@@ -256,6 +256,13 @@ const IMAGES = [
     'A group snapshot that sorts a small group into three next steps',
   ], '52 pages')],
   ['cvcb-real-pages',   realPages('#E4572E', ['cvcb_p4.png', 'cvcb_p12.png', 'cvcb_p50.png'], '52 pages')],
+  ['abc-whats-inside', whatsInside('ABC Behavior', 'Data Sheets', [
+    'ABC recording form — three columns, several incidents per page',
+    'Frequency tally, duration sheet, and a weekly pattern summary',
+    'A zero-technology "what the data suggests we try next" table',
+    '<b>The AI Pattern Summary page</b> — a plain-language pattern from de-identified entries',
+  ], '5 pages')],
+  ['abc-real-pages',   realPages('#7B5EA7', ['abc_p2.png', 'abc_p3.png', 'abc_p4.png'], '5 pages')],
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
