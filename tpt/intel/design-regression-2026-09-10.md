@@ -93,3 +93,97 @@ is arguably worse than one that stays quiet.
 
 Fix: compare **git commit times**, falling back to mtime only for files
 not yet committed.
+
+---
+
+# ROOT CAUSE — found 2026-09-11, and it is not what this file said yesterday
+
+Yesterday this file blamed two things: the Sunday factory ignoring an
+explicit instruction, and my Wednesday brief omitting the rule. Both are
+true. **Neither is the cause.**
+
+**The Bright Scholar design system was never available to any product
+except the CVC binder.** Its CSS lived inlined in a `css()` function
+inside `build-binder.js`, usable only by that one build. Its fonts lived
+in an ephemeral scratchpad, or in a `node_modules` that may or may not
+exist in a given container. `brand.css` was the only shared stylesheet
+committed to the repo — so every other product used it, necessarily.
+
+**The factories could not have built Bright Scholar even when told to.**
+A brief cannot conjure a stylesheet that does not exist.
+
+## The audit that settled it
+
+Reading the embedded fonts out of every shipping PDF. **All 47 failed:**
+
+| PDF | Fonts actually embedded |
+|---|---|
+| Wednesday 09-09 drop | `LiberationSans` only — no brand face at all |
+| Sunday 09-06 drop | `Inter` — that container happened to have node_modules |
+| **CVC binder (the approved reference)** | `LuckiestGuy`, but **neither Fredoka nor Nunito** |
+
+Three containers, three different results, none of them the intended
+design. Even the product the owner approved as the visual standard has
+been rendering its body text in Liberation Sans since the day it shipped.
+
+Chromium substitutes a missing face silently. The build succeeds, the
+PDF opens, every gate passes, and the product simply looks wrong. That
+is the worst failure shape available: no error to notice.
+
+## What was done about it
+
+1. **`kits/tooling/fonts/`** — Fredoka, Nunito and Luckiest Guy woff2
+   files committed to the repo, with `brand-fonts.css` referencing them
+   by relative path. No npm, no scratchpad, no network at build time.
+2. **`kits/tooling/check_fonts.py`** — fails any PDF embedding a
+   substitute face, or embedding no brand face at all. This is the part
+   that matters: it converts a silent wrong-looking build into a loud
+   failing one.
+3. **`kits/tooling/brand-bright-scholar.css`** — the shared stylesheet
+   that never existed. Deliberately keeps `brand.css`'s class names
+   (`.band`, `.doc-tag`, `.kicker`, `.lede`, `.sect`, `.card`, `.note`)
+   so a product adopts the design by changing one `<link>` line, and
+   additionally maps the local table/field classes the free-resource
+   products define in their own inline styles.
+
+## Proof: ABC Behavior Data Sheets, converted end to end
+
+- Brand faces embed, zero fallbacks (`check_fonts.py`: 0 failures).
+- **Header bug found and fixed in the stylesheet:** `.doc-tag` was a flex
+  child of a 13pt-tall `.band`, so the document title printed *on top of*
+  the rainbow bar and was unreadable. The bar is now drawn by `::before`
+  and the tag flows beneath it.
+- **The recording form went from two and a half cramped rows to nine
+  usable ones** at 46pt each, which also consumed most of the page's dead
+  space. On a form filled in by hand under pressure, row height *is* the
+  product.
+- All four gates pass: breaks 0 · US English 0 · fresh 0 · fonts 0.
+
+## Still to do — six products
+
+IEP at a Glance · IEP Goal Tracking · Free Behavior Tracker · Homeschool
+Attendance Sheet · Progress Monitoring Sheets · Deaf Awareness Month Pack.
+
+Each needs its `<link>` swapped and then a visual pass, because each file
+defines its own local class vocabulary in an inline `<style>` written
+against the old tokens. That is per-file work, not a batch `sed`. The
+stylesheet now covers the classes ABC used; the others will surface a few
+more, which should be added to the shared sheet rather than patched
+locally.
+
+**The catalog's other 40 products also fail the font gate** and will need
+the same treatment eventually. Newest and best-selling first, per the
+existing retrofit rule.
+
+## Two further fragilities found in passing
+
+- **The build depends on ephemeral npm installs.** Installing the fonts
+  removed `playwright` from `node_modules`, which broke `make_pins.js`
+  mid-run. Nothing in the repo pins these; whether a build works depends
+  on what a container happens to have. Worth a `package.json` with real
+  dependencies.
+- **`check_fresh` had a dependency-modeling error**, found while clearing
+  the last flag: it treated *every* thumbnail as deriving from the product
+  PDF, but the `-whats-inside` card is drawn from the listing's own title
+  and bullets. It flagged a correct, byte-identical file. Now checked
+  against `listings.json` instead.

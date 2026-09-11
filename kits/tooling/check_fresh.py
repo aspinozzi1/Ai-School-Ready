@@ -87,7 +87,13 @@ for l in listings:
         stale += 1
         continue
     deps = [(f"tpt/pinsrc/{s}", pm) for s in l.get('previewShots', [])]
-    deps += [(t, pm) for t in l.get('thumbnails', [])]
+    # Not every thumbnail derives from the product PDF. The "-whats-inside"
+    # card is drawn from the listing's own title and bullets, so it goes stale
+    # when listings.json changes, not when the PDF does. Checking it against
+    # the PDF flagged a correct, byte-identical file on 2026-09-11.
+    lj = mt('tpt/listings.json') or pm
+    deps += [(t, lj if t.endswith('-whats-inside.png') else pm)
+             for t in l.get('thumbnails', [])]
     shot_times = [mt(f"tpt/pinsrc/{s}") for s in l.get('previewShots', [])]
     preview = f"tpt/previews/{l['id']}-preview.pdf"
     deps.append((preview, max([pm] + [t for t in shot_times if t])))
