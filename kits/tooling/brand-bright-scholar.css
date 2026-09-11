@@ -1,0 +1,155 @@
+/* Bright Scholar — the shared document stylesheet.
+   Created 2026-09-11.
+
+   Until today this design system existed only inside
+   kits/bestseller-binder/src/build-binder.js, as an inlined css() function
+   that only the CVC binder could use. Every other product linked brand.css,
+   the older corporate sheet, because it was the only shared stylesheet in
+   the repo. That is why the 09-06 and 09-09 drops shipped off-brand: not
+   because a factory ignored a brief, but because the design they were told
+   to match was not available to them.
+
+   Fonts come from ./fonts/brand-fonts.css, vendored in the repo, so a build
+   either gets the real faces or fails check_fonts.py.
+
+   Keeps the same class names as brand.css (.band, .doc-tag, .kicker, .lede,
+   .sect, .card, .small, .note) so existing product markup adopts it by
+   changing one <link> line. */
+
+@import url('fonts/brand-fonts.css');
+
+:root{
+  --ink:#17293B; --blue:#2D6CB5; --teal:#17BEBB; --sunny:#FFC43D;
+  --tomato:#E4572E; --leaf:#4CAF6D; --grape:#8367C7;
+  --cream:#FFFDF8; --grey:#7A8B9A; --rule:#E3DCCD;
+  --display:'Luckiest Guy', 'Fredoka', sans-serif;
+  --ui:'Fredoka', sans-serif;
+  --body:'Nunito', sans-serif;
+}
+
+@page{ size:Letter; margin:0.5in 0.55in 0.55in; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family:var(--body); font-size:10.5pt; line-height:1.5;
+  color:var(--ink); background:var(--cream);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+
+/* The rainbow bar. Drawn as a background on the running header and footer
+   cells so it repeats on every printed page without any JS. */
+.doc{ width:100%; border-collapse:collapse; }
+.doc > thead > tr > td, .doc > tfoot > tr > td{ padding:0; border:none; }
+
+/* .band was a flex row in the old sheet, with .doc-tag as a flex child. Keep
+   the markup, change the model: the bar is drawn by ::before and the tag
+   flows underneath it. As a flex child in a 13pt-tall box the tag overlapped
+   the bar and was unreadable. */
+.band{
+  display:block; position:relative; padding-top:19pt;
+}
+.band::before{
+  content:''; position:absolute; top:0; left:0; right:0; height:13pt;
+  background:linear-gradient(to right,
+    var(--tomato) 0 25%, var(--sunny) 25% 50%,
+    var(--teal) 50% 75%, var(--blue) 75% 100%);
+}
+.band .logo{ display:none; }          /* the bar is the brand mark now */
+.doc-tag{
+  font-family:var(--ui); font-size:8pt; font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--grey);
+  padding:0; display:block; line-height:1.35;
+}
+.doc-tag b{ display:block; color:var(--ink); font-weight:700; letter-spacing:.02em; }
+.foot-space{ height:16pt; }
+
+.content-cell{ padding:9pt 0 0; vertical-align:top; }
+
+/* Headings */
+h1{
+  font-family:var(--display); font-weight:400; font-size:27pt; line-height:1.06;
+  letter-spacing:.01em; margin:2pt 0 7pt; color:var(--ink);
+}
+h2{
+  font-family:var(--ui); font-weight:700; font-size:14.5pt; line-height:1.2;
+  margin:15pt 0 6pt; color:var(--blue);
+}
+h3{ font-family:var(--ui); font-weight:600; font-size:11pt; margin:0 0 3pt; }
+.kicker{
+  font-family:var(--ui); font-weight:600; font-size:8.5pt; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--teal); margin-bottom:3pt;
+}
+.lede{ font-size:11pt; line-height:1.5; margin-bottom:4pt; }
+.small{ font-size:9.5pt; color:var(--ink); }
+p{ margin-bottom:6pt; }
+
+/* Cards: thick rounded outline with the offset shadow that defines the look */
+.card, .sect > .card{
+  background:#fff; border:2.5pt solid var(--ink); border-radius:13pt;
+  padding:10pt 13pt; margin:7pt 0;
+  box-shadow:4pt 4pt 0 var(--sunny);
+}
+.card.teal{ box-shadow:4pt 4pt 0 var(--teal); }
+.card.tomato{ box-shadow:4pt 4pt 0 var(--tomato); }
+.card.leaf{ box-shadow:4pt 4pt 0 var(--leaf); }
+
+.note{
+  background:var(--ink); color:#fff; border-radius:13pt;
+  padding:11pt 14pt; margin:9pt 0;
+}
+.note b, .note strong{ color:var(--sunny); }
+
+/* Tables — used by every data sheet. Row height is the product on a form
+   that gets written on by hand, so rows are generous by default. */
+table.form{ width:100%; border-collapse:separate; border-spacing:0; margin:6pt 0; }
+table.form th{
+  font-family:var(--ui); font-weight:700; font-size:9pt; text-align:left;
+  background:var(--ink); color:#fff; padding:7pt 9pt;
+}
+table.form th:first-child{ border-radius:9pt 0 0 0; }
+table.form th:last-child{ border-radius:0 9pt 0 0; }
+table.form td{
+  border-bottom:1.5pt solid var(--rule); padding:9pt;
+  height:34pt;                       /* generous: this is written in by hand */
+}
+table.form tr:nth-child(even) td{ background:#FFF8E8; }
+
+.writeline{ border-bottom:1.5pt solid var(--rule); height:26pt; }
+.sect{ break-inside:avoid; }
+h2,h3{ break-after:avoid; }
+
+
+/* ---- Local class vocabulary used by the free-resource products ----
+   Each of those files defines .abctbl/.fieldrow/.writein etc. in its own
+   inline <style>, written against the old sheet's tokens. Mapping them here
+   means a product adopts Bright Scholar by changing its <link> line only. */
+
+table.abctbl, table.talltbl, .content-cell table{
+  width:100%; border-collapse:separate; border-spacing:0; margin:6pt 0;
+}
+table.abctbl th, table.talltbl th, .content-cell table th{
+  font-family:var(--ui); font-weight:700; font-size:9pt; text-align:left;
+  background:var(--ink); color:#fff; padding:7pt 9pt; border:none;
+}
+table.abctbl th:first-child, table.talltbl th:first-child,
+.content-cell table th:first-child{ border-radius:9pt 0 0 0; }
+table.abctbl th:last-child, table.talltbl th:last-child,
+.content-cell table th:last-child{ border-radius:0 9pt 0 0; }
+table.abctbl td, table.talltbl td, .content-cell table td{
+  border:none; border-bottom:1.5pt solid var(--rule); padding:9pt;
+  vertical-align:top; font-size:9.5pt;
+}
+/* Row height is the product on a form filled in by hand under pressure. */
+table.abctbl tbody td{ height:46pt; }
+table.talltbl tbody td{ height:34pt; }
+table.abctbl tbody tr:nth-child(even) td,
+table.talltbl tbody tr:nth-child(even) td{ background:#FFF8E8; }
+
+.fieldrow{ display:flex; gap:12pt; flex-wrap:wrap; margin:7pt 0; }
+.fieldrow .f{ flex:1 1 30%; min-width:130pt; }
+.fieldrow .f label{
+  display:block; font-family:var(--ui); font-weight:600; font-size:8pt;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--grey);
+  margin-bottom:2pt;
+}
+.writein{ display:block; height:22pt; border-bottom:1.5pt solid var(--rule); }

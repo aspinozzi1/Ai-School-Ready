@@ -1,0 +1,31 @@
+/* Bright Scholar brand faces, vendored into the repo 2026-09-11.
+
+   Why these live here rather than in node_modules or a scratchpad: until
+   today they did neither reliably, and builds fell back to Liberation Sans
+   without saying so. Audit of the shipped PDFs on 2026-09-11 found the
+   Wednesday drop carrying ONLY LiberationSans, the Sunday drop carrying
+   Inter (its container happened to have node_modules), and even the
+   approved CVC binder reference carrying LuckiestGuy but neither Fredoka
+   nor Nunito. Three different results from three containers, none of them
+   the intended design, and nothing detected it.
+
+   Self-hosted, committed, relative paths. A build either finds these or
+   fails check_fonts.py -- it can no longer quietly look wrong.
+
+   Faces: Fredoka (display/UI numerals), Nunito (body), Luckiest Guy
+   (headline only). SIL Open Font License 1.1; see each family's upstream
+   @fontsource package for the full licence text. */
+
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:400;font-display:block;src:url('fredoka-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:500;font-display:block;src:url('fredoka-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:600;font-display:block;src:url('fredoka-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:700;font-display:block;src:url('fredoka-latin-700-normal.woff2') format('woff2')}
+
+@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:block;src:url('nunito-latin-300-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:block;src:url('nunito-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:block;src:url('nunito-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:block;src:url('nunito-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:block;src:url('nunito-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:block;src:url('nunito-latin-800-normal.woff2') format('woff2')}
+
+@font-face{font-family:'Luckiest Guy';font-style:normal;font-weight:400;font-display:block;src:url('luckiest-guy-latin-400-normal.woff2') format('woff2')}
