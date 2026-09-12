@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice Activity</title>
+
+<!-- ===================================================================
+     YOUR QUESTIONS GO HERE. This is the only part you need to change.
+
+     Each question has:
+       q       the question the student reads
+       choices the options they can click
+       answer  the position of the correct one, counting from 0
+               (first choice = 0, second = 1, third = 2, fourth = 3)
+       why     what the student sees after they answer, right or wrong
+
+     Add or delete questions freely. Two is fine. Thirty is fine.
+     =================================================================== -->
+<script>
+const ACTIVITY_TITLE = "Rounding to the Nearest Ten";
+const ACTIVITY_NOTE  = "Click the answer you think is right. You can try again.";
+
+const QUESTIONS = [
+  { q: "Round 47 to the nearest ten.",
+    choices: ["40", "50", "47", "500"],
+    answer: 1,
+    why: "47 is past the halfway point (45), so it rounds up to 50." },
+
+  { q: "Round 23 to the nearest ten.",
+    choices: ["30", "20", "25", "200"],
+    answer: 1,
+    why: "23 has not reached the halfway point (25), so it rounds down to 20." },
+
+  { q: "Round 85 to the nearest ten.",
+    choices: ["80", "90", "85", "100"],
+    answer: 1,
+    why: "85 is exactly halfway. The rule we use is to round up, so 85 becomes 90." },
+
+  { q: "Round 61 to the nearest ten.",
+    choices: ["70", "60", "61", "600"],
+    answer: 1,
+    why: "61 is only one past 60, well short of halfway, so it rounds down to 60." },
+
+  { q: "Round 8 to the nearest ten.",
+    choices: ["0", "10", "8", "80"],
+    answer: 1,
+    why: "8 is past halfway between 0 and 10, so it rounds up to 10." }
+];
+</script>
+
+<style>
+  :root{
+    --ink:#17293B; --blue:#2D6CB5; --teal:#17BEBB; --sunny:#FFC43D;
+    --tomato:#E4572E; --leaf:#4CAF6D; --cream:#FFFDF8; --grey:#7A8B9A;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family:'Nunito','Trebuchet MS',system-ui,sans-serif;
+    background:var(--cream); color:var(--ink);
+    min-height:100vh; padding:18px;
+  }
+  .bar{ height:12px; border-radius:6px; margin-bottom:18px;
+    background:linear-gradient(to right,
+      var(--tomato) 0 25%, var(--sunny) 25% 50%,
+      var(--teal) 50% 75%, var(--blue) 75% 100%); }
+  .wrap{ max-width:760px; margin:0 auto; }
+  h1{ font-size:1.7rem; line-height:1.15; margin-bottom:4px; }
+  .note{ color:var(--grey); margin-bottom:14px; }
+
+  .scorebar{
+    display:flex; justify-content:space-between; align-items:center;
+    background:#fff; border:3px solid var(--ink); border-radius:14px;
+    padding:10px 16px; margin-bottom:16px; box-shadow:5px 5px 0 var(--sunny);
+    font-weight:700;
+  }
+  .card{
+    background:#fff; border:3px solid var(--ink); border-radius:16px;
+    padding:18px; margin-bottom:16px; box-shadow:5px 5px 0 var(--teal);
+  }
+  .qnum{ font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--grey); font-weight:700; margin-bottom:6px; }
+  .qtext{ font-size:1.22rem; font-weight:700; margin-bottom:14px; }
+
+  button.choice{
+    display:block; width:100%; text-align:left; font:inherit; font-weight:600;
+    background:var(--cream); border:2.5px solid var(--ink); border-radius:12px;
+    padding:12px 15px; margin-bottom:9px; cursor:pointer;
+  }
+  button.choice:hover:not(:disabled){ background:#FFF4D6; }
+  button.choice:focus-visible{ outline:4px solid var(--blue); outline-offset:2px; }
+  button.choice:disabled{ cursor:default; }
+  button.choice.right{ background:#DFF3E5; border-color:var(--leaf); }
+  button.choice.wrong{ background:#FBE3DD; border-color:var(--tomato); }
+
+  .feedback{ margin-top:10px; padding:12px 14px; border-radius:12px;
+    font-weight:600; display:none; }
+  .feedback.show{ display:block; }
+  .feedback.ok{ background:#DFF3E5; border:2.5px solid var(--leaf); }
+  .feedback.no{ background:#FBE3DD; border:2.5px solid var(--tomato); }
+  .again{ font:inherit; font-weight:700; margin-top:10px; cursor:pointer;
+    background:var(--sunny); border:2.5px solid var(--ink);
+    border-radius:10px; padding:8px 14px; }
+
+  .done{ background:var(--ink); color:#fff; border-radius:16px;
+    padding:20px; text-align:center; display:none; }
+  .done.show{ display:block; }
+  .done h2{ color:var(--sunny); margin-bottom:6px; }
+  .restart{ font:inherit; font-weight:700; margin-top:12px; cursor:pointer;
+    background:var(--sunny); color:var(--ink); border:none;
+    border-radius:10px; padding:10px 18px; }
+
+  @media print{ body{ background:#fff; } .scorebar,.done{ display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"></div>
+  <h1 id="title"></h1>
+  <p class="note" id="note"></p>
+
+  <div class="scorebar">
+    <span id="progress"></span>
+    <span id="score"></span>
+  </div>
+
+  <div id="questions"></div>
+
+  <div class="done" id="done">
+    <h2>Finished!</h2>
+    <p id="finalscore"></p>
+    <button class="restart" onclick="location.reload()">Try the whole set again</button>
+  </div>
+</div>
+
+<script>
+/* Nothing below here needs changing to use your own questions. */
+let firstTryCorrect = 0;
+let answered = 0;
+
+document.getElementById('title').textContent = ACTIVITY_TITLE;
+document.getElementById('note').textContent = ACTIVITY_NOTE;
+
+function updateBar(){
+  document.getElementById('progress').textContent =
+    'Question ' + Math.min(answered + 1, QUESTIONS.length) + ' of ' + QUESTIONS.length;
+  document.getElementById('score').textContent =
+    'Right first try: ' + firstTryCorrect;
+}
+
+QUESTIONS.forEach(function(item, i){
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const num = document.createElement('div');
+  num.className = 'qnum';
+  num.textContent = 'Question ' + (i + 1);
+  card.appendChild(num);
+
+  const text = document.createElement('div');
+  text.className = 'qtext';
+  text.textContent = item.q;
+  card.appendChild(text);
+
+  const fb = document.createElement('div');
+  fb.className = 'feedback';
+
+  let usedATry = false;
+  let settled = false;
+
+  item.choices.forEach(function(choice, c){
+    const b = document.createElement('button');
+    b.className = 'choice';
+    b.type = 'button';
+    b.textContent = choice;
+    b.addEventListener('click', function(){
+      if (settled) return;
+
+      if (c === item.answer) {
+        b.classList.add('right');
+        settled = true;
+        if (!usedATry) firstTryCorrect++;
+        answered++;
+        card.querySelectorAll('button.choice').forEach(function(x){ x.disabled = true; });
+        fb.className = 'feedback ok show';
+        fb.textContent = 'Correct. ' + item.why;
+        updateBar();
+        if (answered === QUESTIONS.length) finish();
+      } else {
+        b.classList.add('wrong');
+        b.disabled = true;
+        usedATry = true;
+        fb.className = 'feedback no show';
+        fb.textContent = 'Not quite — read it once more and try another answer.';
+      }
+    });
+    card.appendChild(b);
+  });
+
+  card.appendChild(fb);
+  document.getElementById('questions').appendChild(card);
+});
+
+function finish(){
+  const d = document.getElementById('done');
+  document.getElementById('finalscore').textContent =
+    'You got ' + firstTryCorrect + ' of ' + QUESTIONS.length + ' right on the first try.';
+  d.classList.add('show');
+  d.scrollIntoView({ behavior:'smooth' });
+}
+
+updateBar();
+</script>
+</body>
+</html>

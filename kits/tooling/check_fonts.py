@@ -31,8 +31,14 @@ except ImportError:  # older name
 
 BRAND = ('fredoka', 'nunito', 'luckiestguy', 'luckiest guy')
 # Substitutes Chromium reaches for when a declared face is unavailable.
-FALLBACK = ('liberation', 'dejavu', 'freesans', 'notosans', 'arial',
+FALLBACK = ('liberation', 'freesans', 'notosans', 'arial',
             'helvetica', 'timesnewroman', 'inter')
+# Monospace is a deliberate choice, not a substitution: code and prompt blocks
+# need a fixed-pitch face and the Bright Scholar set has none. Allowed on its own,
+# never as a stand-in for body text -- a PDF with ONLY a mono face still fails the
+# "no brand face" check below. (Added 2026-09-12 with the build-along line, which
+# prints code a teacher has to read character by character.)
+ALLOWED_MONO = ('dejavusansmono', 'couriernew', 'liberationmono')
 
 def faces(doc):
     out = set()
@@ -61,7 +67,9 @@ def main(argv):
         norm = {re.sub(r'[^a-z]', '', f.lower()) for f in found}
         has_brand = any(any(b.replace(' ', '') in n for b in BRAND) for n in norm)
         subs = sorted({f for f in found
-                       if any(fb in re.sub(r'[^a-z]', '', f.lower()) for fb in FALLBACK)})
+                       if any(fb in re.sub(r'[^a-z]', '', f.lower()) for fb in FALLBACK)
+                       and not any(m in re.sub(r'[^a-z]', '', f.lower())
+                                   for m in ALLOWED_MONO)})
         if not found:
             continue                                 # no text at all - nothing to check
         if subs:

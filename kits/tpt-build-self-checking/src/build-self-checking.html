@@ -1,0 +1,774 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Make a Self-Checking Practice Activity</title><style>
+@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;
+  page-break-after:always;background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;
+  background:linear-gradient(to right,var(--tomato) 0 25%,var(--sunny) 25% 50%,
+  var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;
+  background:linear-gradient(to right,var(--blue) 0 25%,var(--teal) 25% 50%,
+  var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:30pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}
+.lede{font-size:11.5pt;margin-bottom:9pt}
+.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}
+.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;
+  padding:11pt 13pt;margin-bottom:9pt;font-family:'Nunito',sans-serif;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code,.code{font-family:'DejaVu Sans Mono','Courier New',monospace;font-size:8.5pt}
+.code{background:#F4F1E8;border:1.5pt solid var(--rule);border-radius:9pt;
+  padding:9pt 11pt;margin-bottom:8pt;white-space:pre-wrap;line-height:1.35}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.tier{display:flex;gap:8pt;margin-bottom:9pt}
+.tier .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--ink);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:13pt;display:flex;
+  align-items:center;justify-content:center}
+.tier.ok .n{background:var(--leaf)}.tier.mid .n{background:var(--sunny);color:var(--ink)}
+.tier.stop .n{background:var(--tomato)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+</style></head><body>
+<div class="sheet"><div class="bar"></div>
+<div style="padding-top:34pt">
+<div class="kick">Build It Yourself &middot; No Coding Background Needed</div>
+<h1>Make a Self-Checking<br>Practice Activity</h1>
+<p class="lede">Use an AI chat to build a practice activity your students click through
+&mdash; it tells them right or wrong, explains why, and lets them try again. One file.
+No login. No subscription. Works in any browser, on any device, offline.</p>
+<div class="row" style="margin:12pt 0">
+  <div class="card t" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">29</h3><p class="small" style="margin:0">pages, start to finish</p></div>
+  <div class="card" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">9</h3><p class="small" style="margin:0">prompts, written out in full</p></div>
+  <div class="card g" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">1</h3><p class="small" style="margin:0">working file included</p></div>
+</div>
+<div class="note"><b>The finished activity comes with this pack.</b><br>
+If you get stuck at any step, you still own a working tool you can use on Monday.
+Open it, swap in your own questions, and it is yours.</div>
+<div class="card r"><h3>Who this is for</h3>
+<p class="small" style="margin:0">Teachers who already use AI for planning and want to go further &mdash;
+from asking it to write things, to asking it to build things. You do not need to know
+any code. You do need to be willing to read what comes back and say "not quite, try again."</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The finished thing, first</div>
+<h1 style="font-size:24pt">What you will have<br>at the end</h1>
+
+<p class="lede">Before any instruction, here is the thing you are building, so you know
+whether it is worth your evening.</p>
+<div class="card t"><h3>A student opens one file and sees:</h3>
+<table style="margin-top:6pt">
+<tr><th style="width:34%">What they do</th><th>What happens</th></tr>
+<tr><td>Read a question</td><td>Plain text, as many questions as you want &mdash; five or fifty.</td></tr>
+<tr><td>Click an answer</td><td>Wrong: the choice grays out, and the activity says try again. Nothing is lost.</td></tr>
+<tr><td>Click again</td><td>Right: the choice turns green and a sentence explains <i>why</i> it is right.</td></tr>
+<tr><td>Keep going</td><td>A counter tracks how many they got on the first try &mdash; not how many guesses they made.</td></tr>
+<tr><td>Finish</td><td>A summary panel, and a button to run the whole set again.</td></tr>
+</table></div>
+<div class="card"><h3>What it does not do, on purpose</h3>
+<p class="small" style="margin:0">It does not ask for a name. It does not ask for a login. It does not send
+anything anywhere. It does not keep a record after the browser tab closes. Every one of
+those is a deliberate choice, and page 4 explains why it matters more than it sounds.</p></div>
+<div class="note"><b>Why build it rather than buy it?</b><br>
+Because the question bank is yours. The vocabulary list you actually taught, the
+misconceptions your class actually has, the four problems that came up on Tuesday.
+No purchased activity knows those.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you start</div>
+<h2>What you need &mdash; all free</h2>
+
+<div class="card g"><h3>1. An AI chat</h3>
+<p class="small" style="margin:0">This pack is written with <b>Claude</b> on screen, because it is
+reliably good at producing a single working file and showing it to you straight away.
+<b>ChatGPT and Gemini both work too</b> &mdash; the prompts are plain English and are not
+tied to one product. Where a step depends on the specific tool, it says so.</p></div>
+<div class="card"><h3>2. A text editor you already have</h3>
+<p class="small" style="margin:0">Notepad on Windows, TextEdit on a Mac (switch it to plain text
+under Format), or the free editor of your choice. You are only ever saving text and
+double-clicking it. Nothing gets installed.</p></div>
+<div class="card t"><h3>3. A browser</h3>
+<p class="small" style="margin:0">Chrome, Edge, Safari, Firefox &mdash; any of them. This is where
+your activity runs. Not a website, not an account: a file on your computer that the
+browser knows how to open.</p></div>
+<div class="card r"><h3>What you do <i>not</i> need</h3>
+<p class="small" style="margin:0">A coding class. A paid subscription. Permission from anyone,
+for the version built in this pack. A web host. A domain name. Any prior experience.</p></div>
+<div class="note"><b>Time:</b> about 40 minutes the first time, most of it reading.
+Ten minutes the second time. Under five once it is a habit &mdash; that is the real prize here.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Read this before you build anything</div>
+<h2>The three-tier rule for student data</h2>
+
+<p>This page is first because it shapes what you build, not because it is paperwork. The
+activity in this pack sits entirely in Tier 1. Knowing the tiers is what lets you build the
+next thing safely.</p>
+<div class="tier ok"><div class="n">1</div><div>
+<h3>Content you wrote yourself</h3>
+<p class="small" style="margin:0">Questions, word lists, problems, examples, explanations. No student
+appears in it at all. <b>Build freely. Nobody needs to approve this.</b> Everything in this pack is Tier 1.</p></div></div>
+<div class="tier mid"><div class="n">2</div><div>
+<h3>De-identified student data</h3>
+<p class="small" style="margin:0">Scores and patterns with every identifier removed &mdash; "S1, S2, S3",
+or "a 3rd grader scored 6 of 10, missed every word with a blend." Useful, and safe
+<i>if the identifiers never go in</i>. Keep the roster key on paper or in your district's own
+system. The tool only ever sees S1.</p></div></div>
+<div class="tier stop"><div class="n">3</div><div>
+<h3>Data that can be traced to a child</h3>
+<p class="small" style="margin:0">Names, class rosters, grades tied to a person, IEP details,
+anything a stranger could match to one student. <b>Stop and ask your district.</b> This is not a
+thing to stand up on a personal account, however convenient it would be.</p></div></div>
+<div class="note"><b>The moment it goes wrong is almost always the same one.</b><br>
+You have a working Tier 2 tool. It shows S1, S2, S3. And you think: "I just need the names
+so I can tell who is who." That single step moves you from Tier 2 to Tier 3. Keep the key
+somewhere else and the tool stays safe.</div>
+<p class="small"><b>This is practical guidance, not legal advice.</b> FERPA, COPPA, your state law
+and your district's own policy are the actual authorities. Check your district's policy before
+any tool touches real student information.</p>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">How this actually works</div>
+<h2>The loop</h2>
+
+<p class="lede">Building with an AI chat is not one magic instruction. It is a short loop you
+run four or five times. Once you see the loop, every other build in the series is the same.</p>
+<div class="row">
+<div class="card t"><h3>1 &middot; Describe</h3><p class="small" style="margin:0">Say what you want in plain
+sentences. Be specific about what the <i>student</i> does, not about how it should be coded.</p></div>
+<div class="card"><h3>2 &middot; Look</h3><p class="small" style="margin:0">Open what it made. Click it like a
+student would &mdash; including clicking the wrong answer on purpose.</p></div>
+</div>
+<div class="row">
+<div class="card g"><h3>3 &middot; Say what is off</h3><p class="small" style="margin:0">In one sentence.
+"When I click a wrong answer it does nothing." You do not need to know why.</p></div>
+<div class="card r"><h3>4 &middot; Repeat</h3><p class="small" style="margin:0">Three or four rounds gets you
+something genuinely usable. It is a conversation, not a command.</p></div>
+</div>
+<div class="note"><b>The one habit that separates people who get this working from people who
+give up:</b> describe the <i>behavior you saw</i>, not the fix you imagine.
+"It says correct even when I pick the wrong one" gets you further than
+"change the if statement", especially when you do not know what an if statement is.</div>
+<div class="card"><h3>A fair warning</h3>
+<p class="small" style="margin:0">The first thing it gives you is rarely the thing you want. That is
+normal and it is not you failing. Every build in this series assumes three or four rounds.
+Budget for them and the whole process stops being frustrating.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 1 of 6</div>
+<h2>Ask for the first version</h2>
+
+<p>Open your AI chat and paste this. It is long on purpose &mdash; every sentence in it exists
+because leaving it out produces something worse.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the first build</div>
+Build me a self-checking practice activity as one single HTML file I can save and open in a browser.<br><br>
+How it should work for a student:<br>
+&bull; They see a list of questions, each with four answer choices as clickable buttons.<br>
+&bull; If they click a wrong answer, that choice is grayed out and disabled, a message tells them to try again, and they can still pick another answer.<br>
+&bull; If they click the right answer, it turns green, the other choices lock, and a sentence explains why that answer is correct.<br>
+&bull; A counter at the top shows how many they got right <i>on the first try</i> &mdash; a wrong guess first should not count as a first-try correct.<br>
+&bull; When every question is answered, show a summary and a button to start over.<br><br>
+Requirements:<br>
+&bull; Everything in ONE file. No links to outside files, no internet needed, no login.<br>
+&bull; Put my questions in a clearly marked list at the very top of the file so I can edit them without touching anything else.<br>
+&bull; Add comments above that list telling me how to add or remove a question.<br>
+&bull; Nothing is saved anywhere and no student name is ever asked for.<br>
+&bull; Big text and big buttons &mdash; this may be used on a tablet.<br><br>
+Use five questions about rounding to the nearest ten as the example content so I can see it working.
+</div>
+<div class="note"><b>Why "one single HTML file" matters.</b> It is the difference between a thing
+you own and a thing you rent. One file goes on a shared drive, into your LMS, onto a flash
+drive, or into an email. Nothing expires and nothing needs an account.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 1, continued</div>
+<h2>What should come back</h2>
+
+<p>You should get one long block of code and, depending on the tool, a preview panel you can
+click straight away.</p>
+<div class="card t"><h3>If you are using Claude</h3>
+<p class="small" style="margin:0">It usually opens the result in a panel beside the conversation
+and you can click the buttons there. That is the fastest way to check it &mdash; you are testing
+before you have saved anything.</p></div>
+<div class="card"><h3>If you are using ChatGPT or Gemini</h3>
+<p class="small" style="margin:0">You may get the code without a live preview. Skip ahead to
+Step 6 on page 13, save the file, and open it &mdash; then come back here. Everything else in
+this pack is identical.</p></div>
+<div class="card r"><h3>If it gave you several files</h3>
+<p class="small" style="margin:0">Say: <i>"Put all of that into one single HTML file &mdash; the styling
+and the code included &mdash; so I only have one thing to save."</i> This is the most common thing
+to go differently from the prompt, and one sentence fixes it.</p></div>
+<div class="note"><b>Do not read the code.</b> Genuinely. You are not checking whether the code
+is good, you are checking whether the activity behaves. Click it like a nine-year-old would.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 2 of 6</div>
+<h2>Four checks before you go further</h2>
+
+<p class="lede">Run these in order. If any fails, the sentence beside it is what you paste back.</p>
+<table>
+<tr><th style="width:40%">Do this</th><th>If it misbehaves, say this</th></tr>
+<tr><td><b>Click a wrong answer on purpose.</b> It should gray out and invite another try.</td>
+<td>"When I click a wrong answer, nothing happens. It should gray that choice out and let me try another one."</td></tr>
+<tr><td><b>Then click the right answer.</b> It should turn green and explain why.</td>
+<td>"When I get it right, it does not tell me why. Show the explanation under the question."</td></tr>
+<tr><td><b>Check the counter.</b> A question you got wrong first should NOT count as first-try correct.</td>
+<td>"The first-try counter is going up even when I guessed wrong first. It should only count questions I got right on my first click."</td></tr>
+<tr><td><b>Answer everything.</b> A summary should appear at the end.</td>
+<td>"Nothing happened when I finished the last question. Show a summary with how many I got right on the first try."</td></tr>
+</table>
+<div class="note"><b>The third check is the one that catches people out.</b> It is the most common
+thing to come back subtly wrong, and it is the thing that makes the activity honest: a student
+who guesses three times and lands on the right answer has not shown you they know it.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 3 of 6</div>
+<h2>Put your own content in</h2>
+
+<p>Now it works, make it yours. You have two ways, and the second one is the one worth learning.</p>
+<div class="card g"><h3>The fast way &mdash; ask</h3>
+<div class="prompt" style="margin-top:6pt;margin-bottom:0"><div class="lbl">Prompt 2 &middot; your content</div>
+Replace the example questions with these, keeping everything else exactly as it is.
+For each one, write the explanation so it teaches the idea rather than just restating the answer.<br><br>
+[paste your questions and answers here, in any rough format]
+</div></div>
+<div class="card t"><h3>The way worth learning &mdash; edit it yourself</h3>
+<p class="small" style="margin-bottom:0">Open the file in your text editor. Near the top you will
+find the question list. Change the words between the quote marks. Save. Refresh the browser.
+That is the whole skill, and it means you are never waiting on an AI to fix a typo.</p></div>
+<div class="note"><b>Write the explanations as if the student got it wrong.</b> "50, because 47 is
+past halfway" teaches. "The answer is 50" does not. This is the single biggest difference
+between an activity that drills and an activity that instructs, and no AI will make that
+judgment for you &mdash; it is the part that is actually your job.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 3, continued</div>
+<h2>The part you edit</h2>
+
+<p>This is what the question list looks like in the finished file. Four things to notice.</p>
+<div class="code">{ q: "Round 47 to the nearest ten.",
+  choices: ["40", "50", "47", "500"],
+  answer: 1,
+  why: "47 is past the halfway point (45), so it rounds up to 50." },</div>
+<table>
+<tr><th style="width:20%">Part</th><th>What it is</th></tr>
+<tr><td><code>q</code></td><td>The question the student reads. Change the words, keep the quote marks.</td></tr>
+<tr><td><code>choices</code></td><td>The buttons, in the order they appear. Four is a habit, not a rule &mdash; three or five work.</td></tr>
+<tr><td><code>answer</code></td><td><b>Counts from zero.</b> The first choice is 0, the second is 1, the third is 2. Here the answer is "50", which sits second, so it is 1.</td></tr>
+<tr><td><code>why</code></td><td>What the student sees after answering. This is where the teaching lives.</td></tr>
+</table>
+<div class="note"><b>Counting from zero is the one thing that trips everybody.</b> If a question
+marks the wrong choice as correct, this is almost always why. Count the choices starting at
+zero and check the number matches.</div>
+<div class="card r"><h3>Always test your own key</h3>
+<p class="small" style="margin:0">Click through every question once after you swap the content in.
+An activity that confidently marks the wrong answer correct is worse than no activity, and it
+takes ninety seconds to rule out.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 4 of 6</div>
+<h2>Make the feedback teach</h2>
+
+<p class="lede">A right-or-wrong activity is worth something. A right-or-wrong activity that
+explains itself is worth ten times as much, and it costs one more prompt.</p>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; better wrong-answer feedback</div>
+For each question, give each <i>wrong</i> choice its own short message explaining the likely mistake &mdash;
+not just "try again". Keep it to one sentence, keep it kind, and never say the student is wrong
+as a person. Show that message when they click that specific choice.
+</div>
+<div class="card t"><h3>What that turns into</h3>
+<p class="small" style="margin-bottom:4pt">A student who clicks "40" on "round 47" sees:</p>
+<p class="small" style="margin:0"><i>"Close &mdash; 47 is past the halfway mark, so it goes up rather than down."</i></p>
+<p class="small" style="margin:6pt 0 0">Rather than: <i>"Not quite &mdash; try again."</i></p></div>
+<div class="note"><b>This is the part where being a teacher beats being a programmer.</b> You know
+which wrong answer means "guessed", which means "rounded the wrong way", and which means
+"does not know what halfway is." Those are three different students and they need three
+different sentences. Write them yourself.</div>
+<div class="card"><h3>Worth knowing</h3>
+<p class="small" style="margin:0">The included file uses one shared try-again message, to keep the
+code simple enough to read. Prompt 3 is how you upgrade it. Both versions are legitimate &mdash;
+start where you like.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 5 of 6</div>
+<h2>Make it look like your room</h2>
+
+<div class="prompt"><div class="lbl">Prompt 4 &middot; appearance</div>
+Change the look: use [your colors] as the main colors, make the question text larger, and
+put the activity title and a short instruction line at the top. Keep the buttons big enough
+to tap on a tablet.
+</div>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; accessibility, and this one matters</div>
+Make sure this works for a student using a keyboard instead of a mouse: every choice should be
+reachable by pressing Tab and selectable with Enter, with a clearly visible outline on whatever
+is currently selected. Do not use color alone to show right and wrong &mdash; include words too.
+</div>
+<div class="note"><b>Prompt 5 is not optional and it is not decoration.</b> A student using a
+keyboard, a screen reader, or with any color vision difference will hit a wall on an activity
+that signals "correct" with green alone. Asking for it costs one prompt. Retrofitting it later
+costs an afternoon.</div>
+<div class="card g"><h3>How to check it worked</h3>
+<p class="small" style="margin:0">Put the mouse down. Press Tab repeatedly &mdash; you should see a
+clear outline moving between the choices. Press Enter on one &mdash; it should select. If either
+fails, say exactly that and ask again.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Step 6 of 6</div>
+<h2>Get it out of the chat and into a file</h2>
+
+<p class="lede">Until you do this, the thing you made lives inside a conversation. This step is
+what makes it yours.</p>
+<div class="card"><h3>1. Copy all of the code</h3>
+<p class="small" style="margin:0">Most tools have a copy button on the code block. Use it &mdash;
+selecting by hand usually misses the last line.</p></div>
+<div class="card t"><h3>2. Paste it into a plain text editor</h3>
+<p class="small" style="margin:0">Notepad, or TextEdit set to plain text. <b>Not Word.</b> Word adds
+invisible formatting that stops the file working, and the failure is baffling when it happens.</p></div>
+<div class="card g"><h3>3. Save it with .html on the end</h3>
+<p class="small" style="margin:0">Name it something you will recognize: <code>rounding-practice.html</code>.
+The <code>.html</code> is what tells your computer to open it in a browser. On Windows, set
+"Save as type" to All Files so it does not quietly become a .txt.</p></div>
+<div class="card r"><h3>4. Double-click it</h3>
+<p class="small" style="margin:0">It opens in your browser. No internet needed. That is the whole
+thing &mdash; it works the same on a school laptop with the wifi off.</p></div>
+<div class="note"><b>If it opens as a page of code instead of an activity</b>, the file extension
+did not save. Rename it so it ends in <code>.html</code> and try again. This is the single most
+common stumble in this whole pack and it is a thirty-second fix.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Using it</div>
+<h2>Getting it to students</h2>
+
+<p class="lede">Four ways, easiest first. All of them keep the file yours.</p>
+<table>
+<tr><th style="width:26%">How</th><th>What happens</th><th style="width:22%">Worth knowing</th></tr>
+<tr><td><b>On the board</b></td><td>Open it yourself and work through it as a class.</td><td>Zero setup. Good for a first run.</td></tr>
+<tr><td><b>Shared drive</b></td><td>Drop it in the class folder students already open.</td><td>Uses access your district already granted.</td></tr>
+<tr><td><b>Attach in your LMS</b></td><td>Post it as a file in Classroom, Canvas, Schoology.</td><td>Some LMSs preview HTML instead of opening it &mdash; tell students to download first.</td></tr>
+<tr><td><b>On the devices</b></td><td>Copy it onto classroom laptops or tablets once.</td><td>Works with the wifi off. Genuinely useful when the network is down.</td></tr>
+</table>
+<div class="note"><b>Notice what is not on this list:</b> putting it on the public internet. You do not
+need to, and not needing to is what keeps this simple. The file works fine sitting on a drive.</div>
+<div class="card r"><h3>One thing to check with your district</h3>
+<p class="small" style="margin:0">Some districts restrict what file types students can open, or block
+local HTML on managed devices. That is a two-minute question to your tech team and it is worth
+asking before you plan a lesson around it.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div>
+<h2>The six things that actually go wrong</h2>
+
+<p class="lede">In order of how often they happen. Each fix is one sentence you paste back into the chat,
+or one thing you change yourself.</p>
+<div class="card r"><h3>1. It opens as a wall of code</h3>
+<p class="small" style="margin:0"><b>Cause:</b> the file did not save with <code>.html</code> on the end.
+<b>Fix:</b> rename it so it ends in <code>.html</code>. On Windows you may need to turn on
+"file name extensions" in File Explorer's View menu to see what it really saved as.</p></div>
+<div class="card"><h3>2. Nothing happens when you click</h3>
+<p class="small" style="margin:0"><b>Cause:</b> usually the code was copied incompletely &mdash; the last
+lines got missed. <b>Fix:</b> copy it again with the copy button, not by selecting with the mouse.</p></div>
+<div class="card t"><h3>3. It marks the wrong answer correct</h3>
+<p class="small" style="margin:0"><b>Cause:</b> the <code>answer</code> number counts from zero and it is
+off by one. <b>Fix:</b> count the choices starting at 0 and correct the number. This is the most
+common error in your <i>own</i> edits, not in the AI's work.</p></div>
+<div class="card g"><h3>4. It looks plain and unstyled</h3>
+<p class="small" style="margin:0"><b>Cause:</b> the styling came as a separate file.
+<b>Fix:</b> "Put the styling inside the same HTML file so I only have one file to save."</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks, continued</div>
+<h2>Two more, and a rule</h2>
+
+<div class="card"><h3>5. It asks for a name or a login</h3>
+<p class="small" style="margin:0"><b>Cause:</b> the AI added a feature you did not ask for &mdash; it does
+this sometimes, trying to be helpful. <b>Fix:</b> "Remove the name field and any login. This must not
+collect anything about the student." Say it plainly; it will comply. And notice that this is the
+Tier 1 rule from page 4 doing its job.</p></div>
+<div class="card r"><h3>6. It worked, then you changed something, and now it does not</h3>
+<p class="small" style="margin:0"><b>Cause:</b> a missing quote mark or comma in the question list.
+<b>Fix:</b> compare your edit to the pattern on page 10. Every question needs its quote marks closed and
+a comma between entries. If you cannot spot it, paste the question list into the chat and say
+"something in this list is broken &mdash; find it."</p></div>
+<div class="note"><b>The rule that covers everything not on this list:</b><br>
+Describe what you saw, in ordinary words, and ask for it to be fixed. You do not need the right
+vocabulary. "The green thing does not appear when I get it right" is a completely serviceable
+bug report and it will be understood.</div>
+<div class="card g"><h3>When to stop fixing and start over</h3>
+<p class="small" style="margin:0">If three rounds have not fixed it, the conversation has probably tied
+itself in a knot. Start a fresh chat, paste Prompt 1 again, and add the one thing that went wrong.
+This is faster than untangling, and it costs you two minutes.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Make it a habit</div>
+<h2>Changing it for anything else</h2>
+
+<p class="lede">The activity is not about rounding. Rounding was just the example. Here is the same
+file doing other jobs &mdash; each of these is one prompt or one edit away.</p>
+<table>
+<tr><th style="width:30%">Subject</th><th>What the questions become</th></tr>
+<tr><td>Vocabulary</td><td>The word, with four meanings. The explanation gives the word in a sentence.</td></tr>
+<tr><td>Reading</td><td>A short passage at the top, then comprehension questions about it.</td></tr>
+<tr><td>Science</td><td>A diagram described in words, then "which part does X?"</td></tr>
+<tr><td>History</td><td>A source quotation, then questions about who wrote it and why.</td></tr>
+<tr><td>Grammar</td><td>A sentence with four possible corrections.</td></tr>
+<tr><td>Music, art, PE</td><td>Terms, signs, rules &mdash; anything with a right answer and a reason.</td></tr>
+</table>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; changing the subject entirely</div>
+Keep this activity exactly as it works now, but replace the content with [subject] questions for
+[grade]. Write the explanations so they teach the idea, and keep the reading level appropriate for
+that age.
+</div>
+<div class="note"><b>The test of whether a topic fits:</b> can a question have one clearly right answer
+and a reason you could explain in a sentence? If yes, it works. If the answer is "it depends" or
+"there are several good answers", this is the wrong tool &mdash; that is a discussion, not a drill.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Judgment</div>
+<h2>What not to build this way</h2>
+
+<p class="lede">Knowing where this stops is as valuable as knowing how to start. Four honest limits.</p>
+<div class="card r"><h3>Anything that grades for real</h3>
+<p class="small" style="margin:0">This is practice, not assessment. It keeps no record, and it should
+not. A score that counts belongs in the system your district already uses, where it is backed up,
+auditable and covered by policy.</p></div>
+<div class="card"><h3>Anything holding a student's name</h3>
+<p class="small" style="margin:0">Page 4, Tier 3. The temptation arrives the moment the tool becomes
+genuinely useful. Keep the roster key somewhere else.</p></div>
+<div class="card t"><h3>Anything open-ended</h3>
+<p class="small" style="margin:0">Essays, opinions, "explain your thinking" &mdash; a click-the-answer
+activity cannot judge those, and pretending otherwise teaches students that thinking has four
+options. Use this for the recall that frees your time for the open-ended work.</p></div>
+<div class="card g"><h3>Anything you would not check yourself</h3>
+<p class="small" style="margin:0">If you would not read every question before handing it out on paper,
+do not hand it out on a screen either. The medium changed; your responsibility for the content
+did not.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The data rule in full</div>
+<h2>Tier 2: using real results safely</h2>
+
+<p class="lede">The activity in this pack collects nothing. But once you have built one tool, you will
+want one that looks at how students actually did. Here is how to do that without crossing a line.</p>
+<div class="card g"><h3>What makes data de-identified</h3>
+<p class="small" style="margin:0">Not "I removed the last names." De-identified means a person who
+found this file could not work out which child it describes &mdash; even knowing your class. Student
+numbers, no names, no initials, no "the one with the IEP", no detail that only fits one child.</p></div>
+<div class="card t"><h3>A worked example</h3>
+<p class="small" style="margin-bottom:5pt"><b>Safe to put in a tool or a prompt:</b></p>
+<div class="code" style="margin-bottom:7pt">S1: 8/10   S2: 6/10   S3: 9/10   S4: 4/10
+Whole group missed Q3 and Q7 (both regrouping)</div>
+<p class="small" style="margin-bottom:5pt"><b>Not safe, even though it looks harmless:</b></p>
+<div class="code" style="margin-bottom:0">Marcus: 4/10 - still struggling since his IEP meeting</div></div>
+<div class="note"><b>Keep the key on paper.</b> A sticky note in your planner that says S1 = Marcus does
+the whole job, and it never leaves your desk. The tool sees S1 forever.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The data rule in full</div>
+<h2>Tier 3: when to stop and ask</h2>
+
+<p class="lede">Sooner or later you will want to build something that genuinely needs real student
+information. That is not a failure of nerve &mdash; it is the point at which this stops being a solo
+project.</p>
+<div class="card r"><h3>You are in Tier 3 the moment any of these is true</h3>
+<p class="small" style="margin:0">&bull; Names, initials or student ID numbers go into the tool.<br>
+&bull; It stores anything between sessions &mdash; a database, an account, a saved file of results.<br>
+&bull; It lives on the public internet where a link would reach it.<br>
+&bull; It holds grades that count, attendance, behavior records or anything from an IEP.<br>
+&bull; Somebody other than you would need to log in to it.</p></div>
+<div class="card"><h3>What to do instead of abandoning the idea</h3>
+<p class="small" style="margin:0">Take it to your district's technology team as a proposal, not a
+fait accompli. Districts say yes to things reviewed in advance far more often than to things
+discovered in use. Bring what it does, what data it touches, and where it would live.
+Peninsula School District in Washington built its own tools this way and reports saving
+substantial money doing it &mdash; with the district involved, which is exactly the difference.</p></div>
+<div class="note"><b>Why the district cares, in one sentence:</b> student records are covered by
+federal and state law, and the school &mdash; not you personally &mdash; carries the obligation. A
+tool they reviewed is a tool they can stand behind.</div>
+<p class="small"><b>Practical guidance, not legal advice.</b> Your district's policy, your state's
+student privacy law, FERPA and COPPA are the authorities. Ask your district before real student
+information enters anything you build.</p>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">If you have ten minutes</div>
+<h2>The short version</h2>
+
+<p class="lede">The rest of this pack explains why. This page is what to do. Come back for the
+reasoning once it is working.</p>
+<div class="card t"><h3>1 &middot; Open the file that came with this pack</h3>
+<p class="small" style="margin:0"><code>practice-activity.html</code>. Double-click it. It opens in your
+browser and works immediately. You now have a working activity and you have written nothing.</p></div>
+<div class="card"><h3>2 &middot; Open it again in a text editor</h3>
+<p class="small" style="margin:0">Right-click &gt; Open with &gt; Notepad or TextEdit. Near the top is a
+block marked YOUR QUESTIONS GO HERE.</p></div>
+<div class="card g"><h3>3 &middot; Change the words between the quote marks</h3>
+<p class="small" style="margin:0">Your question, your four choices, your explanation. Remember
+<code>answer</code> counts from zero. Save the file.</p></div>
+<div class="card r"><h3>4 &middot; Refresh the browser</h3>
+<p class="small" style="margin:0">Your activity. Ten minutes, no AI needed at all for this route.</p></div>
+<div class="note"><b>Then, when you want a different <i>kind</i> of activity</b> rather than different
+questions &mdash; that is when the prompts on page 6 onward earn their keep. The AI is for changing what
+the thing does. Editing the list is for changing what it asks.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you build</div>
+<h2>Plan it first &mdash; five minutes with a pen</h2>
+
+<p class="lede">The teachers who get a genuinely useful tool are the ones who decided what it was for
+before they opened the chat. Fill this in.</p>
+<div class="card"><h3>What skill is this practicing?</h3>
+<div style="border-bottom:1.5pt solid var(--rule);height:24pt"></div>
+<p class="small" style="margin:5pt 0 0">One skill. Not a unit. "Rounding to the nearest ten", not "place value".</p></div>
+<div class="card t"><h3>What are the three wrong answers your students actually give?</h3>
+<div style="border-bottom:1.5pt solid var(--rule);height:22pt"></div>
+<div style="border-bottom:1.5pt solid var(--rule);height:22pt"></div>
+<div style="border-bottom:1.5pt solid var(--rule);height:22pt"></div>
+<p class="small" style="margin:5pt 0 0">These become your distractors. Invented wrong answers teach
+nothing; the ones your class really produces teach a great deal.</p></div>
+<div class="card g"><h3>For each one &mdash; what is the misconception behind it?</h3>
+<div style="border-bottom:1.5pt solid var(--rule);height:22pt"></div>
+<div style="border-bottom:1.5pt solid var(--rule);height:22pt"></div>
+<p class="small" style="margin:5pt 0 0">This is what you write in the feedback. It is the part no AI can
+do for you, and the part that makes the activity worth more than a worksheet.</p></div>
+<div class="note"><b>Ten questions is plenty.</b> A student who does ten with real feedback learns more
+than one who clicks through forty. Resist the urge to generate a hundred just because you can.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">A second example</div>
+<h2>The same file, doing a different job</h2>
+
+<p class="lede">To show this is not really about rounding &mdash; here is the identical structure holding
+a vocabulary question, written the way this pack argues for.</p>
+<div class="code">{ q: "In the sentence 'the path was treacherous after the rain',
+       what does TREACHEROUS mean?",
+  choices: ["Very muddy", "Dangerous and unstable", "Long and winding", "Steep"],
+  answer: 1,
+  why: "Treacherous means dangerous, especially in a hidden way - the rain made the
+        path unsafe, not just messy." },</div>
+<div class="card t"><h3>Why each wrong choice is there</h3>
+<table style="margin-top:6pt;margin-bottom:0">
+<tr><th style="width:32%">Choice</th><th>The student who picks it</th></tr>
+<tr><td>Very muddy</td><td>Took the context clue (rain) but not the word. Very common, and worth a specific message.</td></tr>
+<tr><td>Long and winding</td><td>Guessed from "path" rather than from the word at all.</td></tr>
+<tr><td>Steep</td><td>Knows it is something about difficulty, has not pinned down which.</td></tr>
+</table></div>
+<div class="note"><b>That table is the actual work.</b> Writing four plausible choices is easy. Knowing
+which wrong answer means which misunderstanding is teaching, and it is why your version of this
+activity will beat a generated one.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Where this goes</div>
+<h2>What else the same loop builds</h2>
+
+<p class="lede">You now know a method, not a product. The loop on page 5 is identical for all of these &mdash;
+describe, look, say what is off, repeat.</p>
+<table>
+<tr><th style="width:34%">Build</th><th>Tier</th><th>What changes</th></tr>
+<tr><td><b>Flashcard drill</b></td><td>1</td><td>One thing at a time, flip to check, shuffle each run.</td></tr>
+<tr><td><b>Sorting activity</b></td><td>1</td><td>Drag items into categories. Ask for click-to-select if dragging proves fiddly on tablets.</td></tr>
+<tr><td><b>Timed fluency practice</b></td><td>1</td><td>A countdown and a running count. Good for math facts.</td></tr>
+<tr><td><b>Class hub page</b></td><td>1</td><td>Today's agenda, links, due dates. You edit it; nobody logs in.</td></tr>
+<tr><td><b>Parent explainer</b></td><td>1</td><td>What we are learning and how to help at home, in one page you can send.</td></tr>
+<tr><td><b>Score pattern viewer</b></td><td><b>2</b></td><td>Paste de-identified scores, see which questions the group missed. Read page 19 first.</td></tr>
+</table>
+<div class="note"><b>Notice the Tier column.</b> Five of those six need nobody's permission. The sixth
+touches real results and so it follows the Tier 2 rules &mdash; student numbers, no names, key on paper.
+Knowing which column you are in is the whole discipline.</div>
+<div class="card g"><h3>The honest summary of what you have learned</h3>
+<p class="small" style="margin:0">Not how to code. How to describe a thing precisely enough that a
+machine can build it, and how to tell whether what came back is right. Those are teaching skills. You
+already had them; this pack pointed them at a new object.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div>
+<h2>Every prompt, in one place</h2>
+
+<p class="small">Copy from here rather than retyping. Square brackets mean "put your own thing here".</p>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">1 &middot; first build</div>
+<span class="small">Build me a self-checking practice activity as one single HTML file I can save and open in a browser. Students see questions with four clickable choices. A wrong click greys that choice out and invites another try; a right click turns green, locks the others and explains why it is right. A counter shows how many were right on the FIRST try. Show a summary at the end with a start-over button. Everything in one file, no internet, no login, no student name, nothing saved. Put my questions in a clearly marked list at the top with comments explaining how to add one. Big text and big buttons for tablets.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">2 &middot; your content</div>
+<span class="small">Replace the example questions with these, keeping everything else exactly as it is. Write each explanation so it teaches the idea rather than restating the answer. [your questions]</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">3 &middot; better wrong-answer feedback</div>
+<span class="small">Give each wrong choice its own one-sentence message explaining the likely mistake, shown when that specific choice is clicked. Keep it kind.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">4 &middot; appearance</div>
+<span class="small">Use [your colors] as the main colors, make the question text larger, and add a title and instruction line at the top. Keep buttons big enough to tap.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">5 &middot; accessibility</div>
+<span class="small">Make every choice reachable with Tab and selectable with Enter, with a clearly visible outline on the current one. Do not use color alone to show right and wrong &mdash; include words too.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">6 &middot; change the subject</div>
+<span class="small">Keep this working exactly as it does, but replace the content with [subject] questions for [grade], at an appropriate reading level.</span></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div>
+<h2>Three more worth keeping</h2>
+
+<div class="prompt"><div class="lbl">7 &middot; when it will not behave</div>
+<span class="small">Here is what I did and what happened: [what you clicked]. I expected [what should have happened]. Fix it and give me the whole file again.</span></div>
+<div class="prompt"><div class="lbl">8 &middot; shuffle the questions</div>
+<span class="small">Put the questions in a different random order each time the page is opened, so students sitting together do not see the same sequence. Keep each question's choices with it.</span></div>
+<div class="prompt"><div class="lbl">9 &middot; a printable version</div>
+<span class="small">Add a print stylesheet so that printing this page gives a clean worksheet: questions and choices only, no buttons, no colors, no score panel, with room to write.</span></div>
+<div class="note"><b>Prompt 9 is the one teachers ask for second.</b> The same question bank becomes the
+screen activity and the paper version, and no one has to retype anything. It is also the answer to
+"what do I do when the laptops do not turn up."</div>
+<div class="card g"><h3>A habit worth forming</h3>
+<p class="small" style="margin:0">Keep your own prompts in a document as you find ones that work. Within
+a term you will have a personal library that fits how you teach, and building the next tool becomes
+a matter of pasting rather than thinking.</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The file</div>
+<h2>The finished activity, in full</h2>
+
+<p class="small">The complete file is included with this pack as <code>practice-activity.html</code> &mdash;
+you do not need to type any of this. It is printed so you can see what you are working with, and so
+the pack still makes sense on paper.</p>
+<p class="small"><b>This first part is the only bit you edit.</b> Everything after it is machinery.</p>
+<div class="code" style="font-size:7.4pt;line-height:1.3">&lt;!-- ===================================================================
+     YOUR QUESTIONS GO HERE. This is the only part you need to change.
+
+     Each question has:
+       q       the question the student reads
+       choices the options they can click
+       answer  the position of the correct one, counting from 0
+               (first choice = 0, second = 1, third = 2, fourth = 3)
+       why     what the student sees after they answer, right or wrong
+
+     Add or delete questions freely. Two is fine. Thirty is fine.
+     =================================================================== --&gt;
+&lt;script&gt;
+const ACTIVITY_TITLE = "Rounding to the Nearest Ten";
+const ACTIVITY_NOTE  = "Click the answer you think is right. You can try again.";
+
+const QUESTIONS = [
+  { q: "Round 47 to the nearest ten.",
+    choices: ["40", "50", "47", "500"],
+    answer: 1,
+    why: "47 is past the halfway point (45), so it rounds up to 50." },
+
+  { q: "Round 23 to the nearest ten.",
+    choices: ["30", "20", "25", "200"],
+    answer: 1,
+    why: "23 has not reached the halfway point (25), so it rounds down to 20." },
+
+  { q: "Round 85 to the nearest ten.",
+    choices: ["80", "90", "85", "100"],
+    answer: 1,
+    why: "85 is exactly halfway. The rule we use is to round up, so 85 becomes 90." },
+
+  { q: "Round 61 to the nearest ten.",
+    choices: ["70", "60", "61", "600"],
+    answer: 1,
+    why: "61 is only one past 60, well short of halfway, so it rounds down to 60." },
+
+  { q: "Round 8 to the nearest ten.",
+    choices: ["0", "10", "8", "80"],
+    answer: 1,
+    why: "8 is past halfway between 0 and 10, so it rounds up to 10." }
+];
+&lt;/script&gt;
+
+</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div>
+<h2>How this pack is built</h2>
+
+<div class="card"><h3>What we are claiming</h3>
+<p class="small" style="margin:0">That the prompts in this pack, used with a current AI chat assistant,
+produce a working self-checking activity. Every prompt here was run and the resulting activity was
+tested before publication &mdash; including clicking wrong answers on purpose, checking the first-try
+counter behaves honestly, and confirming the answer key is right.</p></div>
+<div class="card r"><h3>What we are not claiming</h3>
+<p class="small" style="margin:0">We are not claiming this replaces your district's learning management
+system, and we would advise against trying. We are not claiming it is an assessment tool. We are not
+claiming any particular learning outcome. And this is not legal advice about student data &mdash; your
+district's policy, your state's law, FERPA and COPPA are the authorities.</p></div>
+<div class="card t"><h3>An honest limitation</h3>
+<p class="small" style="margin:0">AI tools change. A prompt that produces a clean single file today may
+produce something slightly different in six months. That is why this pack teaches the <i>loop</i> on
+page 5 rather than only the prompts &mdash; the loop survives the tools changing, and the included
+working file does not depend on any AI at all.</p></div>
+<div class="card g"><h3>Sources</h3>
+<p class="small" style="margin:0">Peninsula School District's use of AI-built internal tools, and the
+associated cost saving, is as reported in 2026 coverage of the district's technology work.
+Student privacy guidance follows the Family Educational Rights and Privacy Act (FERPA) and the
+Children's Online Privacy Protection Act (COPPA); the Future of Privacy Forum's <i>Educator's Guide
+to Student Privacy</i> is a readable starting point. Neither this pack nor its authors are affiliated
+with any AI company or any named district.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b> Every prompt run, every step
+followed start to finish, and the included file tested in a browser before this pack shipped.</div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div>
+<h2>If this was useful</h2>
+
+<div class="card g" style="margin-top:14pt"><h3>Leaving feedback earns you credit</h3>
+<p style="margin-bottom:6pt">TPT gives you credit toward future purchases every time you review something
+you have downloaded. Go to <b>My Purchases</b>, find this pack, and leave a rating and a comment.
+It costs a minute and it comes back to you as money off the next thing you buy.</p>
+<p class="small" style="margin:0">It also tells us what to build next, which is genuinely how the
+decisions get made here.</p></div>
+<div class="card t"><h3>If something did not work</h3>
+<p style="margin:0">Please tell us through TPT before leaving a rating &mdash; message us and we will fix
+it and re-upload the same day, and you keep the updated file free. A prompt that stopped behaving
+is something we want to know about, not something to live with.</p></div>
+<div class="note" style="margin-top:14pt"><b>What you can do now that you could not this morning:</b><br>
+Build a practice activity for any topic you teach, in about ten minutes, that checks itself and
+explains its answers &mdash; without a subscription, a login, or anyone's permission. The rounding
+example was never the point. The loop on page 5 was.</div>
+<div class="card" style="margin-top:14pt"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Bright Scholar &middot; AI-Ready School</p></div>
+<div class="foot"><span>Build It Yourself · Self-Checking Practice Activity</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+</body></html>

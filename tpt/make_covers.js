@@ -257,6 +257,11 @@ const PRODUCTS = [
     title: 'ABC Behavior', accent: 'Data Sheets',
     lede: 'A recording form, a frequency tally, a duration sheet, and an AI page that drafts a pattern summary from de-identified entries.',
     chips: ['5 pages', 'AI pattern summary', 'Team decides', '$6'] },
+  { file: 'build-self-checking', badge: 'Build It Yourself',
+    kicker: 'Use AI to build it \u00b7 no coding background needed',
+    title: 'Build a Self-Checking', accent: 'Practice Activity',
+    lede: 'Nine prompts written out in full, a working activity file included, and a plain rule for keeping student data out of what you build.',
+    chips: ['29 pages', 'Working file included', 'Any subject', '$19'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

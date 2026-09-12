@@ -96,6 +96,10 @@ for (const l of [...listings].sort((a, b) => a.order - b.order)) {
   if (l.product) fs.copyFileSync(path.join(ROOT, l.product), path.join(stage, path.basename(l.product)));
   if (l.product) fs.copyFileSync(path.join(ROOT, `tpt/previews/${l.id}-preview.pdf`), path.join(stage, '5-PREVIEW.pdf'));
   if (l.easelSetup) fs.copyFileSync(path.join(ROOT, l.easelSetup), path.join(stage, '6-EASEL-SETUP.txt'));
+  // Extra product files that ship alongside the PDF - e.g. the working activity
+  // file in the build-along line, which is half of what the buyer is paying for.
+  (l.extraFiles || []).forEach(f =>
+    fs.copyFileSync(path.join(ROOT, f), path.join(stage, path.basename(f))));
   fs.copyFileSync(path.join(ROOT, l.cover), path.join(stage, '2-MAIN-COVER.png'));
   l.thumbnails.forEach((t, i) =>
     fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${3 + i}-THUMBNAIL-${i + 1}.png`)));

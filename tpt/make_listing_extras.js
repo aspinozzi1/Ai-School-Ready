@@ -247,6 +247,15 @@ const IMAGES = [
   ], '8 pages')],
   ['igt-real-pages',   realPages('#17BEBB', ['igt_p2.png', 'igt_p6.png', 'igt_p7.png'], '8 pages')],
   ['whole-staff-license', license()],
+  ['bsc-whats-inside', whatsInside('Build It Yourself ·', 'Self-Checking Practice Activity', [
+    'Nine prompts, written out in full - copy and paste',
+    'A working activity file, included and ready to use',
+    'Six real failures and the sentence that fixes each',
+    'The three-tier rule for handling student data',
+    'A planning page to fill in before you build',
+    'Works in any browser, offline, with no login',
+  ])],
+  ['bsc-real-pages',   realPages('#2D6CB5', ['bsc_p2.png', 'bsc_p6.png', 'bsc_p16.png'], '29 pages')],
   ['cvcb-whats-inside', whatsInside('Short-Vowel CVC ·', 'The Complete Binder', [
     'Five units — short a, i, o, u and e',
     'Thirty no-prep practice pages, six per unit',

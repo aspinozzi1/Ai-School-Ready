@@ -70,11 +70,23 @@ def mt(p):
     full = os.path.join(ROOT, p)
     if not os.path.exists(full):
         return None
-    # A file rebuilt but not yet committed is fresh now, whatever its last
-    # commit says -- so dirty and untracked paths use mtime.
+    # Two clocks, and each is wrong on its own:
+    #   mtime  -- git does not preserve it, so after a pull every file looks
+    #             equally new and real staleness hides (the 48-false-alarm bug).
+    #   git    -- a rebuild that happens to produce byte-identical output makes
+    #             no commit, so a genuinely current file keeps an old date.
+    # Take the later of the two. A file is stale only when BOTH say it is, which
+    # is the case that actually matters: never rebuilt and never recommitted.
+    #
+    # Known limitation, stated rather than hidden: this cannot catch a derived
+    # file that was rebuilt from a stale source and so carries a fresh mtime
+    # with old content. Rebuild in dependency order (pinsrc, extras, previews,
+    # drops) and that case does not arise.
+    mtime = os.path.getmtime(full)
     if p in DIRTY:
-        return os.path.getmtime(full)
-    return _git_time(p) or os.path.getmtime(full)
+        return mtime
+    g = _git_time(p)
+    return max(g, mtime) if g else mtime
 
 listings = json.load(open(os.path.join(ROOT, 'tpt/listings.json')))['listings']
 stale = 0
