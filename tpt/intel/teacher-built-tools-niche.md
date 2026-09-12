@@ -177,3 +177,46 @@ the audience does not yet have a word for what they want, which is
 exactly what being early looks like. In that case title on the artifact
 ("self-checking activities") and use the method word in tags and
 description only.
+
+
+---
+
+## The `vibe coding` decision (owner, 2026-09-12)
+
+**Measured 2026-09-11: `vibe coding` returns "not enough data for this term" on
+TPT Keywords.** No search volume today. `ai tools for teachers` returned the
+same, though at four words that one may be hitting the tool's length limit
+rather than a true zero; `vibe coding` is two words, so its zero is real.
+
+**The owner's judgment is that the term becomes mainstream, and the line should
+claim it now.** That is very likely right on the trend, and the research
+supports it: Cool Cat Teacher, Class Tech Tips, TCEA, CodeHS, Coursera and
+AI for Education all use the phrase in 2026.
+
+**So this is not an either/or, and it was resolved by splitting the surfaces:**
+
+| Surface | Decision | Why |
+|---|---|---|
+| **Tags** | **`vibe coding` in, from day one** | A tag costs one of six slots and nothing else. It starts accumulating listing age against the phrase now, which is the whole advantage of being early. Replaced `ai tools for teachers`, which measured empty. |
+| **Description** | **Opens with the term** | TPT indexes description text. The phrase can grow here without spending title characters. |
+| **Inside the product** | **Names and teaches the term** | Brand building. A buyer who learns the word from us associates it with us. |
+| **Title** | **Artifact wording for now** | The title is the one surface that has to convert a browsing teacher *today*, and today most of them do not know the word. |
+
+**The flip condition, so this is a plan and not a hope:**
+
+> Re-pull `vibe coding` monthly. When it returns **real volume with a Strong or
+> Promising badge**, move it into the title of every product in this line and
+> retitle the back catalog. Editing a TPT title costs nothing and does not reset
+> the listing.
+
+That asymmetry is the whole argument: we can add the word to a title the day it
+starts selling, but we cannot retroactively have been tagged for it since
+September. So claim it in the cheap places now, spend title characters only when
+the data says to.
+
+**A risk worth naming.** In professional software circles "vibe coding" carries
+a connotation of accepting AI output without understanding it. For a product
+teaching teachers, that association could cut against us. The answer is to own
+the responsible version explicitly, which the pack now does: the method page
+names both uses of the term and states that this one means describe, check,
+correct, repeat. That turns a brand risk into a differentiator.

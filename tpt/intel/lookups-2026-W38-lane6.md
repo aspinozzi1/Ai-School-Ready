@@ -12,7 +12,7 @@ decide whether the first build goes out Sunday or the Sunday after.
 
 | # | Look up | What it decides |
 |---|---|---|
-| 1 | **vibe coding** | **The single most important number for this lane.** The web calls this movement "vibe coding" — Cool Cat Teacher, TCEA, CodeHS, Coursera all use it. Does a TPT buyer? If yes, it is the title word and we own the category early. If it returns nothing, see the note below — that is informative, not fatal. |
+| 1 | **vibe coding** | **RUN THIS EVERY MONTH.** Measured empty 2026-09-11; the owner's bet is that it becomes mainstream, so it is tagged and in the description from day one. The standing instruction is to re-pull monthly and move it into product titles the moment it returns real volume with a Strong or Promising badge. Original note below.<br><br>**The single most important number for this lane.** The web calls this movement "vibe coding" — Cool Cat Teacher, TCEA, CodeHS, Coursera all use it. Does a TPT buyer? If yes, it is the title word and we own the category early. If it returns nothing, see the note below — that is informative, not fatal. |
 | 2 | **self checking activities** | The first build's own artifact phrase, and the fallback title if #1 is empty. Teachers search for the *thing* far more reliably than for the *method*. |
 | 3 | **ai tools for teachers** | The broad door into this audience. We already hold one product here, so a strong number also tells us whether to retitle it. |
 | 4 | **ai professional development** | Tests the $18–25 price band. PD phrases carry higher price tolerance than activity phrases, and this line is PD wearing an activity's clothes. |
