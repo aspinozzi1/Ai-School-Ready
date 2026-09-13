@@ -118,6 +118,33 @@ table.form tr:nth-child(even) td{ background:#FFF8E8; }
 .sect{ break-inside:avoid; }
 h2,h3{ break-after:avoid; }
 
+/* .callout and .legal never made it into this sheet when it was created
+   2026-09-11 -- seven already-shipped products (abc-behavior-data-sheets,
+   deaf-awareness-month, free-behavior-tracker, homeschool-attendance,
+   progress-monitoring-sheets, iep-at-a-glance, iep-goal-tracking) link only
+   to this file and use both classes, so their live PDFs are very likely
+   rendering plain unstyled text where a bordered callout box and a small
+   caption-style legal footer belong. Ported from the old brand.css, renamed
+   to Bright Scholar tokens. Not retroactively rebuilt today -- flagged for a
+   follow-up visual re-check of those seven. */
+.callout{
+  border-left:4px solid var(--sunny); background:#FDF6E7;
+  border-radius:0 8px 8px 0; padding:9pt 12pt; margin:10pt 0; break-inside:avoid;
+}
+.callout.teal{ border-left-color:var(--teal); background:#EAF5F3; }
+.callout.navy{ border-left-color:var(--ink); background:var(--cream); }
+.callout.rule{
+  border:none; border-radius:10px; background:var(--ink); color:#fff;
+  padding:13pt 16pt; text-align:center;
+}
+.callout.rule .rule-label{ color:var(--sunny); font-weight:700; font-size:9pt; letter-spacing:2.4px; text-transform:uppercase; }
+.callout.rule .rule-text{ font-size:14.5pt; font-weight:700; line-height:1.4; }
+.callout.rule .rule-text em{ color:var(--teal); font-style:normal; }
+.legal{
+  font-size:7.8pt; color:var(--grey); border-top:1px solid var(--rule);
+  padding-top:6pt; margin-top:10pt; line-height:1.45; break-inside:avoid;
+}
+
 
 /* ---- Local class vocabulary used by the free-resource products ----
    Each of those files defines .abctbl/.fieldrow/.writein etc. in its own

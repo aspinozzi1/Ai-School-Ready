@@ -29,6 +29,7 @@ that no longer exists on disk.
 """
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -88,7 +89,46 @@ def mt(p):
     g = _git_time(p)
     return max(g, mtime) if g else mtime
 
-listings = json.load(open(os.path.join(ROOT, 'tpt/listings.json')))['listings']
+LISTINGS_PATH = os.path.join(ROOT, 'tpt/listings.json')
+EXTRAS_PATH = os.path.join(ROOT, 'tpt/make_listing_extras.js')
+_EXTRAS_LINES = open(EXTRAS_PATH).read().split('\n') if os.path.exists(EXTRAS_PATH) else []
+
+def _extras_entry_time(thumbnail_path):
+    """Git/mtime of the make_listing_extras.js line that actually draws this
+    "-whats-inside" thumbnail.
+
+    The card's text is a hardcoded call in make_listing_extras.js
+    (`whatsInside('Name', 'Accent', [...])`), not a read of listings.json, so
+    that line is the thumbnail's real source. Comparing against all of
+    listings.json instead (tried first) flagged every older thumbnail stale
+    the moment a 2026-09-12 commit re-escaped every description's em dash to
+    \\u2014 across the whole file -- a byte-for-byte cosmetic change to every
+    listing that would have falsely invalidated 16 correct thumbnails.
+    Blaming the one matching line in the generator file isolates the check to
+    edits that could actually change what the thumbnail shows.
+    """
+    basename = os.path.splitext(os.path.basename(thumbnail_path))[0]
+    marker = f"'{basename}'"
+    line_no = None
+    for i, line in enumerate(_EXTRAS_LINES):
+        if marker in line:
+            line_no = i
+            break
+    if line_no is None:
+        return None
+    if 'tpt/make_listing_extras.js' in DIRTY:
+        return os.path.getmtime(EXTRAS_PATH)
+    try:
+        out = subprocess.run(
+            ['git', '-C', ROOT, 'blame', '--line-porcelain', '-L', f'{line_no + 1},{line_no + 1}',
+             '--', 'tpt/make_listing_extras.js'],
+            capture_output=True, text=True, timeout=20).stdout
+    except (OSError, subprocess.SubprocessError):
+        return None
+    m = re.search(r'^committer-time (\d+)', out, re.M)
+    return int(m.group(1)) if m else None
+
+listings = json.load(open(LISTINGS_PATH))['listings']
 stale = 0
 for l in listings:
     if not l.get('product'):
@@ -100,11 +140,10 @@ for l in listings:
         continue
     deps = [(f"tpt/pinsrc/{s}", pm) for s in l.get('previewShots', [])]
     # Not every thumbnail derives from the product PDF. The "-whats-inside"
-    # card is drawn from the listing's own title and bullets, so it goes stale
-    # when listings.json changes, not when the PDF does. Checking it against
-    # the PDF flagged a correct, byte-identical file on 2026-09-11.
-    lj = mt('tpt/listings.json') or pm
-    deps += [(t, lj if t.endswith('-whats-inside.png') else pm)
+    # card is drawn from a hardcoded call in make_listing_extras.js, so it
+    # goes stale when THAT call changes, not when the PDF does. Checking it
+    # against the PDF flagged a correct, byte-identical file on 2026-09-11.
+    deps += [(t, (_extras_entry_time(t) or pm) if t.endswith('-whats-inside.png') else pm)
              for t in l.get('thumbnails', [])]
     shot_times = [mt(f"tpt/pinsrc/{s}") for s in l.get('previewShots', [])]
     preview = f"tpt/previews/{l['id']}-preview.pdf"

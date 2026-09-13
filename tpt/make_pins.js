@@ -279,6 +279,16 @@ const PIN_COPY = {
     sub: 'Recording form, tally, duration sheet + an AI Pattern Summary page. $6.',
     board: 'Special Education',
     desc: 'ABC behavior data sheets: an antecedent-behavior-consequence recording form, a frequency tally, a duration sheet, a weekly pattern summary, and an AI Pattern Summary page that turns de-identified entries into a plain-language pattern — never a diagnosis, never a behavior plan. From two certified teachers.' },
+  'build-self-checking': { pal: P.blue,
+    top: 'Build a practice activity', mid: 'with AI — no coding needed', big: 'DESCRIBE. CHECK. BUILD.',
+    sub: 'Nine copy-paste prompts, a working file included, and the checking left in. $19.',
+    board: 'Build It Yourself',
+    desc: 'Build a self-checking practice activity with AI, no coding background needed: nine prompts written out in full, a working activity file included and tested in a browser, six real failures with the sentence that fixes each, and the three-tier rule for keeping student data out of what you build. From two certified teachers.' },
+  'conference-kit': { pal: P.turq,
+    top: 'Conference sign-ups', mid: 'plus the words to say', big: 'PREP + AI TALKING POINTS',
+    sub: 'A fairer sign-up sheet, per-student prep pages, and an AI page that drafts the talking points. $8.',
+    board: 'Parent Communication',
+    desc: 'Parent teacher conference sign up sheets and forms: a sign-up sheet where parents rank their top three times, a master schedule grid, a reminder slip, a conference prep sheet per student, a zero-technology talking-points page, and an AI Conference Prep page that drafts three talking points and one ask for home from a de-identified pattern. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>
@@ -452,7 +462,7 @@ Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
 Young Entrepreneurs · Deaf Education · Reading Intervention ·
-Classroom Management · Special Education
+Classroom Management · Special Education · Build It Yourself
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================

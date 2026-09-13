@@ -434,7 +434,7 @@ Statuses: pending → shipped YYYY-MM-DD.
 | 1 | Aug 24 | Back to school with AI | BTS AI Setup Pack $8 | Parent Message Makeovers $12 | vocabulary cheat sheet · 10-min habit · PII poster · emergency sub plans · delegate-or-teacher poster | shipped 2026-08-24 |
 | 2 | Aug 30 | Binders, routines & parent contact (brief override, see 2026-W36 brief) | Substitute Binder with AI $8 | Parent Communication Log $6 | back to school parent questionnaire · classroom procedures checklist · sub binder starter pages · my digital footprint · internet safety with AI | shipped 2026-08-30 |
 | 3 | Sep 6 | Newsletters & families | Newsletter & Family Comms pack $8 | Kit 3 retrofit $24 (`kits/kit03/`) | newsletter prompt sheet · open-house talking points · translation-request guide · family FAQ handout · positive-note generator card | **superseded — shipped 2026-09-06.** No item in this row ever got a primary-meter row; the brief's live pulls found a far stronger family (win scores up to 4,600). Sep 6 shipped IEP at a Glance $7, IEP Goal Tracking & Data Collection Sheets $9, Free Behavior Tracker (free), Homeschool Attendance Sheet (free, lane 2), and Progress Monitoring Tracking Sheets (free) instead. See `tpt/intel/2026-W37-brief.md`. Newsletter theme returns when a pull supports the editable format it actually needs. |
-| 4 | Sep 13 | Assessment, safely | Rubric pack $10 | PD Short: "Grading & Feedback with AI" $12 | rubric starter · exit-ticket prompts · feedback sentence stems · academic-integrity one-pager · quiz-leveling guide | pending |
+| 4 | Sep 13 | Assessment, safely | Rubric pack $10 | PD Short: "Grading & Feedback with AI" $12 | rubric starter · exit-ticket prompts · feedback sentence stems · academic-integrity one-pager · quiz-leveling guide | **superseded — shipped 2026-09-13.** Per the owner's 2026-09-11 directive, Sunday's headline moved to Lane 6 (Teacher-Built Classroom Tools): Build a Self-Checking Practice Activity $19 (built and shipped 09-12, drop 49). Today's factory built the one validated companion the brief called for: Parent Teacher Conference Kit $8, Lane 1 — "parent teacher conference sign up," score 1,370. This row's assessment theme never got a validation row and returns when a pull supports it. See `tpt/intel/2026-W38-brief.md`. |
 | 5 | Sep 20 | Time-saver consolidation | Conference-Season Pack $8 (early) | BUNDLE "AI Time-Savers Toolkit" $19 = W1 mid + W2 mid + W5 mid | conference prep checklist · talking-points prompts · de-identified summary guide · scheduling email templates · "what to tell families about AI" card | pending |
 | 6 | Sep 27 | Differentiation | Leveled-text prompt pack $10 | Kit 4 retrofit $24 (`kits/kit04/`) | leveling cheat sheet · scaffold/extension prompt card · IEP-safe writing poster · station-directions generator · reading-level guide | pending |
 | 7 | Oct 4 | Conferences & report cards | Report Card Comment Helper $10 | PD Short: "De-Identification Deep Dive" $12 | comment-bank starter · strengths-language sheet · conference agenda template · difficult-conversation prompts · progress-update email card | pending |
@@ -639,3 +639,68 @@ thin against that bar, fix the kit, not the price.
   touched only the two new pins plus an append-only `PINS.txt` diff, no
   revert needed. All check_breaks.py flags: 0; check_fresh.py
   stale/missing: 0; check_us_english.py: 0.
+- **2026-09-13 (Week 4 Sunday drop — Lane 6 companion, per the
+  2026-09-11 owner directive)**: shipped one product. Per
+  `tpt/intel/2026-W38-brief.md`, this Sunday's headline is Lane 6
+  (Teacher-Built Classroom Tools) and it was already built and shipped
+  the day before (Build a Self-Checking Practice Activity, $19, drop
+  49, 2026-09-12) — the factory does not rebuild it. Today's build is
+  the one validated companion the brief called for: **Parent Teacher
+  Conference Kit**, $8 (license $4), Lane 1 — "parent teacher
+  conference sign up" (685 vol, <1K shelf, Promising, score 1,370,
+  pulled 09-05), timed ahead of the Oct–Nov conference season per the
+  brief's own timing lesson from the 09-05 open-house miss. Seven
+  pages: a sign-up sheet where parents rank their top three times
+  in-person-or-virtual instead of racing for the first slot, a master
+  schedule grid, a reminder slip, a conference prep sheet per student,
+  a zero-technology talking-points page (strengths / growth / one ask,
+  with sentence starters), the AI Conference Prep page (drafts three
+  talking points and one ask for home from a de-identified grade level
+  and score/pattern — never a name, never a roster), a during-conference
+  notes page, a follow-up log, and a no-show follow-up note. Built on
+  `brand-bright-scholar.css`, the same layer as the rest of the current
+  data-tracking/family-communication family.
+  **Two real bugs found and fixed in shared tooling while building this:**
+  (1) `brand-bright-scholar.css` (created 2026-09-11) never defined
+  `.callout` or `.legal` — the classes seven already-shipped products
+  (abc-behavior-data-sheets, deaf-awareness-month, free-behavior-tracker,
+  homeschool-attendance, progress-monitoring-sheets, iep-at-a-glance,
+  iep-goal-tracking) use for their rule-box callouts and legal footers.
+  Those seven were very likely rendering that text unstyled on live TPT
+  listings. Ported the missing classes from the old `brand.css`, renamed
+  to Bright Scholar tokens; NOT retroactively rebuilt today (out of
+  scope for a one-product Sunday), flagged here for a follow-up visual
+  re-check of those seven PDFs. (2) `check_fresh.py`'s "-whats-inside"
+  freshness check compared every thumbnail against `listings.json`'s
+  own last-commit time, so appending any new listing made every older
+  thumbnail look stale — caught because a 2026-09-12 commit that only
+  re-escaped em dashes to `—` across the whole file flagged 16
+  correct thumbnails at once. Rewired the check to blame the one
+  `make_listing_extras.js` line that actually draws each thumbnail
+  instead. Also restored every tracked file's mtime to its real commit
+  time at session start (a fresh container checkout stamps "now" on
+  everything, which silently defeated this same gate's git-time
+  fallback) and again after each `git checkout --` revert this session,
+  since checkout itself re-stamps mtime to "now" even when content is
+  unchanged.
+  **Not rebuilt today, flagged rather than fixed:** the Lane 6
+  headline's pinsrc renders and real-pages thumbnail are one commit
+  stale against its own product PDF (a same-day wording edit on
+  2026-09-12 that the previous session never re-rendered) — per the
+  brief, this session does not touch that product, so `check_fresh.py`
+  still reports 4-5 flags against `build-self-checking` after this
+  ship; they are pre-existing, not new. Also shipped: a Pinterest pin
+  for `build-self-checking`, which had none (the Saturday session that
+  built drop 49 never added a `PIN_COPY` entry) — new board "Build It
+  Yourself". `PINS-2026-09-13.zip` ships both new pins
+  (conference-kit, build-self-checking) plus the append-only
+  `PINS.txt` diff; make_pins.js needed no revert this run (byte-identical
+  on every other listing). Drop 50 in `UPLOAD/drops/`. All
+  check_breaks.py flags: 0; check_us_english.py: 0; check_fonts.py: 0;
+  check_fresh.py: 0 for this product (pre-existing build-self-checking
+  staleness noted above is the brief's call, not this session's).
+  Lane 2 and lane 5 were not built today — the brief's own headline
+  decision (2026-09-11) narrowed this Sunday to these two products; see
+  `2026-W38-brief.md` for the full reasoning. `take home folder` (829)
+  and `happy mail` (816) remain open and stale (last pulled 08-26),
+  on the W38 Sunday lookup list per the brief.

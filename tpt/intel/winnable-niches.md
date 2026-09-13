@@ -76,7 +76,7 @@ evidence.
 | **weekly newsletter template editable** | 6,688 | 3K–8K | Strong | **1,216** | **OPEN — needs editable pipeline** |
 | classroom procedures + routines powerpoint | 3,997 | 3K–8K | Strong | 727 | **OPEN — needs slides pipeline** |
 | **newsletter template editable** | 9,854 | 8K–20K | Strong | **704** | **OPEN — needs editable pipeline** |
-| **parent teacher conference sign up** | 685 | **<1K** | Promising | **1,370** | **OPEN — build Sept/Oct, conferences are Oct–Nov** |
+| **parent teacher conference sign up** | 685 | **<1K** | Promising | **1,370** | **shipped 09-13 ($8) — Parent Teacher Conference Kit** |
 | **open house stations** | 3,920 | **1K–3K** | Strong | **1,960** | **JULY QUEUE — season closing now** |
 | **all about me** | 167,556 | **75K–150K** | Strong | **1,489** | **JULY QUEUE** — was 150K–300K/751 on 09-03 |
 | **open house scavenger hunt** | 2,371 | **1K–3K** | Strong | **1,186** | **JULY QUEUE — season closing now** |

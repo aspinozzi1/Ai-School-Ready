@@ -262,6 +262,11 @@ const PRODUCTS = [
     title: 'Build a Self-Checking', accent: 'Practice Activity',
     lede: 'Nine prompts written out in full, a working activity file included, and a plain rule for keeping student data out of what you build.',
     chips: ['29 pages', 'Working file included', 'Any subject', '$19'] },
+  { file: 'conference-kit',      badge: 'Classroom \u00b7 Family Comm',
+    kicker: 'Parent teacher conferences \u00b7 sign-ups + prep',
+    title: 'Parent Teacher', accent: 'Conference Kit',
+    lede: 'A sign-up sheet parents actually prefer, a prep sheet per student, and an AI page that drafts three talking points from a de-identified score.',
+    chips: ['7 pages', 'Sign-up + schedule', 'AI talking points', '$8'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

@@ -1864,6 +1864,54 @@
       "extraFiles": [
         "UPLOAD/02-paid/practice-activity.html"
       ]
+    },
+    {
+      "id": "conference-kit",
+      "order": 50,
+      "name": "Parent Teacher Conference Kit",
+      "product": "UPLOAD/02-paid/Parent-Teacher-Conference-Kit.pdf",
+      "cover": "tpt/covers/conference-kit-cover.png",
+      "thumbnails": [
+        "tpt/extras/ctk-whats-inside.png",
+        "tpt/extras/ctk-real-pages.png"
+      ],
+      "title": "Parent Teacher Conference Sign Up Sheets & Forms | Prep + AI Talking Points Kit",
+      "description": "The hard part of conference week was never the schedule. It's knowing what to say in twenty-five back-to-back conversations. This kit covers both: a sign-up sheet parents actually prefer, and the prep pages nothing else in this niche sells.\n\nINSIDE (7 pages): a sign-up sheet where parents rank their top three times instead of racing to claim the first slot, with an in-person-or-virtual column · a master schedule grid for your finished day · a reminder slip to send home the week before · a conference prep sheet, one page per student, filled in beforehand · a talking-points page (strengths, growth area, one ask for home, with sentence starters) that needs no technology at all · a notes page for during the conference · a follow-up log · and a warm no-show follow-up note.\n\nTHE AI CONFERENCE PREP PAGE is the one thing nothing else in this space offers: paste a de-identified grade level and a score or pattern and get back three talking points and one specific, doable ask for home, in plain language a family will understand. Never a name, never a class roster, never a diagnosis.\n\nTHIS IS A PREPARATION TOOL, never a decision-maker — it never scores a student, never drafts a formal evaluation, and never replaces your own judgment about what a family needs to hear.\n\nRUNNING THIS ACROSS YOUR TEAM? Additional licenses are half price ($4 each), and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 8,
+      "licenses": 4,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "parent teacher conference sign up",
+        "conference sign up",
+        "parent teacher conference forms",
+        "parent communication log",
+        "parent teacher conference form editable",
+        "conferences"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI Time Savers",
+      "previewShots": [
+        "ctk_p2.png",
+        "ctk_p4.png",
+        "ctk_p5.png"
+      ],
+      "previewInside": [
+        "A sign-up sheet where parents rank their top three times — fairer than first-come-first-served",
+        "A master schedule grid, a reminder slip, and a conference prep sheet per student",
+        "The talking-points page — strengths, growth, and one ask, with sentence starters",
+        "<b>The AI Conference Prep page</b> — three talking points and one ask, from a de-identified pattern"
+      ],
+      "previewUnit": "the full kit is 7 pages",
+      "filesBadge": "7 pages",
+      "insideHeading": "What's inside the full kit"
     }
   ]
 }

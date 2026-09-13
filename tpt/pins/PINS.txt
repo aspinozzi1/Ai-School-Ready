@@ -4,7 +4,7 @@ Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
 Young Entrepreneurs · Deaf Education · Reading Intervention ·
-Classroom Management · Special Education
+Classroom Management · Special Education · Build It Yourself
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================
@@ -2073,3 +2073,88 @@ Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
 
+------------------------------------------------------------------
+BUILD A SELF-CHECKING PRACTICE ACTIVITY
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+build-self-checking-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Build a Self-Checking Practice Activity with AI | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Build a self-checking practice activity with AI, no coding background needed: nine prompts written out in full, a working activity file included and tested in a browser, six real failures with the sentence that fixes each, and the three-tier rule for keeping student data out of what you build. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Build It Yourself   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: self checking activities · vibe coding · teacher made games   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PARENT TEACHER CONFERENCE KIT
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+conference-kit-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Parent Teacher Conference Sign Up Sheets & Forms | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Parent teacher conference sign up sheets and forms: a sign-up sheet where parents rank their top three times, a master schedule grid, a reminder slip, a conference prep sheet per student, a zero-technology talking-points page, and an AI Conference Prep page that drafts three talking points and one ask for home from a de-identified pattern. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Parent Communication   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent teacher conference sign up · conference sign up · parent teacher conference forms   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

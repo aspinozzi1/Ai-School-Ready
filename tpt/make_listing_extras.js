@@ -272,6 +272,13 @@ const IMAGES = [
     '<b>The AI Pattern Summary page</b> — a plain-language pattern from de-identified entries',
   ], '5 pages')],
   ['abc-real-pages',   realPages('#7B5EA7', ['abc_p2.png', 'abc_p3.png', 'abc_p4.png'], '5 pages')],
+  ['ctk-whats-inside', whatsInside('Parent Teacher', 'Conference Kit', [
+    'A sign-up sheet where parents rank their top three times',
+    'A master schedule grid, reminder slip, and per-student prep sheet',
+    'The talking-points page — strengths, growth, one ask, zero technology',
+    '<b>The AI Conference Prep page</b> — three talking points from a de-identified pattern',
+  ], '7 pages')],
+  ['ctk-real-pages',   realPages('#2D6CB5', ['ctk_p2.png', 'ctk_p4.png', 'ctk_p5.png'], '7 pages')],
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
