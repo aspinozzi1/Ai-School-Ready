@@ -1,0 +1,540 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Vibe Coding for Teachers - Classroom Dashboard</title><style>
+@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+.code{font-family:'DejaVu Sans Mono',monospace;font-size:8.2pt;background:#F4F1E8;
+  border:1.5pt solid var(--rule);border-radius:9pt;padding:9pt 11pt;margin-bottom:8pt;
+  white-space:pre-wrap;line-height:1.35}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.task{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.task .n{flex:none;width:27pt;height:27pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:13pt;display:flex;
+  align-items:center;justify-content:center}
+.tier{display:flex;gap:8pt;margin-bottom:9pt}
+.tier .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--ink);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:13pt;display:flex;
+  align-items:center;justify-content:center}
+.tier.ok .n{background:var(--leaf)}.tier.mid .n{background:var(--sunny);color:var(--ink)}
+.tier.stop .n{background:var(--tomato)}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:30pt">
+<div class="kick">Vibe Coding for Teachers &middot; Build 2 of the series</div>
+<h1>Build a Classroom<br>Dashboard That Remembers</h1>
+<p class="lede">One file that runs your room: a class list, a fair name picker, a group maker,
+a timer and a points tracker &mdash; and it still knows all of it tomorrow morning. No login,
+no subscription, no account, nothing uploaded anywhere.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">10</h3><p class="small" style="margin:0">tasks, each one finished before the next</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">12</h3><p class="small" style="margin:0">prompts, written out in full</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">finished app, included</p></div>
+</div>
+<div class="note"><b>This is the one that turns a page into software.</b><br>
+The difference between an activity and an application is that an application <i>remembers</i>.
+Task 2 is where that happens, and once you have done it once you can put it in anything you build.</div>
+<div class="card r"><h3>Where your data actually lives</h3>
+<p class="small" style="margin:0">On your device, in your browser, and nowhere else. It is not
+uploaded, not synced, and not readable by us or anyone else. Page 5 explains exactly what that
+means for putting student names in &mdash; including the moment it stops being true.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The finished thing, first</div><h2>What you will have at the end</h2>
+<p class="lede">Six tools in one file. Open it on the board in the morning and leave it open all day.</p>
+<table>
+<tr><th style="width:27%">Tab</th><th>What it does</th></tr>
+<tr><td><b>Class list</b></td><td>Type your students once. It is still there next week, next term, until you clear it.</td></tr>
+<tr><td><b>Pick a student</b></td><td>Random, but with <b>fair mode</b>: nobody gets picked twice until everybody has had a turn.</td></tr>
+<tr><td><b>Make groups</b></td><td>Random groups of any size, properly shuffled, everyone placed.</td></tr>
+<tr><td><b>Timer</b></td><td>One, three, five or ten minutes, big enough to read from the back.</td></tr>
+<tr><td><b>Points</b></td><td>Tap to add. Totals save as you go.</td></tr>
+<tr><td><b>Data and reset</b></td><td>Copy your points with the names stripped out, for when you want AI help spotting a pattern. Plus an end-of-year erase.</td></tr>
+</table>
+<div class="card t"><h3>The fair picker is worth the build on its own</h3>
+<p class="small" style="margin:0">Pure random means the same three children answer everything and
+two never get asked. Fair mode keeps a list of who has already been picked and only draws from the
+rest &mdash; then starts a fresh round when everyone has had a turn. It is four lines of logic and it
+changes who talks in your room.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Why this build matters</div><h2>The difference between a page and an app</h2>
+<p class="lede">Build 1 in this series made an activity. This one makes software. One idea
+separates them.</p>
+<div class="row">
+<div class="card r"><h3>A page</h3><p class="small" style="margin:0">Forgets everything the moment
+it closes. Fine for a practice activity a student does once. Useless for anything you want to keep
+using &mdash; you would type your class list in every single morning.</p></div>
+<div class="card g"><h3>An app</h3><p class="small" style="margin:0">Writes what it knows into the
+browser's own storage on your device. Close the tab, shut the laptop, come back Thursday: still
+there.</p></div>
+</div>
+<div class="note"><b>The technical name is local storage, and that is nearly all you need to know
+about it.</b><br>
+It is a small notebook the browser keeps for each file on your own machine. Your app writes to it;
+nothing else can read it; it never leaves the device. No server, no account, no internet.</div>
+<div class="card"><h3>Why this is the safe option as well as the useful one</h3>
+<p class="small" style="margin:0">Every other way of making something remember involves sending data
+somewhere &mdash; a database, an account, someone's cloud. Local storage is the one option where the
+question "who else can see this?" has the answer "nobody". For a tool holding a class list, that is
+not a small detail. It is the whole reason this design is the right one.</p></div>
+<div class="card p"><h3>What it cannot do, honestly</h3>
+<p class="small" style="margin:0">It is tied to that browser on that device. Open the file on a
+different laptop and it starts empty. That is a real limit, and it is the same limit that makes it
+private. Page 18 covers what changing it would cost.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you start</div><h2>What you need</h2>
+<div class="card g"><h3>1. An AI chat</h3><p class="small" style="margin:0">Written with <b>Claude</b>
+on screen. <b>ChatGPT and Gemini both work</b> &mdash; the prompts are plain English. Where a step
+depends on the tool, it says so.</p></div>
+<div class="card"><h3>2. A plain text editor</h3><p class="small" style="margin:0">Notepad, or TextEdit
+set to plain text. Not Word.</p></div>
+<div class="card t"><h3>3. A browser, and the same one each time</h3>
+<p class="small" style="margin:0"><b>This matters more here than in build 1.</b> Your saved data
+belongs to the browser you used. Build it in Chrome and it lives in Chrome. Open the same file in
+Edge later and it will look empty &mdash; nothing is lost, you are just looking in a different notebook.</p></div>
+<div class="card r"><h3>What you do not need</h3><p class="small" style="margin:0">A server, a host,
+a domain, an account, a subscription, or anyone's permission for the version built here.</p></div>
+<div class="note"><b>Time:</b> about an hour the first time, in ten-minute pieces if that suits you
+better &mdash; the tasks are built to stop cleanly. Under twenty minutes once you have done it once.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Read this before you type a single name</div><h2>The three tiers, and the names question</h2>
+<p>Build 1 avoided student data entirely. This one cannot &mdash; a name picker needs names. So here is
+the honest version, which is more useful than a rule that says never.</p>
+<div class="tier ok"><div class="n">1</div><div><h3>Content you wrote</h3>
+<p class="small" style="margin:0">Questions, timers, group sizes. No student in it. <b>Build freely.</b></p></div></div>
+<div class="tier mid"><div class="n">2</div><div><h3>De-identified student data</h3>
+<p class="small" style="margin:0">S1, S2, S3 and their scores. The dashboard's export tab produces
+exactly this. <b>Safe to paste into an AI chat</b> because nobody can be identified from it.</p></div></div>
+<div class="tier stop"><div class="n">3</div><div><h3>Data traceable to a child</h3>
+<p class="small" style="margin:0">Names, and anything attached to them. <b>Whether this is fine or a
+problem depends entirely on where it lives.</b> That is the point of this page.</p></div></div>
+<div class="card t"><h3>The same names, two completely different situations</h3>
+<table style="margin-top:6pt;margin-bottom:0">
+<tr><th style="width:50%">This file on your laptop</th><th>The same file hosted online</th></tr>
+<tr><td>Saves only to your browser. Nothing transmitted. No account. No link anyone could visit. About as exposed as the class list in your planner.</td>
+<td>Now reachable by a URL. Now a record held somewhere, by software your district did not review. <b>Now a conversation with your district, not a setting you flip.</b></td></tr>
+</table></div>
+<div class="note"><b>So the rule is not "never use names."</b> It is: <b>names may live locally on your
+own device; they may not be published, synced, or pasted into a chatbot.</b> The dashboard is built
+that way on purpose, and the export tab exists so you never have to break it.</div>
+<p class="small"><b>Practical guidance, not legal advice.</b> FERPA, COPPA, your state law and your
+district's policy are the authorities. If you are unsure, use student numbers instead of names &mdash;
+the dashboard works exactly the same.</p>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The method</div><h2>Ten tasks, and how each one ends</h2>
+<p class="lede">Every task below finishes with something you can see working. If it does not work,
+you do not move on &mdash; you say what went wrong and ask again. That is the whole discipline.</p>
+<div class="task"><div class="n">1</div><div><h3>Build the shell</h3><p class="small" style="margin:0">Six tabs that switch. Nothing in them yet.</p></div></div>
+<div class="task"><div class="n">2</div><div><h3>Make it remember</h3><p class="small" style="margin:0"><b>The one that matters.</b> Close the tab, reopen, data still there.</p></div></div>
+<div class="task"><div class="n">3</div><div><h3>The class list</h3><p class="small" style="margin:0">Add and remove students. Survives a reload.</p></div></div>
+<div class="task"><div class="n">4</div><div><h3>The fair picker</h3><p class="small" style="margin:0">Random, but nobody twice until everyone has had a turn.</p></div></div>
+<div class="task"><div class="n">5</div><div><h3>Groups</h3><p class="small" style="margin:0">Properly shuffled, everybody placed, no leftovers dropped.</p></div></div>
+<div class="task"><div class="n">6</div><div><h3>Timer</h3><p class="small" style="margin:0">Readable from the back of the room.</p></div></div>
+<div class="task"><div class="n">7</div><div><h3>Points</h3><p class="small" style="margin:0">Tap to add; totals save as you go.</p></div></div>
+<div class="task"><div class="n">8</div><div><h3>The de-identified export</h3><p class="small" style="margin:0">The safety feature, and the bridge to asking AI for help.</p></div></div>
+<div class="task"><div class="n">9</div><div><h3>Make it yours</h3><p class="small" style="margin:0">Your colors, your wording.</p></div></div>
+<div class="task"><div class="n">10</div><div><h3>Make it usable by everyone</h3><p class="small" style="margin:0">Keyboard, contrast, screen readers.</p></div></div>
+<div class="note"><b>Stop wherever you like.</b> A dashboard with tasks 1 to 4 done is already
+better than most of what is installed on your school laptop. The rest can wait for next weekend.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 1</div><h2>Build the shell</h2>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the shell</div>
+Build me a classroom dashboard as one single HTML file I can save and open in a browser.<br><br>
+It has six tabs across the top: Class list, Pick a student, Make groups, Timer, Points, and Data and reset. Clicking a tab shows that panel and hides the others.<br><br>
+Requirements:<br>
+&bull; Everything in ONE file &mdash; styling and code included. No internet, no login, no account.<br>
+&bull; Big text and big buttons; this gets used on a board at the front of a room.<br>
+&bull; Leave each panel empty for now with just its name in it. I am going to fill them in one at a time.<br>
+&bull; Nothing is sent anywhere and nothing asks for a password.
+</div>
+<div class="card g"><h3>Task 1 is done when</h3><p class="small" style="margin:0">You can click all
+six tabs and watch the panel underneath change. That is all. Do not add anything else yet &mdash;
+building one piece at a time is what stops the conversation tying itself in knots later.</p></div>
+<div class="card r"><h3>If it gave you several files</h3><p class="small" style="margin:0">Say:
+<i>"Put all of that into one single HTML file so I only have one thing to save."</i></p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2 &mdash; the important one</div><h2>Make it remember</h2>
+<p class="lede">Everything else in this build is ordinary. This is the step that makes it software.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; saving</div>
+Now make this dashboard remember its data between sessions, using the browser's local storage on my own device. Nothing should be sent to a server and there should be no account.<br><br>
+Keep everything in one saved object: the class list, the points for each student, and which students have already been picked.<br><br>
+Important:<br>
+&bull; Save whenever anything changes, automatically. I should never press a Save button.<br>
+&bull; Load whatever was saved when the page opens.<br>
+&bull; If saving or loading fails for any reason, the app must still work with empty data rather than showing an error or a blank screen.<br>
+&bull; Show a small "Saved" confirmation so I can see it happening.
+</div>
+<div class="card t"><h3>Why that fourth bullet is in there</h3>
+<p class="small" style="margin:0">Local storage can be switched off. A private window blocks it, some
+managed school devices restrict it, and a browser set to clear site data will wipe it. Without that
+instruction the app can crash on open. With it, the worst case is an empty class list &mdash; annoying,
+not broken. <b>Asking for the failure case is the single most useful habit in this whole series.</b></p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2, continued</div><h2>The test that proves it</h2>
+<div class="card g"><h3>Do this exactly</h3>
+<p class="small" style="margin-bottom:5pt">1. Type a name into the class list. Any name.<br>
+2. <b>Close the tab completely.</b> Not refresh &mdash; close it.<br>
+3. Open the file again.</p>
+<p class="small" style="margin:0"><b>The name should still be there.</b> If it is, you have built an
+application. If it is not, task 2 is not finished and nothing after this point will work properly.</p></div>
+<div class="prompt"><div class="lbl">If the test fails</div>
+I closed the tab and reopened the file, and my data was gone. It should have been saved to local storage on this device and loaded again when the page opens. Fix that and give me the whole file back.
+</div>
+<div class="note"><b>Do not move past this page until the test passes.</b> Every later task saves
+something, and debugging saving while also debugging a points tracker is much harder than debugging
+saving on its own. This is the one place in the build where patience genuinely pays.</div>
+<div class="card"><h3>A thing worth knowing</h3>
+<p class="small" style="margin:0">Your data belongs to <i>that file in that browser</i>. Move the file
+to a different folder and it usually still works; open it in a different browser and it starts fresh.
+Nothing is lost &mdash; you are looking in a different notebook.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 3</div><h2>The class list</h2>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; the roster</div>
+In the Class list tab: a text box and an Add button. Typing a name and pressing Add, or pressing Enter, adds that student to a list shown as rounded chips underneath, each with a small x to remove it.<br><br>
+&bull; Adding or removing saves straight away.<br>
+&bull; Refuse duplicates and say so, rather than adding the same name twice.<br>
+&bull; Removing a student also removes their points and their pick history.<br>
+&bull; Show a running count underneath: "24 students".
+</div>
+<div class="card t"><h3>That third bullet is not fussiness</h3>
+<p class="small" style="margin:0">When a child moves away mid-year and you delete them, their points
+should go too. Without that instruction their total sits in storage forever and shows up in your
+export months later. <b>Say what should happen to the data when something is deleted</b> &mdash; it is
+the kind of thing an AI will not decide sensibly on its own.</p></div>
+<div class="card g"><h3>Task 3 is done when</h3><p class="small" style="margin:0">You can add your
+real class, reload the page, and they are all still there. At this point the thing is genuinely
+useful even with four tabs still empty.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4</div><h2>The fair picker</h2>
+<p class="lede">The one feature here that most bought tools get wrong.</p>
+<div class="prompt"><div class="lbl">Prompt 4 &middot; fair random</div>
+In the Pick a student tab: a big Pick button that shows one student's name in large text.<br><br>
+Add a checkbox called "Fair mode", on by default. When fair mode is on, remember who has already been picked and only choose from students who have not been picked yet. When everyone has had a turn, start a fresh round automatically.<br><br>
+Underneath, show how many students are still to be picked this round. The pick history saves with everything else.
+</div>
+<div class="card t"><h3>Why this matters more than it sounds</h3>
+<p class="small" style="margin:0">Truly random means the same three children answer everything while
+two are never asked all week &mdash; and you will not notice, because each individual pick looked fair.
+Fair mode makes participation even by design instead of by your memory. <b>It is the single most
+defensible thing in this dashboard if a colleague asks why you built your own.</b></p></div>
+<div class="card g"><h3>Task 4 is done when</h3><p class="small" style="margin:0">With three names on
+the list, three picks give you three different students, and the counter goes 2, then 1, then 0 &mdash;
+and the fourth pick starts a new round.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Tasks 5 and 6</div><h2>Groups and the timer</h2>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; group maker</div>
+In the Make groups tab: a number box for group size (default 3) and a Make groups button. It shuffles the whole class properly and deals them into groups of that size, shown as cards side by side.<br><br>
+&bull; Everybody must end up in a group. If the class does not divide evenly, the last group is smaller &mdash; never drop anyone.<br>
+&bull; Use a proper shuffle, not sorting by a random number.
+</div>
+<div class="card t"><h3>Why that last line is there</h3>
+<p class="small" style="margin:0">The common quick way to shuffle a list produces uneven results &mdash;
+some arrangements come up far more often than others. Asking for a proper shuffle costs you nothing
+and means your groups really are random. You do not need to know the algorithm; you just need to
+have asked for it.</p></div>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; timer</div>
+In the Timer tab: a big countdown in minutes and seconds, readable from the back of a classroom. Preset buttons for 1, 3, 5 and 10 minutes, plus Start and Pause. When it reaches zero it stops and turns red. It does not need to save between sessions.
+</div>
+<div class="card g"><h3>Done when</h3><p class="small" style="margin:0">Groups: everyone from your
+class appears exactly once across the cards. Timer: it counts down, pauses, and turns red at zero.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Tasks 7 and 8</div><h2>Points, and the export that keeps you safe</h2>
+<div class="prompt"><div class="lbl">Prompt 7 &middot; points</div>
+In the Points tab: a table with one row per student showing their name, their total, and +1 and +5 buttons. Tapping a button adds to that student's total and saves straight away.
+</div>
+<div class="prompt"><div class="lbl">Prompt 8 &middot; the de-identified export</div>
+In the Data and reset tab: a button that builds a copy of the points list with <b>every name replaced by S1, S2, S3</b> and so on, shown in a text box, plus a Copy button.<br><br>
+Add a clear note on the page saying this de-identified version is the one to paste into an AI chat, and that the version with names should stay on this device.<br><br>
+Also add two buttons that ask for confirmation first: Clear all points, and Erase everything.
+</div>
+<div class="note"><b>Task 8 is the one that makes the rest of it responsible.</b><br>
+Without it, the first time you want AI help spotting a pattern you will be tempted to paste the real
+list. With it, the safe option is one click and is right there next to the thing you were about to do.
+<b>Design the safe path to be the easy path</b> &mdash; that is a principle worth carrying into
+everything else you build.</p></div>
+<div class="card g"><h3>Done when</h3><p class="small" style="margin:0">The export shows S1, S2, S3
+with the right totals and <b>no name appears anywhere in it</b>. Check that by eye before you trust it.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Tasks 9 and 10</div><h2>Make it yours, and make it usable by everyone</h2>
+<div class="prompt"><div class="lbl">Prompt 9 &middot; appearance</div>
+Restyle it with [your colors] as the main colors. Make the picked name and the timer as large as will fit. Round the corners and give the panels a thick outline so it reads clearly from a distance.
+</div>
+<div class="prompt"><div class="lbl">Prompt 10 &middot; accessibility, and this is not optional</div>
+Make sure everything works for someone using a keyboard instead of a mouse: every tab and button reachable with Tab, usable with Enter, with a clearly visible outline on whatever is selected. Do not rely on color alone to show state &mdash; include words. Give every icon-only button a label a screen reader can announce.
+</div>
+<div class="card t"><h3>How to check prompt 10 actually worked</h3>
+<p class="small" style="margin:0">Put the mouse down. Press Tab repeatedly &mdash; a clear outline should
+move between the tabs and buttons. Press Enter on one &mdash; it should activate. If either fails, say
+exactly that and ask again. It takes a minute and it is the difference between a tool everyone in
+your building can use and one that quietly excludes a colleague.</p></div>
+<div class="card p"><h3>One more worth adding</h3>
+<p class="small" style="margin:0">The small x that removes a student is an icon with no words. A
+screen reader announces it as "button" unless you ask for a label. Prompt 10's last line is what
+turns that into "Remove Ada".</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Saving and using it</div><h2>Out of the chat, into your room</h2>
+<div class="card"><h3>1. Copy all of the code</h3><p class="small" style="margin:0">Use the copy button
+on the code block. Selecting by hand usually misses the last line.</p></div>
+<div class="card t"><h3>2. Paste into a plain text editor</h3><p class="small" style="margin:0">
+Notepad, or TextEdit set to plain text. <b>Not Word</b> &mdash; it adds invisible formatting that stops
+the file working, and the failure is baffling when it happens.</p></div>
+<div class="card g"><h3>3. Save as <code>dashboard.html</code></h3><p class="small" style="margin:0">
+On Windows set "Save as type" to All Files so it does not quietly become a .txt.</p></div>
+<div class="card r"><h3>4. Put it somewhere you will find it, then leave it there</h3>
+<p class="small" style="margin:0"><b>This matters more than in build 1.</b> Your saved class list is
+tied to this file in this browser. Pick its home now &mdash; desktop, documents, wherever &mdash; and do
+not move it between machines expecting the data to follow.</p></div>
+<div class="note"><b>Make a bookmark.</b> Open the file, then bookmark it like any web page. Now it
+is one click every morning instead of a hunt through folders, and it will behave like any other tool
+on your bar.</div>
+<div class="card"><h3>Using it on the board</h3><p class="small" style="margin:0">Open it at the start
+of the day and leave the tab open. Press Ctrl and plus (Command and plus on a Mac) a few times to
+make everything bigger for the room.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div><h2>The seven things that actually go wrong</h2>
+<div class="card r"><h3>1. It opens as a wall of code</h3><p class="small" style="margin:0">The file did
+not save with <code>.html</code> on the end. Rename it. On Windows turn on file name extensions in
+File Explorer's View menu so you can see what it really saved as.</p></div>
+<div class="card"><h3>2. My class list vanished</h3><p class="small" style="margin:0">Almost always a
+different browser, a private window, or a browser set to clear site data on exit. Check you are opening
+it the same way you did before. <b>Nothing is lost</b> &mdash; you are looking in a different notebook.</p></div>
+<div class="card t"><h3>3. It saves, but not on the school laptop</h3><p class="small" style="margin:0">
+Some managed devices block local storage. If the app still works but forgets, that is the cause &mdash;
+and it is why prompt 2 asked for it to keep working with empty data rather than crash. Ask your tech
+team; it is usually a policy setting.</p></div>
+<div class="card g"><h3>4. Fair mode picks someone twice</h3><p class="small" style="margin:0">Say:
+<i>"Fair mode picked the same student twice before everyone had a turn. It should only choose from
+students not yet picked this round."</i></p></div>
+<div class="card"><h3>5. The group maker leaves someone out</h3><p class="small" style="margin:0">Say:
+<i>"Three students were missing from the groups. Everyone must be placed, and the last group can be
+smaller."</i></p></div>
+<div class="card r"><h3>6. The export still shows names</h3><p class="small" style="margin:0"><b>Stop
+and fix this before using it.</b> Say: <i>"The export still has real names in it. Every name must be
+replaced with S1, S2, S3 before it is shown."</i> Then check by eye again.</p></div>
+<div class="card p"><h3>7. It worked, then an edit broke it</h3><p class="small" style="margin:0">
+Paste the part you changed into the chat and say "something in this is broken, find it." You do not
+need to spot it yourself.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">What to build next</div><h2>The same pattern, six more tools</h2>
+<p class="lede">You now know how to make something remember. That is the hard part, and it is reusable.
+Everything below is the same three moves: build the panel, save the data, add the export.</p>
+<table>
+<tr><th style="width:30%">Build</th><th>What it stores</th><th style="width:14%">Tier</th></tr>
+<tr><td><b>Seating chart</b></td><td>Which name sits in which seat. Print it for a substitute.</td><td>3 local</td></tr>
+<tr><td><b>Hall pass log</b></td><td>Who left, when, and when they came back.</td><td>3 local</td></tr>
+<tr><td><b>Reading log</b></td><td>Minutes read per student per week, and a running total.</td><td>3 local</td></tr>
+<tr><td><b>Behavior tally</b></td><td>Counts of a specific behavior across a week.</td><td>3 local</td></tr>
+<tr><td><b>Supply or equipment sign-out</b></td><td>Which laptop or calculator went to whom.</td><td>3 local</td></tr>
+<tr><td><b>Class agenda page</b></td><td>Today's plan and links. No student data at all.</td><td>1</td></tr>
+</table>
+<div class="note"><b>Notice the tier column, and notice the word <i>local</i>.</b><br>
+Five of those hold names, and all five are fine for the same reason this dashboard is: the data
+stays on your device. The tier is not decided by whether names appear. It is decided by <b>where the
+data lives and who else can reach it.</b> That is the sentence to remember out of this whole pack.</div>
+<div class="card g"><h3>The prompt shape that builds any of them</h3>
+<p class="small" style="margin:0">"Build me a [thing] as one single HTML file. It should [what the
+teacher does]. Save everything to local storage on my device so it is still there tomorrow, and keep
+working with empty data if saving is unavailable. Add a button that copies a version with names
+replaced by S1, S2, S3. No account, no login, nothing sent anywhere."</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When you want more</div><h2>What hosting would cost you</h2>
+<p class="lede">Sooner or later you will want the dashboard on your phone as well as your laptop, or
+a colleague will ask for a copy that stays in sync. Here is what that actually involves, so you can
+decide with your eyes open.</p>
+<div class="card r"><h3>What changes the moment it goes online</h3>
+<p class="small" style="margin:0">&bull; The data stops living on your device and starts living on
+someone's server.<br>
+&bull; A link exists that could reach it.<br>
+&bull; It becomes software holding student records that your district did not review.<br>
+&bull; You, personally, become responsible for something that is properly the school's responsibility.</p></div>
+<div class="card t"><h3>What to do instead of abandoning the idea</h3>
+<p class="small" style="margin:0">Take it to your technology team as a proposal rather than a
+surprise. Bring what it does, what data it touches, and where it would live. Districts say yes to
+reviewed things far more often than to discovered things &mdash; and a district that has seen it can
+host it properly, which is better than you hosting it badly.</p></div>
+<div class="card g"><h3>The middle option most teachers actually want</h3>
+<p class="small" style="margin:0">Keep it local, and use the export. If you want the same dashboard on
+two machines, you do not need syncing &mdash; you need to retype a class list once a year. That is
+twenty minutes against a genuine compliance question, and for most people it is not a close call.</p></div>
+<div class="note"><b>The honest summary:</b> everything in this pack is yours, private, and needs
+nobody's approval. The moment you want it to be in two places at once, it stops being yours alone.
+That is not a rule someone invented to slow you down &mdash; it is just what happens when data moves.</div>
+<p class="small"><b>Practical guidance, not legal advice.</b> Your district's policy, your state's
+student privacy law, FERPA and COPPA are the authorities.</p>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div><h2>Every prompt, in one place</h2>
+<p class="small">Copy from here rather than retyping. Square brackets mean put your own thing in.</p>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">1 &middot; the shell</div><span class="small">Build me a classroom dashboard as one single HTML file. Six tabs across the top: Class list, Pick a student, Make groups, Timer, Points, Data and reset. Clicking a tab shows that panel and hides the others. Everything in one file, no internet, no login. Big text and big buttons for use on a board. Leave the panels empty for now.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">2 &middot; saving</div><span class="small">Make it remember its data between sessions using the browser's local storage on my device. One saved object holding the class list, points, and pick history. Save automatically whenever anything changes; load on open. If saving or loading fails, keep working with empty data rather than erroring. Show a small Saved confirmation.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">3 &middot; the roster</div><span class="small">Class list tab: a text box and Add button; Enter also adds. Names show as chips with a small x to remove. Saves straight away. Refuse duplicates and say so. Removing a student removes their points and pick history too. Show a running count.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">4 &middot; fair random</div><span class="small">Pick tab: a big Pick button showing one name in large text. A Fair mode checkbox, on by default: remember who has been picked and only choose from those who have not, starting a fresh round when everyone has had a turn. Show how many are left this round. Pick history saves.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">5 &middot; groups</div><span class="small">Groups tab: a group size box and a Make groups button. Shuffle properly and deal into groups of that size, shown as cards. Everyone must be placed; the last group can be smaller. Use a proper shuffle, not sorting by a random number.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">6 &middot; timer</div><span class="small">Timer tab: a big countdown readable from the back of a room. Presets for 1, 3, 5 and 10 minutes, plus Start and Pause. Stops and turns red at zero. Does not need to save.</span></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div><h2>The rest of the prompts</h2>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">7 &middot; points</div><span class="small">Points tab: a table with one row per student showing name, total, and +1 and +5 buttons. Tapping adds and saves straight away.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">8 &middot; de-identified export</div><span class="small">Data tab: a button that builds a copy of the points with every name replaced by S1, S2, S3, shown in a text box, plus a Copy button. Add a note saying this version is the one to paste into an AI chat and the named version stays on this device. Also add Clear all points and Erase everything, both asking for confirmation.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">9 &middot; appearance</div><span class="small">Restyle with [your colors]. Make the picked name and the timer as large as will fit. Thick outlines and rounded corners so it reads from a distance.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">10 &middot; accessibility</div><span class="small">Everything reachable with Tab and usable with Enter, with a clearly visible outline on the selected item. Do not use color alone to show state. Give every icon-only button a label a screen reader can announce.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">11 &middot; when something breaks</div><span class="small">Here is what I did and what happened: [what you clicked]. I expected [what should have happened]. Fix it and give me the whole file again.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">12 &middot; a printable version</div><span class="small">Add a print stylesheet so printing gives a clean class list and points table with no buttons, no tabs and no colors &mdash; something I can put in a substitute folder.</span></div>
+<div class="note"><b>Prompt 12 is the one teachers ask for second</b>, right after they have used the
+dashboard for a week: the same data on paper, for the day the laptop does not turn up.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The file</div><h2>The part that does the remembering</h2>
+<p class="small">The complete dashboard ships with this pack as <code>classroom-dashboard.html</code> &mdash;
+you do not need to type any of this. This is the piece worth actually looking at, because it is the
+one you will reuse in everything else you build.</p>
+<div class="code" style="font-size:7.6pt;line-height:1.3">/* ---- storage: one key, this browser only ---------------------------- */
+const KEY = 'classroom-dashboard-v1';
+const blank = { names: [], points: {}, picked: [] };
+let S = load();
+
+function load(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return { ...blank };
+    const o = JSON.parse(raw);
+    return { names: o.names || [], points: o.points || {}, picked: o.picked || [] };
+  } catch (e) {            // private window, blocked storage, corrupt value
+    return { ...blank };
+  }
+}
+function save(){
+  try {
+    localStorage.setItem(KEY, JSON.stringify(S));
+    flash('savedMsg', 'Saved');
+  } catch (e) {
+    flash('savedMsg', 'Could not save on this device');
+  }
+}
+function flash(id, msg){
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 1600);
+}</div>
+<div class="card t"><h3>Reading it without knowing code</h3>
+<p class="small" style="margin:0"><code>load</code> tries to read what was saved; if anything at all
+goes wrong it hands back empty data instead of failing. <code>save</code> writes the whole object and
+shows a confirmation; if the browser refuses, it says so rather than pretending. <b>Both are wrapped
+in try and catch</b>, which is the instruction from prompt 2 &mdash; keep working when storage is
+unavailable &mdash; showing up in the actual file.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this pack is built</h2>
+<div class="card"><h3>What we are claiming</h3><p class="small" style="margin:0">That these prompts,
+used with a current AI chat, produce a working classroom dashboard. Every prompt was run and the
+resulting app was tested in a real browser before publication &mdash; including adding students,
+closing the tab and reopening to confirm the data survived, checking fair mode does not repeat, that
+the group maker places everyone, and that the export contains no names.</p></div>
+<div class="card r"><h3>What we are not claiming</h3><p class="small" style="margin:0">Not a
+replacement for your district's systems. Not a gradebook of record. Not a substitute for reading your
+district's policy. And not legal advice about student data &mdash; FERPA, COPPA, your state law and
+your district are the authorities.</p></div>
+<div class="card t"><h3>An honest limitation</h3><p class="small" style="margin:0">Local storage is
+tied to one browser on one device, and a managed school laptop may restrict it. That is a real
+constraint, it is the same constraint that keeps the data private, and page 18 covers what changing it
+would cost. AI tools also change; this pack teaches the loop and ships the finished file for exactly
+that reason.</p></div>
+<div class="card g"><h3>Sources</h3><p class="small" style="margin:0">The tools named on page 17 as
+worth building next &mdash; hall passes, seating charts, group makers, behavior trackers, name pickers
+&mdash; are drawn from 2026 reporting on what teachers are already building for themselves with AI.
+Student privacy guidance follows FERPA and COPPA; the Future of Privacy Forum's <i>Educator's Guide to
+Student Privacy</i> is a readable starting point. Not affiliated with any AI company or platform.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b> Every prompt run, every task
+completed in order, and the included app tested in a browser before this pack shipped.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card g" style="margin-top:12pt"><h3>Leaving feedback earns you credit</h3>
+<p style="margin-bottom:6pt">TPT gives you credit toward future purchases every time you review
+something you have downloaded. Go to <b>My Purchases</b>, find this pack, leave a rating and a
+comment. It takes a minute and it comes back to you as money off the next thing you buy.</p>
+<p class="small" style="margin:0">It also tells us what to build next, which is genuinely how these
+decisions get made.</p></div>
+<div class="card t"><h3>If something did not work</h3><p style="margin:0">Message us through TPT
+before leaving a rating and we will fix it and re-upload the same day, and you keep the updated file
+free. A prompt that stopped behaving is something we want to know about.</p></div>
+<div class="note" style="margin-top:12pt"><b>What you can do now that you could not this morning:</b><br>
+Build software that remembers. Not a page &mdash; an application, holding real information, running on
+your own machine, owned by you, costing nothing, and answerable to nobody's subscription. The
+dashboard was the example. <b>The saving was the lesson.</b></div>
+<div class="card" style="margin-top:12pt"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Bright Scholar &middot; AI-Ready School</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Classroom Dashboard</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>

@@ -247,6 +247,15 @@ const IMAGES = [
   ], '8 pages')],
   ['igt-real-pages',   realPages('#17BEBB', ['igt_p2.png', 'igt_p6.png', 'igt_p7.png'], '8 pages')],
   ['whole-staff-license', license()],
+  ['vcd-whats-inside', whatsInside('Vibe Coding \u00b7', 'Classroom Dashboard', [
+    'Ten tasks, each finished before the next begins',
+    'Twelve prompts, written out in full',
+    'The finished app included and browser-tested',
+    'A fair picker - nobody twice until everyone has had a turn',
+    'One-click export with names replaced by S1, S2, S3',
+    'Where student data can and cannot live, answered plainly',
+  ])],
+  ['vcd-real-pages',   realPages('#2D6CB5', ['vcd_p3.png', 'vcd_p8.png', 'vcd_p17.png'], '23 pages')],
   ['bsc-whats-inside', whatsInside('Build It Yourself ·', 'Self-Checking Practice Activity', [
     'Nine prompts, written out in full - copy and paste',
     'A working activity file, included and ready to use',

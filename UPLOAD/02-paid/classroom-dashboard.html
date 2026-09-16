@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classroom Dashboard</title>
+<style>
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--leaf:#4CAF6D;--grape:#8367C7;--cream:#FFFDF8;--grey:#7A8B9A;--rule:#E3DCCD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Trebuchet MS',system-ui,sans-serif;background:var(--cream);
+  color:var(--ink);padding:14px;min-height:100vh}
+.bar{height:12px;border-radius:6px;margin-bottom:14px;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-size:1.6rem;margin-bottom:2px}
+.sub{color:var(--grey);margin-bottom:12px;font-size:.95rem}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tab{font:inherit;font-weight:700;background:#fff;border:2.5px solid var(--ink);
+  border-radius:11px;padding:8px 15px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--sunny)}
+.tab:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+.panel{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:18px;
+  box-shadow:6px 6px 0 var(--teal)}
+.panel[hidden]{display:none}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:11px}
+input,select{font:inherit;border:2.5px solid var(--ink);border-radius:10px;padding:8px 11px;
+  background:var(--cream)}
+input:focus-visible,select:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+button{font:inherit;font-weight:700;cursor:pointer;border:2.5px solid var(--ink);
+  border-radius:10px;padding:8px 14px;background:var(--cream)}
+button:hover{background:#FFF4D6}
+button:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+button.go{background:var(--sunny)}
+button.warn{background:#FBE3DD;border-color:var(--tomato)}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--cream);
+  border:2px solid var(--ink);border-radius:999px;padding:5px 11px;margin:0 6px 6px 0}
+.pill button{border:none;background:none;padding:0 2px;font-size:1rem;line-height:1}
+.pick{font-size:2.6rem;font-weight:800;text-align:center;padding:26px 10px;
+  border:3px dashed var(--blue);border-radius:14px;margin-bottom:11px;min-height:108px;
+  display:flex;align-items:center;justify-content:center}
+.timer{font-size:3.4rem;font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
+.timer.done{color:var(--tomato)}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px}
+th{background:var(--ink);color:#fff;text-align:left;padding:8px 10px;font-size:.9rem}
+th:first-child{border-radius:9px 0 0 0}th:last-child{border-radius:0 9px 0 0}
+td{border-bottom:2px solid var(--rule);padding:7px 10px}
+tr:nth-child(even) td{background:#FFF8E8}
+.groups{display:flex;gap:11px;flex-wrap:wrap;margin-top:11px}
+.group{flex:1 1 180px;border:2.5px solid var(--ink);border-radius:13px;padding:11px;
+  background:var(--cream)}
+.group h3{font-size:1rem;margin-bottom:5px;color:var(--blue)}
+.note{background:var(--ink);color:#fff;border-radius:13px;padding:12px 15px;margin-top:13px}
+.note b{color:var(--sunny)}
+.small{font-size:.88rem;color:var(--grey)}
+.saved{font-size:.82rem;color:var(--leaf);font-weight:700;min-height:1.1em}
+textarea{font:inherit;width:100%;min-height:104px;border:2.5px solid var(--ink);
+  border-radius:10px;padding:10px;background:var(--cream);font-family:ui-monospace,monospace;
+  font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"></div>
+  <h1>Classroom Dashboard</h1>
+  <p class="sub">Everything saves on this device. Nothing is sent anywhere, and there is no account.</p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true"  data-p="roster">Class list</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="pick">Pick a student</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="groups">Make groups</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="timer">Timer</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="points">Points</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="data">Data &amp; reset</button>
+  </div>
+
+  <!-- CLASS LIST -->
+  <section class="panel" id="p-roster">
+    <div class="row">
+      <input id="nameIn" placeholder="First name or student number" aria-label="Name to add" size="26">
+      <button class="go" id="addBtn">Add</button>
+      <span class="saved" id="savedMsg"></span>
+    </div>
+    <div id="chips"></div>
+    <p class="small" id="count"></p>
+    <div class="note"><b>Use first names or student numbers — your call, but read this.</b><br>
+      This file saves to this browser on this device only. Nothing is uploaded, no account exists,
+      and closing the tab does not lose it. That makes a first name here about as exposed as a class
+      list in your planner. <b>It stops being true the moment this file is hosted online or synced</b>
+      — then names become records, and that is a conversation with your district, not a setting you flip.</div>
+  </section>
+
+  <!-- PICKER -->
+  <section class="panel" id="p-pick" hidden>
+    <div class="pick" id="pickOut">Press Pick</div>
+    <div class="row">
+      <button class="go" id="pickBtn">Pick a student</button>
+      <label><input type="checkbox" id="fairMode" checked> Fair mode &mdash; nobody twice until everyone has had a turn</label>
+    </div>
+    <p class="small" id="fairLeft"></p>
+  </section>
+
+  <!-- GROUPS -->
+  <section class="panel" id="p-groups" hidden>
+    <div class="row">
+      <label>Group size <input id="gSize" type="number" value="3" min="2" max="10" style="width:76px"></label>
+      <button class="go" id="gBtn">Make groups</button>
+    </div>
+    <div class="groups" id="gOut"></div>
+  </section>
+
+  <!-- TIMER -->
+  <section class="panel" id="p-timer" hidden>
+    <div class="timer" id="tOut">05:00</div>
+    <div class="row" style="justify-content:center;margin-top:12px">
+      <button data-min="1">1 min</button><button data-min="3">3 min</button>
+      <button data-min="5">5 min</button><button data-min="10">10 min</button>
+      <button class="go" id="tStart">Start</button><button id="tStop">Pause</button>
+    </div>
+  </section>
+
+  <!-- POINTS -->
+  <section class="panel" id="p-points" hidden>
+    <p class="small">Tap a plus to add a point. Totals save automatically.</p>
+    <table><thead><tr><th>Student</th><th style="width:88px">Points</th><th style="width:140px">Add</th></tr></thead>
+    <tbody id="ptBody"></tbody></table>
+  </section>
+
+  <!-- DATA -->
+  <section class="panel" id="p-data" hidden>
+    <h3 style="margin-bottom:7px">Copy for an AI chat &mdash; names removed</h3>
+    <p class="small" style="margin-bottom:9px">This swaps every name for S1, S2, S3 before you copy, so you
+      can ask for help spotting patterns without any student being identifiable. The key stays here with you.</p>
+    <textarea id="deid" readonly></textarea>
+    <div class="row" style="margin-top:9px">
+      <button class="go" id="deidBtn">Build de-identified copy</button>
+      <button id="copyBtn">Copy to clipboard</button>
+      <span class="saved" id="copyMsg"></span>
+    </div>
+    <div class="note"><b>Never paste the class list itself into a chatbot.</b><br>
+      The de-identified version above is the safe thing to share. The version with names stays on this device.</div>
+    <div class="row" style="margin-top:15px">
+      <button class="warn" id="resetPts">Clear all points</button>
+      <button class="warn" id="resetAll">Erase everything (end of year)</button>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ---- storage: one key, this browser only ---------------------------- */
+const KEY = 'classroom-dashboard-v1';
+const blank = { names: [], points: {}, picked: [] };
+let S = load();
+
+function load(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return { ...blank };
+    const o = JSON.parse(raw);
+    return { names: o.names || [], points: o.points || {}, picked: o.picked || [] };
+  } catch (e) {            // private window, blocked storage, corrupt value
+    return { ...blank };
+  }
+}
+function save(){
+  try {
+    localStorage.setItem(KEY, JSON.stringify(S));
+    flash('savedMsg', 'Saved');
+  } catch (e) {
+    flash('savedMsg', 'Could not save on this device');
+  }
+}
+function flash(id, msg){
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 1600);
+}
+
+/* ---- tabs ------------------------------------------------------------ */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected','false'); });
+    t.setAttribute('aria-selected','true');
+    ['roster','pick','groups','timer','points','data'].forEach(function(p){
+      document.getElementById('p-' + p).hidden = (p !== t.dataset.p);
+    });
+    if (t.dataset.p === 'points') drawPoints();
+    if (t.dataset.p === 'pick')   drawFairLeft();
+  });
+});
+
+/* ---- class list ------------------------------------------------------ */
+function drawRoster(){
+  const box = document.getElementById('chips');
+  box.textContent = '';
+  S.names.forEach(function(n, i){
+    const s = document.createElement('span');
+    s.className = 'pill';
+    s.appendChild(document.createTextNode(n));
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = '×';
+    b.setAttribute('aria-label', 'Remove ' + n);
+    b.addEventListener('click', function(){
+      S.names.splice(i, 1);
+      delete S.points[n];
+      S.picked = S.picked.filter(function(x){ return x !== n; });
+      save(); drawRoster();
+    });
+    s.appendChild(b);
+    box.appendChild(s);
+  });
+  document.getElementById('count').textContent =
+    S.names.length + (S.names.length === 1 ? ' student' : ' students');
+}
+function addName(){
+  const inp = document.getElementById('nameIn');
+  const v = inp.value.trim();
+  if (!v) return;
+  if (S.names.indexOf(v) !== -1) { flash('savedMsg', 'Already on the list'); return; }
+  S.names.push(v);
+  save(); drawRoster();
+  inp.value = ''; inp.focus();
+}
+document.getElementById('addBtn').addEventListener('click', addName);
+document.getElementById('nameIn').addEventListener('keydown', function(e){
+  if (e.key === 'Enter') addName();
+});
+
+/* ---- picker ---------------------------------------------------------- */
+function drawFairLeft(){
+  const left = S.names.filter(function(n){ return S.picked.indexOf(n) === -1; }).length;
+  document.getElementById('fairLeft').textContent =
+    S.names.length ? left + ' of ' + S.names.length + ' still to be picked this round' : '';
+}
+document.getElementById('pickBtn').addEventListener('click', function(){
+  if (!S.names.length) { document.getElementById('pickOut').textContent = 'Add some names first'; return; }
+  const fair = document.getElementById('fairMode').checked;
+  let pool = S.names;
+  if (fair) {
+    pool = S.names.filter(function(n){ return S.picked.indexOf(n) === -1; });
+    if (!pool.length) { S.picked = []; pool = S.names; }   // round finished, start again
+  }
+  const chosen = pool[Math.floor(Math.random() * pool.length)];
+  if (fair) S.picked.push(chosen);
+  save();
+  document.getElementById('pickOut').textContent = chosen;
+  drawFairLeft();
+});
+
+/* ---- groups ---------------------------------------------------------- */
+document.getElementById('gBtn').addEventListener('click', function(){
+  const out = document.getElementById('gOut');
+  out.textContent = '';
+  const size = Math.max(2, Math.min(10, parseInt(document.getElementById('gSize').value, 10) || 3));
+  const pool = S.names.slice();
+  for (let i = pool.length - 1; i > 0; i--) {          // Fisher-Yates
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = pool[i]; pool[i] = pool[j]; pool[j] = t;
+  }
+  let g = 1;
+  while (pool.length) {
+    const members = pool.splice(0, size);
+    const d = document.createElement('div');
+    d.className = 'group';
+    const h = document.createElement('h3');
+    h.textContent = 'Group ' + g++;
+    d.appendChild(h);
+    members.forEach(function(m){
+      const p = document.createElement('div');
+      p.textContent = m;
+      d.appendChild(p);
+    });
+    out.appendChild(d);
+  }
+});
+
+/* ---- timer ----------------------------------------------------------- */
+let tLeft = 300, tId = null;
+function drawTimer(){
+  const m = String(Math.floor(tLeft / 60)).padStart(2, '0');
+  const s = String(tLeft % 60).padStart(2, '0');
+  const el = document.getElementById('tOut');
+  el.textContent = m + ':' + s;
+  el.classList.toggle('done', tLeft === 0);
+}
+document.querySelectorAll('[data-min]').forEach(function(b){
+  b.addEventListener('click', function(){
+    clearInterval(tId); tId = null;
+    tLeft = parseInt(b.dataset.min, 10) * 60;
+    drawTimer();
+  });
+});
+document.getElementById('tStart').addEventListener('click', function(){
+  if (tId) return;
+  tId = setInterval(function(){
+    if (tLeft > 0) tLeft--;
+    drawTimer();
+    if (tLeft === 0) { clearInterval(tId); tId = null; }
+  }, 1000);
+});
+document.getElementById('tStop').addEventListener('click', function(){
+  clearInterval(tId); tId = null;
+});
+
+/* ---- points ---------------------------------------------------------- */
+function drawPoints(){
+  const b = document.getElementById('ptBody');
+  b.textContent = '';
+  S.names.forEach(function(n){
+    const tr = document.createElement('tr');
+    const td1 = document.createElement('td'); td1.textContent = n;
+    const td2 = document.createElement('td'); td2.textContent = S.points[n] || 0;
+    const td3 = document.createElement('td');
+    [1, 5].forEach(function(v){
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = '+' + v;
+      btn.style.marginRight = '5px';
+      btn.setAttribute('aria-label', 'Add ' + v + ' to ' + n);
+      btn.addEventListener('click', function(){
+        S.points[n] = (S.points[n] || 0) + v;
+        save(); drawPoints();
+      });
+      td3.appendChild(btn);
+    });
+    tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+    b.appendChild(tr);
+  });
+}
+
+/* ---- de-identified export -------------------------------------------- */
+document.getElementById('deidBtn').addEventListener('click', function(){
+  const lines = S.names.map(function(n, i){
+    return 'S' + (i + 1) + ': ' + (S.points[n] || 0) + ' points';
+  });
+  document.getElementById('deid').value = lines.length
+    ? 'Class points this week, names removed:\n' + lines.join('\n')
+    : 'Add some names first.';
+});
+document.getElementById('copyBtn').addEventListener('click', function(){
+  const t = document.getElementById('deid');
+  if (!t.value) { flash('copyMsg', 'Build it first'); return; }
+  t.select();
+  navigator.clipboard.writeText(t.value)
+    .then(function(){ flash('copyMsg', 'Copied'); })
+    .catch(function(){ flash('copyMsg', 'Select the text and copy it'); });
+});
+
+/* ---- resets ---------------------------------------------------------- */
+document.getElementById('resetPts').addEventListener('click', function(){
+  if (!confirm('Clear every point total? The class list stays.')) return;
+  S.points = {}; save(); drawPoints();
+});
+document.getElementById('resetAll').addEventListener('click', function(){
+  if (!confirm('Erase the class list, points and pick history from this device?')) return;
+  S = { ...blank };
+  try { localStorage.removeItem(KEY); } catch (e) { /* nothing to do */ }
+  drawRoster(); drawPoints(); drawFairLeft();
+  document.getElementById('pickOut').textContent = 'Press Pick';
+});
+
+drawRoster(); drawTimer(); drawFairLeft();
+</script>
+</body>
+</html>

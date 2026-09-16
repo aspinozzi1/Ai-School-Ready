@@ -2083,7 +2083,7 @@ build-self-checking-pin.png   (in this folder; PNG, well under the 20 MB cap)
 
 --- TITLE ---
 
-Build a Self-Checking Practice Activity with AI | Teachers Pay Teachers
+Vibe Coding for Teachers | Teachers Pay Teachers
 
 --- DESCRIPTION ---
 
@@ -2099,7 +2099,7 @@ Build It Yourself   <- create once, reuse forever
 
 --- TAGGED TOPICS ---
 
-Try: self checking activities · vibe coding · teacher made games   <- pick whatever Pinterest's search suggests closest
+Try: vibe coding · self checking activities · teacher made games   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 
@@ -2244,3 +2244,4 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
