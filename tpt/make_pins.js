@@ -289,6 +289,16 @@ const PIN_COPY = {
     sub: 'A fairer sign-up sheet, per-student prep pages, and an AI page that drafts the talking points. $8.',
     board: 'Parent Communication',
     desc: 'Parent teacher conference sign up sheets and forms: a sign-up sheet where parents rank their top three times, a master schedule grid, a reminder slip, a conference prep sheet per student, a zero-technology talking-points page, and an AI Conference Prep page that drafts three talking points and one ask for home from a de-identified pattern. From two certified teachers.' },
+  'iep-org-binder': { pal: P.turq,
+    top: 'IEP organization', mid: 'the shell, not the data', big: 'COVERS. TABS. CASELOAD.',
+    sub: 'A binder cover, spine label, eight dividers, and a caseload overview — by student number. $10.',
+    board: 'Special Education',
+    desc: 'IEP organization binder: a binder cover and spine label, eight section dividers (Students, Goals, Data, Meetings, Services, Communication, Accommodations, Notes), a caseload overview, a meeting-dates tracker, and a contact log — every page by student number, never a name, with a confidentiality page up front. From two certified teachers.' },
+  'complete-iep-binder-bundle': { pal: P.grape,
+    top: '4 products, 1 price', mid: 'the whole IEP binder system', big: 'BUNDLE & SAVE 25%',
+    sub: 'IEP at a Glance + Goal Tracking + ABC Data Sheets + the Organization Binder. $24.',
+    board: 'Special Education',
+    desc: 'The Complete IEP Binder bundle: IEP at a Glance, IEP Goal Tracking & Data Collection Sheets, ABC Data Sheets, and the IEP Organization Binder — four real products, 25% off buying separately. Every page uses student numbers, never names. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>
@@ -476,7 +486,8 @@ ${rows}`;
   const page = await browser.newPage({ viewport: { width: 1000, height: 1500 } });
   for (const l of [...listings].sort((a, b) => a.order - b.order)) {
     const c = PIN_COPY[l.id];
-    if (!c || !l.product) continue;
+    const hasShots = l.product || (l.previewShots && l.previewShots.length >= 2);
+    if (!c || !hasShots) continue;
     await page.setContent(html(l, c), { waitUntil: 'networkidle' });
     const out = path.join(OUT, l.id + '-pin.png');
     await page.screenshot({ path: out });

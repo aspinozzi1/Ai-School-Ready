@@ -1912,6 +1912,94 @@
       "previewUnit": "the full kit is 7 pages",
       "filesBadge": "7 pages",
       "insideHeading": "What's inside the full kit"
+    },
+    {
+      "id": "iep-org-binder",
+      "order": 51,
+      "name": "IEP Organization Binder",
+      "product": "UPLOAD/02-paid/IEP-Organization-Binder.pdf",
+      "cover": "tpt/covers/iep-org-binder-cover.png",
+      "thumbnails": [
+        "tpt/extras/iob-whats-inside.png",
+        "tpt/extras/iob-real-pages.png"
+      ],
+      "title": "IEP Organization Binder | Covers, Dividers, Caseload Overview & Meeting Log",
+      "description": "An IEP organization binder built to be the shell, not the data: a binder cover and spine label (two spine widths, because binders vary), eight section dividers — Students, Goals, Data, Meetings, Services, Communication, Accommodations, Notes — a caseload overview, a meeting-dates tracker for annual reviews and re-evaluations, and a contact log for every call, email, and hallway conversation worth remembering.\n\nA CONFIDENTIALITY PAGE COMES FIRST, not last. A completed binder holds an entire caseload's confidential records in one place, so every page inside — the caseload overview included — uses student numbers only, never a name, with the name-to-number key kept in a separate locked location.\n\nA \"WHAT'S IN THIS BINDER\" INDEX is the page a substitute reads first: it maps every tab to what belongs behind it, and points to the exact pack in our store that fills it. New-student and end-of-year checklists keep the binder current all year, not just in August.\n\nNO AI PAGE ON THIS ONE, on purpose: it's an organizational shell with nothing to synthesize, and the AI work already lives in the products it organizes.\n\nWHAT THIS BINDER IS NOT: not an IEP and not the official special education record, not a data-tracking system on its own, and not a compliance document — confirm placement, storage, and retention with your district's special education office.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 10,
+      "licenses": 5,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "iep organization binder",
+        "iep binder",
+        "iep binder cover",
+        "special education",
+        "iep at a glance",
+        "case manager"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Special Education",
+      "previewShots": [
+        "iob_p2.png",
+        "iob_p3.png",
+        "iob_p4.png"
+      ],
+      "previewInside": [
+        "A binder cover and spine label — two spine widths, because binders vary",
+        "Eight section dividers to print, cut, and mount: Students, Goals, Data, Meetings, Services, Communication, Accommodations, Notes",
+        "A caseload overview, meeting-dates tracker, and contact log — every page by student number, never a name",
+        "<b>A confidentiality page up front</b>, a substitute-ready index, and new-student and end-of-year checklists"
+      ],
+      "previewUnit": "the full binder is 8 pages",
+      "filesBadge": "8 pages",
+      "insideHeading": "What's inside the full binder"
+    },
+    {
+      "id": "complete-iep-binder-bundle",
+      "order": 52,
+      "name": "The Complete IEP Binder",
+      "cover": "tpt/covers/complete-iep-binder-bundle-cover.png",
+      "thumbnails": [],
+      "bundleOf": [
+        "iep-at-a-glance",
+        "iep-goal-tracking",
+        "abc-behavior-data-sheets",
+        "iep-org-binder"
+      ],
+      "title": "The Complete IEP Binder Bundle | At a Glance, Goal Tracking, ABC Data + AI",
+      "description": "Everything a case manager's caseload needs, in one bundle at 25% off: the IEP Organization Binder (the shell — covers, spine label, eight section dividers, a caseload overview, a meeting-dates tracker, and a contact log, all by student number) plus the three packs that fill every tab in it — IEP at a Glance (student snapshot sheets and a guest-teacher accommodations-only card), IEP Goal Tracking & Data Collection Sheets (weekly data, a hand-plotted graph, and an AI Progress Summary page), and ABC Data Sheets (an antecedent-behavior-consequence recording form, a frequency tally, and an AI Pattern Summary page).\n\nFOUR REAL PRODUCTS, ONE PRICE: bought separately these four packs total $32. This bundle is $24 — 25% off, and still less than half of what comparable binder-shaped IEP systems charge.\n\nEVERY PAGE ACROSS ALL FOUR PACKS USES STUDENT NUMBERS, NEVER NAMES, and every AI page works from de-identified scores and patterns only — never a name, never a roster, never a diagnosis. Each pack's own confidentiality guidance and \"what this is not\" page carries over unchanged.\n\nRUNNING THIS ACROSS A TEAM OR A WHOLE CASELOAD? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 24,
+      "licenses": 12,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Special Education",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "iep binder",
+        "iep organization binder",
+        "special education",
+        "iep at a glance",
+        "iep goal tracking",
+        "case manager"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Special Education",
+      "previewShots": [
+        "iob_p3.png",
+        "iob_p4.png"
+      ]
     }
   ]
 }

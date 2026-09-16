@@ -279,6 +279,13 @@ const IMAGES = [
     '<b>The AI Conference Prep page</b> — three talking points from a de-identified pattern',
   ], '7 pages')],
   ['ctk-real-pages',   realPages('#2D6CB5', ['ctk_p2.png', 'ctk_p4.png', 'ctk_p5.png'], '7 pages')],
+  ['iob-whats-inside', whatsInside('IEP Organization', 'Binder', [
+    'A binder cover and spine label — two spine widths',
+    'Eight section dividers to print, cut, and mount',
+    'A caseload overview, meeting-dates tracker, and contact log — by student number',
+    '<b>A confidentiality page up front</b>, plus new-student and end-of-year checklists',
+  ], '8 pages')],
+  ['iob-real-pages',   realPages('#17BEBB', ['iob_p2.png', 'iob_p3.png', 'iob_p4.png'], '8 pages')],
 ];
 
 fs.mkdirSync(OUT, { recursive: true });

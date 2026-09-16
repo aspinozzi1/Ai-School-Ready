@@ -704,3 +704,65 @@ thin against that bar, fix the kit, not the price.
   `2026-W38-brief.md` for the full reasoning. `take home folder` (829)
   and `happy mail` (816) remain open and stale (last pulled 08-26),
   on the W38 Sunday lookup list per the brief.
+- **2026-09-16 (Week 4 Wednesday drop — lanes 3 and 4 shipped nothing;
+  the IEP family fills the slot instead)**: per
+  `tpt/intel/2026-W38-wed-brief.md`, Monday's five Priority 1 lookups for
+  Young Entrepreneurs and Deaf Education (needs and wants, goods and
+  services, student business plan, dhh itinerant, accommodations
+  checklist) never came back, so neither lane had a validated row to
+  build against today — per the binding validation rule, no product
+  ships without one, so **lane 3 and lane 4 shipped nothing this week**,
+  matching the 2026-09-09 precedent. The brief's own Priority 3 fallback
+  named the family that *was* producing: the IEP/Special Education line.
+  Shipped two products, both tracing to the brief's validation table
+  (TPT Keywords, pulled 09-05, inside the drift window): **IEP
+  Organization Binder**, $10 (license $5) — "iep organization binder"
+  (408 vol, <1K shelf, Promising, score 816) — an 8-page organizational
+  shell (not a data tracker): a binder cover and two-width spine label,
+  eight section dividers (Students, Goals, Data, Meetings, Services,
+  Communication, Accommodations, Notes), a caseload overview, a
+  meeting-dates tracker, and a contact log, every page by student number
+  only. Per the brief's own stronger-than-usual guardrail, the
+  confidentiality page runs second (right after the intro), not last,
+  and there is deliberately **no AI page** — an organizational shell has
+  nothing to synthesize, and adding one would be padding. **The Complete
+  IEP Binder** bundle, $24 (license $12) — bundles IEP at a Glance ($7) +
+  IEP Goal Tracking & Data Collection Sheets ($9) + ABC Data Sheets ($6)
+  + the new binder ($10), a $32 sum at 25% off, landing under the $37
+  comparable the brief found on 09-05 while containing four real
+  products. This is the catalog's first bundle listing; `make_drops.js`
+  and `make_previews.js` already carried bundle support (`bundleOf`,
+  skip-preview) from earlier tooling work, so no new build-system code
+  was needed there. `make_pins.js` did need a one-line fix: its main loop
+  hard-required `l.product`, which would have silently skipped a pin for
+  any bundle forever — changed to accept a listing with either a product
+  or a `previewShots` override (the bundle's pin reuses two of the new
+  binder's own real-page renders). New product PDF passed every gate
+  clean on first content pass except page fullness: the three data-table
+  pages (caseload overview, meeting-dates tracker, contact log) initially
+  rendered 35–45% empty at the bottom on a 10–12 row table, caught on the
+  contact-sheet eyeball and fixed by widening rows to 35pt and filling
+  each table to the page (13–16 rows, tuned per table so none spills a
+  near-empty overflow page). `iep-at-a-glance` and `iep-goal-tracking`
+  (both bundle components) were spot-checked against the font gate as
+  part of validating the bundle and pass clean — the earlier `kits/`
+  source-folder copies that still fail are stale duplicates outside the
+  shipping path, not live products, and were left alone (out of scope
+  this session). Drops 51–52 in `UPLOAD/drops/`; `PINS-2026-09-16.zip`
+  ships both new pins (binder, bundle) on a new "Special Education" pin
+  board reuse, plus the append-only `PINS.txt` diff — no revert needed,
+  every other pin PNG rendered byte-identical this run. The
+  `make_covers.js`/`make_listing_extras.js`/`make_previews.js` full-regen
+  footgun reverted one unrelated file each run (`conference-kit-cover.png`,
+  `ctk-whats-inside.png`, `ctk-real-pages.png`) plus, on the previews
+  pass, all 47 other preview PDFs — every reverted file's text content
+  was verified byte-for-byte identical to HEAD first (font-hinting
+  render-noise only, matching the documented footgun, not a content
+  change). All gates: check_fonts.py 0, check_breaks.py 0,
+  check_us_english.py 0, check_fresh.py 0 for both new products (the
+  3 remaining flags are the pre-existing, out-of-scope
+  `build-self-checking` staleness carried from 2026-09-13, unrelated to
+  today's build). The owner's standing decision from Monday's list — what
+  Wednesday becomes permanently once lane 3/4 data does or doesn't
+  return — is still open; today's build is the brief's named fallback,
+  not a new standing assignment.

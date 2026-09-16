@@ -267,6 +267,16 @@ const PRODUCTS = [
     title: 'Parent Teacher', accent: 'Conference Kit',
     lede: 'A sign-up sheet parents actually prefer, a prep sheet per student, and an AI page that drafts three talking points from a de-identified score.',
     chips: ['7 pages', 'Sign-up + schedule', 'AI talking points', '$8'] },
+  { file: 'iep-org-binder',      badge: 'Case Manager Organization',
+    kicker: 'Special education \u00b7 the shell, not the data',
+    title: 'IEP Organization', accent: 'Binder',
+    lede: 'A binder cover and spine label, eight section dividers, a caseload overview, a meeting-dates tracker, and a contact log \u2014 all by student number, never a name.',
+    chips: ['8 pages', 'Student numbers only', '8 dividers', '$10'] },
+  { file: 'complete-iep-binder-bundle', badge: 'Bundle \u00b7 4 Products',
+    kicker: 'Special education \u00b7 save 25%',
+    title: 'The Complete', accent: 'IEP Binder',
+    lede: 'IEP at a Glance, IEP Goal Tracking, ABC Data Sheets, and the IEP Organization Binder \u2014 every tab in the binder, filled.',
+    chips: ['4 products', 'Save 25%', 'Data + shell', '$24'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover
