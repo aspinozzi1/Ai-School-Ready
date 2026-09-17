@@ -91,3 +91,18 @@ planned product:
   is not.
 - A brief older than 14 days is stale: the factory should proceed on the
   calendar row and note in its summary that no fresh intel existed.
+
+
+## Brief and lookup file naming (changed 2026-09-17)
+
+**Name brief files by their DROP DATE, not the ISO week:**
+`2026-09-18-fri-brief.md`, not `2026-W38-fri-brief.md`.
+
+The week scheme collided twice in three weeks. A Friday shares the ISO week of
+the Wednesday before it, so `2026-W37-fri-brief.md` ended up holding the 09-04
+drop and `2026-W38-fri-brief.md` the 09-11 one — and the next Friday in each
+week had nowhere to go. Existing files keep their names; new ones use the date.
+
+Drop-date naming is unambiguous, sorts correctly, and cannot collide. Pulse
+files stay on the week scheme, since one pulse file genuinely does cover a
+week's three drops.
