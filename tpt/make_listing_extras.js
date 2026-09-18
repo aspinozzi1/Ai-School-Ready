@@ -256,6 +256,15 @@ const IMAGES = [
     'Where student data can and cannot live, answered plainly',
   ])],
   ['vcd-real-pages',   realPages('#2D6CB5', ['vcd_p3.png', 'vcd_p8.png', 'vcd_p17.png'], '23 pages')],
+  ['p2p-whats-inside', whatsInside('Vibe Coding \u00b7', 'Pitch to Prototype', [
+    'Five days, each one ending somewhere definite',
+    'Six printable student pages, interviews through pitch',
+    'The finished example app included and browser-tested',
+    'Every teacher prompt written out in full, on one page',
+    'A rescue page for when the build breaks in front of the class',
+    'Day 4 testing - hand it over, say nothing, write what you see',
+  ], 'PDF + HTML')],
+  ['p2p-real-pages',   realPages('#8367C7', ['p2p_p2.png', 'p2p_p7.png', 'p2p_p13.png'], '21 pages + app')],
   ['bsc-whats-inside', whatsInside('Build It Yourself ·', 'Self-Checking Practice Activity', [
     'Nine prompts, written out in full - copy and paste',
     'A working activity file, included and ready to use',

@@ -2055,6 +2055,65 @@
       "previewUnit": "23 pages + 1 working app",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "pitch-to-prototype",
+      "order": 54,
+      "name": "Vibe Coding Pitch to Prototype",
+      "product": "UPLOAD/02-paid/Vibe-Coding-Pitch-to-Prototype.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/lost-and-found.html"
+      ],
+      "cover": "tpt/covers/pitch-to-prototype-cover.png",
+      "thumbnails": [
+        "tpt/extras/p2p-whats-inside.png",
+        "tpt/extras/p2p-real-pages.png"
+      ],
+      "title": "Vibe Coding for Kids | Pitch to Prototype Entrepreneurship Unit, Grades 4-8",
+      "description": "Vibe coding for kids, the entrepreneurship version: your class finds a real problem in your own building, writes the specification for an app that fixes it, and watches you build it live on the board. Five days. The deliverable is working software the school can actually use, not a poster about an app that does not exist.\n\nTHE GROWN-UP HOLDS THE KEYBOARD, AND THAT IS THE POINT. Students do the interviews, the problem statement, the feature list, the testing and the pitch. You do the prompting, projected, so they watch their own words become software. Chatbots are 13 and up, and no child's name goes into a prompt at any point in this unit.\n\nFIVE DAYS, EACH ONE ENDING SOMEWHERE DEFINITE. Day 1 find a real problem. Day 2 define it. Day 3 build it live. Day 4 test it on real people. Day 5 pitch, then change one thing. If a day does not reach its end point you do not move on, and the plan says so.\n\nDAY 4 IS THE DAY MOST UNITS LEAVE OUT. Students hand the tool to a real person, give them one task, and then say nothing. If you have to explain it, that is a finding. Watching a stranger fail to use the thing you built is the single most useful hour in the unit.\n\nA RESCUE PAGE FOR WHEN IT BREAKS IN FRONT OF THE CLASS. It will. There is a full page on what to do when the build fails while thirty children are watching, and why letting them see that is worth more than a build that goes smoothly.\n\nSIX PRINTABLE STUDENT PAGES: the interview sheet, the problem statement and feature sort, the spec card they sign and hand to you, a round-by-round record of the live build, the testing observation page, and the pitch planner with a decision log.\n\nEVERY PROMPT WRITTEN OUT IN FULL, collected on one page so you are not hunting through the unit mid-lesson.\n\nTHE FINISHED EXAMPLE APP IS INCLUDED. Lost and Found, built by exactly this process and tested in a real browser before publication. One file, opens in any browser, remembers its items after the tab closes, and has no name field anywhere in it by design.\n\nWHERE THE DATA LIVES, ANSWERED HONESTLY. What students build keeps its information in the browser on one device. Nothing is transmitted, there is no account, and there is no server to pay for or shut off in June. The unit also draws the line plainly: describe people by their job, never by their name.\n\nWHAT THIS IS NOT: not a coding course, not a replacement for your district's systems, and not legal advice about student data. Your district's policy, your state's law, FERPA and COPPA are the authorities.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 18,
+      "licenses": 9,
+      "grades": [
+        "4th grade",
+        "5th grade",
+        "6th grade",
+        "7th grade",
+        "8th grade"
+      ],
+      "subjects": [
+        "Career and Technical Education",
+        "Instructional Technology",
+        "Problem Solving"
+      ],
+      "tags": [
+        "vibe coding",
+        "entrepreneurship",
+        "shark tank",
+        "project based learning",
+        "design thinking",
+        "stem"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Kids",
+      "previewShots": [
+        "p2p_p2.png",
+        "p2p_p7.png",
+        "p2p_p13.png"
+      ],
+      "previewInside": [
+        "<b>Five days</b>, each one ending somewhere definite",
+        "<b>Six student pages</b> - interviews, spec card, testing, pitch",
+        "<b>A finished example app</b>, included and browser-tested",
+        "Every teacher prompt written out in full on one page",
+        "A rescue page for when the build breaks in front of the class",
+        "Day 4 testing - hand it over, say nothing, write down what you see"
+      ],
+      "previewUnit": "21 pages + 1 working app",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }

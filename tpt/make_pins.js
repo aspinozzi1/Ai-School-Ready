@@ -22,8 +22,19 @@ const OUT = path.join(ROOT, 'tpt/pins');
 const SRC = path.join(ROOT, 'tpt/pinsrc');
 const { listings } = JSON.parse(fs.readFileSync(path.join(ROOT, 'tpt/listings.json'), 'utf8'));
 
-const font = (fam, file) =>
-  `@font-face{font-family:'${fam}';src:url('file://${path.join(ROOT, 'node_modules/@fontsource', file)}') format('woff2');}`;
+/* Brand faces come from the vendored set in kits/tooling/fonts, not from
+   node_modules: an npm install once removed @fontsource and every pin after it
+   rendered in a system fallback without saying so. These files are committed. */
+const FONTDIR = path.join(ROOT, 'kits/tooling/fonts');
+const font = (fam, file) => {
+  const p = path.join(FONTDIR, file);
+  if (!fs.existsSync(p)) throw new Error('missing brand font: ' + p);
+  /* Inlined as a data URI on purpose. setContent() gives the page an opaque
+     origin, so a file:// @font-face URL is refused silently and the pin
+     renders in a system fallback that looks almost right. */
+  return `@font-face{font-family:'${fam}';src:url(data:font/woff2;base64,`
+    + fs.readFileSync(p).toString('base64') + `) format('woff2');}`;
+};
 
 const b64 = f => 'data:image/png;base64,' + fs.readFileSync(path.join(SRC, f)).toString('base64');
 
@@ -294,6 +305,16 @@ const PIN_COPY = {
     sub: 'A binder cover, spine label, eight dividers, and a caseload overview — by student number. $10.',
     board: 'Special Education',
     desc: 'IEP organization binder: a binder cover and spine label, eight section dividers (Students, Goals, Data, Meetings, Services, Communication, Accommodations, Notes), a caseload overview, a meeting-dates tracker, and a contact log — every page by student number, never a name, with a confidentiality page up front. From two certified teachers.' },
+  'vibe-dashboard': { pal: P.blue,
+    top: 'A page is not an app', mid: 'until it remembers', big: 'BUILD IT IN ONE FILE',
+    sub: 'Class list, fair picker, groups, timer and points \u2014 still there tomorrow morning. $24.',
+    board: 'Vibe Coding for Teachers',
+    desc: 'Vibe coding for teachers: build a classroom dashboard that remembers. Ten tasks, twelve prompts written out in full, and the finished app included and browser-tested. A fair name picker so the same three children do not answer everything, and a one-click export that replaces every name with S1, S2, S3. No login, no subscription, nothing uploaded anywhere. From two certified teachers.' },
+  'pitch-to-prototype': { pal: P.grape,
+    top: 'Your class finds a problem', mid: 'you build the app live', big: 'FIVE DAYS. REAL SOFTWARE.',
+    sub: 'Interviews, a signed spec card, a live build, real testing, then the pitch. $18.',
+    board: 'Vibe Coding for Kids',
+    desc: 'Vibe coding for kids, the entrepreneurship unit: five days where students interview real people in the building, write the specification for an app that fixes what they found, and watch you build it live on the board. Six printable student pages, every teacher prompt written out in full, a rescue page for when the build breaks in front of the class, and a finished example app included. The teacher holds the keyboard and no child name goes into a prompt. Grades 4-8. From two certified teachers.' },
   'complete-iep-binder-bundle': { pal: P.grape,
     top: '4 products, 1 price', mid: 'the whole IEP binder system', big: 'BUNDLE & SAVE 25%',
     sub: 'IEP at a Glance + Goal Tracking + ABC Data Sheets + the Organization Binder. $24.',
@@ -353,17 +374,17 @@ function html(l, c) {
        <div class="shot h1"><img src="${b64(shots[0])}"></div>`
     : `<div class="shot h0"><img src="${b64(shots[0])}"></div>`;
   return `<!doctype html><html><head><meta charset="utf-8"><style>
-${font('Luckiest', 'luckiest-guy/files/luckiest-guy-latin-400-normal.woff2')}
-${font('Baloo', 'baloo-2/files/baloo-2-latin-700-normal.woff2')}
-${font('Baloo8', 'baloo-2/files/baloo-2-latin-800-normal.woff2')}
+${font('Luckiest', 'luckiest-guy-latin-400-normal.woff2')}
+${font('Body', 'nunito-latin-700-normal.woff2')}
+${font('Display', 'fredoka-latin-700-normal.woff2')}
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1000px;height:1500px;background:${c.pal.field};font-family:Baloo,sans-serif;
+body{width:1000px;height:1500px;background:${c.pal.field};font-family:Body,sans-serif;
      position:relative;overflow:hidden}
 .doodles{position:absolute;inset:0}
 .dot{position:absolute;border-radius:50%}
 .head{position:relative;padding:52px 60px 0;text-align:center}
-.top{font-family:Baloo8,sans-serif;font-size:46px;color:#fff;line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
-.mid{font-family:Baloo8,sans-serif;font-size:46px;color:${c.pal.cta};line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+.top{font-family:Display,sans-serif;font-size:46px;color:#fff;line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+.mid{font-family:Display,sans-serif;font-size:46px;color:${c.pal.cta};line-height:1.05;text-shadow:0 3px 0 rgba(0,0,0,.18)}
 .big{font-family:Luckiest,cursive;font-size:68px;line-height:.98;color:#fff;margin-top:14px;
      -webkit-text-stroke:8px #17293B;paint-order:stroke fill;letter-spacing:.5px}
 .sub{margin:20px auto 0;max-width:800px;background:#fff;border:5px solid #17293B;border-radius:18px;

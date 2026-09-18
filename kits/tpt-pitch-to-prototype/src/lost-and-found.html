@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost and Found Log</title>
+<style>
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--leaf:#4CAF6D;--cream:#FFFDF8;--grey:#7A8B9A;--rule:#E3DCCD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Trebuchet MS',system-ui,sans-serif;background:var(--cream);
+  color:var(--ink);padding:16px;min-height:100vh}
+.bar{height:12px;border-radius:6px;margin-bottom:14px;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.wrap{max-width:880px;margin:0 auto}
+h1{font-size:1.65rem;margin-bottom:2px}
+.sub{color:var(--grey);margin-bottom:14px}
+.panel{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:18px;
+  box-shadow:6px 6px 0 var(--teal);margin-bottom:16px}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:flex-end;margin-bottom:10px}
+label{display:block;font-size:.8rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:3px}
+input,select{font:inherit;border:2.5px solid var(--ink);border-radius:10px;padding:8px 11px;
+  background:var(--cream);width:100%}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+.f{flex:1 1 170px}
+button{font:inherit;font-weight:700;cursor:pointer;border:2.5px solid var(--ink);
+  border-radius:10px;padding:9px 15px;background:var(--cream)}
+button:hover{background:#FFF4D6}
+button.go{background:var(--sunny)}
+button.small{padding:5px 10px;font-size:.85rem}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.chip{font:inherit;font-weight:700;border:2.5px solid var(--ink);border-radius:999px;
+  padding:6px 14px;background:#fff;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sunny)}
+table{width:100%;border-collapse:separate;border-spacing:0}
+th{background:var(--ink);color:#fff;text-align:left;padding:8px 10px;font-size:.88rem}
+th:first-child{border-radius:9px 0 0 0}th:last-child{border-radius:0 9px 0 0}
+td{border-bottom:2px solid var(--rule);padding:8px 10px;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+tr.claimed td{opacity:.55}
+tr.claimed .item{text-decoration:line-through}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 9px;border-radius:999px;
+  border:2px solid var(--ink);background:#fff}
+.empty{text-align:center;color:var(--grey);padding:26px 10px}
+.stats{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:12px}
+.stat{flex:1 1 130px;border:2.5px solid var(--ink);border-radius:13px;padding:10px;
+  text-align:center;background:var(--cream)}
+.stat b{display:block;font-size:1.7rem;color:var(--blue)}
+.stat span{font-size:.8rem;color:var(--grey)}
+.note{background:var(--ink);color:#fff;border-radius:13px;padding:12px 15px;margin-top:14px}
+.note b{color:var(--sunny)}
+.saved{font-size:.82rem;color:var(--leaf);font-weight:700;min-height:1.1em;align-self:center}
+@media print{.panel{box-shadow:none}button,.filters,.note,form{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"></div>
+  <h1>Lost and Found Log</h1>
+  <p class="sub">Built by Room 12 &mdash; because nobody could ever find anything in the box.</p>
+
+  <div class="panel">
+    <form id="addForm">
+      <div class="row">
+        <div class="f"><label for="item">What is it</label>
+          <input id="item" required placeholder="Blue water bottle" maxlength="60"></div>
+        <div class="f"><label for="where">Where it was found</label>
+          <input id="where" required placeholder="Gym bleachers" maxlength="40"></div>
+        <div class="f" style="flex:0 1 140px"><label for="when">Date found</label>
+          <input id="when" type="date" required></div>
+        <div style="flex:0 0 auto"><button class="go" type="submit">Add item</button></div>
+        <span class="saved" id="savedMsg"></span>
+      </div>
+    </form>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b id="sWaiting">0</b><span>waiting to be claimed</span></div>
+    <div class="stat"><b id="sClaimed">0</b><span>claimed</span></div>
+    <div class="stat"><b id="sOld">0</b><span>here over 30 days</span></div>
+  </div>
+
+  <div class="panel">
+    <div class="filters">
+      <button class="chip" data-f="waiting" aria-pressed="true">Waiting</button>
+      <button class="chip" data-f="claimed" aria-pressed="false">Claimed</button>
+      <button class="chip" data-f="all" aria-pressed="false">Everything</button>
+      <button class="small" id="printBtn" style="margin-left:auto">Print this list</button>
+    </div>
+    <table>
+      <thead><tr><th>Item</th><th style="width:22%">Found</th><th style="width:16%">Date</th><th style="width:19%">Status</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>Nothing here yet.</div>
+  </div>
+
+  <div class="note"><b>This log lists things, not people.</b><br>
+    No names, ever. When someone claims an item you mark it claimed &mdash; you do not write down
+    who took it. That was Room 12's rule and it is why this can live anywhere in the building.</div>
+</div>
+
+<script>
+const KEY = 'lost-and-found-v1';
+let items = load();
+let filter = 'waiting';
+
+function load(){
+  try { const r = localStorage.getItem(KEY); return r ? (JSON.parse(r) || []) : []; }
+  catch (e) { return []; }
+}
+function save(){
+  try { localStorage.setItem(KEY, JSON.stringify(items)); flash('Saved'); }
+  catch (e) { flash('Could not save on this device'); }
+}
+function flash(msg){
+  const el = document.getElementById('savedMsg');
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 1600);
+}
+function daysOld(iso){
+  const then = new Date(iso + 'T00:00:00');
+  if (isNaN(then)) return 0;
+  return Math.floor((Date.now() - then.getTime()) / 86400000);
+}
+
+document.getElementById('addForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const item  = document.getElementById('item').value.trim();
+  const where = document.getElementById('where').value.trim();
+  const when  = document.getElementById('when').value;
+  if (!item || !where || !when) return;
+  items.push({ id: Date.now(), item: item, where: where, when: when, claimed: false });
+  save(); draw();
+  e.target.reset();
+  document.getElementById('item').focus();
+});
+
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click', function(){
+    filter = c.dataset.f;
+    document.querySelectorAll('.chip').forEach(function(x){
+      x.setAttribute('aria-pressed', String(x === c));
+    });
+    draw();
+  });
+});
+
+document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+function draw(){
+  const body = document.getElementById('rows');
+  body.textContent = '';
+  const shown = items.filter(function(i){
+    return filter === 'all' ? true : filter === 'claimed' ? i.claimed : !i.claimed;
+  });
+  shown.forEach(function(i){
+    const tr = document.createElement('tr');
+    if (i.claimed) tr.className = 'claimed';
+
+    const c1 = document.createElement('td');
+    c1.className = 'item';
+    c1.textContent = i.item;
+    const old = daysOld(i.when);
+    if (!i.claimed && old > 30) {
+      const t = document.createElement('span');
+      t.className = 'tag';
+      t.style.marginLeft = '7px';
+      t.textContent = old + ' days';
+      c1.appendChild(t);
+    }
+
+    const c2 = document.createElement('td'); c2.textContent = i.where;
+    const c3 = document.createElement('td'); c3.textContent = i.when;
+
+    const c4 = document.createElement('td');
+    const b = document.createElement('button');
+    b.className = 'small';
+    b.type = 'button';
+    b.textContent = i.claimed ? 'Undo' : 'Mark claimed';
+    b.setAttribute('aria-label', (i.claimed ? 'Undo claim on ' : 'Mark claimed: ') + i.item);
+    b.addEventListener('click', function(){
+      i.claimed = !i.claimed;
+      save(); draw();
+    });
+    c4.appendChild(b);
+
+    tr.appendChild(c1); tr.appendChild(c2); tr.appendChild(c3); tr.appendChild(c4);
+    body.appendChild(tr);
+  });
+  document.getElementById('empty').hidden = shown.length > 0;
+
+  document.getElementById('sWaiting').textContent = items.filter(function(i){ return !i.claimed; }).length;
+  document.getElementById('sClaimed').textContent = items.filter(function(i){ return i.claimed; }).length;
+  document.getElementById('sOld').textContent =
+    items.filter(function(i){ return !i.claimed && daysOld(i.when) > 30; }).length;
+}
+
+document.getElementById('when').value = new Date().toISOString().slice(0, 10);
+draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Pitch to Prototype</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:30pt">
+<div class="kick">Vibe Coding for Kids &middot; Young Entrepreneurs</div>
+<h1>Pitch to Prototype</h1>
+<p class="lede">A five-day unit where your class finds a real problem in your building, writes the
+spec for an app that fixes it, and watches you build it live on the board. The deliverable is
+working software, not a poster.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">5</h3><p class="small" style="margin:0">days, each with a clear end point</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">6</h3><p class="small" style="margin:0">student pages worth printing</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">finished example app included</p></div>
+</div>
+<div class="note"><b>The grown-up holds the keyboard, and that is the point.</b><br>
+Students do the interviews, the problem statement, the feature list, the testing and the pitch.
+You do the prompting, projected, so they watch their own words become software. Specification and
+testing are the actual thinking &mdash; typing prompts is not.</div>
+<div class="card r"><h3>Grades 4&ndash;8 &middot; no coding background needed</h3>
+<p class="small" style="margin:0">You do not need to know how to code. You need to be willing to
+read what the AI produces, say "not quite", and ask again &mdash; in front of the class, which turns
+out to be the most valuable part.</p></div>
+<div class="row" style="margin-top:10pt">
+<div class="card p"><h3>What you need</h3>
+<p class="small" style="margin:0">A projector, a browser, and one AI chat account that <i>you</i> sign
+in to. Nothing is installed. Nothing is bought. Students never touch the chat &mdash; chatbots are
+13 and up, and no child&rsquo;s name goes into a prompt at any point in this unit.</p></div>
+<div class="card t"><h3>What comes out of it</h3>
+<p class="small" style="margin:0">A single web page that your school can actually use, saved as one
+file in your own Drive. It keeps its data in the browser: nothing is sent anywhere, there is no
+account, and there is no server to pay for or shut off in June.</p></div>
+</div>
+<div class="card" style="margin-top:2pt"><h3>Inside</h3>
+<p class="small" style="margin:0">Five teacher day-plans with scripts and the exact prompts &middot;
+a rescue page for when the build breaks in front of the class &middot; six printable student pages
+&middot; every prompt collected on one page &middot; and <b>Lost and Found</b>, a finished example
+app built by exactly this process, included as a file you can open today.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you begin</div><h2>The five days at a glance</h2>
+<p class="lede">Each day ends somewhere definite. If a day does not reach its end point, do not
+move on &mdash; the next day depends on it.</p>
+<div class="day"><div class="n">DAY 1</div><div><h3>Find a real problem</h3>
+<p class="small" style="margin:0"><b>Students:</b> interview three people in the building about
+something that annoys them. Not "an app idea" &mdash; a problem.<br>
+<b>You:</b> model one interview badly, then well. The difference is the lesson.<br>
+<b>Ends with:</b> every group holding three interview sheets.</p></div></div>
+<div class="day"><div class="n">DAY 2</div><div><h3>Define it</h3>
+<p class="small" style="margin:0"><b>Students:</b> turn the interviews into one problem statement and
+sort features into must-have and nice-to-have.<br>
+<b>You:</b> push back hard on the must-have list. Three items, not eleven.<br>
+<b>Ends with:</b> one page per group that you could hand to a stranger.</p></div></div>
+<div class="day"><div class="n">DAY 3</div><div><h3>Build it live</h3>
+<p class="small" style="margin:0"><b>Students:</b> read the spec aloud, watch it become software, call
+out what is wrong.<br>
+<b>You:</b> prompt on the board. Let them see it fail and get fixed.<br>
+<b>Ends with:</b> something that runs, even if it is ugly.</p></div></div>
+<div class="day"><div class="n">DAY 4</div><div><h3>Test it on real people</h3>
+<p class="small" style="margin:0"><b>Students:</b> watch someone use it without explaining anything.<br>
+<b>You:</b> teach the one rule &mdash; if you have to explain it, that is a finding.<br>
+<b>Ends with:</b> a list of things real users got stuck on.</p></div></div>
+<div class="day"><div class="n">DAY 5</div><div><h3>Pitch and change one thing</h3>
+<p class="small" style="margin:0"><b>Students:</b> pitch with evidence from testing; decide what to
+change and what to leave.<br>
+<b>You:</b> make one live change from their decision.<br>
+<b>Ends with:</b> a shipped tool the school can actually use.</p></div></div>
+<div class="card t"><h3>Shorter on time?</h3><p class="small" style="margin:0">Days 1 and 2 can be
+one long session. Day 4 cannot be skipped &mdash; it is where the learning is, and it is the day
+most units leave out.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Why this unit works</div><h2>What students are actually practicing</h2>
+<p class="lede">If you have run a business unit before, this one will feel different. Here is what
+changed and why it matters.</p>
+<table>
+<tr><th style="width:44%">The usual business unit</th><th>This one</th></tr>
+<tr><td>Students invent a product nobody asked for.</td><td>Students find a problem somebody actually has, by asking.</td></tr>
+<tr><td>The deliverable is a poster or a slide deck.</td><td>The deliverable runs, and the school keeps using it.</td></tr>
+<tr><td>Success is measured by the pitch.</td><td>Success is measured by whether a stranger can use the thing.</td></tr>
+<tr><td>Feedback is the teacher's opinion.</td><td>Feedback is watching a real user get stuck.</td></tr>
+</table>
+<div class="note"><b>The single biggest shift is day 4.</b><br>
+Most units end at the pitch, which teaches students that a good presentation is the goal. Testing
+on a real user teaches them that the goal is the thing working &mdash; and that their own opinion of
+their design is not evidence.</div>
+<div class="card g"><h3>What the students take away that lasts</h3>
+<p class="small" style="margin:0">How to ask about a problem without leading the answer. How to tell
+a must-have from a want. How to watch someone struggle without rescuing them. How to change your
+mind because of evidence. None of those are about apps.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The one rule</div><h2>Why you do the typing</h2>
+<div class="card r"><h3>The rule</h3>
+<p style="margin:0"><b>The adult holds the keyboard. Always.</b> Students never type into the AI
+chat, and nothing about a student &mdash; no name, no work, no photo, no description that could
+identify one &mdash; goes into a prompt.</p></div>
+<div class="card"><h3>The practical reason</h3>
+<p class="small" style="margin:0">The main AI chat tools require users to be 13 or older, and most
+of them are not designed for a class account. Putting a nine-year-old at that keyboard is a
+problem whatever your intentions.</p></div>
+<div class="card t"><h3>The better reason</h3>
+<p class="small" style="margin:0">Prompting is the easy part and it is not the thinking. Deciding
+what to build, saying it precisely enough that someone else could build it, and judging whether
+what came back is right &mdash; that is the work, and it is all on the students. <b>Handing them the
+keyboard would mean handing them the shallow half.</b></p></div>
+<div class="card g"><h3>How it looks in the room</h3>
+<p class="small" style="margin:0">Your screen is projected. A student reads their spec aloud. You
+type what they said &mdash; not what you think they meant. When it comes back wrong, you ask them
+what is wrong, and you type their correction. <b>You are their hands, not their brain.</b></p></div>
+<div class="note"><b>Say the rule out loud on day 1 and give the reason.</b> Students accept a
+boundary far better when it comes with an explanation, and "prompting is the easy part, I am not
+letting you skip the hard part" is an explanation they respect.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 1</div><h2>Find a real problem</h2>
+<p class="lede">The whole unit stands or falls here. A weak problem produces a pointless app and
+five days of going through the motions.</p>
+<div class="card r"><h3>Start by banning the good idea</h3>
+<p class="small" style="margin:0">Tell them: <b>nobody pitches an idea today.</b> Today you only
+collect complaints. Ideas come from problems, and a problem you invented at your desk is not a
+problem &mdash; it is a guess.</p></div>
+<div class="card"><h3>Model it badly first &mdash; this is worth the five minutes</h3>
+<p class="small" style="margin-bottom:5pt">Interview a volunteer in front of the class, doing it
+wrong on purpose:</p>
+<p class="small" style="margin-bottom:4pt"><i>"Wouldn't it be good if there was an app for the lost
+property box?"</i> &mdash; leading. They will agree with anything.</p>
+<p class="small" style="margin:0">Then do it right: <i>"Tell me about the last time you lost
+something at school. What happened? What did you do? How did that go?"</i> Ask them which version
+told you more.</p></div>
+<div class="card t"><h3>Who they interview</h3>
+<p class="small" style="margin:0">Three people, and <b>at least one adult who is not a teacher</b> &mdash;
+the office staff, a custodian, a lunch supervisor. Those three know more about what does not work
+in a building than anyone, and they are almost never asked.</p></div>
+<div class="card g"><h3>Day 1 ends when</h3><p class="small" style="margin:0">Every group has three
+completed interview sheets and has not yet suggested a single solution. If a group has already
+designed an app, send them back out &mdash; kindly, but send them.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 2</div><h2>Define it</h2>
+<p class="lede">Turning three messy conversations into one sentence a stranger could act on.</p>
+<div class="card"><h3>The problem statement frame</h3>
+<p class="small" style="margin:0">Students fill in: <b>"[Who] needs a way to [do what], because
+[why it is hard now]."</b> One sentence. If it needs an "and", it is two problems and they must
+pick one.</p></div>
+<div class="card t"><h3>Then the sort, and this is where you push</h3>
+<p class="small" style="margin-bottom:5pt">Every group will produce eleven must-haves. Your job is
+to get them to three.</p>
+<p class="small" style="margin:0">Ask of each one: <b>"If we shipped without this, would it still
+solve the problem?"</b> If yes, it is a nice-to-have. Say out loud that this is the hardest thing
+professionals do and most of them are bad at it too.</p></div>
+<div class="card p"><h3>What a good one looks like</h3>
+<p class="small" style="margin-bottom:4pt"><b>Problem:</b> "The office staff need a way to know what
+is in the lost property box, because right now they have to tip the whole thing out every time a
+parent calls."</p>
+<p class="small" style="margin:0"><b>Must-have:</b> add an item · see the list · mark it claimed.
+<b>Nice-to-have:</b> photos, categories, dates, email alerts, a search box.</p></div>
+<div class="card g"><h3>Day 2 ends when</h3><p class="small" style="margin:0">Each group has one page:
+a problem statement, three must-haves, and everything else parked in a nice-to-have column. That
+page is the spec. Tomorrow you build from it, word for word.</p></div>
+<div class="note"><b>Do not let them add features tomorrow.</b> The discipline of shipping what was
+specced is half the lesson, and it is the half adults find hardest.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 3</div><h2>Build it live</h2>
+<p class="lede">The day they see their own sentences turn into software. Protect it &mdash; do not
+let it become a lecture about AI.</p>
+<div class="card"><h3>How to run the room</h3>
+<p class="small" style="margin:0">Project your screen. A student from the group reads the spec aloud.
+<b>You type what they said, not what you think they meant.</b> If the spec is vague, the result will
+be wrong, and that is a better lesson than you quietly fixing it.</p></div>
+<div class="prompt"><div class="lbl">The teacher prompt &middot; use this shape every time</div>
+Build a single HTML file that runs in a browser with no login and no internet. It is for [who], to help them [do what].<br><br>
+It must do exactly three things:<br>
+1. [must-have one]<br>
+2. [must-have two]<br>
+3. [must-have three]<br><br>
+Save everything to local storage on this device so it is still there tomorrow, and keep working with empty data if saving is unavailable. Big text and big buttons. Do not ask for anyone's name and do not collect any personal information.
+</div>
+<div class="card t"><h3>Why that last sentence is in the prompt every single time</h3>
+<p class="small" style="margin:0">Left to itself the AI will helpfully add a "your name" field to
+almost anything. Saying no up front is easier than noticing it later &mdash; and doing it in front of
+the class, out loud, teaches them that this is a thing you decide on purpose.</p></div>
+<div class="card g"><h3>Day 3 ends when</h3><p class="small" style="margin:0">Something runs. It can be
+ugly. It can be missing a must-have. It has to run.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 3, the page you will actually need</div><h2>When it breaks in front of everyone</h2>
+<p class="lede">It will. The AI will produce something that does not work, mid-lesson, with thirty
+children watching. <b>This is the most valuable ten minutes in the unit</b> and it only works if you
+do not panic.</p>
+<div class="card r"><h3>What not to do</h3>
+<p class="small" style="margin:0">Do not apologize for the technology. Do not switch to a backup
+slide deck. Do not say "let me fix this at lunch." All three teach the class that broken things are
+shameful and should be hidden.</p></div>
+<div class="card g"><h3>What to do instead &mdash; three moves</h3>
+<p class="small" style="margin-bottom:5pt"><b>1. Name it out loud.</b> "That is not what we asked for.
+Look &mdash; we said mark it claimed, and it deleted the whole row."</p>
+<p class="small" style="margin-bottom:5pt"><b>2. Ask them what they saw.</b> Not what to do about it &mdash;
+what they <i>saw</i>. Getting a class to describe a bug precisely is a genuine skill and they are
+better at it than you expect.</p>
+<p class="small" style="margin:0"><b>3. Fix it in front of them.</b> Type their description back:
+<i>"When I click mark claimed it deletes the item. It should keep the item and show it as claimed."</i>
+Watch it come back right.</p></div>
+<div class="note"><b>What they learn from those ten minutes:</b> that adults do not actually know
+how everything works, that being stuck is ordinary rather than embarrassing, and that describing a
+problem clearly is most of solving it. <b>You cannot teach that from a slide.</b></div>
+<div class="card"><h3>If three rounds have not fixed it</h3>
+<p class="small" style="margin:0">Start a fresh chat and paste the original prompt with the one thing
+that went wrong added. Say to the class why you are doing it: the conversation got tangled and
+starting clean is faster than untangling. That is also a real professional habit.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 4</div><h2>Test it on real people</h2>
+<p class="lede">The day most units skip, and the day the actual learning happens.</p>
+<div class="card r"><h3>The one rule, and it is hard</h3>
+<p style="margin:0"><b>If you have to explain it, that is a finding.</b> Students hand the tool to a
+real user, say "can you add a lost umbrella", and then <b>say nothing</b>. Not one word. Watching
+someone struggle with something you made, without rescuing them, is genuinely difficult for a
+ten-year-old and that is the point.</p></div>
+<div class="card t"><h3>Who tests it</h3>
+<p class="small" style="margin:0">The people they interviewed on day 1. Not each other &mdash; they
+already know how it works, which makes them useless as testers. Three real users is plenty; you
+will get every major finding from the first two.</p></div>
+<div class="card"><h3>What students record</h3>
+<p class="small" style="margin:0">Only what happened: where the user paused, what they clicked first,
+what they said out loud, what they got wrong. <b>Not opinions, and not what the student thinks the
+user should have done.</b> The observation sheet is deliberately narrow about this.</p></div>
+<div class="card p"><h3>The debrief question that does the work</h3>
+<p class="small" style="margin:0">"You knew exactly how to use it. They did not. <b>What did you know
+that they did not?</b>" That question is the entire discipline of design, and eleven-year-olds get
+it immediately once they have watched someone fail in front of them.</p></div>
+<div class="card g"><h3>Day 4 ends when</h3><p class="small" style="margin:0">Each group has a list of
+things real users got stuck on, written as observations rather than excuses.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 5</div><h2>Pitch, then change one thing</h2>
+<p class="lede">The pitch is not the end. Shipping a change based on evidence is the end.</p>
+<div class="card"><h3>The pitch, four minutes</h3>
+<p class="small" style="margin:0">The problem, in the words of the person who has it &middot; what we
+built &middot; <b>what happened when a real person used it</b> &middot; what we are changing because of
+that &middot; what we are deliberately not changing, and why.</p></div>
+<div class="card t"><h3>The part that separates this from every other pitch</h3>
+<p class="small" style="margin:0"><b>"What we are deliberately not changing."</b> A group that says "a
+user wanted photos but that is a nice-to-have, so no" has understood something most adults in
+meetings have not. Reward it loudly.</p></div>
+<div class="card g"><h3>Then make one change, live</h3>
+<p class="small" style="margin:0">Pick the highest-impact finding and fix it on the board in front of
+them. Five minutes. They watch their evidence become a change in the software, which is the whole
+arc of the unit compressed into one moment.</p></div>
+<div class="card p"><h3>Then actually give it to the school</h3>
+<p class="small" style="margin:0">Save the file, put it on the office computer or the shared drive,
+and tell the class it is in use. <b>A tool that gets used is a different experience from a project
+that gets graded</b>, and they will remember which one this was.</p></div>
+<div class="note"><b>If nothing is good enough to ship, say so honestly</b> and explain what would
+need to be true. Pretending a weak tool is in use teaches them that the praise is automatic, which
+makes all your other praise worthless.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 1</div><h2>Problem hunt: interview sheet</h2>
+<p class="small">Ask about a <b>problem</b>, never about an app. Fill one sheet per person.</p>
+<div class="box"><h3>Who I talked to (their job, not their name)</h3><div class="wl"></div></div>
+<div class="box"><h3>"Tell me about the last time something at school did not work the way it should."</h3>
+<div class="wl tall"></div><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>"What did you do about it?"</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>"How often does that happen?"</h3><div class="wl"></div></div>
+<div class="box"><h3>The exact words they used that stuck with me</h3><div class="wl"></div><div class="wl"></div></div>
+<div class="card r" style="margin-top:4pt"><h3>Check yourself before you finish</h3>
+<p class="small" style="margin:0">Did I suggest a solution? If yes, cross it out. Today is only for
+problems.</p></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 2</div><h2>Problem statement and feature sort</h2>
+<div class="box"><h3>Our problem, in one sentence</h3>
+<p class="small" style="margin-bottom:5pt">[Who] needs a way to [do what], because [why it is hard now].</p>
+<div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="row">
+<div class="box"><h3 style="color:var(--tomato)">MUST have &mdash; only three</h3>
+<div class="wl"></div><div class="wl"></div><div class="wl"></div>
+<p class="small" style="margin:5pt 0 0">Test: if we shipped without this, would it still solve the problem? If yes, it goes in the other column.</p></div>
+<div class="box"><h3 style="color:var(--grey)">Nice to have &mdash; as many as you like</h3>
+<div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div>
+</div>
+<div class="card p"><h3>The hardest part of this page</h3>
+<p class="small" style="margin:0">Moving something you love into the right-hand column. Professionals
+find this hard too. Doing it on purpose is the skill.</p></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 2 to 3</div><h2>Spec card &mdash; hand this to your teacher</h2>
+<p class="small">This is what gets built. Whatever is not on this card does not get built, however
+much you want it. Print one per group and hand it over on day 3.</p>
+<div class="box"><h3>Group</h3><div class="wl"></div></div>
+<div class="box"><h3>Who is this for? (their job, not their name)</h3><div class="wl"></div></div>
+<div class="box"><h3>The problem, one sentence</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box" style="border-color:var(--tomato)"><h3 style="color:var(--tomato)">It must do exactly these three things</h3>
+<p class="small" style="margin-bottom:5pt">Write them as things the user <i>does</i>, not as features.
+"Mark an item claimed", not "a claimed button".</p>
+<div class="wl"></div><div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3>Should it remember things after the page closes?  Yes / No</h3>
+<p class="small" style="margin:0">If yes, say what: <span style="border-bottom:1.5pt solid var(--rule);display:inline-block;width:56%"></span></p></div>
+<div class="card r"><h3>Sign here, both of you</h3>
+<p class="small" style="margin:0">Group: <span style="border-bottom:1.5pt solid var(--rule);display:inline-block;width:32%"></span>
+&nbsp; Teacher: <span style="border-bottom:1.5pt solid var(--rule);display:inline-block;width:32%"></span><br>
+Signing means: we build this, and we do not add to it mid-build.</p></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 3</div><h2>Watch the build</h2>
+<p class="small">While your teacher types, you are not a spectator. Write down what actually happened
+each round &mdash; this is the record of how your idea became real.</p>
+<div class="box"><h3>Round 1 &mdash; what we asked for</h3><div class="wl"></div>
+<h3 style="margin-top:6pt">What we got</h3><div class="wl"></div>
+<h3 style="margin-top:6pt">What was wrong with it</h3><div class="wl"></div></div>
+<div class="box"><h3>Round 2 &mdash; what we said next</h3><div class="wl"></div>
+<h3 style="margin-top:6pt">What changed</h3><div class="wl"></div></div>
+<div class="box"><h3>Round 3 &mdash; what we said next</h3><div class="wl"></div>
+<h3 style="margin-top:6pt">What changed</h3><div class="wl"></div></div>
+<div class="card t"><h3>The question to answer at the end of the day</h3>
+<p class="small" style="margin-bottom:5pt"><b>Which of our sentences was the vaguest, and how did we
+know?</b></p><div class="wl"></div></div>
+<div class="card p"><h3>If it broke</h3>
+<p class="small" style="margin:0">Write down exactly what you saw, in the fewest words that would let
+somebody else picture it.</p></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 4</div><h2>Testing: what I saw</h2>
+<div class="card r" style="margin-bottom:9pt"><h3>Say nothing</h3>
+<p class="small" style="margin:0">Hand it over, give them one task, then be quiet. If you have to
+explain it, write that down &mdash; <b>that is a finding, not a failure of the tester.</b></p></div>
+<div class="box"><h3>The task I gave them</h3><div class="wl"></div></div>
+<div class="box"><h3>What they clicked first</h3><div class="wl"></div></div>
+<div class="box"><h3>Where they paused or looked confused</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>Anything they said out loud</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>Did they finish the task?  Yes / No &mdash; and what got in the way</h3><div class="wl tall"></div></div>
+<div class="card t"><h3>Afterwards, the big question</h3>
+<p class="small" style="margin:0"><b>What did I know that they did not?</b></p><div class="wl"></div></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Student page &middot; Day 5</div><h2>Pitch planner and decision log</h2>
+<div class="box"><h3>1. The problem, in the words of the person who has it</h3><div class="wl tall"></div></div>
+<div class="box"><h3>2. What we built &mdash; the three must-haves</h3><div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3>3. What happened when a real person used it</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="row">
+<div class="box"><h3 style="color:var(--leaf)">4. What we are changing, and why</h3>
+<div class="wl"></div><div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3 style="color:var(--grey)">5. What we are NOT changing, and why</h3>
+<div class="wl"></div><div class="wl"></div><div class="wl"></div></div>
+</div>
+<div class="card p"><h3>Box 5 is the one that impresses people</h3>
+<p class="small" style="margin:0">Deciding not to build something, on purpose, with a reason, is
+harder and more valuable than adding one more feature.</p></div>
+<div class="foot"><span>Student page · Pitch to Prototype</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The example</div><h2>What a finished one looks like</h2>
+<p class="lede">The pack includes a working app called <code>lost-and-found.html</code>. It is the
+example a real class would produce from a real spec &mdash; open it before you teach, so you know
+what the target looks like.</p>
+<div class="card t"><h3>The spec it was built from</h3>
+<p class="small" style="margin-bottom:5pt"><b>Problem:</b> "The office staff need a way to know what
+is in the lost property box, because right now they have to tip the whole thing out every time a
+parent calls."</p>
+<p class="small" style="margin:0"><b>Must-haves:</b> add an item &middot; see the list &middot; mark it
+claimed. That is all three, and the app does exactly those three things.</p></div>
+<div class="card g"><h3>What it does</h3>
+<p class="small" style="margin:0">Add an item with where and when it was found &middot; filter by
+waiting, claimed or everything &middot; mark claimed and undo &middot; flags anything sitting over 30
+days &middot; counts at the top &middot; prints as a clean list for a clipboard &middot; and it
+remembers everything between sessions.</p></div>
+<div class="card r"><h3>What it deliberately does not do</h3>
+<p class="small" style="margin:0"><b>There is nowhere to write a person's name.</b> When an item is
+claimed you mark the item, not the claimer. That was the class rule, and it is the reason this tool
+can sit on the office computer without anyone having a conversation about it.</p></div>
+<div class="note"><b>Use it as a worked example, not a template to hand out.</b> If you give students
+the finished app on day 1 they will build backwards from it. Show it on day 5, after theirs exists,
+and ask what theirs does better.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every teacher prompt, in one place</h2>
+<p class="small">You type these, never a student. Square brackets mean put the group's own words in.</p>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">1 &middot; the build, day 3</div>
+<span class="small">Build a single HTML file that runs in a browser with no login and no internet. It is for [who], to help them [do what]. It must do exactly three things: 1. [must-have] 2. [must-have] 3. [must-have]. Save everything to local storage on this device so it is still there tomorrow, and keep working with empty data if saving is unavailable. Big text and big buttons. Do not ask for anyone's name and do not collect any personal information.</span></div>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">2 &middot; when it does the wrong thing</div>
+<span class="small">When I [what you clicked], it [what happened]. It should [what the spec says]. Fix that and give me the whole file again.</span></div>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">3 &middot; the day-5 change</div>
+<span class="small">We tested this with real users and they got stuck on [what happened]. Change [the one thing] so that [what should happen instead]. Do not change anything else.</span></div>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">4 &middot; make it usable by everyone</div>
+<span class="small">Make sure this works for someone using a keyboard instead of a mouse: everything reachable with Tab and usable with Enter, with a clearly visible outline on the selected item. Do not use color alone to show status. Give every icon-only button a label a screen reader can announce.</span></div>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">5 &middot; make it printable</div>
+<span class="small">Add a print stylesheet so printing gives a clean list with no buttons and no colors &mdash; something that works on a clipboard.</span></div>
+<div class="prompt" style="padding:9pt 12pt"><div class="lbl">6 &middot; when three rounds have not fixed it</div>
+<span class="small">[Start a fresh chat.] Paste prompt 1 again, then add: Also make sure that [the thing that kept going wrong].</span></div>
+<div class="note"><b>Prompt 4 is not optional.</b> If the tool goes into the office, someone with a
+motor or vision difference may have to use it. Asking costs one prompt.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Practical</div><h2>Saving it, and what happens after the unit</h2>
+<div class="card"><h3>Getting it out of the chat</h3>
+<p class="small" style="margin:0">Copy all the code with the copy button &middot; paste into Notepad or
+TextEdit set to plain text, <b>not Word</b> &middot; save as something like <code>lost-and-found.html</code>,
+setting "Save as type" to All Files on Windows &middot; double-click to open. If it opens as a page
+of code, the <code>.html</code> did not save.</p></div>
+<div class="card t"><h3>Where it should live</h3>
+<p class="small" style="margin:0">On the computer of whoever has the problem. The data saves in that
+browser on that machine &mdash; nothing is uploaded, no account exists. Moving the file to a different
+computer gives you a working but empty copy.</p></div>
+<div class="card r"><h3>What would change if it went online</h3>
+<p class="small" style="margin:0">Hosting it would mean the data lives on someone's server and a link
+exists that could reach it. For a list of umbrellas that is not dramatic, but it becomes school
+software rather than a classroom tool, and that is a conversation with your technology team rather
+than a thing to do quietly. <b>Keeping it local is why this unit needs nobody's permission.</b></p></div>
+<div class="card g"><h3>The best outcome</h3>
+<p class="small" style="margin:0">Somebody in the building uses it in March without thinking about it,
+and a student walks past the office and sees their thing being used. That is worth more than any
+grade you could put on this.</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this unit is built</h2>
+<div class="card"><h3>What we are claiming</h3>
+<p class="small" style="margin:0">That the prompts here, used with a current AI chat, produce working
+classroom tools from a class's own specification. The included example app was built this way and
+tested in a real browser before publication &mdash; items added, filters checked, claimed and undone,
+the page reloaded to confirm the data survived, the over-30-days flag verified against real dates,
+and the console checked for errors.</p></div>
+<div class="card r"><h3>What we are not claiming</h3>
+<p class="small" style="margin:0">Not a computer science curriculum and not aligned to any CS
+standards. Not a replacement for your district's systems. Not legal advice about student data &mdash;
+your district's policy, your state's law, FERPA and COPPA are the authorities. And the AI tools
+change, which is why this unit teaches the loop and the discipline rather than one product's menus.</p></div>
+<div class="card t"><h3>An honest limitation</h3>
+<p class="small" style="margin:0">Five days is enough to build something real and not enough to build
+something polished. Groups will finish with tools that work and look homemade. <b>Resist making them
+prettier</b> &mdash; the lesson is that a working ugly thing beats a beautiful idea, and that lesson
+is undermined by a teacher tidying it up overnight.</p></div>
+<div class="card g"><h3>Where the student-facing design ideas come from</h3>
+<p class="small" style="margin:0">The problem-interview arc, the must-have sort and the
+watch-without-explaining testing rule are standard practice in design and product work, adapted here
+for grades 4&ndash;8. The tools named as worth building are drawn from 2026 reporting on what
+teachers already build for themselves with AI.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b> Every prompt run, the example
+app built from the spec printed in this pack and tested in a browser before shipping.</div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card g" style="margin-top:14pt"><h3>Leaving feedback earns you credit</h3>
+<p style="margin-bottom:6pt">TPT gives you credit toward future purchases every time you review
+something you have downloaded. Go to <b>My Purchases</b>, find this unit, and leave a rating and a
+comment.</p>
+<p class="small" style="margin:0">It also tells us what to build next, which is genuinely how these
+decisions get made.</p></div>
+<div class="card t"><h3>If something did not work</h3>
+<p style="margin:0">Message us through TPT before leaving a rating and we will fix it and re-upload
+the same day, and you keep the updated file free. A prompt that stopped behaving is something we
+want to know about.</p></div>
+<div class="note" style="margin-top:14pt"><b>What your class will have done by Friday:</b><br>
+Asked a real person about a real problem. Written a specification precise enough for someone else to
+build from. Watched their own words become software. Handed it to a stranger and watched them
+struggle without rescuing them. Changed it because of evidence rather than opinion. <b>The app was
+never the point.</b></div>
+<div class="card" style="margin-top:14pt"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Bright Scholar &middot; AI-Ready School</p></div>
+<div class="foot"><span>Pitch to Prototype · Vibe Coding for Kids</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>

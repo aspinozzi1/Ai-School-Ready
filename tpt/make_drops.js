@@ -25,8 +25,14 @@ function listingTxt(l) {
     ? `Preview ............ 5-PREVIEW.pdf   <- upload in the LEFT "Preview" box (up to 30 MB)
 Video Preview ...... skip (the right box)`
     : 'Skip both boxes: a bundle shows its component listings\' previews.';
+  /* Every file the buyer downloads gets a line here, not just the PDF:
+     an extraFiles app that stays sitting in the zip is a product that
+     shipped without the thing it promises. */
   const productName = l.product
-    ? `${path.basename(l.product)}   (in this zip)`
+    ? [`${path.basename(l.product)}   (in this zip)`]
+        .concat((l.extraFiles || []).map(f =>
+          `${path.basename(f)}   (in this zip — upload this one too)`))
+        .join('\n')
     : `none — build this in TPT's bundle tool from: ${l.bundleOf.join(' + ')}`;
   const thumbs = l.thumbnails.length
     ? `Main Cover ......... 2-MAIN-COVER.png
