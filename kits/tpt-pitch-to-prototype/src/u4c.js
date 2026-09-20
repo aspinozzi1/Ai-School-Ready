@@ -6,8 +6,8 @@ P('Student page &middot; Day 4','<h2>Testing: what I saw</h2>',`
 explain it, write that down &mdash; <b>that is a finding, not a failure of the tester.</b></p></div>
 <div class="box"><h3>The task I gave them</h3><div class="wl"></div></div>
 <div class="box"><h3>What they clicked first</h3><div class="wl"></div></div>
-<div class="box"><h3>Where they paused or looked confused</h3><div class="wl tall"></div><div class="wl tall"></div></div>
-<div class="box"><h3>Anything they said out loud</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>Where they paused or looked confused</h3><div class="wl tall"></div></div>
+<div class="box"><h3>Anything they said out loud</h3><div class="wl tall"></div></div>
 <div class="box"><h3>Did they finish the task?  Yes / No &mdash; and what got in the way</h3><div class="wl tall"></div></div>
 <div class="card t"><h3>Afterwards, the big question</h3>
 <p class="small" style="margin:0"><b>What did I know that they did not?</b></p><div class="wl"></div></div>`, true);

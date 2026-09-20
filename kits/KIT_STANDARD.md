@@ -194,6 +194,16 @@ inspected before presenting — no exceptions.
 to fit its box, so an overlong title, kicker, or card line prints straight through
 whatever sits beneath it, and the eye misses it at thumbnail size. Run
 `python3 kits/tooling/check_overlap.py kits/kitXX/KitXX_PresentationDeck.pptx`
+
+`python3 kits/tooling/check_footer.py kits/kitXX/*.pdf`
+
+Catches page content that runs past the sheet's bottom padding. This is
+its own gate because `check_overlap.py` cannot see the failure: `.sheet`
+is a fixed 11in box with `overflow:hidden` and `.foot` is positioned on
+top of it, so an overfull page does not reflow or error — the excess is
+clipped at the paper edge and the footer paints over whatever is left.
+The thing crossing the footer is usually a card border or a write-on
+rule, which is a drawing, not a text block.
 after every deck build; it must come back clean. The chip-zone rule is now enforced
 in code (title/kicker clamp to w:8.7 whenever the slide carries a Rivera chip), so
 new collisions mean a hand-placed text box, not a helper.

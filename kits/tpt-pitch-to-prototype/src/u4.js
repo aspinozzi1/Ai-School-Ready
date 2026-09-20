@@ -50,7 +50,7 @@ P('Student page &middot; Day 1','<h2>Problem hunt: interview sheet</h2>',`
 <div class="box"><h3>Who I talked to (their job, not their name)</h3><div class="wl"></div></div>
 <div class="box"><h3>"Tell me about the last time something at school did not work the way it should."</h3>
 <div class="wl tall"></div><div class="wl tall"></div><div class="wl tall"></div></div>
-<div class="box"><h3>"What did you do about it?"</h3><div class="wl tall"></div><div class="wl tall"></div></div>
+<div class="box"><h3>"What did you do about it?"</h3><div class="wl tall"></div></div>
 <div class="box"><h3>"How often does that happen?"</h3><div class="wl"></div></div>
 <div class="box"><h3>The exact words they used that stuck with me</h3><div class="wl"></div><div class="wl"></div></div>
 <div class="card r" style="margin-top:4pt"><h3>Check yourself before you finish</h3>
