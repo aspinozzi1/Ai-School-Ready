@@ -65,12 +65,27 @@ static page.
 | # | Build | What it does | Data tier |
 |---|---|---|---|
 | 1 | **Self-checking practice activity** *(shipped 09-13)* | Students click, it marks and explains | 1 |
-| 2 | **Classroom dashboard that remembers** | Name picker, timer, group maker, points — saving between sessions | 1–2 |
-| 3 | **Seating chart builder** | Drag names into seats, save the layout, print it | 2 |
-| 4 | **Hall pass and sign-out log** | Who left, when, back when — with a printable day log | 2 |
-| 5 | **Behavior points tracker** | Per-student tallies, weekly view, de-identified export | 2 |
+| 2 | **Classroom dashboard that remembers** *(shipped 09-16)* | Name picker, timer, group maker, points — saving between sessions | 1–2 |
+| 3 | **Seating chart builder** *(deferred — see note)* | Drag names into seats, save the layout, print it | 2 |
+| 4 | **Hall pass and sign-out log** *(under review — see note)* | Who left, when, back when — with a printable day log | 2 |
+| 5 | **Behavior points tracker** *(shipped 09-20, as build 3 — see note)* | A daily point card that keeps a dated record, not a running total: day roll-up, week view, printable card, de-identified export | 2 |
 | 6 | **Reading log / fluency tracker** | Minutes, levels, progress over a term | 2 |
 | 7 | **Parent-facing class page** | Agenda, links, due dates — the teacher edits, nobody logs in | 1 |
+
+**Note on the 09-20 reorder (Sunday brief, `2026-09-20-sun-brief.md`):** row 5
+shipped ahead of rows 3–4 for two reasons, sent to the owner on the prior
+Friday and not overruled. **Row 4, the hall pass log, should probably not
+ship at all** — digital hall passes became a 2026 student-surveillance
+story (Philadelphia district-wide for 2026-27, NYC systems timing bathroom
+trips), and a log of which named child left the room and for how long is
+tier 3 under our own rule; teaching a teacher to build one contradicts the
+posture of every other product in this catalog. If the owner wants it built
+anyway, it needs its own privacy framing first, not a straight port of the
+dashboard pattern. **Row 3, the seating chart, faces seven free generators
+already on the open web**, several AI-powered — buildable, but it needs an
+answer to "why not use the free one" baked into the pack, which is a
+harder product than row 5 was. Both are open, not cancelled; the next
+Lane A session should get an owner call on row 4 before building it.
 
 **Every product ships the working application**, not only instructions. A
 teacher who gets stuck still owns the tool.

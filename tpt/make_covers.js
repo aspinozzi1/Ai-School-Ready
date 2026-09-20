@@ -287,6 +287,11 @@ const PRODUCTS = [
     title: 'The Complete', accent: 'IEP Binder',
     lede: 'IEP at a Glance, IEP Goal Tracking, ABC Data Sheets, and the IEP Organization Binder \u2014 every tab in the binder, filled.',
     chips: ['4 products', 'Save 25%', 'Data + shell', '$24'] },
+  { file: 'vibe-behavior-tracker', badge: 'Vibe Coding',
+    kicker: 'Vibe coding for teachers \u00b7 build 3',
+    title: 'Build a Behavior', accent: 'Tracker That Keeps the History',
+    lede: 'A daily point card that scores three to five expectations and remembers every day it has ever seen \u2014 a trend, not a tally that resets.',
+    chips: ['25 pages', 'Working app included', '11 prompts', '$22'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

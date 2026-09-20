@@ -2114,6 +2114,61 @@
       "previewUnit": "21 pages + 1 working app",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "vibe-behavior-tracker",
+      "order": 55,
+      "name": "Vibe Coding Behavior Tracker",
+      "product": "UPLOAD/02-paid/Vibe-Coding-Behavior-Tracker.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/behavior-tracker.html"
+      ],
+      "cover": "tpt/covers/vibe-behavior-tracker-cover.png",
+      "thumbnails": [
+        "tpt/extras/vcb-whats-inside.png",
+        "tpt/extras/vcb-real-pages.png"
+      ],
+      "title": "Vibe Coding for Teachers | Build a Behavior Tracker That Keeps the History",
+      "description": "Vibe coding for teachers, build three: a behavior point tracker that KEEPS THE HISTORY. Score three to five expectations across the day for one student, on time blocks that fit a check-in, check-out routine - and every day you have ever scored is still there next week, not overwritten by a running total.\n\nA TALLY TELLS YOU TODAY. A RECORD TELLS YOU THE TRUTH. Build two in this series taught the app to remember a number. This one teaches it to remember a list of dated entries instead, so a week's trend actually means something. That one idea is the hardest lesson in the whole series, and it carries into anything you build next that needs a history.\n\nTEN TASKS, EACH ONE FINISHED BEFORE THE NEXT. Build the roster by student number, name the expectations, build the day grid, make it remember a shape instead of a number, the day roll-up, the week view, the weekly export habit, the printable day card, the de-identified summary, and accessibility plus a shared-computer check. Stop wherever you like - a tracker with five tasks done is already a working daily point card.\n\nELEVEN PROMPTS WRITTEN OUT IN FULL, including the sentences that matter and are easy to miss: an unscored cell must never count as a zero, keep every entry with its own date, and never let a full name field into the roster.\n\nTHE FINISHED APP IS INCLUDED. Tested in a real browser before publication - a day scored, the tab closed and reopened to confirm every entry survived, the roll-up checked against a changing denominator, and the de-identified summary checked for real student numbers.\n\nA STRICTER DATA RULE FOR A STRICTER RECORD. A dated behavior record about a named student is more sensitive than a class list, so this build defaults to student numbers, never a full name field, and the pack explains exactly where local, private and safe stops being true.\n\nWHAT THIS IS NOT: not a behavior intervention, not a replacement for your school's official behavior or IEP data system, and not legal advice about student data - your district's policy, your state's law, FERPA and COPPA are the authorities.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nBuilt and audited by two certified teachers.",
+      "price": 22,
+      "licenses": 11,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Professional Development"
+      ],
+      "tags": [
+        "vibe coding",
+        "behavior tracker",
+        "student behavior tracker",
+        "classroom management",
+        "teacher tools",
+        "ai tools"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Teachers",
+      "previewShots": [
+        "vcb_p03.png",
+        "vcb_p09.png",
+        "vcb_p17.png"
+      ],
+      "previewInside": [
+        "<b>Ten tasks</b> - each finished before the next begins",
+        "<b>Eleven prompts</b>, written out in full",
+        "<b>The finished app included</b>, tested in a browser",
+        "A record, not a tally - every dated entry kept, never overwritten",
+        "A weekly export habit and a one-page printable day card",
+        "A stricter three-tier data rule, built for a behavior record"
+      ],
+      "previewUnit": "25 pages + 1 working app",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }

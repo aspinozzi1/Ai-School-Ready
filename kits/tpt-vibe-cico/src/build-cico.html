@@ -1,0 +1,628 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Vibe Coding for Teachers - Build a Behavior Tracker That Keeps the History</title><style>
+@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:27pt;line-height:1.08;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+.code{font-family:'DejaVu Sans Mono',monospace;font-size:8.2pt;background:#F4F1E8;
+  border:1.5pt solid var(--rule);border-radius:9pt;padding:9pt 11pt;margin-bottom:8pt;
+  white-space:pre-wrap;line-height:1.35}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.task{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.task .n{flex:none;width:27pt;height:27pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:13pt;display:flex;
+  align-items:center;justify-content:center}
+.tier{display:flex;gap:8pt;margin-bottom:9pt}
+.tier .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--ink);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:13pt;display:flex;
+  align-items:center;justify-content:center}
+.tier.ok .n{background:var(--leaf)}.tier.mid .n{background:var(--sunny);color:var(--ink)}
+.tier.stop .n{background:var(--tomato)}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:26pt">
+<div class="kick">Vibe Coding for Teachers &middot; Build 3 of the series</div>
+<h1>Build a Behavior Tracker<br>That Keeps the History</h1>
+<p class="lede">A daily point card for one student that scores three to five expectations across the
+day, remembers every day it has ever seen, and turns six weeks of taps into a trend you can actually
+read &mdash; not a total that resets and tells you nothing.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">10</h3><p class="small" style="margin:0">tasks, each one finished before the next</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">11</h3><p class="small" style="margin:0">prompts, written out in full</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">finished app, included</p></div>
+</div>
+<div class="note"><b>Build 2 taught the app to remember a value. This one teaches it to remember a
+record.</b><br>
+That is a genuinely different, harder idea, and it is the one that separates somebody who can
+vibe-code a toy from somebody who can vibe-code a tool.</div>
+<div class="card r"><h3>Where your data actually lives</h3>
+<p class="small" style="margin:0">On your device, in your browser, and nowhere else. Nothing is
+uploaded, synced, or readable by anyone else. Page 5 sets out exactly what that means for a dated
+record about a named student &mdash; a stricter question than a class list, answered plainly.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The finished thing, first</div><h2>What you will have at the end</h2>
+<p class="lede">A tool built around the point card most schools already use for a Tier 2 check-in,
+check-out routine &mdash; morning check-in, scored through the day, checkout, a copy home. This build
+does the recording and the summarizing. It does not decide the intervention; the team does that.</p>
+<table>
+<tr><th style="width:27%">Tab</th><th>What it does</th></tr>
+<tr><td><b>Roster</b></td><td>Students by number or initials. No full-name field anywhere in this build.</td></tr>
+<tr><td><b>Expectations</b></td><td>Three to five, in your own words. Edit them any time.</td></tr>
+<tr><td><b>Score today</b></td><td>Time blocks down, expectations across. Tap a cell to cycle the score.</td></tr>
+<tr><td><b>Week view</b></td><td>Five days per student, against the goal you set &mdash; a trend at a glance.</td></tr>
+<tr><td><b>Print a card</b></td><td>One student, one page, ready for a backpack.</td></tr>
+<tr><td><b>Data &amp; export</b></td><td>A weekly backup file, and a de-identified copy for asking AI to help spot a pattern.</td></tr>
+</table>
+<div class="card t"><h3>The real-world shape this fits</h3>
+<p class="small" style="margin:0">Check-in, check-out (CICO) is, by the research literature, the most
+frequently used Tier 2 behavior support in US schools: a student checks in with an adult, is scored on
+a small set of expectations through the day, checks out, and a copy goes home &mdash; typically run for
+six to eight weeks and reviewed on the data it produces. This pack does not teach CICO as an
+intervention. It builds the card that any team using a structure like it would actually need.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Why this build matters</div><h2>A tally tells you today. A record tells you the truth.</h2>
+<p class="lede">Build 2's points tab keeps a running total per student and nothing else &mdash; no
+dates, no history, no way to answer "is this better than three weeks ago." That is a tally. This
+build is the step up from it.</p>
+<div class="row">
+<div class="card r"><h3>A tally</h3><p class="small" style="margin:0">One number per student that goes
+up. Ask it "how was Tuesday?" and it has no answer &mdash; Tuesday was overwritten the moment Wednesday
+happened.</p></div>
+<div class="card g"><h3>A record</h3><p class="small" style="margin:0">A list of dated entries: this
+student, this day, this time block, this expectation, this score. The day total, the week trend, and
+everything else in this pack are <i>computed from that list</i> &mdash; they are never the thing being
+saved.</p></div>
+</div>
+<div class="note"><b>Say this sentence to yourself before you open the chat.</b><br>
+"I am not asking it to remember a number. I am asking it to remember a list of dated entries, and
+compute the numbers from the list." That one sentence is the entire architectural idea in this pack,
+and once you have built it here you can put it in anything: attendance, reading minutes, incident logs.</div>
+<div class="card"><h3>Why a tally is the trap, not a shortcut</h3>
+<p class="small" style="margin:0">Left to its own judgment, an AI chat will very often build the tally
+&mdash; it is simpler and it looks finished sooner. It works fine for a week. Then a colleague asks
+"is this better than last month" and there is no way to answer, because last month was never kept.
+By the time a teacher notices, they own three weeks of data that cannot answer the one question the
+whole tool exists for.</p></div>
+<div class="card p"><h3>What this costs you</h3>
+<p class="small" style="margin:0">One extra idea to hold in your head at task 4, and slightly more
+code than a tally would need. That is the entire price for data that can actually answer a question
+about the past. Task 4 walks it through slowly, once, and you will not need to think about it again
+after that.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you start</div><h2>What you need</h2>
+<div class="card g"><h3>1. An AI chat</h3><p class="small" style="margin:0">Written with <b>Claude</b>
+on screen. <b>ChatGPT and Gemini both work</b> &mdash; the prompts are plain English. Where a step
+depends on the tool, it says so.</p></div>
+<div class="card"><h3>2. A plain text editor</h3><p class="small" style="margin:0">Notepad, or TextEdit
+set to plain text. Not Word.</p></div>
+<div class="card t"><h3>3. A browser, and the same one each time</h3>
+<p class="small" style="margin:0">Your saved records belong to the browser you used. Build it in
+Chrome and it lives in Chrome. Open the same file in Edge later and it will look empty &mdash; nothing
+is lost, you are looking in a different notebook. Page 19 covers this exact failure and what to say
+when it happens.</p></div>
+<div class="card r"><h3>What you do not need</h3><p class="small" style="margin:0">A server, a host,
+a domain, an account, a subscription, a login for students, or anyone's permission for the version
+built here.</p></div>
+<div class="note"><b>Time:</b> 45&ndash;60 minutes the first time, in pieces if that suits you better
+&mdash; the tasks are built to stop cleanly. Under 20 minutes once you have done it here before, because
+you already know the one hard idea.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Read this before you type a single score</div><h2>The three tiers, made stricter for a behavior record</h2>
+<p>The tier is decided by <b>where the data lives and who can reach it</b>, not by whether a name
+appears &mdash; the same rule as every pack in this series. For this build the answer is stricter,
+because <b>a dated behavior record about an identified child is more sensitive than a class roster.</b></p>
+<div class="tier ok"><div class="n">1</div><div><h3>The card design</h3>
+<p class="small" style="margin:0">The expectations, the goal percentage, the blank printable layout.
+All teacher-authored, no student in it. <b>Build freely.</b></p></div></div>
+<div class="tier mid"><div class="n">2</div><div><h3>Daily scores, by student number, on this device</h3>
+<p class="small" style="margin:0">The app's home. Kept in this browser, on this device, transmitted
+nowhere. The app defaults to student numbers rather than initials, and that default is the right
+choice, not a setting to change.</p></div></div>
+<div class="tier stop"><div class="n">3</div><div><h3>The moment those records leave the device</h3>
+<p class="small" style="margin:0">Synced, emailed, dropped in a shared drive, pasted into a chatbot,
+or opened on a computer somebody else signs into. <b>Stop and treat it as a conversation with your
+district</b>, not a setting you flip.</p></div></div>
+<div class="card t"><h3>One more line, specific to this build</h3>
+<p class="small" style="margin:0">This tracker is <b>your own working record, not the school's record
+of behavior.</b> If your district keeps an official behavior or IEP data system, that system is the
+record of record. This tool is the fast, private, day-to-day version that feeds your own thinking
+between the meetings where the official record gets updated.</p></div>
+<div class="note"><b>So the rule is not "never track behavior on a computer."</b> It is: <b>records may
+live locally, by student number, on your own device; they may not be published, synced, or pasted
+into a chatbot.</b> The export tab exists so the safe route &mdash; a private backup file on your own
+drive &mdash; is also the easy one.</div>
+<p class="small"><b>Practical guidance, not legal advice.</b> FERPA, COPPA, your state law and your
+district's policy are the authorities. If you are unsure, use a student number instead of initials
+&mdash; the tracker works exactly the same either way.</p>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The method</div><h2>Ten tasks, and how each one ends</h2>
+<p class="lede">Every task below finishes with something you can see working. If it does not work,
+you do not move on &mdash; you say what went wrong and ask again. That is the whole discipline.</p>
+<div class="task"><div class="n">1</div><div><h3>The shell and the roster</h3><p class="small" style="margin:0">Student numbers or initials &mdash; never names. A class that lists but does not survive yet.</p></div></div>
+<div class="task"><div class="n">2</div><div><h3>Name the expectations</h3><p class="small" style="margin:0">Three to five, in your own words. Editable later.</p></div></div>
+<div class="task"><div class="n">3</div><div><h3>The day grid</h3><p class="small" style="margin:0">Time blocks down, expectations across. A day scored in under a minute.</p></div></div>
+<div class="task"><div class="n">4</div><div><h3>Make it remember</h3><p class="small" style="margin:0"><b>The one that matters.</b> A shape, not a number. Close the tab, reopen, today's scores are still there.</p></div></div>
+<div class="task"><div class="n">5</div><div><h3>The day roll-up</h3><p class="small" style="margin:0">Points earned over points possible &mdash; against a goal you set.</p></div></div>
+<div class="task"><div class="n">6</div><div><h3>The week view</h3><p class="small" style="margin:0">Five days side by side. A trend you can see without doing arithmetic.</p></div></div>
+<div class="task"><div class="n">7</div><div><h3>Export and the backup habit</h3><p class="small" style="margin:0">A file on your own drive, and a reason you will actually do it weekly.</p></div></div>
+<div class="task"><div class="n">8</div><div><h3>The printable day card</h3><p class="small" style="margin:0">One page, one child, ready for a backpack.</p></div></div>
+<div class="task"><div class="n">9</div><div><h3>The de-identified summary</h3><p class="small" style="margin:0">Every identifier replaced, ready to paste into AI.</p></div></div>
+<div class="task"><div class="n">10</div><div><h3>Colors, accessibility, and the shared-computer check</h3><p class="small" style="margin:0">A tool that works on the classroom machine, for the person who owns it.</p></div></div>
+<div class="note"><b>Stop wherever you like.</b> A tracker with tasks 1 through 5 done is already a
+working daily point card. Say so, so you start.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 1</div><h2>The shell and the roster</h2>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the shell and the roster</div>
+Build me a behavior point tracker as one single HTML file I can save and open in a browser.<br><br>
+It has six tabs across the top: Roster, Expectations, Score today, Week view, Print a card, and Data
+and export. Clicking a tab shows that panel and hides the others.<br><br>
+In the Roster tab: a text box and an Add button for adding one student at a time, shown afterward as
+a list with a small remove button on each. The box is labeled "Student number or initials" &mdash;
+never a full name field.<br><br>
+Requirements:<br>
+&bull; Everything in ONE file &mdash; styling and code included. No internet, no login, no account.<br>
+&bull; Big text and big buttons; a teacher will use this at a desk, not across a room.<br>
+&bull; Leave the other five panels empty for now with just their names in them.<br>
+&bull; Nothing is sent anywhere and nothing asks for a password.
+</div>
+<div class="card r"><h3>That "never a full name field" line is not a style choice</h3>
+<p class="small" style="margin:0">A dated behavior record is more sensitive than a class list, and
+this pack's whole privacy posture depends on the roster never holding one. Say it in the prompt so the
+model does not default to "Student name" out of habit.</p></div>
+<div class="card g"><h3>Task 1 is done when</h3><p class="small" style="margin:0">You can click all
+six tabs and watch the panel change, and you can add a student to the roster and see them appear in a
+list. Nothing needs to save yet &mdash; that is task 4.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2</div><h2>Name the expectations</h2>
+<p class="lede">Every point card is scored against a short, specific list &mdash; the same three to
+five things, every block, every day. Naming them well is most of the design work.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; the expectations</div>
+In the Expectations tab: a text box and an Add button for adding one expectation at a time, shown as a
+list with a remove button on each. Allow no fewer than one and no more than five. Also add a number box
+for "daily goal" as a percentage, defaulting to 80.
+</div>
+<div class="card t"><h3>Write these in your own words, not a behaviorist's</h3>
+<p class="small" style="margin:0">"Followed directions the first time," "kept hands and feet to
+self," "used a calm voice" &mdash; short, positive, specific enough that you and a substitute would
+score the same moment the same way. Vague expectations ("behaved well") make every score a guess.</p></div>
+<div class="card"><h3>Why cap it at five</h3><p class="small" style="margin:0">More than five
+expectations turns a thirty-second check-in into a form, and the tool stops getting used by week two
+&mdash; the same failure mode as scoring too many blocks, covered on page 19. Five is already generous;
+most real point cards use three or four.</p></div>
+<div class="card g"><h3>Task 2 is done when</h3><p class="small" style="margin:0">You can add, see, and
+remove expectations, a sixth is refused with a message rather than silently accepted, and the goal box
+holds a percentage.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 3</div><h2>The day grid</h2>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; the scoring grid</div>
+In the Score today tab: a dropdown to choose which student you are scoring, and below it a grid with
+time blocks as rows and the expectations as columns. Use three time blocks: Morning, Midday, Afternoon.
+Each cell is a button. Clicking a cell cycles it through no score, 2, 1, 0, and back to no score, and
+shows the current value.
+</div>
+<div class="card t"><h3>Why a tap-to-cycle button beats a dropdown per cell</h3>
+<p class="small" style="margin:0">A teacher scoring a real student mid-lesson has three to five
+seconds, not thirty. One tap per cell, repeated until the number they want shows, is the fastest input
+shape there is for a small fixed set of values. A dropdown or a typed number is slower for exactly the
+same result.</p></div>
+<div class="card"><h3>What 2, 1 and 0 mean</h3><p class="small" style="margin:0">This follows the scale
+most point cards already use: <b>2</b> met the expectation, <b>1</b> needed a reminder, <b>0</b> did
+not meet it this block. You are not required to use this scale &mdash; say so in the prompt if your
+school's card uses something else, like a smiley scale or a 1&ndash;5 range.</p></div>
+<div class="card g"><h3>Task 3 is done when</h3><p class="small" style="margin:0">With one student
+selected, you can tap through a full grid of blocks and expectations and watch each cell's number
+change. Nothing needs to survive a reload yet.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4 &mdash; the important one</div><h2>Make it remember &mdash; a shape, not a number</h2>
+<p class="lede">Everything else in this build is ordinary. This is the step that makes it software,
+and it is harder than build 2's version of the same idea.</p>
+<div class="prompt"><div class="lbl">Prompt 4 &middot; saving a record, not a total</div>
+Now make this tracker remember its data between sessions, using the browser's local storage on my own
+device. Nothing should be sent to a server and there should be no account.<br><br>
+Save the roster, the expectations, the goal, and <b>every scored cell as its own dated entry</b>: which
+student, which date, which time block, which expectation, and what score. Do not collapse these into a
+running total &mdash; keep every entry, tagged with its own date, so a day two weeks ago can still be
+looked up on its own.<br><br>
+Important:<br>
+&bull; Save whenever anything changes, automatically. I should never press a Save button.<br>
+&bull; Load whatever was saved when the page opens.<br>
+&bull; If saving or loading fails for any reason, the app must still work with empty data rather than
+showing an error or a blank screen.<br>
+&bull; Only a scored cell should count in any later total &mdash; an unscored cell must not count as a
+zero.
+</div>
+<div class="card t"><h3>Read that fourth bullet again</h3>
+<p class="small" style="margin:0">It is the same idea as build 2's failure-case instruction, and it
+matters even more here: a managed school device can restrict local storage, and a private window
+blocks it outright. Without this line the app can crash on open. With it, the worst case is a blank
+day &mdash; annoying, not broken, and nothing already saved is lost.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4, continued</div><h2>The test that proves it kept the shape</h2>
+<div class="card g"><h3>Do this exactly</h3>
+<p class="small" style="margin-bottom:5pt">1. Score two or three cells for one student today.<br>
+2. <b>Close the tab completely.</b> Not refresh &mdash; close it.<br>
+3. Open the file again and select the same student.</p>
+<p class="small" style="margin:0"><b>Today's scores should still be there, exactly as you left them.</b>
+If they are, you have built an application that remembers a record. If they are not, task 4 is not
+finished and nothing in tasks 5 through 9 will produce a trustworthy number.</p></div>
+<div class="prompt"><div class="lbl">If the test fails</div>
+I closed the tab and reopened the file, and my scores were gone. Every scored cell should have been
+saved as its own dated entry to local storage on this device and loaded again when the page opens. Fix
+that and give me the whole file back.
+</div>
+<div class="prompt"><div class="lbl">A second test worth running, once the first one passes</div>
+Score one student for today, then change your computer's clock forward one day and score them again.
+Go back to today's date in the app if it lets you, or just check tomorrow. Confirm both days show up
+separately in whatever you build in task 6 &mdash; if only the most recent day appears, it is still
+keeping a total, not a record, and that is worth catching now rather than in week three.
+</div>
+<div class="note"><b>Do not move past this page until the first test passes.</b> Every later task reads
+from the same saved list. Debugging the week view while also debugging whether entries persist at all
+is much harder than confirming persistence on its own, once, here.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 5</div><h2>The day roll-up</h2>
+<p class="lede">One number per student per day, computed from the list task 4 just built &mdash; never
+saved on its own.</p>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; earned over possible</div>
+Add a day summary under the grid in the Score today tab. Count only the cells that have been scored
+today for the selected student: add up the scores for "points earned," and multiply the number of
+scored cells by 2 for "points possible." Show earned, possible, and the percentage, next to the daily
+goal.
+</div>
+<div class="card t"><h3>Why "possible" is not just "blocks times expectations"</h3>
+<p class="small" style="margin:0">A day where only nine of fifteen cells got scored &mdash; a fire
+drill ate the afternoon, say &mdash; is not the same shape as a full day, and comparing its raw
+percentage to a full day's is comparing two different things. Counting possible points only from cells
+that were actually scored keeps the fraction honest on a short day. This is the failure mode on page
+19 that this exact design choice prevents.</p></div>
+<div class="card g"><h3>Task 5 is done when</h3><p class="small" style="margin:0">Scoring three cells
+at level 2 for a student with nothing else scored shows "6 of 6" and 100%, not "6 of 30."</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 6</div><h2>The week view</h2>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; five days, one table</div>
+In the Week view tab: a table with one row per student and one column per weekday, Monday through
+Friday, for the current week. Each cell shows that day's percentage from the roll-up in task 5, or a
+dash if that day was not scored. Color a cell green if it meets the daily goal and a different color
+if it does not. Add a week average column.
+</div>
+<div class="card t"><h3>What "the current week" should mean</h3>
+<p class="small" style="margin:0">Ask for Monday through Friday of the week containing today. On a
+weekend, that naturally shows last week's finished data rather than an empty week that has not started
+&mdash; useful on a Sunday night, and worth asking for by name if the first version does not do it.</p></div>
+<div class="card g"><h3>Task 6 is done when</h3><p class="small" style="margin:0">You can look at the
+table and answer "is this student better than three weeks ago" without opening a single day &mdash;
+the exact question a tally could never answer, now sitting in one row.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 7</div><h2>Export, and the habit that protects six weeks of work</h2>
+<p class="lede">Everything this pack has built lives in one browser on one device. That is also its
+only real weakness, and this task is the fix.</p>
+<div class="prompt"><div class="lbl">Prompt 7 &middot; export and a weekly reminder</div>
+In the Data and export tab: a button that downloads everything &mdash; the roster, expectations, goal,
+and every dated entry &mdash; as a single file to my computer. Also: remember the date of the last
+export, and show a visible message anywhere in the app if it has been seven days or more since the
+last one, or if none has ever been done.
+</div>
+<div class="card r"><h3>Why this task is not optional</h3>
+<p class="small" style="margin:0">A CICO card typically runs six to eight weeks. Clearing browser
+data, a laptop replacement, or a school re-image wipes local storage completely and without warning
+&mdash; and the whole value of this tool is the trend line across those weeks. <b>Pick a day &mdash; the
+brief suggests Friday afternoon &mdash; and export every single week.</b> It takes ten seconds and the
+app now tells you when you are overdue.</p></div>
+<div class="card g"><h3>Task 7 is done when</h3><p class="small" style="margin:0">Clicking export
+downloads a file you can find in your downloads folder, and the reminder message appears the first
+time you open the app before ever exporting.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 8</div><h2>The printable day card</h2>
+<div class="prompt"><div class="lbl">Prompt 8 &middot; one page, one child</div>
+In the Print a card tab: a dropdown to choose a student and a button that opens the print dialog with
+a single clean page showing that student's name or number, today's date, the scoring grid with today's
+numbers, the day total, and two blank signature lines: one for the adult, one for "sent home." Hide
+everything else on the page &mdash; tabs, buttons, colors &mdash; so only that content prints.
+</div>
+<div class="card t"><h3>Why this needs its own task instead of "just print the screen"</h3>
+<p class="small" style="margin:0">A page built for a screen prints badly by default: tabs repeat, colors
+waste ink, and buttons appear as dead shapes. A dedicated print view, built and tested separately, is
+the difference between a page that looks fine on the laptop and a card that actually works stapled
+inside a take-home folder.</p></div>
+<div class="card g"><h3>Task 8 is done when</h3><p class="small" style="margin:0">Print preview shows
+one page: the grid, the total, and the two signature lines &mdash; nothing else, no colors bleeding the
+printer's ink for no reason.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 9</div><h2>The de-identified summary</h2>
+<div class="prompt"><div class="lbl">Prompt 9 &middot; a copy safe to paste anywhere</div>
+In the Data and export tab, below the export button: a button that builds a text summary of this
+week, relabeling every student S1, S2, S3 and so on instead of their real number or initials, showing
+each day's percentage and a week average, shown in a text box with a Copy button. Add a note saying
+this version is the one to paste into an AI chat, and the version with real student numbers stays on
+this device.
+</div>
+<div class="note"><b>This is the task that makes the rest of the pack responsible.</b><br>
+Without it, the first time a teacher wants AI help spotting a pattern across a caseload, the real
+roster is one paste away from a chat window. With it, the safe option is one click and sits right next
+to the thing they were about to do. <b>Design the safe path to be the easy path</b> &mdash; the same
+principle build 2 taught, applied to a record instead of a total.</div>
+<div class="card g"><h3>Task 9 is done when</h3><p class="small" style="margin:0">The summary shows
+S1, S2, S3 with real percentages, and you have checked by eye that no student number or initials
+appears anywhere in the text box.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 10</div><h2>Colors, accessibility, and the shared-computer check</h2>
+<div class="prompt"><div class="lbl">Prompt 10 &middot; make it yours, and make it safe on a shared machine</div>
+Restyle the tracker with [your colors]. Then make sure everything works for someone using a keyboard
+instead of a mouse: every tab, button and dropdown reachable with Tab, usable with Enter, with a
+clearly visible outline on whatever is selected. Do not rely on color alone to show a score &mdash;
+keep a number or a symbol on every cell as well as its color.
+</div>
+<div class="card r"><h3>The check this task adds that build 2 did not need</h3>
+<p class="small" style="margin:0"><b>Browser storage is per browser profile, not per person.</b> A
+substitute, a co-teacher, or a student using the same login on the same classroom machine can open
+this tracker and see it. Before you rely on it: confirm the computer you use it on is signed into a
+profile only you use, the same way you already treat a locked filing cabinet. This is the single
+biggest hazard specific to this build, and it does not apply to a name picker or a class list.</p></div>
+<div class="card t"><h3>How to check the keyboard part actually worked</h3>
+<p class="small" style="margin:0">Put the mouse down. Press Tab repeatedly &mdash; a clear outline
+should move between tabs, the dropdown, and every grid cell. Press Enter on a cell &mdash; it should
+cycle its score. If either fails, say exactly that and ask again.</p></div>
+<div class="card g"><h3>Task 10 is done when</h3><p class="small" style="margin:0">You can score a full
+day using only the keyboard, and you have said out loud which computer this will live on and confirmed
+it is not a shared login.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Saving and using it</div><h2>Out of the chat, into your room</h2>
+<div class="card"><h3>1. Copy all of the code</h3><p class="small" style="margin:0">Use the copy button
+on the code block. Selecting by hand usually misses the last line.</p></div>
+<div class="card t"><h3>2. Paste into a plain text editor</h3><p class="small" style="margin:0">
+Notepad, or TextEdit set to plain text. <b>Not Word</b> &mdash; it adds invisible formatting that stops
+the file working.</p></div>
+<div class="card g"><h3>3. Save as <code>behavior-tracker.html</code></h3><p class="small" style="margin:0">
+On Windows set "Save as type" to All Files so it does not quietly become a .txt.</p></div>
+<div class="card r"><h3>4. Put it somewhere you will find it, then leave it there</h3>
+<p class="small" style="margin:0">Your saved records are tied to this file in this browser, on this
+device. Pick its home now and do not move it between machines expecting the history to follow &mdash;
+that is exactly what the weekly export from task 7 is for.</p></div>
+<div class="note"><b>Make a bookmark.</b> Open the file, then bookmark it like any web page. Now
+checking in is one click every morning, the same as any other tool on your bar.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div><h2>The six things that actually go wrong</h2>
+<div class="card r"><h3>1. A different browser shows an empty tracker</h3><p class="small" style="margin:0">
+Almost always a different browser, a private window, or a browser set to clear site data on exit.
+Check you are opening the exact same file the exact same way as before. <b>Nothing is lost</b> &mdash;
+you are looking in a different notebook. This is why the weekly export in task 7 exists.</p></div>
+<div class="card"><h3>2. It saves, but not on the school laptop</h3><p class="small" style="margin:0">
+Some managed devices restrict local storage by policy. If the app still works but forgets, that is the
+cause, and it is exactly why task 4's prompt asked for it to keep working with empty data rather than
+crash. Ask your tech team; it is usually a setting they can adjust.</p></div>
+<div class="card t"><h3>3. Scoring every block for every child gets abandoned by week two</h3>
+<p class="small" style="margin:0">This tool is built for one child's card at a time, three to five
+expectations, a few taps &mdash; not a whole class scored every hour. If it feels slow, you are likely
+using it for more students or more blocks than a point card is meant to hold. Say: <i>"Scoring takes
+too long. Cut it down to what one adult can realistically do in the moment."</i></p></div>
+<div class="card g"><h3>4. A day with fewer blocks scored looks unfairly low</h3><p class="small" style="margin:0">
+This is the changing-denominator problem task 5 was built to prevent. If a percentage looks wrong on a
+short day, check that "points possible" is counting only scored cells, not every cell on the grid. Say:
+<i>"An unscored cell must not count as a zero in the daily percentage."</i></p></div>
+<div class="card r"><h3>5. The de-identified summary still shows a real number or initials</h3>
+<p class="small" style="margin:0"><b>Stop and fix this before sharing it anywhere.</b> Say: <i>"The
+summary still has a real student number in it. Every student must be relabeled S1, S2, S3 before the
+text is shown."</i> Then check it again by eye.</p></div>
+<div class="card p"><h3>6. It worked, then an edit broke it</h3><p class="small" style="margin:0">
+Paste the part you changed into the chat and say "something in this is broken, find it." You do not
+need to spot it yourself, and you do not need to re-explain the whole app &mdash; the broken piece is
+usually enough.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">What to build next</div><h2>The same shape, and what going further would cost</h2>
+<p class="lede">You now know how to make something remember a dated record instead of a total. That is
+the hard part in this entire series, and it is reusable in the two builds still ahead.</p>
+<table>
+<tr><th style="width:30%">Build</th><th>What it stores</th><th style="width:14%">Tier</th></tr>
+<tr><td><b>Reading log / fluency tracker</b></td><td>Minutes and levels per student per day, over a term.</td><td>2 local</td></tr>
+<tr><td><b>Seating chart builder</b></td><td>Which name sits where, saved layouts over time.</td><td>2 local</td></tr>
+<tr><td><b>Parent-facing class page</b></td><td>Agenda and links only. No student data at all.</td><td>1</td></tr>
+</table>
+<div class="note"><b>Notice the tier column says local, not "no names."</b> A reading log holding names
+is fine for the same reason this tracker is: the data stays on your device. The tier is decided by
+where the data lives and who else can reach it &mdash; the sentence this whole series keeps coming back
+to.</div>
+<div class="card r"><h3>What changes the moment any of this goes online</h3>
+<p class="small" style="margin:0">The data stops living on your device and starts living on someone's
+server. A link exists that could reach it. It becomes a system holding student records that your
+district did not review, and you personally become responsible for something that is properly the
+school's responsibility. Take it to your technology team as a proposal, with what it does and what data
+it touches, rather than a surprise after the fact.</p></div>
+<div class="card g"><h3>The middle option most teachers actually want</h3>
+<p class="small" style="margin:0">Keep it local, and export weekly. If you want the same tracker on two
+machines, you do not need syncing &mdash; you need the export file and five minutes at the start of a
+new device. That is a small habit against a real compliance question, and for most people it is not a
+close call.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div><h2>Every prompt, in one place</h2>
+<p class="small">Copy from here rather than retyping. Square brackets mean put your own thing in.</p>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">1 &middot; shell and roster</div><span class="small">Build me a behavior point tracker as one single HTML file. Six tabs: Roster, Expectations, Score today, Week view, Print a card, Data and export. Roster tab: add students one at a time by student number or initials &mdash; never a full name field &mdash; shown as a list with a remove button. Everything in one file, no internet, no login. Leave the other panels empty for now.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">2 &middot; expectations</div><span class="small">Expectations tab: add one expectation at a time, shown as a list with a remove button, no fewer than one and no more than five. Add a "daily goal" percentage box, defaulting to 80.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">3 &middot; the day grid</div><span class="small">Score today tab: a dropdown to choose a student, then a grid with three time blocks (Morning, Midday, Afternoon) as rows and the expectations as columns. Each cell is a button that cycles through no score, 2, 1, 0, and back to no score on each click.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">4 &middot; saving a record, not a total</div><span class="small">Make it remember data between sessions using local storage on my device, no server, no account. Save the roster, expectations, goal, and every scored cell as its own dated entry (student, date, block, expectation, score) &mdash; never collapsed into a running total. Save automatically on every change; load on open; keep working with empty data if saving or loading fails; an unscored cell must never count as a zero.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">5 &middot; the day roll-up</div><span class="small">Under the grid, show today's points earned and points possible for the selected student, counting only cells that have been scored (possible = scored cells &times; 2), plus the percentage next to the daily goal.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">6 &middot; the week view</div><span class="small">Week view tab: one row per student, one column per weekday (Monday&ndash;Friday) of the current week, each cell showing that day's percentage or a dash if unscored, colored by whether it met the goal, plus a week average column.</span></div>
+</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Appendix</div><h2>The rest of the prompts</h2>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">7 &middot; export and the backup reminder</div><span class="small">Data and export tab: a button that downloads the roster, expectations, goal, and every dated entry as one file. Remember the last export date and show a visible reminder if it has been seven or more days, or if none has happened yet.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">8 &middot; the printable card</div><span class="small">Print a card tab: choose a student, then print a single clean page with their number, today's date, today's scoring grid, the day total, and two signature lines (adult, sent home). Hide everything else on the page when printing.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">9 &middot; de-identified summary</div><span class="small">Below the export button, a button that builds a text summary of this week relabeling every student S1, S2, S3 with their daily percentages and a week average, in a text box with a Copy button. Add a note that this version is safe to paste into an AI chat and the real version stays on this device.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">10 &middot; appearance and accessibility</div><span class="small">Restyle with [your colors]. Make sure every tab, button and dropdown is reachable with Tab and usable with Enter, with a visible outline on the selected item. Never rely on color alone to show a score &mdash; keep a number or symbol on every cell too.</span></div>
+<div class="prompt" style="padding:8pt 11pt"><div class="lbl">11 &middot; when something breaks</div><span class="small">Here is what I did and what happened: [what you clicked]. I expected [what should have happened]. Fix it and give me the whole file again.</span></div>
+<div class="note"><b>Prompt 11 is the one you will use most often</b>, and it works exactly the same way
+in every build in this series &mdash; describe the click, describe the expectation, ask for the whole
+file back.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The file</div><h2>The part that keeps the shape</h2>
+<p class="small">The complete tracker ships with this pack as <code>behavior-tracker.html</code> &mdash;
+you do not need to type any of this. This is the piece worth reading, because the same shape belongs
+in anything you build next that needs a history rather than a total.</p>
+<div class="code" style="font-size:8pt;line-height:1.32">/* ---- storage: one key, this browser only ---------------------------- */
+const KEY = 'vibe-cico-v1';
+const blank = { students: [], expectations: ['Followed directions', 'Kept a calm voice', 'On task'],
+  blocks: ['Morning', 'Midday', 'Afternoon'], goal: 80, entries: {}, lastExport: null };
+let storageOK = true;
+let S = load();
+
+function load(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return { ...blank, entries: {} };
+    const o = JSON.parse(raw);
+    return {
+      students: o.students || [],
+      expectations: (o.expectations &amp;&amp; o.expectations.length) ? o.expectations : blank.expectations.slice(),
+      blocks: (o.blocks &amp;&amp; o.blocks.length) ? o.blocks : blank.blocks.slice(),
+      goal: o.goal || 80,
+      entries: o.entries || {},
+      lastExport: o.lastExport || null,
+    };
+  } catch (e) {                 // private window, blocked storage, corrupt value
+    storageOK = false;
+    return { ...blank, entries: {} };
+  }
+}
+function save(){
+  try {
+    localStorage.setItem(KEY, JSON.stringify(S));
+  } catch (e) {
+    storageOK = false;
+  }
+  document.getElementById('storageBanner').hidden = storageOK;
+  checkExportBanner();
+}</div>
+<div class="card t"><h3>Reading it without knowing code</h3>
+<p class="small" style="margin:0">Every entry is stored under a key built from the date, the student,
+the block, and the expectation &mdash; so each dated fact gets its own slot instead of overwriting the
+one before it. <code>load</code> hands back empty data if anything at all goes wrong reading storage;
+<code>save</code> writes the whole object and quietly gives up rather than crashing if the browser
+refuses. Both are wrapped in try and catch, which is task 4's instruction &mdash; keep working when
+storage is unavailable &mdash; showing up as real code.</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this pack is built</h2>
+<div class="card"><h3>What we are claiming</h3><p class="small" style="margin:0">That these eleven
+prompts, used with a current AI chat, produce a working behavior point tracker. Every prompt was run
+and the resulting app was tested in a real browser before publication, including scoring a day,
+closing the tab and reopening to confirm every entry survived, checking that an unscored cell never
+counts as a zero, and confirming the de-identified summary contains no real student number.</p></div>
+<div class="card r"><h3>What we are not claiming</h3><p class="small" style="margin:0">Not a behavior
+intervention, not a replacement for your school's official behavior or IEP data system, and not a
+recommendation to run check-in, check-out without your team's training and buy-in &mdash; this pack
+builds the recording tool, never the intervention decision. And not legal advice about student data:
+FERPA, COPPA, your state law and your district are the authorities.</p></div>
+<div class="card t"><h3>An honest limitation</h3><p class="small" style="margin:0">Local storage is
+tied to one browser on one device, and a managed school laptop may restrict it. That is a real
+constraint, it is the same constraint that keeps the data private, and it is why task 7's weekly export
+is not optional. AI tools also change; this pack teaches the loop and ships the finished file for
+exactly that reason.</p></div>
+<div class="card g"><h3>Sources</h3><p class="small" style="margin:0">Check-in, check-out as the
+description of what a daily behavior point card is and how it is typically run draws on the published
+Tier 2 behavior-support literature describing it as the most widely used targeted intervention of its
+kind in US schools; this pack does not teach or endorse a specific program and never claims to replace
+one. The build-your-own-classroom-tools framing continues from 2026 coverage of teachers building
+their own hall passes, seating charts, and behavior trackers with AI, cited in builds 1 and 2 of this
+series. Student privacy guidance follows FERPA and COPPA; the Future of Privacy Forum's <i>Educator's
+Guide to Student Privacy</i> is a readable starting point. Not affiliated with any AI company, platform,
+or behavior-support program.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b> Every prompt run, every task
+completed in order, and the included app tested in a browser before this pack shipped.</div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card g" style="margin-top:12pt"><h3>Leaving feedback earns you credit</h3>
+<p style="margin-bottom:6pt">TPT gives you credit toward future purchases every time you review
+something you have downloaded. Go to <b>My Purchases</b>, find this pack, leave a rating and a
+comment. It takes a minute and it comes back to you as money off the next thing you buy.</p>
+<p class="small" style="margin:0">It also tells us what to build next, which is genuinely how these
+decisions get made.</p></div>
+<div class="card t"><h3>If something did not work</h3><p style="margin:0">Message us through TPT
+before leaving a rating and we will fix it and re-upload the same day, and you keep the updated file
+free. A prompt that stopped behaving is something we want to know about.</p></div>
+<div class="note" style="margin-top:12pt"><b>What you can do now that you could not this morning:</b><br>
+Build software that remembers a history, not just a moment &mdash; the same shape underneath a reading
+log, an attendance record, or anything else that needs to answer "what happened, and when." The
+tracker was the example. <b>The shape was the lesson.</b></div>
+<div class="card" style="margin-top:12pt"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Bright Scholar &middot; AI-Ready School</p></div>
+<div class="foot"><span>Vibe Coding for Teachers &middot; Build a Behavior Tracker</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>

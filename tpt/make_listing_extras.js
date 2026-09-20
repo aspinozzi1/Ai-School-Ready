@@ -304,6 +304,15 @@ const IMAGES = [
     '<b>A confidentiality page up front</b>, plus new-student and end-of-year checklists',
   ], '8 pages')],
   ['iob-real-pages',   realPages('#17BEBB', ['iob_p2.png', 'iob_p3.png', 'iob_p4.png'], '8 pages')],
+  ['vcb-whats-inside', whatsInside('Vibe Coding ·', 'Behavior Tracker', [
+    'Ten tasks, each finished before the next begins',
+    'Eleven prompts, written out in full',
+    'The finished app included and browser-tested',
+    '<b>A record, not a tally</b> - every dated entry kept, never overwritten',
+    'A weekly export habit and a printable day card',
+    'A stricter three-tier data rule, built for a behavior record',
+  ], 'PDF + HTML')],
+  ['vcb-real-pages',   realPages('#2D6CB5', ['vcb_p03.png', 'vcb_p09.png', 'vcb_p17.png'], '25 pages + app')],
 ];
 
 fs.mkdirSync(OUT, { recursive: true });

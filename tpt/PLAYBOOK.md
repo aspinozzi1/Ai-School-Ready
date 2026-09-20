@@ -766,3 +766,58 @@ thin against that bar, fix the kit, not the price.
   Wednesday becomes permanently once lane 3/4 data does or doesn't
   return — is still open; today's build is the brief's named fallback,
   not a new standing assignment.
+- **2026-09-20 (Sunday drop, Lane A flagship — build 3, per the two-lanes
+  directive of 2026-09-16 and `tpt/intel/2026-09-20-sun-brief.md`)**:
+  shipped one product, the only lane producing new content this week.
+  **Vibe Coding for Teachers | Build a Behavior Tracker That Keeps the
+  History**, $22 (license $11) — a 25-page build-along plus the finished
+  app (`behavior-tracker.html`), teaching a daily point card shaped
+  around check-in, check-out (CICO): a roster by student number or
+  initials only, three to five teacher-worded expectations, a day grid
+  (time blocks by expectations, tap to cycle a score), a week view, a
+  weekly export habit, a one-page printable day card, and a de-identified
+  summary. The brief moved this ahead of roadmap rows 3 (seating chart)
+  and 4 (hall pass log) in `tpt/intel/vibe-coding-line.md`'s series
+  table — row 4 in particular is now flagged for an owner call before it
+  is ever built, since digital hall passes became a 2026
+  student-surveillance story. **The architectural lesson, stated
+  explicitly in the pack:** build 2's points tab kept a running total;
+  this build keeps a list of dated entries instead, so the day roll-up,
+  week view and export are all computed from that list rather than being
+  the saved state themselves — the first genuinely architectural idea in
+  the series. **Browser-tested with Playwright** before shipping: added
+  students (including a rejected duplicate), capped expectations at
+  five, cycled a scoring cell through 2/1/0/blank, verified the day
+  roll-up math, then closed the browser tab entirely and reopened it to
+  confirm every scored entry survived; also verified the week view, the
+  de-identified summary contains no real student number, the export
+  downloads a file, the print view populates, and the app keeps working
+  with zero console errors when `localStorage` is blocked (private-window
+  simulation) — all passed. **One real rendering bug found and fixed
+  during the build, not a content bug:** Chromium's print-to-pdf, when
+  rendering all 25 `.sheet` pages in a single job, intermittently emitted
+  a sub-pixel stray blank trailing page (undetectable via DOM
+  `scrollHeight`, which reported zero overflow throughout) and then
+  misattributed that stray page's footer text onto page 1 of the same
+  print job — a real, visible duplicate-footer defect that
+  `check_overlap.py` caught and a plain eyeball of page 1 confirmed. Fixed
+  by rendering each `.sheet` as its own single-page PDF and merging with
+  pypdf (`kits/tpt-vibe-cico/render.js`); a separate, real overflow on
+  the code-excerpt page was also caught and fixed by trimming the quoted
+  source to the two functions the page actually discusses. All gates
+  clean on the shipped PDF: `check_breaks.py` 0, `check_fonts.py` 0,
+  `check_us_english.py` 0, `check_overlap.py` clean, `check_fresh.py` 0
+  stale after rebuilding pinsrc renders → extras → previews → drops in
+  that order. Title 74 characters, carries "Vibe Coding," 6 tags, license
+  exactly half price. Drop 55 in `UPLOAD/drops/`;
+  `PINS-2026-09-20.zip` ships this week's one new pin plus the
+  append-only `PINS.txt` diff — the `make_covers.js`/
+  `make_listing_extras.js`/`make_previews.js`/`make_drops.js` full-regen
+  footgun reverted every other unrelated file each run, verified
+  content-identical (not just byte-identical) to HEAD first via a
+  zip-content hash comparison and a PDF text-extraction comparison before
+  reverting. Lanes 1, 2, 4 and 5 shipped nothing this week by standing
+  directive — their ~50 existing listings stay live untouched. Lane B
+  (Young Entrepreneurs) had nothing ready this week either; the next
+  Lane A or Lane B build is an owner call on the hall-pass question
+  above, or the seating-chart build, or Lane B's build 2.

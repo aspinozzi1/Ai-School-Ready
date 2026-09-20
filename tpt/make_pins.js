@@ -320,6 +320,11 @@ const PIN_COPY = {
     sub: 'IEP at a Glance + Goal Tracking + ABC Data Sheets + the Organization Binder. $24.',
     board: 'Special Education',
     desc: 'The Complete IEP Binder bundle: IEP at a Glance, IEP Goal Tracking & Data Collection Sheets, ABC Data Sheets, and the IEP Organization Binder — four real products, 25% off buying separately. Every page uses student numbers, never names. From two certified teachers.' },
+  'vibe-behavior-tracker': { pal: P.blue,
+    top: 'A tally tells you today', mid: 'a record tells you the truth', big: 'BUILD IT IN ONE FILE',
+    sub: 'A daily point card that remembers every day it has ever seen — not a total that resets. $22.',
+    board: 'Vibe Coding for Teachers',
+    desc: 'Vibe coding for teachers: build a behavior tracker that keeps the history. Ten tasks, eleven prompts written out in full, and the finished app included and browser-tested. Scores three to five expectations on a daily point card, keeps every dated entry instead of a running total, and a one-click export replaces every student with S1, S2, S3. Student numbers only, never a name field. From two certified teachers.' },
 };
 
 const doodle = (x, y, r, s, d) =>

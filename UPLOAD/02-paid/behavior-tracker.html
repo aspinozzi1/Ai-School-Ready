@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behavior Point Tracker</title>
+<style>
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--leaf:#4CAF6D;--grape:#8367C7;--cream:#FFFDF8;--grey:#7A8B9A;--rule:#E3DCCD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito','Trebuchet MS',system-ui,sans-serif;background:var(--cream);
+  color:var(--ink);padding:14px;min-height:100vh}
+.bar{height:12px;border-radius:6px;margin-bottom:14px;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.wrap{max-width:1040px;margin:0 auto}
+h1{font-size:1.6rem;margin-bottom:2px}
+.sub{color:var(--grey);margin-bottom:12px;font-size:.95rem}
+.banner{background:#FBE3DD;border:2.5px solid var(--tomato);border-radius:12px;padding:10px 14px;
+  margin-bottom:12px;font-weight:700;font-size:.92rem}
+.banner.warn{background:#FFF4D6;border-color:var(--sunny)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tab{font:inherit;font-weight:700;background:#fff;border:2.5px solid var(--ink);
+  border-radius:11px;padding:8px 15px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--sunny)}
+.tab:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+.panel{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:18px;
+  box-shadow:6px 6px 0 var(--teal)}
+.panel[hidden]{display:none}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:11px}
+input,select{font:inherit;border:2.5px solid var(--ink);border-radius:10px;padding:8px 11px;
+  background:var(--cream)}
+input:focus-visible,select:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+button{font:inherit;font-weight:700;cursor:pointer;border:2.5px solid var(--ink);
+  border-radius:10px;padding:8px 14px;background:var(--cream)}
+button:hover{background:#FFF4D6}
+button:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+button.go{background:var(--sunny)}
+button.warn{background:#FBE3DD;border-color:var(--tomato)}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--cream);
+  border:2px solid var(--ink);border-radius:999px;padding:5px 11px;margin:0 6px 6px 0;
+  font-weight:700;cursor:pointer}
+.pill button{border:none;background:none;padding:0 2px;font-size:1rem;line-height:1}
+.pill[aria-pressed="true"]{background:var(--teal);color:#fff}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-top:10px}
+th{background:var(--ink);color:#fff;text-align:left;padding:8px 10px;font-size:.9rem}
+th:first-child{border-radius:9px 0 0 0}th:last-child{border-radius:0 9px 0 0}
+td{border-bottom:2px solid var(--rule);padding:7px 10px}
+tr:nth-child(even) td{background:#FFF8E8}
+.cell{width:100%;height:44px;border:2.5px solid var(--ink);border-radius:9px;font-weight:800;
+  font-size:1rem;background:#fff;cursor:pointer}
+.cell[data-v="2"]{background:#DFF3E4;border-color:var(--leaf);color:#1E5C36}
+.cell[data-v="1"]{background:#FFF4D6;border-color:var(--sunny);color:#6B5300}
+.cell[data-v="0"]{background:#FBE3DD;border-color:var(--tomato);color:#8A2A12}
+.note{background:var(--ink);color:#fff;border-radius:13px;padding:12px 15px;margin-top:13px}
+.note b{color:var(--sunny)}
+.small{font-size:.88rem;color:var(--grey)}
+.saved{font-size:.82rem;color:var(--leaf);font-weight:700;min-height:1.1em}
+textarea{font:inherit;width:100%;min-height:120px;border:2.5px solid var(--ink);
+  border-radius:10px;padding:10px;background:var(--cream);font-family:ui-monospace,monospace;
+  font-size:.85rem}
+.rollup{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.stat{border:2.5px solid var(--ink);border-radius:12px;padding:10px 16px;background:var(--cream);
+  min-width:120px;text-align:center}
+.stat b{display:block;font-size:1.5rem}
+.stat.ok{border-color:var(--leaf)}
+.stat.low{border-color:var(--tomato)}
+#printCard{display:none}
+@media print{
+  body>*:not(#printCard){display:none!important}
+  #printCard{display:block!important;padding:20px}
+  #printCard table{margin-top:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"></div>
+  <h1>Behavior Point Tracker</h1>
+  <p class="sub">Everything saves on this device only. No account, nothing uploaded, nothing synced.</p>
+  <div id="storageBanner" class="banner" hidden>Storage is unavailable in this browser right now &mdash;
+    the tracker still works, but today's scores will be lost if you close the tab. Try a normal window
+    instead of a private one.</div>
+  <div id="exportBanner" class="banner warn" hidden></div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true"  data-p="roster">Roster</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="expect">Expectations</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="score">Score today</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="week">Week view</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="print">Print a card</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="data">Data &amp; export</button>
+  </div>
+
+  <!-- ROSTER -->
+  <section class="panel" id="p-roster">
+    <div class="row">
+      <input id="stuIn" placeholder="Student number or initials (never a full name)" aria-label="Student number or initials to add" size="30">
+      <button class="go" id="addStu">Add</button>
+      <span class="saved" id="rosterMsg"></span>
+    </div>
+    <div id="chips"></div>
+    <p class="small" id="count"></p>
+    <div class="note"><b>Numbers or initials only &mdash; on purpose.</b><br>
+      A dated behavior record about an identified child is more sensitive than a class roster, so this
+      tracker never asks for a full name. What you type here saves to this browser on this device only
+      and is never uploaded. That stops being true the moment this file is hosted online, synced, or
+      opened on a shared login &mdash; see the Data tab for the full three-tier rule.</div>
+  </section>
+
+  <!-- EXPECTATIONS -->
+  <section class="panel" id="p-expect" hidden>
+    <p class="small" style="margin-bottom:9px">Three to five, in your own words. These are the columns
+      of the scoring grid.</p>
+    <div class="row">
+      <input id="expIn" placeholder="e.g. Followed directions" aria-label="New expectation" size="30">
+      <button class="go" id="addExp">Add</button>
+      <span class="saved" id="expMsg"></span>
+    </div>
+    <div id="expChips"></div>
+    <div class="row" style="margin-top:14px">
+      <label>Daily goal <input id="goalIn" type="number" min="1" max="100" value="80" style="width:70px"> %</label>
+    </div>
+  </section>
+
+  <!-- SCORE TODAY -->
+  <section class="panel" id="p-score" hidden>
+    <div class="row">
+      <label for="scoreStu"><b>Student</b></label>
+      <select id="scoreStu" aria-label="Student to score"></select>
+      <span class="small" id="scoreDate"></span>
+    </div>
+    <div id="grid"></div>
+    <div class="rollup" id="rollup"></div>
+    <div class="note"><b>Tap a cell to cycle the score:</b> blank &rarr; <b>2 met</b> &rarr; <b>1
+      partial</b> &rarr; <b>0 not yet</b> &rarr; blank again. Only scored cells count toward the total,
+      so a short day is never compared unfairly against a full one.</div>
+  </section>
+
+  <!-- WEEK VIEW -->
+  <section class="panel" id="p-week" hidden>
+    <p class="small" style="margin-bottom:9px">This week, one row per student. <span id="goalLine"></span></p>
+    <div id="weekTable"></div>
+  </section>
+
+  <!-- PRINT -->
+  <section class="panel" id="p-print" hidden>
+    <div class="row">
+      <label for="printStu">Student</label>
+      <select id="printStu" aria-label="Student to print"></select>
+      <button class="go" id="printBtn">Print this student's day card</button>
+    </div>
+    <p class="small">Opens your browser's print dialog with one page: today's grid and totals, ready
+      for a backpack. Everything else on screen is hidden automatically.</p>
+  </section>
+
+  <!-- DATA -->
+  <section class="panel" id="p-data" hidden>
+    <h3 style="margin-bottom:7px">Weekly backup</h3>
+    <p class="small" style="margin-bottom:9px">Export writes every record to a file on your own drive.
+      Do this once a week &mdash; clearing browser data erases everything stored here.</p>
+    <div class="row">
+      <button class="go" id="exportBtn">Export to a file</button>
+      <span class="saved" id="exportMsg"></span>
+    </div>
+    <h3 style="margin:16px 0 7px">Copy for an AI chat &mdash; identifiers removed</h3>
+    <p class="small" style="margin-bottom:9px">Relabels every student S1, S2, S3 and summarizes this
+      week's percentages only. The version with real numbers or initials stays on this device.</p>
+    <textarea id="deid" readonly></textarea>
+    <div class="row" style="margin-top:9px">
+      <button class="go" id="deidBtn">Build de-identified summary</button>
+      <button id="copyBtn">Copy to clipboard</button>
+      <span class="saved" id="copyMsg"></span>
+    </div>
+    <div class="note"><b>Three tiers, decided by where the data lives.</b><br>
+      1) The card design and expectations &mdash; yours, build freely.
+      2) Daily scores by student number, on this device only &mdash; the app's home.
+      3) The moment records are synced, emailed, dropped in a shared drive, pasted into a chatbot, or
+      opened on a login someone else shares &mdash; stop, that is a conversation with your district. This
+      is your own working record, not the school's record of behavior.</div>
+    <div class="row" style="margin-top:15px">
+      <button class="warn" id="resetAll">Erase everything from this device</button>
+    </div>
+  </section>
+</div>
+
+<div id="printCard"></div>
+
+<script>
+/* ---- storage: one key, this browser only ---------------------------- */
+const KEY = 'vibe-cico-v1';
+const blank = { students: [], expectations: ['Followed directions', 'Kept a calm voice', 'On task'],
+  blocks: ['Morning', 'Midday', 'Afternoon'], goal: 80, entries: {}, lastExport: null };
+let storageOK = true;
+let S = load();
+
+function load(){
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return { ...blank, entries: {} };
+    const o = JSON.parse(raw);
+    return {
+      students: o.students || [],
+      expectations: (o.expectations && o.expectations.length) ? o.expectations : blank.expectations.slice(),
+      blocks: (o.blocks && o.blocks.length) ? o.blocks : blank.blocks.slice(),
+      goal: o.goal || 80,
+      entries: o.entries || {},
+      lastExport: o.lastExport || null,
+    };
+  } catch (e) {                 // private window, blocked storage, corrupt value
+    storageOK = false;
+    return { ...blank, entries: {} };
+  }
+}
+function save(){
+  try {
+    localStorage.setItem(KEY, JSON.stringify(S));
+  } catch (e) {
+    storageOK = false;
+  }
+  document.getElementById('storageBanner').hidden = storageOK;
+  checkExportBanner();
+}
+function flash(id, msg){
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  setTimeout(function(){ el.textContent = ''; }, 1600);
+}
+function checkExportBanner(){
+  const b = document.getElementById('exportBanner');
+  const days = S.lastExport ? (Date.now() - S.lastExport) / 86400000 : Infinity;
+  if (days >= 7) {
+    b.hidden = false;
+    b.textContent = S.lastExport
+      ? "It's been over a week since your last export. Back up now, before a cleared browser takes the history with it."
+      : "You haven't exported a backup yet. Do it once this week, before a cleared browser could take the history with it.";
+  } else {
+    b.hidden = true;
+  }
+}
+
+/* ---- dates ------------------------------------------------------------ */
+function todayStr(){
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function mondayOf(d){
+  const x = new Date(d);
+  const day = x.getDay();                       // 0 Sun .. 6 Sat
+  const diff = day === 0 ? -6 : 1 - day;
+  x.setDate(x.getDate() + diff);
+  x.setHours(0, 0, 0, 0);
+  return x;
+}
+function weekDates(){
+  const mon = mondayOf(new Date());
+  const out = [];
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    out.push(d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'));
+  }
+  return out;
+}
+const DOW = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+
+/* ---- tabs -------------------------------------------------------------- */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.setAttribute('aria-selected', 'false'); });
+    t.setAttribute('aria-selected', 'true');
+    ['roster', 'expect', 'score', 'week', 'print', 'data'].forEach(function(p){
+      document.getElementById('p-' + p).hidden = (p !== t.dataset.p);
+    });
+    if (t.dataset.p === 'score') drawScore();
+    if (t.dataset.p === 'week')  drawWeek();
+    if (t.dataset.p === 'print') fillSelect('printStu');
+  });
+});
+
+/* ---- roster ------------------------------------------------------------ */
+function drawRoster(){
+  const box = document.getElementById('chips');
+  box.textContent = '';
+  S.students.forEach(function(n, i){
+    const s = document.createElement('span');
+    s.className = 'pill';
+    s.style.cursor = 'default';
+    s.appendChild(document.createTextNode(n));
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = '×';
+    b.setAttribute('aria-label', 'Remove ' + n);
+    b.addEventListener('click', function(){
+      S.students.splice(i, 1);
+      Object.keys(S.entries).forEach(function(k){ if (k.split('|')[1] === n) delete S.entries[k]; });
+      save(); drawRoster(); fillSelect('scoreStu'); fillSelect('printStu');
+    });
+    s.appendChild(b);
+    box.appendChild(s);
+  });
+  document.getElementById('count').textContent =
+    S.students.length + (S.students.length === 1 ? ' student' : ' students');
+}
+function addStudent(){
+  const inp = document.getElementById('stuIn');
+  const v = inp.value.trim();
+  if (!v) return;
+  if (S.students.indexOf(v) !== -1) { flash('rosterMsg', 'Already on the list'); return; }
+  S.students.push(v);
+  save(); drawRoster(); fillSelect('scoreStu'); fillSelect('printStu');
+  flash('rosterMsg', 'Saved');
+  inp.value = ''; inp.focus();
+}
+document.getElementById('addStu').addEventListener('click', addStudent);
+document.getElementById('stuIn').addEventListener('keydown', function(e){ if (e.key === 'Enter') addStudent(); });
+
+/* ---- expectations -------------------------------------------------------- */
+function drawExpect(){
+  const box = document.getElementById('expChips');
+  box.textContent = '';
+  S.expectations.forEach(function(n, i){
+    const s = document.createElement('span');
+    s.className = 'pill';
+    s.style.cursor = 'default';
+    s.appendChild(document.createTextNode(n));
+    if (S.expectations.length > 1) {
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = '×';
+      b.setAttribute('aria-label', 'Remove expectation ' + n);
+      b.addEventListener('click', function(){
+        S.expectations.splice(i, 1);
+        Object.keys(S.entries).forEach(function(k){ if (Number(k.split('|')[3]) === i) delete S.entries[k]; });
+        save(); drawExpect();
+      });
+      s.appendChild(b);
+    }
+    box.appendChild(s);
+  });
+  document.getElementById('goalIn').value = S.goal;
+}
+document.getElementById('addExp').addEventListener('click', function(){
+  const inp = document.getElementById('expIn');
+  const v = inp.value.trim();
+  if (!v) return;
+  if (S.expectations.length >= 5) { flash('expMsg', 'Five is the most one card can hold'); return; }
+  if (S.expectations.indexOf(v) !== -1) { flash('expMsg', 'Already on the list'); return; }
+  S.expectations.push(v);
+  save(); drawExpect();
+  flash('expMsg', 'Saved');
+  inp.value = ''; inp.focus();
+});
+document.getElementById('goalIn').addEventListener('change', function(e){
+  const v = Math.max(1, Math.min(100, parseInt(e.target.value, 10) || 80));
+  S.goal = v; save(); e.target.value = v;
+});
+
+/* ---- score today --------------------------------------------------------- */
+function fillSelect(id){
+  const sel = document.getElementById(id);
+  const prev = sel.value;
+  sel.textContent = '';
+  S.students.forEach(function(n){
+    const o = document.createElement('option');
+    o.value = n; o.textContent = n;
+    sel.appendChild(o);
+  });
+  if (S.students.indexOf(prev) !== -1) sel.value = prev;
+}
+function entryKey(date, student, b, e){ return date + '|' + student + '|' + b + '|' + e; }
+function cycle(v){ return v === undefined ? 2 : v === 2 ? 1 : v === 1 ? 0 : undefined; }
+function dayRollup(student, date){
+  let earned = 0, scored = 0;
+  S.blocks.forEach(function(_, b){
+    S.expectations.forEach(function(__, e){
+      const v = S.entries[entryKey(date, student, b, e)];
+      if (v !== undefined) { earned += v; scored++; }
+    });
+  });
+  const possible = scored * 2;
+  return { earned: earned, possible: possible, scored: scored,
+    pct: possible ? Math.round((earned / possible) * 100) : null };
+}
+function drawScore(){
+  fillSelect('scoreStu');
+  document.getElementById('scoreDate').textContent = todayStr();
+  const stu = document.getElementById('scoreStu').value;
+  const grid = document.getElementById('grid');
+  grid.textContent = '';
+  if (!stu) { grid.innerHTML = '<p class="small">Add a student on the Roster tab first.</p>'; document.getElementById('rollup').textContent = ''; return; }
+  const date = todayStr();
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const htr = document.createElement('tr');
+  htr.appendChild(document.createElement('th'));
+  S.expectations.forEach(function(ex){ const th = document.createElement('th'); th.textContent = ex; htr.appendChild(th); });
+  thead.appendChild(htr); table.appendChild(thead);
+  const tbody = document.createElement('tbody');
+  S.blocks.forEach(function(blk, b){
+    const tr = document.createElement('tr');
+    const th = document.createElement('td');
+    th.innerHTML = '<b>' + blk + '</b>';
+    tr.appendChild(th);
+    S.expectations.forEach(function(_, e){
+      const td = document.createElement('td');
+      const v = S.entries[entryKey(date, stu, b, e)];
+      const btn = document.createElement('button');
+      btn.className = 'cell';
+      btn.type = 'button';
+      btn.dataset.v = v === undefined ? '' : String(v);
+      btn.textContent = v === undefined ? '–' : v === 2 ? '2 ✓' : v === 1 ? '1 ~' : '0 ✗';
+      btn.setAttribute('aria-label', blk + ', ' + S.expectations[e] + ', currently ' + (v === undefined ? 'not scored' : v));
+      btn.addEventListener('click', function(){
+        const k = entryKey(date, stu, b, e);
+        const nv = cycle(S.entries[k]);
+        if (nv === undefined) delete S.entries[k]; else S.entries[k] = nv;
+        save(); drawScore();
+      });
+      td.appendChild(btn);
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  grid.appendChild(table);
+  const r = dayRollup(stu, date);
+  const box = document.getElementById('rollup');
+  const pctClass = r.pct === null ? '' : r.pct >= S.goal ? 'ok' : 'low';
+  box.innerHTML =
+    '<div class="stat"><b>' + r.earned + ' of ' + r.possible + '</b>points earned of possible</div>' +
+    '<div class="stat ' + pctClass + '"><b>' + (r.pct === null ? '–' : r.pct + '%') + '</b>today, goal ' + S.goal + '%</div>' +
+    '<div class="stat"><b>' + r.scored + '</b>of ' + (S.blocks.length * S.expectations.length) + ' cells scored</div>';
+}
+document.getElementById('scoreStu').addEventListener('change', drawScore);
+
+/* ---- week view ---------------------------------------------------------- */
+function drawWeek(){
+  document.getElementById('goalLine').textContent = 'Goal line: ' + S.goal + '%.';
+  const box = document.getElementById('weekTable');
+  box.textContent = '';
+  if (!S.students.length) { box.innerHTML = '<p class="small">Add a student on the Roster tab first.</p>'; return; }
+  const dates = weekDates();
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const htr = document.createElement('tr');
+  htr.appendChild(document.createElement('th'));
+  DOW.forEach(function(d){ const th = document.createElement('th'); th.textContent = d; htr.appendChild(th); });
+  const thAvg = document.createElement('th'); thAvg.textContent = 'Week avg'; htr.appendChild(thAvg);
+  thead.appendChild(htr); table.appendChild(thead);
+  const tbody = document.createElement('tbody');
+  S.students.forEach(function(stu){
+    const tr = document.createElement('tr');
+    const th = document.createElement('td'); th.innerHTML = '<b>' + stu + '</b>'; tr.appendChild(th);
+    let sum = 0, n = 0;
+    dates.forEach(function(d){
+      const r = dayRollup(stu, d);
+      const td = document.createElement('td');
+      if (r.pct === null) { td.textContent = '–'; }
+      else {
+        td.textContent = r.pct + '%';
+        td.style.fontWeight = '800';
+        td.style.color = r.pct >= S.goal ? '#1E5C36' : '#8A2A12';
+        sum += r.pct; n++;
+      }
+      tr.appendChild(td);
+    });
+    const tdAvg = document.createElement('td');
+    tdAvg.innerHTML = n ? '<b>' + Math.round(sum / n) + '%</b>' : '–';
+    tr.appendChild(tdAvg);
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  box.appendChild(table);
+}
+
+/* ---- print --------------------------------------------------------------- */
+document.getElementById('printBtn').addEventListener('click', function(){
+  const stu = document.getElementById('printStu').value;
+  if (!stu) { return; }
+  const date = todayStr();
+  const r = dayRollup(stu, date);
+  let rows = '';
+  S.blocks.forEach(function(blk, b){
+    rows += '<tr><td><b>' + blk + '</b></td>';
+    S.expectations.forEach(function(_, e){
+      const v = S.entries[entryKey(date, stu, b, e)];
+      rows += '<td style="text-align:center">' + (v === undefined ? '–' : v) + '</td>';
+    });
+    rows += '</tr>';
+  });
+  const head = '<tr><th></th>' + S.expectations.map(function(ex){ return '<th>' + ex + '</th>'; }).join('') + '</tr>';
+  document.getElementById('printCard').innerHTML =
+    '<h2>Behavior point card &mdash; Student ' + stu + '</h2>' +
+    '<p>' + date + '</p>' +
+    '<table border="1" cellpadding="6" style="border-collapse:collapse;width:100%">' + head + rows + '</table>' +
+    '<p style="margin-top:12px"><b>Today: ' + r.earned + ' of ' + r.possible + ' points (' +
+    (r.pct === null ? 'not scored yet' : r.pct + '%') + '), goal ' + S.goal + '%.</b></p>' +
+    '<p style="margin-top:18px">Adult signature: _______________________  Sent home: _______________________</p>';
+  window.print();
+});
+
+/* ---- export --------------------------------------------------------------- */
+document.getElementById('exportBtn').addEventListener('click', function(){
+  const payload = { exportedAt: new Date().toISOString(), students: S.students,
+    expectations: S.expectations, blocks: S.blocks, goal: S.goal, entries: S.entries };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'behavior-tracker-export-' + todayStr() + '.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  S.lastExport = Date.now();
+  save();
+  flash('exportMsg', 'Exported');
+});
+
+/* ---- de-identified summary -------------------------------------------------- */
+document.getElementById('deidBtn').addEventListener('click', function(){
+  if (!S.students.length) { document.getElementById('deid').value = 'Add some students first.'; return; }
+  const dates = weekDates();
+  const lines = S.students.map(function(stu, i){
+    const label = 'S' + (i + 1);
+    const parts = dates.map(function(d, di){
+      const r = dayRollup(stu, d);
+      return DOW[di] + ' ' + (r.pct === null ? 'no data' : r.pct + '%');
+    });
+    let sum = 0, n = 0;
+    dates.forEach(function(d){ const r = dayRollup(stu, d); if (r.pct !== null) { sum += r.pct; n++; } });
+    const avg = n ? Math.round(sum / n) : null;
+    return label + ': ' + parts.join(', ') + (avg === null ? '' : ' — week average ' + avg + '%, goal ' + S.goal + '%');
+  });
+  document.getElementById('deid').value =
+    'Behavior point card summary, this week, identifiers removed:\n' + lines.join('\n');
+});
+document.getElementById('copyBtn').addEventListener('click', function(){
+  const t = document.getElementById('deid');
+  if (!t.value) { flash('copyMsg', 'Build it first'); return; }
+  t.select();
+  navigator.clipboard.writeText(t.value)
+    .then(function(){ flash('copyMsg', 'Copied'); })
+    .catch(function(){ flash('copyMsg', 'Select the text and copy it'); });
+});
+
+/* ---- reset ------------------------------------------------------------------ */
+document.getElementById('resetAll').addEventListener('click', function(){
+  if (!confirm('Erase every student, expectation and score from this device? This cannot be undone.')) return;
+  S = { ...blank, expectations: blank.expectations.slice(), blocks: blank.blocks.slice(), entries: {} };
+  try { localStorage.removeItem(KEY); } catch (e) { /* nothing to do */ }
+  drawRoster(); drawExpect(); fillSelect('scoreStu'); fillSelect('printStu'); drawScore();
+});
+
+document.getElementById('storageBanner').hidden = storageOK;
+drawRoster(); drawExpect(); fillSelect('scoreStu'); fillSelect('printStu'); checkExportBanner();
+</script>
+</body>
+</html>
