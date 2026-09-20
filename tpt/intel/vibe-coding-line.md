@@ -1,15 +1,25 @@
-# THE TWO LANES — binding directive, owner 2026-09-16
+# THE THREE LANES — binding directive
 
-> "Moving forward I only want content on Teacher Vibe Coding and Young
-> Entrepreneurs. I want to own the vibe coding part of TpT and I know its
-> coming. I want the word Vibe Coding in my titles. Build these out
-> thoroughly and give teachers true tangible tasks to complete that produce
-> actually amazing SAAS for their classrooms."
+> **2026-09-16, owner:** "Moving forward I only want content on Teacher Vibe
+> Coding and Young Entreprenuers. I want to own the vibe coding part of TpT
+> and I know its coming. I want the word Vibe Coding in my titles. Build
+> these out thoroughly and give teachers true tangible tasks to complete
+> that produce actually amazing SAAS for their classrooms."
 
-**Everything else stops.** Lanes 1 (classroom), 2 (homeschool), 4 (deaf
-education) and 5 (open demand / best-sellers) produce **no new content**.
-Their 50 existing listings stay live, keep their tags, and are not withdrawn
-— but the factory does not build for them.
+> **2026-09-20, owner — the directive widened:** "With the new Vibe-Coding
+> content we are pushing. Please make sure to keep building the young
+> entreprenuer content as well and full school PDs. These content pieces
+> with AI integration is what I want this TpT account to provide and sell."
+
+**The store builds three lanes.** Whole-school PD is restored as a first-
+class lane, not an archive. What the two directives share is the binding
+sentence: **AI integration is the product.** A PD that is not about AI, an
+entrepreneurship unit that does not end in software, and a classroom tool
+the teacher did not build themselves are all out of scope.
+
+Lanes 1 (classroom), 2 (homeschool) and 4 (deaf education) still produce
+**no new content**. Their existing listings stay live, keep their tags, and
+are not withdrawn — but the factory does not build for them.
 
 ---
 
@@ -136,26 +146,106 @@ instead of on typing prompts.
 
 ---
 
-## Cadence
+## LANE C · Whole-school PD, with AI integration
+
+The format the store already proves it can make — Kit 1 (**AI Foundations &
+Safety**, $24) and Kit 2 (**ChatGPT & AI Prompting**, $24), nine files each,
+presentable cold by any confident teacher-leader.
+
+### What makes the next ones ours rather than generic
+
+**Lane A is the curriculum; Lane C is how a building buys it.** The PD nobody
+else can write is the one where **every teacher leaves the session with a
+working classroom tool they built during it** — not a handout about AI, a
+file that runs.
+
+That is also the commercial argument. A single teacher buys a $22 build-along.
+A principal buys one PD and multiplies it by the staff: Kit 1 is $24 with
+additional licences at half price, so a forty-person building is a single
+purchase order, not forty transactions.
+
+### The series
+
+| # | Session | The deliverable a teacher walks out with |
+|---|---|---|
+| 1 | **AI Foundations & Safety** *(live, $24)* | The one privacy rule, and a vetted-tool checklist |
+| 2 | **ChatGPT & AI Prompting** *(live, $24)* | Four drafted artifacts from their own prompts |
+| 3 | **Build Your First Classroom Tool** | **A working app on their own device, built in the session** |
+| 4 | **AI and Student Data: the line, and where it sits** | Their own de-identification habit, drilled |
+| 5 | **Leading AI in a Building** | An adoption plan a principal can actually run |
+
+Session 3 is the bridge and should be built first: it takes Lane A's best
+shipped build-along and turns it into a facilitated ninety minutes.
+
+### Price
+
+**$24–34.** Kit 1 and Kit 2 sit at $24. A session that ends in working
+software is worth more than one that ends in a handout — **Session 3 at $29**,
+additional licences half price, purchase orders through TpT for Schools.
+
+### Standing rules specific to Lane C
+
+- **Presentable cold.** The script is word for word and the deck matches it
+  cue for cue. A teacher-leader who has never run a PD can deliver it.
+- **Every statistic verified against a live source**, with full APA
+  references. This is the lane where a made-up number ends the account.
+- **A live AI mistake during the lab is a teaching gift**, not a failure —
+  the script says so and tells the facilitator what to do with it.
+- **No child's data in any demonstration**, ever, including the facilitator's.
+- **"Vibe Coding" appears in the title of any Lane C session that builds
+  software**, and not in the ones that do not. Session 3 carries it; Session 4
+  does not.
+
+---
+
+## Cadence — three lanes, three slots, and one honest constraint
 
 Three drops stay: **Sunday · Wednesday · Friday**.
 
-- **Sunday** — Lane A flagship. The headline every week.
-- **Wednesday** — Lane A, second build or a free that funnels in.
-- **Friday** — Lane B, or a third Lane A build when Lane B has nothing ready.
+| Slot | Lane | Every week? |
+|---|---|---|
+| **Sunday** | **A** — Teacher Vibe Coding flagship | Yes. The headline. |
+| **Wednesday** | **C** — whole-school PD, or Lane A's second build / a free | Alternates, see below |
+| **Friday** | **B** — Young Entrepreneurs | Yes |
+
+### Why Lane C cannot be weekly, said plainly
+
+A full staff PD is **nine files**: a 34-slide editable deck with speaker
+notes, a word-for-word facilitator script, a prep guide, a participant
+handout, a first-48-hours sheet, a 30-day implementation plan, an exit
+ticket, an admin one-pager, and verified APA references. Kit 1 and Kit 2
+each took far more than one factory slot.
+
+**A PD therefore spans two consecutive Wednesdays and ships on the second.**
+Wednesday one builds the deck and the script; Wednesday two builds the seven
+supporting files, runs the gates and ships. The Wednesdays in between belong
+to Lane A or a free.
+
+That is roughly **one PD a month**. Promising one a week would produce a thin
+PD, and a thin PD is the one product in this catalog a buyer can spot from
+the preview.
 
 ---
 
 ## Standing rules, unchanged
 
-- Titles ≤80 characters and **carry "Vibe Coding"**; ≤6 tags; licence half price.
-- Bright Scholar design, real brand fonts, `check_fonts.py` must pass.
+- Titles ≤80 characters; ≤6 tags; licence half price. **"Vibe Coding" goes in
+  the title of anything that builds software** — every Lane A and Lane B
+  product, and any Lane C session whose lab ends in a working file. A PD on
+  student data or on leading adoption does not build software and does not
+  carry it.
+- Bright Scholar design, real brand fonts. **Five gates, all must pass:**
+  `check_fonts.py` · `check_breaks.py` · `check_overlap.py` ·
+  `check_us_english.py` · `check_footer.py`.
 - No shorthand in reader-facing copy. American English.
 - **Never promise future content.** A product names what it teaches. The
-  roadmap above is internal and does not appear in any listing.
-- The three-tier data rule appears in every Lane A product.
+  roadmaps above are internal and appear in no listing.
+- The three-tier data rule appears in **every Lane A and Lane C product**.
 - Provenance: "Built and audited by two certified teachers."
-- **Every build-along ships its working application.**
+- **Every build-along ships its working application**, and every Lane C
+  session that builds software ships the file its lab produces.
+- **Verify every printed claim** — page counts, file counts, slide counts,
+  cross-references. In Lane C, also every statistic, against a live source.
 
 ## The validation exception, recorded once
 
@@ -168,3 +258,11 @@ skipped quietly, and the monthly re-pull is how we find out whether it lands.
 Lane B products **can** still validate on existing rows (`entrepreneurship`
 1,153 · 3K–8K · Promising; `shark tank` 403 · 3K–8K · Promising) and should
 carry them in tags even while the title leads on vibe coding.
+
+**Lane C is the least exposed of the three.** It sells on established PD
+phrases rather than on the category bet — `technology professional
+development` and `ai professional development` are both on the Sunday
+worksheet unrun, and Kit 1 and Kit 2 are already listed against that family.
+A Lane C session can therefore carry a validated row even when its Lane A
+source material cannot, which is a good reason to keep the lane rather than a
+consolation for having it.
