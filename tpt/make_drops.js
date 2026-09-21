@@ -20,6 +20,8 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'UPLOAD/drops');
 const { listings } = JSON.parse(fs.readFileSync(path.join(ROOT, 'tpt/listings.json'), 'utf8'));
 
+const thumbSlot = i => (i < 2 ? 3 + i : 4 + i);   // 3, 4, then 6 onward: slot 5 is the preview
+
 function listingTxt(l) {
   const previewLine = l.product
     ? `Preview ............ 5-PREVIEW.pdf   <- upload in the LEFT "Preview" box (up to 30 MB)
@@ -34,10 +36,13 @@ Video Preview ...... skip (the right box)`
           `${path.basename(f)}   (in this zip — upload this one too)`))
         .join('\n')
     : `none — build this in TPT's bundle tool from: ${l.bundleOf.join(' + ')}`;
+  /* List every thumbnail the listing actually has. It used to hardcode two,
+     so a third would sit unnamed in the zip and never get uploaded. */
   const thumbs = l.thumbnails.length
-    ? `Main Cover ......... 2-MAIN-COVER.png
-Thumbnail 1 ........ 3-THUMBNAIL-1.png
-Thumbnail 2 ........ 4-THUMBNAIL-2.png`
+    ? ['Main Cover ......... 2-MAIN-COVER.png']
+        .concat(l.thumbnails.map((_, i) =>
+          `Thumbnail ${i + 1} ........ ${thumbSlot(i)}-THUMBNAIL-${i + 1}.png`))
+        .join('\n')
     : `Main Cover ......... 2-MAIN-COVER.png
 Thumbnails ......... leave empty`;
   const price = l.price === 0
@@ -108,7 +113,7 @@ for (const l of [...listings].sort((a, b) => a.order - b.order)) {
     fs.copyFileSync(path.join(ROOT, f), path.join(stage, path.basename(f))));
   fs.copyFileSync(path.join(ROOT, l.cover), path.join(stage, '2-MAIN-COVER.png'));
   l.thumbnails.forEach((t, i) =>
-    fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${3 + i}-THUMBNAIL-${i + 1}.png`)));
+    fs.copyFileSync(path.join(ROOT, t), path.join(stage, `${thumbSlot(i)}-THUMBNAIL-${i + 1}.png`)));
   const zipName = `drop-${String(l.order).padStart(2, '0')}-${l.id}.zip`;
   const zipPath = path.join(OUT, zipName);
   fs.rmSync(zipPath, { force: true });

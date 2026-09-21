@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Boss</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0E1B27;color:#F4F1E8;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;
+       min-height:100vh;padding:14px;gap:12px;overflow-x:hidden}
+  #wrap{width:100%;max-width:880px;display:flex;flex-direction:column;gap:10px}
+  #stage{position:relative;width:100%;aspect-ratio:16/9;
+         border:4px solid #17293B;border-radius:12px;overflow:hidden;background:#101F2E;
+         box-shadow:0 8px 0 #0A1420}
+  canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+  .panel{background:#17293B;border:3px solid #F4F1E8;border-radius:10px;padding:12px 14px}
+  #qtext{font-size:clamp(15px,2.6vw,21px);font-weight:700;line-height:1.35;margin-bottom:10px}
+  #answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  #answers button{font:inherit;font-weight:700;font-size:clamp(13px,2.1vw,17px);text-align:left;
+      padding:11px 13px;border-radius:8px;border:3px solid #F4F1E8;background:#0E1B27;
+      color:#F4F1E8;cursor:pointer;transition:transform .06s}
+  #answers button:hover:not(:disabled){transform:translateY(-2px);background:#1F3950}
+  #answers button:focus-visible{outline:4px solid #FFC43D;outline-offset:2px}
+  #answers button.right{background:#2E7D4F;border-color:#8CE0AE}
+  #answers button.wrong{background:#8C2F1B;border-color:#F0A08C}
+  #answers button:disabled{cursor:default;opacity:.9}
+  .key{display:inline-block;min-width:20px;margin-right:7px;padding:0 5px;border-radius:4px;
+       background:#F4F1E8;color:#17293B;font-size:.85em}
+  #say{font-size:clamp(14px,2.3vw,18px);font-weight:700;min-height:1.4em;text-align:center}
+  @media (max-width:560px){ #answers{grid-template-columns:1fr} }
+  #start,#over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:14px;text-align:center;padding:20px;
+      background:rgba(14,27,39,.96);z-index:5}
+  h1{font-size:clamp(22px,4.6vw,40px);letter-spacing:.02em;line-height:1.1}
+  .big{font-size:clamp(15px,2.6vw,20px);max-width:32ch;line-height:1.4;color:#C8D6E2}
+  .go{font:inherit;font-weight:800;font-size:clamp(15px,2.6vw,20px);padding:12px 26px;
+      border-radius:10px;border:3px solid #17293B;background:#FFC43D;color:#17293B;cursor:pointer}
+  .go:hover{transform:translateY(-2px)}
+  .go:focus-visible{outline:4px solid #17BEBB;outline-offset:3px}
+  .meta{font-size:13px;color:#8FA3B4}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+<div id="wrap">
+  <div id="stage">
+    <canvas id="c" width="640" height="360" aria-hidden="true"></canvas>
+
+    <div id="start">
+      <h1 id="title">Review Boss</h1>
+      <p class="big" id="blurb">Answer right and you land the hit. Answer wrong and it hits you.</p>
+      <button class="go" id="startBtn">Start the fight</button>
+      <p class="meta" id="best"></p>
+    </div>
+
+    <div id="over" hidden>
+      <h1 id="overTitle"></h1>
+      <p class="big" id="overText"></p>
+      <button class="go" id="againBtn">Fight again</button>
+      <p class="meta" id="overMeta"></p>
+    </div>
+  </div>
+
+  <div class="panel"><div id="say" role="status" aria-live="polite">&nbsp;</div></div>
+
+  <div class="panel" id="qpanel" hidden>
+    <div id="qtext"></div>
+    <div id="answers"></div>
+  </div>
+</div>
+
+<script>
+/* ===========================================================================
+   YOUR CONTENT LIVES HERE. Everything above and below is the game.
+   Replace these questions with your own. Keep the shape exactly:
+     q  = the question
+     a  = the four answers
+     ok = which one is right, counting from 0 (so 0 is the first)
+   Four to twenty questions works well. The game draws them in a new order
+   every fight, so the same set stays usable all week.
+   =========================================================================== */
+
+const BOSS_NAME = 'The Water Cycle';     // what the class is fighting
+const UNIT_NAME = 'Water Cycle Review';  // shows on the title screen
+
+const QUESTIONS = [
+  { q: 'Water turning from liquid into vapor is called what?',
+    a: ['Evaporation', 'Condensation', 'Precipitation', 'Collection'], ok: 0 },
+  { q: 'Water vapor cooling and forming clouds is called what?',
+    a: ['Runoff', 'Condensation', 'Evaporation', 'Infiltration'], ok: 1 },
+  { q: 'Rain, snow, sleet and hail are all examples of what?',
+    a: ['Transpiration', 'Condensation', 'Precipitation', 'Evaporation'], ok: 2 },
+  { q: 'What provides the energy that drives the whole water cycle?',
+    a: ['The moon', 'The sun', 'The wind', 'The tides'], ok: 1 },
+  { q: 'Water released from the leaves of plants is called what?',
+    a: ['Transpiration', 'Precipitation', 'Percolation', 'Condensation'], ok: 0 },
+  { q: 'Water that flows over the ground into rivers is called what?',
+    a: ['Infiltration', 'Runoff', 'Condensation', 'Evaporation'], ok: 1 },
+  { q: 'Water soaking down into the soil is called what?',
+    a: ['Runoff', 'Precipitation', 'Infiltration', 'Transpiration'], ok: 2 },
+  { q: 'Roughly how much of Earth’s water is fresh water?',
+    a: ['About 3 percent', 'About 30 percent', 'About half', 'Almost all of it'], ok: 0 },
+];
+
+/* ===========================================================================
+   THE GAME. You can read it, change it, or leave it alone.
+   =========================================================================== */
+
+const W = 640, H = 360;
+const c = document.getElementById('c'), x = c.getContext('2d');
+x.imageSmoothingEnabled = false;
+
+const $ = id => document.getElementById(id);
+const P = {                      // palette, one place so a recolor is one edit
+  ink:'#0E1B27', deep:'#17293B', cream:'#F4F1E8', sky:'#1F3950',
+  hero:'#17BEBB', boss:'#B8503A', bossDark:'#7E3324',
+  good:'#4CAF6D', bad:'#E4572E', gold:'#FFC43D', gray:'#5B6F81'
+};
+
+/* ---- tiny pixel sprites: one character per pixel, '.' is transparent ---- */
+const SPR = {
+  hero: [
+    '...1111...','..111111..','.11222211.','.12211221.','.11222211.',
+    '..112211..','...1111...','..111111..','.11.11.11.','.1..11..1.'
+  ],
+  boss: [
+    '....22222222....','..222222222222..','.22222222222222.',
+    '2221133113311222','2221133113311222','2222222222222222',
+    '2224444444444222','2242222222222422','2224444444444222',
+    '.22222222222222.','..2.22222222.2..','.2...222222...2.',
+    '2.....2....2....','.......2..2.....'
+  ]
+};
+const SKIN = {
+  hero: { '1':P.hero, '2':'#0E1B27' },
+  boss: { '2':P.boss, '1':'#FFF3D6', '3':'#2A0E08', '4':P.bossDark }
+};
+function sprite(rows, skin, px, py, s, flashWhite) {
+  rows.forEach((row, ry) => {
+    for (let rx = 0; rx < row.length; rx++) {
+      const ch = row[rx];
+      if (ch === '.' || ch === ' ') continue;
+      x.fillStyle = flashWhite ? '#fff' : (skin[ch] || P.cream);
+      x.fillRect(px + rx * s, py + ry * s, s, s);
+    }
+  });
+}
+
+/* ---- game state ---- */
+const BOSS_HP = 200;   // about 12 correct answers to win
+const HERO_HP = 100;   // about 7 misses to lose
+let S = null;
+function fresh() {
+  return {
+    scene:'title', bossHP:BOSS_HP, heroHP:HERO_HP, bossShown:BOSS_HP, heroShown:HERO_HP,
+    order:shuffle(QUESTIONS.map((_,i)=>i)), qi:0, answered:0, correct:0, streak:0, best:0,
+    shake:0, bossFlash:0, heroFlash:0, floaters:[], t:0, startedAt:0, locked:false
+  };
+}
+function shuffle(arr){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){ const j=(Math.random()*(i+1))|0; [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+/* ---- sound: synthesized, so there are no audio files to lose ---- */
+let AC = null;
+function beep(freq, ms, type, vol) {
+  try {
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    const o = AC.createOscillator(), g = AC.createGain();
+    o.type = type || 'square'; o.frequency.value = freq;
+    g.gain.value = vol == null ? 0.05 : vol;
+    o.connect(g); g.connect(AC.destination);
+    o.start();
+    g.gain.exponentialRampToValueAtTime(0.0001, AC.currentTime + ms / 1000);
+    o.stop(AC.currentTime + ms / 1000);
+  } catch (e) { /* audio blocked or unavailable; the game plays on in silence */ }
+}
+const sfxHit   = () => { beep(220, 90); setTimeout(()=>beep(160,120),70); };
+const sfxCrit  = () => { beep(440, 70); setTimeout(()=>beep(660,70),60); setTimeout(()=>beep(880,140),120); };
+const sfxHurt  = () => { beep(120, 200, 'sawtooth', .045); };
+const sfxWin   = () => [523,659,784,1047].forEach((f,i)=>setTimeout(()=>beep(f,160,'square',.05), i*130));
+const sfxLose  = () => [330,262,196].forEach((f,i)=>setTimeout(()=>beep(f,260,'sawtooth',.045), i*190));
+
+/* ---- drawing ---- */
+function glow(px, py, r) {
+  const g = x.createRadialGradient(px, py, 8, px, py, r);
+  g.addColorStop(0, 'rgba(184,80,58,.45)');
+  g.addColorStop(1, 'rgba(184,80,58,0)');
+  x.fillStyle = g; x.beginPath(); x.arc(px, py, r, 0, 7); x.fill();
+}
+function bar(px, py, w, h, frac, fill) {
+  x.fillStyle = P.deep;  x.fillRect(px-3, py-3, w+6, h+6);
+  x.fillStyle = '#0A1420'; x.fillRect(px, py, w, h);
+  const f = Math.max(0, Math.min(1, frac));
+  x.fillStyle = f > .5 ? fill : (f > .25 ? P.gold : P.bad);
+  x.fillRect(px, py, Math.round(w * f), h);
+  x.strokeStyle = P.cream; x.lineWidth = 2; x.strokeRect(px-1, py-1, w+2, h+2);
+}
+function label(text, px, py, size, color, align) {
+  x.font = '700 ' + size + 'px system-ui, sans-serif';
+  x.fillStyle = color; x.textAlign = align || 'left'; x.textBaseline = 'top';
+  x.fillText(text, px, py);
+}
+function draw() {
+  const sx = S.shake > 0 ? (Math.random()*S.shake - S.shake/2) : 0;
+  const sy = S.shake > 0 ? (Math.random()*S.shake - S.shake/2) : 0;
+  x.save(); x.translate(sx, sy);
+
+  x.fillStyle = P.ink; x.fillRect(-10, -10, W+20, H+20);
+  x.fillStyle = '#26466B'; x.fillRect(-10, 150, W+20, 70);       // horizon band
+  x.fillStyle = '#1B3452'; x.fillRect(-10, 196, W+20, 24);
+  x.fillStyle = '#17293B'; x.fillRect(-10, 220, W+20, H);        // floor
+  x.fillStyle = '#20364B'; for (let i=0;i<9;i++) x.fillRect(-10+i*76, 220, 38, H);
+
+  // stars, fixed by index so they do not jitter
+  x.fillStyle = 'rgba(244,241,232,.20)';
+  for (let i = 0; i < 40; i++) x.fillRect((i*97)%W, (i*53)%140, 2, 2);
+
+  const bob = Math.sin(S.t / 22) * 3;
+  glow(470, 118 + bob, 130);
+  sprite(SPR.boss, SKIN.boss, 358, 30 + bob, 14, S.bossFlash > 0);
+  sprite(SPR.hero, SKIN.hero, 140, 176, 10, S.heroFlash > 0);
+
+  bar(28, 26, 250, 16, S.bossShown / BOSS_HP, P.bad);
+  label(BOSS_NAME, 28, 6, 15, P.cream);
+  label(Math.max(0, Math.round(S.bossShown)) + ' / ' + BOSS_HP, 286, 26, 13, P.gray);
+
+  bar(28, 308, 250, 14, S.heroShown / HERO_HP, P.good);
+  label('Your class', 28, 286, 14, P.cream);
+  label(Math.max(0, Math.round(S.heroShown)) + ' / ' + HERO_HP, 286, 308, 12, P.gray);
+
+  if (S.streak > 1) label(S.streak + ' in a row', 28, 50, 15, P.gold);
+
+  S.floaters.forEach(f => {
+    x.globalAlpha = Math.max(0, f.life / 60);
+    label(f.text, f.x, f.y, f.size, f.color, 'center');
+    x.globalAlpha = 1;
+  });
+  x.restore();
+}
+
+function step() {
+  S.t++;
+  S.bossShown += (S.bossHP - S.bossShown) * 0.12;   // bars drain, never jump
+  S.heroShown += (S.heroHP - S.heroShown) * 0.12;
+  if (S.shake > 0) S.shake *= 0.86;
+  if (S.bossFlash > 0) S.bossFlash--;
+  if (S.heroFlash > 0) S.heroFlash--;
+  S.floaters.forEach(f => { f.y -= 0.8; f.life--; });
+  S.floaters = S.floaters.filter(f => f.life > 0);
+  draw();
+  requestAnimationFrame(step);
+}
+
+function floater(text, px, py, color, size) {
+  S.floaters.push({ text, x:px, y:py, color, size: size || 22, life: 60 });
+}
+
+/* ---- questions ---- */
+function askNext() {
+  if (S.qi >= S.order.length) S.order = shuffle(S.order), S.qi = 0;   // loop the bank
+  const item = QUESTIONS[S.order[S.qi]];
+  const picks = shuffle(item.a.map((text, i) => ({ text, right: i === item.ok })));
+  $('qtext').textContent = item.q;
+  const box = $('answers'); box.innerHTML = '';
+  picks.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.innerHTML = '<span class="key">' + (i+1) + '</span>' + escapeHtml(p.text);
+    b.dataset.right = p.right ? '1' : '0';
+    b.onclick = () => answer(b, p.right, box);
+    box.appendChild(b);
+  });
+  $('qpanel').hidden = false;
+  S.locked = false;
+  box.querySelector('button').focus();
+}
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+
+function answer(btn, right, box) {
+  if (S.locked) return;
+  S.locked = true;
+  S.answered++;
+  [...box.children].forEach(b => {
+    b.disabled = true;
+    if (b.dataset.right === '1') b.classList.add('right');
+  });
+  if (!right) btn.classList.add('wrong');
+
+  if (right) {
+    S.correct++; S.streak++;
+    const crit = S.streak >= 3 && Math.random() < 0.35;
+    const dmg = (crit ? 26 : 14) + ((Math.random()*5)|0);
+    S.bossHP = Math.max(0, S.bossHP - dmg);
+    S.bossFlash = 8; S.shake = crit ? 16 : 8;
+    floater('-' + dmg + (crit ? '!' : ''), 470, 70, crit ? P.gold : P.cream, crit ? 30 : 22);
+    say(crit ? 'Critical hit. ' + S.streak + ' in a row.' : 'Direct hit.');
+    crit ? sfxCrit() : sfxHit();
+  } else {
+    S.streak = 0;
+    const dmg = 12 + ((Math.random()*6)|0);
+    S.heroHP = Math.max(0, S.heroHP - dmg);
+    S.heroFlash = 8; S.shake = 10;
+    floater('-' + dmg, 220, 160, P.bad, 22);
+    say('Not that one. Look at the highlighted answer.');
+    sfxHurt();
+  }
+
+  S.qi++;
+  setTimeout(() => {
+    $('qpanel').hidden = true;
+    if (S.bossHP <= 0) return finish(true);
+    if (S.heroHP <= 0) return finish(false);
+    setTimeout(askNext, 260);
+  }, right ? 900 : 1700);            // longer on a miss, so the right answer is read
+}
+function say(t){ $('say').textContent = t; }
+
+/* ---- start and finish ---- */
+function begin() {
+  const best = S.best;
+  S = fresh(); S.best = best; S.scene = 'fight';
+  S.startedAt = Date.now();
+  $('start').hidden = true; $('over').hidden = true;
+  say('Answer right and you land the hit.');
+  askNext();
+}
+function finish(won) {
+  S.scene = 'over';
+  const secs = Math.round((Date.now() - S.startedAt) / 1000);
+  const pct = S.answered ? Math.round(S.correct / S.answered * 100) : 0;
+  $('overTitle').textContent = won ? 'You beat it' : 'It beat you';
+  $('overText').textContent = won
+    ? S.correct + ' right out of ' + S.answered + ', in ' + secs + ' seconds.'
+    : 'You got ' + S.correct + ' of ' + S.answered + ' right. Go again.';
+  if (won && (!S.best || secs < S.best)) { S.best = secs; saveBest(secs); }
+  $('overMeta').textContent = S.best ? 'Class record: ' + S.best + ' seconds' : '';
+  $('over').hidden = false;
+  $('againBtn').focus();
+  won ? sfxWin() : sfxLose();
+}
+function loadBest(){ try { return parseInt(localStorage.getItem('bossBest'), 10) || 0; } catch(e){ return 0; } }
+function saveBest(v){ try { localStorage.setItem('bossBest', String(v)); } catch(e){} }
+
+/* ---- keys: 1-4 answer, Enter starts ---- */
+document.addEventListener('keydown', e => {
+  if (e.key >= '1' && e.key <= '4' && !$('qpanel').hidden) {
+    const b = $('answers').children[+e.key - 1];
+    if (b && !b.disabled) b.click();
+  }
+  if (e.key === 'Enter') {
+    if (!$('start').hidden) $('startBtn').click();
+    else if (!$('over').hidden) $('againBtn').click();
+  }
+});
+
+$('startBtn').onclick = begin;
+$('againBtn').onclick = begin;
+
+S = fresh();
+S.best = loadBest();
+$('title').textContent = UNIT_NAME;
+$('blurb').textContent = 'Beat ' + BOSS_NAME + '. Answer right and you land the hit. Answer wrong and it hits you.';
+$('best').textContent = S.best ? 'Class record: ' + S.best + ' seconds' : 'No class record yet.';
+step();
+</script>
+</body>
+</html>

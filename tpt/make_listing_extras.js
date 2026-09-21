@@ -75,6 +75,30 @@ function whatsInside(kitName, accent, items, badge = '9 files') {
 </body></html>`;
 }
 
+/* ---- shape 3: the thing itself, running ---- */
+function gameShot(file, kicker, head, headAccent, caption, captionBold) {
+  return `<!doctype html><html><head><meta charset="utf-8">
+<link href="${FONTS}" rel="stylesheet"><style>${BASE}
+  body { background: #17293B; display: flex; flex-direction: column; align-items: center;
+         justify-content: center; gap: 16px; padding: 40px 44px 52px; }
+  .kick2 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 21px;
+           letter-spacing: 2.2px; text-transform: uppercase; color: #FFC43D; text-align: center; }
+  h1 { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 44px; color: #FFFDF8;
+       text-align: center; line-height: 1.08; }
+  h1 em { font-style: normal; color: #17BEBB; }
+  img { width: 100%; max-height: 585px; object-fit: contain; border-radius: 14px;
+        border: 6px solid #FFFDF8; box-shadow: 0 12px 0 rgba(0,0,0,.35); }
+  .cap { font-size: 23px; font-weight: 800; color: #FFFDF8; text-align: center; line-height: 1.3; }
+  .cap b { color: #FFC43D; }
+</style></head><body>
+  <div class="kick2">${kicker}</div>
+  <h1>${head}<br><em>${headAccent}</em></h1>
+  <img src="${b64(file)}">
+  <p class="cap">${caption}<br><b>${captionBold}</b></p>
+  ${rainbow()}
+</body></html>`;
+}
+
 /* ---- shape 2: real pages collage ---- */
 function realPages(field, shots, badge = '9 files') {
   return `<!doctype html><html><head><meta charset="utf-8">
@@ -256,6 +280,19 @@ const IMAGES = [
     'Where student data can and cannot live, answered plainly',
   ])],
   ['vcd-real-pages',   realPages('#2D6CB5', ['vcd_p3.png', 'vcd_p8.png', 'vcd_p17.png'], '23 pages')],
+  ['bbg-the-game', gameShot('bbg_game.png', 'This is the game you build',
+      'Your questions are', 'the weapon',
+      'Health bars \u00b7 sprites \u00b7 sound \u00b7 screen shake',
+      'No student logins. Works with the wifi down.')],
+  ['bbg-whats-inside', whatsInside('Vibe Code Your Own Game \u00b7', 'Boss Battle', [
+    'Twelve tasks, each ending in something you can play',
+    'The finished game included and browser-tested',
+    'Every prompt in full, including what to forbid',
+    'Task 8, juice - the lines that make a class shout',
+    'How to write questions worth fighting over',
+    'Building in a famous genre without stealing',
+  ], 'PDF + HTML')],
+  ['bbg-real-pages',   realPages('#E4572E', ['bbg_p3.png', 'bbg_p13.png', 'bbg_p24.png'], '29 pages + game')],
   ['rst-whats-inside', whatsInside('Vibe Coding \u00b7', 'Class Roster', [
     'Twelve tasks, each ending in something that works',
     'Three layers - browser, database, schema',

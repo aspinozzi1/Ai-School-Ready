@@ -108,6 +108,71 @@ the tool replaces, not by page count.
 
 ---
 
+## LANE A-G · "VIBE CODE YOUR OWN GAME" — the series to own
+
+> **Owner, 2026-09-21:** "Now that I think about it, I should own the 'Vibe
+> Code your own game' part of TpT. Add that to the drop list."
+
+A named sub-series inside Lane A, and **the phrase goes in the title**.
+
+### Why this one converts when the roster did not
+
+The owner declined to upload the tier-2 roster on 09-21: *"I want content that
+will have a high conversion of purchase... actually highly tangible and
+exciting to teachers that isn't too simple and could be accomplished easily
+with already existing tools."* A game clears every part of that test where a
+roster did not.
+
+| The test | A roster app | A review game |
+|---|---|---|
+| Tangible and exciting | A list | Health bars, sound, a class shouting |
+| Beyond a worksheet | Yes | Obviously, visibly yes |
+| Not doable in existing tools | True but invisible | Partly served, and the gaps are real |
+| Audience | Teachers who want a database | **Every teacher, every subject, every grade** |
+| Sells from the cover | No | The cover is a screenshot of a game |
+
+### The honest competitive position, which every product must state
+
+Blooket, Gimkit and Kahoot exist and teachers know them. **Say so on page 3,
+in both directions.** Theirs are faster to start and more polished. Ours:
+
+- **no student logins or accounts, for anybody**
+- **works with the internet down** — it is a local file
+- **cannot be blocked by a district** or lost when a subscription lapses
+- **no student data leaves the room**, because there is nowhere to send it
+- **every rule is changeable** the morning you decide it is wrong
+- **free forever** against roughly $60 a year for a paid tier
+
+Pretending the competition does not exist is the fastest way to lose a review.
+
+### The series
+
+| # | Build | The hook |
+|---|---|---|
+| 1 | **Boss Battle Review Game** *(shipped)* | Your questions are the weapon |
+| 2 | Escape room / locked doors | A code you only get by knowing the content |
+| 3 | Two-team head-to-head | The loudest thirty minutes of the week |
+| 4 | Arcade run where right answers power the action | Movement, not multiple choice |
+| 5 | A choose-the-path story with real consequences | ELA and social studies reach |
+
+### Binding rules for this series
+
+- **"Vibe Code Your Own Game" leads the title.** It is the phrase being
+  claimed. `vibe coding` stays as tag one and the custom category, since the
+  literal string differs and the tag is what search sees.
+- **The finished game ships in the drop**, and is played start to finish — to
+  a win *and* to a loss — before publication.
+- **Every product carries the IP page.** Systems are not protected, expression
+  is; what may be borrowed, what may never be, and a checklist. Drawn from the
+  owner's own guardrails file. This is a differentiator, not a disclaimer.
+- **No student data, ever.** These games know nothing about any child and save
+  no name. The obvious feature request — a named high-score table — is
+  refused in the product itself and the reason is given.
+- **$19–24.** Top of the impulse band. The roster's $39 experiment is not
+  repeated without evidence.
+
+---
+
 ## LANE B · Young Entrepreneurs, rebuilt around vibe coding
 
 The old lane measured badly and the numbers say why: `market day` **6**,

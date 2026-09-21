@@ -1,0 +1,788 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Vibe Code Your Own Game</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:24pt">
+<div class="kick">Vibe Code Your Own Game &middot; build 1</div>
+<h1>The Boss Battle<br>Review Game</h1>
+<p class="lede">Twelve tasks. At the end you have a real game &mdash; health bars, sprites, sound,
+screen shake &mdash; where <b>your</b> review questions are the weapon. One file. No student
+logins, no subscription, and it runs with the wifi down.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">12</h3><p class="small" style="margin:0">tasks, each ending in something you can play</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">finished game included</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">accounts anyone has to make</p></div>
+</div>
+<div class="note"><b>This is the part of AI nobody shows teachers.</b><br>
+Not a faster worksheet. Not a lesson plan in thirty seconds. An actual piece of software, built
+by you, in an evening, about the exact thing you taught this week &mdash; and it belongs to you
+afterwards.</div>
+<div class="card r"><h3>No coding background. About ninety minutes.</h3>
+<p class="small" style="margin:0">Nothing installed, nothing to sign up for, no build step.
+One file that opens by double-clicking it. Swap in your own questions by editing eight lines at
+the top.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Inside</h3>
+<p class="small" style="margin:0">Twelve tasks with the exact prompts written out in full
+&middot; the finished game, playable today &middot; the six failures you will hit and the
+sentence that fixes each &middot; five ways to run it with a class &middot; how to write
+questions worth fighting over &middot; and a straight page on building in a famous game's genre
+without stealing from it.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you begin</div><h2>The twelve tasks at a glance</h2>
+<p class="lede">Every task ends with something on screen. If a task does not, stop there and fix
+it &mdash; the next one builds on it.</p>
+<table>
+<thead><tr><th style="width:26pt">#</th><th>Task</th><th>Ends with</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Pick the fight</td><td>A boss, a unit, eight questions</td></tr>
+<tr><td>2</td><td>The stage</td><td>A window with a floor and a sky</td></tr>
+<tr><td>3</td><td>The two fighters</td><td>Pixel art you drew in text</td></tr>
+<tr><td>4</td><td>Health bars that drain</td><td>Two bars that slide, not jump</td></tr>
+<tr><td>5</td><td>The question and four answers</td><td>Something to click</td></tr>
+<tr><td>6</td><td>A right answer lands a hit</td><td>The boss losing health</td></tr>
+<tr><td>7</td><td>A wrong answer hits back</td><td>Stakes</td></tr>
+<tr><td>8</td><td><b>Make it feel good</b></td><td>Shake, flash, damage numbers</td></tr>
+<tr><td>9</td><td>Sound, with no sound files</td><td>A hit you can hear</td></tr>
+<tr><td>10</td><td>Winning and losing</td><td>Two endings and a rematch</td></tr>
+<tr><td>11</td><td>The class record</td><td>A time that survives the tab closing</td></tr>
+<tr><td>12</td><td>Everyone can play it</td><td>Keyboard, touch, Chromebook</td></tr>
+</tbody></table>
+<div class="card t"><h3>Stop anywhere after task 7</h3>
+<p class="small" style="margin:0">Tasks 1 to 7 give you a working game. Tasks 8 and 9 are what
+make a class shout at the screen, and they are the ones worth staying up for.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Honestly</div><h2>You already have Blooket. Why build one?</h2>
+<p class="lede">Fair question, asked first, because a teacher who has used Gimkit will ask it
+in the first ten seconds.</p>
+<table>
+<thead><tr><th>&nbsp;</th><th>The ones you know</th><th>The one you build</th></tr></thead>
+<tbody>
+<tr><td><b>Student logins</b></td><td>Codes, accounts, or both</td><td>None. It is one file on your screen.</td></tr>
+<tr><td><b>Needs the internet</b></td><td>Yes</td><td>No. Works with the wifi down.</td></tr>
+<tr><td><b>Cost</b></td><td>Free tier, then a yearly fee</td><td>Nothing, forever</td></tr>
+<tr><td><b>Blocked by your district?</b></td><td>Sometimes</td><td>It is a local file, so no</td></tr>
+<tr><td><b>Student data leaves the room</b></td><td>Yes, to their servers</td><td>Never. There is nothing to send.</td></tr>
+<tr><td><b>The game itself</b></td><td>Their template, your questions</td><td>Yours. Change any rule you like.</td></tr>
+<tr><td><b>Setup time</b></td><td>Minutes</td><td>An evening, once</td></tr>
+</tbody></table>
+<div class="note"><b>Be honest about the trade.</b> Their tools are faster to start and have
+polish you will not match on a Tuesday. What you get instead is a game that needs nothing from
+anyone, costs nothing ever, cannot be taken away when a subscription lapses or a district blocks
+a domain, and can be changed on the morning you decide the rules are wrong.</div>
+<div class="card g"><h3>The part that surprises people</h3>
+<p class="small" style="margin:0">Classes care more about a game their teacher made than a
+polished one from a company. Say you built it. They will ask how, and that is a better
+conversation than any lesson on digital citizenship.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The one idea</div><h2>A game is a machine that remembers what is happening</h2>
+<p class="lede">This is what separates a game from a worksheet with pictures, and it is the
+thing worth actually learning here.</p>
+<div class="card"><h3>A worksheet has no state</h3>
+<p class="small" style="margin:0">Questions sit there. Answering one changes nothing about the
+others. A printable quiz and a fancy digital quiz are the same machine.</p></div>
+<div class="card t"><h3>A game has state, and everything reads from it</h3>
+<p class="small" style="margin-bottom:5pt">One object holds the whole situation: how much health
+each side has, which question is up, how many right in a row, whether the screen is shaking.
+<b>Every frame, the game draws that object. Every answer changes it.</b></p>
+<p class="small" style="margin:0">That is the entire architecture, and once you have seen it you
+can build any game.</p></div>
+<div class="card g"><h3>Three parts, and you will build them in this order</h3>
+<p class="small" style="margin-bottom:4pt"><b>The state</b> &mdash; one object. Health, question
+number, streak.</p>
+<p class="small" style="margin-bottom:4pt"><b>The loop</b> &mdash; sixty times a second, nudge
+the animations along and draw everything.</p>
+<p class="small" style="margin:0"><b>The events</b> &mdash; a click or a key changes the state.
+The loop notices on the next frame.</p></div>
+<div class="note"><b>Why to say this to the AI out loud.</b> Ask for "a quiz game" and you often
+get one giant function that redraws the page on every click, and it becomes unchangeable by task
+6. <b>Ask for a state object, a draw function and a game loop</b> and you get something you can
+still be editing in March.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">What you need</div><h2>Before task 1</h2>
+<div class="card t"><h3>An AI chat you are signed in to</h3>
+<p class="small" style="margin:0">Any of them. You paste prompts and read what comes back. You
+are at the keyboard the whole time.</p></div>
+<div class="card"><h3>A browser, and a folder</h3>
+<p class="small" style="margin:0">The game is one HTML file you save wherever you keep things.
+Double-click it and it runs. That is the whole deployment.</p></div>
+<div class="card g"><h3>Eight questions you already have</h3>
+<p class="small" style="margin:0">Off a quiz, a review sheet, an exit ticket. Four answer choices
+each. Do not write new ones tonight &mdash; use something you already trust, so the first version
+is about the game rather than about the content.</p></div>
+<div class="card r"><h3>What you do not need</h3>
+<p class="small" style="margin:0">Node, npm, a terminal, an account, a server, a credit card, an
+art program, or any music. The sound in this game is generated by the browser, which is why there
+are no audio files to lose.</p></div>
+<div class="note"><b>If you only have twenty minutes tonight,</b> do tasks 1 to 4. You will have
+a boss, a hero and two health bars on screen, which is the moment this stops feeling
+theoretical.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 1</div><h2>Pick the fight</h2>
+<p class="lede">Four minutes with a pen. The only task the AI cannot do for you.</p>
+<div class="card"><h3>Three decisions</h3>
+<p class="small" style="margin-bottom:4pt"><b>What are they fighting?</b> Name the boss after the
+thing they find hard. The Water Cycle. Fraction Island. The Comma Splice. A unit that beats
+students becomes a monster that beats students, and that joke does a lot of work.</p>
+<p class="small" style="margin-bottom:4pt"><b>Which eight questions?</b> Pull them from something
+you already use.</p>
+<p class="small" style="margin:0"><b>How long should a fight take?</b> Twelve correct answers is
+about ten minutes of class with discussion. That is the default and it is a good one.</p></div>
+<div class="card t"><h3>Write the questions in this shape now</h3>
+<pre>{ q: 'Water turning from liquid into vapor is called what?',
+  a: ['Evaporation','Condensation','Precipitation','Collection'],
+  ok: 0 }</pre>
+<p class="small" style="margin:0"><code>ok</code> counts from zero, so <code>0</code> is the
+first answer. Getting this shape right now means task 5 is a paste rather than a negotiation.</p></div>
+<div class="card r"><h3>The mistake that makes a boring game</h3>
+<p class="small" style="margin:0"><b>Three obviously wrong answers and one obviously right one.</b>
+A class shouts the answer in two seconds and the game is over in ninety. There is a whole page on
+this later; for now, make the wrong answers the mistakes your students actually make.</p></div>
+<div class="card g"><h3>Task 1 ends when</h3>
+<p class="small" style="margin:0">You have a boss name and eight questions written in that
+shape.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2</div><h2>The stage</h2>
+<p class="lede">A window to fight in, and proof the loop is running.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the stage</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+Put a canvas in it, 640 by 360, scaled to fit the page, with <b>imageSmoothingEnabled set to
+false</b> so pixel art stays sharp. Set up <b>a state object, a draw function, and a game loop
+using requestAnimationFrame</b> &mdash; I want those three things separate, not one big function.
+Draw a dark sky, a horizon band and a floor. Put a few stars in the sky at fixed positions so
+they do not flicker. Make something move every frame so I can see the loop is alive.</div>
+<div class="card"><h3>The three phrases doing the work</h3>
+<p class="small" style="margin-bottom:4pt"><b>"no frameworks and no build step"</b> &mdash; stops
+it reaching for React, which needs a terminal.</p>
+<p class="small" style="margin-bottom:4pt"><b>"a state object, a draw function, and a game loop"</b>
+&mdash; the architecture from the last page, asked for by name.</p>
+<p class="small" style="margin:0"><b>"stars at fixed positions"</b> &mdash; ask for random stars
+and they are redrawn in new places sixty times a second, which looks like static.</p></div>
+<div class="card t"><h3>Task 2 ends when</h3>
+<p class="small" style="margin:0">You open the file and see a sky, a floor, and something
+moving.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 3</div><h2>The two fighters</h2>
+<p class="lede">Pixel art you can draw in a text editor, with no art program and no image files.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; sprites</div>
+I want pixel sprites <b>written as arrays of text</b>, one character per pixel, with a dot for
+transparent &mdash; so I can edit the art by typing. Write a function that takes one of those
+arrays, a color map, an x and y, and a pixel size, and draws it on the canvas. Then make two:
+a small hero standing bottom left, and <b>a big boss, at least fourteen pixels wide, on the
+right.</b> Give the boss a slow bob up and down so it looks alive. Put a soft colored glow
+behind it.</div>
+<div class="card t"><h3>What a sprite looks like, so you can change it</h3>
+<pre>hero: [
+  '...1111...',
+  '..111111..',
+  '.11222211.',
+  '.12211221.'
+]</pre>
+<p class="small" style="margin:0">Every <code>1</code> is one color, every <code>2</code>
+another, every dot is nothing. <b>Change a character, save, reload &mdash; the art changed.</b>
+That is the moment most teachers realise they can actually do this.</p></div>
+<div class="card r"><h3>Make the boss big</h3>
+<p class="small" style="margin:0">Left alone the AI makes both fighters the same modest size and
+the screen looks like a chess problem. <b>A boss should be four or five times the hero.</b> Say so
+in the prompt, and say it again if it does not listen.</p></div>
+<div class="card g"><h3>Task 3 ends when</h3>
+<p class="small" style="margin:0">Two characters are on the stage and the big one is breathing.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4</div><h2>Health bars that drain</h2>
+<p class="lede">The single cheapest thing you can do to make software feel like a game.</p>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; the bars</div>
+Add health to the state: the boss has 200, the class has 100. Draw a bar for each, with a label
+and the numbers beside it. Put the boss bar at the top under its name and the class bar at the
+bottom under the hero. <b>The bars must slide toward the real value a little each frame rather
+than jumping</b> &mdash; keep a separate "shown" number per bar and ease it toward the true one.
+Turn the bar yellow below half and red below a quarter.</div>
+<div class="card t"><h3>Why the sliding matters more than it sounds</h3>
+<p class="small" style="margin:0">A bar that jumps from 200 to 186 is information. A bar that
+<i>drains</i> from 200 to 186 over half a second is <b>a hit landing</b>. It is four lines of
+code and it is most of the difference between a quiz and a game. Every arcade game you have ever
+played does this.</p></div>
+<div class="card r"><h3>The bug to watch for</h3>
+<p class="small" style="margin:0">If the bar overshoots and jitters at the end, the easing step is
+too big. Say: <b>move it twelve percent of the remaining distance each frame.</b></p></div>
+<div class="card g"><h3>Task 4 ends when</h3>
+<p class="small" style="margin:0">You change a health number by hand in the code, reload, and
+watch the bar glide to the new value.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 5</div><h2>The question, and four answers</h2>
+<p class="lede">Now the content arrives, and where you put it matters.</p>
+<div class="prompt"><div class="lbl">Prompt 4 &middot; questions</div>
+Put my questions in <b>a plain array at the very top of the file</b>, above all the game code,
+with a comment saying this is the part a teacher edits. Each one has a question, four answers, and
+which answer is right counting from zero. Below the canvas, show the current question and four
+answer buttons as <b>real HTML buttons, not drawn on the canvas</b>, so they work with a keyboard
+and a screen reader. Number them 1 to 4 and let those number keys answer. <b>Shuffle the answer
+order every time a question is asked</b>, and shuffle the question order every fight, so the same
+set is still usable on Friday.</div>
+<div class="card"><h3>Two decisions in that prompt worth understanding</h3>
+<p class="small" style="margin-bottom:4pt"><b>Content at the top, above the code.</b> A teacher
+editing next month should not have to go hunting past three hundred lines of game. This is the
+difference between a thing you use all year and a thing you built once.</p>
+<p class="small" style="margin:0"><b>Buttons in HTML, not painted on the canvas.</b> Canvas text
+cannot be read by a screen reader or reached with Tab. Use the canvas for the fight and the page
+for the interface &mdash; that is not a compromise, it is the right call.</p></div>
+<div class="card r"><h3>Shuffle, or it stops working on day two</h3>
+<p class="small" style="margin:0">Without it, the third student to play has memorised that the
+answer is always the second one. Shuffling answers <i>and</i> questions is what makes eight
+questions last a week.</p></div>
+<div class="card g"><h3>Task 5 ends when</h3>
+<p class="small" style="margin:0">A question from your own unit is on screen with four buttons
+under it, in a different order each time you reload.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 6</div><h2>A right answer lands a hit</h2>
+<p class="lede">The first moment it is a game.</p>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; damage</div>
+When the right answer is clicked, take health off the boss &mdash; about 14 to 18, with a little
+randomness so no two hits are identical. Then <b>disable all four buttons and highlight which one
+was right</b>, wait about a second, and ask the next question. Track a streak of correct answers
+in the state. <b>After three in a row, some hits are critical</b> and take roughly double, with a
+different message. Show the streak on screen once it is above one.</div>
+<div class="card t"><h3>The critical hit is not decoration</h3>
+<p class="small" style="margin:0">It is the reason a class that is doing well starts paying
+<i>more</i> attention rather than less. A streak that pays off turns "we are winning" into
+"do not break the chain", and that is worth writing four lines for.</p></div>
+<div class="card"><h3>Randomness, but not too much</h3>
+<p class="small" style="margin:0">Identical damage every time feels mechanical. Wildly varying
+damage feels unfair. A small spread on a fixed base is the shape almost every game uses.</p></div>
+<div class="card g"><h3>Task 6 ends when</h3>
+<p class="small" style="margin:0">You answer correctly and watch the boss bar drain.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 7</div><h2>A wrong answer hits back</h2>
+<p class="lede">Without stakes there is no game, only a quiz with a health bar on it.</p>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; consequences</div>
+When a wrong answer is clicked, the class takes 12 to 17 damage and the streak resets to zero.
+Mark the clicked button wrong in red and <b>still highlight the right one in green</b>. Say
+something plain like "Not that one, look at the highlighted answer". <b>Wait longer before the
+next question after a miss than after a hit</b> &mdash; about 1.7 seconds instead of 0.9 &mdash;
+so there is time to actually read it.</div>
+<div class="card t"><h3>The longer pause is the teaching</h3>
+<p class="small" style="margin:0">On a hit the class already knows; move on. On a miss the correct
+answer is on screen and every eye in the room is on it. <b>That extra eight-tenths of a second is
+the only reteaching this game does, and it is why it is a review game and not a scoreboard.</b>
+Ask for it explicitly, because no model will think of it.</p></div>
+<div class="card r"><h3>Get the numbers right or the game is not fun</h3>
+<p class="small" style="margin:0">Boss 200 and about 15 damage a hit means <b>roughly twelve
+correct answers to win</b>. Class 100 and about 14 a miss means <b>about seven misses to lose</b>.
+So a class at sixty percent loses and a class at seventy-five percent squeaks through. Losable but
+winnable is the whole design. If your class wins every time, raise the boss health.</p></div>
+<div class="card g"><h3>Task 7 ends when</h3>
+<p class="small" style="margin:0">You can lose. Answer badly on purpose and watch your own bar
+empty.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 8 &middot; the one that matters</div><h2>Make it feel good</h2>
+<p class="lede">Tasks 1 to 7 made a game. This is the one that makes a class shout at the screen.</p>
+<div class="prompt"><div class="lbl">Prompt 7 &middot; juice</div>
+Add three things when a hit lands. <b>Screen shake</b>: offset the whole canvas by a small random
+amount for a few frames and let it settle. <b>A white flash</b>: draw whoever got hit in solid
+white for about eight frames. <b>A floating number</b>: show the damage above them, drifting up
+and fading out. Make a critical hit shake harder and show a bigger number in gold. Keep all three
+short &mdash; a few frames, not a second.</div>
+<div class="card t"><h3>These have a name, and the name is useful</h3>
+<p class="small" style="margin:0">Game developers call it <b>juice</b> &mdash; feedback that adds
+nothing to the rules and everything to how it feels. Almost none of the fun in an arcade game is
+in the rules. It is in the shake, the flash, the little number, the sound. <b>Say the word "juice"
+to an AI and it knows exactly what you want.</b></p></div>
+<div class="card r"><h3>The trap</h3>
+<p class="small" style="margin:0">Left to itself a model will make the shake last half a second
+and the flash a quarter of one. It looks broken. <b>Short and sharp.</b> If it feels wrong, ask
+for half as long before you ask for anything else.</p></div>
+<div class="card"><h3>Test it on somebody</h3>
+<p class="small" style="margin:0">Hand your laptop to a colleague without explaining anything and
+watch them answer three questions. If nobody reacts to a critical hit, the juice is too
+quiet.</p></div>
+<div class="card g"><h3>Task 8 ends when</h3>
+<p class="small" style="margin:0">A critical hit makes you grin at your own screen, alone, at
+night.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 9</div><h2>Sound, with no sound files</h2>
+<p class="lede">The browser can make noise on its own. Nothing to download and nothing to lose.</p>
+<div class="prompt"><div class="lbl">Prompt 8 &middot; sound</div>
+Add sound using <b>the Web Audio API to generate tones &mdash; no audio files at all.</b> Write one
+small function that plays a tone at a given pitch for a given length. Then use it for: a hit, a
+critical hit as a quick rising run of notes, taking damage as a low buzz, winning as a short
+four-note fanfare, and losing as three falling notes. Keep everything quiet and under a quarter of
+a second except the endings. <b>Wrap it so the game keeps working if audio is blocked.</b></div>
+<div class="card t"><h3>Why no files</h3>
+<p class="small" style="margin:0">Audio files mean a folder, and a folder means the game is no
+longer one file you can email to the teacher next door. A tone generated in six lines of code
+travels with the game forever.</p></div>
+<div class="card r"><h3>Browsers will not make noise until somebody clicks</h3>
+<p class="small" style="margin:0">This is a rule in every browser, not a bug in your game. Since
+your first sound happens after a button press, you will not notice &mdash; but if you ever add
+music to the title screen, that is why it is silent.</p></div>
+<div class="card"><h3>Test it on the classroom machine</h3>
+<p class="small" style="margin:0">School computers have their own opinions about volume. Check
+before the lesson, not during it.</p></div>
+<div class="card g"><h3>Task 9 ends when</h3>
+<p class="small" style="margin:0">A hit makes a noise and a critical hit makes a better one.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 10</div><h2>Winning and losing</h2>
+<p class="lede">A game needs to end, and it needs to end differently.</p>
+<div class="prompt"><div class="lbl">Prompt 9 &middot; the endings</div>
+When the boss reaches zero, show a win screen over the canvas: a headline, <b>how many were right
+out of how many, and how long it took</b>. When the class reaches zero, show a different screen
+that says so plainly and invites a rematch. Both have a button that starts a fresh fight with the
+questions reshuffled. Make Enter work on both.</div>
+<div class="card t"><h3>Report the score, not just the result</h3>
+<p class="small" style="margin:0"><b>"Eleven right out of thirteen, in four minutes"</b> is a
+thing a class argues about and tries to beat. "You win" is a thing they watch. The number is what
+turns one fight into three.</p></div>
+<div class="card r"><h3>Losing has to be survivable</h3>
+<p class="small" style="margin:0">The losing screen says what happened and offers another go. No
+scolding, no red X, no sad noise that goes on too long. A class that loses and immediately says
+"again" is the best outcome this game has.</p></div>
+<div class="card g"><h3>Task 10 ends when</h3>
+<p class="small" style="margin:0">You have won once and lost once, and both times wanted to press
+the button.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 11</div><h2>The class record</h2>
+<p class="lede">One number, saved. It changes the whole week.</p>
+<div class="prompt"><div class="lbl">Prompt 10 &middot; the record</div>
+Save the fastest winning time to <b>localStorage</b> and show it on the title screen and the win
+screen. Only save it on a win. <b>Wrap every read and write in a try and catch so the game still
+works if storage is unavailable</b>, and show "No class record yet" when there is not one.</div>
+<div class="card t"><h3>What this does to third period</h3>
+<p class="small" style="margin:0">First period sets a record. Second period sees it on the title
+screen. <b>By fifth period it is a competition between classes that you did not have to
+organize.</b> That is one afternoon of storage code doing more work than a display board.</p></div>
+<div class="card"><h3>Where the record lives, and what that means</h3>
+<p class="small" style="margin:0">In the browser, on that one computer. If you play on the
+classroom machine all day the record follows the day correctly. Playing on your laptop at home
+gives you a different record, and clearing browsing data resets it. For a bragging number that is
+exactly right &mdash; nothing important is lost when it goes.</p></div>
+<div class="card r"><h3>Keep it to one number</h3>
+<p class="small" style="margin:0">It is tempting to store names against times. Do not. The moment
+a child's name is in there you have a student record on a shared classroom computer, and the
+bragging is not worth it. A time with no name is a leaderboard everybody can still argue
+about.</p></div>
+<div class="card g"><h3>Task 11 ends when</h3>
+<p class="small" style="margin:0">You win, close the tab, reopen the file, and the record is still
+there.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 12</div><h2>Everyone can play it</h2>
+<p class="lede">The last task, and the one that decides whether it works in your actual room.</p>
+<div class="prompt"><div class="lbl">Prompt 11 &middot; reach</div>
+Make sure this works for someone using <b>a keyboard instead of a mouse</b>: every answer reachable
+with Tab, usable with Enter, with a clearly visible outline on the selected one, and the first
+answer focused when a question appears. <b>Do not use color alone</b> to show right and wrong
+&mdash; the highlighted correct answer must be obvious without it. Make the buttons big enough for
+a finger, stack them in one column on a narrow screen, and check it fits a Chromebook screen with
+nothing cut off.</div>
+<div class="card t"><h3>The Chromebook test is the real one</h3>
+<p class="small" style="margin:0">Teachers build on a laptop and deploy on a cart of Chromebooks
+with smaller screens. Open it on the actual hardware before the actual lesson. Something will be
+cut off and it takes two minutes to fix in advance and ruins a period to find out live.</p></div>
+<div class="card r"><h3>Color alone is the most common accessibility bug in classroom games</h3>
+<p class="small" style="margin:0">Red for wrong and green for right is invisible to a good number
+of students. The fix costs nothing: the correct answer also gets a word, a mark, or a border
+change.</p></div>
+<div class="card g"><h3>Task 12 ends when</h3>
+<p class="small" style="margin:0">You have played a whole fight using only the number keys, on the
+machine your class will actually use.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div><h2>The six failures you will actually hit</h2>
+<p class="lede">In roughly the order they happen.</p>
+<table>
+<thead><tr><th style="width:36%">What you see</th><th>What it is, and the sentence that fixes it</th></tr></thead>
+<tbody>
+<tr><td><b>A blank white page</b></td><td>One JavaScript error stops everything. Press F12, read the red line, paste it in with <b>this is the error and this is what I was doing.</b></td></tr>
+<tr><td><b>Blurry, soft-edged sprites</b></td><td>Smoothing is on. Say: <b>set imageSmoothingEnabled to false and add image-rendering pixelated to the canvas in CSS.</b></td></tr>
+<tr><td><b>The health bar jumps instead of draining</b></td><td>It is drawing the real value. Say: <b>keep a separate shown value per bar and ease it toward the true one each frame.</b></td></tr>
+<tr><td><b>Clicking fast answers twice</b></td><td>No lock. Say: <b>ignore clicks until the next question is asked.</b></td></tr>
+<tr><td><b>It wants me to run npm install</b></td><td>You got a framework. Say: <b>rewrite this as one HTML file with no frameworks, no libraries and no build step.</b></td></tr>
+<tr><td><b>It works, then the third change breaks it</b></td><td>The file has outgrown the chat. Start a fresh chat, paste the whole current file, then ask for the one change.</td></tr>
+</tbody></table>
+<div class="note"><b>The habit worth more than the table:</b> paste the error <i>with what you were
+doing when it happened</i>. "It broke" gets you guesses. "I clicked the second answer and the
+screen went white, here is the console" gets you the fix.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 1 to 6</h2>
+<p class="small">Copy and paste. Square brackets mean put your own words in.</p>
+<div class="prompt"><div class="lbl">1 &middot; the stage</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+Put a canvas in it, 640 by 360, scaled to fit, with imageSmoothingEnabled set to false. Set up a
+state object, a draw function, and a game loop using requestAnimationFrame, kept separate. Draw a
+dark sky, a horizon band and a floor, with stars at fixed positions. Make something move every
+frame so I can see the loop is alive.</div>
+<div class="prompt"><div class="lbl">2 &middot; sprites</div>
+I want pixel sprites written as arrays of text, one character per pixel, a dot for transparent, so
+I can edit the art by typing. Write a function that takes one of those arrays, a color map, an x
+and y and a pixel size, and draws it. Make a small hero bottom left and a big boss at least
+fourteen pixels wide on the right, four or five times the hero. Give the boss a slow bob and a
+soft glow behind it.</div>
+<div class="prompt"><div class="lbl">3 &middot; health bars</div>
+Add health to the state: boss 200, class 100. Draw a bar for each with a label and numbers, boss
+at the top under its name, class at the bottom under the hero. The bars must slide toward the real
+value rather than jumping: keep a separate shown value per bar and move it twelve percent of the
+remaining distance each frame. Yellow below half, red below a quarter.</div>
+<div class="prompt"><div class="lbl">4 &middot; questions</div>
+Put my questions in a plain array at the very top of the file, above all the game code, with a
+comment saying this is the part a teacher edits. Each has a question, four answers, and which is
+right counting from zero. Below the canvas show the question and four real HTML buttons, not drawn
+on the canvas, numbered 1 to 4 with those number keys working. Shuffle the answers every question
+and the questions every fight.</div>
+<div class="prompt"><div class="lbl">5 &middot; damage</div>
+When the right answer is clicked, take 14 to 18 off the boss with a little randomness. Disable all
+four buttons, highlight which was right, wait about a second, ask the next. Track a streak; after
+three in a row some hits are critical for roughly double with a different message. Show the streak
+once it is above one.</div>
+<div class="prompt"><div class="lbl">6 &middot; consequences</div>
+When a wrong answer is clicked, the class takes 12 to 17 and the streak resets. Mark the clicked
+one red and still highlight the right one green. Say "Not that one, look at the highlighted
+answer". Wait about 1.7 seconds before the next question instead of 0.9, so there is time to read
+it.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 7 to 12</h2>
+<div class="prompt"><div class="lbl">7 &middot; juice</div>
+Add three things when a hit lands. Screen shake: offset the whole canvas by a small random amount
+for a few frames and let it settle. A white flash: draw whoever got hit in solid white for about
+eight frames. A floating damage number that drifts up and fades. Criticals shake harder and show a
+bigger number in gold. Keep all three to a few frames, not a second.</div>
+<div class="prompt"><div class="lbl">8 &middot; sound</div>
+Add sound using the Web Audio API to generate tones, no audio files at all. One small function
+that plays a tone at a given pitch for a given length. Use it for a hit, a critical as a quick
+rising run, taking damage as a low buzz, winning as a four-note fanfare, losing as three falling
+notes. Quiet, under a quarter second except the endings. Keep working if audio is blocked.</div>
+<div class="prompt"><div class="lbl">9 &middot; the endings</div>
+When the boss reaches zero show a win screen over the canvas with a headline, how many were right
+out of how many, and how long it took. When the class reaches zero show a different screen that
+says so plainly and invites a rematch. Both have a button that starts a fresh fight with questions
+reshuffled. Enter works on both.</div>
+<div class="prompt"><div class="lbl">10 &middot; the record</div>
+Save the fastest winning time to localStorage and show it on the title and win screens. Only save
+on a win. Wrap every read and write in try and catch so the game works if storage is unavailable,
+and show "No class record yet" when there is not one.</div>
+<div class="prompt"><div class="lbl">11 &middot; reach</div>
+Make sure this works for someone using a keyboard instead of a mouse: every answer reachable with
+Tab, usable with Enter, a clearly visible outline on the selected one, first answer focused when a
+question appears. Do not use color alone to show right and wrong. Buttons big enough for a
+finger, one column on a narrow screen, and it must fit a Chromebook with nothing cut off.</div>
+<div class="prompt"><div class="lbl">12 &middot; when three rounds have not fixed it</div>
+[Start a fresh chat.] Here is my whole file. [paste it] Change only this one thing: [the thing].
+Do not change anything else, and give me the whole file back.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The files</div><h2>What is in this download</h2>
+<div class="card t"><h3>boss-battle.html</h3>
+<p class="small" style="margin:0">The finished game, built by exactly these twelve tasks and
+played in a browser before publication. <b>Open it and play it first.</b> Knowing what the target
+feels like makes every prompt land better. It works as-is: change the eight questions at the top
+and it is your unit tonight.</p></div>
+<div class="card"><h3>Two ways to use this pack, both fine</h3>
+<p class="small" style="margin:0"><b>Build it</b> &mdash; work the twelve tasks and end up with
+something you understand well enough to change in March. <b>Play it</b> &mdash; swap the questions
+at the top and use it tomorrow, then read the tasks when you want to change something. The first
+teaches more. The second is a review game before homeroom.</p></div>
+<div class="card r"><h3>The eight lines you edit</h3>
+<pre>const BOSS_NAME = 'The Water Cycle';
+const UNIT_NAME = 'Water Cycle Review';
+
+const QUESTIONS = [
+  { q: 'Your question here?',
+    a: ['Right one','Wrong','Wrong','Wrong'], ok: 0 },
+];</pre>
+<p class="small" style="margin:0">Everything else in the file is the game. You never have to touch
+it.</p></div>
+<div class="note"><b>More questions is better.</b> Eight works. Sixteen means a fight rarely
+repeats itself and the same file survives a whole unit.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The questions</div><h2>How to write ones worth fighting over</h2>
+<p class="lede">This page matters more than any of the code. A game with lazy questions is a
+lazy game, however good the explosions are.</p>
+<div class="card r"><h3>The rule: wrong answers should be the mistakes your students actually make</h3>
+<p class="small" style="margin-bottom:5pt"><b>Weak:</b> "Water turning to vapor is called?"
+&mdash; Evaporation / A dog / Tuesday / Purple.</p>
+<p class="small" style="margin:0"><b>Strong:</b> Evaporation / Condensation / Precipitation /
+Transpiration. Every one is a real term from the unit, so getting it right means knowing the
+difference rather than spotting the joke.</p></div>
+<div class="card t"><h3>Where to find those wrong answers</h3>
+<p class="small" style="margin:0">Your last quiz. The four things students actually put are
+better distractors than anything you or an AI will invent, <b>and you already have them.</b>
+Grade a stack, write down the four most common wrong answers, and the game writes itself.</p></div>
+<div class="card"><h3>Ask an AI for help the right way</h3>
+<p class="small" style="margin-bottom:5pt">Bad: "write me eight questions about the water cycle."</p>
+<p class="small" style="margin:0">Better: <b>"Here are four questions and the wrong answers my
+students actually gave. Write four more in the same shape, where every wrong answer is a real
+misconception rather than an obvious joke."</b> Do not send student work or names &mdash; type
+the misconceptions in yourself.</p></div>
+<div class="card g"><h3>A mix that works</h3>
+<p class="small" style="margin:0">Two easy ones to get a streak going, four that are the actual
+content, two that are genuinely hard. Front-load an easy one so the first hit lands early and the
+room is in it.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">In the room</div><h2>Five ways to run it</h2>
+<div class="card t"><h3>1. Whole class, one screen</h3>
+<p class="small" style="margin:0">Project it. Cold-call who answers, or take a vote of hands
+first. <b>This is the one to start with</b> and the best use of the shared health bar &mdash; one
+class, one fate.</p></div>
+<div class="card"><h3>2. Two teams, alternating</h3>
+<p class="small" style="margin:0">Left side, right side, take turns. The class bar becomes
+whichever team is up. Loud, and worth it.</p></div>
+<div class="card g"><h3>3. Individually on Chromebooks</h3>
+<p class="small" style="margin:0">Send the file or drop it in a shared folder &mdash; they open it
+and play alone at their own pace. No logins, nothing to join, works if the wifi is out.</p></div>
+<div class="card p"><h3>4. Early finishers</h3>
+<p class="small" style="margin:0">Leave it open on a spare machine. Beat the class record.</p></div>
+<div class="card r"><h3>5. A substitute can run it</h3>
+<p class="small" style="margin:0">"Open this file, project it, let them play." Nothing to log
+into and nothing to break. Worth leaving in the sub folder.</p></div>
+<div class="note"><b>The thing to say on the first day:</b> "I built this." Then take two minutes
+at the end to show them the eight lines with the questions in. Some of them will go home and try
+it, which is a better outcome than the review.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Said plainly</div><h2>Building in somebody else&rsquo;s genre without stealing</h2>
+<p class="lede">The first thing most teachers want to make is a version of a game they love.
+Here is where the line actually sits.</p>
+<div class="card t"><h3>The distinction that matters</h3>
+<p class="small" style="margin:0"><b>Systems are not protected. Expression is.</b> Turn-based
+fights, health bars, experience points, type advantages, critical hits, a four-option menu &mdash;
+those are rules, and rules are used by hundreds of games. <b>Names, characters, artwork, music,
+logos and written lines are protected</b>, and those are the things you must not take.</p></div>
+<div class="card g"><h3>So you may freely</h3>
+<p class="small" style="margin:0">Build a turn-based fight with a menu of four moves &middot; use
+health bars that drain and a critical hit &middot; make a type chart of your own design &middot;
+use badges that unlock areas &middot; use the chunky four-shade handheld look, which is a hardware
+idiom hundreds of independent games use &middot; write chiptune-style sounds of your own.</p></div>
+<div class="card r"><h3>And you must never</h3>
+<p class="small" style="margin:0">Use a protected game's names, characters, creatures, places,
+items or move names &mdash; anywhere, including in your code and your file names &middot; copy,
+trace or recolor its artwork or fonts &middot; use its melodies, even altered &middot; reuse its
+lines of dialogue, including the famous short ones. <b>Write your own in your own voice.</b></p></div>
+<div class="card"><h3>The checklist, at the end of every session</h3>
+<p class="small" style="margin:0">Search your whole file for the protected names &mdash; there
+should be none &middot; read every line the player sees out loud, and rewrite any that sounds like
+a line you have heard &middot; look at each sprite and ask whether a fan would name it; if so,
+redraw it &middot; hum your victory sound, and if it resolves into somebody else's tune, rewrite
+it.</p></div>
+<div class="note"><b>And the practical point.</b> A classroom game you never publish is a very
+different risk from one you sell or put online. Keep it in your room and this is mostly about
+teaching students to do it properly. Put it on the internet and the checklist is not optional.
+<b>This is not legal advice &mdash; it is the line a careful teacher can hold.</b></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Where the data lives</div><h2>The shortest privacy page in this series</h2>
+<p class="lede">Because the honest answer is: there is almost nothing to say, and that is the
+point.</p>
+<div class="card g"><h3>What this game knows about your students</h3>
+<p class="small" style="margin:0"><b>Nothing.</b> No names, no accounts, no scores against people,
+no roster. It cannot know anything, because there is nowhere to type it and nothing to type it
+into.</p></div>
+<div class="card t"><h3>What leaves the room</h3>
+<p class="small" style="margin:0"><b>Nothing.</b> The file is on the computer it is running on.
+There is no server, no network call, no analytics and no company behind it. Unplug the internet
+and it plays exactly the same.</p></div>
+<div class="card"><h3>The one thing it saves</h3>
+<p class="small" style="margin:0">A single number &mdash; the fastest winning time &mdash; in that
+browser on that machine. No name attached, by design. If somebody clears browsing data it is gone,
+and nothing is lost that matters.</p></div>
+<div class="card r"><h3>Keep it that way</h3>
+<p class="small" style="margin:0">The obvious next feature is storing who got the high score. Do
+not. That single change turns a toy with no data into a student record on a shared classroom
+computer, and the bragging is not worth the conversation. <b>A time with nobody's name on it is
+still something a class will fight over.</b></p></div>
+<div class="note"><b>Worth saying to an administrator in one sentence:</b> "It is a file on my
+computer that has no student information in it and does not connect to anything." That is the
+whole disclosure, and it is true.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Test it like you mean it</div><h2>Eight things to try before a class sees it</h2>
+<p class="lede">Ten minutes at your desk saves a period.</p>
+<table>
+<thead><tr><th style="width:50%">Try this</th><th>You want</th></tr></thead>
+<tbody>
+<tr><td>Answer everything right</td><td>A win in about twelve questions</td></tr>
+<tr><td>Answer everything wrong</td><td>A loss in about seven, and a rematch offered</td></tr>
+<tr><td>Get three right in a row</td><td>A critical hit, louder and bigger</td></tr>
+<tr><td>Click an answer twice, fast</td><td>The second click ignored</td></tr>
+<tr><td>Play using only the number keys</td><td>A whole fight, no mouse</td></tr>
+<tr><td>Win, close the tab, reopen it</td><td>The class record still there</td></tr>
+<tr><td>Start four fights in a row</td><td>A different first question most times</td></tr>
+<tr><td>Open it on the classroom machine</td><td>Nothing cut off, sound audible</td></tr>
+</tbody></table>
+<div class="card r"><h3>The one everybody skips</h3>
+<p class="small" style="margin:0"><b>The Chromebook.</b> You built it on a laptop. Your class does
+not have your laptop. Two minutes now, or a ruined period later.</p></div>
+<div class="card t"><h3>And one worth doing with a person</h3>
+<p class="small" style="margin:0">Hand it to a colleague and say nothing at all. If they hesitate
+about what to do, your first question or your buttons need work &mdash; not their attention.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Make it yours</div><h2>Six changes that take one prompt each</h2>
+<p class="lede">The game you built is a starting point. Each of these is one sentence to an AI.</p>
+<div class="card t"><h3>Re-skin it</h3>
+<p class="small" style="margin:0"><b>"Change the palette to these colors and redraw the boss as
+[a thing from my unit]."</b> The sprites are text arrays, so a new boss is a few lines.</p></div>
+<div class="card"><h3>More than one boss</h3>
+<p class="small" style="margin:0"><b>"After the boss dies, a tougher second one appears with more
+health."</b> A unit becomes a gauntlet.</p></div>
+<div class="card g"><h3>Let them heal</h3>
+<p class="small" style="margin:0"><b>"Three right in a row heals the class ten."</b> Rewards a run
+and keeps a struggling class alive longer.</p></div>
+<div class="card p"><h3>A timer per question</h3>
+<p class="small" style="margin:0"><b>"Ten seconds to answer, and running out counts as wrong."</b>
+Use carefully &mdash; it raises the stakes and it raises the anxiety.</p></div>
+<div class="card r"><h3>Categories as moves</h3>
+<p class="small" style="margin:0"><b>"Four buttons for four topics; picking one draws a question
+from that topic."</b> Now the class is choosing strategy, not just answering.</p></div>
+<div class="card"><h3>Two-player</h3>
+<p class="small" style="margin:0"><b>"Two teams alternate turns and each has its own health
+bar."</b> The loudest version of this game.</p></div>
+<div class="note"><b>Change one thing at a time and play it after each one.</b> Two changes in one
+prompt means two things to untangle when it breaks, and it will break.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this pack is built, and what it does not claim</h2>
+<div class="card t"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">Not theory. I build software for my own high school shop course
+and run it with real students all year, including a full retro game with its own design document
+and a written set of rules about what may and may not be borrowed from the genre it sits in. The
+IP page in this pack is that thinking, reduced to the part a teacher needs.</p></div>
+<div class="card"><h3>What was tested before this went out</h3>
+<p class="small" style="margin:0">The included game was played in a real browser, start to
+finish, both ways. A perfect run won in <b>10 answers</b> and the class bar never moved. A run of
+deliberate wrong answers lost in <b>8</b>. The number keys answered, the class record survived a
+reload, and four fights in a row opened with four different questions. No console errors
+anywhere.</p></div>
+<div class="card r"><h3>What is NOT claimed</h3>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a replacement for Blooket or Gimkit.</b>
+They are faster to start and more polished. The trade is on page 3, stated in both directions.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a gradebook.</b> It records no scores
+against any student and should not.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not legal advice</b> about copyright. The IP
+page is how a careful teacher can hold the line, not a substitute for a lawyer if you intend to
+publish.</p>
+<p class="small" style="margin:0">&bull; <b>Not guaranteed to come out identical.</b> You are
+working with a model; your boss will look different from mine. That is the point.</p></div>
+<div class="card g"><h3>Why the prompts spend so much time saying no</h3>
+<p class="small" style="margin:0">No frameworks. No build step. No audio files. No color-only
+signals. Left alone a model builds what most software looks like, and most software has more parts
+than a teacher can maintain. <b>Saying no is the part of prompting nobody teaches, and it is most
+of the skill.</b></p></div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card t"><h3>Leaving a review earns you TPT credit</h3>
+<p class="small" style="margin:0">TPT gives you credit toward future purchases for every review
+you leave, and reviews are how other teachers find work like this. Thirty seconds.</p></div>
+<div class="card r"><h3>If it did not work, tell me before you rate it</h3>
+<p class="small" style="margin:0">The Q&amp;A on the listing reaches me directly. A game that will
+not open is almost always one line, and I would far rather fix it than have you stuck with a file
+that does nothing.</p></div>
+<div class="card"><h3>The one thing to take away</h3>
+<p class="small" style="margin:0"><b>The fun is not in the rules. It is in the shake, the flash,
+the number and the sound.</b> That is true of every game you have played, it takes about twenty
+lines, and it is the difference between something your class tolerates and something they ask
+for.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b><br>
+Every prompt here was run. The game was played through to a win and to a loss before this went
+out, on the file that is in this download.</div>
+<div class="foot"><span>Vibe Code Your Own Game · Boss Battle</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>
