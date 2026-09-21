@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class Roster</title>
+<style>
+  :root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+        --cream:#FFFDF8;--leaf:#4CAF6D;--grey:#7A8B9A;--rule:#E3DCCD}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--cream);
+       color:var(--ink);line-height:1.5;padding:22px 18px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:27px;letter-spacing:-.01em}
+  h2{font-size:17px;margin-bottom:9px}
+  .sub{color:var(--grey);font-size:14px;margin:4px 0 20px}
+  section{background:#fff;border:2.5px solid var(--ink);border-radius:13px;
+          padding:15px 17px;margin-bottom:15px;box-shadow:4px 4px 0 var(--sunny)}
+  section.t{box-shadow:4px 4px 0 var(--teal)} section.g{box-shadow:4px 4px 0 var(--leaf)}
+  section.r{box-shadow:4px 4px 0 var(--tomato)}
+  label{display:block;font-weight:700;font-size:13px;margin:9px 0 3px}
+  input,select,textarea{font:inherit;width:100%;padding:8px 10px;border:2px solid var(--rule);
+                        border-radius:8px;background:#fff;color:inherit}
+  textarea{min-height:120px;resize:vertical;font-family:ui-monospace,monospace;font-size:13px}
+  button{font:inherit;font-weight:700;cursor:pointer;border:2.5px solid var(--ink);
+         border-radius:9px;padding:8px 15px;background:var(--sunny);color:var(--ink)}
+  button.ghost{background:#fff} button.warn{background:var(--tomato);color:#fff;border-color:var(--tomato)}
+  button.small{padding:4px 10px;font-size:13px;border-width:2px}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .row{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+  .row>*{flex:1;min-width:140px} .row>.fix{flex:none;min-width:0}
+  table{width:100%;border-collapse:collapse;margin-top:10px}
+  th{text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+     color:var(--grey);border-bottom:2px solid var(--rule);padding:6px 8px}
+  td{border-bottom:1.5px solid var(--rule);padding:7px 8px;vertical-align:middle}
+  td.n{color:var(--grey);width:34px}
+  .msg{margin-top:10px;padding:9px 12px;border-radius:8px;font-size:14px;display:none}
+  .msg.show{display:block}
+  .msg.ok{background:#E8F6EC;border:2px solid var(--leaf)}
+  .msg.bad{background:#FDECE7;border:2px solid var(--tomato)}
+  .msg.info{background:#E8F1FB;border:2px solid var(--blue)}
+  .preview{margin-top:10px;font-family:ui-monospace,monospace;font-size:13px;
+           background:var(--cream);border:2px dashed var(--blue);border-radius:9px;
+           padding:10px 12px;max-height:190px;overflow:auto}
+  .preview b{color:var(--tomato)} .preview i{color:var(--grey);font-style:normal}
+  .empty{color:var(--grey);padding:14px 2px;font-size:14px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;
+        background:var(--teal);color:#fff;margin-left:7px}
+  code{font-family:ui-monospace,monospace;font-size:13px;background:var(--cream);
+       padding:1px 5px;border-radius:4px;border:1px solid var(--rule)}
+  @media print{
+    body{background:#fff;padding:0} section{box-shadow:none;border:none;padding:0}
+    .noprint{display:none!important} h1{font-size:22px} .pill{display:none}
+    td,th{border-color:#999}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Class Roster</h1>
+  <p class="sub">First names and last initials only &mdash; by construction, not by habit.</p>
+
+  <!-- ------------------------------------------------ connection -->
+  <section class="noprint" id="connBox">
+    <h2>Connect to your database</h2>
+    <p style="font-size:14px;color:var(--grey);margin-bottom:4px">
+      Both values come from your Supabase project, Settings &rarr; API. They are saved in this
+      browser only. <b>Keep this file on your own computer.</b>
+    </p>
+    <label for="url">Project URL</label>
+    <input id="url" placeholder="https://abcdefgh.supabase.co" autocomplete="off">
+    <label for="key">Anon public key</label>
+    <input id="key" placeholder="eyJhbGciOi..." autocomplete="off">
+    <div class="row" style="margin-top:12px">
+      <div class="fix"><button id="connect">Connect</button></div>
+      <div class="fix"><button class="ghost small" id="forget">Forget these</button></div>
+    </div>
+    <div class="msg" id="connMsg"></div>
+  </section>
+
+  <!-- ------------------------------------------------ class -->
+  <section class="t" id="classBox" hidden>
+    <h2>Class</h2>
+    <div class="row">
+      <div>
+        <label for="classSel">Pick a class</label>
+        <select id="classSel"></select>
+      </div>
+      <div class="fix"><button class="ghost" id="newClass">New class</button></div>
+    </div>
+    <div id="newClassRow" class="row noprint" style="margin-top:10px" hidden>
+      <div><label for="className">Name</label><input id="className" placeholder="Level 2 Woodshop"></div>
+      <div><label for="classPeriod">Period (optional)</label><input id="classPeriod" placeholder="3rd"></div>
+      <div class="fix"><button id="createClass">Create</button></div>
+    </div>
+    <div class="msg" id="classMsg"></div>
+  </section>
+
+  <!-- ------------------------------------------------ paste roster -->
+  <section class="noprint" id="pasteBox" hidden>
+    <h2>Paste your roster</h2>
+    <p style="font-size:14px;color:var(--grey)">
+      One name per line, any order &mdash; <code>Anthony Spinozzi</code> or
+      <code>Spinozzi, Anthony</code> both work. <b>The shortening happens right here, in this
+      browser, before anything is sent.</b> Watch the preview change as you type.
+    </p>
+    <label for="paste">Names</label>
+    <textarea id="paste" placeholder="Anthony Spinozzi&#10;Garcia, Maria&#10;Jo&#10;James Van Der Berg"></textarea>
+    <div class="preview" id="preview"><i>The preview appears here.</i></div>
+    <div class="row" style="margin-top:12px">
+      <div class="fix"><button id="addAll" disabled>Add to class</button></div>
+      <div class="fix"><button class="ghost small" id="clearPaste">Clear</button></div>
+    </div>
+    <div class="msg" id="pasteMsg"></div>
+  </section>
+
+  <!-- ------------------------------------------------ the roster -->
+  <section class="g" id="listBox" hidden>
+    <h2>Students <span class="pill" id="count">0</span></h2>
+    <table>
+      <thead><tr><th class="noprint"></th><th>Name</th><th class="noprint" style="width:92px"></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>Nobody on this roster yet.</div>
+    <div class="row noprint" style="margin-top:13px">
+      <div class="fix"><button class="ghost small" id="printBtn">Print this roster</button></div>
+      <div class="fix"><button class="ghost small" id="exportBtn">Copy de-identified list</button></div>
+    </div>
+    <div class="msg" id="listMsg"></div>
+  </section>
+
+  <!-- ------------------------------------------------ the proof -->
+  <section class="r noprint" id="proofBox" hidden>
+    <h2>Prove it to yourself</h2>
+    <p style="font-size:14px;color:var(--grey)">
+      This sends a full name straight past the browser shortening and asks the database to store
+      it. It should fail. If it ever succeeds, your check constraint is missing and you should
+      stop and re-run <code>schema.sql</code>.
+    </p>
+    <div class="row" style="margin-top:10px">
+      <div><label for="proofName">Name to attempt</label><input id="proofName" value="Anthony Spinozzi"></div>
+      <div class="fix"><button class="warn" id="tryIt">Try to store a full name</button></div>
+    </div>
+    <div class="msg" id="proofMsg"></div>
+  </section>
+
+</div>
+
+<script>
+/* ------------------------------------------------------------------ names --
+   This is the whole privacy idea in twenty lines, and it runs HERE, in the
+   teacher's browser, before fetch() is ever called. The full surname does not
+   travel over the network, which is why no column in schema.sql has anywhere
+   to put one.                                                               */
+
+function shortenName(raw){
+  var s = String(raw == null ? '' : raw).replace(/\s+/g,' ').trim();
+  if(!s) return '';
+  if(s.indexOf(',') > -1){                    // "Spinozzi, Anthony" -> "Anthony Spinozzi"
+    var bits = s.split(','), last = bits[0], first = bits.slice(1).join(' ');
+    if(first && first.trim()) s = first.trim() + ' ' + last.trim();
+  }
+  var parts = s.split(' ').filter(Boolean);
+  var first = parts[0];
+  if(parts.length === 1) return titleCase(first);
+  var lastInitial = parts[parts.length - 1][0];
+  return titleCase(first) + ' ' + lastInitial.toUpperCase() + '.';
+}
+function titleCase(w){ return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); }
+
+/* Two students can easily both shorten to "Anthony S." A trailing number keeps
+   them apart, and `taken` lets us avoid colliding with names already stored. */
+function shortenRoster(text, taken){
+  var seen = new Map(), out = [];
+  (taken || []).forEach(function(n){ seen.set(n, 1); });
+  String(text || '').split(/[\n\r]+/).forEach(function(line){
+    var short = shortenName(line);
+    if(!short) return;
+    var n = (seen.get(short) || 0) + 1;
+    seen.set(short, n);
+    out.push({ raw: line.trim(), name: n === 1 ? short : short + ' ' + n });
+  });
+  return out;
+}
+
+/* ------------------------------------------------------------- connection -- */
+var S = { url:'', key:'', classId:null, students:[] };
+var $ = function(id){ return document.getElementById(id); };
+
+function say(el, text, kind){
+  el.textContent = text;
+  el.className = 'msg show ' + (kind || 'info');
+}
+function hide(el){ el.className = 'msg'; }
+
+function load(){
+  try{
+    S.url = localStorage.getItem('roster.url') || '';
+    S.key = localStorage.getItem('roster.key') || '';
+  }catch(e){ /* private window, blocked storage - carry on with empty values */ }
+  $('url').value = S.url; $('key').value = S.key;
+}
+function remember(){
+  try{
+    localStorage.setItem('roster.url', S.url);
+    localStorage.setItem('roster.key', S.key);
+  }catch(e){ /* nothing to do; the app still works for this session */ }
+}
+
+function api(path, opts){
+  opts = opts || {};
+  var headers = {
+    apikey: S.key,
+    Authorization: 'Bearer ' + S.key,
+    'Content-Type': 'application/json'
+  };
+  if(opts.prefer) headers.Prefer = opts.prefer;
+  return fetch(S.url.replace(/\/+$/,'') + '/rest/v1/' + path, {
+    method: opts.method || 'GET',
+    headers: headers,
+    body: opts.body ? JSON.stringify(opts.body) : undefined
+  }).then(function(r){
+    return r.text().then(function(t){
+      var data = null;
+      if(t){ try{ data = JSON.parse(t); }catch(e){ data = t; } }
+      if(!r.ok){
+        var m = (data && data.message) ? data.message : ('HTTP ' + r.status);
+        var err = new Error(m); err.status = r.status; err.body = data; throw err;
+      }
+      return data;
+    });
+  });
+}
+
+/* ------------------------------------------------------------- classes -- */
+function loadClasses(){
+  return api('classes?select=id,name,period&archived=eq.false&order=created_at').then(function(rows){
+    var sel = $('classSel');
+    sel.innerHTML = '';
+    (rows || []).forEach(function(c){
+      var o = document.createElement('option');
+      o.value = c.id;
+      o.textContent = c.name + (c.period ? ' · ' + c.period : '');
+      sel.appendChild(o);
+    });
+    if(rows && rows.length){
+      S.classId = rows[0].id; sel.value = S.classId;
+      return loadStudents();
+    }
+    S.classId = null; S.students = []; draw();
+    say($('classMsg'), 'No classes yet. Make one to start.', 'info');
+  });
+}
+
+function createClass(){
+  var name = $('className').value.trim();
+  if(!name){ say($('classMsg'), 'Give the class a name first.', 'bad'); return; }
+  api('classes', { method:'POST', prefer:'return=representation',
+                   body:[{ name:name, period: $('classPeriod').value.trim() || null }] })
+    .then(function(){
+      $('className').value = ''; $('classPeriod').value = '';
+      $('newClassRow').hidden = true;
+      return loadClasses();
+    })
+    .then(function(){ say($('classMsg'), 'Class created.', 'ok'); })
+    .catch(function(e){ say($('classMsg'), 'Could not create the class: ' + e.message, 'bad'); });
+}
+
+/* ------------------------------------------------------------ students -- */
+function loadStudents(){
+  if(!S.classId){ S.students = []; draw(); return Promise.resolve(); }
+  return api('students?select=id,display_name,sort_order&class_id=eq.' + S.classId +
+             '&order=sort_order,display_name')
+    .then(function(rows){ S.students = rows || []; draw(); });
+}
+
+function draw(){
+  var tb = $('rows');
+  tb.innerHTML = '';
+  S.students.forEach(function(s, i){
+    var tr = document.createElement('tr');
+    var n  = document.createElement('td'); n.className = 'n'; n.textContent = (i + 1);
+    var nm = document.createElement('td'); nm.textContent = s.display_name;
+    var ac = document.createElement('td'); ac.className = 'noprint';
+    var b  = document.createElement('button');
+    b.className = 'ghost small'; b.textContent = 'Remove';
+    b.setAttribute('aria-label', 'Remove ' + s.display_name);
+    b.onclick = function(){ removeStudent(s); };
+    ac.appendChild(b);
+    tr.appendChild(n); tr.appendChild(nm); tr.appendChild(ac);
+    tb.appendChild(tr);
+  });
+  $('count').textContent = S.students.length;
+  $('empty').hidden = S.students.length > 0;
+}
+
+function removeStudent(s){
+  api('students?id=eq.' + s.id, { method:'DELETE' })
+    .then(loadStudents)
+    .then(function(){ say($('listMsg'), 'Removed ' + s.display_name + '.', 'ok'); })
+    .catch(function(e){ say($('listMsg'), 'Could not remove: ' + e.message, 'bad'); });
+}
+
+/* --------------------------------------------------------- paste + add -- */
+function renderPreview(){
+  var taken = S.students.map(function(s){ return s.display_name; });
+  var list = shortenRoster($('paste').value, taken);
+  var box = $('preview');
+  if(!list.length){ box.innerHTML = '<i>The preview appears here.</i>'; $('addAll').disabled = true; return; }
+  box.innerHTML = list.map(function(r){
+    return escapeHtml(r.raw) + '  →  <b>' + escapeHtml(r.name) + '</b>';
+  }).join('<br>');
+  $('addAll').disabled = false;
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' })[c];
+  });
+}
+
+function addAll(){
+  if(!S.classId){ say($('pasteMsg'), 'Pick a class first.', 'bad'); return; }
+  var taken = S.students.map(function(s){ return s.display_name; });
+  var list = shortenRoster($('paste').value, taken);
+  if(!list.length){ say($('pasteMsg'), 'Nothing to add.', 'bad'); return; }
+  var base = S.students.length;
+  var body = list.map(function(r, i){
+    return { class_id:S.classId, display_name:r.name, sort_order: base + i };
+  });
+  $('addAll').disabled = true;
+  api('students', { method:'POST', prefer:'return=representation', body:body })
+    .then(function(){
+      $('paste').value = ''; renderPreview();
+      return loadStudents();
+    })
+    .then(function(){
+      say($('pasteMsg'), 'Added ' + list.length + ' student' + (list.length === 1 ? '' : 's') + '.', 'ok');
+    })
+    .catch(function(e){
+      $('addAll').disabled = false;
+      say($('pasteMsg'), 'Nothing was added: ' + e.message, 'bad');
+    });
+}
+
+/* ------------------------------------------------------------- export -- */
+function exportList(){
+  var text = S.students.map(function(s, i){ return 'S' + (i + 1); }).join(', ');
+  var done = function(ok){
+    say($('listMsg'), ok ? 'Copied: ' + text : 'Could not copy. Here it is: ' + text, ok ? 'ok' : 'info');
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+  } else { done(false); }
+}
+
+/* -------------------------------------------------------------- proof -- */
+function tryIt(){
+  if(!S.classId){ say($('proofMsg'), 'Pick a class first.', 'bad'); return; }
+  var name = $('proofName').value;
+  api('students', { method:'POST', prefer:'return=representation',
+                    body:[{ class_id:S.classId, display_name:name, sort_order:999 }] })
+    .then(function(){
+      say($('proofMsg'), 'IT STORED "' + name + '". That is wrong — your check constraint ' +
+          'is missing. Re-run schema.sql, then delete that row.', 'bad');
+      return loadStudents();
+    })
+    .catch(function(e){
+      say($('proofMsg'), 'Refused by the database, which is correct — ' + e.message, 'ok');
+    });
+}
+
+/* --------------------------------------------------------------- wire -- */
+function showApp(on){
+  ['classBox','pasteBox','listBox','proofBox'].forEach(function(id){ $(id).hidden = !on; });
+}
+
+$('connect').onclick = function(){
+  S.url = $('url').value.trim(); S.key = $('key').value.trim();
+  if(!S.url || !S.key){ say($('connMsg'), 'Both boxes are needed.', 'bad'); return; }
+  say($('connMsg'), 'Connecting…', 'info');
+  loadClasses()
+    .then(function(){ remember(); showApp(true); say($('connMsg'), 'Connected.', 'ok'); })
+    .catch(function(e){
+      showApp(false);
+      say($('connMsg'), 'Could not connect: ' + e.message +
+          ' — check the URL and key, and that schema.sql has been run.', 'bad');
+    });
+};
+$('forget').onclick = function(){
+  try{ localStorage.removeItem('roster.url'); localStorage.removeItem('roster.key'); }catch(e){}
+  S.url = S.key = ''; $('url').value = ''; $('key').value = '';
+  showApp(false); say($('connMsg'), 'Forgotten on this computer.', 'ok');
+};
+$('newClass').onclick = function(){ $('newClassRow').hidden = !$('newClassRow').hidden; };
+$('createClass').onclick = createClass;
+$('classSel').onchange = function(){
+  S.classId = $('classSel').value; hide($('classMsg')); loadStudents().then(renderPreview);
+};
+$('paste').oninput = renderPreview;
+$('clearPaste').onclick = function(){ $('paste').value = ''; renderPreview(); hide($('pasteMsg')); };
+$('addAll').onclick = addAll;
+$('printBtn').onclick = function(){ window.print(); };
+$('exportBtn').onclick = exportList;
+$('tryIt').onclick = tryIt;
+
+load();
+draw();
+</script>
+</body>
+</html>

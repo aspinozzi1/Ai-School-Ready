@@ -2169,6 +2169,62 @@
       "previewUnit": "25 pages + 1 working app",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "vibe-roster",
+      "order": 56,
+      "name": "Vibe Coding Class Roster",
+      "product": "UPLOAD/02-paid/Vibe-Coding-Class-Roster.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/roster.html",
+        "UPLOAD/02-paid/schema.sql"
+      ],
+      "cover": "tpt/covers/vibe-roster-cover.png",
+      "thumbnails": [
+        "tpt/extras/rst-whats-inside.png",
+        "tpt/extras/rst-real-pages.png"
+      ],
+      "title": "Vibe Coding for Teachers | Build a Roster That Cannot Store Last Names",
+      "description": "Vibe coding for teachers, the real-software tier: build a class roster that lives in an actual database, opens on any computer you own, and physically cannot hold a student's surname - because the database itself refuses one. Twelve tasks. No coding background, nothing installed, no build step, and nothing to pay at classroom size.\n\nTHIS IS THE STEP UP FROM A SINGLE FILE, AND IT IS A REAL STEP. Everything else in this line saves to one computer. This one has a database behind it, so the same roster is on your laptop, on the classroom desktop, and on the machine in the back room. A tool that cannot hold a roster cannot run a course, and that is the gap this closes.\n\nTHREE LAYERS, AND NONE OF THEM TRUSTS THE OTHERS. Your browser shortens the name before anything is sent. The database refuses the long form even if your code has a bug. And no column anywhere has a place to put a surname. For one to be stored, all three have to fail at once, in three different ways.\n\nTASK 4 IS THE PRODUCT. One line of the table definition decides what a name is allowed to look like, and the pack has you paste a full name into the database on purpose, so you watch it get refused before you build anything on top. That error message is the thing you are making.\n\nTWELVE PROMPTS WRITTEN OUT IN FULL, including the clauses that are easy to miss and expensive to leave out: no extra columns, plain fetch instead of a library that would need a terminal, check for collisions against students already in the class, and tell me nothing was added when an insert fails.\n\nAN HONEST PAGE ABOUT THE KEY IN YOUR FILE. Anyone with your project URL and key can read this roster. That is stated plainly, along with the three things that follow from it. The point is not that a leak is impossible - it is that what a leak would expose is a list saying Anthony S. and Maria C. You did not make the breach impossible. You made it boring.\n\nTHE FINISHED TOOL IS INCLUDED, both files. The roster page and the database file, ready to use as they are if you would rather have a working roster today and understand it this weekend.\n\nSIX FAILURES YOU WILL ACTUALLY HIT, with the sentence that fixes each - the empty list with no error, the import statement, the duplicate key, and the three others.\n\nALSO INSIDE: how to read a Postgres error, eight tests to run before you trust it, what to say to thirty students on the first day, and a straight answer about when one file is enough and when it is not.\n\nWHAT THIS IS NOT: not a secure multi-user system, not a gradebook, not a system of record, and not legal advice about student data. Your district's policy, your state's law, FERPA and COPPA are the authorities.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
+      "price": 39,
+      "licenses": 19,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Instructional Technology",
+        "Professional Development",
+        "Classroom Management"
+      ],
+      "tags": [
+        "vibe coding",
+        "teacher tools",
+        "classroom management",
+        "ai tools",
+        "technology professional development",
+        "student data privacy"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Teachers",
+      "previewShots": [
+        "rst_p4.png",
+        "rst_p9.png",
+        "rst_p22.png"
+      ],
+      "previewInside": [
+        "<b>Twelve tasks</b>, each ending in something that works",
+        "<b>Three layers</b> - browser, database, schema - none trusting the others",
+        "<b>Both working files included</b>, the roster and its database",
+        "Every prompt written out in full, including what to forbid",
+        "An honest page on the key in your file and who can read your data",
+        "The six failures you will hit, and the sentence that fixes each"
+      ],
+      "previewUnit": "29 pages + 2 working files",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML + SQL"
     }
   ]
 }

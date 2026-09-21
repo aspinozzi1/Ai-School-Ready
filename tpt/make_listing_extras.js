@@ -256,6 +256,15 @@ const IMAGES = [
     'Where student data can and cannot live, answered plainly',
   ])],
   ['vcd-real-pages',   realPages('#2D6CB5', ['vcd_p3.png', 'vcd_p8.png', 'vcd_p17.png'], '23 pages')],
+  ['rst-whats-inside', whatsInside('Vibe Coding \u00b7', 'Class Roster', [
+    'Twelve tasks, each ending in something that works',
+    'Three layers - browser, database, schema',
+    'Both working files included, ready to use',
+    'Every prompt in full, including what to forbid',
+    'An honest page on who can read your data',
+    'Six real failures and the fix for each',
+  ], 'PDF + HTML + SQL')],
+  ['rst-real-pages',   realPages('#2D6CB5', ['rst_p4.png', 'rst_p9.png', 'rst_p22.png'], '29 pages + 2 files')],
   ['p2p-whats-inside', whatsInside('Vibe Coding \u00b7', 'Pitch to Prototype', [
     'Five days, each one ending somewhere definite',
     'Six printable student pages, interviews through pitch',

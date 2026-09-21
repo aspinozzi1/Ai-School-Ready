@@ -2373,3 +2373,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODING CLASS ROSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+vibe-roster-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Vibe coding for teachers, the real-software tier: build a class roster that lives in an actual database and physically cannot hold a student surname, because the database itself refuses one. Three layers that do not trust each other - the browser shortens, the database refuses, and no column has a place to put it. Twelve prompts written out in full, both working files included, and an honest page about who can read your data. No coding background, nothing installed. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Coding for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · teacher tools · classroom management   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

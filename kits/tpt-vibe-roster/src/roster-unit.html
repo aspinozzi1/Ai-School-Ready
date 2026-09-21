@@ -1,0 +1,802 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Build a Roster That Cannot Store Last Names</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:26pt">
+<div class="kick">Vibe Coding for Teachers &middot; the real-software tier</div>
+<h1>Build a Roster That<br>Cannot Store Last Names</h1>
+<p class="lede">Twelve tasks. At the end you have a class roster that lives in a real database,
+opens on any computer you own, and <b>physically cannot hold a student's surname</b> &mdash;
+because the database itself refuses one.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">12</h3><p class="small" style="margin:0">tasks, each ending in something that works</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">2</h3><p class="small" style="margin:0">working files included</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">$0</h3><p class="small" style="margin:0">to run it, at classroom size</p></div>
+</div>
+<div class="note"><b>This is the step up from a single file, and it is a real step.</b><br>
+Everything in this line so far saves to one computer. This one has a database behind it, so the
+same roster is there on your laptop, on the classroom desktop, and on the machine in the back
+room. That is the thing a one-file tool cannot do, and it is why a tool that cannot hold a
+roster cannot run a course.</div>
+<div class="card r"><h3>You do not need a coding background &mdash; you do need ninety minutes</h3>
+<p class="small" style="margin:0">Nothing is installed. There is no build step and no npm. You
+paste one file into a web page once, and everything after that happens in a browser.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Inside</h3>
+<p class="small" style="margin:0">Twelve tasks with the exact prompts written out in full
+&middot; the six failures you will actually hit and the sentence that fixes each &middot; the
+finished roster app and its database file, both included &middot; an honest page about the key
+in your file and who can read your data &middot; and the page that tells you when you have
+outgrown a one-file tool.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you begin</div><h2>The twelve tasks at a glance</h2>
+<p class="lede">Each task ends somewhere you can see. If a task does not reach its end point,
+do not move on &mdash; everything after it assumes that one worked.</p>
+<table>
+<thead><tr><th style="width:26pt">#</th><th>Task</th><th>Ends with</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Decide what this tool will never know</td><td>One sentence, written down</td></tr>
+<tr><td>2</td><td>Make the database</td><td>A project URL and a key</td></tr>
+<tr><td>3</td><td>The two tables</td><td>Tables that exist</td></tr>
+<tr><td>4</td><td><b>The line that makes the wrong thing impossible</b></td><td>The database refusing a surname</td></tr>
+<tr><td>5</td><td>A page that talks to it</td><td>Your class list on screen</td></tr>
+<tr><td>6</td><td>Shorten in the browser, before it sends</td><td>A live preview as you type</td></tr>
+<tr><td>7</td><td>Paste a whole roster at once</td><td>A class added in one go</td></tr>
+<tr><td>8</td><td>Two students, same short name</td><td>Both of them, kept apart</td></tr>
+<tr><td>9</td><td>Prove it to yourself</td><td>A refusal you triggered on purpose</td></tr>
+<tr><td>10</td><td>Print it</td><td>A clipboard-ready list</td></tr>
+<tr><td>11</td><td>The de-identified copy</td><td>S1, S2, S3 on your clipboard</td></tr>
+<tr><td>12</td><td>What happens in June</td><td>A deletion you can actually do</td></tr>
+</tbody></table>
+<div class="card t"><h3>Stop anywhere after task 6</h3>
+<p class="small" style="margin:0">A roster that lists your class and refuses surnames is already
+useful. Tasks 7 to 12 make it pleasant. Nobody has to finish a unit to get value out of it.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Why this one is different</div><h2>When one file stops being enough</h2>
+<p class="lede">Every build in this line so far produces a single page that saves to the computer
+it is open on. That is the right shape for most classroom tools, and it is the wrong shape for
+this one.</p>
+<table>
+<thead><tr><th>&nbsp;</th><th>A single file</th><th>What you are building here</th></tr></thead>
+<tbody>
+<tr><td><b>Where data lives</b></td><td>In one browser, on one machine</td><td>In a database you own</td></tr>
+<tr><td><b>Second computer</b></td><td>Starts empty</td><td>Same roster, already there</td></tr>
+<tr><td><b>If the browser is cleared</b></td><td>Everything is gone</td><td>Nothing is gone</td></tr>
+<tr><td><b>Setup</b></td><td>Open the file</td><td>About ninety minutes, once</td></tr>
+<tr><td><b>Cost</b></td><td>Nothing</td><td>Nothing, at classroom size</td></tr>
+<tr><td><b>Honest risk</b></td><td>You lose your data</td><td>Somebody else could read it</td></tr>
+</tbody></table>
+<div class="note"><b>The sentence a one-file tool cannot say:</b> a tool that cannot hold a roster
+cannot run a course. The moment you want the same list of students in front of two different
+machines &mdash; or want it to still exist after a district IT refresh wipes browser data &mdash;
+you have outgrown one file, and no amount of cleverness inside that file fixes it.</div>
+<div class="card r"><h3>And the honest cost, on page one rather than buried</h3>
+<p class="small" style="margin:0">Putting data on a server means somebody other than you could
+reach it. That is a real trade and this pack does not pretend otherwise &mdash; it is the whole
+reason the build is shaped the way it is. There is a full page on exactly who can read your
+roster and what they would see.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The one idea</div><h2>Three layers, and none of them trusts the others</h2>
+<p class="lede">Most software protects student data by being careful. Careful software has a bad
+day eventually. This one is built so the bad day is boring.</p>
+<div class="step"><div class="n">1</div><div><h3>The browser shortens the name</h3>
+<p class="small" style="margin:0">You paste <code>Anthony Spinozzi</code>. Before anything is
+sent anywhere, the page turns it into <code>Anthony S.</code> The surname never leaves the
+computer you typed it on.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>The database refuses the long form</h3>
+<p class="small" style="margin:0">One line of the table definition says what a name is allowed to
+look like. Send <code>Anthony Spinozzi</code> anyway &mdash; by accident, by a bug, by pasting into
+the wrong box &mdash; and the database rejects it. Not a warning. A refusal.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>There is nowhere to put one</h3>
+<p class="small" style="margin:0">No column in the whole database is for a last name. Even if
+somebody wanted to store one, there is no shelf to put it on.</p></div></div>
+<div class="note"><b>Each layer is independent, and that is the entire point.</b><br>
+Layer 1 is code you wrote, so it can have a bug. Layer 2 is a rule the database enforces whatever
+your code does. Layer 3 is the shape of the thing itself. For a surname to end up stored, all
+three have to fail at once &mdash; and they fail in different ways for different reasons.</div>
+<div class="card g"><h3>Why this is worth doing properly once</h3>
+<p class="small" style="margin:0">You can reuse this pattern in everything you build afterwards.
+Decide what the tool must never know, then make it structurally unable to know it. That habit is
+worth more than any single tool in this series.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">What you need</div><h2>Before task 1</h2>
+<div class="card"><h3>A free Supabase account</h3>
+<p class="small" style="margin:0">Supabase gives you a Postgres database with a free tier that
+is far larger than a roster will ever need. No card. You will make one project and never touch
+the billing page. <b>Sign up with your own address, not a school one</b> &mdash; this is your
+tool, and a district account can be closed out from under you.</p></div>
+<div class="card t"><h3>An AI chat you are signed in to</h3>
+<p class="small" style="margin:0">Any of them. You will paste prompts and read what comes back.
+You are the one at the keyboard for all of it.</p></div>
+<div class="card g"><h3>A browser, and somewhere to keep one file</h3>
+<p class="small" style="margin:0">The roster page is a single HTML file that lives in your own
+Drive or Documents folder. <b>It is never published to the web</b>, and there is a page later
+explaining exactly why that matters.</p></div>
+<div class="card r"><h3>What you do not need</h3>
+<p class="small" style="margin:0">Node, npm, a terminal, a deploy pipeline, a domain, a credit
+card, or permission from anybody &mdash; you are building a tool for your own classroom out of
+your own class list, the same as a spreadsheet.</p></div>
+<div class="note"><b>One honest warning about time.</b> Task 2 is account setup and it is the
+dullest ninety seconds in the pack. Tasks 3 and 4 are where it gets interesting. If you only have
+twenty minutes today, do tasks 1 to 4 &mdash; that is the part worth the evening.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 1</div><h2>Decide what this tool will never know</h2>
+<p class="lede">Before a single prompt. This takes four minutes and it is the only task that
+cannot be done by the AI.</p>
+<div class="card"><h3>Write down one sentence</h3>
+<p class="small" style="margin-bottom:5pt">"This roster knows <i>&lt;what&gt;</i> and never knows
+<i>&lt;what else&gt;</i>."</p>
+<p class="small" style="margin:0">Mine is: <b>it knows a first name and a last initial, and it
+never knows a surname, a student ID, a grade, or a birthday.</b></p></div>
+<div class="card t"><h3>Why the sentence comes first</h3>
+<p class="small" style="margin:0">If you start prompting without it, the AI will helpfully offer
+you an email field, a parent contact field and a notes box, because that is what rosters usually
+have. Every one of those is a thing you would then have to protect. The cheapest student data to
+keep safe is the kind you never collected.</p></div>
+<div class="card r"><h3>The test for whether a field belongs</h3>
+<p class="small" style="margin-bottom:5pt">For each thing you are tempted to store, ask:
+<b>what does this tool do differently because it knows that?</b></p>
+<p class="small" style="margin:0">A roster does nothing differently for knowing a birthday. So it
+does not get one. If you cannot answer the question, delete the field.</p></div>
+<div class="note"><b>This is also the answer you give an administrator.</b> Not "it is secure" —
+that is a claim you would have to defend. "It cannot hold that" is a fact about the thing, and
+you can show them the line that makes it true.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2</div><h2>Make the database</h2>
+<p class="lede">Ends with two strings written down. That is the whole task.</p>
+<div class="step"><div class="n">1</div><div><h3>Sign up and make a project</h3>
+<p class="small" style="margin:0">supabase.com, new project, any name. Choose a region near you.
+It takes a minute or two to finish building &mdash; that wait is normal.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Set a database password and keep it</h3>
+<p class="small" style="margin:0">Put it wherever you keep passwords. You will almost never need
+it, and "almost never" is exactly when people lose things.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Copy two values</h3>
+<p class="small" style="margin:0">Settings, then API. You want the <b>Project URL</b> (it looks
+like <code>https://abcdefgh.supabase.co</code>) and the <b>anon public</b> key, which is long.
+Do not copy the one labeled service role.</p></div></div>
+<div class="card r"><h3>Do not copy the service role key. Ever.</h3>
+<p class="small" style="margin:0">Same page, different row. The anon key is meant to sit in a
+page. The service role key ignores every rule you are about to write, including the one that
+refuses surnames. You will not need it and nothing in this pack uses it.</p></div>
+<div class="card g"><h3>Task 2 ends when</h3>
+<p class="small" style="margin:0">You have a project URL and an anon key in a file you can find
+again.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 3</div><h2>The two tables</h2>
+<p class="lede">Two tables is the whole database: classes, and the students in them.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the tables</div>
+Write me a Postgres schema for a class roster, as SQL I can paste into the Supabase SQL editor.
+Two tables. <b>classes</b>: id, name, an optional period, an archived flag, created_at.
+<b>students</b>: id, class_id referencing classes with on delete cascade, display_name, a
+sort_order integer, created_at. Use uuid primary keys with gen_random_uuid(). Make display_name
+unique within a class. <b>Do not add any other columns</b> &mdash; no email, no student number, no
+notes. Add a comment at the top saying why there is no column for a last name.</div>
+<div class="card"><h3>What you should get back</h3>
+<p class="small" style="margin:0">About twenty lines of SQL. Read it before you run it. You are
+looking for two things: that <code>students</code> has exactly the columns you asked for, and
+that <code>on delete cascade</code> is on the class reference &mdash; that is what makes deleting
+a class in June actually delete its students.</p></div>
+<div class="card t"><h3>Run it</h3>
+<p class="small" style="margin:0">Supabase, SQL Editor, paste, Run. Then Table
+Editor, and look at them. Seeing the empty tables is the point of the task.</p></div>
+<div class="card r"><h3>If it added columns you did not ask for</h3>
+<p class="small" style="margin:0">It will sometimes add <code>email</code> or <code>full_name</code>
+anyway, because that is what most rosters look like. <b>Delete those lines yourself before
+running it.</b> This is the first place the habit from task 1 earns its keep.</p></div>
+<div class="card g"><h3>Task 3 ends when</h3>
+<p class="small" style="margin:0">Two tables exist and you have looked at them.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4 &middot; the one that matters</div><h2>The line that makes the wrong thing impossible</h2>
+<p class="lede">Everything else in this build is plumbing. This is the product.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; the constraint</div>
+Add a CHECK constraint to the students table called <b>display_name_is_shortened</b>. It must
+accept a single first name like <b>Jo</b> or <b>O'Neal</b>, or a first name followed by a single
+capital letter and a period like <b>Anthony S.</b>, optionally followed by a number like
+<b>Anthony S. 2</b>. It must reject anything containing a full surname, including
+<b>Anthony Spinozzi</b>, <b>Spinozzi, Anthony</b> and <b>Anthony S. Spinozzi</b>. Also cap the
+length at 24 characters. Give me the ALTER TABLE statement and explain the pattern in plain
+English, one clause at a time.</div>
+<div class="card t"><h3>What it looks like when it is right</h3>
+<pre class="sql">constraint display_name_is_shortened check (
+  display_name ~ '^[A-Za-z][A-Za-z''-]*( [A-Z]\.( [0-9]+)?)?$'
+  and length(display_name) &lt;= 24
+)</pre>
+<p class="small" style="margin:0">The doubled quote inside the pattern is how SQL writes a single
+apostrophe, and it is what lets <code>O'Neal</code> through. If yours has one quote there, the
+statement will not run.</p></div>
+<div class="card r"><h3>Now try to break it, in the SQL editor, before you build anything else</h3>
+<pre class="sql">insert into students (class_id, display_name)
+values ('00000000-0000-0000-0000-000000000000', 'Anthony Spinozzi');</pre>
+<p class="small" style="margin:0">You want the error. <b>new row for relation "students" violates
+check constraint "display_name_is_shortened"</b>. If it stores instead, the constraint did not
+apply &mdash; check you ran the ALTER on the right table.</p></div>
+<div class="note"><b>That error message is the thing you are building.</b> Everything from here is
+a nicer way to avoid ever seeing it.</div>
+<div class="card g"><h3>Task 4 ends when</h3>
+<p class="small" style="margin:0">You have made the database say no to you, on purpose.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 5</div><h2>A page that talks to it</h2>
+<p class="lede">One HTML file. It asks for your URL and key, then reads the classes table.</p>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; the page</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+It has two boxes at the top for a Supabase project URL and an anon key, and a Connect button. It
+saves both to localStorage so I do not retype them, and it keeps working if localStorage is
+unavailable. On connect it reads the <b>classes</b> table through the Supabase REST endpoint using
+plain fetch &mdash; <b>not</b> the supabase-js library, since I am not installing anything &mdash;
+and lists the classes in a dropdown. Send the key in both the apikey and Authorization headers.
+If the request fails, show me the actual error message on the page rather than logging it to the
+console. Big text, big buttons.</div>
+<div class="card"><h3>The sentence that saves you twenty minutes</h3>
+<p class="small" style="margin:0"><b>"not the supabase-js library, since I am not installing
+anything."</b> Left to itself the AI writes <code>import { createClient }</code>, which needs npm,
+which needs a terminal, which is the cliff most teachers fall off. Plain <code>fetch</code> against
+the REST endpoint does the same job from a file you double-click.</p></div>
+<div class="card t"><h3>Make one class so there is something to see</h3>
+<p class="small" style="margin:0">Easiest in the Supabase Table Editor: insert a row into
+<code>classes</code> with a name. Then reload your page.</p></div>
+<div class="card r"><h3>Nothing appears and there is no error</h3>
+<p class="small" style="margin:0">Almost always Row Level Security. Supabase turns it on by
+default, and with no policy the anon key can read nothing &mdash; which looks exactly like an
+empty table. Prompt 4 on the prompts page fixes it, and the data page explains what you are
+turning on.</p></div>
+<div class="card g"><h3>Task 5 ends when</h3>
+<p class="small" style="margin:0">Your class name appears in the dropdown, having come out of a
+database.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 6</div><h2>Shorten in the browser, before it sends</h2>
+<p class="lede">Layer 1. The one the student's family would care about most.</p>
+<div class="prompt"><div class="lbl">Prompt 4 &middot; the shortening</div>
+Add a function <b>shortenName</b> that turns a full name into a first name and a last initial.
+<b>Anthony Spinozzi</b> becomes <b>Anthony S.</b> It must also handle <b>Spinozzi, Anthony</b>
+written last name first, and give the same answer either way round. A single name like <b>Jo</b>
+is left alone, not mangled. A multi-part surname like <b>de la Cruz</b> or <b>Van Der Berg</b>
+surrenders only one letter. Then add a box I can type names into, showing a live preview of what
+each one becomes, so I can see the shortening happen before anything is sent.</div>
+<div class="card t"><h3>Test it with the awkward ones yourself</h3>
+<table>
+<thead><tr><th>You type</th><th>It should show</th></tr></thead>
+<tbody>
+<tr><td>Anthony Spinozzi</td><td>Anthony S.</td></tr>
+<tr><td>Spinozzi, Anthony</td><td>Anthony S.</td></tr>
+<tr><td>Maria de la Cruz</td><td>Maria C.</td></tr>
+<tr><td>James Van Der Berg</td><td>James B.</td></tr>
+<tr><td>Jo</td><td>Jo</td></tr>
+<tr><td>jordan LEE</td><td>Jordan L.</td></tr>
+</tbody></table></div>
+<div class="card r"><h3>The two it gets wrong first time</h3>
+<p class="small" style="margin:0"><b>Last-name-first</b> rosters, which is how most school systems
+export them &mdash; without it, <code>Spinozzi, Anthony</code> becomes <code>Spinozzi A.</code>
+and you have stored the surname. And <b>mononyms</b>: a student with one name gets turned into
+<code>Jo J.</code> if nobody thought about it. Both are in the prompt for that reason.</p></div>
+<div class="note"><b>Why the live preview matters more than it looks.</b> It is the only moment a
+teacher actually sees the privacy decision happen. Without it this is a claim in a README; with
+it, it is a thing you watched work.</div>
+<div class="card g"><h3>Task 6 ends when</h3>
+<p class="small" style="margin:0">You type a full name and watch it become a short one, before
+anything has been sent anywhere.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 7</div><h2>Paste a whole roster at once</h2>
+<p class="lede">Nobody types thirty names one at a time twice.</p>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; the paste</div>
+Add a big text box where I paste a whole class list, one name per line, straight out of whatever
+my school system exports. Shorten every line in the browser, show the preview as a list of
+<b>what I typed</b> to <b>what will be stored</b>, and add an <b>Add to class</b> button that
+inserts them all in one request with their sort order. Ignore blank lines. After a successful add,
+clear the box and refresh the list. If the insert fails, say so and <b>tell me nothing was
+added</b>, because the whole request is one statement.</div>
+<div class="card"><h3>Why one request and not thirty</h3>
+<p class="small" style="margin:0">A single insert either takes the whole class or none of it. That
+is much easier to reason about than a run that half worked and left you guessing which fourteen
+students made it. The phrase "tell me nothing was added" in the prompt is what gets you an honest
+message instead of a cheerful one.</p></div>
+<div class="card t"><h3>Try it with your real roster</h3>
+<p class="small" style="margin:0">Export your actual class list and paste it. This is the first
+moment the tool is useful rather than interesting, and it is also the moment you find out what
+your school's export format really looks like.</p></div>
+<div class="card g"><h3>Task 7 ends when</h3>
+<p class="small" style="margin:0">A real class is in the database, in one click, with no surname
+anywhere in it.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 8</div><h2>Two students with the same short name</h2>
+<p class="lede">You have an Anthony Spinozzi and an Anthony Sanders. Both shorten to
+<code>Anthony S.</code> This is not an edge case; it happens in most classes of thirty.</p>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; collisions</div>
+Two students can shorten to the same name. When that happens, number them: the second
+<b>Anthony S.</b> becomes <b>Anthony S. 2</b>, the third becomes <b>Anthony S. 3</b>. It has to
+check against students <b>already in the class</b>, not only the ones in this paste, so adding a
+second Anthony next week still works. Show the numbering in the preview so I can see which is
+which before I commit.</div>
+<div class="card r"><h3>The bug this prompt exists to prevent</h3>
+<p class="small" style="margin:0">Left alone, the code checks only within the batch you just
+pasted. Add Anthony Sanders in September and Anthony Spinozzi in October, and the October insert
+fails on the unique constraint with a message that will mean nothing to you at 7am. <b>"Already in
+the class, not only in this paste"</b> is the whole fix.</p></div>
+<div class="card t"><h3>And now the awkward human bit</h3>
+<p class="small" style="margin:0">Somebody is <code>Anthony S. 2</code> and they will notice. Tell
+them why on the first day: the tool does not keep last names, so it counts instead. Every student
+I have explained that to has thought it was reasonable. It is a better conversation than the one
+where a system holds their whole name for no reason.</p></div>
+<div class="card g"><h3>Task 8 ends when</h3>
+<p class="small" style="margin:0">Two students who shorten the same way are both on the roster,
+and you can tell them apart.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 9</div><h2>Prove it to yourself</h2>
+<p class="lede">A button whose only job is to fail. It is the most valuable thing on the page.</p>
+<div class="prompt"><div class="lbl">Prompt 7 &middot; the proof</div>
+Add a panel called <b>Prove it to yourself</b> with a text box defaulting to
+<b>Anthony Spinozzi</b> and a button. The button sends that name to the database <b>bypassing the
+shortening</b>, and shows what comes back. If the database refuses it, say so clearly and show the
+actual error. If it succeeds, say loudly that this is wrong and the check constraint is missing.
+Make the failure case the one that looks reassuring.</div>
+<div class="card t"><h3>What you should see</h3>
+<pre>Refused by the database, which is correct &mdash; new row for
+relation "students" violates check constraint
+"display_name_is_shortened"</pre></div>
+<div class="card"><h3>Why a button and not a note in the documentation</h3>
+<p class="small" style="margin:0">Because a claim you can press is different from a claim you can
+read. You will press it once a year when you have forgotten how any of this works, and it will
+tell you in two seconds whether the thing still holds. So will a principal, if you ever have to
+show them.</p></div>
+<div class="card r"><h3>If it stores the name</h3>
+<p class="small" style="margin:0">Stop. The constraint from task 4 did not apply &mdash; usually
+the ALTER ran against a different table, or ran before the table existed. Re-run it, delete the
+bad row, and press the button again.</p></div>
+<div class="card g"><h3>Task 9 ends when</h3>
+<p class="small" style="margin:0">You have triggered the refusal on purpose from inside your own
+tool.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 10</div><h2>Print it</h2>
+<p class="lede">The roster that matters most is the one on a clipboard when the network is down.</p>
+<div class="prompt"><div class="lbl">Prompt 8 &middot; printing</div>
+Add a print stylesheet. When I print, hide the connection boxes, the paste area, the proof panel
+and every button &mdash; I want the class name and the numbered list of students and nothing else.
+Black on white, no background colors, and it must fit a page without me changing any print
+settings.</div>
+<div class="card"><h3>Test it properly, which means actually printing</h3>
+<p class="small" style="margin:0">Print preview is not the test. Send one to the machine in your
+building and look at it. This is where you discover that your roster of thirty-one runs onto a
+second page with one name on it.</p></div>
+<div class="card t"><h3>The detail worth asking for</h3>
+<p class="small" style="margin:0">Numbered rows. A printed roster with numbers is countable at a
+glance, which is the entire reason you carry one.</p></div>
+<div class="card g"><h3>Task 10 ends when</h3>
+<p class="small" style="margin:0">A piece of paper exists that you would actually use.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 11</div><h2>The de-identified copy</h2>
+<p class="lede">The version you can paste into an AI chat without thinking about it.</p>
+<div class="prompt"><div class="lbl">Prompt 9 &middot; the export</div>
+Add a button that copies the class to the clipboard as <b>S1, S2, S3</b> in roster order, with no
+names at all. If the clipboard is blocked, show the text on the page so I can copy it by hand.</div>
+<div class="card"><h3>What this is actually for</h3>
+<p class="small" style="margin:0">Group arrangements, seating experiments, rotation schedules,
+anything where you want a second opinion from an AI about the <i>shape</i> of your class rather
+than about the people in it. You keep the S1-to-name mapping in your head or on paper. The chat
+never sees a child.</p></div>
+<div class="card r"><h3>A first name is still a name</h3>
+<p class="small" style="margin:0">It is tempting to think <code>Anthony S.</code> is de-identified
+enough to paste anywhere. In a building where you teach, a first name and an initial identifies a
+specific child to anyone who works there. That is why this button exists and why it produces
+<code>S1</code> rather than a shorter name.</p></div>
+<div class="card g"><h3>Task 11 ends when</h3>
+<p class="small" style="margin:0">Your clipboard holds a class with nobody in it.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 12</div><h2>What happens in June</h2>
+<p class="lede">The task everybody skips, which is why so much student data outlives the student.</p>
+<div class="prompt"><div class="lbl">Prompt 10 &middot; the ending</div>
+Add an archive control for a class, and a delete that really deletes &mdash; the class and every
+student in it. Make delete ask me to confirm by typing the class name, because it cannot be
+undone. Then tell me in one sentence what happens to the student rows when a class is deleted,
+based on my actual schema.</div>
+<div class="card t"><h3>The answer you want back</h3>
+<p class="small" style="margin:0">"The students are deleted too, because
+<code>class_id</code> references <code>classes</code> with <code>on delete cascade</code>." If the
+AI cannot tell you that from your own schema, ask it to look again &mdash; and if the cascade is
+genuinely missing, add it now rather than in June.</p></div>
+<div class="card"><h3>Archive and delete are different promises</h3>
+<p class="small" style="margin:0"><b>Archive</b> means out of my way. <b>Delete</b> means gone.
+Tools that only archive let data quietly accumulate for years, and a list of every child you have
+taught since 2026 is a thing you never decided to keep.</p></div>
+<div class="card r"><h3>Put a date on it</h3>
+<p class="small" style="margin:0">Pick a day &mdash; the last in-service day works &mdash; and
+delete last year's classes on it. A retention habit is worth more than a retention policy, and
+this one takes four minutes a year.</p></div>
+<div class="card g"><h3>Task 12 ends when</h3>
+<p class="small" style="margin:0">You have deleted a test class and watched its students go with
+it.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div><h2>The six failures you will actually hit</h2>
+<p class="lede">Not generic advice. These are the six that happen, in the order they happen.</p>
+<table>
+<thead><tr><th style="width:38%">What you see</th><th>What it is, and the sentence that fixes it</th></tr></thead>
+<tbody>
+<tr><td><b>An empty list and no error at all</b></td><td>Row Level Security is on with no policy, so the anon key can read nothing &mdash; which looks identical to an empty table. Run the policy statements from <code>schema.sql</code>.</td></tr>
+<tr><td><b>import statement is not defined</b></td><td>You got <code>supabase-js</code> code. Say: <b>rewrite this with plain fetch against the REST endpoint, no libraries and no build step.</b></td></tr>
+<tr><td><b>violates check constraint</b> when adding a real class</td><td>A name got past the shortening &mdash; usually a middle name or a suffix. Say: <b>show me which line of my paste produced that value.</b></td></tr>
+<tr><td><b>duplicate key value violates unique constraint</b></td><td>Two students shortened the same way and the numbering only checked within the batch. Task 8's prompt, with the "already in the class" clause.</td></tr>
+<tr><td><b>Failed to fetch</b>, nothing else</td><td>Almost always a typo in the project URL, or a trailing slash. Paste it fresh from the Supabase settings page.</td></tr>
+<tr><td><b>It worked yesterday and today the page is blank</b></td><td>Browser data was cleared, so the saved URL and key are gone. Paste them again. Your roster is untouched &mdash; that is the whole point of having a database.</td></tr>
+</tbody></table>
+<div class="note"><b>The habit worth more than this table:</b> paste the error text into the chat
+<i>with what you were doing when it happened</i>. "It broke" gets you guesses. "I clicked Add to
+class with thirty names pasted and got this" gets you the answer.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 1 to 5</h2>
+<p class="small">Copy and paste. Square brackets mean put your own words in.</p>
+<div class="prompt"><div class="lbl">1 &middot; the tables</div>
+Write me a Postgres schema for a class roster, as SQL I can paste into the Supabase SQL editor.
+Two tables. classes: id, name, optional period, archived flag, created_at. students: id, class_id
+referencing classes with on delete cascade, display_name, sort_order integer, created_at. Use uuid
+primary keys with gen_random_uuid(). Make display_name unique within a class. Do not add any other
+columns. Add a comment at the top saying why there is no column for a last name.</div>
+<div class="prompt"><div class="lbl">2 &middot; the constraint</div>
+Add a CHECK constraint to students called display_name_is_shortened. Accept a single first name
+like Jo or O'Neal, or a first name followed by a capital letter and a period like Anthony S.,
+optionally followed by a number like Anthony S. 2. Reject anything containing a full surname,
+including Anthony Spinozzi, Spinozzi, Anthony and Anthony S. Spinozzi. Cap the length at 24
+characters. Give me the ALTER TABLE statement and explain the pattern one clause at a time.</div>
+<div class="prompt"><div class="lbl">3 &middot; the page</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+Two boxes for a Supabase project URL and anon key, and a Connect button. Save both to localStorage
+and keep working if localStorage is unavailable. On connect, read the classes table through the
+Supabase REST endpoint using plain fetch, not the supabase-js library, since I am not installing
+anything. Send the key in both the apikey and Authorization headers. Show the actual error on the
+page if the request fails. Big text, big buttons.</div>
+<div class="prompt"><div class="lbl">4 &middot; let the page read and write</div>
+Give me the SQL to enable Row Level Security on both tables and add a policy that lets the anon
+key select, insert, update and delete on each. Then tell me in plain English who can reach my data
+once that policy exists.</div>
+<div class="prompt"><div class="lbl">5 &middot; the shortening</div>
+Add a function shortenName turning a full name into a first name and last initial. Anthony
+Spinozzi becomes Anthony S. Handle Spinozzi, Anthony written last name first and give the same
+answer either way round. Leave a single name like Jo alone. A multi-part surname like de la Cruz
+or Van Der Berg surrenders only one letter. Add a box I can type into showing a live preview of
+what each name becomes before anything is sent.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 6 to 12</h2>
+<div class="prompt"><div class="lbl">6 &middot; the paste</div>
+Add a big text box where I paste a whole class list, one name per line. Shorten every line in the
+browser, preview what I typed against what will be stored, and add an Add to class button that
+inserts them all in one request with sort order. Ignore blank lines. Clear the box after a
+successful add. If the insert fails, tell me nothing was added, because the whole request is one
+statement.</div>
+<div class="prompt"><div class="lbl">7 &middot; collisions</div>
+Two students can shorten to the same name. Number them: the second Anthony S. becomes Anthony S.
+2. Check against students already in the class, not only the ones in this paste. Show the
+numbering in the preview.</div>
+<div class="prompt"><div class="lbl">8 &middot; the proof</div>
+Add a panel called Prove it to yourself with a text box defaulting to Anthony Spinozzi and a
+button that sends it to the database bypassing the shortening. If the database refuses it, say so
+and show the actual error. If it succeeds, say loudly that the check constraint is missing.</div>
+<div class="prompt"><div class="lbl">9 &middot; printing</div>
+Add a print stylesheet. When I print, hide the connection boxes, the paste area, the proof panel
+and every button. Class name and a numbered list of students, black on white, fitting the page
+with no print settings changed.</div>
+<div class="prompt"><div class="lbl">10 &middot; the export</div>
+Add a button copying the class to the clipboard as S1, S2, S3 in roster order with no names. If
+the clipboard is blocked, show the text on the page instead.</div>
+<div class="prompt"><div class="lbl">11 &middot; the ending</div>
+Add an archive control for a class, and a delete that removes the class and every student in it,
+confirmed by typing the class name. Then tell me what happens to the student rows on delete, based
+on my actual schema.</div>
+<div class="prompt"><div class="lbl">12 &middot; when three rounds have not fixed it</div>
+[Start a fresh chat.] Paste prompt 3 again, then add: also make sure that [the thing that kept
+going wrong].</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The files</div><h2>What is in this download, and what to do with it</h2>
+<div class="card t"><h3>roster.html</h3>
+<p class="small" style="margin:0">The finished roster, built by exactly the twelve tasks in this
+pack and tested in a browser before publication. <b>Open it and read it</b> before you build your
+own &mdash; knowing what the target looks like makes every prompt land better. It works as-is:
+put your own URL and key in and it runs.</p></div>
+<div class="card"><h3>schema.sql</h3>
+<p class="small" style="margin:0">The whole database, commented. Paste it into the Supabase SQL
+Editor and press Run, once. If you would rather have the working thing today and understand it
+this weekend, this file plus <code>roster.html</code> gets you there in about ten minutes.</p></div>
+<div class="card r"><h3>Two ways to use this pack, both fine</h3>
+<p class="small" style="margin:0"><b>Build it</b> &mdash; work the twelve tasks, prompt by prompt,
+and end up with something you understand well enough to change. <b>Run it</b> &mdash; use the two
+files as they are, and read the tasks when something confuses you. The first teaches more. The
+second gets a roster printed before homeroom.</p></div>
+<div class="note"><b>Keep both files somewhere you control.</b> Your own Drive, your own
+Documents. Not a shared staff folder, and not anywhere that publishes to the web &mdash; the next
+page explains exactly why.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Said plainly</div><h2>The key in your file, and who can read your roster</h2>
+<p class="lede">This page exists because every other tutorial about this leaves it out.</p>
+<div class="card r"><h3>The honest sentence</h3>
+<p class="small" style="margin:0"><b>Anyone who has both your project URL and your anon key can
+read and change this roster.</b> The policy you added in prompt 4 is what lets your page work, and
+it does not know the difference between your page and somebody else's.</p></div>
+<div class="card"><h3>So three things follow, and they are not optional</h3>
+<p class="small" style="margin-bottom:5pt"><b>One.</b> The file lives on your computer. Never on a
+website, never in a public folder, never pasted into a forum when you are asking for help &mdash;
+strip the key first.</p>
+<p class="small" style="margin-bottom:5pt"><b>Two.</b> Nothing sensitive goes in this database.
+Look at what is actually in there: first names, last initials, and the order they sit in.</p>
+<p class="small" style="margin:0"><b>Three.</b> If you ever think the key has got out, Supabase
+can issue a new one in a few seconds. Do that, then paste the new one into your file.</p></div>
+<div class="note"><b>Now read those two sentences together, because this is the whole argument of
+the pack.</b><br>
+A leak is possible. What a leak would expose is a list that says "Anthony S." and "Maria C."
+<b>You did not make the breach impossible. You made it boring.</b> That is a far more reliable
+form of safety than being careful, because it keeps working on the day you are not.</div>
+<div class="card g"><h3>What this is not</h3>
+<p class="small" style="margin:0">Not a system of record, not a gradebook, and not a replacement
+for whatever your district runs. It is a roster you own, for your own classroom, made out of
+information you already carry around in your head.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Where the data lives</div><h2>The three tiers, for this build specifically</h2>
+<p class="lede">The tier is decided by <b>where the data lives and who can reach it</b>, not by
+whether names appear.</p>
+<div class="card g"><h3>Tier 1 &mdash; build freely</h3>
+<p class="small" style="margin:0">The class name, the period, the structure of the tool, the
+schema, the code. All yours. None of it is about a child.</p></div>
+<div class="card t"><h3>Tier 2 &mdash; where this roster lives</h3>
+<p class="small" style="margin:0">First names and last initials, in a database only you have the
+key to, on a page that never leaves your machine. This is the tier the whole build is designed to
+sit in, and the constraint in task 4 is what keeps it there instead of drifting up a tier the
+first time somebody pastes a full roster into the wrong box.</p></div>
+<div class="card r"><h3>Tier 3 &mdash; stop, and ask the district</h3>
+<p class="small" style="margin:0">Anything traceable to a particular child beyond a name: grades,
+behavior records, IEP status, attendance, contact details. Also <b>any of this once it is shared
+&mdash; a staff folder, an emailed export, a chatbot window, a second teacher's account.</b> The
+data did not change. Who can reach it did, and that is what moves the tier.</p></div>
+<div class="note"><b>The part people get backwards.</b> Adding a database did not automatically
+push this build into tier 3. Sharing it would. A tool on a server that only you can reach is
+closer to a notebook in your desk than to a district system, and the difference is who holds the
+key.</div>
+<div class="card"><h3>Not legal advice</h3>
+<p class="small" style="margin:0">Your district's policy, your state's law, FERPA and COPPA are
+the authorities. This is a way of thinking that keeps you well inside them, not a substitute for
+asking.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Test it like you mean it</div><h2>Eight things to try before you trust it</h2>
+<p class="lede">Ten minutes. Do these with a fake class, not your real one.</p>
+<table>
+<thead><tr><th style="width:52%">Try this</th><th>You want</th></tr></thead>
+<tbody>
+<tr><td>Paste <code>Spinozzi, Anthony</code></td><td><code>Anthony S.</code>, not <code>Spinozzi A.</code></td></tr>
+<tr><td>Paste a student with one name</td><td>Left alone, not <code>Jo J.</code></td></tr>
+<tr><td>Add two students who shorten the same</td><td>Both there, second numbered</td></tr>
+<tr><td>Close the tab and reopen it</td><td>The roster is still there</td></tr>
+<tr><td>Open the file on a different computer</td><td>Same roster, after pasting the key</td></tr>
+<tr><td>Press the proof button</td><td>A refusal, quoting the constraint by name</td></tr>
+<tr><td>Print it</td><td>Names and numbers, no buttons, one page</td></tr>
+<tr><td>Delete the fake class</td><td>Its students gone too</td></tr>
+</tbody></table>
+<div class="card t"><h3>The one that catches the most</h3>
+<p class="small" style="margin:0"><b>The second computer.</b> It is the only test that proves you
+built what you think you built &mdash; a tool whose data is somewhere other than the machine in
+front of you. If the second computer shows an empty roster, something is saving locally that
+should not be.</p></div>
+<div class="card r"><h3>And one you cannot test by looking</h3>
+<p class="small" style="margin:0">Whether a surname ever reached the server. Open your browser's
+network tab while you add a class and read what was actually sent. It should say
+<code>Anthony S.</code> If it says anything longer, the shortening is running in the wrong
+place.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Reading the error</div><h2>Postgres is blunt, and that is a kindness</h2>
+<p class="lede">Database errors look frightening and are the most useful text in this whole build.</p>
+<pre class="sql">new row for relation "students" violates check
+constraint "display_name_is_shortened"</pre>
+<div class="card"><h3>Three pieces, left to right</h3>
+<p class="small" style="margin-bottom:5pt"><b>new row for relation "students"</b> &mdash; where it
+happened. Not classes, not somewhere mysterious. The students table.</p>
+<p class="small" style="margin-bottom:5pt"><b>violates check constraint</b> &mdash; what kind of
+rule. A CHECK is a rule about the contents of one row, which means the problem is in the value,
+not in your connection or your key.</p>
+<p class="small" style="margin:0"><b>"display_name_is_shortened"</b> &mdash; which rule, by the
+name you gave it in task 4. This is why naming constraints is worth the two extra words.</p></div>
+<div class="card t"><h3>The other one you will meet</h3>
+<pre class="sql">duplicate key value violates unique constraint
+"students_class_id_display_name_key"</pre>
+<p class="small" style="margin:0">Same shape. The name tells you the columns involved:
+<code>class_id</code> and <code>display_name</code>. Two students in one class shortened the same
+way, and the numbering did not catch it.</p></div>
+<div class="note"><b>The rule for getting help fast:</b> paste the whole error, not a summary of
+it. The constraint name is the single most useful word in the sentence and it is the first thing
+people paraphrase away.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The first day</div><h2>What to say to thirty students</h2>
+<p class="lede">You built a tool that treats them carefully. Tell them.</p>
+<div class="card t"><h3>Sixty seconds, roughly like this</h3>
+<p class="small" style="margin:0">"This is the roster I use. It has your first name and the first
+letter of your last name, and that is all it has &mdash; not your ID, not your grades, not your
+birthday. It is set up so it <i>cannot</i> keep your last name, not just so I remember not to type
+it. If two of you come out the same it will number you, and that is why one of you is Anthony S.
+2."</p></div>
+<div class="card"><h3>Why bother</h3>
+<p class="small" style="margin:0">Because students are told constantly that software watches them,
+and they are mostly right. Showing them one piece that was deliberately built to know less is a
+better lesson about technology than any unit on digital citizenship, and it takes a minute.</p></div>
+<div class="card r"><h3>If somebody asks a hard question</h3>
+<p class="small" style="margin:0">"Could someone else see it?" is a fair question and the answer is
+yes, in principle, if they had my key &mdash; and what they would see is a list of first names.
+<b>Answer it straight.</b> A student who catches you overselling the safety of a system learns the
+wrong lesson very efficiently.</p></div>
+<div class="card g"><h3>The ask worth making</h3>
+<p class="small" style="margin:0">Ask them what else the school stores about them, and who they
+think can see it. You will get a better discussion out of that than out of any prepared
+question.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Outgrowing it</div><h2>When one file is enough, and when it is not</h2>
+<p class="lede">Honest answer: most classroom tools should be one file. This is not most tools.</p>
+<div class="card g"><h3>Stay with one file when</h3>
+<p class="small" style="margin:0">Only you use it &middot; only on one machine &middot; losing the
+data would be annoying rather than serious &middot; it is a timer, a picker, a generator, a
+checklist &middot; you want it working in four minutes.</p></div>
+<div class="card t"><h3>You have outgrown one file when</h3>
+<p class="small" style="margin:0">The same information has to be in front of two machines
+&middot; losing it would cost you a real afternoon &middot; something else you build needs to
+read the same list &middot; it has to survive a browser being cleared by somebody else's IT
+policy.</p></div>
+<div class="card r"><h3>The trap in between</h3>
+<p class="small" style="margin:0"><b>Do not put a database behind something that did not need
+one.</b> You will have taken on a key to protect, a service to remember, and a second thing that
+can be down, in exchange for nothing. The question is never "is a database better" &mdash; it is
+"what does this tool do that one file cannot."</p></div>
+<div class="note"><b>The roster is the honest first case</b>, because a class list is the thing
+every other classroom tool wants to read. Once it lives somewhere with a key, the next tool you
+build can use it instead of asking you to type thirty names again.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this pack is built, and what it does not claim</h2>
+<div class="card t"><h3>Where this pattern comes from</h3>
+<p class="small" style="margin:0">It is not theoretical. The three-layer approach &mdash; shorten
+in the browser, refuse in the database, no column to put it in &mdash; is taken from software I
+built and run for my own high school woodshop course, which has been in daily use with real
+students for a full school year and is still being extended. The roster in this pack is that
+design, reduced to the smallest thing that teaches it.</p></div>
+<div class="card"><h3>What was actually tested before this went out</h3>
+<p class="small" style="margin:0">The constraint pattern was run against accepting and rejecting
+inputs &mdash; <code>Jo</code>, <code>O'Neal</code>, <code>Anthony S.</code>,
+<code>Anthony S. 2</code> accepted; <code>Anthony Spinozzi</code>,
+<code>Spinozzi, Anthony</code>, <code>Maria de la Cruz</code>, <code>Anthony S. Spinozzi</code>
+refused. The included <code>roster.html</code> was driven in a real browser against a stand-in
+database enforcing that same constraint: connect, create a class, paste five names including a
+deliberate collision, confirm the shortened forms are what reach the database, trigger the
+refusal on purpose, remove a student, reload, and handle an unreachable database. No unexpected
+console errors.</p></div>
+<div class="card r"><h3>What is NOT claimed</h3>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not tested against a live Supabase project</b>
+&mdash; the browser test used a stand-in that enforces the same rules. Your first real connection
+is yours to make, and task 5 tells you what a good one looks like.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a secure multi-user system.</b> Anyone
+with your URL and key can read the roster. That is stated plainly rather than hedged.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a system of record</b>, not a gradebook,
+not an SIS.</p>
+<p class="small" style="margin:0">&bull; <b>Not legal advice.</b> Your district's policy, your
+state's law, FERPA and COPPA are the authorities.</p></div>
+<div class="card g"><h3>Why the AI is told what not to do so often</h3>
+<p class="small" style="margin:0">Most of the prompts in this pack spend a clause forbidding
+something &mdash; no extra columns, no libraries, no build step. That is not fussiness. Left to
+itself a model builds what most software looks like, and most software collects more than it
+needs. Saying no is the part of prompting that nobody teaches.</p></div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card t"><h3>Leaving a review earns you TPT credit</h3>
+<p class="small" style="margin:0">TPT gives you credit toward future purchases for every review
+you leave, and reviews are how other teachers find work like this. It takes about thirty
+seconds.</p></div>
+<div class="card r"><h3>If something did not work, tell me before you rate it</h3>
+<p class="small" style="margin:0">The Q&amp;A on the listing reaches me directly. A database error
+you cannot get past is almost always one line, and I would far rather fix it than have you stuck
+with a file that does not run.</p></div>
+<div class="card"><h3>The one thing to take away if you take nothing else</h3>
+<p class="small" style="margin:0"><b>Decide what your tool must never know, then make it
+structurally unable to know it.</b> Not a rule you follow. A shape it has. Everything else in this
+pack is one worked example of that idea.</p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b><br>
+Every prompt here was run. The constraint was tested against names designed to break it. The app
+was driven in a browser, including the failures.</div>
+<div class="foot"><span>Build a Roster That Cannot Store Last Names</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>
