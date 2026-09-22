@@ -18,7 +18,7 @@
   #stage{position:relative;width:100%;aspect-ratio:16/9;border:4px solid var(--deep);
          border-radius:12px;overflow:hidden;background:var(--slate);
          box-shadow:0 8px 0 #0C151D}
-  canvas{display:block;width:100%;height:100%;image-rendering:pixelated}
+  canvas{display:block;width:100%;height:100%}
   .panel{background:var(--deep);border:3px solid var(--bone);border-radius:10px;padding:12px 14px}
   #say{font-size:clamp(14px,2.3vw,18px);font-weight:700;text-align:center;min-height:1.4em}
   #choices{display:grid;gap:9px}
@@ -187,7 +187,7 @@ const QUESTIONS = [
 
 const W=640, H=360;
 const c=document.getElementById('c'), x=c.getContext('2d');
-x.imageSmoothingEnabled=false;
+x.imageSmoothingEnabled=true;
 const $=id=>document.getElementById(id);
 
 /* the whole palette, sixteen colors, one place */
@@ -195,29 +195,72 @@ const P={ ink:'#14202B',deep:'#223448',slate:'#3D5A73',steel:'#5E8199',mist:'#9F
   bone:'#E8E2D0',sand:'#D9B47C',clay:'#B5763F',rust:'#8A4A2B',blood:'#5C2B1E',
   moss:'#6B8F5A',fern:'#47663D',gold:'#F2C14E',amber:'#D9812B',sky:'#7FB2D9',plum:'#6B4A7A' };
 
-/* --- sprites: one char per pixel. Each passes a solid-black silhouette read. --- */
-const SPR={
-  walker:['..3333..','.333333.','.311113.','..1111..','.2111112','.2111112','..1111..','..1..1..','..1..1..','.11..11.'],
-  tent:  ['....1....','...111...','..11111..','.1111111.','11111111 1','1113111 11','111311111','111311111'],
-  peak:  ['......11......','.....1111.....','....111111....','...11111111...','..1111111111..','.111111111111.','11111111111111'],
-  tree:  ['...11...','..1111..','.111111.','11111111','.111111.','..1111..','...33...','...33...'],
-  flag:  ['.1111111','.1222221','.1222221','.1111111','.1......','.1......','.1......','.1......'],
-  water: ['1111111111','1111111111','.11111111.']
-};
-const SKIN={
-  walker:{'1':P.clay,'2':P.rust,'3':P.bone}, tent:{'1':P.sand,'3':P.rust},
-  peak:{'1':P.steel}, tree:{'1':P.fern,'3':P.rust},
-  flag:{'1':P.bone,'2':P.gold}, water:{'1':P.sky}
-};
-function sprite(rows,skin,px,py,s,flash){
-  for(let ry=0;ry<rows.length;ry++){ const row=rows[ry];
-    for(let rx=0;rx<row.length;rx++){ const ch=row[rx];
-      if(ch==='.'||ch===' ')continue;
-      x.fillStyle=flash?P.bone:(skin[ch]||P.bone);
-      x.fillRect(px+rx*s,py+ry*s,s,s);
-      /* one light source, top left: a darker pixel on the bottom-right face */
-      if(!flash&&ry===rows.length-1){ x.fillStyle='rgba(20,32,43,.35)'; x.fillRect(px+rx*s,py+ry*s+s-Math.max(1,s/3),s,Math.max(1,s/3)); }
-    }}
+/* --- No pixel art. Shapes, gradients and atmosphere.
+   Reason: sprite arrays are authored blind -- you type a grid of characters and
+   cannot see the result until it renders, so it comes out lumpy. Everything
+   below is describable in numbers, which is why it reads as art-directed:
+   a dusk ramp, ridges that flatten and lighten with distance, tapered
+   silhouettes, and a warm rim light on the sun side of anything solid. --- */
+
+const SUN = { x: 0.78, y: 0.44 };     // where the light comes from, as a fraction
+
+function ridge(baseY, amp, col, seed, jag, speed){
+  const off = S.scroll * speed;
+  x.fillStyle = col; x.beginPath(); x.moveTo(-8, H);
+  for(let i=-8;i<=W+8;i+=4){
+    x.lineTo(i, baseY + Math.sin((i+off)/110)*amp + Math.sin((i+off)/37)*(amp*jag));
+  }
+  x.lineTo(W+8,H); x.closePath(); x.fill();
+}
+function ridgeY(px, baseY, amp, seed, jag, speed){
+  const off = S.scroll * speed;
+  return baseY + Math.sin((px+off)/110)*amp + Math.sin((px+off)/37)*(amp*jag);
+}
+/* a conifer as a tapered silhouette, varied by index so no two match */
+function conifer(px, gy, h, col){
+  x.fillStyle = col; x.beginPath();
+  x.moveTo(px, gy - h);
+  x.lineTo(px + h*0.27, gy);
+  x.lineTo(px - h*0.27, gy);
+  x.closePath(); x.fill();
+  x.fillRect(px-1.5, gy-2, 3, 4);
+}
+/* the traveler: a silhouette, a shadow, and a rim light from the sun */
+function traveler(px, gy, flash){
+  const body = flash ? '#FFF6E0' : '#151C31';
+  x.save(); x.translate(px, gy); x.scale(1.28,1.28); x.translate(-px,-gy);
+  x.fillStyle = 'rgba(15,20,34,.32)';
+  x.beginPath(); x.ellipse(px+2, gy+2, 24, 4.5, 0, 0, 7); x.fill();
+  x.fillStyle = body;
+  x.beginPath(); x.arc(px, gy-42, 7, 0, 7); x.fill();                       // head
+  x.beginPath();                                                            // coat
+  x.moveTo(px-7, gy-34); x.lineTo(px+7, gy-34);
+  x.lineTo(px+10, gy-13); x.lineTo(px-10, gy-13); x.closePath(); x.fill();
+  x.fillRect(px-7, gy-14, 4.5, 14); x.fillRect(px+2.5, gy-14, 4.5, 14);     // legs
+  x.beginPath();                                                            // staff
+  x.moveTo(px+9, gy-33); x.lineTo(px+20, gy-5);
+  x.lineTo(px+17, gy-4); x.lineTo(px+6, gy-32); x.closePath(); x.fill();
+  if(!flash){
+    x.strokeStyle = 'rgba(255,216,158,.8)'; x.lineWidth = 1.7;
+    x.beginPath(); x.arc(px, gy-42, 7, -1.15, 0.85); x.stroke();
+    x.beginPath(); x.moveTo(px+7, gy-34); x.lineTo(px+10, gy-13); x.stroke();
+  }
+  x.restore();
+}
+/* the destination: a walled camp on the horizon, growing as you close on it */
+function destination(px, gy, scale){
+  x.fillStyle = '#141A2B';
+  const w = 26*scale, h = 18*scale;
+  x.fillRect(px, gy-h, w, h);                                    // wall
+  x.fillRect(px-4*scale, gy-h-6*scale, 7*scale, h+6*scale);      // tower
+  x.beginPath();                                                  // roof
+  x.moveTo(px-6*scale, gy-h-6*scale); x.lineTo(px-0.5*scale, gy-h-13*scale);
+  x.lineTo(px+5*scale, gy-h-6*scale); x.closePath(); x.fill();
+  x.fillStyle = '#F2C14E';                                        // a lit window
+  x.fillRect(px-1.5*scale, gy-h-3*scale, 2*scale, 2.5*scale);
+  x.fillRect(px+w*0.45, gy-h*0.55, 2.2*scale, 3*scale);
+  x.strokeStyle = 'rgba(255,216,158,.7)'; x.lineWidth = 1.4;      // rim light
+  x.beginPath(); x.moveTo(px+w, gy-h); x.lineTo(px+w, gy); x.stroke();
 }
 
 /* --------------------------------------------------------------- state --- */
@@ -300,67 +343,71 @@ function onRidge(spr,skin,count,spacing,speed,amp,yBase,scale,sink){
   }
 }
 function draw(){
-  const sx=S.shake>0?(Math.random()*S.shake-S.shake/2):0;
-  x.save(); x.translate(sx,0);
+  const sx = S.shake>0 ? (Math.random()*S.shake - S.shake/2) : 0;
+  x.save(); x.translate(sx, 0);
 
-  const g=x.createLinearGradient(0,0,0,H);
-  g.addColorStop(0,'#1A2A3A'); g.addColorStop(.5,P.slate); g.addColorStop(1,P.steel);
-  x.fillStyle=g; x.fillRect(-10,-10,W+20,H+20);
+  /* dusk ramp */
+  const sky = x.createLinearGradient(0,0,0,H);
+  sky.addColorStop(0,'#1B2A44'); sky.addColorStop(.34,'#5A6795');
+  sky.addColorStop(.56,'#A0759A'); sky.addColorStop(.74,'#D8865E'); sky.addColorStop(1,'#F5C089');
+  x.fillStyle = sky; x.fillRect(-8,-8,W+16,H+16);
 
-  /* a low sun, and birds, so the sky is never dead */
-  x.fillStyle=P.gold; x.beginPath(); x.arc(520,104,17,0,7); x.fill();
-  x.fillStyle='rgba(242,193,78,.16)'; x.beginPath(); x.arc(520,104,40,0,7); x.fill();
-  x.fillStyle=P.deep;
+  /* sun, low and warm, with a wide soft glow */
+  const sunx = W*SUN.x, suny = H*0.52;
+  const gl = x.createRadialGradient(sunx,suny,18,sunx,suny,160);
+  gl.addColorStop(0,'rgba(255,215,154,.42)'); gl.addColorStop(1,'rgba(255,215,154,0)');
+  x.fillStyle = gl; x.beginPath(); x.arc(sunx,suny,160,0,7); x.fill();
+  x.fillStyle = '#FFD79A'; x.beginPath(); x.arc(sunx,suny,26,0,7); x.fill();
+
+  /* birds, small and slow */
+  x.strokeStyle = 'rgba(20,26,43,.55)'; x.lineWidth = 1.6;
   for(let i=0;i<3;i++){
-    const bx=((i*190 - S.scroll*.12)%(W+200))-60, by=70+Math.sin(S.t/40+i)*5;
-    x.fillRect(bx,by,7,2); x.fillRect(bx-5,by-2,5,2); x.fillRect(bx+7,by-2,5,2);
+    const bx = ((i*230 - S.scroll*.10) % (W+260)) - 80, by = 70 + Math.sin(S.t/46+i)*6;
+    x.beginPath(); x.moveTo(bx-6,by); x.quadraticCurveTo(bx-3,by-3,bx,by);
+    x.quadraticCurveTo(bx+3,by-3,bx+6,by); x.stroke();
   }
 
-  /* far ridge with peaks standing on it */
-  hill(S.scroll*.18,18,168,'#4A6B85');
-  onRidge(SPR.peak,SKIN.peak,6,140,.18,18,168,5,4);
+  /* four ridges: flatter, lighter and slower with distance */
+  ridge(196,15,'#8A93B4',   0,.30,.10);
+  ridge(222,18,'#6B7599', 260,.34,.22);
+  x.fillStyle='rgba(240,178,120,.20)'; x.fillRect(-8,196,W+16,52);   // valley haze
+  ridge(250,14,'#4C567C', 520,.38,.42);
 
-  /* middle ridge with trees standing on it */
-  hill(S.scroll*.45,20,224,P.slate);
-  onRidge(SPR.tree,SKIN.tree,8,96,.45,20,224,4,3);
+  /* the destination sits on the third ridge and grows as you approach */
+  const near = Math.min(1, S.leg/DISTANCE);
+  const dsx = W - 150;
+  destination(dsx, ridgeY(dsx,250,14,520,.38,.42)+2, 0.7 + near*1.4);
 
-  /* near bank */
-  hill(S.scroll*.9,10,286,'#2C4459');
+  /* foreground land */
+  const FG_BASE = 292, FG_AMP = 8;
+  ridge(FG_BASE,FG_AMP,'#222B45', 90,.22,1.0);
 
-  /* the trail itself */
-  x.fillStyle=P.sand; x.fillRect(-10,300,W+20,9);
-  x.fillStyle=P.clay;
-  for(let i=0;i<22;i++){ const px=((i*42 - S.scroll*1.4)%(W+60))-30; x.fillRect(px,303,20,3); }
-  x.fillStyle=P.fern; x.fillRect(-10,309,W+20,H);
-  x.fillStyle='#3E5A34';
-  for(let i=0;i<26;i++){ const px=((i*37 - S.scroll*1.4)%(W+60))-30; x.fillRect(px,316+((i*7)%10),9,3); }
+  /* trees on the near ridge, sizes varied by index */
+  for(let i=0;i<14;i++){
+    let tx = ((i*61 - S.scroll*1.0) % (W+122)); if(tx<0) tx += W+122; tx -= 61;
+    const h  = 24 + ((i*43)%22);
+    conifer(tx, ridgeY(tx,FG_BASE,FG_AMP,90,.22,1.0)+1, h, '#151C31');
+  }
 
-  /* the destination, growing as you close on it */
-  const near=Math.min(1,S.leg/DISTANCE);
-  const fs=3+Math.round(near*3);
-  sprite(SPR.flag,SKIN.flag,W-78,300-SPR.flag.length*fs,fs);
-  sprite(SPR.tent,SKIN.tent,W-132,300-SPR.tent.length*Math.max(2,fs-1),Math.max(2,fs-1));
-
-  /* the traveler */
-  const bob=Math.floor(Math.sin(S.t/8)*2);
-  sprite(SPR.walker,SKIN.walker,92,300-SPR.walker.length*5+bob,5,S.flash>0);
-  x.fillStyle='rgba(20,32,43,.28)'; x.fillRect(92,301,35,4);
+  /* the traveler walks the near ridge */
+  const wx = 132, bob = Math.sin(S.t/9)*1.6;
+  traveler(wx, ridgeY(wx,FG_BASE,FG_AMP,90,.22,1.0) + 2 + bob, S.flash>0);
 
   /* status bar */
-  x.fillStyle='rgba(20,32,43,.82)'; x.fillRect(0,0,W,44);
-  x.fillStyle=P.deep; x.fillRect(0,44,W,2);
+  x.fillStyle='rgba(15,20,34,.80)'; x.fillRect(0,0,W,44);
+  x.fillStyle='rgba(233,169,114,.35)'; x.fillRect(0,44,W,1.5);
   label('DAY '+S.days, 14,14,16,P.bone);
   label('SUPPLIES', 104,9,10,P.mist);
   for(let i=0;i<Math.max(S.supplies,0);i++){
     x.fillStyle=P.gold; x.fillRect(104+i*13,23,9,11);
-    x.fillStyle='rgba(20,32,43,.45)'; x.fillRect(104+i*13,31,9,3);
+    x.fillStyle='rgba(15,20,34,.45)'; x.fillRect(104+i*13,31,9,3);
   }
   label('IDEAS LOCKED IN', 268,9,10,P.mist);
   label(String(S.mastered.size), 268,20,17,P.gold);
   if(S.missed.size) label(S.missed.size+' road'+(S.missed.size>1?'s':'')+' blocked', 310,22,12,P.amber);
   label(DESTINATION.toUpperCase(), W-152,9,10,P.mist);
   const prog=Math.min(1,S.leg/DISTANCE);
-  x.fillStyle='#0C151D'; x.fillRect(W-152,22,136,12);
+  x.fillStyle='rgba(15,20,34,.75)'; x.fillRect(W-152,22,136,12);
   x.fillStyle=P.moss; x.fillRect(W-152,22,Math.round(136*prog),12);
   x.strokeStyle=P.bone; x.lineWidth=2; x.strokeRect(W-153,21,138,14);
 

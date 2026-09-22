@@ -169,8 +169,9 @@ good enough, and it is not optional. The short version, and the gate is longer:
 - **No public individual ranking, and no mechanic where one student's miss
   visibly costs the group.** For struggling students that produces a sense of
   incompetence, which is the opposite of the point.
-- **Sixteen colors, silhouette test, one light source, always something
-  moving.** A teacher who will not project it will not buy it.
+- **No pixel art.** Gradients, sine ridges, silhouettes and a rim light. An AI
+  cannot see what it draws, so give it numbers rather than pictures. A teacher
+  who will not project it will not buy it.
 
 
 - **"Vibe Code Your Own Game" leads the title.** It is the phrase being

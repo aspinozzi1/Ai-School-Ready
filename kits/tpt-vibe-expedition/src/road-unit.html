@@ -214,19 +214,24 @@ with an idea, a level and a one-line reason.</p></div>
 <p class="lede">A landscape that moves, and proof the game is alive.</p>
 <div class="prompt"><div class="lbl">Prompt 1 &middot; the world</div>
 Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
-Put a canvas in it, 640 by 360, scaled to fit, with <b>imageSmoothingEnabled false</b>. Set up
-<b>a state object, a draw function and a game loop using requestAnimationFrame</b>, kept separate.
-Draw a sky that fades from dark at the top to lighter at the horizon, then <b>three layers of
-rolling hills drawn with a sine wave</b>, each scrolling at a different speed. Add a low sun and a
-few birds. <b>Give me one palette of sixteen colors as named constants at the top and use nothing
-outside it.</b></div>
-<div class="card t"><h3>The sixteen-color rule is not decoration</h3>
-<p class="small" style="margin:0"><b>A sprite with forty colors turns to noise at thirty pixels
-tall</b>, because the eye cannot separate adjacent shades at that size. Fewer colors read better,
-always. Ask for the palette as named constants and every later change is one edit in one place.</p></div>
-<div class="card"><h3>Three speeds, not one</h3>
-<p class="small" style="margin:0">Far hills drift slowly, near hills move fast. That difference is
-what makes a flat picture look like distance, and it costs one number per layer.</p></div>
+Put a canvas in it, 640 by 360, scaled to fit. Set up <b>a state object, a draw function and a
+game loop using requestAnimationFrame</b>, kept separate. Draw a <b>dusk sky as a vertical gradient
+with four stops</b> &mdash; deep blue at the top through violet and a warm rose to amber at the
+horizon. Then <b>three ridges drawn with a sine wave</b>, each lower, flatter, darker and scrolling
+faster than the one behind it. Put a low sun near the horizon with a wide soft radial glow, and a
+translucent warm band across the valley for haze. <b>No pixel art anywhere.</b></div>
+<div class="card t"><h3>Why this and not pixel art</h3>
+<p class="small" style="margin-bottom:5pt"><b>An AI cannot see what it is drawing.</b> Ask for
+pixel sprites and it writes a grid of characters blind, and you get a lump. Ask for a gradient from
+one color to another, or a sine wave at a given amplitude, and it gets it right first time
+&mdash; because those are numbers, not pictures.</p>
+<p class="small" style="margin:0"><b>This is the single most useful thing in this pack about making
+things look good with AI.</b> Describe your art mathematically and it will look art-directed.
+Describe it as pixels and it will look like a school project.</p></div>
+<div class="card"><h3>Three speeds and three lightnesses</h3>
+<p class="small" style="margin:0">Far ridges drift slowly and sit lighter and hazier; near ones move
+fast and go dark. <b>That is the whole trick of depth</b>, it is two numbers per layer, and it is
+why the scene reads as distance rather than as stripes.</p></div>
 <div class="card g"><h3>Task 2 ends when</h3>
 <p class="small" style="margin:0">You have a landscape that scrolls, with the far hills lagging the
 near ones.</p></div>
@@ -234,25 +239,27 @@ near ones.</p></div>
 <div class="barb"></div></div>
 <div class="sheet"><div class="bar"></div>
 <div class="kick">Task 3</div><h2>Things that sit on the ground</h2>
-<p class="lede">The single fix that separates a real scene from a pasted one.</p>
-<div class="prompt"><div class="lbl">Prompt 2 &middot; sprites on the land</div>
-Add pixel sprites <b>written as arrays of text</b>, one character per pixel, a dot for transparent,
-so I can edit art by typing. Make a traveler, a tree, a mountain peak, a tent and a flag. Then
-&mdash; this is the important part &mdash; <b>write a function that asks a hill what its surface
-height is at a given x, and place trees and peaks so they sit exactly on that line</b> rather than
-at a fixed height. Give the traveler a small bob. <b>Light everything from the top left</b>: a
-darker row along the bottom of each sprite.</div>
+<p class="lede">Shapes, not sprites &mdash; and the one fix that separates a real scene from a
+pasted one.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; silhouettes on the land</div>
+Draw the traveler, the trees and the destination as <b>solid silhouettes built from paths and
+simple shapes</b>, not pixel art and not images. The traveler is a circle for a head, a tapered
+body, two legs and a staff. Trees are tapered triangles at varied heights. Then &mdash; the
+important part &mdash; <b>write a function that asks a ridge what its surface height is at a given
+x, and place everything so it sits exactly on that line</b> rather than at a fixed height. Add a
+soft shadow under the traveler, and <b>a warm rim light along the edge facing the sun</b>.</div>
 <div class="card r"><h3>The mistake this prompt exists to prevent</h3>
-<p class="small" style="margin:0">Left alone, a model draws hills and then draws trees at a fixed
-y. <b>The trees float over the hills or sink into them</b> and the scene reads as flat and wrong
-without anybody being able to say why. Asking the hill where its surface is, and standing things on
-it, is four lines and it is most of the difference.</p></div>
-<div class="card t"><h3>The silhouette test, before you go further</h3>
-<p class="small" style="margin:0">Fill each sprite with solid black. <b>Can you still tell what it
-is?</b> If not, redraw it. If a shape does not read in silhouette it will not read on a projector
-from the back row, and the back row is your hardest audience.</p></div>
+<p class="small" style="margin:0">Left alone a model draws ridges and then draws trees at a fixed
+y. <b>They float above the ground or sink into it</b>, and the scene reads as wrong without anybody
+being able to say why. Asking the ridge where its surface is, and standing things on it, is four
+lines and it is most of the difference.</p></div>
+<div class="card t"><h3>The rim light is the cheapest thing you will ever add</h3>
+<p class="small" style="margin:0">One bright stroke down the sunlit edge of a dark silhouette and
+the figure stops being a cut-out and starts being <i>in</i> the picture. Two lines of code, and it
+is the difference between a shape and a character.</p></div>
 <div class="card g"><h3>Task 3 ends when</h3>
-<p class="small" style="margin:0">Trees stand on hills, the traveler breathes, and nothing floats.</p></div>
+<p class="small" style="margin:0">Trees stand on ridges, the traveler has a shadow and a lit edge,
+and nothing floats.</p></div>
 <div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
 <div class="barb"></div></div>
 <div class="sheet"><div class="bar"></div>
@@ -487,8 +494,9 @@ the machine your class will use.</p></div>
 <table>
 <thead><tr><th style="width:36%">What you see</th><th>What it is, and the sentence that fixes it</th></tr></thead>
 <tbody>
-<tr><td><b>Trees floating over the hills</b></td><td>Sprites at a fixed height. Say: <b>ask the hill function for its surface height at that x and stand the sprite on it.</b></td></tr>
+<tr><td><b>Trees floating over the ridges</b></td><td>Shapes drawn at a fixed height. Say: <b>ask the ridge function for its surface height at that x and stand the shape on it.</b></td></tr>
 <tr><td><b>The old question still showing under the new fork</b></td><td>A panel never hidden. Say: <b>hide the question panel whenever the fork appears.</b></td></tr>
+<tr><td><b>It gives me lumpy pixel sprites</b></td><td>You asked for art it cannot see. Say: <b>no pixel art, draw everything as solid silhouettes from paths and gradients.</b></td></tr>
 <tr><td><b>Every road feels the same</b></td><td>The levels are not really different. This is a content problem, not a code one &mdash; go back and make the level 3 questions genuinely hard.</td></tr>
 <tr><td><b>Blocked crossings never appear</b></td><td>Misses are being recorded against the question, not the idea. Say: <b>track missed ideas, not missed questions.</b></td></tr>
 <tr><td><b>It wants me to run npm install</b></td><td>You got a framework. Say: <b>rewrite as one HTML file, no frameworks, no libraries, no build step.</b></td></tr>
@@ -504,16 +512,17 @@ console" gets the fix.</div>
 <p class="small">Copy and paste. Square brackets mean put your own words in.</p>
 <div class="prompt"><div class="lbl">1 &middot; the world</div>
 Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
-Canvas 640 by 360, scaled to fit, imageSmoothingEnabled false. A state object, a draw function and
-a game loop using requestAnimationFrame, kept separate. A sky fading dark to light, three layers of
-rolling hills from a sine wave each scrolling at a different speed, a low sun and a few birds. Give
-me one palette of sixteen colors as named constants at the top and use nothing outside it.</div>
+Canvas 640 by 360, scaled to fit. A state object, a draw function and a game loop using
+requestAnimationFrame, kept separate. A dusk sky as a vertical gradient with four stops, deep blue
+through violet and warm rose to amber at the horizon. Three ridges from a sine wave, each lower,
+flatter, darker and scrolling faster than the one behind it. A low sun with a wide soft radial
+glow, and a translucent warm band across the valley for haze. No pixel art anywhere.</div>
 <div class="prompt"><div class="lbl">2 &middot; sprites on the land</div>
-Add pixel sprites written as arrays of text, one character per pixel, a dot for transparent. A
-traveler, a tree, a peak, a tent, a flag. Write a function that asks a hill what its surface height
-is at a given x, and place trees and peaks so they sit exactly on that line rather than at a fixed
-height. Give the traveler a small bob. Light everything from the top left with a darker row along
-the bottom of each sprite.</div>
+Draw the traveler, the trees and the destination as solid silhouettes built from paths and simple
+shapes, not pixel art and not images. The traveler is a circle head, a tapered body, two legs and a
+staff. Trees are tapered triangles at varied heights. Write a function that asks a ridge what its
+surface height is at a given x and place everything so it sits exactly on that line. Add a soft
+shadow under the traveler and a warm rim light along the edge facing the sun.</div>
 <div class="prompt"><div class="lbl">3 &middot; the fork</div>
 Below the canvas, before any question is asked, offer two or three roads as buttons, each with a
 name, a short description and what it asks and pays. An easy road asking two level-1 questions,

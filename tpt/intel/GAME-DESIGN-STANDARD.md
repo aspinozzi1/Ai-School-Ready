@@ -143,38 +143,60 @@ costs nothing.
 
 ## 5. THE VISUAL STANDARD
 
-A teacher will not showcase something that looks like a school project. These
-are rules, not suggestions.
+**Corrected 2026-09-22.** The first version of this section mandated pixel art
+— sixteen colors, a silhouette test, one light source. That advice is fine for
+a human with a mouse and it is **the wrong instruction to give an AI**, which
+is why the first two games looked like school projects.
 
-**Palette.** One palette for the whole game, **sixteen colors or fewer**.
-Eight to twelve per sprite. *A single sprite with forty colors turns to noise
-when it is thirty pixels tall, because the eye cannot tell adjacent shades
-apart at that size.* Fewer colors read better, always.
+### The reason, stated once
 
-**Silhouette test.** Fill each sprite with solid black. If you cannot tell what
-it is, redraw it. *A strong silhouette is recognizable even at a small size* —
-and if it is not readable in silhouette it will not read on a projector from
-the back row.
+**An AI cannot see what it is drawing.** A sprite is a grid of characters typed
+blind; nobody — not the model, not the person prompting — can evaluate it until
+it renders, and by then it is a lump. Raising the resolution does not fix it.
+The same sprites at four times the size with proper shading still read as a
+small bear.
 
-**Check at 1x.** *Your pixel art will be viewed at actual size. If it does not
-read at 1x it does not work, no matter how pretty it looks zoomed in.*
+**What an AI is good at is anything expressible as numbers.** A gradient from
+`#1B2A44` to `#F5C089`. A sine ridge at amplitude 18 that scrolls at 0.22.
+A tapered triangle whose width is 0.27 of its height. A rim light stroked along
+the sun-facing edge. Those come out right the first time, because they are
+instructions rather than pictures.
 
-**One light source, top-left, everywhere.** Highlights on top-left faces,
-shadows bottom-right, on every sprite in the game.
+### So: no pixel art in any product in this series
 
-**Outlines, consistently or not at all.** A single dark outline on everything,
-or none on anything. Half and half looks like two people made it.
+**Build scenes from shapes, gradients and atmosphere.** The pattern that works:
 
-**Something is always moving.** An idle bob, a drifting background, a blinking
-cursor. A static screen reads as broken software.
+1. **A four-stop vertical gradient sky.** Dusk or dawn. Deep blue, violet, warm
+   rose, amber. This alone does more than any sprite.
+2. **Three or four ridges from a sine wave.** Each one lower, flatter, darker
+   and faster-scrolling than the one behind it. *Two numbers per layer is the
+   entire trick of depth.*
+3. **A translucent warm band across the middle distance** for haze. One
+   `fillRect`, and it is what makes the far ridges read as far.
+4. **Everything solid is a silhouette** built from paths — a circle head, a
+   tapered body, a triangle tree. Dark, simple, readable.
+5. **A warm rim light along every sun-facing edge.** Two strokes. It is the
+   difference between a cut-out and a character.
+6. **Things sit on the ground.** Ask the ridge for its surface height at that x
+   and stand the shape on it. Drawing at a fixed y is the single most common
+   reason a scene reads as wrong.
+7. **A soft shadow under anything that touches the ground.**
 
-**Transitions, never hard cuts.** A quarter-second wipe or fade between states.
-This one change does more for perceived quality than any sprite.
+### Still true, and still checked
 
-**Type.** One display face and one body face. Big enough to read from the back
-of a room — nothing under 18px on a projected screen.
+- **Something is always moving.** Parallax drift, an idle bob, birds.
+- **Transitions, never hard cuts** between states.
+- **Readable from the back of a room.** Nothing under 18px projected.
+- **Never color alone** to carry meaning.
+- **One palette for the whole game**, declared as named constants at the top.
+  The sixteen-color cap is dropped — gradients need more — but the discipline of
+  one named palette stays.
 
----
+### The test that replaces the silhouette test
+
+**Screenshot it and look at it small.** If it reads as a designed picture at
+thumbnail size, it will sell. If it reads as coloured rectangles, start again
+with the gradient and the ridges before touching anything else.
 
 ## 6. THE SHOWCASE TEST
 

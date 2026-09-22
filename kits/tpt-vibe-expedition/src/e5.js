@@ -5,8 +5,9 @@ P('When it breaks','<h2>The six failures you will actually hit</h2>',`
 <table>
 <thead><tr><th style="width:36%">What you see</th><th>What it is, and the sentence that fixes it</th></tr></thead>
 <tbody>
-<tr><td><b>Trees floating over the hills</b></td><td>Sprites at a fixed height. Say: <b>ask the hill function for its surface height at that x and stand the sprite on it.</b></td></tr>
+<tr><td><b>Trees floating over the ridges</b></td><td>Shapes drawn at a fixed height. Say: <b>ask the ridge function for its surface height at that x and stand the shape on it.</b></td></tr>
 <tr><td><b>The old question still showing under the new fork</b></td><td>A panel never hidden. Say: <b>hide the question panel whenever the fork appears.</b></td></tr>
+<tr><td><b>It gives me lumpy pixel sprites</b></td><td>You asked for art it cannot see. Say: <b>no pixel art, draw everything as solid silhouettes from paths and gradients.</b></td></tr>
 <tr><td><b>Every road feels the same</b></td><td>The levels are not really different. This is a content problem, not a code one &mdash; go back and make the level 3 questions genuinely hard.</td></tr>
 <tr><td><b>Blocked crossings never appear</b></td><td>Misses are being recorded against the question, not the idea. Say: <b>track missed ideas, not missed questions.</b></td></tr>
 <tr><td><b>It wants me to run npm install</b></td><td>You got a framework. Say: <b>rewrite as one HTML file, no frameworks, no libraries, no build step.</b></td></tr>
@@ -20,16 +21,17 @@ P('Prompts','<h2>Every prompt, in one place &mdash; 1 to 4</h2>',`
 <p class="small">Copy and paste. Square brackets mean put your own words in.</p>
 <div class="prompt"><div class="lbl">1 &middot; the world</div>
 Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
-Canvas 640 by 360, scaled to fit, imageSmoothingEnabled false. A state object, a draw function and
-a game loop using requestAnimationFrame, kept separate. A sky fading dark to light, three layers of
-rolling hills from a sine wave each scrolling at a different speed, a low sun and a few birds. Give
-me one palette of sixteen colors as named constants at the top and use nothing outside it.</div>
+Canvas 640 by 360, scaled to fit. A state object, a draw function and a game loop using
+requestAnimationFrame, kept separate. A dusk sky as a vertical gradient with four stops, deep blue
+through violet and warm rose to amber at the horizon. Three ridges from a sine wave, each lower,
+flatter, darker and scrolling faster than the one behind it. A low sun with a wide soft radial
+glow, and a translucent warm band across the valley for haze. No pixel art anywhere.</div>
 <div class="prompt"><div class="lbl">2 &middot; sprites on the land</div>
-Add pixel sprites written as arrays of text, one character per pixel, a dot for transparent. A
-traveler, a tree, a peak, a tent, a flag. Write a function that asks a hill what its surface height
-is at a given x, and place trees and peaks so they sit exactly on that line rather than at a fixed
-height. Give the traveler a small bob. Light everything from the top left with a darker row along
-the bottom of each sprite.</div>
+Draw the traveler, the trees and the destination as solid silhouettes built from paths and simple
+shapes, not pixel art and not images. The traveler is a circle head, a tapered body, two legs and a
+staff. Trees are tapered triangles at varied heights. Write a function that asks a ridge what its
+surface height is at a given x and place everything so it sits exactly on that line. Add a soft
+shadow under the traveler and a warm rim light along the edge facing the sun.</div>
 <div class="prompt"><div class="lbl">3 &middot; the fork</div>
 Below the canvas, before any question is asked, offer two or three roads as buttons, each with a
 name, a short description and what it asks and pays. An easy road asking two level-1 questions,
