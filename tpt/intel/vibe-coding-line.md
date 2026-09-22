@@ -257,7 +257,18 @@ purchase order, not forty transactions.
 | 5 | **Leading AI in a Building** | An adoption plan a principal can actually run |
 
 Session 3 is the bridge and should be built first: it takes Lane A's best
-shipped build-along and turns it into a facilitated ninety minutes.
+shipped build-along and turns it into a facilitated session.
+
+**Session length — resolved 2026-09-22, do not re-derive it.** This file and
+the Wednesday routine both said "ninety minutes", while `kits/KIT_STANDARD.md`
+locks the session at **45–60 minutes with a protected lab of at least 15**.
+The kit standard wins and is not amended: its lab figure is a floor, so a
+**60-minute session with a protected 30-minute lab** fits inside it. The
+standard's printed 45-minute cut costs the lab two minutes and cuts
+discussion for the rest. A **90-minute column** is printed beside the main
+clock for schools that hand over a full PD block — 25 extra minutes to the
+lab and 5 to a share-out. That is a column in the prep guide, not a tenth
+file.
 
 ### Price
 
