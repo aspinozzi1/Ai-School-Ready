@@ -2286,6 +2286,55 @@
       "previewUnit": "29 pages + 1 working game",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "ai-instructions-file",
+      "order": 58,
+      "name": "The AI Instructions File",
+      "product": "UPLOAD/01-free/ai-instructions-file.pdf",
+      "cover": "tpt/covers/ai-instructions-file-cover.png",
+      "thumbnails": [
+        "tpt/extras/inf-whats-inside.png"
+      ],
+      "title": "The AI Instructions File | Stop Answering a Question Every 90 Seconds | Free",
+      "description": "FREE. The single page that stops an AI asking you a question every ninety seconds - and stops your project quietly drifting away from what you actually asked for.\n\nTHE COMPLAINT EVERY TEACHER HAS about building with AI is not that the code is wrong. It is that you wanted to make something for your class and instead spent forty minutes answering questions about shades of blue.\n\nAN INSTRUCTIONS FILE is one short document you write before you build anything, and paste at the start of every chat about that project. It says what the thing is, what it must never do, and - the part almost nobody includes - what the AI should do when it does not know what you want.\n\nINSIDE, FOUR PAGES: the two ways an AI wastes your evening and why both come from the same missing page; a real instructions file from one of my own classroom projects, with nothing cleaned up for publication; the one sentence that does most of the work; and a fill-in page so you leave with your own.\n\nTHE SENTENCE: when a design question is genuinely open, make the obvious choice and write it down, rather than stopping to ask. It buys you the speed of not being asked without losing the ability to say \"actually, not that\" - because every decision it makes has to be written down where you can see it.\n\nNO CODING, AND NOTHING TO INSTALL. This is a way of giving instructions. It works whether you are building a classroom game, a worksheet generator, a tracker, or nothing at all yet.\n\nIF THIS WAS USEFUL, LEAVING FEEDBACK COSTS NOTHING AND EARNS YOU TPT CREDIT toward anything in the store. It also tells us what to make more of. If something is wrong or unclear, the Q&A reaches us directly.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Professional Development"
+      ],
+      "tags": [
+        "ai tools",
+        "teacher tools",
+        "technology professional development",
+        "free",
+        "ai for teachers",
+        "prompting"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Vibe Code Your Own Game",
+      "previewShots": [
+        "inf_p2.png",
+        "inf_p3.png",
+        "inf_p4.png"
+      ],
+      "previewInside": [
+        "The two ways an AI wastes your evening",
+        "<b>A real instructions file</b> from a live classroom project",
+        "The one sentence that stops it asking and starts it deciding",
+        "The running notes habit that lets you pick a build back up",
+        "<b>A fill-in page</b> so you leave with your own"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

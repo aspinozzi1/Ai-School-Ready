@@ -293,6 +293,13 @@ const IMAGES = [
     'Building in a famous genre without stealing',
   ], 'PDF + HTML')],
   ['bbg-real-pages',   realPages('#E4572E', ['bbg_p3.png', 'bbg_p13.png', 'bbg_p24.png'], '29 pages + game')],
+  ['inf-whats-inside', whatsInside('Free \u00b7', 'The AI Instructions File', [
+    'The two ways an AI wastes your evening',
+    'A real instructions file from a live project',
+    'The one sentence that stops it asking',
+    'The running notes habit that saves a build',
+    'A fill-in page so you leave with your own',
+  ], 'PDF')],
   ['lrd-the-game', gameShot('lrd_game.png', 'This is the game you build',
       'Every turn is a choice', 'before it is a question',
       'Pick the road \u00b7 what you miss blocks it \u00b7 fixing it opens it',
