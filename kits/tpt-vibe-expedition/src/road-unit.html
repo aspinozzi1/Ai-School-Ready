@@ -1,0 +1,780 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>The Long Road</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:24pt">
+<div class="kick">Vibe Code Your Own Game &middot; build 1</div>
+<h1>The Long Road</h1>
+<p class="lede">A journey game where <b>every turn is a choice before it is a question</b>. Your
+class picks the road &mdash; easy, steady, or the hard pass that pays &mdash; and what they get
+wrong blocks the road until they come back and fix it.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">12</h3><p class="small" style="margin:0">tasks, each ending in something playable</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">finished game included</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">ways to lose in front of the class</p></div>
+</div>
+<div class="note"><b>Built on what the research actually says about motivation.</b><br>
+Competence is the strongest driver of student motivation &mdash; stronger than autonomy,
+stronger than belonging &mdash; and points do not produce it. So the loudest moment in this game
+is not a high score. <b>It is the moment a student fixes something they got wrong.</b></div>
+<div class="card r"><h3>No coding background. About two hours.</h3>
+<p class="small" style="margin:0">One HTML file. Nothing installed, no accounts for anybody, no
+subscription, and it runs with the wifi down. Your content goes in one list at the top.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Inside</h3>
+<p class="small" style="margin:0">Twelve tasks with the exact prompts written out in full
+&middot; the finished game, playable today &middot; why this shape beats a quiz with a health bar
+&middot; how to write questions and the one-line reasons that do the teaching &middot; five ways
+to run it &middot; and building in a famous genre without stealing from it.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you begin</div><h2>The twelve tasks at a glance</h2>
+<p class="lede">Every task ends with something on screen you can play. If it does not, stop and
+fix it before moving on.</p>
+<table>
+<thead><tr><th style="width:26pt">#</th><th>Task</th><th>Ends with</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Decide the journey and the ideas</td><td>A destination and your content, tagged</td></tr>
+<tr><td>2</td><td>The country, and the loop</td><td>A landscape that scrolls</td></tr>
+<tr><td>3</td><td>Things that sit on the ground</td><td>Hills with trees actually on them</td></tr>
+<tr><td>4</td><td><b>The fork &mdash; choice before question</b></td><td>Three roads you choose between</td></tr>
+<tr><td>5</td><td>The question the road asks</td><td>A road that resolves</td></tr>
+<tr><td>6</td><td>Supplies, and what a wrong answer costs</td><td>Stakes without a loss screen</td></tr>
+<tr><td>7</td><td>The one line that teaches</td><td>A reason shown after every miss</td></tr>
+<tr><td>8</td><td><b>Missed ideas block the road</b></td><td>A washed-out crossing on your map</td></tr>
+<tr><td>9</td><td><b>Fixing one opens it, loudly</b></td><td>The best moment in the game</td></tr>
+<tr><td>10</td><td>Camps, and gear worth choosing</td><td>A second layer of decisions</td></tr>
+<tr><td>11</td><td>Arrival, scored without ranking</td><td>An ending everybody reaches</td></tr>
+<tr><td>12</td><td>Everyone can play it</td><td>Keyboard, touch, Chromebook</td></tr>
+</tbody></table>
+<div class="card t"><h3>Stop anywhere after task 6</h3>
+<p class="small" style="margin:0">Tasks 1 to 6 give you a real journey game. <b>Tasks 8 and 9 are
+the ones that make it teach</b>, and they are the reason this pack exists.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The shape</div><h2>Why not a quiz with a health bar</h2>
+<p class="lede">The obvious classroom game is a quiz with points bolted on. It is obvious because
+it is easy, and it is weaker than it looks.</p>
+<div class="card r"><h3>What a quiz with points actually does</h3>
+<p class="small" style="margin:0">The student has exactly one input: pick the right answer. There
+is no plan, no trade, no reason to think past the next box. Two students playing the same set have
+the same experience. <b>And bolting a score on top can reduce interest rather than raise it</b>
+&mdash; the reward becomes the point, and the content becomes the toll you pay for it.</p></div>
+<div class="card t"><h3>What a choice does instead</h3>
+<p class="small" style="margin:0">Put a decision <i>before</i> the question and everything changes.
+Now the student is weighing: do I take the hard pass because we need the supplies, or the low trail
+because we are running thin? <b>The thinking happens before they have even seen the question</b>,
+and it continues after, because the outcome changes what they choose next.</p></div>
+<div class="card g"><h3>And the difficulty solves itself</h3>
+<p class="small" style="margin:0">In this game the <b>player chooses the difficulty by choosing the
+road.</b> No hidden algorithm, no labeling anybody. The student who wants the hard pass takes it;
+the one who needs a gentler run takes the low trail; both are playing the same game at the same
+table and neither has been told which one they are.</p></div>
+<div class="note"><b>The test to apply to any game you build:</b> if two students with the same
+content would see the same sequence of screens, <b>there is no choice in your game</b> and you have
+built a worksheet that beeps.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The one idea</div><h2>The loudest moment belongs to the student who was wrong</h2>
+<p class="lede">If you take one thing from this pack into your teaching and never build a game at
+all, take this.</p>
+<div class="card"><h3>What the research says, in one line</h3>
+<p class="small" style="margin:0">Of the three things that drive motivation &mdash; feeling
+capable, having a say, and belonging &mdash; <b>feeling capable is the strongest</b>. And the
+evidence on gamified classrooms is blunt about the rest: points and badges lift interest and
+enjoyment but do <b>almost nothing for how capable a student feels.</b></p></div>
+<div class="card t"><h3>So the game celebrates the right thing</h3>
+<p class="small" style="margin-bottom:5pt">A score says <i>you were already good</i>. That is
+news to nobody, least of all the student who was not.</p>
+<p class="small" style="margin:0"><b>Fixing something you got wrong says: you are better than you
+were twenty minutes ago.</b> That is competence, it is visible, and it is the one thing a
+worksheet can never show a child.</p></div>
+<div class="card g"><h3>How it is built, mechanically</h3>
+<p class="small" style="margin:0">Every question is tagged with an <b>idea</b>. Miss it, and that
+idea <b>blocks a road</b> on your map &mdash; you can see it, you can go around it, and it is
+waiting. Come back and answer it right and the crossing opens permanently, with the biggest
+celebration in the game. <b>The map itself changes shape because the student learned
+something.</b></p></div>
+<div class="card p"><h3>This is also just good teaching</h3>
+<p class="small" style="margin:0">Bringing a missed idea back later rather than immediately is
+spacing, and it is one of the best-evidenced things in learning science. You are not decorating a
+quiz. You are building the thing the research says works, and making it visible.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">What you need</div><h2>Before task 1</h2>
+<div class="card t"><h3>An AI chat you are signed in to</h3>
+<p class="small" style="margin:0">Any of them. You paste prompts and read what comes back. You are
+at the keyboard throughout.</p></div>
+<div class="card"><h3>Twelve to twenty questions, across three or four ideas</h3>
+<p class="small" style="margin:0">More than the boss-battle sort of game needs, because this one
+sorts by idea and by difficulty. <b>You need some easy, some middling and some genuinely hard</b>
+&mdash; the hard road has to actually be hard or the choice is fake.</p></div>
+<div class="card g"><h3>A browser and a folder</h3>
+<p class="small" style="margin:0">One HTML file you double-click. That is the whole deployment.</p></div>
+<div class="card r"><h3>What you do not need</h3>
+<p class="small" style="margin:0">Node, npm, a terminal, an account, a server, an art program or
+any audio files. The art is text, the sound is generated, and the whole thing is one file.</p></div>
+<div class="note"><b>Two hours, not ninety minutes.</b> This is a bigger build than a quiz game and
+the pack says so up front. If you have twenty minutes tonight, do tasks 1 to 4 &mdash; a fork in
+the road with three real options is the moment this stops being a worksheet.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 1</div><h2>Decide the journey, and tag your ideas</h2>
+<p class="lede">Ten minutes with a pen. The only task the AI cannot do, and the one that decides
+whether the rest works.</p>
+<div class="card"><h3>Three decisions</h3>
+<p class="small" style="margin-bottom:4pt"><b>Where are they going?</b> Any destination worth
+reaching. Fort Verity. The Summit. The Last Library. It does not have to relate to your content
+&mdash; the journey is the frame, your questions are the country.</p>
+<p class="small" style="margin-bottom:4pt"><b>What are the three or four ideas?</b> Not topics
+&mdash; ideas. "Evaporation", "condensation", "runoff". The game tracks mastery by idea, so this
+list is the spine of everything.</p>
+<p class="small" style="margin:0"><b>How long is the road?</b> Twelve legs is about twenty-five
+minutes with a class discussing each fork.</p></div>
+<div class="card t"><h3>Write the questions in this shape now</h3>
+<pre>{ q:'A puddle disappears on a hot day. Which process did the most work?',
+  a:['Condensation','Evaporation','Precipitation','Runoff'], ok:1,
+  idea:'evaporation',
+  level:2,
+  why:'The water did not go anywhere solid or liquid. Heat turned it to vapor.' }</pre>
+<p class="small" style="margin:0"><b>Five fields, and the last two are the ones that matter.</b>
+<code>idea</code> is what the game tracks and blocks roads with. <code>why</code> is the only
+teaching the game does.</p></div>
+<div class="card r"><h3>You need real hard ones</h3>
+<p class="small" style="margin:0">Level 3 questions are what the hard pass asks. If your hardest
+question is still recall of a definition, <b>the choice between roads is a lie</b> and students
+will work that out in four minutes. A level 3 should apply the idea to a situation they have not
+seen: a town paves a wetland, a forest is cleared, two puddles in different light.</p></div>
+<div class="card g"><h3>Task 1 ends when</h3>
+<p class="small" style="margin:0">You have a destination and twelve or more questions, each tagged
+with an idea, a level and a one-line reason.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 2</div><h2>The country, and the loop</h2>
+<p class="lede">A landscape that moves, and proof the game is alive.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the world</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+Put a canvas in it, 640 by 360, scaled to fit, with <b>imageSmoothingEnabled false</b>. Set up
+<b>a state object, a draw function and a game loop using requestAnimationFrame</b>, kept separate.
+Draw a sky that fades from dark at the top to lighter at the horizon, then <b>three layers of
+rolling hills drawn with a sine wave</b>, each scrolling at a different speed. Add a low sun and a
+few birds. <b>Give me one palette of sixteen colors as named constants at the top and use nothing
+outside it.</b></div>
+<div class="card t"><h3>The sixteen-color rule is not decoration</h3>
+<p class="small" style="margin:0"><b>A sprite with forty colors turns to noise at thirty pixels
+tall</b>, because the eye cannot separate adjacent shades at that size. Fewer colors read better,
+always. Ask for the palette as named constants and every later change is one edit in one place.</p></div>
+<div class="card"><h3>Three speeds, not one</h3>
+<p class="small" style="margin:0">Far hills drift slowly, near hills move fast. That difference is
+what makes a flat picture look like distance, and it costs one number per layer.</p></div>
+<div class="card g"><h3>Task 2 ends when</h3>
+<p class="small" style="margin:0">You have a landscape that scrolls, with the far hills lagging the
+near ones.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 3</div><h2>Things that sit on the ground</h2>
+<p class="lede">The single fix that separates a real scene from a pasted one.</p>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; sprites on the land</div>
+Add pixel sprites <b>written as arrays of text</b>, one character per pixel, a dot for transparent,
+so I can edit art by typing. Make a traveler, a tree, a mountain peak, a tent and a flag. Then
+&mdash; this is the important part &mdash; <b>write a function that asks a hill what its surface
+height is at a given x, and place trees and peaks so they sit exactly on that line</b> rather than
+at a fixed height. Give the traveler a small bob. <b>Light everything from the top left</b>: a
+darker row along the bottom of each sprite.</div>
+<div class="card r"><h3>The mistake this prompt exists to prevent</h3>
+<p class="small" style="margin:0">Left alone, a model draws hills and then draws trees at a fixed
+y. <b>The trees float over the hills or sink into them</b> and the scene reads as flat and wrong
+without anybody being able to say why. Asking the hill where its surface is, and standing things on
+it, is four lines and it is most of the difference.</p></div>
+<div class="card t"><h3>The silhouette test, before you go further</h3>
+<p class="small" style="margin:0">Fill each sprite with solid black. <b>Can you still tell what it
+is?</b> If not, redraw it. If a shape does not read in silhouette it will not read on a projector
+from the back row, and the back row is your hardest audience.</p></div>
+<div class="card g"><h3>Task 3 ends when</h3>
+<p class="small" style="margin:0">Trees stand on hills, the traveler breathes, and nothing floats.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 4 &middot; the one that matters</div><h2>The fork: choice before question</h2>
+<p class="lede">This is the task that makes it a game rather than a quiz. Everything else is
+scenery around it.</p>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; the fork</div>
+Below the canvas, before any question is asked, <b>offer two or three roads as buttons</b>. Each
+shows a name, a short description, and what it asks and pays. Build three kinds:
+<b>an easy road</b> that asks two level-1 questions, is slow and costs no supplies;
+<b>a steady road</b> that asks one level-2 question;
+and <b>a hard road</b> that asks one level-3 question, gains a day and pays a supply.
+<b>Generate the set fresh at every fork and shuffle the order</b>, so no two journeys are the same.
+Number the buttons 1 to 3 and let those keys choose.</div>
+<div class="card t"><h3>Why the choice has to come first</h3>
+<p class="small" style="margin:0">If the question comes first and the choice is how to spend a
+reward, you have a quiz with a shop. <b>The choice has to be made in ignorance of the question</b>
+&mdash; that is what turns it into a judgment about risk, and judgment under uncertainty is where
+the thinking lives.</p></div>
+<div class="card"><h3>The trade has to be real</h3>
+<p class="small" style="margin:0">If the hard road is strictly better, everyone takes it and there
+is no decision. <b>Each road must be right in some situations and wrong in others</b>: the hard
+pass pays when you are healthy and punishes when you are thin. That is the whole design.</p></div>
+<div class="card g"><h3>Task 4 ends when</h3>
+<p class="small" style="margin:0">You reload twice and get different forks, and you can honestly
+say you had to think about which one to take.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 5</div><h2>The question the road asks</h2>
+<p class="lede">Now the content arrives, and the road decides which question you get.</p>
+<div class="prompt"><div class="lbl">Prompt 4 &middot; drawing the question</div>
+Put my questions in <b>a plain array at the very top of the file</b>, above all game code, with a
+comment saying this is the part a teacher edits. Each has a question, four answers, which is right
+counting from zero, an <b>idea</b>, a <b>level</b> from 1 to 3, and a <b>why</b>. When a road is
+chosen, draw a question <b>matching that road's level</b>. Two rules on the draw:
+<b>never ask the same idea twice in a row</b>, and <b>prefer questions the player has seen least</b>.
+Show it as real HTML buttons below the canvas, not drawn on the canvas, numbered 1 to 4, and
+shuffle the answer order every time.</div>
+<div class="card t"><h3>Never twice in a row is not fussiness</h3>
+<p class="small" style="margin:0">Asking three questions about evaporation back to back teaches a
+student to answer without reading, because the pattern is doing the work. <b>Mixing ideas forces
+them to work out which idea applies</b>, which is the skill that transfers out of your classroom
+and into a test.</p></div>
+<div class="card r"><h3>Buttons in HTML, not painted on canvas</h3>
+<p class="small" style="margin:0">Canvas text cannot be reached with Tab or read aloud by a screen
+reader. Use the canvas for the world and the page for the interface. That is the right call, not a
+compromise.</p></div>
+<div class="card g"><h3>Task 5 ends when</h3>
+<p class="small" style="margin:0">The hard road actually asks you a hard question and the easy road
+does not.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 6</div><h2>Supplies, and what a wrong answer costs</h2>
+<p class="lede">Stakes, without anybody losing in front of the room.</p>
+<div class="prompt"><div class="lbl">Prompt 5 &middot; supplies</div>
+Add supplies, starting at six, shown as icons in a status bar along with the day count and progress
+toward the destination. A wrong answer <b>costs one supply</b>. A clean hard road <b>pays one
+back</b>. <b>When supplies reach zero the player does not lose</b> &mdash; they fall back to the
+last camp, lose three days, get half their supplies back, and continue. <b>There is no lose screen
+anywhere in this game.</b></div>
+<div class="card r"><h3>Read that last line again, because it is the point</h3>
+<p class="small" style="margin-bottom:5pt">A shared score that can be lost means one student's
+wrong answer visibly costs everybody, and the room always knows whose it was. For a student who is
+already struggling, <b>that produces exactly the feeling of not being good enough that you are
+trying to fight.</b></p>
+<p class="small" style="margin:0">So: no losing. Everybody arrives. <b>Arrival is scored, not
+passed or failed</b> &mdash; days taken, supplies left, ideas locked in. A class can want a better
+run without anyone having been the reason.</p></div>
+<div class="card t"><h3>What replaces the tension you gave up</h3>
+<p class="small" style="margin:0">Scarcity. Running low on supplies changes which road you dare
+take, and that is a better tension than a fail screen because <b>it makes them think rather than
+makes them anxious.</b></p></div>
+<div class="card g"><h3>Task 6 ends when</h3>
+<p class="small" style="margin:0">You deliberately run yourself out of supplies and the game keeps
+going.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 7</div><h2>The one line that teaches</h2>
+<p class="lede">The only teaching this game does, and it costs one field per question.</p>
+<div class="prompt"><div class="lbl">Prompt 6 &middot; the reason</div>
+On a wrong answer: mark the clicked one red, <b>highlight the right one in green</b>, and show the
+question's <b>why</b> underneath in a boxed line. <b>Hold all of that on screen for about 2.6
+seconds before moving on, against 1 second after a right answer.</b> Do not use color alone to show
+which was right &mdash; the correct answer also gets a label a screen reader would announce.</div>
+<div class="card t"><h3>The long pause is deliberate and it is the whole feature</h3>
+<p class="small" style="margin:0">After a right answer the class already knows, so move on. After a
+wrong one the right answer is on screen and <b>every eye in the room is on it</b>. That extra
+second and a half is the reteaching. Ask for it by name, because no model will think of it.</p></div>
+<div class="card"><h3>Why, not what</h3>
+<p class="small" style="margin-bottom:5pt"><b>Weak:</b> "The answer is evaporation."</p>
+<p class="small" style="margin:0"><b>Strong:</b> "The water did not go anywhere solid or liquid.
+Heat turned it to vapor." A student who reads that learns the idea. A student who reads the first
+one learns which button to press.</p></div>
+<div class="card r"><h3>Write the reason for the student who got it wrong</h3>
+<p class="small" style="margin:0">Not a definition. The sentence that fixes the specific confusion
+that made them choose the wrong one. You already know what that confusion is &mdash; you have
+graded it a hundred times.</p></div>
+<div class="card g"><h3>Task 7 ends when</h3>
+<p class="small" style="margin:0">You answer wrong on purpose and find yourself reading the reason
+before it disappears.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 8 &middot; the one that matters</div><h2>Missed ideas block the road</h2>
+<p class="lede">The mechanic that turns a game into a review that actually reviews.</p>
+<div class="prompt"><div class="lbl">Prompt 7 &middot; blocked crossings</div>
+Track which <b>ideas</b> the player has got wrong in a list. Once there is at least one, <b>a
+washed-out crossing can appear as one of the roads at a fork</b>, tagged so it is obviously
+different, saying "you turned back here before". It asks a question <b>about that specific idea</b>.
+Show a count of blocked roads in the status bar. <b>The crossing is always optional</b> &mdash;
+there is always another road at the same fork.</div>
+<div class="card t"><h3>Why it must be optional</h3>
+<p class="small" style="margin:0">Forcing a student back to the thing they just failed is a
+punishment, and it reads as one. <b>Letting them see it, go around it, and come back when they are
+ready</b> is the same content with the opposite feeling &mdash; and going back is now their
+decision, which is exactly the autonomy the whole design is built on.</p></div>
+<div class="card g"><h3>And it is spacing, which is the real reason it works</h3>
+<p class="small" style="margin:0">Bringing a missed idea back <b>later</b> rather than immediately
+is one of the best-evidenced things in learning science. Immediately is recognition. Later is
+retrieval, and retrieval is what lasts. <b>The game is not decorating good practice; it is
+enforcing it.</b></p></div>
+<div class="card r"><h3>What a student sees</h3>
+<p class="small" style="margin:0">A map with a broken bridge on it that has their mistake standing
+on the other side. That is a far better way to say "you do not have this yet" than a red X, and
+nobody else in the room can see whose it is.</p></div>
+<div class="card p"><h3>Task 8 ends when</h3>
+<p class="small" style="margin:0">You miss one on purpose and a washed-out crossing turns up a few
+forks later with that idea waiting on it.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 9 &middot; the one that matters</div><h2>Fixing one opens the road, loudly</h2>
+<p class="lede">The most important twenty lines in this pack.</p>
+<div class="prompt"><div class="lbl">Prompt 8 &middot; the fix</div>
+When the player answers a washed-out crossing correctly: <b>remove that idea from the missed list,
+add it to mastered, and show a full-screen celebration</b> &mdash; the only one in the game. It says
+the road is open, names the idea, and says they turned back here before. Give it the longest sound
+in the game. <b>Also</b>, when they fix a missed idea anywhere else, make that loud too: a big
+floating "FIXED", the same sound, and a line saying they have just put right what they got wrong.
+<b>Nothing else in this game gets a full screen. Not arriving, not a good run, nothing.</b></div>
+<div class="card t"><h3>Why this and nothing else</h3>
+<p class="small" style="margin:0">Because <b>what a game celebrates is what it teaches students to
+value.</b> Celebrate speed and they rush. Celebrate a score and they learn that being good at it
+already is the thing. <b>Celebrate a fix and you have told every child in the room that getting
+better is the point</b> &mdash; and the ones who needed to hear that are the ones who got it wrong
+first.</p></div>
+<div class="card g"><h3>The measure the game reports</h3>
+<p class="small" style="margin:0">Not a score. <b>"Ideas locked in", which only ever goes up</b>,
+and at the end, how many of them were put right after getting them wrong. That second number is the
+one worth reading out.</p></div>
+<div class="card r"><h3>What not to add, however tempting</h3>
+<p class="small" style="margin:0">No leaderboard with names. No visible per-student score. Nothing
+that lets the room work out who cost them what. <b>Public ranking harms the students you built
+this for</b>, and it is the easiest thing in the world to add by accident.</p></div>
+<div class="card p"><h3>Task 9 ends when</h3>
+<p class="small" style="margin:0">You miss one on purpose, go back, fix it, and the celebration
+feels slightly bigger than you expected. That is correct.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 10</div><h2>Camps, and gear worth choosing</h2>
+<p class="lede">A second layer of decisions, and a moment to breathe.</p>
+<div class="prompt"><div class="lbl">Prompt 9 &middot; camps</div>
+Every four legs, stop at a camp. <b>No question.</b> Offer three pieces of gear from a set of five
+and let the player take one. Each must be <b>a real trade rather than a straight bonus</b>: a
+lantern that shows what a road will ask before choosing it, a mule that carries two more supplies,
+an old map that adds a fourth road at every fork, a charm that makes the first wrong answer on each
+road free, a rope that softens the hard roads. Never offer one they already have.</div>
+<div class="card t"><h3>Why a stop with no question in it</h3>
+<p class="small" style="margin:0">Pacing. Twelve questions in a row is a test whatever you draw
+around it. A camp every four legs gives the room somewhere to argue about strategy instead of
+content, and <b>that argument is the moment the quiet students join in.</b></p></div>
+<div class="card"><h3>Gear that changes how you play, not how well you score</h3>
+<p class="small" style="margin:0">The lantern does not make questions easier &mdash; it makes the
+<i>choice</i> better informed. That is the right kind of power, because it rewards thinking about
+the game rather than just knowing more.</p></div>
+<div class="card g"><h3>Task 10 ends when</h3>
+<p class="small" style="margin:0">You take a lantern on one run and a mule on the next and the two
+runs genuinely play differently.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 11</div><h2>Arrival, scored without ranking</h2>
+<p class="lede">Everybody gets there. What differs is how.</p>
+<div class="prompt"><div class="lbl">Prompt 10 &middot; arriving</div>
+When the last leg is done, show an arrival screen with <b>days taken, ideas locked in, how many of
+those were fixed after getting them wrong, and supplies left</b>. Save the best run to localStorage
+&mdash; ranked by <b>ideas first and days second</b>, never by speed alone &mdash; and show it on the
+title screen. Wrap storage in try and catch. Add a button to travel again, with everything
+reshuffled.</div>
+<div class="card t"><h3>Ideas first, days second, and never speed alone</h3>
+<p class="small" style="margin:0">Whatever the record measures is what the class will optimise. Rank
+on speed and they will guess fast on the easy road. <b>Rank on ideas and the best strategy is
+learning the content</b>, which is the only alignment that matters in a classroom game.</p></div>
+<div class="card"><h3>What the class record is, and is not</h3>
+<p class="small" style="margin:0">One line, no names on it: "23 ideas in 14 days." Third period can
+try to beat second period without any individual child being the reason. That is belonging without
+ranking, and it is the version that works in a mixed room.</p></div>
+<div class="card g"><h3>Task 11 ends when</h3>
+<p class="small" style="margin:0">You arrive twice, and the second run feels different from the
+first because you chose differently.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Task 12</div><h2>Everyone can play it</h2>
+<p class="lede">The last task, and the one that decides whether it works in your actual room.</p>
+<div class="prompt"><div class="lbl">Prompt 11 &middot; reach</div>
+Make this work for somebody using <b>a keyboard instead of a mouse</b>: every road and every answer
+reachable with Tab, usable with Enter, number keys 1 to 4 working for both, a clearly visible
+outline on the focused one, and focus moved to the first option whenever new choices appear.
+<b>Never use color alone</b> to carry meaning. Buttons big enough for a finger, one column on a
+narrow screen, and it must fit a Chromebook with nothing cut off.</div>
+<div class="card t"><h3>Move the focus, or the keyboard run breaks</h3>
+<p class="small" style="margin:0">When a new fork appears, focus has to land on the first road by
+itself. Without that, a keyboard player has to Tab from the top of the page every single turn, and
+they will give up long before they tell you.</p></div>
+<div class="card r"><h3>The Chromebook test is the real test</h3>
+<p class="small" style="margin:0">You built it on a laptop and your class has a cart. Open it on
+the actual hardware, at the actual resolution, before the actual lesson. Two minutes now or a
+ruined period later.</p></div>
+<div class="card g"><h3>Task 12 ends when</h3>
+<p class="small" style="margin:0">You play a whole journey with your hands on the number keys, on
+the machine your class will use.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it breaks</div><h2>The six failures you will actually hit</h2>
+<p class="lede">In roughly the order they arrive.</p>
+<table>
+<thead><tr><th style="width:36%">What you see</th><th>What it is, and the sentence that fixes it</th></tr></thead>
+<tbody>
+<tr><td><b>Trees floating over the hills</b></td><td>Sprites at a fixed height. Say: <b>ask the hill function for its surface height at that x and stand the sprite on it.</b></td></tr>
+<tr><td><b>The old question still showing under the new fork</b></td><td>A panel never hidden. Say: <b>hide the question panel whenever the fork appears.</b></td></tr>
+<tr><td><b>Every road feels the same</b></td><td>The levels are not really different. This is a content problem, not a code one &mdash; go back and make the level 3 questions genuinely hard.</td></tr>
+<tr><td><b>Blocked crossings never appear</b></td><td>Misses are being recorded against the question, not the idea. Say: <b>track missed ideas, not missed questions.</b></td></tr>
+<tr><td><b>It wants me to run npm install</b></td><td>You got a framework. Say: <b>rewrite as one HTML file, no frameworks, no libraries, no build step.</b></td></tr>
+<tr><td><b>It worked and now the third change broke it</b></td><td>The file has outgrown the chat. Fresh chat, paste the whole file, ask for one change, ask for the whole file back.</td></tr>
+</tbody></table>
+<div class="note"><b>The habit worth more than the table:</b> paste the error <i>with what you were
+doing</i>. "It broke" gets guesses. "I clicked the hard road and the screen froze, here is the
+console" gets the fix.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 1 to 4</h2>
+<p class="small">Copy and paste. Square brackets mean put your own words in.</p>
+<div class="prompt"><div class="lbl">1 &middot; the world</div>
+Build a single HTML file, no frameworks and no build step, that runs by opening it in a browser.
+Canvas 640 by 360, scaled to fit, imageSmoothingEnabled false. A state object, a draw function and
+a game loop using requestAnimationFrame, kept separate. A sky fading dark to light, three layers of
+rolling hills from a sine wave each scrolling at a different speed, a low sun and a few birds. Give
+me one palette of sixteen colors as named constants at the top and use nothing outside it.</div>
+<div class="prompt"><div class="lbl">2 &middot; sprites on the land</div>
+Add pixel sprites written as arrays of text, one character per pixel, a dot for transparent. A
+traveler, a tree, a peak, a tent, a flag. Write a function that asks a hill what its surface height
+is at a given x, and place trees and peaks so they sit exactly on that line rather than at a fixed
+height. Give the traveler a small bob. Light everything from the top left with a darker row along
+the bottom of each sprite.</div>
+<div class="prompt"><div class="lbl">3 &middot; the fork</div>
+Below the canvas, before any question is asked, offer two or three roads as buttons, each with a
+name, a short description and what it asks and pays. An easy road asking two level-1 questions,
+slow, costing no supplies. A steady road asking one level-2. A hard road asking one level-3 that
+gains a day and pays a supply. Generate the set fresh at every fork and shuffle the order. Number
+the buttons and let those keys choose.</div>
+<div class="prompt"><div class="lbl">4 &middot; drawing the question</div>
+Put my questions in a plain array at the very top of the file, above all game code, with a comment
+saying this is the part a teacher edits. Each has a question, four answers, which is right counting
+from zero, an idea, a level from 1 to 3, and a why. When a road is chosen, draw a question matching
+that level. Never ask the same idea twice running, and prefer questions seen least. Real HTML
+buttons below the canvas, numbered, answers shuffled.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 5 to 8</h2>
+<div class="prompt"><div class="lbl">5 &middot; supplies</div>
+Add supplies starting at six, shown as icons in a status bar with the day count and progress to the
+destination. A wrong answer costs one. A clean hard road pays one back. When supplies reach zero
+the player does not lose: they fall back to the last camp, lose three days, get half their supplies
+back and continue. There is no lose screen anywhere in this game.</div>
+<div class="prompt"><div class="lbl">6 &middot; the reason</div>
+On a wrong answer mark the clicked one red, highlight the right one green, and show the question's
+why underneath in a boxed line. Hold all of it for about 2.6 seconds before moving on, against 1
+second after a right answer. Never use color alone: the right answer also gets a label a screen
+reader announces.</div>
+<div class="prompt"><div class="lbl">7 &middot; blocked crossings</div>
+Track which ideas the player has got wrong. Once there is at least one, a washed-out crossing can
+appear as one of the roads at a fork, tagged so it is obviously different, saying they turned back
+here before, asking a question about that specific idea. Show a count of blocked roads in the
+status bar. The crossing is always optional and there is always another road at the same fork.</div>
+<div class="prompt"><div class="lbl">8 &middot; the fix</div>
+When a washed-out crossing is answered right, remove that idea from missed, add it to mastered, and
+show a full-screen celebration, the only one in the game, naming the idea and saying they turned
+back here before. Give it the longest sound. Also make fixing a missed idea anywhere else loud: a
+big floating FIXED, the same sound, a line saying they have put right what they got wrong. Nothing
+else gets a full screen, including arriving.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Prompts</div><h2>Every prompt, in one place &mdash; 9 to 12</h2>
+<div class="prompt"><div class="lbl">9 &middot; camps</div>
+Every four legs, stop at a camp with no question. Offer three pieces of gear from a set of five and
+let the player take one. Each is a real trade, not a bonus: a lantern showing what a road will ask,
+a mule carrying two more supplies, an old map adding a fourth road at every fork, a charm making the
+first wrong answer on each road free, a rope softening the hard roads. Never repeat one.</div>
+<div class="prompt"><div class="lbl">10 &middot; arriving</div>
+At the end of the last leg show days taken, ideas locked in, how many were fixed after being missed,
+and supplies left. Save the best run to localStorage ranked by ideas first and days second, never
+speed alone, and show it on the title screen. Wrap storage in try and catch. A button to travel
+again with everything reshuffled.</div>
+<div class="prompt"><div class="lbl">11 &middot; reach</div>
+Make this work for somebody using a keyboard instead of a mouse: every road and answer reachable
+with Tab, usable with Enter, number keys working for both, a visible outline on the focused one,
+and focus moved to the first option whenever new choices appear. Never use color alone. Buttons big
+enough for a finger, one column on a narrow screen, fitting a Chromebook with nothing cut off.</div>
+<div class="prompt"><div class="lbl">12 &middot; when three rounds have not fixed it</div>
+[Start a fresh chat.] Here is my whole file. [paste it] Change only this one thing: [the thing]. Do
+not change anything else, and give me the whole file back.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The files</div><h2>What is in this download</h2>
+<div class="card t"><h3>long-road.html</h3>
+<p class="small" style="margin:0">The finished game, built by exactly these twelve tasks and played
+through before publication &mdash; a full journey answering everything right, another answering
+everything wrong, and a run that misses on purpose then goes back and clears the crossing.
+<b>Open it and play it first.</b> Knowing what the target feels like makes every prompt land
+better.</p></div>
+<div class="card"><h3>Two ways to use this pack</h3>
+<p class="small" style="margin:0"><b>Build it</b> &mdash; work the twelve tasks and end up with
+something you understand well enough to change in March. <b>Play it</b> &mdash; swap the questions
+at the top and use it this week, then read the tasks when you want to change something.</p></div>
+<div class="card r"><h3>The part you edit</h3>
+<pre>const DESTINATION = 'Fort Verity';
+const QUESTIONS = [
+  { q:'...', a:['..','..','..','..'], ok:0,
+    idea:'evaporation', level:2,
+    why:'One line saying why that is right.' },
+];</pre>
+<p class="small" style="margin:0">Everything below that is the game and you never have to touch
+it.</p></div>
+<div class="note"><b>Twelve questions is the floor, twenty is comfortable.</b> The game sorts by
+idea and by level, so a thin bank means the hard road runs out of hard questions and starts feeling
+like the easy one.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The questions</div><h2>Writing the content this game needs</h2>
+<p class="lede">This game asks more of your questions than a quiz game does, and it pays you back
+for it.</p>
+<div class="card t"><h3>Three levels, and they have to be really different</h3>
+<p class="small" style="margin-bottom:4pt"><b>Level 1 &mdash; do you know the word?</b> "Water
+turning to vapor is called what?"</p>
+<p class="small" style="margin-bottom:4pt"><b>Level 2 &mdash; can you spot it happening?</b> "A
+puddle disappears on a hot day. Which process did the most work?"</p>
+<p class="small" style="margin:0"><b>Level 3 &mdash; can you use it somewhere new?</b> "A town paves
+over a wetland. What most likely happens downstream?" <b>If your level 3 is still a definition, the
+hard road is a lie.</b></p></div>
+<div class="card r"><h3>Wrong answers are the mistakes your students actually make</h3>
+<p class="small" style="margin-bottom:5pt"><b>Weak:</b> Evaporation / A dog / Tuesday / Purple.</p>
+<p class="small" style="margin:0"><b>Strong:</b> Evaporation / Condensation / Precipitation /
+Transpiration. Every one is real, so getting it right means knowing the difference rather than
+spotting the joke. <b>Your last quiz already has the four best wrong answers on it.</b></p></div>
+<div class="card g"><h3>The reason line is the part people skip</h3>
+<p class="small" style="margin:0">It is the only teaching in the whole game. Write it for the
+student who picked the wrong one, not for the one who already knew. One sentence, plain, aimed at
+the confusion rather than at the definition.</p></div>
+<div class="card p"><h3>Ask an AI for help the right way</h3>
+<p class="small" style="margin:0"><b>"Here are four of my questions with the wrong answers my
+students actually give. Write four more at level 3 &mdash; applying the idea to a situation they
+have not seen &mdash; each with a one-line reason aimed at the misconception."</b> Never send
+student work or names; type the misconceptions in yourself.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">In the room</div><h2>Five ways to run it</h2>
+<div class="card t"><h3>1. Whole class, one screen, a vote at every fork</h3>
+<p class="small" style="margin:0"><b>Start here.</b> The vote is the whole point: the argument about
+which road to take is students reasoning about their own confidence out loud, and it costs you
+nothing to run.</p></div>
+<div class="card"><h3>2. Two teams, alternating forks</h3>
+<p class="small" style="margin:0">Each team chooses on its turn. Same journey, two strategies, and
+the comparison at the end is about decisions rather than about who is smarter.</p></div>
+<div class="card g"><h3>3. Individually on Chromebooks</h3>
+<p class="small" style="margin:0">Everyone gets their own road and their own blocked crossings. This
+is the version where the game is quietly differentiating and nobody in the room can tell.</p></div>
+<div class="card p"><h3>4. A station for early finishers</h3>
+<p class="small" style="margin:0">Leave it open. The class record is on the title screen and it only
+counts ideas.</p></div>
+<div class="card r"><h3>5. A substitute can run it</h3>
+<p class="small" style="margin:0">"Open this file, project it, let them vote." Nothing to log into,
+nothing to break, and no way for it to go wrong while you are out.</p></div>
+<div class="note"><b>The two minutes that make it land:</b> at the end, ask the class which fork
+they would take differently, and why. That is a conversation about their own understanding, and the
+game just gave them the vocabulary for it.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Said plainly</div><h2>Building in somebody else&rsquo;s genre without stealing</h2>
+<p class="lede">A journey with forks, supplies and a destination is a very old shape, and some
+famous games use it. Here is where the line sits.</p>
+<div class="card t"><h3>The distinction that matters</h3>
+<p class="small" style="margin:0"><b>Systems are not protected. Expression is.</b> Branching routes,
+resources, random encounters, a map, upgrade stops &mdash; those are rules, used by hundreds of
+games. <b>Names, characters, artwork, music, logos and written lines are protected</b>, and those
+are what you must not take.</p></div>
+<div class="card g"><h3>So you may freely</h3>
+<p class="small" style="margin:0">Build a journey toward a destination &middot; offer branching
+routes with different risk &middot; track a resource that runs down &middot; stop at camps for
+upgrades &middot; end with a scored arrival &middot; use a chunky limited-palette look, which is a
+hardware idiom hundreds of independent games use.</p></div>
+<div class="card r"><h3>And you must never</h3>
+<p class="small" style="margin:0">Use a protected game's title, characters, place names, item names
+or written lines &mdash; anywhere, including in your code and your file names &middot; copy, trace
+or recolor its artwork or fonts &middot; use its music &middot; reuse its famous lines, including
+the short ones everybody can quote. <b>Write your own, in your own voice.</b></p></div>
+<div class="card"><h3>The checklist, at the end of every session</h3>
+<p class="small" style="margin:0">Search the whole file for the protected names, and expect none
+&middot; read every line a player sees out loud and rewrite any that sounds borrowed &middot; look
+at each sprite and ask whether a fan would name it &middot; hum your own victory sound and make sure
+it is not somebody else's tune.</p></div>
+<div class="note"><b>And the practical point.</b> A game you keep in your classroom is a very
+different risk from one you publish or sell. In your room this is mostly about modelling it properly
+for students. <b>This is not legal advice &mdash; it is the line a careful teacher can hold.</b></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Where the data lives</div><h2>The shortest privacy page in this series</h2>
+<p class="lede">The honest answer is that there is almost nothing to say, and that is the point.</p>
+<div class="card g"><h3>What this game knows about your students</h3>
+<p class="small" style="margin:0"><b>Nothing.</b> No names, no accounts, no scores against people.
+There is nowhere to type a name and nothing to type it into.</p></div>
+<div class="card t"><h3>What leaves the room</h3>
+<p class="small" style="margin:0"><b>Nothing.</b> No server, no network call, no analytics, no
+company behind it. Unplug the internet and it plays the same.</p></div>
+<div class="card"><h3>The one thing it saves</h3>
+<p class="small" style="margin:0">A best run &mdash; ideas and days &mdash; in that browser on that
+machine, with no name attached by design. Clear browsing data and it is gone, and nothing that
+matters is lost.</p></div>
+<div class="card r"><h3>The feature to refuse</h3>
+<p class="small" style="margin:0">Sooner or later you will want to store who got the best run. Do
+not. That one change turns a game with no data into a student record on a shared classroom
+computer. <b>A record with nobody's name on it is still something a class will fight over</b>, and
+it is the version that cannot hurt anybody.</p></div>
+<div class="note"><b>For an administrator, in one sentence:</b> "It is a file on my computer with no
+student information in it that does not connect to anything." True, and the whole disclosure.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Test it like you mean it</div><h2>Eight things to try before a class sees it</h2>
+<table>
+<thead><tr><th style="width:52%">Try this</th><th>You want</th></tr></thead>
+<tbody>
+<tr><td>Reload twice and compare the first fork</td><td>Different roads on offer</td></tr>
+<tr><td>Take the hard road three times</td><td>Genuinely harder questions</td></tr>
+<tr><td>Answer everything wrong on purpose</td><td>You fall back, you never lose</td></tr>
+<tr><td>Miss one, then go back to its crossing</td><td>A full-screen moment when you fix it</td></tr>
+<tr><td>Play a run taking only easy roads</td><td>A slower arrival, not a punishment</td></tr>
+<tr><td>Reach a camp twice</td><td>Different gear offered</td></tr>
+<tr><td>Play the whole thing on number keys</td><td>Never needing the mouse</td></tr>
+<tr><td>Open it on the classroom machine</td><td>Nothing cut off, sound audible</td></tr>
+</tbody></table>
+<div class="card r"><h3>The one that catches the most</h3>
+<p class="small" style="margin:0"><b>Missing on purpose and going back.</b> It is the mechanic the
+whole design rests on, it is the one most likely to be silently broken, and it is the last thing
+anybody thinks to test.</p></div>
+<div class="card t"><h3>And one worth doing with a person</h3>
+<p class="small" style="margin:0">Hand it to a colleague and say nothing. Watch which road they take
+first. If they pick at random rather than reading, your road descriptions are not doing their
+job.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For the teacher</div><h2>How this pack is built, and what it does not claim</h2>
+<div class="card t"><h3>Why this shape, and not a quiz with a health bar</h3>
+<p class="small" style="margin:0">The first version of this product <i>was</i> a quiz with a health
+bar, and it was not good enough. The rebuild is built on three findings: <b>feeling capable is the
+strongest driver of motivation</b>, ahead of autonomy and belonging; <b>points and badges lift
+enjoyment but do almost nothing for feeling capable</b>; and <b>public ranking actively harms
+students who are already struggling</b>. Everything in the design follows from those three.</p></div>
+<div class="card"><h3>What was tested before this went out</h3>
+<p class="small" style="margin:0">The included game was played in a real browser three ways: a full
+journey answering everything correctly, a full journey answering everything wrong, and a run that
+missed on purpose then returned to clear the crossing. The wrong-answer run <b>fell back and
+continued rather than ending</b>, blocked crossings appeared and tracked the right ideas, the fix
+fired its full-screen moment and moved the idea from missed to mastered, and camps offered gear. No
+console errors in any run.</p></div>
+<div class="card r"><h3>What is NOT claimed</h3>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a replacement for Blooket or Gimkit</b>, and
+not a replacement for the AI game generators either. Those start faster and look more finished. What
+this is instead: yours, with no logins, working offline, and changeable.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not a gradebook.</b> It records nothing about
+any student and should not.</p>
+<p class="small" style="margin-bottom:5pt">&bull; <b>Not research of my own.</b> The findings above
+are other people's, summarized honestly; this pack applies them, it does not test them.</p>
+<p class="small" style="margin:0">&bull; <b>Not going to come out identical.</b> You are working with
+a model. Your country will look different from mine, and that is the point.</p></div>
+<div class="card g"><h3>Why the prompts spend so long saying no</h3>
+<p class="small" style="margin:0">No frameworks. No color-only signals. No lose screen. No
+leaderboard with names. Left alone a model builds the most common version of a thing, and the most
+common classroom game is a quiz with points on it. <b>Saying no is the part of prompting nobody
+teaches, and it is most of the skill.</b></p></div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">One last thing</div><h2>If this was useful</h2>
+<div class="card t"><h3>Leaving a review earns you TPT credit</h3>
+<p class="small" style="margin:0">TPT gives you credit toward future purchases for every review you
+leave, and reviews are how other teachers find work like this. Thirty seconds.</p></div>
+<div class="card r"><h3>If it did not work, tell me before you rate it</h3>
+<p class="small" style="margin:0">The Q&amp;A on the listing reaches me directly. A game that will
+not open is almost always one line, and I would far rather fix it than leave you with a file that
+does nothing.</p></div>
+<div class="card"><h3>The one thing to take away</h3>
+<p class="small" style="margin:0"><b>What a game celebrates is what it teaches students to value.</b>
+Celebrate a score and you have told them that being good at it already is the point. Celebrate a fix
+and you have told them that getting better is. <b>That is true of your classroom whether or not you
+ever build a game.</b></p></div>
+<div class="note"><b>Built and audited by two certified teachers.</b><br>
+Every prompt here was run. The game was played to the destination three different ways, including
+the one where you get everything wrong, before this went out.</div>
+<div class="foot"><span>Vibe Code Your Own Game · The Long Road</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>

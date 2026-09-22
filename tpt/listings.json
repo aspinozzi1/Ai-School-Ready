@@ -2225,6 +2225,67 @@
       "previewUnit": "29 pages + 2 working files",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML + SQL"
+    },
+    {
+      "id": "vibe-long-road",
+      "order": 57,
+      "name": "Vibe Code Your Own Game - The Long Road",
+      "product": "UPLOAD/02-paid/Vibe-Code-Your-Own-Game-The-Long-Road.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/long-road.html"
+      ],
+      "cover": "tpt/covers/vibe-long-road-cover.png",
+      "thumbnails": [
+        "tpt/extras/lrd-the-game.png",
+        "tpt/extras/lrd-whats-inside.png",
+        "tpt/extras/lrd-real-pages.png"
+      ],
+      "title": "Vibe Code Your Own Game | The Long Road, a Journey Review Game for Any Subject",
+      "description": "Vibe code your own game. Twelve tasks and you have a journey game where every turn is a CHOICE before it is a question - the easy road, the steady one, or the hard pass that pays. One HTML file. No student logins, no subscription, no accounts for anybody, and it runs with the wifi down.\n\nTHIS IS NOT A QUIZ WITH A HEALTH BAR. In a quiz the student has one input: pick the right answer. Here they choose the road first, not knowing what it will ask - so the thinking starts before the question appears and carries on after, because the outcome changes what they choose next. Two students playing the same content get different journeys.\n\nAND THE DIFFICULTY SOLVES ITSELF. The player picks how hard the game is by picking the road. No hidden algorithm, no labeling anybody. The student who wants the hard pass takes it, the one who needs a gentler run takes the low trail, and neither has been told which one they are.\n\nTHE LOUDEST MOMENT BELONGS TO THE STUDENT WHO WAS WRONG. Every question is tagged with an idea. Miss it and that idea BLOCKS A ROAD on the map - visible, optional, waiting. Come back and answer it right and the crossing opens for good, with the only full-screen celebration in the game. The map changes shape because a student learned something.\n\nBUILT ON WHAT THE RESEARCH ACTUALLY SAYS. Of the three drivers of motivation, feeling capable is the strongest - and points and badges lift enjoyment while doing almost nothing for how capable a student feels. So the game celebrates getting better, not being good already. Bringing a missed idea back later rather than immediately is spacing, one of the best-evidenced ideas in learning science.\n\nTHERE IS NO WAY TO LOSE IN FRONT OF THE CLASS. Run out of supplies and you fall back to the last camp and continue. Everybody arrives; arrival is scored, not passed or failed. No leaderboard with names, no visible per-student score, and no way for the room to work out whose wrong answer cost them what - because public ranking harms exactly the students this was built for.\n\nTWELVE PROMPTS WRITTEN OUT IN FULL, including the clauses that are easy to miss: stand sprites on the hill by asking it where its surface is, never ask the same idea twice running, hold a wrong answer on screen far longer than a right one, and one palette of sixteen colors used for everything.\n\nTHE ONE LINE THAT TEACHES. Every question carries a plain-language reason, shown after a miss while the right answer sits on screen. That extra second and a half is the only reteaching the game does, and it is the difference between a review game and a scoreboard.\n\nALSO INSIDE: camps where you choose gear that changes how you play rather than how well you score, how to write level 1, 2 and 3 questions that make the road choice real, five ways to run it including one a substitute can manage, and a straight page on building in a famous game's genre without stealing from it.\n\nTHE FINISHED GAME IS INCLUDED and was played three ways before publication - a full journey answering everything right, one answering everything wrong, and a run that missed on purpose then went back and cleared the crossing.\n\nWHAT IT KNOWS ABOUT YOUR STUDENTS: nothing. No names, no accounts, no scores against people. Nothing leaves the room because there is no server and no company behind it.\n\nWHAT THIS IS NOT: not a replacement for Blooket, Gimkit or an AI game generator - those start faster and look more finished. This one is yours, works offline, and every rule in it can be changed. Not a gradebook, and not legal advice about copyright.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
+      "price": 22,
+      "licenses": 11,
+      "grades": [
+        "4th grade",
+        "5th grade",
+        "6th grade",
+        "7th grade",
+        "8th grade",
+        "9th grade"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Computer Science"
+      ],
+      "tags": [
+        "vibe coding",
+        "review game",
+        "test prep",
+        "classroom games",
+        "ai tools",
+        "game based learning"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Code Your Own Game",
+      "previewShots": [
+        "lrd_p3.png",
+        "lrd_p4.png",
+        "lrd_p14.png"
+      ],
+      "previewInside": [
+        "<b>Choice before question</b> - the road decides what it asks",
+        "<b>Missed ideas block the road</b> until you go back and fix them",
+        "The only full-screen moment belongs to fixing a mistake",
+        "<b>No way to lose</b> in front of the class, and no ranking",
+        "Twelve prompts in full, including what to forbid",
+        "The finished game included, played three ways"
+      ],
+      "previewUnit": "29 pages + 1 working game",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }
