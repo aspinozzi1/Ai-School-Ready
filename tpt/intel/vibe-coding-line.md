@@ -157,6 +157,22 @@ Pretending the competition does not exist is the fastest way to lose a review.
 
 ### Binding rules for this series
 
+**Every game must pass `tpt/intel/GAME-DESIGN-STANDARD.md` before it ships.**
+That file is the result of the owner rejecting drop 57 on 2026-09-22 as not
+good enough, and it is not optional. The short version, and the gate is longer:
+
+- **Competence first** — it is the strongest predictor of motivation, and
+  points do not produce it. Track mastery per idea, bring missed ideas back
+  later in the session, and make fixing a miss the loudest moment in the game.
+- **A real decision every turn that is not "pick the right answer."** Two
+  students with the same content must have different runs.
+- **No public individual ranking, and no mechanic where one student's miss
+  visibly costs the group.** For struggling students that produces a sense of
+  incompetence, which is the opposite of the point.
+- **Sixteen colors, silhouette test, one light source, always something
+  moving.** A teacher who will not project it will not buy it.
+
+
 - **"Vibe Code Your Own Game" leads the title.** It is the phrase being
   claimed. `vibe coding` stays as tag one and the custom category, since the
   literal string differs and the tag is what search sees.

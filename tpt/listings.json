@@ -2225,67 +2225,6 @@
       "previewUnit": "29 pages + 2 working files",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML + SQL"
-    },
-    {
-      "id": "vibe-boss-battle",
-      "order": 57,
-      "name": "Vibe Code Your Own Game - Boss Battle",
-      "product": "UPLOAD/02-paid/Vibe-Code-Your-Own-Game-Boss-Battle.pdf",
-      "extraFiles": [
-        "UPLOAD/02-paid/boss-battle.html"
-      ],
-      "cover": "tpt/covers/vibe-boss-battle-cover.png",
-      "thumbnails": [
-        "tpt/extras/bbg-the-game.png",
-        "tpt/extras/bbg-whats-inside.png",
-        "tpt/extras/bbg-real-pages.png"
-      ],
-      "title": "Vibe Code Your Own Game | Boss Battle Review Game, Any Subject, No Logins",
-      "description": "Vibe code your own game. Twelve tasks and you have a real arcade-style review game - health bars, pixel sprites, sound, screen shake - where YOUR questions are the weapon. One HTML file. No student logins, no subscription, no accounts for anyone, and it runs with the wifi down.\n\nTHIS IS THE PART OF AI NOBODY SHOWS TEACHERS. Not a faster worksheet and not a lesson plan in thirty seconds. An actual piece of software, built by you in an evening, about the exact thing you taught this week - and it belongs to you afterward.\n\nYOU ALREADY HAVE BLOOKET. WHY BUILD ONE? That question is answered honestly on page 3, in both directions. Theirs are faster to start and more polished. Yours needs no logins, costs nothing ever, cannot be blocked by your district or taken away when a subscription lapses, sends no student data anywhere, works with the internet down, and every rule in it can be changed on the morning you decide it is wrong.\n\nTWELVE TASKS, EACH ENDING IN SOMETHING YOU CAN PLAY. The stage, pixel sprites you draw by typing characters, health bars that drain instead of jumping, your questions, damage, consequences, screen shake and floating numbers, sound with no sound files, two endings, the class record, and making it playable by keyboard on a Chromebook.\n\nTASK 8 IS WHY A CLASS SHOUTS AT THE SCREEN. Game developers call it juice - the shake, the flash, the damage number, the sound. Almost none of the fun in an arcade game is in the rules. It is about twenty lines of code and it is the difference between a quiz with a health bar and a game.\n\nTWELVE PROMPTS WRITTEN OUT IN FULL, including the clauses that are easy to miss and expensive to leave out: no frameworks and no build step, a state object and a draw function and a game loop kept separate, sprites as text arrays so you can edit art by typing, and a longer pause after a wrong answer so the class has time to read the right one.\n\nHOW TO WRITE QUESTIONS WORTH FIGHTING OVER. Wrong answers should be the mistakes your students actually make, not obvious jokes - and the best source for those is the quiz you already graded.\n\nFIVE WAYS TO RUN IT: whole class on the projector, two teams, individually on Chromebooks, a station for early finishers, and one a substitute can run with no login and nothing to break.\n\nBUILDING IN A FAMOUS GAME'S GENRE WITHOUT STEALING FROM IT. Systems are not protected; expression is. What you may freely borrow, what you must never touch, and a checklist to run at the end of every session. Teachers get vague warnings about this everywhere else.\n\nTHE FINISHED GAME IS INCLUDED and was played start to finish in a browser before publication, to a win and to a loss. Change eight lines at the top and it is your unit tonight.\n\nWHAT IT KNOWS ABOUT YOUR STUDENTS: nothing. No names, no accounts, no scores against people. Nothing leaves the room because there is no server, no network call and no company behind it. It saves one number - the fastest winning time - with nobody's name on it, by design.\n\nWHAT THIS IS NOT: not a replacement for Blooket or Gimkit, not a gradebook, and not legal advice about copyright. Your district's policy is the authority on what you install and run.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
-      "price": 19,
-      "licenses": 9,
-      "grades": [
-        "3rd grade",
-        "4th grade",
-        "5th grade",
-        "6th grade",
-        "7th grade",
-        "8th grade"
-      ],
-      "subjects": [
-        "For All Subject Areas",
-        "Instructional Technology",
-        "Computer Science"
-      ],
-      "tags": [
-        "vibe coding",
-        "review game",
-        "test prep",
-        "classroom games",
-        "ai tools",
-        "computer science"
-      ],
-      "formats": [
-        "PDF",
-        "HTML"
-      ],
-      "customCategory": "Vibe Code Your Own Game",
-      "previewShots": [
-        "bbg_p3.png",
-        "bbg_p13.png",
-        "bbg_p24.png"
-      ],
-      "previewInside": [
-        "<b>Twelve tasks</b>, each ending in something you can play",
-        "<b>The finished game included</b>, played to a win and a loss",
-        "Every prompt in full, including what to forbid",
-        "<b>Task 8, juice</b> - the twenty lines that make a class shout",
-        "How to write questions worth fighting over",
-        "Building in a famous genre without stealing from it"
-      ],
-      "previewUnit": "29 pages + 1 working game",
-      "insideHeading": "What is inside",
-      "filesBadge": "PDF + HTML"
     }
   ]
 }
