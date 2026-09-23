@@ -3,7 +3,8 @@ PINTEREST UPLOAD SHEET — one pin per listing
 Fields below follow Pinterest's "Create Pin" form top to bottom.
 Boards to create once: AI for Teachers · AI Staff PD · Sub Plans &
 Time Savers · Parent Communication · Back to School · Homeschool AI ·
-Young Entrepreneurs · Deaf Education
+Young Entrepreneurs · Deaf Education · Reading Intervention ·
+Classroom Management · Special Education · Build It Yourself
 Tip: you can select MULTIPLE pin PNGs at once in the uploader and work
 through the drafts list on the left, one per listing.
 ==================================================================
@@ -1755,6 +1756,737 @@ Reading Intervention   <- create once, reuse forever
 --- TAGGED TOPICS ---
 
 Try: cvc words worksheets · cvc word list · reading intervention binder   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IEP AT A GLANCE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+iep-at-a-glance-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+IEP at a Glance | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+IEP at a glance student snapshot sheets: a one-page IEP summary for general education teachers, paraprofessionals, and substitutes — goals in plain language, accommodations, services, contacts, a binder cover, section tabs, and a guest-teacher quick-reference card with accommodations only, never a diagnosis. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep at a glance · iep snapshot · iep binder   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IEP GOAL TRACKING & DATA COLLECTION SHEETS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+iep-goal-tracking-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+IEP Goal Tracking & Data Collection Sheets | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+IEP goal tracking and progress monitoring data collection sheets: a goal-at-a-glance page, weekly and six-week data sheets, a hand-plotted graph page, a prompting-level recording sheet, and an AI Progress Summary page that drafts a progress-report sentence from de-identified scores. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep goal tracking · progress monitoring tracking sheet · progress monitoring forms special education   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+FREE BEHAVIOR TRACKER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+free-behavior-tracker-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Free Behavior Tracker | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free behavior tracker for teachers: a daily point sheet, a frequency tally for one specific behavior, and a weekly summary with plain-language bands — no login, no app, just paper. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: free behavior tracker · behavior tracker · behavior tracking sheet   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOMESCHOOL ATTENDANCE SHEET
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+homeschool-attendance-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Homeschool Attendance Sheet | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free homeschool attendance sheet: a monthly attendance grid to photocopy all year, a year-at-a-glance summary against your own target, and a simple subject log for portfolio review. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Homeschool AI   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: homeschool attendance sheet · homeschool record keeping · homeschool planner   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PROGRESS MONITORING TRACKING SHEETS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+progress-monitoring-sheets-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Progress Monitoring Tracking Sheets | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free progress monitoring tracking sheets: a twelve-week weekly data sheet and a hand-plotted graph page with a target line, ready to print for any IEP goal. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: progress monitoring tracking sheet · progress monitoring forms special education · data tracker   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+DEAF AWARENESS MONTH CLASSROOM PACK
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+deaf-awareness-month-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Deaf Awareness Month Activities | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free Deaf Awareness Month classroom pack: how DHH people communicate (ASL, spoken language, bimodal, devices or none), communication-repair strategies, classroom-access quick wins, a fingerspelling explainer, and a speech banana page for teachers. Built and audited by two certified teachers — and the parents of a deaf child.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Deaf Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: deaf awareness month · deaf awareness · deaf and hard of hearing   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+ABC BEHAVIOR DATA SHEETS
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+abc-behavior-data-sheets-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+ABC Data Sheets | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+ABC behavior data sheets: an antecedent-behavior-consequence recording form, a frequency tally, a duration sheet, a weekly pattern summary, and an AI Pattern Summary page that turns de-identified entries into a plain-language pattern — never a diagnosis, never a behavior plan. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: abc data sheet · behavior data tracking sheet · behavior tracker   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+BUILD A SELF-CHECKING PRACTICE ACTIVITY
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+build-self-checking-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Build a self-checking practice activity with AI, no coding background needed: nine prompts written out in full, a working activity file included and tested in a browser, six real failures with the sentence that fixes each, and the three-tier rule for keeping student data out of what you build. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Build It Yourself   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · self checking activities · teacher made games   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+PARENT TEACHER CONFERENCE KIT
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+conference-kit-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Parent Teacher Conference Sign Up Sheets & Forms | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Parent teacher conference sign up sheets and forms: a sign-up sheet where parents rank their top three times, a master schedule grid, a reminder slip, a conference prep sheet per student, a zero-technology talking-points page, and an AI Conference Prep page that drafts three talking points and one ask for home from a de-identified pattern. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Parent Communication   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: parent teacher conference sign up · conference sign up · parent teacher conference forms   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+IEP ORGANIZATION BINDER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+iep-org-binder-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+IEP Organization Binder | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+IEP organization binder: a binder cover and spine label, eight section dividers (Students, Goals, Data, Meetings, Services, Communication, Accommodations, Notes), a caseload overview, a meeting-dates tracker, and a contact log — every page by student number, never a name, with a confidentiality page up front. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep organization binder · iep binder · iep binder cover   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE COMPLETE IEP BINDER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+complete-iep-binder-bundle-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+The Complete IEP Binder Bundle | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+The Complete IEP Binder bundle: IEP at a Glance, IEP Goal Tracking & Data Collection Sheets, ABC Data Sheets, and the IEP Organization Binder — four real products, 25% off buying separately. Every page uses student numbers, never names. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Special Education   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: iep binder · iep organization binder · special education   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODING CLASSROOM DASHBOARD
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+vibe-dashboard-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Vibe coding for teachers: build a classroom dashboard that remembers. Ten tasks, twelve prompts written out in full, and the finished app included and browser-tested. A fair name picker so the same three children do not answer everything, and a one-click export that replaces every name with S1, S2, S3. No login, no subscription, nothing uploaded anywhere. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Coding for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · classroom management · teacher tools   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODING PITCH TO PROTOTYPE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+pitch-to-prototype-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Kids | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Vibe coding for kids, the entrepreneurship unit: five days where students interview real people in the building, write the specification for an app that fixes what they found, and watch you build it live on the board. Six printable student pages, every teacher prompt written out in full, a rescue page for when the build breaks in front of the class, and a finished example app included. The teacher holds the keyboard and no child name goes into a prompt. Grades 4-8. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Coding for Kids   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · entrepreneurship · shark tank   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODING BEHAVIOR TRACKER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+vibe-behavior-tracker-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Vibe coding for teachers: build a behavior tracker that keeps the history. Ten tasks, eleven prompts written out in full, and the finished app included and browser-tested. Scores three to five expectations on a daily point card, keeps every dated entry instead of a running total, and a one-click export replaces every student with S1, S2, S3. Student numbers only, never a name field. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Coding for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · behavior tracker · student behavior tracker   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODING CLASS ROSTER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+vibe-roster-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Teachers | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Vibe coding for teachers, the real-software tier: build a class roster that lives in an actual database and physically cannot hold a student surname, because the database itself refuses one. Three layers that do not trust each other - the browser shortens, the database refuses, and no column has a place to put it. Twelve prompts written out in full, both working files included, and an honest page about who can read your data. No coding background, nothing installed. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Coding for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · teacher tools · classroom management   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+VIBE CODE YOUR OWN GAME - THE LONG ROAD
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+vibe-long-road-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Code Your Own Game | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+Open the file and it works. Put your own questions in from a setup screen built into the game, or copy the prompt and have AI draft a whole round in about thirty seconds, then save it as your own file to reuse every year. A journey review game where every turn is a choice before it is a question. Students pick the easy road, the steady one or the hard pass that pays, so the thinking starts before the question appears and two students get different journeys. What they get wrong blocks a road on the map until they go back and fix it, and clearing one is the only full-screen celebration in the game. Built on what the research says about motivation: feeling capable is the strongest driver and points do almost nothing for it. No logins, no subscription, no way to lose in front of the class, and it runs with the wifi down. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Vibe Code Your Own Game   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: vibe coding · review game · test prep   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE AI INSTRUCTIONS FILE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ai-instructions-file-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+The AI Instructions File | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free for teachers building anything with AI: the instructions file. One short page you write once and paste at the start of every chat, saying what the thing is, what it must never do, and what the AI should do when it does not know what you want. Includes a real instructions file from a live classroom project, the one sentence that stops it asking and starts it deciding, and a fill-in page so you leave with your own. No coding, nothing to install. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai tools · teacher tools · technology professional development   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 

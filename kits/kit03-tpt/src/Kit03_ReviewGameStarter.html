@@ -65,6 +65,47 @@
   .go:hover{transform:translateY(-2px)}
   .go:focus-visible{outline:4px solid var(--sky);outline-offset:3px}
   .meta{font-size:13px;color:var(--steel)}
+  /* ---- the question setup screen ------------------------------------- */
+  #editor{display:none;width:100%;max-width:900px;margin:0 auto;padding:4px 0 40px}
+  #editor.on{display:block}
+  #editor h2{font-size:clamp(19px,3vw,27px);margin-bottom:6px}
+  #editor h3{font-size:clamp(15px,2.2vw,18px);margin:0 0 6px}
+  #editor p{font-size:clamp(13px,1.9vw,15px);line-height:1.5;color:var(--mist);margin-bottom:9px}
+  #editor p b{color:var(--bone)}
+  .card2{background:var(--deep);border:3px solid var(--bone);border-radius:10px;
+         padding:13px 15px;margin-bottom:12px}
+  .card2.lit{border-color:var(--gold)}
+  .fld{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+  .fld label{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sand)}
+  .fld input,.fld textarea,.fld select{font:inherit;font-size:15px;padding:8px 10px;border-radius:7px;
+        border:2px solid var(--steel);background:var(--ink);color:var(--bone)}
+  .fld textarea{min-height:52px;resize:vertical}
+  .fld input:focus,.fld textarea:focus,.fld select:focus{outline:3px solid var(--gold);outline-offset:1px}
+  .three3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+  .two2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  @media (max-width:640px){.three3,.two2{grid-template-columns:1fr}}
+  .qrow{background:var(--ink);border:2px solid var(--slate);border-radius:9px;padding:11px 12px;margin-bottom:9px}
+  .qrow .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+  .qrow .no{font-weight:800;color:var(--gold);font-size:14px}
+  .ansline{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .ansline input[type=text]{flex:1}
+  .ansline label{font-size:12px;color:var(--mist);display:flex;align-items:center;gap:5px;
+       white-space:nowrap;font-weight:700}
+  .btn{font:inherit;font-weight:800;font-size:15px;padding:9px 16px;border-radius:8px;
+       border:3px solid var(--ink);background:var(--gold);color:var(--ink);cursor:pointer}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:focus-visible{outline:4px solid var(--sky);outline-offset:3px}
+  .btn.quiet{background:var(--slate);color:var(--bone);border-color:var(--bone)}
+  .btn.small{font-size:13px;padding:6px 11px}
+  .btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}
+  pre.pr{background:var(--ink);color:var(--bone);border:2px solid var(--steel);border-radius:8px;
+     padding:11px 13px;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word;
+     max-height:230px;overflow:auto;margin-bottom:9px}
+  .msg{font-size:14px;line-height:1.5;border-radius:8px;padding:9px 12px;margin-top:9px;display:none}
+  .msg.on{display:block}
+  .msg.bad{background:#4A2118;border:2px solid #E0A07F;color:#FFD9C6}
+  .msg.good{background:#2C4426;border:2px solid #A8D18C;color:#DDF2CE}
+  .msg ul{margin:5px 0 0 18px}
   [hidden]{display:none!important}
 </style>
 </head>
@@ -77,6 +118,7 @@
       <h1 id="ttl">The Long Road</h1>
       <p class="big" id="blurb"></p>
       <button class="go" id="startBtn">Set out</button>
+      <button class="go" id="setupBtn" style="background:var(--slate);color:var(--bone)">Put my own questions in</button>
       <p class="meta" id="best"></p>
     </div>
 
@@ -107,47 +149,110 @@
   </div>
 </div>
 
+<div id="editor">
+  <div class="card2 lit">
+    <h2>Put your own questions in</h2>
+    <p>Nothing here leaves this page. There is no account, no upload and no server. When you are
+    done, <b>Save my game</b> gives you back a single file that is yours to keep, copy and hand out.</p>
+    <div class="two2">
+      <div class="fld"><label for="mJourney">Game title</label>
+        <input type="text" id="mJourney" maxlength="42"></div>
+      <div class="fld"><label for="mDest">Where they are traveling to</label>
+        <input type="text" id="mDest" maxlength="34"></div>
+    </div>
+    <div class="fld"><label for="mSubject">What this round reviews</label>
+      <input type="text" id="mSubject" maxlength="60" placeholder="fractions, the Constitution, cell parts"></div>
+    <div class="btnrow"><button class="btn quiet small" id="backBtn">Back to the game</button></div>
+  </div>
+
+  <div class="card2">
+    <h3>The fast way: have AI write them</h3>
+    <p>Fill in the box above first, then copy this and paste it into whichever AI tool you use.
+    Paste what it gives you back into the box underneath. <b>Read them before you play them</b> —
+    AI gets facts wrong, and you are the one who knows your standards.</p>
+    <pre class="pr" id="promptBox"></pre>
+    <div class="btnrow">
+      <button class="btn small" id="copyBtn">Copy the prompt</button>
+      <button class="btn quiet small" id="fmtBtn">What the format means</button>
+    </div>
+    <div id="fmtHelp" hidden style="margin-top:10px">
+      <p style="margin-bottom:4px"><b>One question per line, eight parts, separated by the | character.</b></p>
+      <pre class="pr" style="max-height:none">question | correct answer | wrong | wrong | wrong | idea | level | why</pre>
+      <p style="margin:0"><b>idea</b> is the concept it tests. The game tracks mastery by idea, brings a
+      missed idea back later, and never asks two of the same idea in a row, so use only three or four
+      ideas in a round. <b>level</b> is 1 easy, 2 medium, 3 hard — students pick their own difficulty by
+      picking the road, so you need some of each. <b>why</b> is the one line a student sees after getting
+      it wrong, and it is the part that does the teaching.</p>
+    </div>
+    <div class="fld" style="margin-top:11px"><label for="pasteBox">Paste what the AI gave you here</label>
+      <textarea id="pasteBox" style="min-height:110px" placeholder="One question per line."></textarea></div>
+    <div class="btnrow">
+      <button class="btn" id="loadBtn">Load these questions</button>
+      <button class="btn quiet small" id="appendBtn">Add them to what I already have</button>
+    </div>
+    <div class="msg" id="pasteMsg"></div>
+  </div>
+
+  <div class="card2">
+    <h3>Your questions</h3>
+    <p id="countLine"></p>
+    <div id="qlist"></div>
+    <div class="btnrow">
+      <button class="btn quiet" id="addBtn">Add a question</button>
+      <button class="btn quiet small" id="sampleBtn">Put the sample questions back</button>
+    </div>
+  </div>
+
+  <div class="card2 lit">
+    <h3>When you are ready</h3>
+    <div class="btnrow">
+      <button class="btn" id="playBtn">Play with these now</button>
+      <button class="btn" id="dlBtn">Save my game as a file</button>
+      <button class="btn quiet" id="keepBtn">Keep them in this browser</button>
+    </div>
+    <div class="msg" id="doneMsg"></div>
+    <p style="margin:11px 0 0"><b>Save my game as a file</b> is the one that lasts. Clearing your
+    browsing data erases anything kept in the browser; a file on your own drive survives it, opens on
+    any computer, and can be emailed to the teacher next door.</p>
+  </div>
+</div>
+
 <script>
 /* ===========================================================================
-   START HERE. This is the only block you need to touch to make this game
-   your own. Everything below "THE GAME" runs the whole thing and you do not
-   need to read it, let alone change it.
+   THE LAB STARTER — Session 3, Build Your First Classroom Tool.
 
-   HOW TO EDIT THIS, IN THE LAB:
-   1. Open this file by double-clicking it. It runs in your browser with no
-      install and no account, and it will still run with the wifi off.
-   2. Replace the nine questions below with your own. Keep the same shape.
-   3. Change JOURNEY, DESTINATION and SUBJECT to match your class and topic.
-   4. THEN make two changes by prompting an AI tool instead of typing code
-      yourself: one cosmetic (for example, "change the sky colors to my
-      school colors") and one behavioral (for example, "give the player a
-      fourth road to choose from at every fork"). Paste this whole file into
-      the chat and describe what you want changed; a capable AI tool can
-      make both edits directly in the code below.
+   Nobody has to edit anything below. Open the file, press "Put my own
+   questions in" on the opening screen, and everything the lab asks for is on
+   that one screen: the title, the destination, the questions, a prompt that
+   has AI draft a whole round in about thirty seconds, and a button that saves
+   the result as the participant's own file to take away.
 
-   Each question needs five things:
+   The sample round below is the water cycle, so the game plays start to
+   finish the moment it opens and nobody sits looking at a blank screen while
+   the facilitator is still talking.
+
+   Track 2, for the confident, is this same file plus prompting: paste the
+   whole file into an AI tool and ask for one cosmetic change and one
+   behavioral change. Save a copy first.
+
+   The fields each question carries, for anyone who wants to look:
      q     the question
      a     four answers
      ok    which answer is right, counting from 0
      idea  the concept it tests -- the game tracks mastery BY IDEA, brings a
-           missed idea back later, and never asks two of the same idea in a
-           row
-     why   one line saying why the answer is right; shown after a wrong
-           answer
+           missed idea back later, and never asks two of the same idea in a row
+     why   one line saying why the answer is right; shown after a wrong answer
      level 1 easy, 2 medium, 3 hard -- the player picks difficulty by picking
            the road, so you need some of each
 
-   Eight to ten questions across two or three ideas works well for a single
-   class period. The nine below are a working demo on the water cycle, so
-   the game plays start to finish the moment you open the file -- replace
-   them whenever you're ready.
+   Twelve to twenty questions across three or four ideas works well.
    =========================================================================== */
 
-const DESTINATION = 'Fort Verity';
-const JOURNEY     = 'The Long Road';
-const SUBJECT     = 'the water cycle';
+let DESTINATION = 'Fort Verity';
+let JOURNEY     = 'The Long Road';
+let SUBJECT     = 'the water cycle';
 
-const QUESTIONS = [
+let QUESTIONS = [
   { q:'Water turning from liquid into vapor is called what?',
     a:['Evaporation','Condensation','Precipitation','Collection'], ok:0, idea:'evaporation', level:1,
     why:'Evaporation is liquid becoming vapor. Heat gives the molecules enough energy to escape.' },
@@ -174,9 +279,30 @@ const QUESTIONS = [
   { q:'Cloud droplets are tiny. What has to happen before rain falls?',
     a:['They must freeze','They must join until heavy enough to fall','The cloud must reach the ground','The wind must stop'], ok:1, idea:'precipitation', level:2,
     why:'Droplets collide and merge. Falling needs enough weight to beat the rising air.' },
-  { q:'A storm drops half an inch of rain on a paved lot and half an inch on a nearby forest. Which one sees more precipitation, and why?',
-    a:['The lot; pavement pulls in more rain','Neither; precipitation is the rain falling, not what happens after it lands','The forest; trees increase local rainfall','The lot; less wind resistance'], ok:1, idea:'precipitation', level:3,
-    why:'Precipitation is only the falling water. What the ground does with it afterward (runoff or infiltration) is a separate stage.' },
+
+  { q:'Water that flows over the ground into rivers is called what?',
+    a:['Infiltration','Runoff','Condensation','Evaporation'], ok:1, idea:'runoff', level:1,
+    why:'Runoff travels across the surface instead of soaking in.' },
+  { q:'A parking lot floods but the field beside it does not. Why?',
+    a:['Pavement blocks infiltration, so water runs off','Pavement attracts rain','The field is warmer','Fields evaporate faster'], ok:0, idea:'runoff', level:2,
+    why:'Water that cannot soak in has to go somewhere, so it runs off.' },
+  { q:'A town paves over a wetland. What most likely happens downstream?',
+    a:['Less flooding, the water is held','More flooding, less ground to absorb it','No change, rain is the same','Less evaporation only'], ok:1, idea:'runoff', level:3,
+    why:'Removing ground that absorbs water sends more of it downstream, faster.' },
+
+  { q:'Water released from the leaves of plants is called what?',
+    a:['Transpiration','Precipitation','Percolation','Condensation'], ok:0, idea:'transpiration', level:1,
+    why:'Transpiration is plants releasing water vapor through their leaves.' },
+  { q:'A forest is cleared. What happens to water vapor entering the air there?',
+    a:['It rises, fewer roots hold water','It falls, the trees were transpiring','Nothing, only oceans matter','It rises, soil evaporates more than trees'], ok:1, idea:'transpiration', level:3,
+    why:'Trees move a great deal of water into the air. Remove them and that stops.' },
+
+  { q:'What provides the energy that drives the whole water cycle?',
+    a:['The moon','The sun','The wind','The tides'], ok:1, idea:'energy', level:1,
+    why:'Sunlight is the energy source. Without it nothing evaporates and nothing moves.' },
+  { q:'Why is the water cycle called a cycle?',
+    a:['It happens once a year','Water is used up and replaced','The same water moves through the same stages again','It only works in circles of rain'], ok:2, idea:'energy', level:2,
+    why:'No new water is made. The same water keeps moving through the same stages.' },
 ];
 
 /* ===========================================================================
@@ -648,6 +774,252 @@ $('blurb').textContent='Cross the country to '+DESTINATION+'. Every fork is your
 const b0=loadBest();
 $('best').textContent=b0?('Class best: '+b0.ideas+' ideas in '+b0.days+' days.'):'Nobody has made it yet.';
 step();
+
+/* ===========================================================================
+   PUT YOUR OWN QUESTIONS IN.
+
+   No account, no upload, no server. Everything below runs in this page. The
+   only thing that ever leaves is the file you choose to save, and it goes to
+   your own drive.
+
+   The teacher's questions are teacher-authored content, so there is no student
+   data here and nowhere for any to go. That is deliberate and it is why this
+   file can be emailed around without a second thought.
+   =========================================================================== */
+
+const SAMPLE = { journey:JOURNEY, dest:DESTINATION, subject:SUBJECT,
+                 qs:JSON.parse(JSON.stringify(QUESTIONS)) };
+const KEEP = 'longroad.pack';
+let PRISTINE = '';
+const MARK = 'longroad-your-questions';
+
+document.addEventListener('DOMContentLoaded',()=>{ PRISTINE = document.documentElement.outerHTML; });
+
+/* ---------------------------------------------------------------- apply --- */
+function applyPack(p){
+  if(!p || !p.qs || !p.qs.length) return;
+  QUESTIONS = p.qs; JOURNEY = p.journey || JOURNEY;
+  DESTINATION = p.dest || DESTINATION; SUBJECT = p.subject || SUBJECT;
+  paintTitle();
+}
+function paintTitle(){
+  $('ttl').textContent = JOURNEY;
+  $('blurb').textContent = 'Cross the country to '+DESTINATION+'. Every fork is your choice: '
+    +'the easy road, the steady one, or the hard pass that pays. What you get wrong blocks the road later — '
+    +'and clearing it is the best thing that happens out here. '+SUBJECT+'.';
+}
+
+/* ------------------------------------------------------------- the form --- */
+function pack(){
+  return { journey:$('mJourney').value.trim(), dest:$('mDest').value.trim(),
+           subject:$('mSubject').value.trim(), qs:readRows() };
+}
+function fillForm(p){
+  $('mJourney').value=p.journey; $('mDest').value=p.dest; $('mSubject').value=p.subject;
+  renderRows(p.qs); writePrompt();
+}
+function esc2(t){ return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function rowHTML(q,i){
+  const a=(q.a||['','','','']).concat(['','','','']).slice(0,4);
+  const ans=a.map((t,j)=>`<div class="ansline">
+      <label><input type="radio" name="ok${i}" value="${j}"${q.ok===j?' checked':''}> right</label>
+      <input type="text" class="a" data-j="${j}" value="${esc2(t)}" placeholder="${j===0?'answer':'another answer'}">
+    </div>`).join('');
+  return `<div class="qrow" data-i="${i}">
+    <div class="hd"><span class="no">Question ${i+1}</span>
+      <button class="btn quiet small del" type="button">Remove</button></div>
+    <div class="fld"><label>The question</label><textarea class="q">${esc2(q.q)}</textarea></div>
+    ${ans}
+    <div class="three3" style="margin-top:7px">
+      <div class="fld"><label>Idea it tests</label><input type="text" class="idea" value="${esc2(q.idea)}"></div>
+      <div class="fld"><label>Level</label><select class="level">
+        <option value="1"${q.level==1?' selected':''}>1 — easy</option>
+        <option value="2"${q.level==2?' selected':''}>2 — medium</option>
+        <option value="3"${q.level==3?' selected':''}>3 — hard</option></select></div>
+      <div class="fld"><label>Why the answer is right</label><input type="text" class="why" value="${esc2(q.why)}"></div>
+    </div></div>`;
+}
+function renderRows(qs){
+  $('qlist').innerHTML = qs.map(rowHTML).join('');
+  $('countLine').textContent = qs.length+(qs.length===1?' question.':' questions.')
+    +' Twelve to twenty across three or four ideas plays best.';
+}
+function readRows(){
+  return [...$('qlist').querySelectorAll('.qrow')].map(r=>{
+    const a=[...r.querySelectorAll('input.a')].map(i=>i.value.trim());
+    const ok=r.querySelector('input[type=radio]:checked');
+    return { q:r.querySelector('textarea.q').value.trim(), a,
+             ok: ok?+ok.value:-1,
+             idea:r.querySelector('input.idea').value.trim().toLowerCase(),
+             level:+r.querySelector('select.level').value,
+             why:r.querySelector('input.why').value.trim() };
+  });
+}
+$('qlist').addEventListener('click',e=>{
+  const b=e.target.closest('.del'); if(!b) return;
+  const cur=readRows(); cur.splice(+b.closest('.qrow').dataset.i,1); renderRows(cur);
+});
+$('addBtn').onclick=()=>{ const cur=readRows();
+  cur.push({q:'',a:['','','',''],ok:0,idea:'',level:1,why:''}); renderRows(cur);
+  $('qlist').lastElementChild.scrollIntoView({block:'center'}); };
+$('sampleBtn').onclick=()=>{ if(confirm('Replace everything here with the sample questions?'))
+  fillForm(JSON.parse(JSON.stringify(SAMPLE))); };
+
+/* ------------------------------------------------------------- the prompt -- */
+function writePrompt(){
+  const subj=$('mSubject').value.trim()||'your topic';
+  $('promptBox').textContent =
+`Write 12 multiple-choice review questions about ${subj}.
+
+Give me one question per line with eight parts separated by the | character, and nothing else. No numbering, no headings, no blank lines, no line that is not a question.
+
+question | correct answer | wrong answer | wrong answer | wrong answer | idea | level | why
+
+idea: two or three words naming the concept the question tests. Use only three or four different ideas across all twelve questions, so several questions share each one.
+level: 1, 2 or 3. 1 is straight recall, 2 is applying it, 3 is reasoning about a situation the student has not seen. Give me roughly four of each.
+why: one sentence saying why the correct answer is correct, written for a student who just got it wrong. This sentence has to teach on its own.
+
+Do not use the | character inside any part. Do not write anything before or after the twelve lines.`;
+}
+$('mSubject').addEventListener('input',writePrompt);
+$('copyBtn').onclick=async()=>{
+  const t=$('promptBox').textContent;
+  try{ await navigator.clipboard.writeText(t); tell('pasteMsg','good','Copied. Paste it into your AI tool.'); }
+  catch(e){ const r=document.createRange(); r.selectNodeContents($('promptBox'));
+    const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    tell('pasteMsg','good','Selected it for you. Press Ctrl+C (or Command+C) to copy.'); }
+};
+$('fmtBtn').onclick=()=>{ $('fmtHelp').hidden=!$('fmtHelp').hidden; };
+
+/* --------------------------------------------------------------- parsing -- */
+function shuffle4(right,wrongs){
+  const all=[right,...wrongs]; 
+  for(let i=all.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [all[i],all[j]]=[all[j],all[i]]; }
+  return { a:all, ok:all.indexOf(right) };
+}
+function parsePaste(text){
+  const out=[], bad=[];
+  text.split(/\r?\n/).forEach((raw,n)=>{
+    const line=raw.trim(); if(!line) return;
+    if(!line.includes('|')) { bad.push('Line '+(n+1)+' has no | in it, so it was skipped.'); return; }
+    const f=line.split('|').map(t=>t.trim());
+    if(f.length<8){ bad.push('Line '+(n+1)+' has '+f.length+' parts instead of 8, so it was skipped.'); return; }
+    if(/^question$/i.test(f[0])) return;                       // a pasted header row
+    const lv=parseInt(f[6],10);
+    const s=shuffle4(f[1],[f[2],f[3],f[4]]);
+    out.push({ q:f[0], a:s.a, ok:s.ok, idea:f[5].toLowerCase(),
+               level:(lv>=1&&lv<=3)?lv:2, why:f.slice(7).join(' ').trim() });
+  });
+  return { qs:out, bad };
+}
+function loadPasted(replace){
+  const r=parsePaste($('pasteBox').value);
+  if(!r.qs.length){ tell('pasteMsg','bad','Nothing loaded.'+(r.bad.length?'':' Each line needs eight parts separated by the | character.'),r.bad); return; }
+  const cur = replace ? r.qs : readRows().concat(r.qs);
+  renderRows(cur);
+  tell('pasteMsg','good','Loaded '+r.qs.length+(r.qs.length===1?' question. ':' questions. ')
+    +'Read them before you play them.', r.bad);
+  $('pasteBox').value='';
+}
+$('loadBtn').onclick=()=>loadPasted(true);
+$('appendBtn').onclick=()=>loadPasted(false);
+
+function tell(id,kind,head,list){
+  const el=$(id);
+  el.className='msg on '+kind;
+  el.innerHTML='<b>'+esc2(head)+'</b>'+((list&&list.length)
+    ? '<ul>'+list.map(t=>'<li>'+esc2(t)+'</li>').join('')+'</ul>' : '');
+}
+
+/* ------------------------------------------------------------ validation -- */
+function problems(p){
+  const bad=[];
+  if(!p.journey) bad.push('The game needs a title.');
+  if(!p.dest) bad.push('The game needs somewhere to travel to.');
+  if(p.qs.length<6) bad.push('You have '+p.qs.length+' questions. Six is the fewest that plays; twelve is better.');
+  const ideas=new Set();
+  p.qs.forEach((q,i)=>{
+    const n='Question '+(i+1);
+    if(!q.q) bad.push(n+' has no question in it.');
+    if(q.a.filter(Boolean).length<4) bad.push(n+' needs all four answers filled in.');
+    if(q.ok<0) bad.push(n+' has no answer marked right.');
+    else if(!q.a[q.ok]) bad.push(n+' has an empty answer marked right.');
+    if(!q.idea) bad.push(n+' has no idea named, so the game cannot bring it back later.');
+    if(!q.why) bad.push(n+' has no "why" line, which is the part that teaches.');
+    if(q.idea) ideas.add(q.idea);
+  });
+  if(ideas.size===1 && p.qs.length>3)
+    bad.push('Every question uses the same idea. The game never asks two of the same idea in a row, so it needs at least two.');
+  return bad;
+}
+
+/* ------------------------------------------------------- play, keep, save -- */
+$('playBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Not ready to play yet:',bad);
+    $('doneMsg').scrollIntoView({block:'center'}); return; }
+  applyPack(p); closeEditor(); $('startBtn').click();
+};
+$('keepBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Fix these first:',bad); return; }
+  try{ localStorage.setItem(KEEP,JSON.stringify(p));
+    tell('doneMsg','good','Kept in this browser on this computer. It will be here next time you open '
+      +'this file — but clearing your browsing data erases it, so save the file too.'); }
+  catch(e){ tell('doneMsg','bad','This browser would not let the page store anything. Use '
+      +'"Save my game as a file" instead, which does not need storage.'); }
+};
+$('dlBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Fix these first:',bad); return; }
+  const src = PRISTINE || document.documentElement.outerHTML;
+  const clean = src.replace(new RegExp('<!--'+MARK+'-->[\\s\\S]*?<!--\\/'+MARK+'-->','g'),'');
+  const inject = '<!--'+MARK+'--><script>window.MY_PACK='
+    + JSON.stringify(p).replace(/<\//g,'<\\/') + ';<\/script><!--/'+MARK+'-->';
+  /* assembled, never written out whole: a literal closing body tag in this
+     source would be the first one found and the injection would land here */
+  const END = '<\/bo'+'dy>';
+  const at = clean.lastIndexOf(END);
+  const html = '<!DOCTYPE html>\n' + clean.slice(0,at) + inject + '\n' + clean.slice(at);
+  const name = (p.journey||'my-review-game').toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40) || 'my-review-game';
+  const url = URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  const a = document.createElement('a'); a.href=url; a.download=name+'.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  tell('doneMsg','good','Saved as '+name+'.html, wherever your browser puts downloads. '
+    +'Open that file and your questions are already in it.');
+};
+
+/* ------------------------------------------------------------ open, close -- */
+function openEditor(){
+  fillForm(currentPack()); $('editor').classList.add('on'); $('wrap').hidden=true;
+  $('doneMsg').className='msg'; $('pasteMsg').className='msg';
+  window.scrollTo(0,0); $('mJourney').focus();
+}
+function closeEditor(){ $('editor').classList.remove('on'); $('wrap').hidden=false; }
+function currentPack(){
+  return { journey:JOURNEY, dest:DESTINATION, subject:SUBJECT,
+           qs:JSON.parse(JSON.stringify(QUESTIONS)) };
+}
+$('setupBtn').onclick=openEditor;
+$('backBtn').onclick=closeEditor;
+
+/* What loads, and in what order: a file saved from here beats the browser, and
+   the browser beats the samples that shipped with it.
+
+   This waits for the page to finish parsing, because a file saved from here
+   carries its questions in a block that sits after this script. Running any
+   sooner would read a variable that does not exist yet. The listener that
+   captures the page source is registered above this one and therefore runs
+   first, which is what keeps the saved copy clean. */
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.MY_PACK){ applyPack(window.MY_PACK); return; }
+  try{ const kept=JSON.parse(localStorage.getItem(KEEP)||'null'); if(kept) applyPack(kept); }
+  catch(e){}
+});
 </script>
 </body>
 </html>

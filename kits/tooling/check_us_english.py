@@ -22,6 +22,9 @@ PAIRS = [
     (r'catalogue\b', 'catalog'),
     (r'\bmaths\b', 'math'),
     (r'\bgrey\b', 'gray'),
+    (r'licen[cC]e(s|d)?\b', 'license'),
+    (r'defence\b', 'defense'),
+    (r'practis(e|es|ed|ing)\b', 'practice'),
 ]
 DEFAULTS = ['kits', 'tpt/listings.json', 'tpt/make_pins.js', 'tpt/make_covers.js',
             'tpt/make_previews.js', 'tpt/make_listing_extras.js']

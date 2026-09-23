@@ -43,6 +43,72 @@ the word, but to tell us when the bet starts paying.
 
 ---
 
+## THE PRODUCT SHAPE — owner directive 2026-09-23, binding on Lane A
+
+> **Owner:** "I'm just not feeling the content. Continue sticking with AI PDs and
+> young entreprenuer (AI integration) content. Keep the Vibe Coding content
+> applicable but something that teachers would actually be willing to buy. If it
+> is extremely detailed, teachers won't want it. They want something that is
+> immediately actionable."
+
+**What was wrong, measured rather than guessed.** Every Lane A product shipped so
+far is 23 to 31 pages: self-checking 31 · dashboard 25 · behavior tracker 27 ·
+review game 31 · the Long Road 31 · roster 31 · pitch to prototype 23. Ten and
+twelve-task build-alongs. **That is a course in vibe coding**, and it asks a
+teacher for two hours before anything works.
+
+**The diagnosis, stated plainly so the factory stops repeating it.** We were
+selling the process. A teacher shopping on a Sunday night is not buying a course
+in how to build a tool; they are buying the tool. **Vibe coding is how the thing
+gets made and how it becomes theirs. It is not what they are buying.**
+
+### The new shape — the tool first, the teaching second
+
+| | Old | New |
+|---|---|---|
+| Opens with | Task 1 of 12 | A working file, already running |
+| Pages | 23–31 | **6–10** |
+| Time to something useful | ~2 hours | **Under 15 minutes** |
+| Prompts | 12, written in full | **3–5, and each changes one real thing** |
+| Price | $19–29 | **$9–14** |
+
+**Rules, and they are not negotiable:**
+
+1. **The working file is the product.** It ships with sample content already in
+   it, so double-clicking it produces something that runs before the teacher has
+   read a word.
+2. **The teacher's own content goes in without touching code.** A setup screen
+   inside the file, not a marked block in the source. Asking a teacher to edit
+   HTML in a text editor is the step where they give up.
+3. **Under fifteen minutes to their own version**, and page 2 is the ten-minute
+   path with nothing else on it.
+4. **One page of prompts, three to five, each changing one real thing.** That is
+   the vibe-coding lesson and it is a page, not a curriculum.
+5. **Nothing is a task list.** No numbered build-along, no "by the end of task 7".
+6. **Every product still carries** the honest-competition page, the three-tier
+   data rule sized to the product, what it does *not* do, and the review request.
+
+### Where AI belongs in the product, and it is not in the margins
+
+The fastest, most visible use of AI in a Lane A product is **filling the tool
+with the teacher's own content**: a copy-and-paste prompt that drafts a whole
+round in about thirty seconds, in a format the file parses on paste. That is
+"the power of AI beyond lesson plans and worksheets" in a form a teacher feels
+in the first two minutes, and **every Lane A tool from here on ships one.**
+
+It always carries the same instruction: **read them before you use them.** AI
+gets things wrong and the teacher owns the standards.
+
+### What happens to the seven products already built
+
+They stay live and are not withdrawn. **The Long Road was rebuilt into the new
+shape on 09-23** as the worked example: 8 pages, $12, with the questions setup
+screen and the AI drafting prompt built into the game. The remaining six are
+re-cut in the same way, newest first, one per satellite slot, and repriced on
+the owner's call rather than unilaterally.
+
+---
+
 ## LANE A · Teacher Vibe Coding
 
 Teaching teachers to build the software that runs their room.
@@ -102,9 +168,10 @@ teacher who gets stuck still owns the tool.
 
 ### Price
 
-**$19–29** for a full build-along with the working app. These are genuine
-professional development with a deliverable, and the ceiling is set by what
-the tool replaces, not by page count.
+**$9–14** under the 09-23 shape — the tool, plus six to ten pages that get it
+filled and running. The old $19–29 band was for twelve-task build-alongs and it
+is retired. The ceiling is set by what the tool replaces; the floor is set by
+the fact that a teacher will not spend $24 to find out whether they like it.
 
 ---
 
@@ -150,6 +217,7 @@ Pretending the competition does not exist is the fastest way to lose a review.
 | # | Build | The hook |
 |---|---|---|
 | 1 | **Boss Battle Review Game** *(shipped)* | Your questions are the weapon |
+| 1b | **The Long Road** *(rebuilt 09-23 to the new shape)* | Choice before question, and your questions in ten minutes |
 | 2 | Escape room / locked doors | A code you only get by knowing the content |
 | 3 | Two-team head-to-head | The loudest thirty minutes of the week |
 | 4 | Arcade run where right answers power the action | Movement, not multiple choice |
@@ -185,8 +253,13 @@ good enough, and it is not optional. The short version, and the gate is longer:
 - **No student data, ever.** These games know nothing about any child and save
   no name. The obvious feature request — a named high-score table — is
   refused in the product itself and the reason is given.
-- **$19–24.** Top of the impulse band. The roster's $39 experiment is not
-  repeated without evidence.
+- **$9–14** under the 09-23 product-shape directive. The impulse band, where a
+  teacher buys without asking anybody. The roster's $39 experiment is not
+  repeated without evidence, and the old $19–24 band went with the twelve-task
+  shape that the directive retired.
+- **The game ships with a questions setup screen and an AI drafting prompt.**
+  Editing a marked block in the source is not good enough: a teacher who has to
+  open an HTML file in a text editor stops there.
 
 ---
 
@@ -319,6 +392,13 @@ container is available then.
 - **"Vibe Coding" appears in the title of any Lane C session that builds
   software**, and not in the ones that do not. Session 3 carries it; Session 4
   does not.
+- **A lab file is never edited in a text editor.** The 09-23 product-shape
+  directive applies to Lane C labs with more force than anywhere else: a room
+  of forty teachers opening HTML in Notepad is the session failing in public.
+  Kit 3's starter was swapped on 09-23 for the setup-screen build, and
+  **Wednesday two must rewrite the lab pages of the script and the handout to
+  match it** — the script as committed on 09-23 still walks participants
+  through editing the code block. That is a named task, not a hope.
 
 ---
 

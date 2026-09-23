@@ -2431,7 +2431,7 @@ Vibe Code Your Own Game | Teachers Pay Teachers
 
 --- DESCRIPTION ---
 
-Vibe code your own game: a journey review game where every turn is a choice before it is a question. Students pick the easy road, the steady one or the hard pass that pays, so the thinking starts before the question appears and two students get different journeys. What they get wrong blocks a road on the map until they go back and fix it, and clearing one is the only full-screen celebration in the game. Built on what the research says about motivation: feeling capable is the strongest driver and points do almost nothing for it. No logins, no subscription, no way to lose in front of the class, and it runs with the wifi down. From two certified teachers.
+Open the file and it works. Put your own questions in from a setup screen built into the game, or copy the prompt and have AI draft a whole round in about thirty seconds, then save it as your own file to reuse every year. A journey review game where every turn is a choice before it is a question. Students pick the easy road, the steady one or the hard pass that pays, so the thinking starts before the question appears and two students get different journeys. What they get wrong blocks a road on the map until they go back and fix it, and clearing one is the only full-screen celebration in the game. Built on what the research says about motivation: feeling capable is the strongest driver and points do almost nothing for it. No logins, no subscription, no way to lose in front of the class, and it runs with the wifi down. From two certified teachers.
 
 --- LINK ---
 
@@ -2444,6 +2444,49 @@ Vibe Code Your Own Game   <- create once, reuse forever
 --- TAGGED TOPICS ---
 
 Try: vibe coding · review game · test prep   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE AI INSTRUCTIONS FILE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ai-instructions-file-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+The AI Instructions File | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free for teachers building anything with AI: the instructions file. One short page you write once and paste at the start of every chat, saying what the thing is, what it must never do, and what the AI should do when it does not know what you want. Includes a real instructions file from a live classroom project, the one sentence that stops it asking and starts it deciding, and a fill-in page so you leave with your own. No coding, nothing to install. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai tools · teacher tools · technology professional development   <- pick whatever Pinterest's search suggests closest
 
 --- TAG PRODUCTS ---
 
