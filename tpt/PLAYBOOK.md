@@ -821,3 +821,65 @@ thin against that bar, fix the kit, not the price.
   (Young Entrepreneurs) had nothing ready this week either; the next
   Lane A or Lane B build is an owner call on the hall-pass question
   above, or the seating-chart build, or Lane B's build 2.
+- **2026-09-23 (Wednesday, Lane C — Kit 3 half-build, job 2 of the
+  Wednesday routine)**: per `tpt/intel/2026-09-23-wed-brief.md` section
+  (a), no PD was in progress (`kits/` held only kit01-tpt and
+  kit02-tpt) and the brief called for starting one, so this run built
+  **the deck and the facilitator script only**. **Nothing shipped to
+  TPT.** Session 3, "Build Your First Classroom Tool": a 34-slide deck
+  with speaker notes on every slide and a facilitator script (~10 pp +
+  cover, 11 pages total), both keyed to each other, both following the
+  Kit 1/Kit 2 file pattern exactly (`kits/kit03-tpt/src/deck.js`,
+  `Kit03_FacilitatorScript.html`/`.cover.html`). Ms. Rivera continues
+  as the series' running exemplar (Track A, Kit 3 of 20): she builds
+  one multiplication-facts review game through the full
+  describe/build/test/change-one-thing loop before the room tries it
+  themselves. Also built, ahead of the letter of job 2 per the brief's
+  own recommendation to avoid script drift: the lab's starter game
+  file (`Kit03_ReviewGameStarter.html`), adapted from the
+  already-shipped, `GAME-DESIGN-STANDARD.md`-compliant `long-road.html`
+  and trimmed to nine questions matching the brief's spec.
+  **Browser-tested with Playwright**: 40+ turns including a forced
+  wrong-answer path, a forced "missed idea returns and gets fixed"
+  celebration, and a `localStorage`-blocked (private-window)
+  simulation, all with zero console or page errors.
+  **All five of the brief's mandate statistics were re-verified**
+  against primary sources (enrolled Maryland SB 720 text, Virginia and
+  Ohio law summaries, the FutureEd legislative tracker, Gallup/Walton
+  and IBM/Morning Consult 2026 surveys) before reaching a slide; two
+  were corrected from the brief's own unverified web research — "70+
+  bills" to the exact 77, and Ohio recast as a policy-adoption mandate
+  only rather than a training mandate "comparable" to Maryland's. Full
+  record in `kits/kit03-tpt/RESEARCH_LOG.md`.
+  **One real bug found and fixed in shared tooling**: `check_footer.py`
+  failed on Kit 3's cover page; rebuilding Kit 1's and Kit 2's own
+  already-committed cover sources fresh in this container reproduced
+  the identical failure (a smaller, pre-existing version of the same
+  overflow that nobody had re-rendered against this gate since it was
+  added 2026-09-20), so this was a shared-template bug, not something
+  Kit 3 introduced. Root cause: `kits/tooling/brand.css`'s
+  `.cover .credit` block was flex-flow-positioned, letting its
+  rendered position drift with small content/font-metric differences.
+  Fixed by taking it out of flex flow (`position: absolute`, anchored
+  to a fixed offset from the sheet bottom). Verified with
+  `check_footer.py` (0 collisions) and full-page screenshots of both
+  the Kit 3 and a freshly-rendered Kit 2 cover. This does not require
+  re-shipping the already-live Kit 1/2 PDFs (static binaries,
+  unaffected by a CSS source change).
+  **Two environment gaps, not content bugs, flagged for next
+  Wednesday**: (1) `check_overlap.py` could not run — this container's
+  LibreOffice has no Impress/Writer components installed and the
+  package mirror 404'd on `apt-get install libreoffice-impress`; a
+  Python bounding-box proxy check found zero shape-level collisions
+  across all 34 slides, but the real gate must still run before the
+  2026-09-30 ship. (2) `check_fonts.py` flags Inter as a "fallback"
+  font because its brand list is scoped to the Bright Scholar
+  TPT-listing brand (Fredoka/Nunito/LuckiestGuy), not the Track A
+  Kit-series brand (Inter, per `KIT_STANDARD.md`) — confirmed
+  pre-existing by running the identical check against the already-shipped
+  Kit 1 and Kit 2 PDFs, which fail it the same way. All other gates
+  clean: `check_breaks.py` 0, `check_us_english.py` 0, `check_footer.py`
+  0. `tpt/intel/vibe-coding-line.md` updated with full status.
+  **Ships as drop 59 on 2026-09-30**: the seven remaining KIT_STANDARD
+  components, the real `check_overlap.py` run, the pipeline, and the
+  drop zip and pins zip delivered to the owner.

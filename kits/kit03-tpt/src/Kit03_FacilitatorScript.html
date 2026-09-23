@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kit 3: Word-for-Word Facilitator Script</title>
+<link rel="stylesheet" href="../../tooling/brand.css">
+</head>
+<body>
+<table class="doc">
+  <thead><tr><td>
+    <div class="band">
+      <img class="logo" src="../../../public/brand/logo-nav-dark.svg" alt="AI-Ready School">
+      <div class="doc-tag">Kit 3 · Track A · AI Foundations<b>Word-for-Word Facilitator Script</b></div>
+    </div>
+  </td></tr></thead>
+  <tfoot><tr><td class="foot-space"></td></tr></tfoot>
+  <tbody><tr><td class="content-cell">
+
+    <h1 style="font-size:16pt">How to use this script</h1>
+    <p><strong>Everything in plain type is meant to be spoken aloud.</strong> Read it verbatim (it's
+    written for the ear) or glance and paraphrase once you're comfortable. Either way delivers a
+    complete session. This kit assumes Kits 1 and 2: the one hard rule on student data and the
+    four-part prompt formula are both in force here and get reused, not retaught. This session is
+    hands-on from the middle onward, so read the lab support slides (22-28) before you present;
+    they carry most of the troubleshooting weight so you don't have to improvise it live.</p>
+    <div class="callout teal"><strong>Meet Ms. Rivera.</strong> Throughout the deck you'll see the
+    same example teacher's screen: Ms. Rivera, our running composite (not a real person; she
+    appears in every kit). Today she builds one review game, start to finish, before the room
+    tries it themselves. When her screen is up, point the room at it; it's the model to mimic.
+    Her tracker chip sits top-right on every slide; the matching line under each slide cue below
+    tells you what it says, so you always know what the room is reading.</div>
+
+    <h2>Timing checkpoints</h2>
+    <table>
+      <tr><th>Clock</th><th>You should be…</th><th>If behind…</th></tr>
+      <tr><td>0:04</td><td>Starting the one hard rule (slide 5)</td><td>Trim slide 3's framing to one line</td></tr>
+      <tr><td>0:08</td><td>Starting the live loop demo (slide 9)</td><td>Skip slide 7's honest-limits detail; the loop demo teaches it anyway</td></tr>
+      <tr><td>0:18</td><td>Starting guided practice (slide 18)</td><td>Cut the vague-prompt demo (slide 15) to one sentence instead of a live run</td></tr>
+      <tr><td>0:24</td><td>Opening the lab (slide 21)</td><td>Open it anyway; the lab is the session</td></tr>
+      <tr><td>0:54</td><td>On what-you-built (slide 29)</td><td>Skip straight to the commitment slide (32) and hand out exit tickets</td></tr>
+    </table>
+    <p class="small">45-minute version: run the loop demo (slides 9-13) at two steps instead of
+    four (describe+build combined, test+change combined), skip the live vague-prompt demo (slide
+    15, tell it instead of showing it), and take the lab down to 28 minutes. The lab loses at
+    most two minutes; discussion is what gets cut. Read the "45-min cut" stage notes where they
+    appear. A 90-minute version adds 25 minutes to the lab (55 total) and closes with a 5-minute
+    share-out where three people project what they built; add that time at slide 21 and slide 31.</p>
+
+    <div style="break-inside:avoid">
+    <h2 style="margin-top:0">From the founders</h2>
+    <p class="stage">This note is from Adam and Katelyn Spinozzi, the two certified teachers who wrote
+    this kit. It's here to give you their perspective before you present. Sharing it is entirely your
+    call: read parts aloud where they fit, retell them in your own words, or keep it to yourself as
+    background. The session is complete either way.</p>
+    <div class="callout" style="border-left-color:var(--amber)">
+      <p style="margin-top:0">We're Adam and Katelyn, and here is why this session matters for what happens in your
+      classrooms: every other kit in this series teaches teachers to use a tool someone else built.
+      This one teaches them to build the tool. That is a different kind of confidence, and it is the
+      one that sticks. A teacher who has watched a blank file become a working game they can hand to
+      their own students stops seeing "AI can write code" as a headline about someone else's job and
+      starts seeing it as something they did, once, with their own hands, on their own laptop.</p>
+      <p style="margin-bottom:0">The lessons we believe this hour will leave with your staff: the loop that makes any
+      of this safe to attempt, describe, build, test, change one thing, which works whether the tool
+      is a review game or the next thing your building needs; the honest limit that the tool can
+      still misunderstand a vague request with total confidence, which is why you always test before
+      you trust; and the recovery habit, saving a copy before a risky change, that turns every
+      possible mistake in this lab into a thirty-second reset instead of a lost afternoon. Nobody in
+      this room needs to become a programmer. They need to leave believing they already have the one
+      skill that matters here: knowing how to describe, in plain language, exactly what they want.</p>
+    </div>
+    </div>
+
+<h2 class="segment-head">Segment 1 · Welcome &amp; why now (slides 1-4)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 1</span><span class="title">Title</span><span class="clock">0:00</span></div>
+    <p class="stage">Slide 1 up as people arrive. Start on time.</p>
+    <p class="say">Welcome back. In our last two sessions you learned the one hard rule for student
+    data and a formula for writing prompts that actually work. Today is different from both: today
+    you don't just use AI, you describe a small piece of software into existence, and you leave
+    holding it. By the end of this hour, everyone in this room has a working review game, on their
+    own device, for their own subject.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 2</span><span class="title">This is not optional anymore</span><span class="clock">0:01</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her mandate: the state just funded this hour. Her building goes first.</p>
+    <p class="say">Here's why this session exists this year specifically. Maryland just passed
+    Senate Bill 720, now law, requiring every local school system to train its teachers on AI, with
+    the state's own goal of finishing by July 1st, 2027. It also requires every district to name an
+    AI coordinator and publish a rubric for evaluating AI tools before buying them. Virginia and
+    Ohio both passed their own 2026 laws the same year. And this isn't three states acting alone:
+    77 AI-in-education bills moved through 27 state legislatures in the 2026 session. That is a
+    direction, not an outlier.</p>
+    <div class="callout teal"><strong>If asked "does our state have a law like this?"</strong> Say
+    what you know and don't guess at the rest: "I don't know our state's specific timeline, but the
+    direction is the same everywhere, more states are requiring this, not fewer. Today gets us
+    ahead of it either way."</div>
+
+    <div class="slide-cue"><span class="num">SLIDE 3</span><span class="title">The money is already district money</span><span class="clock">0:02</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her math: one purchase, the whole staff, half price after the first seat.</p>
+    <p class="say">One more thing worth knowing before we start: Maryland's law is explicit that
+    teachers must be compensated for this training, with time, money, or recertification credits,
+    and may not be charged to attend. If your district owes you this training, today can be the
+    session that satisfies it. And practically: this kit is priced so one purchase order covers a
+    whole staff, at half price for every license after the first. That's not your problem to solve
+    today, but it's why a session like this one exists in your building at all.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 4</span><span class="title">The gap this hour closes</span><span class="clock">0:03</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her honest gap: no formal guidance yet, same as most of the room.</p>
+    <p class="say">And here's the honest starting line: in a 2026 Gallup survey, 82 percent of
+    teachers say they've gotten no formal guidance on using AI in their work. A separate 2026
+    survey found only 20 percent report extensive training, and 42 percent name a lack of training
+    as their single biggest barrier. If that's you, you are the majority, not behind. Today: the
+    one rule, what "vibe coding" actually means, a live demo of the loop that makes this safe, one
+    change together, and then thirty protected minutes where you build your own.</p>
+
+<h2 class="segment-head">Segment 2 · The rule, the term, and the loop (slides 5-8)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 5</span><span class="title">The one hard rule</span><span class="clock">0:04</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her one rule, before anything opens: no student data in any prompt, ever.</p>
+    <p class="say">Before a single laptop opens, the rule from Kit 1, restated because today is
+    hands-on and hands-on is where rules get forgotten: no student's name, score, grade, IEP
+    status, behavior record, or writing sample ever enters a prompt. Not today, not with your own
+    class, not as an example. Here's the good news: everything you build today is questions,
+    answers, and a title. There is nowhere for a child's data to even go.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 6</span><span class="title">What "vibe coding" actually means</span><span class="clock">0:05</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her definition: describe what you want, in English, and test what comes back.</p>
+    <p class="say">You've probably heard the term and maybe rolled your eyes a little. Here's what
+    it actually means, no hype: you describe what you want, in plain English. The AI writes the
+    code. You test what it made, and you keep describing changes until it does what you need. No
+    programming class, no syntax to memorize. You already know how to describe what you want
+    clearly, we worked on exactly that skill in Kit 2. That's the whole thing.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 7</span><span class="title">What it is not</span><span class="clock">0:06</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her correction: still her content, her questions, her class. The AI types.</p>
+    <p class="say">Three honest corrections before we go further. It's not magic: every good result
+    traces back to a clear, specific description, vague in still means broken out. It's not
+    hands-off: you read every change, test every change, and decide what ships. And it's not
+    "from scratch": today you change a working program by describing what you want. That's the
+    real skill, and claiming otherwise would be a lie your students catch in a minute. We say what
+    really happened, every time, in every product we make.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 8</span><span class="title">The loop, named</span><span class="clock">0:07</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her loop, named: describe, build, test, change one thing.</p>
+    <p class="say">Four words that are the entire session: describe, build, test, change one
+    thing. Describe what you want, specifically. It builds. You test it yourself, before anyone
+    else does. You change one thing at a time and test again. That loop is what you're about to
+    watch, then practice together, then run on your own for thirty minutes.</p>
+
+<h2 class="segment-head">Segment 3 · Watch the loop, live (slides 9-13)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 9</span><span class="title">Ms. Rivera builds one game, start to finish</span><span class="clock">0:08</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her pick for today: a multiplication-facts review game, her own 4th graders.</p>
+    <p class="say">Before you try this yourself, watch it happen once, live, on Ms. Rivera's
+    screen. She's building a multiplication-facts review game for her own 4th graders, one
+    artifact, the whole loop, start to finish. Nothing she does here is faster than what you'll
+    do; watch the moves, not the speed.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 10</span><span class="title">Describe what you want</span><span class="clock">0:09</span></div>
+    <p class="stage">Her full chat window is the slide, so the tracker chip steps aside here.</p>
+    <p class="say">Her first instinct was "make me a review game," which is too vague to act on.
+    What she actually typed: she has a starter file, and she describes exactly what to replace,
+    her eight questions pasted in full, a new title, and one more sentence that matters more than
+    it looks: keep everything else in the file exactly the way it works now. That boundary line is
+    the single most useful sentence in this whole session. It's what stops the AI from touching
+    things you never asked it to touch.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 11</span><span class="title">Build: it writes, she watches</span><span class="clock">0:10</span></div>
+    <p class="stage">Her chat window again, no tracker chip.</p>
+    <p class="say">Here's what comes back: the file, updated, her eight questions in the block at
+    the top, her new title in the title bar. Name what just happened plainly: the tool rewrote one
+    block of the file. It did not invent a new program, and it did not touch the parts she told it
+    to leave alone. That's the entire "build" step, every time.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 12</span><span class="title">Test: she plays it herself, first</span><span class="clock">0:11</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her honest limit: it renamed a button she never asked it to touch.</p>
+    <p class="say">She double-clicks the file. No install, no account, no wifi required. She
+    answers a question wrong on purpose to check the feedback, and it works exactly right: the
+    correct answer holds on screen and explains why. Then she finds an actual bug, a typo in one
+    of her own answer choices. This is normal. This is what testing is for, and it's why the rule
+    is: you play it before anyone else does. Every single time.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 13</span><span class="title">Change one thing, then test again</span><span class="clock">0:12</span></div>
+    <p class="stage">Her chat window one more time. This closes the loop; take it slowly.</p>
+    <p class="say">Her fix: one sentence, naming exactly which answer choice and exactly what's
+    wrong with it, nothing else. She runs it, plays the whole game again start to finish, and only
+    then calls it done. Describe, build, test, change one thing, and you're back at test. That
+    loop is the entire skill you're about to practice.</p>
+
+<h2 class="segment-head">Segment 4 · Honest limits, live (slides 14-17)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 14</span><span class="title">What it gets wrong, honestly</span><span class="clock">0:14</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her honest limit: it renamed a button she never asked it to touch.</p>
+    <p class="say">Before you try this yourselves, the honest limits. It can rename or move
+    something you never asked it to touch. It can "fix" the wrong line if your request was
+    ambiguous. And here's the one that matters most: it cannot tell when it has misunderstood you.
+    It will sound just as confident either way. None of that is a reason not to build. It's the
+    reason you always test before you trust, which you just watched Ms. Rivera do.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 15</span><span class="title">A vague ask gets a vague fix</span><span class="clock">0:15</span></div>
+    <p class="stage"><strong>Do this live, on the projector, right now, from your own account.</strong>
+    Type exactly "make my game better" into your AI tool and let the room watch what comes back.
+    This is scripted because it is the single most valuable ninety seconds in the session.</p>
+    <p class="say">Watch what happens when I ask for something real but vague. I'm going to type
+    "make my game better" and we'll see what comes back.</p>
+    <p class="stage">Let it respond. It will typically make a generic, harmless change to
+    something that wasn't broken, plus a list of unsolicited suggestions. Read what it did out
+    loud, then name what was missing, the way you'd coach a colleague.</p>
+    <p class="say">Notice what happened: nothing is broken, but nothing useful happened either,
+    because "better" isn't an instruction. Compare that to the fix we just watched: one sentence,
+    one target, one test. That's the whole difference. A vague result isn't the tool failing, it's
+    a teaching moment, and I wanted you to see it happen before you're the one typing.</p>
+    <div class="callout" style="border-left-color:var(--amber)"><strong>If the live demo produces
+    something odd rather than merely unhelpful:</strong> stay calm and name it out loud exactly like
+    any other result: "Interesting, that's not what I expected either. This is exactly why we always
+    test before we trust, and why you'll save a copy before your own risky changes in a few
+    minutes." Undo or close without saving, and move to the next slide. An odd result here is not a
+    failed demo; it's the same lesson, one slide early.</div>
+
+    <div class="slide-cue"><span class="num">SLIDE 16</span><span class="title">Save a copy before you prompt</span><span class="clock">0:16</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her habit now: save a copy before every prompt. Thirty seconds, no exceptions.</p>
+    <p class="say">One habit that makes every mistake reversible: before any change you're not
+    sure about, save a second copy of the file first. Thirty seconds, no exceptions. The single
+    most likely real problem in today's lab is a change that rewrites more of the file than you
+    expected and loses your questions. A saved copy turns that from a disaster into a thirty-second
+    reset. Teach yourself this as a step, not a tip, starting with your very first change today.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 17</span><span class="title">No child's data. Ever.</span><span class="clock">0:17</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her rule slide, same as Kit 1: no child's name, score, or record in any prompt.</p>
+    <p class="say">Last word before hands go on keyboards. No child's data, ever, not a name, a
+    score, a grade, an IEP note, a behavior record, or a writing sample, not in your prompts today
+    and not in your classroom tomorrow, including yours. This game holds questions, answers, and a
+    title. There's nowhere for a child's data to go, and that's by design, not an accident.</p>
+
+<h2 class="segment-head">Segment 5 · Guided practice, together (slides 18-20)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 18</span><span class="title">Everyone makes the same move</span><span class="clock">0:18</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her hand up first: one change, together, before anyone works alone.</p>
+    <p class="stage">Devices out, starter file open, six minutes. This is the last checkpoint
+    before independent work; do not skip it even if the room is eager to move ahead.</p>
+    <p class="say">Open your starter file, everyone, right now. We're going to make one small
+    change together, on the board, projected, so I can catch anyone who's stuck before we split up
+    into independent work.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 19</span><span class="title">Change the destination name</span><span class="clock">0:20</span></div>
+    <p class="stage">Her full prompt is the slide, no tracker chip. Read it word for word, then
+    give the room three minutes and circulate.</p>
+    <p class="say">Type this into your AI tool, exactly as written, with your own school mascot or
+    a place from your own subject in the brackets: "Change the DESTINATION at the top of the file
+    from 'Fort Verity' to [your choice]. Change nothing else." This is small and low-risk on
+    purpose. The point is proving the loop works on your machine, not making a meaningful game
+    yet.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 20</span><span class="title">Raise a hand if it worked</span><span class="clock">0:23</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her checkpoint: did the room's one change actually show up? Confirmed.</p>
+    <p class="say">Open your file. Does the new name show up on the title screen? If yes, you have
+    the whole loop, and everything in the lab is this, repeated on real content. If no, hands up;
+    help is coming to you.</p>
+    <p class="stage"><strong>Do not advance to the lab slide until every raised hand has been
+    resolved.</strong> A facilitator cannot debug forty screens at once once the lab opens; this is
+    the moment to catch anyone stuck.</p>
+
+<h2 class="segment-head">Segment 6 · The lab: build your game (slides 21-28)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 21</span><span class="title">The lab: build your game</span><span class="clock">0:24</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her lab, same as yours: the starter file, her questions, two real changes.</p>
+    <p class="stage">This slide and the six that follow it stay up as reference for the whole
+    30-minute lab; you do not need to advance every minute. Circulate constantly.</p>
+    <p class="say">Thirty protected minutes, starting now. Most of you: Track 1, start from the
+    starter file, swap in your own questions, then make two real changes by describing them, one
+    cosmetic, one behavioral. A few of you already know you want to start from nothing: that's
+    Track 2, and it's a completely normal path, not a harder one, raise a hand and I'll get you the
+    first prompt. One rule for everyone: no student information, ever, and save a copy before any
+    change you're unsure about.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 22</span><span class="title">Your three moves</span><span class="clock">0:25</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her Track 1: open the file, find the block at the top, replace it.</p>
+    <p class="say">Three moves, on screen the whole time you're working: open the starter file,
+    replace the question block near the top with your own eight to ten questions, then make your
+    two changes by describing them, testing after each one.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 23</span><span class="title">The question block, up close</span><span class="clock">0:26</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her question block: eight to ten entries, the same shape every time.</p>
+    <p class="say">This is the exact block from your file, shown large so nobody has to hunt for
+    it. Same shape every entry: the question, four answers, which one is right, the idea it tests,
+    and one line saying why the answer is right. You can type these directly, or describe them to
+    the AI and let it fill the shape in for you, either is fine.</p>
+    <div class="callout teal"><strong>If asked "what's the idea field for?"</strong> That's what lets
+    the game bring a question you missed back later instead of just moving on. It's one word, like
+    "fractions" or "capitals," and every question on the same concept should use the same word.</div>
+
+    <div class="slide-cue"><span class="num">SLIDE 24</span><span class="title">One cosmetic. One behavioral.</span><span class="clock">0:27</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her two prompts: one cosmetic, one behavioral, both hers to choose.</p>
+    <p class="say">Two starting templates for your required changes, more on the handout. Notice
+    both end the same way: "keep everything else the same." That boundary line is doing real work.
+    Test after each change, not after both, same as the loop, one at a time.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 25</span><span class="title">Three minutes: write four questions now</span><span class="clock">0:28</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her three minutes: four questions, roughed out, good enough to start.</p>
+    <p class="stage">Call this out by name at lab start, not as a footnote. Expect roughly a third
+    of the room to arrive without their questions written, per the prep guide's ask.</p>
+    <p class="say">If you didn't bring questions, that is completely normal, take three minutes
+    right now. Pick one thing your students need to know cold this unit, and write four questions
+    on it, rough is fine, you'll refine them while the game runs. And if three minutes isn't
+    enough: the starter file already ships with a working sample game. Nobody is stuck.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 26</span><span class="title">For the few who want to build from zero</span><span class="clock">0:29</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her Track 2 path: the one she didn't need, but some in her building will.</p>
+    <p class="say">For Track 2: this is the full first prompt from your handout, ready to paste
+    into any AI coding tool. Notice it asks for the same design rules baked in from the start, no
+    logins, works offline, brings missed questions back, never a public leaderboard. I won't hover
+    here; ask for help when you want it, not before.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 27</span><span class="title">"It gave me a blank page."</span><span class="clock">During the lab</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her fix for a blank page: read the error out loud to the AI, try again.</p>
+    <p class="stage">Leave this up as a reference; say the recovery line out loud the first time it
+    happens in the room, then let the next person self-serve from the slide.</p>
+    <p class="say">If your screen goes blank: that's almost always a small typo in the code the AI
+    just wrote. Copy the exact error message from your browser, or just say "it's a blank page,
+    nothing shows up," and paste that back to the AI. Say "fix this." It almost always can, and
+    it's usually under thirty seconds.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 28</span><span class="title">"It changed the wrong thing." / "My questions disappeared."</span><span class="clock">During the lab</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her fix for a wrong change: undo, narrow the ask, try again.</p>
+    <p class="say">If it rewrote more than you asked for, this is the single most likely real
+    problem today, and it's exactly why we saved a copy first. Close the file without saving,
+    reopen your saved copy, and try again with a narrower request, for example "change only the
+    title text, nothing else in the file." If you didn't save a copy, re-paste your original
+    questions into the current file rather than starting over. Either way: stay calm, this is
+    never unrecoverable, and a live recovery in front of the room is more reassuring than a clean
+    run would have been.</p>
+
+<h2 class="segment-head">Segment 7 · What you built, and commitments (slides 29-32)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 29</span><span class="title">What you actually built, honestly</span><span class="clock">0:54</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her honest tally: she changed a working program. She did not write one.</p>
+    <p class="say">Say this plainly, don't let the room infer it: you changed a working program by
+    describing what you wanted, tested every change yourself, and ended with your own questions in
+    a game your students can play with the wifi off. You did not write this from a blank file, and
+    this kit never claimed you would. What you own now is the loop, and that loop works on the
+    next tool you build too.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 30</span><span class="title">Where this pattern goes next</span><span class="clock">0:55</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her transfer: the pattern moves to spreadsheets, forms, anything next.</p>
+    <p class="say">This same loop builds a seating chart, a sign-out log, a reading tracker, any
+    small tool your room needs. Our full build-along sessions in the store teach this pattern on a
+    new classroom tool each time, start to finish, if your staff wants to go further.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 31</span><span class="title">Show us what you made</span><span class="clock">0:56</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her share-out: three screens up, her game one of them.</p>
+    <p class="stage">Two to three volunteers, a minute each, projected from their own laptop if the
+    room allows it.</p>
+    <p class="say">Who wants their game on the big screen? Tell us your one behavioral change and
+    what it did. And I'll ask directly: did anyone hit the blank-page fix or the wrong-change fix
+    for real? Tell us, that story is worth more than a clean run.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 32</span><span class="title">Commitment #4</span><span class="clock">0:58</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her commitment, said out loud: one game, live with her class, by Friday.</p>
+    <p class="say">Kits 1 and 2 gave us three commitments. Today adds a fourth: this game gets
+    played with real students by Friday, not filed away. Can I get a nod on that?</p>
+
+<h2 class="segment-head">Segment 8 · First 48 hours &amp; close (slides 33-34)</h2>
+
+    <div class="slide-cue"><span class="num">SLIDE 33</span><span class="title">First 48 hours, then the exit ticket</span><span class="clock">0:59</span></div>
+    <p class="rivera-line"><b>MS. RIVERA'S SCREEN &middot; SO FAR</b> &nbsp; Her first 48 hours: play it with students, fix the first real bug live.</p>
+    <p class="stage">Distribute exit tickets; collect at the door. They double as this hour's PD
+    documentation.</p>
+    <p class="say">Three small things in the next two days: play your game with one real class, or
+    a colleague standing in if timing doesn't line up. Fix the first real bug that shows up, using
+    the recovery lines from today, there will be one, that's normal. And two minutes on the exit
+    ticket: one technique you're taking, one thing you'll try.</p>
+
+    <div class="slide-cue"><span class="num">SLIDE 34</span><span class="title">Close</span><span class="clock">1:00</span></div>
+    <p class="say">Last word. You just described software into existence. That is not a small
+    thing, and it is not a trick, it is a skill you already had most of: knowing exactly what you
+    want and saying so clearly. Keep that skill pointed at the next thing your room needs. Thanks,
+    everyone.</p>
+
+    <p class="legal">© Adam &amp; Katelyn Spinozzi · AI-Ready School. Licensed to the purchasing educator (TpT single-user license); print the handouts for your own session. Running this with a team? Additional licenses are discounted in our TpT store. This resource is provided for informational purposes by educators, not
+    attorneys, and is not legal advice. Consult your district's legal counsel before adopting any
+    policy. Third-party tools named in this kit (ChatGPT, Claude, Gemini, Copilot) are referenced
+    factually; no partnership or endorsement is implied.</p>
+  </td></tr></tbody>
+</table>
+<div class="fixed-foot">
+  <div class="foot">
+    <div class="brand-line">AI-Ready School<span> · </span>Built by Adam &amp; Katelyn Spinozzi · certified educators</div>
+    <div>Word-for-Word Facilitator Script</div>
+  </div>
+</div>
+</body>
+</html>

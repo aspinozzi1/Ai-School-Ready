@@ -276,6 +276,37 @@ file.
 software is worth more than one that ends in a handout — **Session 3 at $29**,
 additional licences half price, purchase orders through TpT for Schools.
 
+### Kit 3 status (updated 2026-09-23)
+
+**Half-built, on schedule.** Per `tpt/intel/2026-09-23-wed-brief.md`'s job-2 decision, this
+Wednesday built the deck (34 slides, speaker notes on every slide) and the facilitator
+script (~10 pp + cover, keyed to all 34 slides) for Session 3, "Build Your First Classroom
+Tool." Also built, ahead of the letter of job 2 but per the brief's own recommendation to
+avoid script drift: the lab's starter review-game file, adapted from the already-shipped,
+design-standard-compliant `long-road.html`, trimmed to nine questions, browser-tested with
+zero console errors. **Nothing shipped to TPT this run.** All five of the brief's mandate
+statistics were re-verified against primary sources before reaching a slide; two were
+corrected (see `kits/kit03-tpt/RESEARCH_LOG.md`). A shared cover-template bug in
+`kits/tooling/brand.css` (a `check_footer.py` failure, reproducible on Kit 1's and Kit 2's
+own already-committed cover sources too, not something Kit 3 introduced) was found and
+fixed; it does not require re-shipping the already-live Kit 1/2 PDFs.
+
+**Next Wednesday (2026-09-30) ships it as drop 59**: the remaining seven KIT_STANDARD
+components (prep guide, participant handout, First 48 Hours, 30-day plan, exit ticket,
+admin one-pager, references with full APA), the gates run on the complete kit including
+`check_overlap.py` (could not run this Wednesday — see below), the pipeline, and the drop
+zip and pins zip delivered to the owner. Title, price ($29, license $14.50), and pricing
+argument are already settled in the brief's sections (b) and (e) and carry forward
+unchanged.
+
+**One environment gap to close before the 2026-09-30 ship**: this container's LibreOffice
+install is missing its Impress/Writer components (`apt-get install libreoffice-impress`
+404'd against the configured mirror), so `check_overlap.py` could not run against the
+deck this week. A Python bounding-box proxy check found zero shape-level collisions
+across all 34 slides, but that is not a substitute for the real gate, which also catches
+text overflowing its own box. Run `check_overlap.py` for real next Wednesday, in whatever
+container is available then.
+
 ### Standing rules specific to Lane C
 
 - **Presentable cold.** The script is word for word and the deck matches it

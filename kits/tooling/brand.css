@@ -207,7 +207,7 @@ table thead tr { break-after: avoid; }
 
 /* ---- cover ---- */
 .cover { background: var(--navy); color: #fff; display: flex; flex-direction: column; }
-.cover .cover-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 0.9in; }
+.cover .cover-body { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 0.9in 1.05in; }
 .cover .spark-badge {
   width: 0.9in; height: 0.9in; border-radius: 50%; background: var(--teal);
   display: flex; align-items: center; justify-content: center;
@@ -218,8 +218,8 @@ table thead tr { break-after: avoid; }
 .cover .cover-sub { color: #C9D4DE; font-size: 12.5pt; max-width: 6in; }
 .cover .component-name { margin-top: 0.35in; display: inline-block; }
 .cover .component-name .badge { font-size: 10pt; padding: 4pt 14pt; }
-.cover .credit { padding: 0.3in 0.9in 0.42in; color: #9FB2C2; font-size: 9pt; border-top: 1px solid rgba(220,227,234,.18); }
-.cover .credit b { color: #fff; display: block; font-size: 10.5pt; }
+.cover .credit { position: absolute; left: 0; right: 0; bottom: 0.58in; padding: 0.14in 0.9in 0; color: #9FB2C2; font-size: 9pt; line-height: 1.35; border-top: 1px solid rgba(220,227,234,.18); }
+.cover .credit b { color: #fff; display: block; font-size: 10.5pt; margin-bottom: 2pt; }
 
 /* ---- Ms. Rivera tracker line in scripts (mirrors the deck chip) ---- */
 .rivera-line {

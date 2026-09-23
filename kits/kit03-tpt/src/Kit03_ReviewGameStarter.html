@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Long Road</title>
+<style>
+  :root{
+    --ink:#14202B; --deep:#223448; --slate:#3D5A73; --steel:#5E8199; --mist:#9FBAC9;
+    --bone:#E8E2D0; --sand:#D9B47C; --clay:#B5763F; --rust:#8A4A2B; --moss:#6B8F5A;
+    --gold:#F2C14E; --amber:#D9812B; --sky:#7FB2D9; --plum:#6B4A7A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--bone);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+       display:flex;align-items:center;justify-content:center;min-height:100vh;padding:14px}
+  #wrap{width:100%;max-width:900px;display:flex;flex-direction:column;gap:10px}
+  #stage{position:relative;width:100%;aspect-ratio:16/9;border:4px solid var(--deep);
+         border-radius:12px;overflow:hidden;background:var(--slate);
+         box-shadow:0 8px 0 #0C151D}
+  canvas{display:block;width:100%;height:100%}
+  .panel{background:var(--deep);border:3px solid var(--bone);border-radius:10px;padding:12px 14px}
+  #say{font-size:clamp(14px,2.3vw,18px);font-weight:700;text-align:center;min-height:1.4em}
+  #choices{display:grid;gap:9px}
+  #choices.three{grid-template-columns:repeat(3,1fr)}
+  #choices.two{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:640px){#choices.three,#choices.two{grid-template-columns:1fr}}
+  .route{font:inherit;text-align:left;cursor:pointer;background:var(--slate);
+         border:3px solid var(--bone);border-radius:9px;padding:11px 13px;color:var(--bone);
+         transition:transform .08s,background .08s;display:flex;flex-direction:column;gap:5px}
+  .route:hover:not(:disabled){transform:translateY(-3px);background:var(--steel)}
+  .route:focus-visible{outline:4px solid var(--gold);outline-offset:2px}
+  .route:disabled{opacity:.55;cursor:default}
+  .route .nm{font-weight:800;font-size:clamp(14px,2.1vw,17px)}
+  .route .dt{font-size:clamp(11px,1.7vw,13px);color:var(--mist);line-height:1.35}
+  .route .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;
+        text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--ink);color:var(--sand)}
+  .route.hard .tag{background:var(--rust);color:var(--bone)}
+  .route.safe .tag{background:var(--moss);color:var(--ink)}
+  .route.block{border-color:var(--gold);border-style:dashed}
+  .route.block .tag{background:var(--gold);color:var(--ink)}
+  #qtext{font-size:clamp(15px,2.5vw,20px);font-weight:700;line-height:1.35;margin-bottom:10px}
+  #answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (max-width:640px){#answers{grid-template-columns:1fr}}
+  #answers button{font:inherit;font-weight:700;font-size:clamp(13px,2vw,16px);text-align:left;
+      padding:11px 13px;border-radius:8px;border:3px solid var(--bone);background:var(--ink);
+      color:var(--bone);cursor:pointer;transition:transform .08s}
+  #answers button:hover:not(:disabled){transform:translateY(-2px);background:var(--slate)}
+  #answers button:focus-visible{outline:4px solid var(--gold);outline-offset:2px}
+  #answers button.right{background:var(--moss);border-color:#A8D18C;color:var(--ink)}
+  #answers button.wrong{background:var(--rust);border-color:#E0A07F}
+  #answers button:disabled{cursor:default;opacity:.92}
+  .key{display:inline-block;min-width:20px;margin-right:7px;padding:0 5px;border-radius:4px;
+       background:var(--bone);color:var(--ink);font-size:.85em}
+  #why{margin-top:9px;font-size:clamp(12px,1.9vw,15px);line-height:1.4;color:var(--sand);
+       border-left:4px solid var(--gold);padding-left:10px;display:none}
+  #why.show{display:block}
+  .screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:14px;text-align:center;padding:22px;background:rgba(20,32,43,.95);z-index:5}
+  h1{font-size:clamp(23px,4.8vw,42px);line-height:1.08;letter-spacing:.01em}
+  h1 em{font-style:normal;color:var(--gold)}
+  .big{font-size:clamp(14px,2.5vw,19px);max-width:34ch;line-height:1.45;color:var(--mist)}
+  .go{font:inherit;font-weight:800;font-size:clamp(15px,2.5vw,19px);padding:12px 28px;
+      border-radius:10px;border:3px solid var(--ink);background:var(--gold);color:var(--ink);cursor:pointer}
+  .go:hover{transform:translateY(-2px)}
+  .go:focus-visible{outline:4px solid var(--sky);outline-offset:3px}
+  .meta{font-size:13px;color:var(--steel)}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stage">
+    <canvas id="c" width="640" height="360" aria-hidden="true"></canvas>
+
+    <div class="screen" id="title">
+      <h1 id="ttl">The Long Road</h1>
+      <p class="big" id="blurb"></p>
+      <button class="go" id="startBtn">Set out</button>
+      <p class="meta" id="best"></p>
+    </div>
+
+    <div class="screen" id="cleared" hidden>
+      <h1><em>The road is open</em></h1>
+      <p class="big" id="clearedText"></p>
+      <button class="go" id="clearedBtn">Keep going</button>
+    </div>
+
+    <div class="screen" id="arrived" hidden>
+      <h1 id="arrTitle"></h1>
+      <p class="big" id="arrText"></p>
+      <button class="go" id="againBtn">Travel again</button>
+      <p class="meta" id="arrMeta"></p>
+    </div>
+  </div>
+
+  <div class="panel"><div id="say" role="status" aria-live="polite">&nbsp;</div></div>
+
+  <div class="panel" id="choicePanel" hidden>
+    <div id="choices" class="three"></div>
+  </div>
+
+  <div class="panel" id="qpanel" hidden>
+    <div id="qtext"></div>
+    <div id="answers"></div>
+    <div id="why"></div>
+  </div>
+</div>
+
+<script>
+/* ===========================================================================
+   START HERE. This is the only block you need to touch to make this game
+   your own. Everything below "THE GAME" runs the whole thing and you do not
+   need to read it, let alone change it.
+
+   HOW TO EDIT THIS, IN THE LAB:
+   1. Open this file by double-clicking it. It runs in your browser with no
+      install and no account, and it will still run with the wifi off.
+   2. Replace the nine questions below with your own. Keep the same shape.
+   3. Change JOURNEY, DESTINATION and SUBJECT to match your class and topic.
+   4. THEN make two changes by prompting an AI tool instead of typing code
+      yourself: one cosmetic (for example, "change the sky colors to my
+      school colors") and one behavioral (for example, "give the player a
+      fourth road to choose from at every fork"). Paste this whole file into
+      the chat and describe what you want changed; a capable AI tool can
+      make both edits directly in the code below.
+
+   Each question needs five things:
+     q     the question
+     a     four answers
+     ok    which answer is right, counting from 0
+     idea  the concept it tests -- the game tracks mastery BY IDEA, brings a
+           missed idea back later, and never asks two of the same idea in a
+           row
+     why   one line saying why the answer is right; shown after a wrong
+           answer
+     level 1 easy, 2 medium, 3 hard -- the player picks difficulty by picking
+           the road, so you need some of each
+
+   Eight to ten questions across two or three ideas works well for a single
+   class period. The nine below are a working demo on the water cycle, so
+   the game plays start to finish the moment you open the file -- replace
+   them whenever you're ready.
+   =========================================================================== */
+
+const DESTINATION = 'Fort Verity';
+const JOURNEY     = 'The Long Road';
+const SUBJECT     = 'the water cycle';
+
+const QUESTIONS = [
+  { q:'Water turning from liquid into vapor is called what?',
+    a:['Evaporation','Condensation','Precipitation','Collection'], ok:0, idea:'evaporation', level:1,
+    why:'Evaporation is liquid becoming vapor. Heat gives the molecules enough energy to escape.' },
+  { q:'A puddle disappears on a hot day. Which process did the most work?',
+    a:['Condensation','Evaporation','Precipitation','Runoff'], ok:1, idea:'evaporation', level:2,
+    why:'The water did not go anywhere solid or liquid. Heat turned it to vapor.' },
+  { q:'Two puddles, same size. One is in the sun and one in shade. Which is gone first, and why?',
+    a:['Shade, cooler air holds more water','Sun, more energy means faster evaporation','Both the same, size decides it','Shade, less wind'], ok:1, idea:'evaporation', level:3,
+    why:'Evaporation speeds up with energy. More sunlight means more energy means faster.' },
+
+  { q:'Water vapor cooling and forming clouds is called what?',
+    a:['Runoff','Condensation','Evaporation','Infiltration'], ok:1, idea:'condensation', level:1,
+    why:'Condensation is vapor becoming liquid, which is what a cloud droplet is.' },
+  { q:'Why does a cold glass get wet on the outside on a warm day?',
+    a:['Water leaks through the glass','Vapor in the air condenses on the cold surface','The glass sweats like skin','Pressure forces water out'], ok:1, idea:'condensation', level:2,
+    why:'The cold surface cools nearby air, and cooled air cannot hold as much vapor.' },
+  { q:'Clouds form where rising air cools. Why does rising air cool?',
+    a:['It is further from the ground, which is warm','It expands as pressure drops','It mixes with cold rain','It loses sunlight'], ok:1, idea:'condensation', level:3,
+    why:'Pressure falls with height, the air expands, and expanding air cools.' },
+
+  { q:'Rain, snow, sleet and hail are all examples of what?',
+    a:['Transpiration','Condensation','Precipitation','Evaporation'], ok:2, idea:'precipitation', level:1,
+    why:'Precipitation is any water falling from the sky, in any state.' },
+  { q:'Cloud droplets are tiny. What has to happen before rain falls?',
+    a:['They must freeze','They must join until heavy enough to fall','The cloud must reach the ground','The wind must stop'], ok:1, idea:'precipitation', level:2,
+    why:'Droplets collide and merge. Falling needs enough weight to beat the rising air.' },
+  { q:'A storm drops half an inch of rain on a paved lot and half an inch on a nearby forest. Which one sees more precipitation, and why?',
+    a:['The lot; pavement pulls in more rain','Neither; precipitation is the rain falling, not what happens after it lands','The forest; trees increase local rainfall','The lot; less wind resistance'], ok:1, idea:'precipitation', level:3,
+    why:'Precipitation is only the falling water. What the ground does with it afterward (runoff or infiltration) is a separate stage.' },
+];
+
+/* ===========================================================================
+   THE GAME.
+   =========================================================================== */
+
+const W=640, H=360;
+const c=document.getElementById('c'), x=c.getContext('2d');
+x.imageSmoothingEnabled=true;
+const $=id=>document.getElementById(id);
+
+/* the whole palette, sixteen colors, one place */
+const P={ ink:'#14202B',deep:'#223448',slate:'#3D5A73',steel:'#5E8199',mist:'#9FBAC9',
+  bone:'#E8E2D0',sand:'#D9B47C',clay:'#B5763F',rust:'#8A4A2B',blood:'#5C2B1E',
+  moss:'#6B8F5A',fern:'#47663D',gold:'#F2C14E',amber:'#D9812B',sky:'#7FB2D9',plum:'#6B4A7A' };
+
+/* --- No pixel art. Shapes, gradients and atmosphere.
+   Reason: sprite arrays are authored blind -- you type a grid of characters and
+   cannot see the result until it renders, so it comes out lumpy. Everything
+   below is describable in numbers, which is why it reads as art-directed:
+   a dusk ramp, ridges that flatten and lighten with distance, tapered
+   silhouettes, and a warm rim light on the sun side of anything solid. --- */
+
+const SUN = { x: 0.78, y: 0.44 };     // where the light comes from, as a fraction
+
+function ridge(baseY, amp, col, seed, jag, speed){
+  const off = S.scroll * speed;
+  x.fillStyle = col; x.beginPath(); x.moveTo(-8, H);
+  for(let i=-8;i<=W+8;i+=4){
+    x.lineTo(i, baseY + Math.sin((i+off)/110)*amp + Math.sin((i+off)/37)*(amp*jag));
+  }
+  x.lineTo(W+8,H); x.closePath(); x.fill();
+}
+function ridgeY(px, baseY, amp, seed, jag, speed){
+  const off = S.scroll * speed;
+  return baseY + Math.sin((px+off)/110)*amp + Math.sin((px+off)/37)*(amp*jag);
+}
+/* a conifer as a tapered silhouette, varied by index so no two match */
+function conifer(px, gy, h, col){
+  x.fillStyle = col; x.beginPath();
+  x.moveTo(px, gy - h);
+  x.lineTo(px + h*0.27, gy);
+  x.lineTo(px - h*0.27, gy);
+  x.closePath(); x.fill();
+  x.fillRect(px-1.5, gy-2, 3, 4);
+}
+/* the traveler: a silhouette, a shadow, and a rim light from the sun */
+function traveler(px, gy, flash){
+  const body = flash ? '#FFF6E0' : '#151C31';
+  x.save(); x.translate(px, gy); x.scale(1.28,1.28); x.translate(-px,-gy);
+  x.fillStyle = 'rgba(15,20,34,.32)';
+  x.beginPath(); x.ellipse(px+2, gy+2, 24, 4.5, 0, 0, 7); x.fill();
+  x.fillStyle = body;
+  x.beginPath(); x.arc(px, gy-42, 7, 0, 7); x.fill();                       // head
+  x.beginPath();                                                            // coat
+  x.moveTo(px-7, gy-34); x.lineTo(px+7, gy-34);
+  x.lineTo(px+10, gy-13); x.lineTo(px-10, gy-13); x.closePath(); x.fill();
+  x.fillRect(px-7, gy-14, 4.5, 14); x.fillRect(px+2.5, gy-14, 4.5, 14);     // legs
+  x.beginPath();                                                            // staff
+  x.moveTo(px+9, gy-33); x.lineTo(px+20, gy-5);
+  x.lineTo(px+17, gy-4); x.lineTo(px+6, gy-32); x.closePath(); x.fill();
+  if(!flash){
+    x.strokeStyle = 'rgba(255,216,158,.8)'; x.lineWidth = 1.7;
+    x.beginPath(); x.arc(px, gy-42, 7, -1.15, 0.85); x.stroke();
+    x.beginPath(); x.moveTo(px+7, gy-34); x.lineTo(px+10, gy-13); x.stroke();
+  }
+  x.restore();
+}
+/* the destination: a walled camp on the horizon, growing as you close on it */
+function destination(px, gy, scale){
+  x.fillStyle = '#141A2B';
+  const w = 26*scale, h = 18*scale;
+  x.fillRect(px, gy-h, w, h);                                    // wall
+  x.fillRect(px-4*scale, gy-h-6*scale, 7*scale, h+6*scale);      // tower
+  x.beginPath();                                                  // roof
+  x.moveTo(px-6*scale, gy-h-6*scale); x.lineTo(px-0.5*scale, gy-h-13*scale);
+  x.lineTo(px+5*scale, gy-h-6*scale); x.closePath(); x.fill();
+  x.fillStyle = '#F2C14E';                                        // a lit window
+  x.fillRect(px-1.5*scale, gy-h-3*scale, 2*scale, 2.5*scale);
+  x.fillRect(px+w*0.45, gy-h*0.55, 2.2*scale, 3*scale);
+  x.strokeStyle = 'rgba(255,216,158,.7)'; x.lineWidth = 1.4;      // rim light
+  x.beginPath(); x.moveTo(px+w, gy-h); x.lineTo(px+w, gy); x.stroke();
+}
+
+/* --------------------------------------------------------------- state --- */
+const START_SUPPLIES=6, DISTANCE=12;   // legs to the destination
+let S=null;
+
+function fresh(){
+  return {
+    scene:'title', leg:0, days:0, supplies:START_SUPPLIES, miles:0,
+    mastered:new Set(), missed:new Map(),   // idea -> times missed, cleared on fix
+    seen:new Map(), lastIdea:null, gear:[], routes:[], pending:null,
+    camp:0, scroll:0, shake:0, flash:0, floats:[], t:0, best:null, locked:false,
+    fixedCount:0
+  };
+}
+const rnd=n=>Math.floor(Math.random()*n);
+const pick=a=>a[rnd(a.length)];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+/* ---------------------------------------------------------------- sound --- */
+let AC=null;
+function tone(f,ms,type,vol){
+  try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+    const o=AC.createOscillator(),g=AC.createGain();
+    o.type=type||'square'; o.frequency.value=f; g.gain.value=vol==null?0.045:vol;
+    o.connect(g);g.connect(AC.destination);o.start();
+    g.gain.exponentialRampToValueAtTime(0.0001,AC.currentTime+ms/1000);
+    o.stop(AC.currentTime+ms/1000);
+  }catch(e){}
+}
+const sGood=()=>{tone(523,80);setTimeout(()=>tone(784,110),70)};
+const sBad =()=>tone(140,240,'sawtooth',.04);
+const sStep=()=>tone(300,50,'triangle',.03);
+const sFix =()=>[523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>tone(f,150,'square',.05),i*110));
+const sArr =()=>[392,523,659,784].forEach((f,i)=>setTimeout(()=>tone(f,220,'triangle',.05),i*160));
+
+/* ----------------------------------------------------------- the routes --- */
+/* Every fork offers a real trade. The player chooses the difficulty by
+   choosing the road, which is autonomy and flow in the same mechanic. */
+function buildRoutes(){
+  const out=[];
+  const blockedIdeas=[...S.missed.keys()];
+
+  out.push({ kind:'safe', name:'The low trail', tag:'Easy going', level:1,
+    detail:'Two easy crossings. Slow, but you keep your supplies.', miles:1, supplyOnWin:0 });
+
+  out.push({ kind:'norm', name:'The wagon road', tag:'Steady', level:2,
+    detail:'The ordinary way. One crossing, fair ground.', miles:2, supplyOnWin:0 });
+
+  if(rnd(10)<6) out.push({ kind:'hard', name:pick(['The high pass','The gorge','The night march']),
+    tag:'Hard', level:3, detail:'Rough country. Harder crossing, but you gain a day and supplies.',
+    miles:3, supplyOnWin:1 });
+
+  /* A missed idea becomes a washed-out crossing you can see and route around.
+     Clearing one is the only full-screen celebration in the game. */
+  if(blockedIdeas.length && rnd(10)<7){
+    const idea=pick(blockedIdeas);
+    out.push({ kind:'block', name:'The washed-out crossing', tag:'Blocked', level:2, idea:idea,
+      detail:'You turned back here before. Clearing it opens the road for good.',
+      miles:2, supplyOnWin:2 });
+  }
+  S.routes=shuffle(out).slice(0, S.gear.includes('map')?4:3);
+}
+
+/* -------------------------------------------------------------- drawing --- */
+function hillY(px,off,amp,yBase){
+  return yBase + Math.sin((px+off)/70)*amp + Math.sin((px+off)/23)*(amp/3);
+}
+function hill(off,amp,yBase,col){
+  x.fillStyle=col; x.beginPath(); x.moveTo(-10,H);
+  for(let px=-10;px<=W+10;px+=6) x.lineTo(px,hillY(px,off,amp,yBase));
+  x.lineTo(W+10,H); x.closePath(); x.fill();
+}
+/* Scatter sprites so they SIT on a named ridge rather than floating over it. */
+function onRidge(spr,skin,count,spacing,speed,amp,yBase,scale,sink){
+  for(let i=0;i<count;i++){
+    const px=((i*spacing - S.scroll*speed) % (W+spacing*2)) - spacing;
+    const gy=hillY(px,S.scroll*speed,amp,yBase);
+    sprite(spr,skin,Math.round(px),Math.round(gy-spr.length*scale+(sink||0)),scale);
+  }
+}
+function draw(){
+  const sx = S.shake>0 ? (Math.random()*S.shake - S.shake/2) : 0;
+  x.save(); x.translate(sx, 0);
+
+  /* dusk ramp */
+  const sky = x.createLinearGradient(0,0,0,H);
+  sky.addColorStop(0,'#1B2A44'); sky.addColorStop(.34,'#5A6795');
+  sky.addColorStop(.56,'#A0759A'); sky.addColorStop(.74,'#D8865E'); sky.addColorStop(1,'#F5C089');
+  x.fillStyle = sky; x.fillRect(-8,-8,W+16,H+16);
+
+  /* sun, low and warm, with a wide soft glow */
+  const sunx = W*SUN.x, suny = H*0.52;
+  const gl = x.createRadialGradient(sunx,suny,18,sunx,suny,160);
+  gl.addColorStop(0,'rgba(255,215,154,.42)'); gl.addColorStop(1,'rgba(255,215,154,0)');
+  x.fillStyle = gl; x.beginPath(); x.arc(sunx,suny,160,0,7); x.fill();
+  x.fillStyle = '#FFD79A'; x.beginPath(); x.arc(sunx,suny,26,0,7); x.fill();
+
+  /* birds, small and slow */
+  x.strokeStyle = 'rgba(20,26,43,.55)'; x.lineWidth = 1.6;
+  for(let i=0;i<3;i++){
+    const bx = ((i*230 - S.scroll*.10) % (W+260)) - 80, by = 70 + Math.sin(S.t/46+i)*6;
+    x.beginPath(); x.moveTo(bx-6,by); x.quadraticCurveTo(bx-3,by-3,bx,by);
+    x.quadraticCurveTo(bx+3,by-3,bx+6,by); x.stroke();
+  }
+
+  /* four ridges: flatter, lighter and slower with distance */
+  ridge(196,15,'#8A93B4',   0,.30,.10);
+  ridge(222,18,'#6B7599', 260,.34,.22);
+  x.fillStyle='rgba(240,178,120,.20)'; x.fillRect(-8,196,W+16,52);   // valley haze
+  ridge(250,14,'#4C567C', 520,.38,.42);
+
+  /* the destination sits on the third ridge and grows as you approach */
+  const near = Math.min(1, S.leg/DISTANCE);
+  const dsx = W - 150;
+  destination(dsx, ridgeY(dsx,250,14,520,.38,.42)+2, 0.7 + near*1.4);
+
+  /* foreground land */
+  const FG_BASE = 292, FG_AMP = 8;
+  ridge(FG_BASE,FG_AMP,'#222B45', 90,.22,1.0);
+
+  /* trees on the near ridge, sizes varied by index */
+  for(let i=0;i<14;i++){
+    let tx = ((i*61 - S.scroll*1.0) % (W+122)); if(tx<0) tx += W+122; tx -= 61;
+    const h  = 24 + ((i*43)%22);
+    conifer(tx, ridgeY(tx,FG_BASE,FG_AMP,90,.22,1.0)+1, h, '#151C31');
+  }
+
+  /* the traveler walks the near ridge */
+  const wx = 132, bob = Math.sin(S.t/9)*1.6;
+  traveler(wx, ridgeY(wx,FG_BASE,FG_AMP,90,.22,1.0) + 2 + bob, S.flash>0);
+
+  /* status bar */
+  x.fillStyle='rgba(15,20,34,.80)'; x.fillRect(0,0,W,44);
+  x.fillStyle='rgba(233,169,114,.35)'; x.fillRect(0,44,W,1.5);
+  label('DAY '+S.days, 14,14,16,P.bone);
+  label('SUPPLIES', 104,9,10,P.mist);
+  for(let i=0;i<Math.max(S.supplies,0);i++){
+    x.fillStyle=P.gold; x.fillRect(104+i*13,23,9,11);
+    x.fillStyle='rgba(15,20,34,.45)'; x.fillRect(104+i*13,31,9,3);
+  }
+  label('IDEAS LOCKED IN', 268,9,10,P.mist);
+  label(String(S.mastered.size), 268,20,17,P.gold);
+  if(S.missed.size) label(S.missed.size+' road'+(S.missed.size>1?'s':'')+' blocked', 310,22,12,P.amber);
+  label(DESTINATION.toUpperCase(), W-152,9,10,P.mist);
+  const prog=Math.min(1,S.leg/DISTANCE);
+  x.fillStyle='rgba(15,20,34,.75)'; x.fillRect(W-152,22,136,12);
+  x.fillStyle=P.moss; x.fillRect(W-152,22,Math.round(136*prog),12);
+  x.strokeStyle=P.bone; x.lineWidth=2; x.strokeRect(W-153,21,138,14);
+
+  S.floats.forEach(f=>{ x.globalAlpha=Math.max(0,f.life/55);
+    label(f.text,f.x,f.y,f.size,f.color,'center'); x.globalAlpha=1; });
+  x.restore();
+}
+function label(t,px,py,size,color,align){
+  x.font='700 '+size+'px system-ui, sans-serif';
+  x.fillStyle=color; x.textAlign=align||'left'; x.textBaseline='top'; x.fillText(t,px,py);
+}
+function float(t,px,py,col,size){ S.floats.push({text:t,x:px,y:py,color:col,size:size||20,life:55}); }
+
+function step(){
+  S.t++;
+  S.scroll += S.scene==='travel' ? 2.2 : 0.35;   // always moving, faster while walking
+  if(S.shake>0)S.shake*=0.85;
+  if(S.flash>0)S.flash--;
+  S.floats.forEach(f=>{f.y-=0.7;f.life--});
+  S.floats=S.floats.filter(f=>f.life>0);
+  draw();
+  requestAnimationFrame(step);
+}
+
+/* ------------------------------------------------------------ questions --- */
+function drawQuestion(level, forceIdea){
+  let pool=QUESTIONS.filter(q=>q.idea!==S.lastIdea);          // interleaving
+  if(forceIdea) pool=QUESTIONS.filter(q=>q.idea===forceIdea);
+  let band=pool.filter(q=>q.level===level);
+  if(!band.length) band=pool.filter(q=>Math.abs(q.level-level)<=1);
+  if(!band.length) band=pool.length?pool:QUESTIONS;
+  /* prefer ones seen least, so a short bank still feels fresh */
+  const low=Math.min(...band.map(q=>S.seen.get(q.q)||0));
+  const fresh=band.filter(q=>(S.seen.get(q.q)||0)===low);
+  return pick(fresh);
+}
+
+function askRoute(route){
+  hideChoices();
+  S.pending={route, asked:0, need:route.kind==='safe'?2:1, wrong:0, charmUsed:false};
+  nextQuestion();
+}
+function nextQuestion(){
+  const p=S.pending;
+  const q=drawQuestion(p.route.level, p.route.idea);
+  p.q=q;
+  S.seen.set(q.q,(S.seen.get(q.q)||0)+1);
+  S.lastIdea=q.idea;
+
+  $('qtext').textContent=q.q;
+  const why=$('why'); why.className=''; why.textContent='';
+  const box=$('answers'); box.innerHTML='';
+  shuffle(q.a.map((text,i)=>({text,right:i===q.ok}))).forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.innerHTML='<span class="key">'+(i+1)+'</span>'+esc(opt.text);
+    b.dataset.right=opt.right?'1':'0';
+    b.onclick=()=>answer(b,opt.right,box);
+    box.appendChild(b);
+  });
+  $('qpanel').hidden=false;
+  S.locked=false;
+  box.querySelector('button').focus();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+
+function answer(btn,right,box){
+  if(S.locked)return; S.locked=true;
+  const p=S.pending, q=p.q;
+  [...box.children].forEach(b=>{ b.disabled=true; if(b.dataset.right==='1')b.classList.add('right'); });
+  if(!right)btn.classList.add('wrong');
+
+  if(right){
+    S.flash=6; sGood();
+    const wasMissed=S.missed.has(q.idea);
+    if(wasMissed && p.route.kind==='block'){
+      /* the loudest moment in the game belongs to the fix */
+      S.missed.delete(q.idea); S.mastered.add(q.idea); S.fixedCount++;
+      finishRoute(true,true); return;
+    }
+    if(wasMissed){
+      S.missed.delete(q.idea); S.fixedCount++; sFix(); S.shake=6;
+      float('FIXED',320,130,P.gold,30);
+      float(q.idea,320,168,P.bone,18);
+      say('That is the one you got wrong earlier, and you have just put it right.');
+    } else {
+      float('+1 idea',320,150,P.gold,22);
+      say('Right. On you go.');
+    }
+    S.mastered.add(q.idea);
+  } else {
+    sBad(); S.shake=10;
+    S.missed.set(q.idea,(S.missed.get(q.idea)||0)+1);
+    S.mastered.delete(q.idea);
+    const charm=S.gear.includes('charm') && !p.charmUsed;
+    if(charm){ p.charmUsed=true; say('Wrong, but the charm held. No supplies lost.'); }
+    else { p.wrong++; S.supplies--; float('-1 supply',320,150,P.amber,20);
+           say('Wrong. That cost you a supply. Read the reason before you move on.'); }
+    const why=$('why'); why.textContent='Why: '+q.why; why.className='show';
+  }
+
+  p.asked++;
+  const pause = right ? 1000 : 2600;    // a miss holds much longer, on purpose
+  setTimeout(()=>{
+    $('qpanel').hidden=true;
+    if(!right && S.supplies<=0) return fallBack();
+    if(p.asked < p.need) return setTimeout(nextQuestion,250);
+    finishRoute(p.wrong===0,false);
+  }, pause);
+}
+
+function finishRoute(clean,fixed){
+  const p=S.pending, r=p.route;
+  S.scene='travel';
+  S.leg++; S.days += (r.kind==='safe'?2:1);
+  S.miles += r.miles;
+  if(clean && r.supplyOnWin) S.supplies=Math.min(S.supplies+r.supplyOnWin, maxSupplies());
+  sStep();
+  if(fixed){
+    sFix();
+    $('clearedText').textContent='You turned back at this crossing before. Not this time — '
+      + p.q.idea + ' is yours now, and the road stays open.';
+    $('cleared').hidden=false; $('clearedBtn').focus();
+    return;
+  }
+  setTimeout(()=>{ if(S.leg>=DISTANCE) arrive(); else nextLeg(); }, 900);
+}
+function maxSupplies(){ return START_SUPPLIES + (S.gear.includes('mule')?2:0); }
+
+function fallBack(){
+  S.scene='travel';
+  S.supplies=Math.max(2,Math.floor(maxSupplies()/2));
+  S.days+=3; S.leg=Math.max(0,S.leg-1);
+  say('Out of supplies. You fall back to the last camp, rest three days, and go again. Nobody is out of this.');
+  setTimeout(nextLeg,2200);
+}
+
+/* ------------------------------------------------------------ the legs --- */
+function nextLeg(){
+  S.scene='map';
+  $('qpanel').hidden=true;   // the last question must not linger under the fork
+  if(S.leg>0 && S.leg%4===0 && S.camp<S.leg/4){ S.camp++; return campStop(); }
+  buildRoutes();
+  const box=$('choices');
+  box.className = S.routes.length>=3 ? 'three' : 'two';
+  box.innerHTML='';
+  S.routes.forEach(r=>{
+    const b=document.createElement('button');
+    b.className='route '+(r.kind==='hard'?'hard':r.kind==='safe'?'safe':r.kind==='block'?'block':'');
+    const lantern = S.gear.includes('lantern');
+    const peek = lantern ? '<br>It will ask about: <b>'+esc(r.idea|| 'anything so far')+'</b>' : '';
+    b.innerHTML='<span class="tag">'+r.tag+'</span><span class="nm">'+esc(r.name)+'</span>'
+      +'<span class="dt">'+esc(r.detail)+peek+'</span>';
+    b.onclick=()=>askRoute(r);
+    box.appendChild(b);
+  });
+  $('choicePanel').hidden=false;
+  say('Which way?');
+  box.querySelector('button').focus();
+}
+function hideChoices(){ $('choicePanel').hidden=true; }
+
+const GEAR={
+  lantern:{name:'Lantern',  t:'See what a road will ask before you choose it.'},
+  rope:   {name:'Rope',     t:'The hard roads cost one less supply when they go wrong.'},
+  mule:   {name:'Mule',     t:'Carry two more supplies, now and from now on.'},
+  map:    {name:'Old map',  t:'One more road to choose from at every fork.'},
+  charm:  {name:'Charm',    t:'The first wrong answer on each road costs nothing.'}
+};
+function campStop(){
+  S.scene='camp';
+  const have=S.gear;
+  const offer=shuffle(Object.keys(GEAR).filter(k=>!have.includes(k))).slice(0,3);
+  const box=$('choices'); box.className = offer.length>=3?'three':'two'; box.innerHTML='';
+  if(!offer.length){ return nextLegAfterCamp(); }
+  offer.forEach(k=>{
+    const b=document.createElement('button'); b.className='route safe';
+    b.innerHTML='<span class="tag">Camp</span><span class="nm">'+GEAR[k].name+'</span>'
+      +'<span class="dt">'+GEAR[k].t+'</span>';
+    b.onclick=()=>{ S.gear.push(k);
+      if(k==='mule')S.supplies=Math.min(S.supplies+2,maxSupplies());
+      say('You take the '+GEAR[k].name.toLowerCase()+'.'); nextLegAfterCamp(); };
+    box.appendChild(b);
+  });
+  $('choicePanel').hidden=false;
+  say('A camp. Take one thing for the road.');
+  box.querySelector('button').focus();
+}
+function nextLegAfterCamp(){ hideChoices(); setTimeout(nextLeg,700); }
+
+/* ------------------------------------------------------- start and end --- */
+function say(t){ $('say').textContent=t; }
+
+function arrive(){
+  S.scene='arrived';
+  const score={days:S.days,supplies:Math.max(0,S.supplies),ideas:S.mastered.size,fixed:S.fixedCount};
+  $('arrTitle').textContent='You reached '+DESTINATION;
+  $('arrText').textContent = score.days+' days. '+score.ideas+' ideas locked in'
+    + (score.fixed?', '+score.fixed+' of them after getting it wrong first':'')
+    + '. '+score.supplies+' supplies left.';
+  const best=loadBest();
+  if(!best || score.ideas>best.ideas || (score.ideas===best.ideas && score.days<best.days)){
+    saveBest(score); S.best=score;
+    $('arrMeta').textContent='A new class best.';
+  } else {
+    $('arrMeta').textContent='Class best: '+best.ideas+' ideas in '+best.days+' days.';
+  }
+  $('arrived').hidden=false; $('againBtn').focus(); sArr();
+}
+function loadBest(){ try{ return JSON.parse(localStorage.getItem('longroad.best')||'null'); }catch(e){ return null; } }
+function saveBest(v){ try{ localStorage.setItem('longroad.best',JSON.stringify(v)); }catch(e){} }
+
+function begin(){
+  S=fresh(); S.scene='map';
+  $('title').hidden=true; $('arrived').hidden=true; $('cleared').hidden=true;
+  say('The road starts here.');
+  nextLeg();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key>='1'&&e.key<='4'){
+    const box = !$('qpanel').hidden ? $('answers') : (!$('choicePanel').hidden ? $('choices') : null);
+    if(box){ const b=box.children[+e.key-1]; if(b&&!b.disabled)b.click(); }
+  }
+  if(e.key==='Enter'){
+    if(!$('title').hidden)$('startBtn').click();
+    else if(!$('cleared').hidden)$('clearedBtn').click();
+    else if(!$('arrived').hidden)$('againBtn').click();
+  }
+});
+$('startBtn').onclick=begin;
+$('againBtn').onclick=begin;
+$('clearedBtn').onclick=()=>{ $('cleared').hidden=true;
+  if(S.leg>=DISTANCE) arrive(); else nextLeg(); };
+
+S=fresh();
+$('ttl').textContent=JOURNEY;
+$('blurb').textContent='Cross the country to '+DESTINATION+'. Every fork is your choice: '
+  +'the easy road, the steady one, or the hard pass that pays. What you get wrong blocks the road later — '
+  +'and clearing it is the best thing that happens out here. '+SUBJECT+'.';
+const b0=loadBest();
+$('best').textContent=b0?('Class best: '+b0.ideas+' ideas in '+b0.days+' days.'):'Nobody has made it yet.';
+step();
+</script>
+</body>
+</html>
