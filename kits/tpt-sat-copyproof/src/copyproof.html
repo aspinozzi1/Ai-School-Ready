@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Make the Copy Worthless</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:28pt">
+<div class="kick">Free &middot; AI and academic honesty</div>
+<h1>Make the Copy<br>Worthless</h1>
+<p class="lede">Four ways to design an assignment so that a copied answer &mdash; from a
+classmate or from a chatbot &mdash; <b>falls apart on its own</b>. No detector, no new software,
+no accusing anybody. You can rewrite one assignment with this in about fifteen minutes.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">4</h3><p class="small" style="margin:0">moves, each with a before and after</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">tools to buy, install or log in to</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">15</h3><p class="small" style="margin:0">minutes to rewrite one you already give</p></div>
+</div>
+<div class="note"><b>The move, in one sentence.</b><br>
+Stop trying to catch the bad outcome. <b>Build the assignment so the bad outcome does not
+work.</b> That is a design decision you make once, not a suspicion you carry around all year.</div>
+<div class="card r"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">This is how I run the software for my own high school woodshop
+course. Every student gets their own version of a unit, and every written answer gets a follow-up
+question, so a copied answer comes apart without anybody being accused of anything. The four moves
+on page 3 are that idea with the software taken out, so they work on paper in any subject.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Start here</div>
+<h2>Why detecting it is the wrong job</h2>
+<p class="lede">Most schools started with detection. It is worth knowing what that has cost,
+because it is the reason this page argues for design instead.</p>
+<div class="card"><h3>The detectors are not accurate enough to accuse a child with</h3>
+<p class="small" style="margin-bottom:5pt">A Stanford-led study published in 2023 tested seven
+AI-writing detectors. On essays by <b>non-native English writers</b> the average false positive rate
+was <b>61.3 percent</b>, and <b>97.8 percent</b> of the TOEFL essays were flagged by at least one
+detector. The mechanism is not mysterious: detectors key on how predictable the writing is, and a
+student still learning English writes in simpler, more predictable sentences.</p>
+<p class="small" style="margin:0">So the tool is least reliable on exactly the students who can
+least afford to be wrongly accused.</p></div>
+<div class="card t"><h3>Universities have been switching them off since 2023</h3>
+<p class="small" style="margin:0">Vanderbilt disabled Turnitin's AI detector in August 2023 and
+published why: with 75,000 papers a year, even a claimed one percent false positive rate is about
+<b>750 papers wrongly flagged</b>; the vendor would not explain how the score is produced; and the
+bias against non-native speakers was already documented. Their conclusion was that AI detection
+software is not an effective tool and should not be used.</p></div>
+<div class="note"><b>And the part nobody says out loud.</b><br>
+Even a detector that worked would only ever tell you something went wrong <i>after</i> a student
+spent an evening not learning anything. <b>A false accusation costs a relationship you cannot get
+back</b>, and a true one still leaves you with an assignment that taught nothing.</div>
+<div class="card g"><h3>The alternative, and it is the same idea twice</h3>
+<p class="small" style="margin:0">In software there is a rule: <b>do not police the bad outcome,
+make it structurally unavailable.</b> A form that has no box for a last name cannot leak one. An
+assignment that only that student can answer cannot be answered by somebody else. Same move, two
+domains, and the second one needs no software at all.</p></div>
+<div class="foot"><span>Make the Copy Worthless &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The four moves</div>
+<h2>Each one, with a before and after</h2>
+<div class="card t"><h3>1 &middot; Anchor it to something only that student has</h3>
+<p class="small" style="margin-bottom:5pt"><b>Before:</b> "Explain how supply and demand set
+prices."&nbsp; <b>After:</b> "Pick something you personally bought in the last month. Explain how
+supply and demand set what you paid for it."</p>
+<p class="small" style="margin:0">A chatbot can write either answer. Only one of them needs a fact
+it does not have. <b>This is the cheapest of the four and usually the strongest.</b></p></div>
+<div class="card"><h3>2 &middot; Make everyone's version slightly different</h3>
+<p class="small" style="margin-bottom:5pt"><b>Before:</b> one worksheet, thirty copies.&nbsp;
+<b>After:</b> three or four variants &mdash; different numbers, a different text, a different
+starting condition &mdash; or let each student choose their own object, poem or data set.</p>
+<p class="small" style="margin:0">Copying from the person beside you stops being useful, and a
+shared answer circulating in a group chat only fits one person. In my own units the computer builds
+a different version for every student from a random seed; <b>four variants on paper gets you most of
+the same effect.</b></p></div>
+<div class="card g"><h3>3 &middot; Ask for the process, not the product</h3>
+<p class="small" style="margin-bottom:5pt"><b>Before:</b> "Submit your solution."&nbsp;
+<b>After:</b> "Submit your solution, plus the approach you tried first and why you abandoned it."</p>
+<p class="small" style="margin:0">A finished answer is the easiest thing in the world to get from
+AI. <b>A dead end is not</b>, because the model never had one. This also happens to be the question
+that teaches the most, which is the test of whether a move is worth making.</p></div>
+<div class="card r"><h3>4 &middot; Make the second question depend on the first</h3>
+<p class="small" style="margin-bottom:5pt"><b>Before:</b> five independent questions.&nbsp;
+<b>After:</b> question two asks about the answer they gave to question one.</p>
+<p class="small" style="margin:0">This is the one my own software leans on hardest, and page 4 is
+entirely about it.</p></div>
+<div class="note"><b>Use one. Not four.</b><br>
+Rewriting every assignment this way is how this ends up in a drawer. Pick <b>the one assignment
+this month where copying actually costs you something</b>, apply move 1, and see what comes back.</div>
+<div class="foot"><span>Make the Copy Worthless &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The strongest move</div>
+<h2>The follow-up question</h2>
+<p class="lede">One extra question, asked about the answer the student just gave. <b>A copied answer
+cannot survive it</b>, and a real one gets deeper. It costs you a line of typing.</p>
+<div class="card"><h3>Why it works when nothing else does</h3>
+<p class="small" style="margin:0">A student who wrote their own answer has reasons sitting right
+behind it. A student who pasted one has the words and nothing underneath. <b>You are not detecting
+anything</b> &mdash; you are asking a normal academic question that happens to require the thing a
+copy does not come with. Nobody gets accused, and nobody has to be.</p></div>
+<h3 style="margin-top:4pt">A bank of stems. Pick one and paste it under any question.</h3>
+<table>
+<thead><tr><th style="width:132pt">Stem</th><th>What a copied answer does with it</th></tr></thead>
+<tbody>
+<tr><td><b>"Why that and not the next most obvious answer?"</b></td><td>Produces a general defense that never names the alternative, because it does not know which one you meant.</td></tr>
+<tr><td><b>"What would have to be different for your answer to be wrong?"</b></td><td>Goes vague. Conditions are the part a pasted answer never carries.</td></tr>
+<tr><td><b>"Where did the number in your second sentence come from?"</b></td><td>Cannot point at it, because it was never derived.</td></tr>
+<tr><td><b>"Say this to somebody who has not taken this class."</b></td><td>Re-states the same sentences in the same register instead of simplifying.</td></tr>
+</tbody></table>
+<div class="card g"><h3>The thirty-second spoken version</h3>
+<p class="small" style="margin:0">Walk the room while they work and ask one student one stem out
+loud. It takes half a minute, it is not a confrontation, and it tells you more than any report ever
+will. <b>Do it with the students who are doing fine as well</b>, or it becomes a punishment and they
+will know.</p></div>
+<div class="note"><b>One honest limit.</b><br>
+None of this stops a determined student, and it is not meant to. It <b>removes the easy win</b>, so
+copying costs more effort than the work would have. If a move only catches people and does not also
+make the task better, it is not on this page.</div>
+<div class="foot"><span>Make the Copy Worthless &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn</div>
+<h2>Rewrite one assignment</h2>
+<p class="lede">Fifteen minutes. Pick the one where copying actually costs you something.</p>
+<div class="box"><h3>The assignment as it stands now</h3>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3>1 &middot; What does this student have that nobody else does?</h3>
+<p class="small" style="margin-bottom:5pt">Their own object, text, data, choice, or something from
+this room this week. Rewrite the prompt so the answer needs it.</p>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3>2 &middot; What can vary between students?</h3>
+<p class="small" style="margin-bottom:5pt">Numbers, the text, the starting condition, or simply
+letting them choose. Three or four variants is plenty.</p>
+<div class="wl"></div></div>
+<div class="box"><h3>3 &middot; The follow-up question you will add</h3>
+<p class="small" style="margin-bottom:5pt">One stem from page 4, written out in your own words.</p>
+<div class="wl"></div></div>
+<div class="card p"><h3>If you are the one who has to run the staff conversation about this</h3>
+<p class="small" style="margin:0">Our <b>AI Foundations &amp; Safety</b> staff training kit is the
+whole-staff version: deck with speaker notes, word-for-word script, participant handout and an
+administrator one-pager, presentable cold by somebody who has never run a session. Licenses are half
+price. Search our store for it.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases for every review, and it is the only thing that decides
+whether another teacher ever sees this. If something here did not work, tell us and we will fix it.</div>
+<div class="foot"><span>Make the Copy Worthless &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>

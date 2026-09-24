@@ -2336,6 +2336,55 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "copy-worthless",
+      "order": 59,
+      "name": "Make the Copy Worthless",
+      "product": "UPLOAD/01-free/make-the-copy-worthless.pdf",
+      "cover": "tpt/covers/copy-worthless-cover.png",
+      "thumbnails": [
+        "tpt/extras/cpw-whats-inside.png"
+      ],
+      "title": "Make the Copy Worthless | 4 Ways to Design an Assignment AI Cannot Do | Free",
+      "description": "FREE. Four ways to design an assignment so that a copied answer - from a classmate or from a chatbot - falls apart on its own. No detector, no new software, and nobody gets accused of anything. You can rewrite one assignment with this in about fifteen minutes.\n\nTHE MOVE IN ONE SENTENCE: stop trying to catch the bad outcome, and build the assignment so the bad outcome does not work. That is a design decision you make once instead of a suspicion you carry around all year.\n\nWHY DETECTION IS THE WRONG JOB, with the actual numbers. A Stanford-led study in 2023 tested seven AI-writing detectors: on essays by non-native English writers the average false positive rate was 61.3 percent, and 97.8 percent of the TOEFL essays were flagged by at least one detector. Vanderbilt disabled Turnitin's AI detector in August 2023 and published why. The tool is least reliable on exactly the students who can least afford to be wrongly accused.\n\nTHE FOUR MOVES, each with a before and an after you can copy: anchor the question to something only that student has, make everyone's version slightly different, ask for the process instead of the product, and make the second question depend on the first.\n\nAND THE STRONGEST ONE GETS ITS OWN PAGE. One follow-up question, asked about the answer the student just gave, with a bank of stems to paste under any question and a note on what a copied answer does with each. A student who wrote their own answer has reasons sitting behind it. A student who pasted one has the words and nothing underneath - so you are not detecting anything, you are asking a normal academic question that happens to need the thing a copy does not come with.\n\nA FILL-IN PAGE so you leave with one assignment actually rewritten, not a list of ideas.\n\nWHERE IT COMES FROM: this is how I run the software for my own high school woodshop course, where every student gets their own version of a unit and every written answer gets a follow-up question. The four moves are that idea with the software taken out, so they work on paper in any subject and any grade.\n\nONE HONEST LIMIT, stated inside: none of this stops a determined student and it is not meant to. It removes the easy win, so copying costs more effort than the work would have. If a move only catches people and does not also make the task better, it is not in here.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "academic honesty",
+        "ai for teachers",
+        "assessment",
+        "teacher tools",
+        "free",
+        "professional development"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI and Academic Honesty",
+      "previewShots": [
+        "cpw_p2.png",
+        "cpw_p3.png",
+        "cpw_p4.png"
+      ],
+      "previewInside": [
+        "<b>Why detecting it is the wrong job</b>, with the actual numbers",
+        "Four moves, each with a before and an after",
+        "<b>The follow-up question</b> a copied answer cannot survive",
+        "A bank of stems to paste under any question",
+        "<b>A fill-in page</b> so you leave with one assignment rewritten"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

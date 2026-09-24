@@ -300,6 +300,13 @@ const IMAGES = [
     'The running notes habit that saves a build',
     'A fill-in page so you leave with your own',
   ], 'PDF')],
+  ['cpw-whats-inside', whatsInside('Free \u00b7', 'Make the Copy Worthless', [
+    'Why detecting it is the wrong job, with the numbers',
+    'Four moves, each with a before and an after',
+    'The follow-up question a copied answer cannot survive',
+    'A bank of stems to paste under any question',
+    'A fill-in page, so you leave with one rewritten',
+  ], 'PDF')],
   ['lrd-the-game', gameShot('lrd_game.png', 'This is the game, and it is ready now',
       'Your questions go in', 'without touching any code',
       'A setup screen inside the game \u00b7 or let AI draft the round',
