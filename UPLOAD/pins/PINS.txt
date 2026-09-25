@@ -2545,3 +2545,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+THE CLASS STORE
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ye-class-store-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Kids | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+A five-day entrepreneurship unit where the deliverable is working software instead of a poster. Your class surveys the room, prices a three-tier shelf and works out a full sell-out by hand, you build the storefront live in front of them, they run a real selling session, and on day five they count the tin against the paper ledger against the app and explain the gap. The working store app is included: one file, a setup screen so you never edit code, a prompt that drafts your whole price list in about thirty seconds, stock that counts down and a last item that stops selling. No accounts for anybody, nothing uploads, and no student ever touches the chatbot. Seven printable student pages. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Entrepreneurship for Kids   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: entrepreneurship · shark tank · classroom economy   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

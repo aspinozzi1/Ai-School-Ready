@@ -292,7 +292,7 @@ instead of on typing prompts.
 | # | Build | The student work |
 |---|---|---|
 | 1 | **Pitch to prototype** | Design an app for a real classroom problem; teacher builds it live; class tests it |
-| 2 | **The class business app** | Market day, but the storefront is software the class specced |
+| 2 | **The class business app** *(shipped 09-25 as The Class Store, $18)* | Market day, but the storefront is software the class specced. Five days ending in a count of the tin against the ledger against the app. The store ships with a setup screen and an AI price-list prompt, so no teacher edits code |
 | 3 | **Test it like a user** | Usability testing, feedback rounds, iteration — the part schools never teach |
 
 ### Price

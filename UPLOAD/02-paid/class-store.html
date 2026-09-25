@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Class Store</title>
+<style>
+  :root{
+    --ink:#16212C; --deep:#22333F; --slate:#35505F; --steel:#5A7C8C; --mist:#A8C0CC;
+    --bone:#F2EDE0; --sun:#F0B429; --leaf:#5C9A5C; --clay:#B5603F; --plum:#7B5EA7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--bone);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+       line-height:1.5;padding:14px}
+  #app{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  header{display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between}
+  h1{font-size:clamp(21px,3.6vw,32px);line-height:1.1}
+  h1 em{font-style:normal;color:var(--sun)}
+  h2{font-size:clamp(17px,2.6vw,22px);margin-bottom:8px}
+  h3{font-size:clamp(14px,2vw,17px);margin-bottom:5px}
+  p{margin-bottom:8px}
+  .muted{color:var(--mist);font-size:14px}
+  nav{display:flex;gap:8px;flex-wrap:wrap}
+  .tab{font:inherit;font-weight:800;font-size:15px;padding:9px 15px;border-radius:9px;
+       border:3px solid var(--bone);background:var(--slate);color:var(--bone);cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--sun);color:var(--ink);border-color:var(--ink)}
+  .tab:focus-visible{outline:4px solid var(--sun);outline-offset:3px}
+  .card{background:var(--deep);border:3px solid var(--bone);border-radius:11px;padding:13px 15px}
+  .card.lit{border-color:var(--sun)}
+  .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(184px,1fr))}
+  .item{text-align:left;font:inherit;background:var(--slate);border:3px solid var(--bone);
+        border-radius:10px;padding:11px 12px;color:var(--bone);cursor:pointer;
+        display:flex;flex-direction:column;gap:5px}
+  /* the shelf highlights without moving: a tile that jumps under a finger is
+     harder to tap, and a moving target is also untestable */
+  .item:hover:not(:disabled){background:var(--steel);border-color:var(--sun)}
+  .item:focus-visible{outline:4px solid var(--sun);outline-offset:2px}
+  .item:disabled{opacity:.5;cursor:not-allowed}
+  .item .nm{font-weight:800;font-size:16px}
+  .item .pr{color:var(--sun);font-weight:800}
+  .item .st{font-size:13px;color:var(--mist)}
+  .item.out .st{color:#F3A99A;font-weight:800}
+  .tierhd{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px;
+     color:var(--sun);margin:4px 0 2px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{text-align:left;padding:7px 8px;background:var(--ink);font-size:12px;
+     letter-spacing:.05em;text-transform:uppercase}
+  td{padding:7px 8px;border-top:1px solid var(--slate);vertical-align:top}
+  .right{text-align:right}
+  .fld{display:flex;flex-direction:column;gap:4px;margin-bottom:9px}
+  .fld label{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sun)}
+  .fld input,.fld select{font:inherit;font-size:15px;padding:8px 10px;border-radius:7px;
+        border:2px solid var(--steel);background:var(--ink);color:var(--bone)}
+  .fld input:focus,.fld select:focus{outline:3px solid var(--sun);outline-offset:1px}
+  .three{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr auto;gap:9px;align-items:end}
+  @media (max-width:640px){.three{grid-template-columns:1fr}}
+  .btn{font:inherit;font-weight:800;font-size:15px;padding:9px 16px;border-radius:8px;
+       border:3px solid var(--ink);background:var(--sun);color:var(--ink);cursor:pointer}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:focus-visible{outline:4px solid var(--mist);outline-offset:3px}
+  .btn.quiet{background:var(--slate);color:var(--bone);border-color:var(--bone)}
+  .btn.small{font-size:13px;padding:6px 11px}
+  .btn.big{font-size:18px;padding:13px 22px}
+  .btnrow{display:flex;gap:9px;flex-wrap:wrap}
+  .total{font-size:clamp(24px,5vw,40px);font-weight:800;color:var(--sun);line-height:1.1}
+  .msg{font-size:14px;border-radius:8px;padding:9px 12px;margin-top:9px;display:none}
+  .msg.on{display:block}
+  .msg.bad{background:#4A2118;border:2px solid #E0A07F;color:#FFD9C6}
+  .msg.good{background:#2A4426;border:2px solid #A8D18C;color:#DDF2CE}
+  .msg ul{margin:5px 0 0 18px}
+  pre.pr{background:var(--ink);border:2px solid var(--steel);border-radius:8px;padding:11px 13px;
+     font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word;
+     max-height:220px;overflow:auto;margin-bottom:9px}
+  .fld.paste textarea{font:inherit;font-size:14px;min-height:96px;padding:8px 10px;border-radius:7px;
+        border:2px solid var(--steel);background:var(--ink);color:var(--bone);resize:vertical}
+  .gap{font-size:clamp(19px,3.6vw,28px);font-weight:800}
+  .gap.ok{color:#A8D18C}.gap.off{color:#F3A99A}
+  [hidden]{display:none!important}
+  @media print{
+    body{background:#fff;color:#000;padding:0}
+    nav,.btnrow,.noprint,header .muted{display:none!important}
+    .card{border:1.5pt solid #000;background:#fff;color:#000;break-inside:avoid}
+    .item{background:#fff;color:#000;border:1pt solid #000}
+    .tierhd{color:#000}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <h1 id="storeName">The Class Store</h1>
+      <p class="muted" id="sub">Everything is priced in <span id="curName">class dollars</span>.</p>
+    </div>
+    <nav>
+      <button class="tab" id="tSell"  aria-selected="true">Sell</button>
+      <button class="tab" id="tLedger" aria-selected="false">Ledger</button>
+      <button class="tab" id="tCount" aria-selected="false">Count up</button>
+      <button class="tab" id="tSetup" aria-selected="false">Set up the store</button>
+    </nav>
+  </header>
+
+  <!-- ------------------------------------------------------------- SELL -->
+  <section id="vSell">
+    <div class="card lit" style="margin-bottom:12px">
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+        <div><h3 style="margin:0">This sale</h3>
+          <p class="muted" id="cartLine" style="margin:0">Nothing in the cart yet.</p></div>
+        <div class="total" id="cartTotal">0</div>
+      </div>
+      <div class="btnrow" style="margin-top:10px">
+        <button class="btn big" id="doneBtn">Finish this sale</button>
+        <button class="btn quiet" id="clearBtn">Clear the cart</button>
+      </div>
+      <div class="msg" id="sellMsg"></div>
+    </div>
+    <div id="shelf"></div>
+  </section>
+
+  <!-- ----------------------------------------------------------- LEDGER -->
+  <section id="vLedger" hidden>
+    <div class="card">
+      <h2>What has sold</h2>
+      <p class="muted">The store records <b>what sold and how many</b>. It does not record who
+      bought anything, and there is nowhere to type a name. See "Set up the store" for why.</p>
+      <table id="ledgerTbl"><thead><tr><th>Item</th><th class="right">Sold</th>
+        <th class="right">Each</th><th class="right">Taken</th></tr></thead><tbody></tbody></table>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:12px">
+        <h3 style="margin:0">Total taken</h3><div class="total" id="ledgerTotal">0</div></div>
+      <div class="btnrow" style="margin-top:10px">
+        <button class="btn quiet small" id="printBtn">Print the price list</button>
+        <button class="btn quiet small" id="undoBtn">Undo the last sale</button>
+      </div>
+      <div class="msg" id="ledgerMsg"></div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ COUNT -->
+  <section id="vCount" hidden>
+    <div class="card lit">
+      <h2>Count up</h2>
+      <p>Count what is actually in the tin, then type it here. <b>If the two numbers do not
+      match, the software is not automatically right.</b> Finding out why is the whole job.</p>
+      <div class="fld" style="max-width:260px"><label for="counted">What you counted</label>
+        <input type="number" id="counted" min="0" step="1" inputmode="numeric"></div>
+      <button class="btn" id="countBtn">Compare</button>
+      <div id="countOut" hidden style="margin-top:14px">
+        <table><tbody>
+          <tr><td>The store says it took</td><td class="right" id="cExp">0</td></tr>
+          <tr><td>You counted</td><td class="right" id="cGot">0</td></tr>
+        </tbody></table>
+        <p style="margin-top:10px">Difference: <span class="gap" id="cGap">0</span></p>
+        <p class="muted" id="cSay"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ SETUP -->
+  <section id="vSetup" hidden>
+    <div class="card lit">
+      <h2>Set up the store</h2>
+      <p>Nothing here leaves this page. There is no account, no upload and no server. When the
+      class has it right, <b>Save the store as a file</b> hands back one file that is yours to
+      keep and reopen next term.</p>
+      <div class="three" style="grid-template-columns:1fr 1fr">
+        <div class="fld"><label for="mName">What the store is called</label>
+          <input type="text" id="mName" maxlength="42"></div>
+        <div class="fld"><label for="mCur">What the money is called</label>
+          <input type="text" id="mCur" maxlength="24" placeholder="class dollars, points, credits"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>The fast way: have AI turn the class's list into products</h3>
+      <p class="muted">Fill in the store name first, then copy this and paste it into whichever AI
+      tool you use. Paste what it gives back into the box underneath. <b>Read it before you sell
+      from it</b> - the class decided the prices, not the AI.</p>
+      <pre class="pr" id="promptBox"></pre>
+      <div class="btnrow"><button class="btn small" id="copyBtn">Copy the prompt</button>
+        <button class="btn quiet small" id="fmtBtn">What the format means</button></div>
+      <div id="fmtHelp" hidden style="margin-top:10px">
+        <pre class="pr" style="max-height:none">name | price | opening stock | tier</pre>
+        <p class="muted" style="margin:0"><b>Tier 1</b> is free privileges - sit anywhere, choose
+        the music. <b>Tier 2</b> is cheap things that get bought every week. <b>Tier 3</b> is the
+        one big thing students save for over weeks. A store with no tier 3 empties on day one and
+        stops motivating anybody, which is why the shelf is built this way.</p>
+      </div>
+      <div class="fld paste" style="margin-top:11px"><label for="pasteBox">Paste the product list here</label>
+        <textarea id="pasteBox" placeholder="One product per line."></textarea></div>
+      <div class="btnrow"><button class="btn" id="loadBtn">Load these products</button>
+        <button class="btn quiet small" id="addToBtn">Add to what is already there</button></div>
+      <div class="msg" id="pasteMsg"></div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>The shelf</h3>
+      <p class="muted" id="countLine"></p>
+      <div id="plist"></div>
+      <div class="btnrow"><button class="btn quiet" id="addBtn">Add a product</button>
+        <button class="btn quiet small" id="sampleBtn">Put the sample shelf back</button></div>
+    </div>
+
+    <div class="card lit" style="margin-top:12px">
+      <h3>Keeping it</h3>
+      <div class="btnrow">
+        <button class="btn" id="dlBtn">Save the store as a file</button>
+        <button class="btn quiet" id="keepBtn">Keep it in this browser</button>
+        <button class="btn quiet small" id="resetSalesBtn">Clear the ledger and start a new term</button>
+      </div>
+      <div class="msg" id="setupMsg"></div>
+      <p class="muted" style="margin:11px 0 0"><b>Save the store as a file</b> is the one that
+      lasts. Clearing your browsing data erases anything kept in the browser; a file on your own
+      drive survives it and opens on any computer.</p>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <h3>What this store will not do, and why</h3>
+      <p class="muted" style="margin:0">There is no box anywhere for a student's name, and there
+      is no per-student balance. <b>A record of which named child bought what is a spending and
+      behavior record</b>, and it is the one thing a class store should not create - it would sit
+      in a file that gets emailed around. The store tracks <b>stock and totals</b>. If you want
+      balances, keep them on paper where they belong to you. And if real money is involved rather
+      than class money, that is school funds and it goes through the office, not through this file.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+/* ===========================================================================
+   THE CLASS STORE.
+
+   Everything runs in this page. No account, no upload, no server. The only
+   thing that leaves is the file you choose to save, and it goes to your drive.
+
+   Deliberately absent: any field for a student's name, and any per-student
+   balance. A purchase history attached to an identified child is a spending
+   and behavior record. This tracks stock and totals instead. That is not an
+   oversight and it is not a setting.
+   =========================================================================== */
+
+const $ = id => document.getElementById(id);
+const KEEP = 'classstore.v1';
+const MARK = 'classstore-your-shop';
+let PRISTINE = '';
+
+const SAMPLE = {
+  name: 'The Class Store',
+  currency: 'class dollars',
+  products: [
+    { n:'Sit anywhere for a day',      p:5,   s:99, t:1 },
+    { n:'Choose the music for a lesson', p:8, s:99, t:1 },
+    { n:'Hat for the day',             p:10,  s:99, t:1 },
+    { n:'Sticker',                     p:3,   s:40, t:2 },
+    { n:'Pencil',                      p:6,   s:25, t:2 },
+    { n:'Eraser',                      p:6,   s:20, t:2 },
+    { n:'Nice pen',                    p:15,  s:10, t:2 },
+    { n:'Lunch with a friend outside', p:60,  s:4,  t:3 },
+    { n:'The big prize box',           p:120, s:2,  t:3 },
+  ],
+  sales: [],
+};
+const TIER = { 1:'Tier 1 — free privileges', 2:'Tier 2 — every week', 3:'Tier 3 — save up for it' };
+
+let S = clone(SAMPLE);
+let cart = [];
+
+function clone(o){ return JSON.parse(JSON.stringify(o)); }
+function esc(t){ return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function money(n){ return String(n); }
+
+/* --------------------------------------------------------------- selling -- */
+function stockLeft(i){
+  const sold = S.sales.reduce((a,sale)=> a + (sale.lines.filter(l=>l.i===i)
+                 .reduce((b,l)=>b+l.q,0)), 0);
+  const inCart = cart.filter(c=>c.i===i).reduce((a,c)=>a+c.q,0);
+  return S.products[i].s - sold - inCart;
+}
+function drawShelf(){
+  const byTier = {1:[],2:[],3:[]};
+  S.products.forEach((p,i)=>{ (byTier[p.t]||byTier[2]).push({p,i}); });
+  let html='';
+  for(const t of [1,2,3]){
+    if(!byTier[t].length) continue;
+    html += `<div class="tierhd">${esc(TIER[t])}</div><div class="grid">`;
+    html += byTier[t].map(({p,i})=>{
+      const left = stockLeft(i);
+      const out = left<=0;
+      return `<button class="item${out?' out':''}" data-i="${i}"${out?' disabled':''}>
+        <span class="nm">${esc(p.n)}</span>
+        <span class="pr">${money(p.p)}</span>
+        <span class="st">${out?'Sold out':left+' left'}</span></button>`;
+    }).join('');
+    html += `</div>`;
+  }
+  $('shelf').innerHTML = html || '<div class="card"><p style="margin:0">The shelf is empty. Open <b>Set up the store</b> and add some products.</p></div>';
+}
+$('shelf').addEventListener('click',e=>{
+  const b=e.target.closest('.item'); if(!b||b.disabled) return;
+  const i=+b.dataset.i;
+  if(stockLeft(i)<=0){ tell('sellMsg','bad','That was the last one. It is sold out.'); drawShelf(); return; }
+  const line = cart.find(c=>c.i===i);
+  if(line) line.q++; else cart.push({i,q:1});
+  $('sellMsg').className='msg';
+  drawCart(); drawShelf();
+});
+function cartTotal(){ return cart.reduce((a,c)=>a + c.q*S.products[c.i].p, 0); }
+function drawCart(){
+  $('cartTotal').textContent = money(cartTotal());
+  $('cartLine').textContent = cart.length
+    ? cart.map(c=>S.products[c.i].n + (c.q>1?' x'+c.q:'')).join(', ')
+    : 'Nothing in the cart yet.';
+}
+$('clearBtn').onclick=()=>{ cart=[]; $('sellMsg').className='msg'; drawCart(); drawShelf(); };
+$('doneBtn').onclick=()=>{
+  if(!cart.length){ tell('sellMsg','bad','There is nothing in the cart.'); return; }
+  const total=cartTotal();
+  S.sales.push({ lines: cart.map(c=>({i:c.i,q:c.q,p:S.products[c.i].p})), total });
+  cart=[]; drawCart(); drawShelf(); drawLedger();
+  tell('sellMsg','good','Sale recorded. '+money(total)+' taken. Next customer.');
+};
+
+/* ---------------------------------------------------------------- ledger -- */
+function ledgerRows(){
+  const per={};
+  S.sales.forEach(sale=>sale.lines.forEach(l=>{
+    const k=l.i+'|'+l.p;
+    per[k]=per[k]||{i:l.i,p:l.p,q:0}; per[k].q+=l.q;
+  }));
+  return Object.values(per).sort((a,b)=>b.q*b.p-a.q*a.p);
+}
+function takenTotal(){ return S.sales.reduce((a,s)=>a+s.total,0); }
+function drawLedger(){
+  const rows=ledgerRows();
+  $('ledgerTbl').querySelector('tbody').innerHTML = rows.length
+    ? rows.map(r=>`<tr><td>${esc(S.products[r.i]?S.products[r.i].n:'(removed)')}</td>
+        <td class="right">${r.q}</td><td class="right">${money(r.p)}</td>
+        <td class="right">${money(r.q*r.p)}</td></tr>`).join('')
+    : '<tr><td colspan="4">Nothing has sold yet.</td></tr>';
+  $('ledgerTotal').textContent = money(takenTotal());
+}
+$('undoBtn').onclick=()=>{
+  if(!S.sales.length){ tell('ledgerMsg','bad','There is nothing to undo.'); return; }
+  const s=S.sales.pop();
+  drawLedger(); drawShelf();
+  tell('ledgerMsg','good','Undid a sale of '+money(s.total)+'. The stock went back on the shelf.');
+};
+$('printBtn').onclick=()=>window.print();
+
+/* ----------------------------------------------------------- reconciling -- */
+$('countBtn').onclick=()=>{
+  const got=parseInt($('counted').value,10);
+  if(isNaN(got)){ $('countOut').hidden=true; return; }
+  const exp=takenTotal(), gap=got-exp;
+  $('cExp').textContent=money(exp); $('cGot').textContent=money(got);
+  const g=$('cGap'); g.textContent=(gap>0?'+':'')+money(gap);
+  g.className='gap '+(gap===0?'ok':'off');
+  $('cSay').textContent = gap===0
+    ? 'They match. Say out loud what that does and does not prove: it proves the arithmetic agrees, not that every sale was rung up.'
+    : (gap<0
+      ? 'The tin is short. Somebody was served without the sale being recorded, or change was given wrong, or a price on the shelf did not match the price in here. Find out which before changing anything.'
+      : 'The tin has more than the store recorded. Usually a sale that was taken but never rung up. That is worth knowing too.');
+  $('countOut').hidden=false;
+};
+
+/* ----------------------------------------------------------------- setup -- */
+function rowHTML(p,i){
+  return `<div class="three" data-i="${i}" style="margin-bottom:9px">
+    <div class="fld" style="margin:0"><label>Product</label>
+      <input type="text" class="n" value="${esc(p.n)}"></div>
+    <div class="fld" style="margin:0"><label>Price</label>
+      <input type="number" class="p" min="0" step="1" value="${p.p}"></div>
+    <div class="fld" style="margin:0"><label>Stock</label>
+      <input type="number" class="s" min="0" step="1" value="${p.s}"></div>
+    <div class="fld" style="margin:0"><label>Tier</label>
+      <select class="t"><option value="1"${p.t==1?' selected':''}>1 — privilege</option>
+        <option value="2"${p.t==2?' selected':''}>2 — every week</option>
+        <option value="3"${p.t==3?' selected':''}>3 — save up</option></select></div>
+    <button class="btn quiet small del" type="button">Remove</button></div>`;
+}
+function drawSetup(){
+  $('mName').value=S.name; $('mCur').value=S.currency;
+  $('plist').innerHTML = S.products.map(rowHTML).join('');
+  const tiers=new Set(S.products.map(p=>+p.t));
+  $('countLine').textContent = S.products.length+(S.products.length===1?' product.':' products.')
+    + (tiers.has(3)?'':'  No tier 3 yet — without something to save up for, a store empties on day one.');
+  writePrompt();
+}
+function readSetup(){
+  return {
+    name: $('mName').value.trim() || 'The Class Store',
+    currency: $('mCur').value.trim() || 'class dollars',
+    products: [...$('plist').querySelectorAll('.three')].map(r=>({
+      n:r.querySelector('.n').value.trim(),
+      p:Math.max(0,parseInt(r.querySelector('.p').value,10)||0),
+      s:Math.max(0,parseInt(r.querySelector('.s').value,10)||0),
+      t:+r.querySelector('.t').value })),
+    sales: S.sales,
+  };
+}
+$('plist').addEventListener('click',e=>{
+  const b=e.target.closest('.del'); if(!b) return;
+  const i=+b.closest('.three').dataset.i;
+  const cur=readSetup();
+  if(S.sales.some(s=>s.lines.some(l=>l.i===i))){
+    tell('pasteMsg','bad','That product has already sold something. Removing it now would break the ledger. Set its stock to 0 instead.');
+    return;
+  }
+  cur.products.splice(i,1);
+  /* every sale stored after this index has to shift down with it */
+  cur.sales = cur.sales.map(s=>({...s, lines:s.lines.map(l=>({...l, i: l.i>i ? l.i-1 : l.i}))}));
+  commit(cur);
+});
+$('addBtn').onclick=()=>{ const cur=readSetup();
+  cur.products.push({n:'',p:1,s:1,t:2}); commit(cur);
+  $('plist').lastElementChild.scrollIntoView({block:'center'}); };
+$('sampleBtn').onclick=()=>{ if(confirm('Replace the shelf with the sample products? Your ledger is kept.')){
+  const cur=readSetup(); commit({...clone(SAMPLE), sales:cur.sales}); } };
+['mName','mCur'].forEach(id=>$(id).addEventListener('input',()=>{
+  S.name=$('mName').value.trim()||'The Class Store';
+  S.currency=$('mCur').value.trim()||'class dollars';
+  paintHeader(); writePrompt(); }));
+
+function commit(next){ S=next; paintHeader(); drawSetup(); drawShelf(); drawLedger(); }
+function paintHeader(){
+  $('storeName').textContent=S.name;
+  $('curName').textContent=S.currency;
+  document.title=S.name;
+}
+
+/* ---------------------------------------------------------------- prompt -- */
+function writePrompt(){
+  const nm=$('mName').value.trim()||'a class store';
+  const cur=$('mCur').value.trim()||'class dollars';
+  $('promptBox').textContent =
+`My class is opening ${nm}. We pay in ${cur}.
+
+Turn the list below into a price list. Give me one product per line with four parts separated by the | character, and nothing else. No numbering, no headings, no blank lines.
+
+name | price | opening stock | tier
+
+price and opening stock are whole numbers.
+tier is 1, 2 or 3. Tier 1 is a free privilege that costs us nothing to give, like sitting anywhere for a day. Tier 2 is a small thing bought most weeks, like a sticker. Tier 3 is one big thing students save up for over several weeks. Give me at least one tier 3.
+
+Here is what my class chose:
+[paste the class's list here]`;
+}
+$('copyBtn').onclick=async()=>{
+  try{ await navigator.clipboard.writeText($('promptBox').textContent);
+    tell('pasteMsg','good','Copied. Paste it into your AI tool, and add the class list at the bottom.'); }
+  catch(e){ const r=document.createRange(); r.selectNodeContents($('promptBox'));
+    const sel=getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    tell('pasteMsg','good','Selected it for you. Press Ctrl+C (or Command+C) to copy.'); }
+};
+$('fmtBtn').onclick=()=>{ $('fmtHelp').hidden=!$('fmtHelp').hidden; };
+
+function parseList(text){
+  const out=[], bad=[];
+  text.split(/\r?\n/).forEach((raw,n)=>{
+    const line=raw.trim(); if(!line) return;
+    if(!line.includes('|')){ bad.push('Line '+(n+1)+' has no | in it, so it was skipped.'); return; }
+    const f=line.split('|').map(t=>t.trim());
+    if(f.length<4){ bad.push('Line '+(n+1)+' has '+f.length+' parts instead of 4, so it was skipped.'); return; }
+    if(/^name$/i.test(f[0])) return;
+    const p=parseInt(f[1],10), s=parseInt(f[2],10), t=parseInt(f[3],10);
+    if(!f[0]||isNaN(p)||isNaN(s)){ bad.push('Line '+(n+1)+' does not have a number for price or stock.'); return; }
+    out.push({ n:f[0], p:Math.max(0,p), s:Math.max(0,s), t:(t>=1&&t<=3)?t:2 });
+  });
+  return {products:out, bad};
+}
+function loadList(replace){
+  const r=parseList($('pasteBox').value);
+  if(!r.products.length){ tell('pasteMsg','bad','Nothing loaded. Each line needs four parts separated by the | character.', r.bad); return; }
+  const cur=readSetup();
+  if(replace && S.sales.length){
+    tell('pasteMsg','bad','There are sales in the ledger, so replacing the whole shelf would break it. Use "Add to what is already there", or clear the ledger first under Keeping it.');
+    return;
+  }
+  commit({...cur, products: replace ? r.products : cur.products.concat(r.products)});
+  tell('pasteMsg','good','Loaded '+r.products.length+
+    (r.products.length===1?' product. ':' products. ')+'Check the prices before you sell from them.', r.bad);
+  $('pasteBox').value='';
+}
+$('loadBtn').onclick=()=>loadList(true);
+$('addToBtn').onclick=()=>loadList(false);
+
+function tell(id,kind,head,list){
+  const el=$(id); el.className='msg on '+kind;
+  el.innerHTML='<b>'+esc(head)+'</b>'+((list&&list.length)
+    ? '<ul>'+list.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>' : '');
+}
+
+/* ------------------------------------------------------- keep and save --- */
+function problems(st){
+  const bad=[];
+  if(!st.products.length) bad.push('The shelf has no products on it.');
+  st.products.forEach((p,i)=>{ if(!p.n) bad.push('Product '+(i+1)+' has no name.'); });
+  return bad;
+}
+$('keepBtn').onclick=()=>{
+  const cur=readSetup(), bad=problems(cur);
+  if(bad.length){ tell('setupMsg','bad','Fix these first:',bad); return; }
+  commit(cur);
+  try{ localStorage.setItem(KEEP,JSON.stringify(cur));
+    tell('setupMsg','good','Kept in this browser on this computer. Clearing your browsing data erases it, so save the file too.'); }
+  catch(e){ tell('setupMsg','bad','This browser would not let the page store anything. Use "Save the store as a file" instead.'); }
+};
+$('resetSalesBtn').onclick=()=>{
+  if(!confirm('Clear the ledger? The shelf and prices stay. This cannot be undone.')) return;
+  const cur=readSetup(); cur.sales=[]; commit(cur);
+  tell('setupMsg','good','Ledger cleared. The shelf and the prices are unchanged.');
+};
+$('dlBtn').onclick=()=>{
+  const cur=readSetup(), bad=problems(cur);
+  if(bad.length){ tell('setupMsg','bad','Fix these first:',bad); return; }
+  commit(cur);
+  const src = PRISTINE || document.documentElement.outerHTML;
+  const clean = src.replace(new RegExp('<!--'+MARK+'-->[\\s\\S]*?<!--\\/'+MARK+'-->','g'),'');
+  const inject = '<!--'+MARK+'--><script>window.MY_STORE='
+    + JSON.stringify(cur).replace(/<\//g,'<\\/') + ';<\/script><!--/'+MARK+'-->';
+  /* assembled, never written out whole: a literal closing body tag in this
+     source would be the first one found and the injection would land here */
+  const END = '<\/bo'+'dy>';
+  const at = clean.lastIndexOf(END);
+  const html = '<!DOCTYPE html>\n' + clean.slice(0,at) + inject + '\n' + clean.slice(at);
+  const name = (cur.name||'class-store').toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40) || 'class-store';
+  const url = URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  const a = document.createElement('a'); a.href=url; a.download=name+'.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  tell('setupMsg','good','Saved as '+name+'.html, wherever your browser puts downloads. Open that file and your shelf and ledger are already in it.');
+};
+
+/* ------------------------------------------------------------------ tabs -- */
+const VIEWS = [['tSell','vSell'],['tLedger','vLedger'],['tCount','vCount'],['tSetup','vSetup']];
+VIEWS.forEach(([tab,view])=>{
+  $(tab).onclick=()=>{
+    VIEWS.forEach(([t,v])=>{ $(t).setAttribute('aria-selected', String(t===tab)); $(v).hidden = v!==view; });
+    if(view==='vSetup') drawSetup();
+    if(view==='vLedger') drawLedger();
+    window.scrollTo(0,0);
+  };
+});
+
+/* What loads, and in what order: a file saved from here beats the browser, and
+   the browser beats the sample shelf that shipped with it. This waits for the
+   page to finish parsing, because a saved file carries its shop in a block
+   that sits after this script. The listener that captures the page source is
+   registered first, which is what keeps the saved copy clean. */
+document.addEventListener('DOMContentLoaded',()=>{ PRISTINE = document.documentElement.outerHTML; });
+document.addEventListener('DOMContentLoaded',()=>{
+  let loaded=null;
+  if(window.MY_STORE) loaded=window.MY_STORE;
+  else { try{ loaded=JSON.parse(localStorage.getItem(KEEP)||'null'); }catch(e){} }
+  if(loaded && loaded.products && loaded.products.length){
+    S = { name:loaded.name||SAMPLE.name, currency:loaded.currency||SAMPLE.currency,
+          products:loaded.products, sales:loaded.sales||[] };
+  }
+  paintHeader(); drawShelf(); drawCart(); drawLedger(); writePrompt();
+});
+</script>
+</body>
+</html>

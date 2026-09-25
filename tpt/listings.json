@@ -2385,6 +2385,67 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "ye-class-store",
+      "order": 60,
+      "name": "The Class Store",
+      "product": "UPLOAD/02-paid/Vibe-Coding-The-Class-Store.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/class-store.html"
+      ],
+      "cover": "tpt/covers/ye-class-store-cover.png",
+      "thumbnails": [
+        "tpt/extras/cst-the-app.png",
+        "tpt/extras/cst-whats-inside.png",
+        "tpt/extras/cst-real-pages.png"
+      ],
+      "title": "Vibe Coding for Kids | The Class Store Your Students Design and You Build",
+      "description": "Five days. Your class decides what to sell and what it costs, you build the storefront live in front of them, they run it for real - and on the last day they count the tin against what the software says and find out why the two do not match.\n\nTHE WORKING STORE APP IS INCLUDED. One HTML file that opens by double-click. Your class's products, prices, stock and price tiers go in from a setup screen inside the app, so you never edit code and never open it in a text editor. No accounts for anybody, no subscription, and it runs with the wifi down.\n\nAND THERE IS AN AI SHORTCUT, WITH THE CATCH TAUGHT ON PURPOSE. The setup screen gives you a prompt to copy: paste it into whichever AI tool you use with the class's list underneath and it hands back a full price list in about thirty seconds. Then you read it against the students' own sheets in front of them and find where it changed a price or invented a tier. Fast is not the same as right, and somebody still has to check.\n\nTHE LESSON THAT SEPARATES THIS FROM EVERY OTHER CLASS STORE. The class works out on paper what a full sell-out should earn BEFORE the software does it, then checks the software against their own number. You cannot tell whether software is right unless you already know the answer. Day 5 is the count-up: three numbers on the board - the tin, the paper ledger and the app - and a gap to explain. Every other class store ends at \"we had a store.\" This one ends at the numbers did not match and we found out why.\n\nTHE STUDENTS NEVER TOUCH THE CHATBOT, AND THAT IS THE BETTER LESSON. Chatbots are 13 and over, and no child's name goes into a prompt. Students do the surveying, the pricing, the feature list, the testing and the decisions. You do the prompting, on the board, where they watch their own spec become software. Specification and judgment are the actual thinking.\n\nINSIDE, 24 PAGES: day-by-day teacher pages with timings; SEVEN STUDENT PAGES worth printing - the forced-choice survey, the three-tier shelf planner, the sell-out arithmetic sheet, the shop-floor observation sheet, a paper ledger, the three-numbers hunt and the change-one-thing decision sheet; the exact prompts written out in full; what to do when the AI breaks it in front of thirty children; what actually goes wrong and the sentence that fixes it; what you can honestly grade; and how to run it again next term.\n\nTHE THREE-TIER SHELF, because a class store dies without it. Tier 1 free privileges, tier 2 small things bought most weeks, tier 3 one big thing to save up for. A store with no tier 3 gets emptied in the first session and stops motivating anybody by week two.\n\nWHAT THIS STORE REFUSES TO RECORD, AND WHY. There is no box anywhere for a student's name and no per-student balance. A record of which named child bought what, when, and how much they had left is a spending and behavior record, and a file gets emailed and copied without anybody deciding to do that. The store tracks stock and totals. If you want balances, keep them on paper where they belong to you. And if real money is involved rather than class money, that is school funds and goes through your office.\n\nWHAT THIS IS NOT. Not a course in programming. Not a full classroom economy - there is no earning side, no payroll and no banking, on purpose. Free digital classroom-economy platforms exist and if what you want is a running class economy they may be the better tool. The difference here is that your class designed this one, nobody has an account, and it is a file you own.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
+      "price": 18,
+      "licenses": 9,
+      "grades": [
+        "3rd grade",
+        "4th grade",
+        "5th grade",
+        "6th grade",
+        "7th grade",
+        "8th grade"
+      ],
+      "subjects": [
+        "Business",
+        "Math",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "entrepreneurship",
+        "shark tank",
+        "classroom economy",
+        "class store",
+        "vibe coding",
+        "project based learning"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Kids",
+      "previewShots": [
+        "cst_p2.png",
+        "cst_p8.png",
+        "cst_p16.png"
+      ],
+      "previewInside": [
+        "<b>Five days</b>, each ending in something real",
+        "The working store app, with a setup screen - <b>no code</b>",
+        "A prompt that drafts your whole price list in 30 seconds",
+        "<b>Seven student pages</b> worth printing",
+        "<b>Day 5: count the tin against the software</b> and explain the gap",
+        "What to do when the AI breaks it in front of the class"
+      ],
+      "previewUnit": "24 pages + the store app",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }
