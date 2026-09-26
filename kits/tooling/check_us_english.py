@@ -14,6 +14,7 @@ PAIRS = [
     (r'analys(e|es|ed|ing)\b', 'analyze'),
     (r'organis(e|es|ed|ing)\b', 'organize'),
     (r'labell(ed|ing)\b', 'labeled/labeling'),
+    (r'\b(?:level|travel|model|cancel|marvel|signal|total)l(?:ed|ing)\b', 'single l in US spelling'),
     (r'centre(s|d)?\b', 'center'),
     (r'favourite\b', 'favorite'),
     (r'behaviour(s|al)?\b', 'behavior'),

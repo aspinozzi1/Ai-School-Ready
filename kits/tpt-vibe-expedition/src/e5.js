@@ -183,7 +183,7 @@ the short ones everybody can quote. <b>Write your own, in your own voice.</b></p
 at each sprite and ask whether a fan would name it &middot; hum your own victory sound and make sure
 it is not somebody else's tune.</p></div>
 <div class="note"><b>And the practical point.</b> A game you keep in your classroom is a very
-different risk from one you publish or sell. In your room this is mostly about modelling it properly
+different risk from one you publish or sell. In your room this is mostly about modeling it properly
 for students. <b>This is not legal advice &mdash; it is the line a careful teacher can hold.</b></div>`);
 
 P('Where the data lives','<h2>The shortest privacy page in this series</h2>',`

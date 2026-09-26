@@ -2446,6 +2446,56 @@
       "previewUnit": "24 pages + the store app",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "what-you-can-borrow",
+      "order": 61,
+      "name": "What You Can Borrow",
+      "product": "UPLOAD/01-free/what-you-can-borrow.pdf",
+      "cover": "tpt/covers/what-you-can-borrow-cover.png",
+      "thumbnails": [
+        "tpt/extras/bwr-whats-inside.png"
+      ],
+      "title": "What You Can Borrow | Make a Classroom Game Without Stealing | Free Guide",
+      "description": "FREE. You want to build a review game that feels like the one your students already love. Everybody tells you not to use copyrighted material and nobody tells you where the line actually is. Here it is, in one page, with the checklist to run before you share anything.\n\nTHE LINE, IN ONE SENTENCE: how a game works is free to borrow, and the particular way somebody said it and drew it is not. Turn-based battles, collecting creatures, locked doors with clues, a health bar - all yours. Their names, their characters, their art, their music, their words - never.\n\nEVERY LEGAL POINT IS QUOTED FROM THE US COPYRIGHT OFFICE, and the sources are named inside. Copyright does not protect \"ideas, methods, systems, procedures, processes, concepts, principles, discoveries, or devices\" - game rules and mechanics sit in that list (Circular 33). Copyright does not protect \"names, titles, slogans, or short phrases\" - but the Copyright Office adds that those \"may be protected as trademarks,\" which is a different law and the one that actually catches teachers. And there is no ten-percent rule: courts \"evaluate fair use claims on a case-by-case basis\" and \"there is no formula to ensure that a predetermined percentage or amount of a work may be used without permission.\"\n\nTHE TWO COLUMNS: seven things that are free to borrow because they are systems, set against the seven matching things that are somebody's expression - with the three places teachers actually get caught, every time.\n\nSEVEN CHECKS, ABOUT FOUR MINUTES, to run on anything before you put it in front of a class, hand it to a colleague, or put it on a school server. Any \"no\" is a thing to change, not a reason to stop.\n\nAND THE PART NOBODY WRITES DOWN: what to do when an AI hands you protected material, which it will. The clause to put in every prompt, the sentence that makes it replace what it used, and why you should ask for the list of what it changed.\n\nA FILL-IN PAGE so you leave with your own game documented - the mechanic described without naming anything, where the pictures came from, who wrote the words. Five minutes now beats trying to remember in April when somebody asks whether it can go on the school website.\n\nNOT LEGAL ADVICE. This is a plain-language summary of published guidance to help you make better decisions, not a substitute for your district's policy or a lawyer, and it says so. When something matters, ask your district before you share it.\n\nWHERE IT COMES FROM: a guardrails page I keep in the software I build for my own high school woodshop course, because one of those projects borrows the structure of a classic handheld game. Rewritten for a teacher making something for one classroom.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Professional Development"
+      ],
+      "tags": [
+        "classroom games",
+        "copyright",
+        "teacher tools",
+        "free",
+        "ai for teachers",
+        "game based learning"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "Vibe Code Your Own Game",
+      "previewShots": [
+        "bwr_p2.png",
+        "bwr_p3.png",
+        "bwr_p4.png"
+      ],
+      "previewInside": [
+        "<b>The one line</b> that decides almost every case",
+        "Three things the Copyright Office actually says, quoted",
+        "<b>Two columns</b>: free to borrow, and never",
+        "<b>Seven checks</b> to run before you share it",
+        "What to do when AI hands you protected material",
+        "A fill-in page so your own game is documented"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

@@ -300,6 +300,13 @@ const IMAGES = [
     'The running notes habit that saves a build',
     'A fill-in page so you leave with your own',
   ], 'PDF')],
+  ['bwr-whats-inside', whatsInside('Free \u00b7', 'What You Can Borrow', [
+    'The one line that decides almost every case',
+    'Three things the Copyright Office actually says',
+    'Two columns: free to borrow, and never',
+    'Seven checks to run before you share it',
+    'What to do when AI hands you protected material',
+  ], 'PDF')],
   ['cst-the-app', gameShot('cst_app.png', 'The store app, included and ready',
       'Your class sets the shelf', 'from a screen, not from code',
       'Three price tiers \u00b7 stock counts down \u00b7 the last one stops selling',
