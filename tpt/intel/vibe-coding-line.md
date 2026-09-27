@@ -218,7 +218,7 @@ Pretending the competition does not exist is the fastest way to lose a review.
 |---|---|---|
 | 1 | **Boss Battle Review Game** *(shipped)* | Your questions are the weapon |
 | 1b | **The Long Road** *(rebuilt 09-23 to the new shape)* | Choice before question, and your questions in ten minutes |
-| 2 | Escape room / locked doors | A code you only get by knowing the content |
+| 2 | **The Locked Room** *(shipped 09-27)* | A wrong answer jams the lock instead of ending anything |
 | 3 | Two-team head-to-head | The loudest thirty minutes of the week |
 | 4 | Arcade run where right answers power the action | Movement, not multiple choice |
 | 5 | A choose-the-path story with real consequences | ELA and social studies reach |
@@ -470,3 +470,74 @@ worksheet unrun, and Kit 1 and Kit 2 are already listed against that family.
 A Lane C session can therefore carry a validated row even when its Lane A
 source material cannot, which is a good reason to keep the lane rather than a
 consolation for having it.
+
+---
+
+## Shipped 2026-09-27: The Locked Room (Lane A-G build 2)
+
+Per `tpt/intel/2026-09-27-sun-brief.md`, since no new TPT data arrived on the
+four rows sent Friday to settle build 2 (sixteen days without a pull). Built
+to the 09-23 product shape: **a working escape room, 8 pages, $14** (license
+$7), not another 23–31-page build-along.
+
+**`kits/tpt-game-locked-room/src/locked-room.html`** — one file, no install,
+no accounts, offline. The sample room (the same water-cycle set the series
+uses) plays before a teacher reads a word. Four or five padlocked "locks" are
+in reach at once — picking one is the decision, before the question ever
+appears. A wrong answer **jams** the lock instead of ending anything: it stays
+visibly stuck, always retryable, and clearing it is the only full-screen
+celebration in the room. The final door opens once every lock is open, so the
+room always finishes — no timer, no fail state. A setup screen collects the
+room name, the final-door line, and one row per clue (question, four answers,
+idea, level 1–3, why); it warns below eight clues, on a single idea, and when
+no level-3 clue exists. The AI drafting prompt uses the identical eight-field
+pipe format as The Long Road (`question | correct | wrong | wrong | wrong |
+idea | level | why`), so the same setup-screen parser serves both games
+unchanged.
+
+**Art is the differentiator named in the 09-22 design-standard note and the
+09-27 brief**: an interior room (a moonlit window as the one light source,
+silhouette furniture — bookshelf, cabinet, desk, trunk, a final door — each
+carrying a padlock built from a rectangle and an arc), not a re-skinned dusk
+landscape. Furniture unlocks visibly as the room's overall progress rises.
+
+**Browser-tested with Playwright**, five passes: played to the final door
+(jamming one lock on purpose, clearing it, confirming the full-screen
+celebration and the final tally of ideas cracked / jams cleared); deliberately
+jammed every one of the five visible locks at once and confirmed the room
+still opened a question on click — never stuck; ran the paste parser with a
+line with no `|` and a line with too few fields and confirmed both were named
+and skipped; saved a renamed room to a file, reopened it in a fresh page, and
+confirmed the room name and clues carried over; and loaded the game with
+`localStorage` blocked (private-window simulation) and played a lock with no
+crash. **Zero console or page errors on every pass.**
+
+**`kits/tpt-game-locked-room/src/room-quick.html`** — the 8-page pack: cover,
+the ten-minute path, a clue worth writing (with a weak/strong "why" example),
+how the room and the jam mechanic work plus three ways to run it, three
+change-it prompts (reskin the room, change the lock count, projector
+contrast), a troubleshooting table, the honest page (Breakout EDU's verified
+$1,499 School Digital+ starting price vs. our one-time $14; TPT escape rooms
+at $3–8; the three-tier data rule; the no-leaderboard refusal; what this pack
+is not), and the license/IP/review page. All five gates clean on first
+render: `check_fonts.py` 0, `check_breaks.py` 0, `check_overlap.py` clean,
+`check_us_english.py` 0, `check_footer.py` 0; `check_fresh.py` 0 stale for
+this listing after rebuilding pinsrc renders → extras → previews → drops in
+that order. Contact-sheet eyeball of all 8 pages: clean, no overflow, no
+orphaned sections. Title 73 characters, leads with "Vibe Code Your Own Game,"
+6 tags, license exactly half price ($7 of $14).
+
+**The full-regen footgun hit `make_previews.js`, `make_drops.js` and
+`make_pins.js` again this run**; every reverted file was verified
+content-identical to HEAD first — preview PDFs by text extraction, drop zips
+by per-entry SHA-256 of their unzipped contents — before reverting, so only
+this listing's own new files changed in git.
+
+Drop 62 in `UPLOAD/drops/`; `PINS-2026-09-27.zip` ships this week's one new
+pin plus the full `PINS.txt` upload sheet.
+
+**What's next for this series**: build 3 (two-team head-to-head) or the
+still-open roadmap-row-3/row-4 owner call from the 09-20 entry above. The
+09-27 brief's four validation rows (`escape room`, `digital escape room`,
+`digital breakout`, `review game`) remain unmeasured — the monthly re-pull is
+how the store finds out whether the category bet on this build is paying off.

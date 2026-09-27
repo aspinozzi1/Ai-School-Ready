@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>The Locked Room</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Vibe Code Your Own Game</div>
+<h1>The Locked Room</h1>
+<p class="lede">A digital escape room for <b>any subject and any grade</b>. Open the file, put your own
+clues in, and run it the same day. Your class picks which lock to attack &mdash; the simple one, the
+sturdy one, or the stiff one that pays off &mdash; and a wrong answer jams the lock instead of ending
+anything, so it waits right there until somebody comes back and clears it.</p>
+<div class="row" style="margin:13pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">10</h3><p class="small" style="margin:0">minutes from opening this to running your own version</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">1</h3><p class="small" style="margin:0">file, no installing, no accounts, works offline</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">0</h3><p class="small" style="margin:0">timers, fail states, or ways to lose in front of the class</p></div>
+</div>
+<div class="note"><b>Your clues go in without touching any code.</b><br>
+There is a setup screen built into the game. Type them in, or use the prompt on page 5 to have AI
+draft a whole room in about thirty seconds and then read them over. Press
+<b>Save my game as a file</b> and you have your own copy to keep, reuse and hand to the teacher
+next door.</div>
+<div class="card r"><h3>Why the jam is the whole design</h3>
+<p class="small" style="margin:0">A wrong answer does not end anything. It jams that lock, in plain
+sight, and the room stays exactly as open as it was. Going back for it and clearing it is the
+loudest moment in the game &mdash; louder than any lock that opens on the first try &mdash; because
+feeling capable is what actually drives students to keep going, and a jam fixed is proof of that.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>What is in this pack</h3>
+<p class="small" style="margin:0">The finished room &middot; ten minutes to make it yours &middot;
+how to write a clue worth answering &middot; how the room works and how to run it &middot; three
+copy-and-paste prompts that change the game itself &middot; the fixes for what actually goes wrong
+&middot; and where your things live.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Start here</div><h2>Ten minutes, start to finish</h2>
+<p class="lede">Do these in order. Your class is picking locks in your own room by the end of step four.</p>
+<div class="step"><div class="n">1</div><div>
+<h3>Unzip the folder and double-click <code>locked-room.html</code></h3>
+<p class="small" style="margin:0">It opens in whatever browser you already use. Nothing installs,
+nothing asks you to sign in. The sample room is about the water cycle, so open a lock or two to see
+the shape of it before you change anything.</p></div></div>
+<div class="step"><div class="n">2</div><div>
+<h3>Press <b>Put my own clues in</b></h3>
+<p class="small" style="margin:0">It is on the opening screen, under the Start button. That is the
+setup screen, and it is the only place you ever need to go.</p></div></div>
+<div class="step"><div class="n">3</div><div>
+<h3>Fill in the room name, what is behind the final door, and what you are reviewing</h3>
+<p class="small" style="margin:0">The final-door line is one sentence of flavor &mdash; "the supply
+closet," "the roof," "Friday." It takes nine seconds and the whole room reads as though it was
+written for your class, because it was.</p></div></div>
+<div class="step"><div class="n">4</div><div>
+<h3>Get your clues in, by whichever of these suits you</h3>
+<p class="small" style="margin:0"><b>Have AI draft them.</b> Copy the prompt the screen gives you,
+paste it into whichever AI tool you use, paste the answer back into the box, press Load. About
+thirty seconds. <b>Read them before you play them</b> &mdash; AI gets things wrong, and you are the
+one who knows your standards. <b>Or type them in</b> on the same screen, one card per clue.</p></div></div>
+<div class="step"><div class="n">5</div><div>
+<h3>Press <b>Save my game as a file</b></h3>
+<p class="small" style="margin:0">This is the step people skip and regret. It hands you back a
+single file with your clues already inside it. Put it wherever you keep your own work. It opens on
+any computer, it survives clearing your browsing data, and you can email it to a colleague who can
+then change it for their own class.</p></div></div>
+<div class="note"><b>Keep the original.</b> Save each room as its own file &mdash;
+<code>fractions.html</code>, <code>cell-parts.html</code>, <code>chapter-7.html</code> &mdash; and
+leave <code>locked-room.html</code> as it came. Then a room you want back next year is still there,
+and you always have a clean copy to start from.</div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The part that decides everything</div><h2>A clue worth answering</h2>
+<p class="lede">The room is the same whatever you put in it. <b>The clues are the lesson</b>, and four
+small decisions on the setup screen are what separate a room students beg to try again from a quiz
+with a padlock drawn on it.</p>
+<table>
+<thead><tr><th style="width:74pt">On the screen</th><th>What it is for</th><th>Getting it right</th></tr></thead>
+<tbody>
+<tr><td><b>The question</b></td><td>What you are asking</td><td>One idea per clue. If a student needs two things to answer it, a jam does not tell you which one they are missing.</td></tr>
+<tr><td><b>Idea it tests</b></td><td>The game never shows two locks on the same idea side by side, so the choice at every turn is a real one</td><td><b>Three or four ideas across the room, several locks each.</b> This is the setting most people get wrong. Ten different ideas gives the room nothing to work with.</td></tr>
+<tr><td><b>Level</b></td><td>Students choose their own difficulty by choosing the lock, so every level needs clues waiting</td><td>Roughly a third each. Level 1 is recall, level 2 is applying it, level 3 is reasoning about something they have not seen before.</td></tr>
+<tr><td><b>Why the answer is right</b></td><td>The one line held on screen after a jam</td><td><b>Write this one properly.</b> It is the only teaching the room does. A student who just jammed a lock should be able to learn from this sentence alone, with nobody explaining it.</td></tr>
+</tbody></table>
+<div class="card t"><h3>What a good "why" line sounds like</h3>
+<p class="small" style="margin-bottom:5pt"><b>Weak:</b> "Evaporation is the correct answer."
+That tells a student who just jammed the lock absolutely nothing.</p>
+<p class="small" style="margin:0"><b>Strong:</b> "The water did not go anywhere solid or liquid.
+Heat turned it into vapor." Now the jam was worth something.</p></div>
+<div class="card r"><h3>Eight to fourteen clues across three or four ideas is a room</h3>
+<p class="small" style="margin:0">Fewer than eight and the room opens in under a minute. More than
+about fourteen and a single room stops being a quick review and starts being a test, which is not
+what anybody is here for. Make as many rooms as you like; each is its own saved file.</p></div>
+<div class="note"><b>A distractor has to be wrong.</b> Make the three wrong answers plausible, but
+never defensible &mdash; in a paper quiz a disputed answer costs one point, in a room it can stop the
+whole class arguing instead of finishing. The setup screen's AI prompt tells the AI this directly;
+read the four answers it gives you before you trust any of them.</div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">How it plays</div><h2>The room, the jam, and no way to lose</h2>
+<p class="lede">Four or five locks are in reach at once. Whichever one a student picks <b>is the
+decision</b> &mdash; it comes before the question, not after it.</p>
+<div class="card"><h3>Pick a lock, any lock</h3>
+<p class="small" style="margin:0">A simple lock asks a level-1 clue. A stiff one asks a level-3 clue
+and is worth more of the room. Two classes with the same clues will clear a room in a different
+order, because which lock looked worth the risk is a real choice every time.</p></div>
+<div class="card t"><h3>Wrong jams it. Right opens it. Nothing else happens.</h3>
+<p class="small" style="margin:0">A jammed lock stays on screen, visibly stuck, and it is always
+still clickable &mdash; there is no cooldown and no penalty beyond having to come back to it. There
+is no timer counting down and no way for the room to end badly. Every room opens, eventually.</p></div>
+<div class="card g"><h3>Clearing a jam is the loudest moment in the game</h3>
+<p class="small" style="margin:0">The only full-screen celebration in the room belongs to a lock
+that was wrong and is now right. Opening a fresh lock earns a quiet acknowledgment; clearing a jam
+stops the room for a second to say so.</p></div>
+<div class="card p"><h3>Three ways to run it</h3>
+<p class="small" style="margin:0"><b>Whole class, projected.</b> The room comes up, the class argues
+about which lock to try, you click. <b>Pairs on one device</b>, with a rule that they agree before
+clicking &mdash; that rule is the whole activity. <b>A station in the corner</b> with no login and no
+way to lose, so a student arriving mid-period can simply pick up where the last one left it.</p></div>
+<div class="note"><b>Nobody is ranked and nobody is out.</b> There is nowhere to type a student's name
+and no per-student score. The tally on screen is locks opened and ideas cracked for the whole room,
+and it only ever goes up.</div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Make it yours</div><h2>Three prompts that change the game itself</h2>
+<p class="lede">Everything so far needed no code. This page is the other half: <b>the game is one
+file you own, so you can change how it works</b>, not just what it asks. Open
+<code>locked-room.html</code> in any AI assistant that accepts a file, paste one of these, and ask
+for the whole file back. Save the result as a <b>new</b> file and keep the old one.</p>
+<div class="prompt"><div class="lbl">1 &middot; Change the room</div>
+Change the setting from a storeroom to a ship's cabin. Keep every rule exactly as it is &mdash; the
+locks, the jamming, the celebration. Change only the words, the colors and the shapes drawn. Give me
+the whole file back.</div>
+<div class="prompt"><div class="lbl">2 &middot; Change the room's size</div>
+Make a room have six locks instead of the current number, and tell me which line I change to do that
+myself next time.</div>
+<div class="prompt"><div class="lbl">3 &middot; Read it from the back</div>
+Increase every font size by about a quarter and raise the contrast on the lock buttons, keeping the
+layout intact at 1280 by 720 on a projector. Give me the whole file back.</div>
+<div class="note"><b>Three rules that will save you an afternoon.</b> Change <b>one</b> thing per
+prompt, and play it before you ask for the next one. Always say <i>give me the whole file back</i>,
+or you will get a fragment and no way to place it. And always save under a new name &mdash; then a
+result you dislike costs you nothing at all.</div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">When it goes wrong</div><h2>The things that actually break</h2>
+<p class="lede">In order of how often they happen.</p>
+<table>
+<thead><tr><th style="width:150pt">What you see</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td><b>"Not ready to play yet", with a list</b></td><td>Nothing is broken. The room will not start on clues it cannot use, and the list names every one. The usual causes are an empty fourth answer and a missing why line.</td></tr>
+<tr><td><b>Pasted clues did not load</b></td><td>Every line needs eight parts separated by the | character. If the AI numbered the lines or added a sentence of its own, delete those lines and press Load again. The message tells you which line numbers it skipped and why.</td></tr>
+<tr><td><b>The room opens in under a minute</b></td><td>You have fewer than eight clues. The setup screen warns you; add more before you run it for the class.</td></tr>
+<tr><td><b>The same idea keeps showing up next to itself</b></td><td>Most of your clues are tagged with one idea. Give the room three or four, several clues each.</td></tr>
+<tr><td><b>A lock only ever asks easy questions</b></td><td>There are no level-2 or level-3 clues left. Add a few harder ones so choosing a lock is a real decision.</td></tr>
+<tr><td><b>A class argues that a "wrong" answer was actually right</b></td><td>Read that clue's four answers again. AI sometimes writes a distractor that is technically defensible &mdash; fix the wording or swap it before you run the room again.</td></tr>
+<tr><td><b>Your clues disappeared</b></td><td>They were kept in the browser and the browsing data was cleared, or you opened the file on a different computer. This is exactly what <b>Save my game as a file</b> prevents, and why page 2 puts it in step five.</td></tr>
+<tr><td><b>It will not open at all</b></td><td>Right-click the file, choose Open with, and pick a browser. A school laptop sometimes tries to open an HTML file in a text editor.</td></tr>
+<tr><td><b>An AI change broke the game</b></td><td>Delete that file and open the copy you kept. This is the whole reason page 5 says to save under a new name.</td></tr>
+</tbody></table>
+<div class="card t"><h3>Before you project it</h3>
+<p class="small" style="margin:0">A room is darker than a daylight scene by design. Open it on the
+classroom projector once before class and check the lock buttons read clearly from the back row.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The honest page</div><h2>What it does not do, and where your things live</h2>
+<div class="card r"><h3>Breakout EDU exists, and it is good</h3>
+<p class="small" style="margin:0">Their School Digital+ subscription starts at $1,499 a year, and it
+buys a library of premade rooms plus a management platform. A one-time $14 file is a different trade,
+and it is worth being plain about it: <b>no subscription, no login for anybody, works with the wifi
+down, cannot be blocked or switched off, and every rule in it is yours to change.</b> Most classroom
+escape rooms sold on TPT are a Google Form or a slide deck with a code typed into a box, usually
+$3&ndash;8; ours is real software with real locks that a teacher can reshape by asking. Pick whichever
+suits the day &mdash; a library of finished rooms is genuinely useful, and so is one you own outright.</p></div>
+<div class="card"><h3>Where your things live, in three lines</h3>
+<p class="small" style="margin-bottom:4pt"><b>Your clues.</b> On this page while you type them, and in
+your own file once you press Save. They are yours, they are not about any student, and they are
+transmitted nowhere.</p>
+<p class="small" style="margin-bottom:4pt"><b>The class best.</b> Ideas cracked and misses only, kept
+in that one browser on that one computer. No names, because there is nowhere to put one.</p>
+<p class="small" style="margin:0"><b>Anything you paste into an AI tool.</b> That leaves the room, and
+it goes to a company. Clues about the water cycle are fine. <b>A student's name, work, score, or
+anything about their needs is not</b> &mdash; that is the line, it does not move, and it applies to
+every AI tool your building uses.</p></div>
+<div class="note"><b>The most-asked feature, refused on purpose.</b> There is no leaderboard with
+student names, and there will not be one. It would put children's names and performance into a file
+that gets emailed around, and ranking students publicly does the most damage to the ones already
+struggling. The tally the game keeps is <b>ideas cracked</b>, it only ever goes up, and the biggest
+moment in the whole room belongs to the student who jammed a lock and then cleared it.</div>
+<div class="card p"><h3>What this pack is not</h3>
+<p class="small" style="margin:0">It is not a course in programming, and it does not teach you to
+build a room from nothing. It hands you a working one, shows you how to fill it with your own clues
+in ten minutes, and shows you how to change it by asking. That is the whole promise, and it is the
+whole of what is in the box.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Yours to use</div><h2>License, credit, and one favor</h2>
+<div class="card g"><h3>What you may do</h3>
+<p class="small" style="margin:0">Use it with your own students for as long as you teach. Change it
+however you like. Save as many rooms as you want. Put it on the classroom computers, on a flash
+drive, on a laptop cart. Your one purchase covers you and your classes.</p></div>
+<div class="card r"><h3>What needs another license</h3>
+<p class="small" style="margin:0">Sharing it with other teachers, putting it on a shared drive or
+server, or handing it round a department or a building. Additional licenses are half price on the
+listing, and a school can buy them on a single purchase order. Please do not post the file publicly
+or sell anything made from it.</p></div>
+<div class="card t"><h3>A note on the shape of the game</h3>
+<p class="small" style="margin:0">Locked rooms, padlocks and a wrong answer that jams the way forward
+are old ideas that belong to nobody, and you are welcome to build on them. The words, the art and the
+code in this file are ours. That distinction is worth knowing if you start changing games with AI:
+<b>how a game works is free to borrow, and the way a particular game says and draws it is not.</b>
+Build on the idea, write your own words.</p></div>
+<div class="note"><b>If this earned its keep, would you leave a review?</b> TPT gives you credits
+toward your next purchase for it, and it is the only thing that decides whether another teacher ever
+sees this. If something did not work, tell us that instead and we will fix it.</div>
+<div class="card"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Written by classroom teachers, used with real classes, and checked
+by a second teacher before it shipped. The room was played start to finish, on a teacher's own set of
+clues, before this pack was published.</p></div>
+<div class="foot"><span>Vibe Code Your Own Game &middot; The Locked Room</span><span>Bright Scholar · AI-Ready School</span></div>
+</body></html>

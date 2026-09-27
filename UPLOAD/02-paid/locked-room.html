@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Locked Room</title>
+<style>
+  :root{
+    --ink:#14202B; --deep:#223448; --slate:#3D5A73; --steel:#5E8199; --mist:#9FBAC9;
+    --bone:#E8E2D0; --sand:#D9B47C; --clay:#B5763F; --rust:#8A4A2B; --moss:#6B8F5A;
+    --gold:#F2C14E; --amber:#D9812B; --sky:#7FB2D9; --plum:#6B4A7A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--bone);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+       display:flex;align-items:center;justify-content:center;min-height:100vh;padding:14px}
+  #wrap{width:100%;max-width:900px;display:flex;flex-direction:column;gap:10px}
+  #stage{position:relative;width:100%;aspect-ratio:16/9;border:4px solid var(--deep);
+         border-radius:12px;overflow:hidden;background:var(--slate);
+         box-shadow:0 8px 0 #0C151D}
+  canvas{display:block;width:100%;height:100%}
+  .panel{background:var(--deep);border:3px solid var(--bone);border-radius:10px;padding:12px 14px}
+  #say{font-size:clamp(14px,2.3vw,18px);font-weight:700;text-align:center;min-height:1.4em}
+  #choices{display:grid;gap:9px}
+  #choices.three{grid-template-columns:repeat(3,1fr)}
+  #choices.two{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:640px){#choices.three,#choices.two{grid-template-columns:1fr}}
+  .route{font:inherit;text-align:left;cursor:pointer;background:var(--slate);
+         border:3px solid var(--bone);border-radius:9px;padding:11px 13px;color:var(--bone);
+         transition:transform .08s,background .08s;display:flex;flex-direction:column;gap:5px}
+  .route:hover:not(:disabled){transform:translateY(-3px);background:var(--steel)}
+  .route:focus-visible{outline:4px solid var(--gold);outline-offset:2px}
+  .route:disabled{opacity:.55;cursor:default}
+  .route .nm{font-weight:800;font-size:clamp(14px,2.1vw,17px)}
+  .route .dt{font-size:clamp(11px,1.7vw,13px);color:var(--mist);line-height:1.35}
+  .route .tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;
+        text-transform:uppercase;padding:2px 8px;border-radius:99px;background:var(--ink);color:var(--sand)}
+  .route.hard .tag{background:var(--rust);color:var(--bone)}
+  .route.safe .tag{background:var(--moss);color:var(--ink)}
+  .route.block{border-color:var(--gold);border-style:dashed}
+  .route.block .tag{background:var(--gold);color:var(--ink)}
+  #qtext{font-size:clamp(15px,2.5vw,20px);font-weight:700;line-height:1.35;margin-bottom:10px}
+  #answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (max-width:640px){#answers{grid-template-columns:1fr}}
+  #answers button{font:inherit;font-weight:700;font-size:clamp(13px,2vw,16px);text-align:left;
+      padding:11px 13px;border-radius:8px;border:3px solid var(--bone);background:var(--ink);
+      color:var(--bone);cursor:pointer;transition:transform .08s}
+  #answers button:hover:not(:disabled){transform:translateY(-2px);background:var(--slate)}
+  #answers button:focus-visible{outline:4px solid var(--gold);outline-offset:2px}
+  #answers button.right{background:var(--moss);border-color:#A8D18C;color:var(--ink)}
+  #answers button.wrong{background:var(--rust);border-color:#E0A07F}
+  #answers button:disabled{cursor:default;opacity:.92}
+  .key{display:inline-block;min-width:20px;margin-right:7px;padding:0 5px;border-radius:4px;
+       background:var(--bone);color:var(--ink);font-size:.85em}
+  #why{margin-top:9px;font-size:clamp(12px,1.9vw,15px);line-height:1.4;color:var(--sand);
+       border-left:4px solid var(--gold);padding-left:10px;display:none}
+  #why.show{display:block}
+  .screen{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:14px;text-align:center;padding:22px;background:rgba(20,32,43,.95);z-index:5}
+  h1{font-size:clamp(23px,4.8vw,42px);line-height:1.08;letter-spacing:.01em}
+  h1 em{font-style:normal;color:var(--gold)}
+  .big{font-size:clamp(14px,2.5vw,19px);max-width:34ch;line-height:1.45;color:var(--mist)}
+  .go{font:inherit;font-weight:800;font-size:clamp(15px,2.5vw,19px);padding:12px 28px;
+      border-radius:10px;border:3px solid var(--ink);background:var(--gold);color:var(--ink);cursor:pointer}
+  .go:hover{transform:translateY(-2px)}
+  .go:focus-visible{outline:4px solid var(--sky);outline-offset:3px}
+  .meta{font-size:13px;color:var(--steel)}
+  /* ---- the clue setup screen ------------------------------------- */
+  #editor{display:none;width:100%;max-width:900px;margin:0 auto;padding:4px 0 40px}
+  #editor.on{display:block}
+  #editor h2{font-size:clamp(19px,3vw,27px);margin-bottom:6px}
+  #editor h3{font-size:clamp(15px,2.2vw,18px);margin:0 0 6px}
+  #editor p{font-size:clamp(13px,1.9vw,15px);line-height:1.5;color:var(--mist);margin-bottom:9px}
+  #editor p b{color:var(--bone)}
+  .card2{background:var(--deep);border:3px solid var(--bone);border-radius:10px;
+         padding:13px 15px;margin-bottom:12px}
+  .card2.lit{border-color:var(--gold)}
+  .fld{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+  .fld label{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sand)}
+  .fld input,.fld textarea,.fld select{font:inherit;font-size:15px;padding:8px 10px;border-radius:7px;
+        border:2px solid var(--steel);background:var(--ink);color:var(--bone)}
+  .fld textarea{min-height:52px;resize:vertical}
+  .fld input:focus,.fld textarea:focus,.fld select:focus{outline:3px solid var(--gold);outline-offset:1px}
+  .three3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+  .two2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  @media (max-width:640px){.three3,.two2{grid-template-columns:1fr}}
+  .qrow{background:var(--ink);border:2px solid var(--slate);border-radius:9px;padding:11px 12px;margin-bottom:9px}
+  .qrow .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+  .qrow .no{font-weight:800;color:var(--gold);font-size:14px}
+  .ansline{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .ansline input[type=text]{flex:1}
+  .ansline label{font-size:12px;color:var(--mist);display:flex;align-items:center;gap:5px;
+       white-space:nowrap;font-weight:700}
+  .btn{font:inherit;font-weight:800;font-size:15px;padding:9px 16px;border-radius:8px;
+       border:3px solid var(--ink);background:var(--gold);color:var(--ink);cursor:pointer}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:focus-visible{outline:4px solid var(--sky);outline-offset:3px}
+  .btn.quiet{background:var(--slate);color:var(--bone);border-color:var(--bone)}
+  .btn.small{font-size:13px;padding:6px 11px}
+  .btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}
+  pre.pr{background:var(--ink);color:var(--bone);border:2px solid var(--steel);border-radius:8px;
+     padding:11px 13px;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word;
+     max-height:230px;overflow:auto;margin-bottom:9px}
+  .msg{font-size:14px;line-height:1.5;border-radius:8px;padding:9px 12px;margin-top:9px;display:none}
+  .msg.on{display:block}
+  .msg.bad{background:#4A2118;border:2px solid #E0A07F;color:#FFD9C6}
+  .msg.good{background:#2C4426;border:2px solid #A8D18C;color:#DDF2CE}
+  .msg ul{margin:5px 0 0 18px}
+  .warn{color:var(--amber)}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="stage">
+    <canvas id="c" width="640" height="360" aria-hidden="true"></canvas>
+
+    <div class="screen" id="title">
+      <h1 id="ttl">The Locked Room</h1>
+      <p class="big" id="blurb"></p>
+      <button class="go" id="startBtn">Start</button>
+      <button class="go" id="setupBtn" style="background:var(--slate);color:var(--bone)">Put my own clues in</button>
+      <p class="meta" id="best"></p>
+    </div>
+
+    <div class="screen" id="cleared" hidden>
+      <h1><em>Cleared</em></h1>
+      <p class="big" id="clearedText"></p>
+      <button class="go" id="clearedBtn">Keep going</button>
+    </div>
+
+    <div class="screen" id="arrived" hidden>
+      <h1 id="arrTitle"></h1>
+      <p class="big" id="arrText"></p>
+      <button class="go" id="againBtn">Try another room</button>
+      <p class="meta" id="arrMeta"></p>
+    </div>
+  </div>
+
+  <div class="panel"><div id="say" role="status" aria-live="polite">&nbsp;</div></div>
+
+  <div class="panel" id="choicePanel" hidden>
+    <div id="choices" class="three"></div>
+  </div>
+
+  <div class="panel" id="qpanel" hidden>
+    <div id="qtext"></div>
+    <div id="answers"></div>
+    <div id="why"></div>
+  </div>
+</div>
+
+<div id="editor">
+  <div class="card2 lit">
+    <h2>Put your own clues in</h2>
+    <p>Nothing here leaves this page. There is no account, no upload and no server. When you are
+    done, <b>Save my game</b> gives you back a single file that is yours to keep, copy and hand out.</p>
+    <div class="two2">
+      <div class="fld"><label for="mRoom">Room name</label>
+        <input type="text" id="mRoom" maxlength="42"></div>
+      <div class="fld"><label for="mFinal">What is behind the final door</label>
+        <input type="text" id="mFinal" maxlength="40" placeholder="the supply closet, the roof, Friday"></div>
+    </div>
+    <div class="fld"><label for="mSubject">What this room reviews</label>
+      <input type="text" id="mSubject" maxlength="60" placeholder="fractions, the Constitution, cell parts"></div>
+    <div class="btnrow"><button class="btn quiet small" id="backBtn">Back to the room</button></div>
+  </div>
+
+  <div class="card2">
+    <h3>The fast way: have AI write them</h3>
+    <p>Fill in the box above first, then copy this and paste it into whichever AI tool you use.
+    Paste what it gives you back into the box underneath. <b>Read them before you play them</b> —
+    AI gets facts wrong, and you are the one who knows your standards.</p>
+    <pre class="pr" id="promptBox"></pre>
+    <div class="btnrow">
+      <button class="btn small" id="copyBtn">Copy the prompt</button>
+      <button class="btn quiet small" id="fmtBtn">What the format means</button>
+    </div>
+    <div id="fmtHelp" hidden style="margin-top:10px">
+      <p style="margin-bottom:4px"><b>One clue per line, eight parts, separated by the | character.</b></p>
+      <pre class="pr" style="max-height:none">question | correct answer | wrong | wrong | wrong | idea | level | why</pre>
+      <p style="margin:0"><b>idea</b> is the concept the lock tests. The game tracks it, brings a jammed
+      lock's idea back for you to clear, and never shows two locks on the same idea side by side, so use only
+      three or four ideas across the room. <b>level</b> is 1 simple, 2 sturdy, 3 stiff — you pick your own
+      difficulty by picking the lock, so you need some of each. <b>why</b> is the one line shown after a wrong
+      answer, and it is the part that does the teaching.</p>
+    </div>
+    <div class="fld" style="margin-top:11px"><label for="pasteBox">Paste what the AI gave you here</label>
+      <textarea id="pasteBox" style="min-height:110px" placeholder="One clue per line."></textarea></div>
+    <div class="btnrow">
+      <button class="btn" id="loadBtn">Load these clues</button>
+      <button class="btn quiet small" id="appendBtn">Add them to what I already have</button>
+    </div>
+    <div class="msg" id="pasteMsg"></div>
+  </div>
+
+  <div class="card2">
+    <h3>Your clues</h3>
+    <p id="countLine"></p>
+    <div id="qlist"></div>
+    <div class="btnrow">
+      <button class="btn quiet" id="addBtn">Add a clue</button>
+      <button class="btn quiet small" id="sampleBtn">Put the sample clues back</button>
+    </div>
+  </div>
+
+  <div class="card2 lit">
+    <h3>When you are ready</h3>
+    <div class="btnrow">
+      <button class="btn" id="playBtn">Play with these now</button>
+      <button class="btn" id="dlBtn">Save my game as a file</button>
+      <button class="btn quiet" id="keepBtn">Keep them in this browser</button>
+    </div>
+    <div class="msg" id="doneMsg"></div>
+    <p style="margin:11px 0 0"><b>Save my game as a file</b> is the one that lasts. Clearing your
+    browsing data erases anything kept in the browser; a file on your own drive survives it, opens on
+    any computer, and can be emailed to the teacher next door.</p>
+  </div>
+</div>
+
+<script>
+/* ===========================================================================
+   YOUR CONTENT. Everything else is the game.
+
+   Each clue needs five things:
+     q     the question
+     a     four answers
+     ok    which answer is right, counting from 0
+     idea  the concept it tests -- the game tracks it by idea and never shows
+           two locks on the same idea side by side
+     why   one line saying why the answer is right; shown after a wrong answer
+     level 1 simple, 2 sturdy, 3 stiff -- you pick your own difficulty by
+           picking the lock, so you need some of each
+
+   Eight to fourteen clues across three or four ideas is a room.
+   =========================================================================== */
+
+let ROOM      = 'The Locked Room';
+let FINALLINE = 'the greenhouse roof';
+let SUBJECT   = 'the water cycle';
+
+let CLUES = [
+  { q:'Water turning from liquid into vapor is called what?',
+    a:['Evaporation','Condensation','Precipitation','Collection'], ok:0, idea:'evaporation', level:1,
+    why:'Evaporation is liquid becoming vapor. Heat gives the molecules enough energy to escape.' },
+  { q:'A puddle disappears on a hot day. Which process did the most work?',
+    a:['Condensation','Evaporation','Precipitation','Runoff'], ok:1, idea:'evaporation', level:2,
+    why:'The water did not go anywhere solid or liquid. Heat turned it to vapor.' },
+  { q:'Two puddles, same size. One is in the sun and one in shade. Which is gone first, and why?',
+    a:['Shade, cooler air holds more water','Sun, more energy means faster evaporation','Both the same, size decides it','Shade, less wind'], ok:1, idea:'evaporation', level:3,
+    why:'Evaporation speeds up with energy. More sunlight means more energy means faster.' },
+
+  { q:'Water vapor cooling and forming clouds is called what?',
+    a:['Runoff','Condensation','Evaporation','Infiltration'], ok:1, idea:'condensation', level:1,
+    why:'Condensation is vapor becoming liquid, which is what a cloud droplet is.' },
+  { q:'Why does a cold glass get wet on the outside on a warm day?',
+    a:['Water leaks through the glass','Vapor in the air condenses on the cold surface','The glass sweats like skin','Pressure forces water out'], ok:1, idea:'condensation', level:2,
+    why:'The cold surface cools nearby air, and cooled air cannot hold as much vapor.' },
+  { q:'Clouds form where rising air cools. Why does rising air cool?',
+    a:['It is further from the ground, which is warm','It expands as pressure drops','It mixes with cold rain','It loses sunlight'], ok:1, idea:'condensation', level:3,
+    why:'Pressure falls with height, the air expands, and expanding air cools.' },
+
+  { q:'Rain, snow, sleet and hail are all examples of what?',
+    a:['Transpiration','Condensation','Precipitation','Evaporation'], ok:2, idea:'precipitation', level:1,
+    why:'Precipitation is any water falling from the sky, in any state.' },
+  { q:'Cloud droplets are tiny. What has to happen before rain falls?',
+    a:['They must freeze','They must join until heavy enough to fall','The cloud must reach the ground','The wind must stop'], ok:1, idea:'precipitation', level:2,
+    why:'Droplets collide and merge. Falling needs enough weight to beat the rising air.' },
+
+  { q:'Water that flows over the ground into rivers is called what?',
+    a:['Infiltration','Runoff','Condensation','Evaporation'], ok:1, idea:'runoff', level:1,
+    why:'Runoff travels across the surface instead of soaking in.' },
+  { q:'A parking lot floods but the field beside it does not. Why?',
+    a:['Pavement blocks infiltration, so water runs off','Pavement attracts rain','The field is warmer','Fields evaporate faster'], ok:0, idea:'runoff', level:2,
+    why:'Water that cannot soak in has to go somewhere, so it runs off.' },
+  { q:'A town paves over a wetland. What most likely happens downstream?',
+    a:['Less flooding, the water is held','More flooding, less ground to absorb it','No change, rain is the same','Less evaporation only'], ok:1, idea:'runoff', level:3,
+    why:'Removing ground that absorbs water sends more of it downstream, faster.' },
+
+  { q:'Water released from the leaves of plants is called what?',
+    a:['Transpiration','Precipitation','Percolation','Condensation'], ok:0, idea:'transpiration', level:1,
+    why:'Transpiration is plants releasing water vapor through their leaves.' },
+  { q:'A forest is cleared. What happens to water vapor entering the air there?',
+    a:['It rises, fewer roots hold water','It falls, the trees were transpiring','Nothing, only oceans matter','It rises, soil evaporates more than trees'], ok:1, idea:'transpiration', level:3,
+    why:'Trees move a great deal of water into the air. Remove them and that stops.' },
+
+  { q:'What provides the energy that drives the whole water cycle?',
+    a:['The moon','The sun','The wind','The tides'], ok:1, idea:'energy', level:1,
+    why:'Sunlight is the energy source. Without it nothing evaporates and nothing moves.' },
+  { q:'Why is the water cycle called a cycle?',
+    a:['It happens once a year','Water is used up and replaced','The same water moves through the same stages again','It only works in circles of rain'], ok:2, idea:'energy', level:2,
+    why:'No new water is made. The same water keeps moving through the same stages.' },
+];
+
+/* ===========================================================================
+   THE GAME.
+   =========================================================================== */
+
+const W=640, H=360;
+const c=document.getElementById('c'), x=c.getContext('2d');
+x.imageSmoothingEnabled=true;
+const $=id=>document.getElementById(id);
+
+/* the whole palette, fourteen colors, one place -- a room lit by one window */
+const P={ ink:'#15100D', wallD:'#241B15', wallM:'#382A1F', floor:'#1C140F', floorL:'#2C2015',
+  wood:'#5C4530', woodL:'#7A5C3D', brass:'#F2C14E', amber:'#D98B2B', moss:'#6B8F5A',
+  rust:'#8A4A2B', bone:'#E8E2D0', moon:'#9FC9E8', moonGlow:'#D8ECF7' };
+
+/* --- No pixel art. Shapes, gradients and one light source.
+   An escape room is an interior: a wall, a floor, furniture and a final door
+   drawn as dark silhouettes with a rim light on the edge facing the window,
+   and a padlock is a rectangle and an arc -- nothing here is a picture, it is
+   numbers, which is why it renders right the first time. --- */
+
+const LEVEL_TAG = {1:'Simple lock',2:'Sturdy lock',3:'Stiff lock'};
+const PROPS = {
+  1:['The desk drawer','The toolbox','The window seat','The mail slot','The supply bin'],
+  2:['The cabinet','The bookshelf','The old trunk','The filing cabinet','The map case'],
+  3:['The safe','The iron chest','The side door','The strongbox','The vault door'],
+};
+/* Assigned once per lock, in level order, so two locks of the same level
+   visible at once read as two different pieces of furniture rather than
+   two identical labels -- only repeats after five locks share a level. */
+let PROP_NAMES = [];
+function buildPropNames(){
+  const counters={1:0,2:0,3:0};
+  PROP_NAMES = CLUES.map(c=>{
+    const lvl=c.level, arr=PROPS[lvl]||PROPS[2];
+    const nm=arr[counters[lvl]%arr.length]; counters[lvl]++; return nm;
+  });
+}
+function propFor(i){ return PROP_NAMES[i] || 'The locked door'; }
+
+function padlock(px,py,size,bodyColor,ringColor){
+  const s=size;
+  x.strokeStyle=ringColor||P.brass; x.lineWidth=s*0.22;
+  x.beginPath(); x.arc(px,py-s*0.55,s*0.5,Math.PI,0); x.stroke();
+  x.fillStyle=bodyColor||P.ink;
+  x.fillRect(px-s*0.55,py-s*0.15,s*1.1,s*0.9);
+  x.fillStyle=ringColor||P.brass;
+  x.beginPath(); x.arc(px,py+s*0.28,s*0.12,0,7); x.fill();
+}
+
+const FURNITURE = [
+  { fx:0.11, fy:0.615, w:46, h:96,  draw:drawBookshelf },
+  { fx:0.33, fy:0.62,  w:56, h:82,  draw:drawCabinet },
+  { fx:0.53, fy:0.665, w:60, h:34,  draw:drawDesk },
+  { fx:0.85, fy:0.64,  w:66, h:42,  draw:drawTrunk },
+];
+function drawBookshelf(px,gy,w,h,locked){
+  const left=px-w/2, top=gy-h;
+  x.fillStyle=P.wood; x.fillRect(left,top,w,h);
+  x.fillStyle=P.wallD;
+  for(let i=1;i<4;i++) x.fillRect(left+3, top+(h/4)*i-2, w-6, 3);
+  x.fillStyle=P.rust;  x.fillRect(left+6,  top+4, 6, h/4-8);
+  x.fillStyle=P.moss;  x.fillRect(left+14, top+4, 6, h/4-10);
+  x.fillStyle=P.amber; x.fillRect(left+22, top+4, 6, h/4-6);
+  x.strokeStyle='rgba(216,236,247,.42)'; x.lineWidth=1.4;
+  x.beginPath(); x.moveTo(left,top); x.lineTo(left,gy); x.stroke();
+  x.fillStyle='rgba(0,0,0,.3)'; x.beginPath(); x.ellipse(px,gy+3,w*0.5,5,0,0,7); x.fill();
+  if(locked) padlock(px, top+h*0.5, 11, P.ink, P.brass);
+}
+function drawCabinet(px,gy,w,h,locked){
+  const left=px-w/2, top=gy-h;
+  x.fillStyle=P.woodL; x.fillRect(left,top,w,h);
+  x.strokeStyle=P.ink; x.lineWidth=2; x.beginPath(); x.moveTo(px,top); x.lineTo(px,gy); x.stroke();
+  x.fillStyle=P.ink;
+  x.beginPath(); x.arc(px-8,gy-h/2,2.6,0,7); x.fill();
+  x.beginPath(); x.arc(px+8,gy-h/2,2.6,0,7); x.fill();
+  x.strokeStyle='rgba(216,236,247,.4)'; x.lineWidth=1.4;
+  x.beginPath(); x.moveTo(left,top); x.lineTo(left,gy); x.stroke();
+  x.fillStyle='rgba(0,0,0,.3)'; x.beginPath(); x.ellipse(px,gy+3,w*0.5,5,0,0,7); x.fill();
+  if(locked) padlock(px, gy-h*0.45, 12, P.ink, P.brass);
+}
+function drawDesk(px,gy,w,h,locked){
+  const left=px-w/2, top=gy-h;
+  x.fillStyle=P.wood;  x.fillRect(left,top,w,h*0.5);
+  x.fillStyle=P.woodL; x.fillRect(left+w*0.15,top+h*0.5,w*0.7,h*0.5);
+  x.fillStyle=P.ink;   x.fillRect(left+w*0.46,top+h*0.72,w*0.08,3);
+  x.strokeStyle='rgba(216,236,247,.4)'; x.lineWidth=1.2;
+  x.beginPath(); x.moveTo(left,top); x.lineTo(left,gy); x.stroke();
+  x.fillStyle='rgba(0,0,0,.28)'; x.beginPath(); x.ellipse(px,gy+2,w*0.5,4,0,0,7); x.fill();
+  if(locked) padlock(px, top+h*0.7, 9, P.ink, P.brass);
+}
+function drawTrunk(px,gy,w,h,locked){
+  const left=px-w/2, top=gy-h;
+  x.fillStyle=P.wood; x.fillRect(left,top+8,w,h-8);
+  x.beginPath(); x.moveTo(left,top+8); x.quadraticCurveTo(px,top-6,left+w,top+8); x.closePath();
+  x.fillStyle=P.woodL; x.fill();
+  x.strokeStyle=P.ink; x.lineWidth=2;
+  x.beginPath(); x.moveTo(left+w*0.25,top+8); x.lineTo(left+w*0.25,gy);
+  x.moveTo(left+w*0.75,top+8); x.lineTo(left+w*0.75,gy); x.stroke();
+  x.strokeStyle='rgba(216,236,247,.4)'; x.lineWidth=1.3;
+  x.beginPath(); x.moveTo(left,top+8); x.lineTo(left,gy); x.stroke();
+  x.fillStyle='rgba(0,0,0,.3)'; x.beginPath(); x.ellipse(px,gy+3,w*0.5,5,0,0,7); x.fill();
+  if(locked){ padlock(px, top+h*0.5, 11, P.ink, P.brass); }
+  else { x.fillStyle='rgba(242,193,78,.25)'; x.beginPath(); x.ellipse(px, top+2, w*0.35, 6,0,0,7); x.fill(); }
+}
+function drawProps(){
+  const total=CLUES.length||1;
+  const openCount = S ? S.lockState.filter(s=>s==='open').length : 0;
+  FURNITURE.forEach((f,idx)=>{
+    const threshold = Math.ceil((idx+1)/(FURNITURE.length+1) * total);
+    const locked = openCount < threshold;
+    f.draw(W*f.fx, H*f.fy, f.w, f.h, locked);
+  });
+}
+function drawFinalDoor(px,gy,progress){
+  const w=70,h=150;
+  x.fillStyle=P.ink; x.fillRect(px-w/2-6,gy-h-6,w+12,h+10);
+  x.save();
+  x.translate(px-w/2, gy-h);
+  x.transform(1-progress*0.35,0,0,1,0,0);
+  x.fillStyle=P.wood; x.fillRect(0,0,w,h);
+  x.strokeStyle=P.woodL; x.lineWidth=2; x.strokeRect(4,4,w-8,h-8);
+  x.restore();
+  if(progress>0.05){
+    const gap = x.createLinearGradient(px+w/2-4,0,px+w/2+18,0);
+    gap.addColorStop(0,'rgba(242,193,78,'+(0.5*progress)+')'); gap.addColorStop(1,'rgba(242,193,78,0)');
+    x.fillStyle=gap; x.fillRect(px+w/2-4,gy-h,24,h);
+  }
+  if(progress<1){
+    x.globalAlpha=1-progress;
+    padlock(px,gy-h*0.5,18,P.ink,P.brass);
+    x.globalAlpha=1;
+  }
+  x.strokeStyle='rgba(216,236,247,.5)'; x.lineWidth=1.6;
+  x.beginPath(); x.moveTo(px-w/2-6,gy-h-6); x.lineTo(px-w/2-6,gy+4); x.stroke();
+}
+function drawDust(t){
+  x.fillStyle='rgba(216,236,247,.55)';
+  for(let i=0;i<10;i++){
+    const dx = 66 + (i*23)%150 + Math.sin(t/60+i)*10;
+    const dy = 40 + ((t*0.4+i*19)%180);
+    x.globalAlpha = 0.12+0.14*Math.sin(t/50+i);
+    x.beginPath(); x.arc(dx,dy,1.4,0,7); x.fill();
+  }
+  x.globalAlpha=1;
+}
+
+/* --------------------------------------------------------------- state --- */
+let S=null;
+function fresh(){
+  return { scene:'title', lockState:CLUES.map(()=>'closed'), visible:[],
+    ideasCracked:new Set(), jamsCleared:0, misses:0, pending:null, locked:false,
+    t:0, shake:0, flash:0, floats:[] };
+}
+const rnd=n=>Math.floor(Math.random()*n);
+const pick=a=>a[rnd(a.length)];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+/* ---------------------------------------------------------------- sound --- */
+let AC=null;
+function tone(f,ms,type,vol){
+  try{ AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+    const o=AC.createOscillator(),g=AC.createGain();
+    o.type=type||'square'; o.frequency.value=f; g.gain.value=vol==null?0.045:vol;
+    o.connect(g);g.connect(AC.destination);o.start();
+    g.gain.exponentialRampToValueAtTime(0.0001,AC.currentTime+ms/1000);
+    o.stop(AC.currentTime+ms/1000);
+  }catch(e){}
+}
+const sGood=()=>{tone(523,80);setTimeout(()=>tone(784,110),70)};
+const sBad =()=>tone(140,240,'sawtooth',.04);
+const sFix =()=>[523,659,784,1047,1319].forEach((f,i)=>setTimeout(()=>tone(f,150,'square',.05),i*110));
+const sArr =()=>[392,523,659,784].forEach((f,i)=>setTimeout(()=>tone(f,220,'triangle',.05),i*160));
+
+/* ------------------------------------------------------------ the locks --- */
+/* Every lock is a real decision: which idea, at which difficulty. A jammed
+   lock always stays clickable, so the room can never truly get stuck. */
+function visibleCount(){ return CLUES.length<=9 ? 4 : 5; }
+function arrangeByIdea(indices){
+  const byIdea={};
+  indices.forEach(i=>{ const k=CLUES[i].idea; (byIdea[k]=byIdea[k]||[]).push(i); });
+  const groups=Object.values(byIdea);
+  const out=[]; let more=true;
+  while(more){ more=false; for(const g of groups){ if(g.length){ out.push(g.shift()); if(g.length)more=true; } } }
+  return out;
+}
+function refillVisible(){
+  const jammed=[]; const pool=[];
+  CLUES.forEach((c,i)=>{
+    if(S.lockState[i]==='jammed') jammed.push(i);
+    else if(S.lockState[i]==='closed') pool.push(i);
+  });
+  const need=Math.max(visibleCount()-jammed.length,0);
+  const chosenIdeas=new Set(jammed.map(i=>CLUES[i].idea));
+  const chosen=[];
+  shuffle(pool).forEach(i=>{ if(chosen.length<need && !chosenIdeas.has(CLUES[i].idea)){ chosen.push(i); chosenIdeas.add(CLUES[i].idea); } });
+  shuffle(pool).forEach(i=>{ if(chosen.length<need && !chosen.includes(i)) chosen.push(i); });
+  S.visible=arrangeByIdea([...jammed,...chosen]);
+}
+function renderChoices(){
+  const box=$('choices');
+  box.className = S.visible.length>=3 ? 'three' : 'two';
+  box.innerHTML='';
+  S.visible.forEach(i=>{
+    const c=CLUES[i], st=S.lockState[i];
+    const b=document.createElement('button');
+    b.className='route '+(st==='jammed' ? 'block' : (c.level===3?'hard':c.level===1?'safe':''));
+    const tag = st==='jammed' ? 'Jammed — try again' : (LEVEL_TAG[c.level]||'Sturdy lock');
+    b.innerHTML='<span class="tag">'+tag+'</span><span class="nm">'+esc(propFor(i))+'</span>'
+      +'<span class="dt">Tests: <b>'+esc(c.idea)+'</b>'
+      +(st==='jammed' ? '<br>You got this one wrong before. Clear it and the room brightens.' : '')
+      +'</span>';
+    b.onclick=()=>askLock(i);
+    box.appendChild(b);
+  });
+  $('choicePanel').hidden=false;
+  say(S.visible.length+' lock'+(S.visible.length===1?'':'s')+' in reach. Which one?');
+  const first=box.querySelector('button'); if(first) first.focus();
+}
+function hideChoices(){ $('choicePanel').hidden=true; }
+
+function askLock(i){
+  hideChoices();
+  S.pending={idx:i};
+  const c=CLUES[i];
+  $('qtext').textContent=c.q;
+  const why=$('why'); why.className=''; why.textContent='';
+  const box=$('answers'); box.innerHTML='';
+  shuffle(c.a.map((text,k)=>({text,right:k===c.ok}))).forEach((opt,k)=>{
+    const b=document.createElement('button');
+    b.innerHTML='<span class="key">'+(k+1)+'</span>'+esc(opt.text);
+    b.dataset.right=opt.right?'1':'0';
+    b.onclick=()=>answerLock(b,opt.right,box);
+    box.appendChild(b);
+  });
+  $('qpanel').hidden=false;
+  S.locked=false;
+  box.querySelector('button').focus();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+
+function answerLock(btn,right,box){
+  if(S.locked)return; S.locked=true;
+  const p=S.pending, i=p.idx, c=CLUES[i];
+  [...box.children].forEach(b=>{ b.disabled=true; if(b.dataset.right==='1')b.classList.add('right'); });
+  if(!right)btn.classList.add('wrong');
+
+  const wasJammed = S.lockState[i]==='jammed';
+  if(right){
+    S.flash=6; sGood();
+    S.lockState[i]='open';
+    S.ideasCracked.add(c.idea);
+    if(wasJammed){
+      S.jamsCleared++;
+      setTimeout(()=>{ $('qpanel').hidden=true; celebrateClear(c); }, 1000);
+      return;
+    }
+    float('OPEN',320,150,P.brass,22);
+    say('It opens. Pick another.');
+  } else {
+    sBad(); S.shake=10; S.misses++;
+    S.lockState[i]='jammed';
+    float('JAMMED',320,150,P.amber,20);
+    say('Wrong. It jams — read the reason, and come back for it later.');
+    const why=$('why'); why.textContent='Why: '+c.why; why.className='show';
+  }
+  const pause = right ? 1000 : 2600;
+  setTimeout(()=>{ $('qpanel').hidden=true; afterResolve(); }, pause);
+}
+function celebrateClear(c){
+  sFix(); S.shake=6;
+  $('clearedText').textContent='That lock jammed on '+c.idea+' earlier. Not this time — it is open for good, '
+    +'and this is the loudest moment in the room.';
+  $('cleared').hidden=false; $('clearedBtn').focus();
+}
+function afterResolve(){
+  const openCount=S.lockState.filter(s=>s==='open').length;
+  if(openCount>=CLUES.length){ arrive(); return; }
+  refillVisible();
+  renderChoices();
+}
+function say(t){ $('say').textContent=t; }
+function float(t,px,py,col,size){ S.floats.push({text:t,x:px,y:py,color:col,size:size||20,life:55}); }
+
+/* ------------------------------------------------------- start and end --- */
+function arrive(){
+  S.scene='arrived';
+  hideChoices();
+  const score={ideas:S.ideasCracked.size,jams:S.jamsCleared,misses:S.misses,locks:CLUES.length};
+  $('arrTitle').textContent='The final door opens';
+  $('arrText').textContent = 'Behind it: '+FINALLINE+'. '+score.ideas+' ideas cracked'
+    + (score.jams ? ', '+score.jams+' of them after a jam' : '') + '. '
+    + score.locks+' locks opened, no names, no timer, nobody lost.';
+  const best=loadBest();
+  const better = !best || score.ideas>best.ideas || (score.ideas===best.ideas && score.misses<best.misses);
+  if(better){ saveBest(score); S.best=score; $('arrMeta').textContent='A new class best.'; }
+  else { $('arrMeta').textContent='Class best: '+best.ideas+' ideas cracked, '+best.misses+' misses.'; }
+  $('arrived').hidden=false; $('againBtn').focus(); sArr();
+}
+function loadBest(){ try{ return JSON.parse(localStorage.getItem('lockedroom.best')||'null'); }catch(e){ return null; } }
+function saveBest(v){ try{ localStorage.setItem('lockedroom.best',JSON.stringify(v)); }catch(e){} }
+
+function begin(){
+  S=fresh(); S.scene='room';
+  buildPropNames();
+  $('title').hidden=true; $('arrived').hidden=true; $('cleared').hidden=true;
+  say('The door behind you locks. '+CLUES.length+' locks stand between you and the way out.');
+  refillVisible();
+  renderChoices();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key>='1'&&e.key<='5'){
+    const box = !$('qpanel').hidden ? $('answers') : (!$('choicePanel').hidden ? $('choices') : null);
+    if(box){ const b=box.children[+e.key-1]; if(b&&!b.disabled)b.click(); }
+  }
+  if(e.key==='Enter'){
+    if(!$('title').hidden)$('startBtn').click();
+    else if(!$('cleared').hidden)$('clearedBtn').click();
+    else if(!$('arrived').hidden)$('againBtn').click();
+  }
+});
+$('startBtn').onclick=begin;
+$('againBtn').onclick=begin;
+$('clearedBtn').onclick=()=>{ $('cleared').hidden=true; afterResolve(); };
+
+/* ------------------------------------------------------------- drawing --- */
+function draw(){
+  const sx = S.shake>0 ? (Math.random()*S.shake - S.shake/2) : 0;
+  x.save(); x.translate(sx,0);
+
+  const wallGrad=x.createLinearGradient(0,0,0,H*0.62);
+  wallGrad.addColorStop(0,P.wallD); wallGrad.addColorStop(1,P.wallM);
+  x.fillStyle=wallGrad; x.fillRect(-8,-8,W+16,H*0.64+8);
+
+  const floorGrad=x.createLinearGradient(0,H*0.6,0,H);
+  floorGrad.addColorStop(0,P.floorL); floorGrad.addColorStop(1,P.floor);
+  x.fillStyle=floorGrad; x.fillRect(-8,H*0.6,W+16,H*0.4+8);
+  x.strokeStyle='rgba(0,0,0,.22)'; x.lineWidth=1;
+  for(let ly=H*0.64; ly<H; ly+=14){ x.beginPath(); x.moveTo(0,ly); x.lineTo(W,ly); x.stroke(); }
+
+  const wx=W*0.20, wy=H*0.16, ww=54, wh=74;
+  const glow=x.createRadialGradient(wx+ww/2,wy+wh/2,10,wx+ww/2,wy+wh/2,150);
+  glow.addColorStop(0,'rgba(216,236,247,.30)'); glow.addColorStop(1,'rgba(216,236,247,0)');
+  x.fillStyle=glow; x.beginPath(); x.arc(wx+ww/2,wy+wh/2,150,0,7); x.fill();
+  x.fillStyle=P.ink; x.fillRect(wx-6,wy-6,ww+12,wh+12);
+  x.fillStyle=P.moonGlow; x.fillRect(wx,wy,ww,wh);
+  x.strokeStyle=P.ink; x.lineWidth=3;
+  x.beginPath(); x.moveTo(wx+ww/2,wy); x.lineTo(wx+ww/2,wy+wh);
+  x.moveTo(wx,wy+wh/2); x.lineTo(wx+ww,wy+wh/2); x.stroke();
+
+  const total=CLUES.length||1;
+  const openCount = S.lockState.filter(s=>s==='open').length;
+  drawFinalDoor(W*0.64, H*0.62, Math.min(1,openCount/total));
+  drawProps();
+  drawDust(S.t);
+
+  x.fillStyle='rgba(21,16,13,.82)'; x.fillRect(0,0,W,40);
+  label('LOCKS OPEN',14,8,10,P.bone);
+  label(openCount+' / '+total,14,19,18,P.brass);
+  label('IDEAS CRACKED',150,8,10,P.bone);
+  label(String(S.ideasCracked.size),150,19,18,P.moss);
+  const jammedCount=S.lockState.filter(s=>s==='jammed').length;
+  if(jammedCount) label(jammedCount+' jammed',290,22,12,P.amber);
+  label('THE WAY OUT',W-140,8,10,P.bone);
+  x.fillStyle='rgba(0,0,0,.55)'; x.fillRect(W-140,20,124,12);
+  x.fillStyle=P.brass; x.fillRect(W-140,20,Math.round(124*Math.min(1,openCount/total)),12);
+  x.strokeStyle=P.bone; x.lineWidth=2; x.strokeRect(W-141,19,126,14);
+
+  S.floats.forEach(f=>{ x.globalAlpha=Math.max(0,f.life/55); label(f.text,f.x,f.y,f.size,f.color,'center'); x.globalAlpha=1; });
+  x.restore();
+}
+function label(t,px,py,size,color,align){
+  x.font='700 '+size+'px system-ui, sans-serif';
+  x.fillStyle=color; x.textAlign=align||'left'; x.textBaseline='top'; x.fillText(t,px,py);
+}
+function step(){
+  S.t++;
+  if(S.shake>0)S.shake*=0.85;
+  if(S.flash>0)S.flash--;
+  S.floats.forEach(f=>{f.y-=0.7;f.life--});
+  S.floats=S.floats.filter(f=>f.life>0);
+  draw();
+  requestAnimationFrame(step);
+}
+
+S=fresh();
+$('ttl').textContent=ROOM;
+function paintBlurb(){
+  $('blurb').textContent = CLUES.length+' locks stand between you and the way out. Pick one, answer its clue '
+    +'— get it right and it opens, get it wrong and it jams, but you can always come back for it. '
+    +'Behind the final door: '+FINALLINE+'. Today’s room: '+SUBJECT+'.';
+}
+paintBlurb();
+const b0=loadBest();
+$('best').textContent = b0 ? ('Class best: '+b0.ideas+' ideas cracked, '+b0.misses+' misses.') : 'Nobody has escaped yet.';
+step();
+
+/* ===========================================================================
+   PUT YOUR OWN CLUES IN.
+
+   No account, no upload, no server. Everything below runs in this page. The
+   only thing that ever leaves is the file you choose to save, and it goes to
+   your own drive.
+
+   The teacher's clues are teacher-authored content, so there is no student
+   data here and nowhere for any to go. That is deliberate and it is why this
+   file can be emailed around without a second thought.
+   =========================================================================== */
+
+const SAMPLE = { room:ROOM, finalLine:FINALLINE, subject:SUBJECT,
+                 qs:JSON.parse(JSON.stringify(CLUES)) };
+const KEEP = 'lockedroom.pack';
+let PRISTINE = '';
+const MARK = 'lockedroom-your-clues';
+
+document.addEventListener('DOMContentLoaded',()=>{ PRISTINE = document.documentElement.outerHTML; });
+
+/* ---------------------------------------------------------------- apply --- */
+function applyPack(p){
+  if(!p || !p.qs || !p.qs.length) return;
+  CLUES = p.qs; ROOM = p.room || ROOM;
+  FINALLINE = p.finalLine || FINALLINE; SUBJECT = p.subject || SUBJECT;
+  $('ttl').textContent = ROOM; paintBlurb();
+}
+
+/* ------------------------------------------------------------- the form --- */
+function pack(){
+  return { room:$('mRoom').value.trim(), finalLine:$('mFinal').value.trim(),
+           subject:$('mSubject').value.trim(), qs:readRows() };
+}
+function fillForm(p){
+  $('mRoom').value=p.room; $('mFinal').value=p.finalLine; $('mSubject').value=p.subject;
+  renderRows(p.qs); writePrompt();
+}
+function esc2(t){ return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function rowHTML(q,i){
+  const a=(q.a||['','','','']).concat(['','','','']).slice(0,4);
+  const ans=a.map((t,j)=>`<div class="ansline">
+      <label><input type="radio" name="ok${i}" value="${j}"${q.ok===j?' checked':''}> right</label>
+      <input type="text" class="a" data-j="${j}" value="${esc2(t)}" placeholder="${j===0?'answer':'another answer'}">
+    </div>`).join('');
+  return `<div class="qrow" data-i="${i}">
+    <div class="hd"><span class="no">Clue ${i+1}</span>
+      <button class="btn quiet small del" type="button">Remove</button></div>
+    <div class="fld"><label>The question</label><textarea class="q">${esc2(q.q)}</textarea></div>
+    ${ans}
+    <div class="three3" style="margin-top:7px">
+      <div class="fld"><label>Idea it tests</label><input type="text" class="idea" value="${esc2(q.idea)}"></div>
+      <div class="fld"><label>Level</label><select class="level">
+        <option value="1"${q.level==1?' selected':''}>1 — simple</option>
+        <option value="2"${q.level==2?' selected':''}>2 — sturdy</option>
+        <option value="3"${q.level==3?' selected':''}>3 — stiff</option></select></div>
+      <div class="fld"><label>Why the answer is right</label><input type="text" class="why" value="${esc2(q.why)}"></div>
+    </div></div>`;
+}
+function warnings(p){
+  const warn=[];
+  if(p.qs.length>0 && p.qs.length<8) warn.push('Fewer than eight clues — the room may open in under a minute. Eight to fourteen plays best.');
+  const ideas=new Set(p.qs.map(q=>q.idea).filter(Boolean));
+  if(ideas.size===1 && p.qs.length>1) warn.push('Only one idea across your clues — add a second or third so a jam can sit next to something else.');
+  if(p.qs.length>0 && !p.qs.some(q=>+q.level===3)) warn.push('No level-3 clue yet — without a stiff lock, choosing a lock is not much of a decision.');
+  return warn;
+}
+function renderRows(qs){
+  $('qlist').innerHTML = qs.map(rowHTML).join('');
+  const w=warnings({qs});
+  $('countLine').innerHTML = qs.length+(qs.length===1?' clue.':' clues.')
+    +' Eight to fourteen across three or four ideas is a room.'
+    + (w.length ? '<br><span class="warn">'+w.map(esc2).join(' ')+'</span>' : '');
+}
+function readRows(){
+  return [...$('qlist').querySelectorAll('.qrow')].map(r=>{
+    const a=[...r.querySelectorAll('input.a')].map(i=>i.value.trim());
+    const ok=r.querySelector('input[type=radio]:checked');
+    return { q:r.querySelector('textarea.q').value.trim(), a,
+             ok: ok?+ok.value:-1,
+             idea:r.querySelector('input.idea').value.trim().toLowerCase(),
+             level:+r.querySelector('select.level').value,
+             why:r.querySelector('input.why').value.trim() };
+  });
+}
+$('qlist').addEventListener('click',e=>{
+  const b=e.target.closest('.del'); if(!b) return;
+  const cur=readRows(); cur.splice(+b.closest('.qrow').dataset.i,1); renderRows(cur);
+});
+$('addBtn').onclick=()=>{ const cur=readRows();
+  cur.push({q:'',a:['','','',''],ok:0,idea:'',level:1,why:''}); renderRows(cur);
+  $('qlist').lastElementChild.scrollIntoView({block:'center'}); };
+$('sampleBtn').onclick=()=>{ if(confirm('Replace everything here with the sample clues?'))
+  fillForm(JSON.parse(JSON.stringify(SAMPLE))); };
+
+/* ------------------------------------------------------------- the prompt -- */
+function writePrompt(){
+  const subj=$('mSubject').value.trim()||'your topic';
+  $('promptBox').textContent =
+`Write 10 multiple-choice clues for a classroom escape room about ${subj}.
+
+Give me one clue per line with eight parts separated by the | character, and nothing else. No numbering, no headings, no blank lines, no line that is not a clue.
+
+question | correct answer | wrong answer | wrong answer | wrong answer | idea | level | why
+
+idea: two or three words naming the concept the clue tests. Use only three or four different ideas across all ten clues, so several clues share each one.
+level: 1, 2 or 3. 1 is straight recall, 2 is applying it, 3 is reasoning about a situation the student has not seen. Give me a mix of all three.
+why: one sentence saying why the correct answer is correct, written for a student who just got it wrong. This sentence has to teach on its own.
+
+Make sure exactly one wrong answer per clue is the tempting one and none of the three wrong answers could be defended as also correct — a disputed answer stops the whole room. Do not use the | character inside any part. Do not write anything before or after the ten lines.`;
+}
+$('mSubject').addEventListener('input',writePrompt);
+$('copyBtn').onclick=async()=>{
+  const t=$('promptBox').textContent;
+  try{ await navigator.clipboard.writeText(t); tell('pasteMsg','good','Copied. Paste it into your AI tool.'); }
+  catch(e){ const r=document.createRange(); r.selectNodeContents($('promptBox'));
+    const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    tell('pasteMsg','good','Selected it for you. Press Ctrl+C (or Command+C) to copy.'); }
+};
+$('fmtBtn').onclick=()=>{ $('fmtHelp').hidden=!$('fmtHelp').hidden; };
+
+/* --------------------------------------------------------------- parsing -- */
+function shuffle4(right,wrongs){
+  const all=[right,...wrongs];
+  for(let i=all.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [all[i],all[j]]=[all[j],all[i]]; }
+  return { a:all, ok:all.indexOf(right) };
+}
+function parsePaste(text){
+  const out=[], bad=[];
+  text.split(/\r?\n/).forEach((raw,n)=>{
+    const line=raw.trim(); if(!line) return;
+    if(!line.includes('|')) { bad.push('Line '+(n+1)+' has no | in it, so it was skipped.'); return; }
+    const f=line.split('|').map(t=>t.trim());
+    if(f.length<8){ bad.push('Line '+(n+1)+' has '+f.length+' parts instead of 8, so it was skipped.'); return; }
+    if(/^question$/i.test(f[0])) return;
+    const lv=parseInt(f[6],10);
+    const s=shuffle4(f[1],[f[2],f[3],f[4]]);
+    out.push({ q:f[0], a:s.a, ok:s.ok, idea:f[5].toLowerCase(),
+               level:(lv>=1&&lv<=3)?lv:2, why:f.slice(7).join(' ').trim() });
+  });
+  return { qs:out, bad };
+}
+function loadPasted(replace){
+  const r=parsePaste($('pasteBox').value);
+  if(!r.qs.length){ tell('pasteMsg','bad','Nothing loaded.'+(r.bad.length?'':' Each line needs eight parts separated by the | character.'),r.bad); return; }
+  const cur = replace ? r.qs : readRows().concat(r.qs);
+  renderRows(cur);
+  tell('pasteMsg','good','Loaded '+r.qs.length+(r.qs.length===1?' clue. ':' clues. ')
+    +'Read them before you play them.', r.bad);
+  $('pasteBox').value='';
+}
+$('loadBtn').onclick=()=>loadPasted(true);
+$('appendBtn').onclick=()=>loadPasted(false);
+
+function tell(id,kind,head,list){
+  const el=$(id);
+  el.className='msg on '+kind;
+  el.innerHTML='<b>'+esc2(head)+'</b>'+((list&&list.length)
+    ? '<ul>'+list.map(t=>'<li>'+esc2(t)+'</li>').join('')+'</ul>' : '');
+}
+
+/* ------------------------------------------------------------ validation -- */
+function problems(p){
+  const bad=[];
+  if(!p.room) bad.push('The room needs a name.');
+  if(!p.finalLine) bad.push('The room needs a line for what is behind the final door.');
+  if(p.qs.length<4) bad.push('You have '+p.qs.length+' clues. Four is the fewest that plays; eight to fourteen is a room.');
+  const ideas=new Set();
+  p.qs.forEach((q,i)=>{
+    const n='Clue '+(i+1);
+    if(!q.q) bad.push(n+' has no question in it.');
+    if(q.a.filter(Boolean).length<4) bad.push(n+' needs all four answers filled in.');
+    if(q.ok<0) bad.push(n+' has no answer marked right.');
+    else if(!q.a[q.ok]) bad.push(n+' has an empty answer marked right.');
+    if(!q.idea) bad.push(n+' has no idea named, so the game cannot track it.');
+    if(!q.why) bad.push(n+' has no "why" line, which is the part that teaches.');
+    if(q.idea) ideas.add(q.idea);
+  });
+  if(ideas.size===1 && p.qs.length>3)
+    bad.push('Every clue uses the same idea. The room never shows two locks on the same idea side by side, so it needs at least two.');
+  return bad;
+}
+
+/* ------------------------------------------------------- play, keep, save -- */
+$('playBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Not ready to play yet:',bad);
+    $('doneMsg').scrollIntoView({block:'center'}); return; }
+  applyPack(p); closeEditor(); $('startBtn').click();
+};
+$('keepBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Fix these first:',bad); return; }
+  try{ localStorage.setItem(KEEP,JSON.stringify(p));
+    tell('doneMsg','good','Kept in this browser on this computer. It will be here next time you open '
+      +'this file — but clearing your browsing data erases it, so save the file too.'); }
+  catch(e){ tell('doneMsg','bad','This browser would not let the page store anything. Use '
+      +'"Save my game as a file" instead, which does not need storage.'); }
+};
+$('dlBtn').onclick=()=>{
+  const p=pack(), bad=problems(p);
+  if(bad.length){ tell('doneMsg','bad','Fix these first:',bad); return; }
+  const src = PRISTINE || document.documentElement.outerHTML;
+  const clean = src.replace(new RegExp('<!--'+MARK+'-->[\\s\\S]*?<!--\\/'+MARK+'-->','g'),'');
+  const inject = '<!--'+MARK+'--><script>window.MY_PACK='
+    + JSON.stringify(p).replace(/<\//g,'<\\/') + ';<\/script><!--/'+MARK+'-->';
+  const END = '<\/bo'+'dy>';
+  const at = clean.lastIndexOf(END);
+  const html = '<!DOCTYPE html>\n' + clean.slice(0,at) + inject + '\n' + clean.slice(at);
+  const name = (p.room||'my-locked-room').toLowerCase()
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40) || 'my-locked-room';
+  const url = URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  const a = document.createElement('a'); a.href=url; a.download=name+'.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  tell('doneMsg','good','Saved as '+name+'.html, wherever your browser puts downloads. '
+    +'Open that file and your clues are already in it.');
+};
+
+/* ------------------------------------------------------------ open, close -- */
+function openEditor(){
+  fillForm(currentPack()); $('editor').classList.add('on'); $('wrap').hidden=true;
+  $('doneMsg').className='msg'; $('pasteMsg').className='msg';
+  window.scrollTo(0,0); $('mRoom').focus();
+}
+function closeEditor(){ $('editor').classList.remove('on'); $('wrap').hidden=false; }
+function currentPack(){
+  return { room:ROOM, finalLine:FINALLINE, subject:SUBJECT,
+           qs:JSON.parse(JSON.stringify(CLUES)) };
+}
+$('setupBtn').onclick=openEditor;
+$('backBtn').onclick=closeEditor;
+
+/* What loads, and in what order: a file saved from here beats the browser, and
+   the browser beats the sample that shipped with it.
+
+   This waits for the page to finish parsing, because a file saved from here
+   carries its clues in a block that sits after this script. Running any
+   sooner would read a variable that does not exist yet. The listener that
+   captures the page source is registered above this one and therefore runs
+   first, which is what keeps the saved copy clean. */
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.MY_PACK){ applyPack(window.MY_PACK); return; }
+  try{ const kept=JSON.parse(localStorage.getItem(KEEP)||'null'); if(kept) applyPack(kept); }
+  catch(e){}
+});
+</script>
+</body>
+</html>

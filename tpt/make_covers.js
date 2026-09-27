@@ -327,6 +327,11 @@ const PRODUCTS = [
     title: 'Build a Behavior', accent: 'Tracker That Keeps the History',
     lede: 'A daily point card that scores three to five expectations and remembers every day it has ever seen \u2014 a trend, not a tally that resets.',
     chips: ['25 pages', 'Working app included', '11 prompts', '$22'] },
+  { file: 'vibe-locked-room', badge: 'Vibe Code Your Own Game',
+    kicker: 'Any subject \u00b7 any grade \u00b7 no logins for anybody',
+    title: 'The Locked Room', accent: 'A Digital Escape Room You Own',
+    lede: 'Open the file and it works. Put your own clues in from a setup screen - a wrong answer jams the lock instead of ending anything.',
+    chips: ['The game', '8 pages', '10 minutes', '$14'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

@@ -2496,6 +2496,68 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "vibe-locked-room",
+      "order": 62,
+      "name": "Vibe Code Your Own Game - The Locked Room",
+      "product": "UPLOAD/02-paid/Vibe-Code-Your-Own-Game-The-Locked-Room.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/locked-room.html"
+      ],
+      "cover": "tpt/covers/vibe-locked-room-cover.png",
+      "thumbnails": [
+        "tpt/extras/lkr-the-game.png",
+        "tpt/extras/lkr-setup.png",
+        "tpt/extras/lkr-whats-inside.png",
+        "tpt/extras/lkr-real-pages.png"
+      ],
+      "title": "Vibe Code Your Own Game | The Locked Room, an Escape Room for Any Subject",
+      "description": "Open the file. It works. Put your own clues in from a setup screen built into the game, press Save, and you have a digital escape room for your unit. Most teachers are running their own version in about ten minutes.\n\nNO CODE, AND NOTHING TO INSTALL. One HTML file that opens in the browser you already use. No accounts for you or for students, no subscription, nothing to renew, and it runs with the wifi down.\n\nTHREE WAYS TO GET YOUR CLUES IN. Type them on the setup screen. Paste a list you already have. Or copy the prompt included in the pack, hand it to whichever AI tool you use, and have a whole room drafted in about thirty seconds - then read it over, because you are the one who knows your standards.\n\nTHEN SAVE IT AS YOUR OWN FILE. One button gives you back a file with your clues already inside it. Keep it, reuse it next year, make a different one for every unit. It opens on any computer and survives clearing your browsing data.\n\nIT IS NOT A QUIZ WITH A PADLOCK DRAWN ON IT. Four or five locks are in reach at once, and your class picks which one to attack before they see the question - the simple one, the sturdy one, or the stiff one that is worth more of the room. Two classes with the same clues will clear a room in a different order, because which lock looked worth the risk is a real choice every time.\n\nA WRONG ANSWER DOES NOT END ANYTHING. It jams that lock, in plain sight, and the room stays exactly as open as it was. Going back for it and clearing it is the loudest moment in the game - louder than any lock that opens on the first try - because feeling capable is what actually keeps a class going, not a running score.\n\nNO WAY TO LOSE IN FRONT OF THE CLASS. There is no timer counting down and no fail state. Every room opens eventually. There is no leaderboard with names, no per-student score, and no way for the room to work out whose wrong answer cost what.\n\nWHAT IT KNOWS ABOUT YOUR STUDENTS: nothing. There is nowhere to type a name and nowhere for anything to go. No server, no company behind it.\n\nALSO IN THE EIGHT PAGES: how to write a clue worth answering, how the room works and three ways to run it in class, the fixes for what actually goes wrong, and three copy-and-paste prompts that change the game itself - the setting, the number of locks, the text size for the back of the room.\n\nWHAT THIS IS NOT. It is not a course in programming and it does not teach you to build a room from nothing. It hands you a working one, shows you how to fill it in ten minutes, and shows you how to change it by asking. It is also not a replacement for Breakout EDU's library of premade rooms, which starts at $1,499 a year for a school - this is a different trade: a one-time $14 file that is yours to change, works offline, and cannot be blocked or switched off.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
+      "price": 14,
+      "licenses": 7,
+      "grades": [
+        "4th grade",
+        "5th grade",
+        "6th grade",
+        "7th grade",
+        "8th grade",
+        "9th grade"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Computer Science"
+      ],
+      "tags": [
+        "vibe coding",
+        "escape room",
+        "digital escape room",
+        "classroom games",
+        "ai tools",
+        "game based learning"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Code Your Own Game",
+      "previewShots": [
+        "lkr_p2.png",
+        "lkr_p4.png",
+        "lkr_p5.png"
+      ],
+      "previewInside": [
+        "<b>Open the file and it works</b> - nothing to install, no accounts",
+        "<b>Your clues in from a setup screen</b>, no code touched",
+        "A prompt that has AI draft a whole room in about 30 seconds",
+        "<b>A wrong answer jams the lock</b> - it never ends the game",
+        "Clearing a jam is the loudest moment in the room",
+        "Three prompts that change the game itself"
+      ],
+      "previewUnit": "8 pages + the game",
+      "insideHeading": "What you do with it",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }
