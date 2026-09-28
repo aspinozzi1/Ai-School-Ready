@@ -2558,6 +2558,55 @@
       "previewUnit": "8 pages + the game",
       "insideHeading": "What you do with it",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "what-ai-costs",
+      "order": 63,
+      "name": "What AI Actually Costs",
+      "product": "UPLOAD/01-free/what-ai-actually-costs.pdf",
+      "cover": "tpt/covers/what-ai-costs-cover.png",
+      "thumbnails": [
+        "tpt/extras/aic-whats-inside.png"
+      ],
+      "title": "What AI Actually Costs | Work Out the Real Number for Your Class | Free",
+      "description": "FREE. Somebody in your building has asked what it would cost to use AI with students, and the answer they got was a shrug. Here is why nobody will give you a number, and how to work out your own - a real one, for your class, in about twenty minutes.\n\nTHERE ARE NO PRICES IN THIS FILE, ON PURPOSE. AI prices have moved several times a year, always downward, and a number printed in a PDF is wrong within months. This teaches you where to look and what to multiply, which does not go stale.\n\nTWO DIFFERENT QUESTIONS WEARING ONE WORD, and almost every useless answer comes from mixing them up. A SEAT is what one person pays to use a chatbot - a monthly subscription, predictable, scaling by how many people. USAGE is what a piece of software pays to call AI on its own - billed by the amount of text, no subscription, and unpredictable until you measure it. Those have different bills, different risks and different permission questions, and an answer to one is not an answer to the other.\n\nFIVE MECHANICS THAT DO NOT GO OUT OF DATE. Text is counted in tokens, not words. What goes in and what comes out are priced separately, and generated text costs several times more - so asking for a long answer costs far more than sending a long document, which is the opposite of what most people assume. A conversation re-sends its whole history every turn, which is the biggest surprise on a first bill. Repeated context can be cached for roughly a tenth of the normal input rate. And work that can wait runs at about half price in batch mode, which almost nobody uses.\n\nTHE METHOD, IN FIVE STEPS: do the real thing once for one student, write down the tokens in and out, look up today's rate, multiply by students AND by how many times each - the number people forget - then ask the three questions that actually move the total.\n\nA FILL-IN WORKSHEET so you end with a number you can defend in a meeting, because you watched it happen. Keep it, and next term you have the working rather than just the answer.\n\nAND THE COST NOBODY PUTS IN THE SPREADSHEET: teacher time. An hour of checking what AI produced is a real cost, it is larger than the subscription, and leaving it out makes the comparison dishonest.\n\nWHERE IT COMES FROM: I built a button into the software I run for my own high school woodshop course that pushes one student's worth of work through for real and reports what it used. Not a projection - the actual figure. This is that method with the software taken out, so you can do it with a calculator.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "ai for teachers",
+        "technology professional development",
+        "teacher tools",
+        "free",
+        "ai professional development",
+        "staff meeting"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "aic_p2.png",
+        "aic_p3.png",
+        "aic_p4.png"
+      ],
+      "previewInside": [
+        "<b>Two different questions</b> wearing one word",
+        "Five mechanics that do not go out of date",
+        "<b>The five-step method</b> that gets you a real number",
+        "The three questions that actually move the total",
+        "<b>A fill-in worksheet</b> you can defend in a meeting"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

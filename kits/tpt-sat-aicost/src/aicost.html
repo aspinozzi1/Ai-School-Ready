@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>What AI Actually Costs</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:26pt">
+<div class="kick">Free &middot; AI in school, honestly</div>
+<h1>What AI<br>Actually Costs</h1>
+<p class="lede">Somebody in your building has asked what it would cost to use AI with students, and
+the answer they got was a shrug. <b>Here is why nobody will give you a number, and how to work out
+your own</b> &mdash; a real one, for your class, in about twenty minutes.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">2</h3><p class="small" style="margin:0">completely different things people mean by "cost"</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">worksheet that gets you a real figure</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">prices printed here for you to trust</p></div>
+</div>
+<div class="note"><b>The sentence this whole page is built on.</b><br>
+<b>That is a measurement, not an estimate.</b> Everyone else guesses. You can go and find out, and
+the finding out is easier than the guessing.</div>
+<div class="card r"><h3>Why there are no prices in here</h3>
+<p class="small" style="margin:0">AI prices have moved several times a year, always downward, and a
+number printed in a PDF is wrong within months. <b>So this page teaches you where to look and what
+to multiply</b>, which does not go stale. Anybody who hands you a per-student figure without asking
+what your students will actually do with it is guessing.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">I built a button into the software I run for my own high school
+woodshop course that pushes one student's worth of work through for real and reports what it
+used. Not a projection &mdash; the actual figure. <b>This is that method, with the software taken
+out</b>, so you can do it with a calculator.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Start here</div>
+<h2>Two different questions wearing one word</h2>
+<p class="lede">Almost every useless answer about AI cost comes from mixing these up. <b>Work out
+which one you are being asked before you answer it.</b></p>
+<div class="card t"><h3>1 &middot; A seat &mdash; what one person pays to use a chatbot</h3>
+<p class="small" style="margin-bottom:5pt">A monthly subscription per person. A free tier, then a
+paid tier at a fixed price a month, sometimes an education or team rate. <b>Predictable, and it
+scales by how many people, not by how much they use it.</b></p>
+<p class="small" style="margin:0">This is what most teachers are actually paying for today, and for
+a teacher-does-the-prompting classroom it is usually the whole bill.</p></div>
+<div class="card"><h3>2 &middot; Usage &mdash; what a piece of software pays to call AI</h3>
+<p class="small" style="margin-bottom:5pt">Billed by the amount of text, per use, with no
+subscription. <b>This is what you pay if a tool you or your district built calls AI on its own</b>
+&mdash; grading drafts, generating practice, answering questions inside an app.</p>
+<p class="small" style="margin:0">Unpredictable until you measure it, which is the entire reason for
+this page.</p></div>
+<div class="note"><b>The question to ask back, before you promise anybody a number.</b><br>
+"Is a person typing into a chatbot, or is software calling AI by itself?" <b>Those have different
+bills, different risks and different permission questions</b>, and an answer to one is not an answer
+to the other.</div>
+<div class="card g"><h3>And the cost nobody puts in the spreadsheet</h3>
+<p class="small" style="margin:0"><b>Teacher time.</b> An hour of checking what AI produced is a real
+cost and it is larger than the subscription. It is also the one that falls if the thing is set up
+well, and rises forever if it is not. Put it on the sheet, even as a guess, or the comparison is
+dishonest.</p></div>
+<div class="foot"><span>What AI Actually Costs &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">How usage billing works</div>
+<h2>Five mechanics that do not go out of date</h2>
+<p class="lede">You do not need to know prices to reason about this. <b>You need to know what gets
+counted.</b></p>
+<div class="card"><h3>1 &middot; Text is counted in tokens, not words</h3>
+<p class="small" style="margin:0">A token is a chunk of text, usually a bit less than a word.
+Roughly, <b>a page of writing is around 500 to 700 tokens.</b> You do not have to count them
+yourself &mdash; the tools report the number.</p></div>
+<div class="card t"><h3>2 &middot; What goes in and what comes out are priced separately &mdash; and out costs much more</h3>
+<p class="small" style="margin:0">Across the major providers, <b>generated text is billed at several
+times the rate of text you send in</b> &mdash; commonly around five times. So <b>asking for a long
+answer costs far more than sending a long document</b>, which is the opposite of what most people
+assume.</p></div>
+<div class="card g"><h3>3 &middot; A conversation re-sends itself every turn</h3>
+<p class="small" style="margin:0">Each message in a back-and-forth sends the <b>whole</b> history
+again. A twenty-turn conversation is not twenty small requests; it is twenty requests that keep
+growing. <b>This is the single biggest surprise on a first bill.</b></p></div>
+<div class="card r"><h3>4 &middot; Repeated context can be cached, and the discount is large</h3>
+<p class="small" style="margin:0">If the same long text is sent over and over &mdash; a rubric, a
+reading, a set of instructions &mdash; providers let software mark it as cached. <b>Re-reading it
+then costs roughly a tenth of the normal input rate</b>, at the price of a small surcharge the
+first time. For anything that sends the same rubric thirty times, this is the difference between
+affordable and not.</p></div>
+<div class="card p"><h3>5 &middot; Work that can wait is about half price</h3>
+<p class="small" style="margin:0">Providers offer a batch mode for work with no hurry &mdash;
+overnight rather than instantly &mdash; at <b>roughly half the normal rate</b>. Most classroom work
+that is not happening live qualifies, and almost nobody uses it.</p></div>
+<div class="note"><b>Do not trust a price printed in any PDF, including this one.</b><br>
+There are none here on purpose. <b>Look up the current rate on the provider's own pricing page on
+the day you do the arithmetic.</b> The five mechanics above are what stay true.</div>
+<div class="foot"><span>What AI Actually Costs &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The method</div>
+<h2>Measure one, then multiply</h2>
+<p class="lede">Twenty minutes, and you end with a number you can defend in a meeting because you
+watched it happen.</p>
+<div class="step"><div class="n">1</div><div><h3>Do the real thing once, for one student</h3>
+<p class="small" style="margin:0">Not a sample, not a shortened version. <b>One student's actual
+work, all the way through</b>, in whatever tool would really do it. An estimate built on a
+simplified version measures the simplified version.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Write down what it reported</h3>
+<p class="small" style="margin:0">Tokens in and tokens out, separately, because they are priced
+separately. Every serious tool reports both &mdash; in its usage screen, its billing page, or the
+response itself. <b>If a tool will not tell you, that is worth knowing too.</b></p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Look up today's rate and do two multiplications</h3>
+<p class="small" style="margin:0">Tokens in times the input rate, tokens out times the output rate.
+Rates are quoted per million tokens, so <b>divide by a million at the end</b>. That is one student,
+once.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Multiply by reality, not by your class list</h3>
+<p class="small" style="margin:0">Students times <b>how many times each</b> &mdash; and the second
+number is the one people forget. A tool used once a term and a tool used every lesson differ by a
+factor of thirty, not by a rounding error.</p></div></div>
+<div class="step"><div class="n">5</div><div><h3>Then ask the three questions that move the number</h3>
+<p class="small" style="margin:0">Is the same long text sent every time, so it could be cached? Does
+this need to be instant, or could it run overnight at half price? <b>Are we asking for long answers
+where a short one would do?</b> Output is the expensive half.</p></div></div>
+<div class="note"><b>Why one real run beats any estimate.</b><br>
+The number depends almost entirely on how much text moves, and nobody can guess that about your
+assignment, your rubric and your students. <b>Twenty minutes of measuring beats an afternoon of
+arguing about a guess</b>, and it is the same twenty minutes whoever asks.</div>
+<div class="foot"><span>What AI Actually Costs &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn</div>
+<h2>Work out your number</h2>
+<p class="lede">Fill this in while you do it, not afterwards. Keep it &mdash; when somebody asks next
+term, you will have the working, not just the answer.</p>
+<div class="box"><h3>What one student actually did</h3>
+<p class="small" style="margin-bottom:4pt">The task, in one line:</p><div class="wl"></div>
+<div class="row" style="margin-top:4pt">
+<div><p class="small" style="margin-bottom:3pt"><b>Tokens in</b></p><div class="wl"></div></div>
+<div><p class="small" style="margin-bottom:3pt"><b>Tokens out</b></p><div class="wl"></div></div></div></div>
+<div class="box"><h3>Today's rates, from the provider's own page</h3>
+<div class="row">
+<div><p class="small" style="margin-bottom:3pt">Input, per million</p><div class="wl"></div></div>
+<div><p class="small" style="margin-bottom:3pt">Output, per million</p><div class="wl"></div></div>
+<div><p class="small" style="margin-bottom:3pt">Date I looked</p><div class="wl"></div></div></div></div>
+<div class="box"><h3>The arithmetic</h3>
+<div class="row">
+<div><p class="small" style="margin-bottom:3pt">One student, once</p><div class="wl"></div></div>
+<div><p class="small" style="margin-bottom:3pt">&times; students &times; times each</p><div class="wl"></div></div>
+<div><p class="small" style="margin-bottom:3pt"><b>Per term</b></p><div class="wl"></div></div></div></div>
+<div class="box"><h3>What would move it, and by how much</h3>
+<p class="small" style="margin:0">Cacheable repeated text? Could it run overnight? Are we asking for
+longer answers than we need?</p><div class="wl"></div></div>
+<div class="card p"><h3>If this is a conversation your whole staff needs to have</h3>
+<p class="small" style="margin:0">Our <b>AI Foundations &amp; Safety</b> staff training kit is the
+whole-staff version &mdash; deck with speaker notes, a word-for-word script, a participant handout
+and an administrator one-pager, presentable cold by somebody who has never run a session. Licenses
+are half price. Search our store for it.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases for every review, and it is the only thing that decides
+whether another teacher ever sees this.</div>
+<div class="foot"><span>What AI Actually Costs &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>
