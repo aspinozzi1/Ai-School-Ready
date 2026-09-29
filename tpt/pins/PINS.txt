@@ -2717,3 +2717,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+WHICH AI SHOULD DO THIS?
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+which-ai-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Which AI Should Do This? | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free for teachers: most of us did not know there was a choice. Every AI tool offers several models, a careful slow one and a fast cheap one, and picking between them gets treated as a technical decision when it is a question about your classroom. The rule is one line - match the model to who checks the output. If a student reads it and nobody else does, use the careful one. If you read it and can overrule it in two seconds, use the fast cheap one. Inside: nine classroom jobs already sorted with the pattern spelled out, the case that catches people out, how to read the model menu without any names, the one-minute check that settles arguments, and a fill-in page for three of your own jobs. No model is named in the advice, on purpose. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: ai for teachers · teacher tools · free   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

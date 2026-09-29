@@ -2607,6 +2607,55 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "which-ai",
+      "order": 64,
+      "name": "Which AI Should Do This?",
+      "product": "UPLOAD/01-free/which-ai-should-do-this.pdf",
+      "cover": "tpt/covers/which-ai-cover.png",
+      "thumbnails": [
+        "tpt/extras/wai-whats-inside.png"
+      ],
+      "title": "Which AI Should Do This? | Match the Model to Who Checks It | Free",
+      "description": "FREE. Most teachers do not know there is a choice. Every AI tool offers several models - a careful slow one, a fast cheap one, sometimes three or four in between - and picking between them gets treated as a technical decision. It is not. It is a question about your classroom, and there is one rule.\n\nTHE RULE: match the model to who checks the output. If a student reads it and nobody else does, use the careful one. If you read it and can overrule it in two seconds, use the fast cheap one. That is the whole decision, and the rest of the page is just applying it.\n\nNO MODEL IS NAMED IN THE ADVICE, ON PURPOSE. Model names change every few months and a printed list is wrong by spring. The rule does not change, and it works on whatever names your tool is showing you today.\n\nNINE CLASSROOM JOBS, ALREADY SORTED, with the pattern spelled out - and the pattern is not what people expect. It is not \"important jobs get the good model.\" Scoring feels more important than brainstorming and it lands on the cheap side, because you look at every score. Importance is not the axis. Being caught is the axis.\n\nTHE ONE THAT CATCHES PEOPLE OUT: anything a student reads without you in between - a study guide, a hint, a worked example, a revision summary. It is the strictest case there is and the one most often done on autopilot with whatever was cheapest. A wrong score you glance at and change costs four seconds. A wrong explanation a student reads alone and believes costs a week, and you may never find out it happened.\n\nHOW TO READ THE MENU YOU HAVE, without the names: price order is the reliable signal and providers do not get it backwards; how much the model can hold at once decides whether a big job is possible at all; and whether it thinks before it answers is worth paying for on anything with steps and wasted on rewriting a sentence. Plus the one-minute check that settles most arguments - run the same job through two models and read both answers side by side.\n\nA FILL-IN PAGE for three of your own jobs, with the middle column filled in first because it answers the third one for you.\n\nWHERE IT COMES FROM: the software I run for my own high school woodshop course uses two different models on purpose, and the reason is written down in the code - the careful one writes anything a student will read, the fast one scores work I read and can override. That one sentence is the whole design decision, and it is this page.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "ai for teachers",
+        "teacher tools",
+        "free",
+        "technology professional development",
+        "chatgpt for teachers",
+        "ai professional development"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "wai_p2.png",
+        "wai_p3.png",
+        "wai_p4.png"
+      ],
+      "previewInside": [
+        "<b>The one rule</b> that settles it every time",
+        "The two questions to ask about any job",
+        "<b>Nine classroom jobs</b>, already sorted",
+        "How to read the model menu without the names",
+        "<b>A fill-in page</b> for three of your own jobs"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

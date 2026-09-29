@@ -300,6 +300,13 @@ const IMAGES = [
     'The running notes habit that saves a build',
     'A fill-in page so you leave with your own',
   ], 'PDF')],
+  ['wai-whats-inside', whatsInside('Free \u00b7', 'Which AI Should Do This?', [
+    'The one rule that settles it every time',
+    'The two questions to ask about any job',
+    'Nine classroom jobs, already sorted',
+    'How to read the model menu without the names',
+    'A fill-in page for three of your own jobs',
+  ], 'PDF')],
   ['aic-whats-inside', whatsInside('Free \u00b7', 'What AI Actually Costs', [
     'Two different questions wearing one word',
     'Five mechanics that do not go out of date',

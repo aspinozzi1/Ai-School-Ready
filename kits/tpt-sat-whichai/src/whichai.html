@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Which AI Should Do This</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:26pt">
+<div class="kick">Free &middot; AI in school, honestly</div>
+<h1>Which AI<br>Should Do This?</h1>
+<p class="lede">Most teachers do not know there is a choice. Every AI tool offers
+<b>several models</b> &mdash; a careful slow one, a fast cheap one, sometimes three or four in
+between &mdash; and picking between them is treated as a technical decision. <b>It is not. It is a
+question about your classroom</b>, and there is one rule.</p>
+<div class="note"><b>The rule, and the rest of this page is just applying it.</b><br>
+<b>Match the model to who checks the output.</b> If a student reads it and nobody else does, use the
+careful one. If you read it and can overrule it in two seconds, use the fast cheap one. That is the
+whole decision.</div>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">question that settles it, every time</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">9</h3><p class="small" style="margin:0">classroom jobs already sorted for you</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">model names in the advice, on purpose</p></div>
+</div>
+<div class="card r"><h3>Why no model is named in the advice</h3>
+<p class="small" style="margin:0">Model names change every few months and a printed list is wrong by
+spring. <b>The rule does not change</b>, and it works on whatever names your tool is showing you
+today. Page 4 tells you how to read the menu you have, whatever is on it.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">The software I run for my own high school woodshop course uses
+<b>two different models on purpose</b>, and the reason is written down in the code: the careful one
+writes anything a student will read, the fast one scores work that I read and can override. <b>That
+one sentence is the whole design decision</b>, and it is this page.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The rule</div>
+<h2>Who reads it, and can they catch it?</h2>
+<p class="lede">Not "which model is best." <b>Best at what, for whom, checked by whom.</b> Ask these
+two about any job before you pick anything.</p>
+<div class="card t"><h3>1 &middot; Who sees this output?</h3>
+<p class="small" style="margin:0">You, before anybody else? A student, directly? A parent? An
+administrator? <b>The further it travels without you in the middle, the more care it needs.</b></p></div>
+<div class="card"><h3>2 &middot; If it were wrong, would that get caught?</h3>
+<p class="small" style="margin-bottom:5pt">This is the one people skip, and it is the one that
+decides. A wrong score you glance at and change costs four seconds. <b>A wrong explanation a student
+reads alone and believes costs a week</b>, and you may never find out it happened.</p>
+<p class="small" style="margin:0">So: <b>checked work can use the cheap fast model. Unchecked work
+cannot.</b></p></div>
+<div class="card g"><h3>And the third question, only when the first two tie</h3>
+<p class="small" style="margin:0"><b>How much text is involved?</b> A whole novel, a term's worth of
+notes, thirty essays at once &mdash; some models hold far more at once than others, and that is a
+separate axis from careful-versus-fast. If the job is large, check that before anything else,
+because a model that cannot hold the material will not do the job at any price.</p></div>
+<div class="note"><b>Write the reason down, in one sentence, wherever you decided it.</b><br>
+Not for anybody else &mdash; for you in March, when somebody asks why the marking uses one thing and
+the study guides use another. <b>"A student reads this and nobody checks it, so it uses the careful
+one"</b> is a complete and defensible answer, and you will not reconstruct it from memory.</div>
+<div class="foot"><span>Which AI Should Do This &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Sorted for you</div>
+<h2>Nine classroom jobs, and which side they fall on</h2>
+<table>
+<thead><tr><th>The job</th><th style="width:88pt">Who checks it</th><th style="width:96pt">Which model</th></tr></thead>
+<tbody>
+<tr><td>An explanation a student reads on their own</td><td>Nobody</td><td><b>The careful one</b></td></tr>
+<tr><td>Feedback sent straight to a student</td><td>Nobody</td><td><b>The careful one</b></td></tr>
+<tr><td>A message that goes home to a parent</td><td>You, but it leaves the building</td><td><b>The careful one</b></td></tr>
+<tr><td>Anything a colleague will present from</td><td>Them, without your context</td><td><b>The careful one</b></td></tr>
+<tr><td>A first-draft score you review</td><td>You, every time</td><td>The fast cheap one</td></tr>
+<tr><td>Sorting or tagging a pile of work</td><td>You, at a glance</td><td>The fast cheap one</td></tr>
+<tr><td>Rewriting your own draft</td><td>You, obviously</td><td>The fast cheap one</td></tr>
+<tr><td>Brainstorming, twenty ideas to pick three</td><td>You, by picking</td><td>The fast cheap one</td></tr>
+<tr><td>Summarizing a long document you will read anyway</td><td>You</td><td>The fast cheap one</td></tr>
+</tbody></table>
+<div class="card t"><h3>Notice what the pattern is not</h3>
+<p class="small" style="margin:0">It is not "important jobs get the good model." Scoring feels more
+important than brainstorming, and it is on the cheap side &mdash; <b>because you look at every
+score.</b> Importance is not the axis. <b>Being caught is the axis.</b></p></div>
+<div class="card r"><h3>The one that catches people out</h3>
+<p class="small" style="margin:0"><b>Anything a student reads without you in between</b> is the
+strictest case in the list, and it is the one most often done on autopilot with whatever was
+cheapest. A study guide, a hint, a worked example, a revision summary &mdash; if they read it alone
+and believe it, it needs the careful model and it needs you to have read it once.</p></div>
+<div class="foot"><span>Which AI Should Do This &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Reading the menu you have</div>
+<h2>How to tell which is which, without the names</h2>
+<p class="lede">Open the model list in whatever tool you use. <b>You are looking for three things</b>,
+and every provider publishes all three.</p>
+<div class="step"><div class="n">1</div><div><h3>Price, which is the reliable signal</h3>
+<p class="small" style="margin:0">On the pricing page the models are listed with a rate each.
+<b>The most expensive is the careful one and the cheapest is the fast one</b>, and providers do not
+get that backwards. If you read nothing else, read the price order.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>How much it can hold at once</h3>
+<p class="small" style="margin:0">Published as a context window or a token limit. <b>This is the
+axis that decides whether the job is possible at all</b>, separately from careful-versus-fast. A
+whole class set of essays is a lot of text.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Whether it thinks before it answers</h3>
+<p class="small" style="margin:0">Most tools now offer a slower mode that reasons first. <b>Worth it
+for anything with steps &mdash; grading against a rubric, working a problem</b> &mdash; and wasted on
+rewriting a sentence.</p></div></div>
+<div class="card g"><h3>The chatbot version of the same decision</h3>
+<p class="small" style="margin:0">If you use a chat tool rather than something built, the dropdown at
+the top is this exact choice. <b>The rule is unchanged:</b> switching to the careful model costs you
+a few seconds of waiting, and it is worth it for anything a student will read and nobody will check.
+For rewriting your own newsletter, the fast one is fine and you will notice the difference in speed
+more than in quality.</p></div>
+<div class="note"><b>One check that costs a minute and settles most arguments.</b><br>
+Run the <i>same</i> job through two models and read both answers side by side. <b>If you cannot tell
+them apart, use the cheap one</b> &mdash; that is a measurement, not a preference, and it is the only
+way to know for your subject and your students rather than in general.</div>
+<div class="foot"><span>Which AI Should Do This &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn</div>
+<h2>Sort three of your own jobs</h2>
+<p class="lede">Pick three things you already use AI for, or are about to. <b>Fill in the middle
+column first</b> &mdash; it answers the third one for you.</p>
+<div class="box"><h3>Three jobs, sorted</h3>
+<table><thead><tr><th>The job</th><th style="width:150pt">Who checks it before anyone acts on it?</th><th style="width:76pt">Careful or fast?</th></tr></thead>
+<tbody>
+<tr><td style="height:34pt"></td><td></td><td></td></tr>
+<tr><td style="height:34pt"></td><td></td><td></td></tr>
+<tr><td style="height:34pt"></td><td></td><td></td></tr>
+</tbody></table>
+<p class="small" style="margin:0"><b>Fill in the middle column first.</b> It answers the third one
+for you, which is the whole point of the rule.</p></div>
+<div class="box"><h3>The one job on this page nobody checks, and what I will do about it</h3>
+<div class="wl"></div></div>
+<div class="card p"><h3>If your whole staff is making this choice by guessing</h3>
+<p class="small" style="margin:0">Our <b>ChatGPT &amp; AI Prompting</b> staff training kit is the
+whole-staff version &mdash; deck with speaker notes, a word-for-word script, a participant handout
+and an administrator one-pager, presentable cold by somebody who has never run a session. Licenses
+are half price. Search our store for it.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases for every review, and it is the only thing that decides
+whether another teacher ever sees this.</div>
+<div class="foot"><span>Which AI Should Do This &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>
