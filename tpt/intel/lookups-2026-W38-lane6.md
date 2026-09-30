@@ -24,7 +24,7 @@ decide whether the first build goes out Sunday or the Sunday after.
 |---|---|---|
 | 6 | **interactive activities** | Whether the artifact family is enterable at all, or a giant we can only tag. |
 | 7 | **class website** | The hub build (ladder item 2). Also a check on whether teachers want a page they control. |
-| 8 | **technology professional development** | The whole-staff licence buyer — coaches and tech integrationists. |
+| 8 | **technology professional development** | The whole-staff license buyer — coaches and tech integrationists. |
 | 9 | **digital resources** | The format family the TPT taxonomy actually uses. Expect crowded; want the number. |
 | 10 | **no prep digital** | Whether "no prep" wording carries over from print to digital, where it is the strongest phrase we know of. |
 

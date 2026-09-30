@@ -42,7 +42,7 @@ Also in there and immediately teachable:
   Arrived at independently, and it is exactly the pedagogy our build-alongs
   already use. That is validation, and it should be said out loud.
 - **"No em dashes anywhere in the project."** A house-style rule given to a
-  model. Teachers recognise this instantly.
+  model. Teachers recognize this instantly.
 - **"Keep `PROGRESS.md` updated at the end of every session."** How a person
   with a teaching job picks work back up a week later.
 
@@ -134,7 +134,7 @@ it.
 
 **The line is not "teach teachers to build one-file tools."** It is: *here is a
 teacher who built real software for his own classes, and here is every decision
-he made and why.* That is a much larger and much less copyable catalogue.
+he made and why.* That is a much larger and much less copyable catalog.
 
 **Three products the engine now obviously supports, none of them built:**
 

@@ -53,7 +53,7 @@ allotment while the factory is repairing itself.
 | 11 | **student led conferences** | Conference season is Oct–Nov and `parent teacher conference sign up` already validated at **1,370**. This checks whether the student-led variant is a separate door or the same one. |
 | 12 | **progress monitoring graph** | Carried unrun. Whether the graph page earns its own free listing. |
 | 13 | **data binder covers** | Cheap companion to the IEP family; `iep binder cover` already came back 930 · 1K–3K · Strong (465). |
-| 14 | **behavior intervention plan** | **Tag and adjacency only — this can never be a product for us.** Our standing guardrail is that we record and summarise; we never draft a behavior plan as though it were the team's decision. Same posture as `iep goal bank`. I want the size of the umbrella, nothing more. |
+| 14 | **behavior intervention plan** | **Tag and adjacency only — this can never be a product for us.** Our standing guardrail is that we record and summarize; we never draft a behavior plan as though it were the team's decision. Same posture as `iep goal bank`. I want the size of the umbrella, nothing more. |
 | 15 | **morning meeting** | The one lane-1 classroom-routine phrase we have never tested, and adjacent to the validated `special education morning meeting slides` (2,006 · Promising). |
 
 ---

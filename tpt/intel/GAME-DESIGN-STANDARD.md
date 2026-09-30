@@ -195,7 +195,7 @@ instructions rather than pictures.
 ### The test that replaces the silhouette test
 
 **Screenshot it and look at it small.** If it reads as a designed picture at
-thumbnail size, it will sell. If it reads as coloured rectangles, start again
+thumbnail size, it will sell. If it reads as colored rectangles, start again
 with the gradient and the ridges before touching anything else.
 
 ## 6. THE SHOWCASE TEST

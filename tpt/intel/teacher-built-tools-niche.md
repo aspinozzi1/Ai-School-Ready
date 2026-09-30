@@ -59,7 +59,7 @@ tools their LMS does not provide.** The LMS stays the system of record.
    further. Not absolute beginners.
 5. **First build:** a **self-checking practice activity** — runs from
    one file, no login, any browser, any topic.
-6. **Price:** premium flagship, **$18–25**. Licences at half.
+6. **Price:** premium flagship, **$18–25**. Licenses at half.
 7. **Cadence:** Sunday's **headline** product, with one validated
    win-lane item alongside so the IEP and behavior families keep growing.
 8. **Guardrail:** teach it, with the limits stated plainly.
@@ -84,11 +84,11 @@ away.
 | Tier | What goes in | Who approves |
 |---|---|---|
 | **1 · Teacher-authored content** | Word lists, questions, prompts, examples the teacher wrote. No student data of any kind. | Nobody. Build it today. |
-| **2 · De-identified student data** | Scores, error patterns, response counts — labelled S1/S2/S3, or "a 3rd grader," never a name. | Nobody, *if* the identifiers never enter. This is where our AI Growth Eval already lives. |
+| **2 · De-identified student data** | Scores, error patterns, response counts — labeled S1/S2/S3, or "a 3rd grader," never a name. | Nobody, *if* the identifiers never enter. This is where our AI Growth Eval already lives. |
 | **3 · Identifiable student data** | Names, rosters, IEP details, grades tied to a person, anything a stranger could trace to one child. | **Your district. Stop and ask.** This is not a thing to build on a personal account. |
 
 **The teaching points, in every build-along:**
-- How to recognise you have crossed from Tier 2 into Tier 3 — usually by
+- How to recognize you have crossed from Tier 2 into Tier 3 — usually by
   adding "just the names so I can tell them apart."
 - The substitution habit: a roster key stays on paper or in the
   district's own system; the tool sees S1, S2, S3.
@@ -144,7 +144,7 @@ minutes" build, and the three-tier data-safety page as a standalone.
 
 ## Standing rules this line inherits
 
-- Titles ≤80 characters, ≤6 tags, licence at half price.
+- Titles ≤80 characters, ≤6 tags, license at half price.
 - Bright Scholar design, real brand fonts, `check_fonts.py` must pass.
 - No shorthand in reader-facing copy. American English.
 - **Never promise future content.** A build-along names what it teaches,

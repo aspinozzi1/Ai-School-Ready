@@ -50,7 +50,7 @@ the owner uploads.
 1. **Port the templates.** Move the `brand.css` free-resource and paid
    layouts onto the Bright Scholar system — cream ground, rainbow top
    bar, Fredoka / Nunito / Luckiest Guy, thick rounded outlines,
-   colour-coded sections — matching
+   color-coded sections — matching
    `kits/bestseller-binder/src/cvc-binder-sample.html`. Do it in the
    shared template so every future build inherits it and no brief has to
    remember to say so.

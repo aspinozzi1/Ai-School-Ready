@@ -61,7 +61,7 @@ review. Rows 11 to 13 size that market properly.
 | # | Look up | What it decides |
 |---|---|---|
 | 1 | **ai professional development** | The core Lane C phrase, **never measured**, and on a worksheet unrun for ten days. Everything in this lane hangs off it. |
-| 2 | **technology professional development** | The whole-staff licence buyer — coaches and tech integrationists, who hold budget a classroom teacher does not. Also **never measured**. |
+| 2 | **technology professional development** | The whole-staff license buyer — coaches and tech integrationists, who hold budget a classroom teacher does not. Also **never measured**. |
 | 3 | **ai training for teachers** | The literal phrase the new state laws use. If an administrator under a 2027 deadline searches TPT at all, this is what they type. |
 | 4 | **staff meeting activities** | What a person actually types when they have been handed a PD day to fill on Thursday. A different, more desperate, more purchasing search than #1. |
 | 5 | **ai policy** | Maryland requires a published tool-evaluation rubric. We already sell a free tool-safety checklist. If this measures at all, the rubric is a product and the free is its door. |

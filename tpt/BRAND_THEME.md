@@ -22,7 +22,7 @@ bodies — it brands the product, it doesn't decorate the content.
 |---|---|---|
 | ink | `#17293B` | text, bands, the professional spine (v1 brand equity) |
 | school blue | `#2D6CB5` | friendly primary: slide pills, kickers, table heads |
-| teal | `#17BEBB` | the intern's colour: badges, checks, Rivera lines |
+| teal | `#17BEBB` | the intern's color: badges, checks, Rivera lines |
 | sunny | `#FFC43D` | highlighter: h2 chips, band underline, rule borders |
 | tomato | `#E4572E` | sparingly: warnings, ✘ marks, one rainbow stripe |
 | cream | `#FFFDF8` | page ground |

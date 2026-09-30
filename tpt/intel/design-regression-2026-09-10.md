@@ -16,7 +16,7 @@ template, not the approved Bright Scholar design.**
 
 What the approved design is (`kits/bestseller-binder/src/cvc-binder-sample.html`,
 as shipped in the CVC binder): cream ground, rainbow top bar,
-Fredoka / Nunito / Luckiest Guy, thick rounded outlines, colour-coded
+Fredoka / Nunito / Luckiest Guy, thick rounded outlines, color-coded
 sections. What shipped instead: dark navy header band, white ground,
 system-ish sans, thin hairline rules. Competent, corporate, and not what
 the owner asked for — his direction on 2026-09-01 was "school like

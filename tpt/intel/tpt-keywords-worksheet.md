@@ -537,7 +537,7 @@ we need demand and buyer intent, not low competition.
    make this a decision rather than a build: it is a **named program and
    a trademark**, and our own authoring standard forbids claiming
    alignment we have not actually grounded. Doing it properly means
-   working from the published sequence and labelling ourselves a
+   working from the published sequence and labeling ourselves a
    supplement, not an affiliate. Do not build against it until the owner
    rules.
 5. **"addition and subtraction within 20" (15,959 · 40K–75K · Promising,
@@ -609,7 +609,7 @@ Friday format.
 4. Recommended first build: an **IEP Goal & Progress Monitoring Tracker**
    — goal pages, weekly data sheets, graph pages, plus the AI synthesis
    page ("here are six weeks of scores on this goal, de-identified —
-   summarise the trend, say whether the goal is on pace, and draft the
+   summarize the trend, say whether the goal is on pace, and draft the
    progress-report sentence"). That last step is the exact chore SPED
    teachers dread most, and no competitor is doing it.
 5. **Caveat before building:** IEP work touches legally-binding

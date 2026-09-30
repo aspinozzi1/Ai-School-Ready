@@ -63,7 +63,7 @@ TPT's own dashboard warns sellers about trademarked search terms. Even
 if one returns a beautiful number, **we do not title, subtitle or tag on
 it.** The generic alternative is `social narratives`, which is #10 below
 and is why it is on the list. Same posture as the UFLI deferral: a great
-score is not a licence.
+score is not a license.
 
 Please verify current trademark status before we use either word
 anywhere — I am flagging a risk, not delivering a legal opinion.

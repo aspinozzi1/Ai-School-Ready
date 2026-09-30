@@ -160,7 +160,7 @@ anyway, it needs its own privacy framing first, not a straight port of the
 dashboard pattern. **Row 3, the seating chart, faces seven free generators
 already on the open web**, several AI-powered — buildable, but it needs an
 answer to "why not use the free one" baked into the pack, which is a
-harder product than row 5 was. Both are open, not cancelled; the next
+harder product than row 5 was. Both are open, not canceled; the next
 Lane A session should get an owner call on row 4 before building it.
 
 **Every product ships the working application**, not only instructions. A
@@ -316,7 +316,7 @@ file that runs.
 
 That is also the commercial argument. A single teacher buys a $22 build-along.
 A principal buys one PD and multiplies it by the staff: Kit 1 is $24 with
-additional licences at half price, so a forty-person building is a single
+additional licenses at half price, so a forty-person building is a single
 purchase order, not forty transactions.
 
 ### The series
@@ -347,7 +347,7 @@ file.
 
 **$24–34.** Kit 1 and Kit 2 sit at $24. A session that ends in working
 software is worth more than one that ends in a handout — **Session 3 at $29**,
-additional licences half price, purchase orders through TpT for Schools.
+additional licenses half price, purchase orders through TpT for Schools.
 
 ### Kit 3 status (updated 2026-09-23)
 
@@ -383,12 +383,12 @@ container is available then.
 ### Kit 3 status (updated 2026-09-30)
 
 **Shipped as drop 65** (`tpt/listings.json` id `kit3`, order 65): "Vibe Coding Staff PD | Build a
-Review Game with AI | Editable Slides & Script" (77 chars), **$29, licence $14.50**. Nine files in
+Review Game with AI | Editable Slides & Script" (77 chars), **$29, license $14.50**. Nine files in
 `AI-Ready-School-Kit-03.zip` plus `Kit03_ReviewGameStarter.html` via `extraFiles`. The 09-23 drift
 (deck and script still describing the code-block lab) was fixed first. Mandate statistics were all
 re-verified against live sources; the PD-budget figure is not printed anywhere; two wording errors
 and one author byline were corrected (see `kits/kit03-tpt/RESEARCH_LOG.md`). Owner still to decide:
-Kits 1 and 2 are live at $24 with $10 licences, which is not half; Kit 3 follows the rule.
+Kits 1 and 2 are live at $24 with $10 licenses, which is not half; Kit 3 follows the rule.
 **Next Lane C slot:** none owed. A new PD (Session 4 or 5) is a two-Wednesday build and is not
 started; the brief for 2026-10-07 decides between that, a Lane A build-along, or a free.
 
@@ -445,7 +445,7 @@ the preview.
 
 ## Standing rules, unchanged
 
-- Titles ≤80 characters; ≤6 tags; licence half price. **"Vibe Coding" goes in
+- Titles ≤80 characters; ≤6 tags; license half price. **"Vibe Coding" goes in
   the title of anything that builds software** — every Lane A and Lane B
   product, and any Lane C session whose lab ends in a working file. A PD on
   student data or on leading adoption does not build software and does not

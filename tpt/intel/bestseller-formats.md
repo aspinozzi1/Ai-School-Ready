@@ -108,7 +108,7 @@ We require:
 
 ### Cadence — SHIP THE COMPLETE BINDER (owner directive 2026-09-04)
 
-The unit-by-unit plan is **cancelled**. Owner: *"Teachers aren't going to
+The unit-by-unit plan is **canceled**. Owner: *"Teachers aren't going to
 buy one-offs and slowly build their binders."* That is right — the
 category is defined by completeness, and a partial binder asks the buyer
 to bet on a stranger finishing it.
@@ -129,7 +129,7 @@ ambiguous at worksheet size — several were unidentifiable, which in a
 picture-word matching task is not a style problem, it is a correctness
 problem: the child cannot answer.
 
-Standard now: **filled, high-contrast, literal-coloured illustrations**
+Standard now: **filled, high-contrast, literal-colored illustrations**
 (`kits/bestseller-binder/src/icons.js`, 30 words). Every picture must be
 identifiable at 44pt by a five-year-old, in one guess. Ambiguous drawings
 are not "polished" — the word is swapped for one that can be drawn
@@ -186,7 +186,7 @@ Cutting rules that took three passes to get right, and are worth keeping:
   so every picture carries the same optical weight on the page.
 
 Prompting note: the prompt describes the *convention* — bold uniform
-outline, flat solid fills, no gradients or shadows, literal colours — and
+outline, flat solid fills, no gradients or shadows, literal colors — and
 never names another seller's brand. Naming a live competitor's style to
 reproduce it and then selling alongside them is not a road we go down.
 
@@ -198,7 +198,7 @@ are the two short vowels beginning readers most often confuse, and
 published phonics scope-and-sequences commonly separate them as far
 apart in the order as possible — so short e is taught last, four units
 from short i. Cited on the binder's own "How this is built" page
-(NJTSS / Reading Rockets sample scope and sequence), and labelled there
+(NJTSS / Reading Rockets sample scope and sequence), and labeled there
 as a **practitioner convention, not experimental evidence**, because
 that is what it is.
 

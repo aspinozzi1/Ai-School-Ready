@@ -2,7 +2,7 @@
 
 Compiled by the Tuesday pulse, 2026-09-01. Primary meter: **TPT Keywords
 (owner-run pulls #5 and #6, 2026-08-26)**. Google/Mangools numbers are
-secondary and labelled.
+secondary and labeled.
 
 **Status of the Monday worksheet:** `lookups-2026-W36-wednesday.md` was
 sent to the owner Monday evening and has not come back yet. It is not a

@@ -62,8 +62,8 @@ Those are large bundles; ours is smaller and should not pretend otherwise.
 
 | Listing | Price | Reasoning |
 |---|---|---|
-| IEP Organization Binder | **$10** (licence $5) | ~14 pages of organisational pages. More than a single form pack, well under a full system. |
-| The Complete IEP Binder (bundle) | **$24** (licence $12) | Contains IEP at a Glance ($7) + IEP Goal Tracking ($9) + ABC Data Sheets ($6) + the new binder ($10) = **$32 sum, 25% off**. Lands just under the $37 comparable while containing four real products. |
+| IEP Organization Binder | **$10** (license $5) | ~14 pages of organisational pages. More than a single form pack, well under a full system. |
+| The Complete IEP Binder (bundle) | **$24** (license $12) | Contains IEP at a Glance ($7) + IEP Goal Tracking ($9) + ABC Data Sheets ($6) + the new binder ($10) = **$32 sum, 25% off**. Lands just under the $37 comparable while containing four real products. |
 
 *Caveat: comparables come from search-result snippets; TPT returns HTTP 403 to
 automated fetches. Directional, not measured.*
@@ -95,7 +95,7 @@ the moment names go in, this becomes a document that cannot leave a locked room.
 
 **No AI page on this product.** It is an organisational shell; there is no data
 to synthesise and adding a prompt for the sake of the brand signature would be
-padding. The AI work lives in the products it organises. Saying so plainly in
+padding. The AI work lives in the products it organizes. Saying so plainly in
 the listing is more honest than a token page.
 
 **Drafted titles (≤80):**

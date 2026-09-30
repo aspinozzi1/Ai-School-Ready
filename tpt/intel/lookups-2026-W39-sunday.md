@@ -101,7 +101,7 @@ the web has tools for it.
 | 12 | **bathroom sign out** | The phrase teachers actually type for #11. If both are thin and small, the whole branch closes cleanly and the roadmap loses an item. |
 | 13 | **self checking activities** | Carried unrun since 09-12. The artifact phrase for Lane A build #1, which shipped 09-13 titled on the method instead. Cheap to retitle now, expensive once the listing has history. |
 | 14 | **teacher made games** | Carried unrun. How teachers describe building their own material with no technical vocabulary. If this is where the volume is, it reframes every title in the lane. |
-| 15 | **technology professional development** | Carried unrun. The whole-staff licence buyer — coaches and tech integrationists — and the phrase that tests the $19–29 band rather than the activity band. |
+| 15 | **technology professional development** | Carried unrun. The whole-staff license buyer — coaches and tech integrationists — and the phrase that tests the $19–29 band rather than the activity band. |
 
 ---
 
