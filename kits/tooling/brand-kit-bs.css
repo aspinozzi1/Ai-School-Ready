@@ -1,0 +1,10 @@
+/* Kit layout (brand.css) set in the Bright Scholar faces (Nunito body, Fredoka heads),
+   vendored in ./fonts. Added 2026-09-30 for Kit 3 so the PDFs embed real brand faces and
+   pass check_fonts.py; brand.css alone asks for Inter from a node_modules path that does
+   not exist in scheduled containers, and Chromium silently substitutes Liberation Sans. */
+@import url('brand.css');
+@import url('fonts/brand-fonts.css');
+html, body, .doc, .sheet, table, td, th, p, li { font-family: 'Nunito', sans-serif; }
+h1, h2, h3, .kicker, .band .doc-tag, .foot .brand-line, .slide-cue, .slide-cue .num, .slide-cue .title,
+.slide-cue .clock, .callout.rule .rule-label, .timing .t, .badge, .cover h1, .cover .track, .segment-head,
+.cover .spark-badge { font-family: 'Fredoka', sans-serif; }

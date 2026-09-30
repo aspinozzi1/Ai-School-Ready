@@ -184,6 +184,8 @@ const IMAGES = [
   ['kit1-real-pages',   realPages('#17BEBB', ['k1_script.png', 'k1_handout.png', 'k1_plan.png'])],
   ['kit2-whats-inside', whatsInside('Kit 2 ·', 'Prompting Basics', KIT_ITEMS(33))],
   ['kit2-real-pages',   realPages('#2D6CB5', ['k2_script.png', 'k2_handout.png', 'k2_plan.png'])],
+  ['kit3-whats-inside', whatsInside('Kit 3 \u00b7', 'Vibe Coding Staff PD', KIT_ITEMS(34).concat(['<b>The working game file</b> every teacher builds on']), '9 files + game')],
+  ['kit3-real-pages',   realPages('#8367C7', ['k3_script.png', 'k3_handout.png', 'k3_plan.png'])],
   ['bts-whats-inside', whatsInside('Back-to-School', 'AI Setup Pack', [
     'The First-Week AI Setup Checklist — ten boxes, one planning period',
     'Ready-to-send family letter about how you\u2019ll use AI this year',

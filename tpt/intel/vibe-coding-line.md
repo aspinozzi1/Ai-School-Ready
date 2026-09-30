@@ -380,6 +380,18 @@ across all 34 slides, but that is not a substitute for the real gate, which also
 text overflowing its own box. Run `check_overlap.py` for real next Wednesday, in whatever
 container is available then.
 
+### Kit 3 status (updated 2026-09-30)
+
+**Shipped as drop 65** (`tpt/listings.json` id `kit3`, order 65): "Vibe Coding Staff PD | Build a
+Review Game with AI | Editable Slides & Script" (77 chars), **$29, licence $14.50**. Nine files in
+`AI-Ready-School-Kit-03.zip` plus `Kit03_ReviewGameStarter.html` via `extraFiles`. The 09-23 drift
+(deck and script still describing the code-block lab) was fixed first. Mandate statistics were all
+re-verified against live sources; the PD-budget figure is not printed anywhere; two wording errors
+and one author byline were corrected (see `kits/kit03-tpt/RESEARCH_LOG.md`). Owner still to decide:
+Kits 1 and 2 are live at $24 with $10 licences, which is not half; Kit 3 follows the rule.
+**Next Lane C slot:** none owed. A new PD (Session 4 or 5) is a two-Wednesday build and is not
+started; the brief for 2026-10-07 decides between that, a Lane A build-along, or a free.
+
 ### Standing rules specific to Lane C
 
 - **Presentable cold.** The script is word for word and the deck matches it

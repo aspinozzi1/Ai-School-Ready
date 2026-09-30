@@ -2656,6 +2656,66 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "kit3",
+      "order": 65,
+      "name": "Vibe Coding Staff PD - Build Your First Classroom Tool",
+      "product": "UPLOAD/02-paid/AI-Ready-School-Kit-03.zip",
+      "extraFiles": [
+        "UPLOAD/02-paid/Kit03_ReviewGameStarter.html"
+      ],
+      "cover": "tpt/covers/kit3-cover.png",
+      "thumbnails": [
+        "tpt/extras/kit3-whats-inside.png",
+        "tpt/extras/kit3-real-pages.png"
+      ],
+      "title": "Vibe Coding Staff PD | Build a Review Game with AI | Editable Slides & Script",
+      "description": "A staff PD where nobody leaves holding a handout. Every teacher in the room leaves holding a working review game they built from their own questions, saved as their own file, on their own device.\n\nOpen the game file and it works. Press \"Put my own questions in\" and type them, paste a list, or copy the prompt and have an AI tool draft a whole round, then read every question before you play it, because fast is not the same as right. Press \"Save my game as a file\" and walk out with it. Nobody edits code to enter questions or save the game. It needs no account, no install, and runs with the wifi off.\n\nThe session teaches the loop that makes this safe to attempt: describe what you want, build, test it yourself, change one thing, test again. Ms. Rivera, our running example teacher, builds one game start to finish on screen before your staff tries it. There is a scripted live moment where a vague request gets a vague result, and the facilitator names what was missing. A live AI mistake during the lab is a teaching gift, and the script tells the facilitator exactly what to do with it.\n\nHONEST ABOUT WHAT IT IS: teachers change a working program by describing what they want. They do not write one from a blank file, and the session says so.\n\nINCLUDED (9 files + the game): facilitator prep guide with a 45-minute cut and a 90-minute column · word-for-word script keyed to every slide · 34-slide PowerPoint deck, fully editable, with speaker notes on every slide · participant handout · first-48-hours action sheet · 30-day plan with three 10-minute PLC follow-ups · exit ticket that doubles as PD documentation (date, hours, signature line) · admin one-pager · full APA references with every statistic checked against its source · the working game file (HTML).\n\nNO STUDENT DATA, ANYWHERE. The game holds questions, answers and a title, and the session teaches the one rule in every demonstration.\n\nA PRINCIPAL BUYS THIS ONCE AND MULTIPLIES IT BY THE STAFF. Additional licenses are $14.50 each, half price, and we accept purchase orders through TpT for Schools. A forty-person building is one purchase order, not forty transactions.\n\nSession 3 of the AI Foundations series. Pairs with Sessions 1 and 2; the one privacy rule is restated on a slide, so it also runs on its own for staff who know the basics.\n\nBuilt and audited by two certified teachers. Informational only, not legal advice; check with your district about local credit and about how it wants tools like this shared with students.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first. We would rather fix it than leave you stuck.",
+      "price": 29,
+      "licenses": 14.5,
+      "grades": [
+        "Not Grade Specific",
+        "Adult Education"
+      ],
+      "subjects": [
+        "Computer Science - Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "vibe coding",
+        "ai professional development",
+        "teacher pd",
+        "staff training",
+        "ai workshop",
+        "staff meeting"
+      ],
+      "formats": [
+        "Zip",
+        "PDF",
+        "PowerPoint",
+        "HTML"
+      ],
+      "customCategory": "AI PD Sessions",
+      "previewShots": [
+        "k3_script.png",
+        "k3_handout.png",
+        "k3_plan.png"
+      ],
+      "previewInside": [
+        "Facilitator prep guide, with a 45-minute cut and a 90-minute column",
+        "Word-for-word facilitator script",
+        "<b>34-slide editable PowerPoint</b> with speaker notes on every slide",
+        "Participant handout",
+        "First-48-hours action sheet",
+        "30-day plan",
+        "Exit ticket that doubles as PD documentation",
+        "Admin one-pager",
+        "Full APA references, every statistic checked",
+        "<b>The working game file</b> every teacher builds on"
+      ],
+      "previewUnit": "the full kit is 9 files + the game",
+      "filesBadge": "9 files + game"
     }
   ]
 }

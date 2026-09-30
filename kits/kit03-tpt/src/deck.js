@@ -48,8 +48,8 @@ const W = 13.33, H = 7.5;
     null,
     "Her checkpoint: did the room's one change actually show up? Confirmed.",
     "Her lab, same as yours: the starter file, her questions, two real changes.",
-    "Her Track 1: open the file, find the block at the top, replace it.",
-    "Her question block: eight to ten entries, the same shape every time.",
+    "Her Track 1: open the file, press Put my own questions in, fill the form.",
+    "Her setup screen: type, paste a list, or let AI draft a round.",
     "Her two prompts: one cosmetic, one behavioral, both hers to choose.",
     "Her three minutes: four questions, roughed out, good enough to start.",
     "Her Track 2 path: the one she didn't need, but some in her building will.",
@@ -156,7 +156,7 @@ const W = 13.33, H = 7.5;
       { text: 'AI-Ready', options: { color: TEAL, bold: true } },
       { text: ' School', options: { color: WHITE, bold: true } },
     ], { x: 2.15, y: 0.97, w: 4, h: 0.6, fontFace: FONT, fontSize: 26, margin: 0, valign: 'middle' });
-    s.addText('TRACK A · AI FOUNDATIONS · KIT 3 OF 20', {
+    s.addText('TRACK A · AI FOUNDATIONS · KIT 3', {
       x: 0.9, y: 2.75, w: 10, h: 0.4, fontFace: FONT, fontSize: 15, bold: true,
       color: AMBER, charSpacing: 3, margin: 0 });
     s.addText('Build Your First\nClassroom Tool', {
@@ -175,11 +175,11 @@ const W = 13.33, H = 7.5;
     kicker(s, 'Why this room, this year');
     title(s, 'This is not optional anymore');
     card(s, 0.7, 1.7, 12.0, 2.15, PAPER);
-    s.addText('Maryland’s AI Ready Schools Act (SB 720) is now law: every local school system trains its teachers on AI, with the state’s own goal of finishing by July 1, 2027. Virginia and Ohio passed their own 2026 laws the same year.', {
+    s.addText('Maryland’s AI Ready Schools Act (SB 720) is now law: it sets up statewide AI training for teachers, with the law’s own intent of training educators by July 1, 2027. Virginia and Ohio passed their own 2026 laws the same year.', {
       x: 1.05, y: 1.9, w: 11.3, h: 1.8, fontFace: FONT, fontSize: 19, color: INK, margin: 0, valign: 'middle' });
     card(s, 0.7, 4.05, 12.0, 1.75, 'EAF5F3');
     s.addText('77 bills, 27 states', { x: 1.05, y: 4.25, w: 4.6, h: 1.35, fontFace: FONT, fontSize: 32, bold: true, color: TEAL, margin: 0, valign: 'middle' });
-    s.addText('That is how many AI-in-education bills moved through state legislatures in the 2026 session alone. This is not one state. It is a direction.', {
+    s.addText('That is how many AI-in-education bills FutureEd was tracking in state legislatures during the 2026 session. This is not one state. It is a direction.', {
       x: 5.8, y: 4.25, w: 6.6, h: 1.35, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'middle' });
     s.addNotes('Say: Maryland Senate Bill 720, now Chapter 634 of the 2026 Laws of Maryland, requires statewide teacher AI training through a train-the-trainer model, with the law’s own stated intent of finishing by July 1, 2027. It also requires every local school system to name an AI coordinator and requires the state to publish a rubric districts use to evaluate AI tools before buying them. Virginia’s HB 1186 and SB 394, effective July 1, 2026, direct the state to issue AI guidance that includes professional development for educators. Ohio’s HB 96 requires every public district to adopt a formal AI policy by July 1, 2026 (a policy mandate, not a training one; keep those two separate if asked). The 77-bills-27-states figure is FutureEd’s legislative tracker, not an estimate. Full citations in the References file.');
   }
@@ -319,7 +319,7 @@ const W = 13.33, H = 7.5;
     const s = base();
     kicker(s, 'The loop, step 2 of 4 · on Ms. Rivera’s screen');
     title(s, 'Build: it writes, she watches');
-    beforeLine(s, 'WHAT COMES BACK', 'the file, updated, with her eight questions in the block at the top and her new title in the title bar.', MUTED);
+    beforeLine(s, 'WHAT COMES BACK', 'the file, updated, with her eight questions loaded and her new title on the opening screen.', MUTED);
     riveraScreen(s, [
       { text: '“Done. I replaced the QUESTIONS block with your eight multiplication questions and updated the title to “Multiplication Match-Up.” Everything else in the file is unchanged. Want to open it and try it?”', options: { color: INK } },
     ], { header: 'AI coding tool (any of them) · responding to Ms. Rivera', fontSize: 17, lineSpacingMultiple: 1.25, caption: 'She does not need to read the code. She needs to open the file and click around, which is the next step.' });
@@ -458,7 +458,7 @@ const W = 13.33, H = 7.5;
     s.addText('The lab: build your game.', {
       x: 0.7, y: 1.35, w: 12.0, h: 1.0, fontFace: FONT, fontSize: 42, bold: true, color: WHITE, margin: 0 });
     const rules = [
-      ['Track 1 (most of you)', 'Start from the starter file. Swap in your questions, then make two real changes by describing them.'],
+      ['Track 1 (most of you)', 'Open the starter file, press Put my own questions in, fill in the form, then make two real changes by describing them.'],
       ['Track 2 (a few of you)', 'Start from nothing, with the first prompt on the handout. Raise a hand; this is the normal path for you.'],
       ['The one rule', 'No student information, ever. Save a copy before any change you are unsure about.'],
     ];
@@ -479,37 +479,45 @@ const W = 13.33, H = 7.5;
     title(s, 'Your three moves');
     const steps = [
       ['1', 'Open the starter file', 'Double-click it. It opens in your browser. Nothing to install.'],
-      ['2', 'Replace the question block', 'Find the block at the very top of the file. Swap in your eight to ten questions.'],
+      ['2', 'Press “Put my own questions in”', 'It is on the opening screen. Fill in the form: type them, paste a list, or let the AI prompt draft a round.'],
       ['3', 'Make two changes by describing them', 'One cosmetic (how it looks). One behavioral (how it plays). Test after each one.'],
+      ['4', 'Press “Save my game as a file”', 'That file is yours to keep, copy and hand out. You walk out with it.'],
     ];
     steps.forEach(([n, h, b], i) => {
-      const y = 1.65 + i * 1.55;
-      card(s, 0.7, y, 12.0, 1.35, PAPER);
-      s.addShape('ellipse', { x: 1.0, y: y + 0.42, w: 0.55, h: 0.55, fill: { color: TEAL }, line: { color: TEAL } });
-      s.addText(n, { x: 1.0, y: y + 0.42, w: 0.55, h: 0.55, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
-      s.addText(h, { x: 1.8, y: y + 0.16, w: 10.6, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0 });
-      s.addText(b, { x: 1.8, y: y + 0.68, w: 10.6, h: 0.6, fontFace: FONT, fontSize: 16, color: INK, margin: 0 });
+      const y = 1.55 + i * 1.18;
+      card(s, 0.7, y, 12.0, 1.06, PAPER);
+      s.addShape('ellipse', { x: 1.0, y: y + 0.27, w: 0.52, h: 0.52, fill: { color: TEAL }, line: { color: TEAL } });
+      s.addText(n, { x: 1.0, y: y + 0.27, w: 0.52, h: 0.52, fontFace: FONT, fontSize: 20, bold: true, color: WHITE, align: 'center', valign: 'middle', margin: 0 });
+      s.addText(h, { x: 1.8, y: y + 0.1, w: 10.6, h: 0.42, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0 });
+      s.addText(b, { x: 1.8, y: y + 0.54, w: 10.6, h: 0.45, fontFace: FONT, fontSize: 16, color: INK, margin: 0 });
     });
-    s.addNotes('This is a leave-up reference slide. Point new arrivals or lost participants back to it rather than re-explaining verbally each time.');
+    s.addNotes('Say: four moves, on screen the whole time you work. Nobody edits code to enter questions or save the game. This is a leave-up reference slide; point new arrivals or lost participants back to it rather than re-explaining verbally each time.');
   }
 
-  // ============================== SLIDE 23 · LAB SUPPORT: THE QUESTION BLOCK ==============================
+  // ============================== SLIDE 23 · LAB SUPPORT: THE SETUP SCREEN ==============================
   {
     const s = base();
-    kicker(s, 'Lab support · where your content lives');
-    title(s, 'The question block, up close');
-    card(s, 0.7, 1.7, 12.0, 3.5, NAVY);
+    kicker(s, 'Lab support · where your content goes');
+    title(s, 'The setup screen, up close');
+    const ways = [
+      ['1 · Type them', 'One card per question: the question, four answers, the idea it tests, a level, and one line saying why it is right.', 'EAF5F3'],
+      ['2 · Paste a list', 'One question per line, eight parts split by the | character. The page loads it and names every line it skipped, and why.', PAPER],
+      ['3 · Let AI draft a round', 'Type your topic, press Copy the prompt, paste it into any AI tool, paste the answer back. Fast, and it still needs your eyes.', 'FBF3DC'],
+    ];
+    ways.forEach(([h, b, fill], i) => {
+      const x = 0.7 + i * 4.06;
+      card(s, x, 1.7, 3.88, 3.05, fill);
+      s.addText(h, { x: x + 0.25, y: 1.85, w: 3.4, h: 0.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0 });
+      s.addText(b, { x: x + 0.25, y: 2.45, w: 3.4, h: 2.15, fontFace: FONT, fontSize: 16, color: INK, margin: 0, valign: 'top', lineSpacingMultiple: 1.2 });
+    });
+    card(s, 0.7, 4.95, 12.0, 1.1, NAVY);
     s.addText([
-      { text: 'const QUESTIONS = [\n', options: { color: '9FB2C2' } },
-      { text: '  { q: ', options: { color: 'C9D4DE' } }, { text: 'your question here', options: { color: AMBER } }, { text: ',\n', options: { color: 'C9D4DE' } },
-      { text: '    a: [', options: { color: 'C9D4DE' } }, { text: 'four answer choices', options: { color: AMBER } }, { text: '], ok: 0,\n', options: { color: 'C9D4DE' } },
-      { text: '    idea: ', options: { color: 'C9D4DE' } }, { text: 'the concept it tests', options: { color: AMBER } }, { text: ', level: 1,\n', options: { color: 'C9D4DE' } },
-      { text: '    why: ', options: { color: 'C9D4DE' } }, { text: 'one line saying why it is right', options: { color: AMBER } }, { text: ' },\n', options: { color: 'C9D4DE' } },
-      { text: '  … eight to ten of these', options: { color: '9FB2C2', italic: true } },
-    ], { x: 1.05, y: 1.95, w: 11.3, h: 3.0, fontFace: 'Courier New', fontSize: 15, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
-    s.addText('Same shape, every entry. Type your own questions directly, or describe them to the AI and let it fill the shape in for you.', {
-      x: 0.7, y: 5.4, w: 12.0, h: 0.6, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('This is the exact block from the starter file, shown large so nobody has to hunt for it. The "idea" field is what lets the game bring a missed question back later; the "why" field is what it shows after a wrong answer. Both matter and both are one line each.');
+      { text: 'Fast is not the same as right. ', options: { bold: true, color: AMBER } },
+      { text: 'Read every drafted question before anyone plays it, and fix the ones that are off in the form. AI drafts, the teacher decides.', options: { color: WHITE } },
+    ], { x: 1.0, y: 4.95, w: 11.4, h: 1.1, fontFace: FONT, fontSize: 18, margin: 0, valign: 'middle' });
+    s.addText('The “idea” is two or three words naming the concept. The game brings a missed idea back later, so use three or four ideas per round.', {
+      x: 0.7, y: 6.2, w: 12.0, h: 0.5, fontFace: FONT, fontSize: 16, italic: true, color: MUTED, align: 'center', margin: 0 });
+    s.addNotes('Say: this is the whole setup screen in three ways. Then run the AI prompt live on the projector: type a topic, copy the prompt, paste it into your AI tool, paste the twelve lines back, press Load these questions. Read the result out loud against what a teacher would actually want and point at one real thing it got wrong or made too easy. Fast is not the same as right; that is the lesson. If a line will not load the page names it and says why; that is a teaching gift.');
   }
 
   // ============================== SLIDE 24 · LAB SUPPORT: TWO PROMPTS ==============================
@@ -572,7 +580,7 @@ const W = 13.33, H = 7.5;
     card(s, 0.7, 3.7, 12.0, 1.9, 'EAF5F3');
     s.addText('The fix: copy the exact error message from the browser (or just say "it’s a blank page, nothing shows up") and paste it back to the AI. Say "fix this." It almost always can.', {
       x: 1.05, y: 3.9, w: 11.3, h: 1.5, fontFace: FONT, fontSize: 19, bold: true, color: NAVY, margin: 0, valign: 'middle' });
-    s.addText('Under thirty seconds, every time this has happened in testing.', {
+    s.addText('Usually a quick fix. Stay calm and say it out loud.', {
       x: 0.7, y: 5.85, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 15, italic: true, color: MUTED, align: 'center', margin: 0 });
     s.addNotes('Say this recovery line out loud the first time it happens in the room, then let the next person self-serve from the slide. A blank page is not a crisis; it is the single most common, single most fixable thing that happens in this lab.');
   }
@@ -590,7 +598,7 @@ const W = 13.33, H = 7.5;
       x: 1.05, y: 3.95, w: 11.3, h: 1.5, fontFace: FONT, fontSize: 17.5, bold: true, color: NAVY, margin: 0, valign: 'middle' });
     s.addText('This is exactly why you saved a copy first. Nothing here is ever unrecoverable.', {
       x: 0.7, y: 5.9, w: 12.0, h: 0.45, fontFace: FONT, fontSize: 15, italic: true, color: MUTED, align: 'center', margin: 0 });
-    s.addNotes('This is the failure the whole "save a copy first" habit exists for. If someone did not save a copy, they re-paste their original questions into the current file rather than starting over; either way, stay calm and visible about it, since a live recovery is more reassuring than a clean run.');
+    s.addNotes('This is the failure the whole "save a copy first" habit exists for. If someone did not save a copy, they press Put my own questions in and type or paste their questions back in rather than starting over; either way, stay calm and visible about it, since a live recovery is more reassuring than a clean run.');
   }
 
   // ============================== SLIDE 29 · WHAT YOU BUILT ==============================
