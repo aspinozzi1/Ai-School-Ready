@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Nobody Should Know Which One They Got</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Free &middot; Differentiation, honestly</div>
+<h1>Nobody Should Know<br>Which One They Got</h1>
+<p class="lede">You already differentiate. The question this page is about is narrower and almost
+never asked: <b>does the student need to know which version they were given?</b> Usually they can
+tell &mdash; the colored paper, the group name, the sheet marked B. This is about taking that away,
+and why that is easier than it sounds.</p>
+<div class="note"><b>The argument, and it is not the one you are expecting.</b><br>
+<b>The label does no teaching work.</b> A student cannot act on "you are on tier two." It is not
+feedback, it is a status. <b>A thing that does no work and may cost something should go</b> &mdash;
+and the useful discovery is that it costs you almost nothing to remove.</div>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">4</h3><p class="small" style="margin:0">things that have to match, or the tier shows</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">6</h3><p class="small" style="margin:0">ways to do it on paper, with no software</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">research claim I expected to make and cannot</p></div>
+</div>
+<div class="card r"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">The reading in the software I run for my own high school woodshop
+course comes in three levels. Same question bank at every level, same key terms, and the level moves
+on its own as a student improves. <b>Nothing on the student's screen names a level, shows a badge,
+or hints that anybody got different text.</b> That rule is one line in the spec and it is the whole
+of this page.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>The idea underneath, which shows up everywhere</h3>
+<p class="small" style="margin:0"><b>Build it so the wrong thing is impossible, rather than so that
+you are careful.</b> A form with no box for a last name cannot leak one. A screen with nowhere to
+print a level cannot label a child. Being careful fails on the day you are tired; <b>a thing that
+cannot happen does not need you to be careful.</b></p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Straight talking</div>
+<h2>What the research actually says</h2>
+<p class="lede">I expected to open this page with "research shows labeling harms students."
+<b>I went and read it, and it does not say that.</b> Here is what it does say, because you should
+have the real version before you change anything in your room.</p>
+<div class="card"><h3>The best-known meta-analysis found the opposite of a crisis</h3>
+<p class="small" style="margin-bottom:5pt">Kulik and Kulik, 1984, pooling <b>31 studies</b> of
+ability grouping in elementary schools, reported <b>"significant positive effects on the academic
+performance of elementary school children"</b> &mdash; a small benefit, moving a typical student
+from the 50th to the 58th percentile.</p>
+<p class="small" style="margin:0">And on the part this page is about, the same analysis found
+grouping had <b>"trivially small effects on the self-concepts of elementary school pupils."</b>
+Not devastating. Trivially small.</p></div>
+<div class="card t"><h3>The concerns are real but contested, and later work is mixed</h3>
+<p class="small" style="margin:0">There is a long literature on placement bias and on students in
+low groups internalizing what the group says about them, and there is also work finding no such
+contrast effect. <b>Anybody who tells you this question is settled has not read enough of it.</b></p></div>
+<div class="note"><b>So why hide the tier at all?</b><br>
+Because the argument was never the research. <b>It is that the label does nothing.</b> Ask what a
+student is supposed to do differently on learning they are on tier two. There is no answer. It
+carries no instruction, no next step and no way to improve &mdash; <b>it is a fact about them rather
+than about their work.</b></div>
+<div class="card g"><h3>And that makes it a cheap decision rather than a brave one</h3>
+<p class="small" style="margin:0">You are not weighing a benefit against a risk. <b>You are removing
+something with no upside and an argued-about downside</b>, and page 3 says what it costs to remove:
+four things have to match. That is the whole price.</p></div>
+<div class="foot"><span>Nobody Should Know Which One They Got &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The four things</div>
+<h2>Match these, or the tier shows anyway</h2>
+<p class="lede">Children are extremely good at this. <b>Hiding the label is not enough if everything
+else gives it away</b>, and these are the four that give it away.</p>
+<div class="card t"><h3>1 &middot; The same questions</h3>
+<p class="small" style="margin:0">Not easier questions for the easier passage. <b>The same question
+bank at every level.</b> If the questions differ, the versions are visibly different work and the
+whole thing collapses the moment two students compare. It also keeps the assessment honest: you are
+changing how hard the <i>reading</i> is, not what you are asking them to know.</p></div>
+<div class="card"><h3>2 &middot; The same key terms</h3>
+<p class="small" style="margin:0">Every version uses the real vocabulary. <b>Simplifying the
+sentences is differentiation; removing the words of the subject is a different and smaller
+course.</b> A student on the simplest version still says "photosynthesis," still writes it, still
+owns it.</p></div>
+<div class="card g"><h3>3 &middot; The same look and roughly the same length</h3>
+<p class="small" style="margin:0">Same font, same layout, same number of paragraphs, same paper.
+<b>No colored paper, no letters in the corner, no "Version B."</b> Two sheets the same shape on the
+same desk tell a room nothing.</p></div>
+<div class="card r"><h3>4 &middot; The same expectations out loud</h3>
+<p class="small" style="margin:0">Same deadline, same instructions, same tone when you hand it over.
+<b>This is the one that leaks</b>, and it leaks through kindness &mdash; "take your time with this
+one" said gently to one table announces the whole system.</p></div>
+<div class="note"><b>And one rule about movement.</b><br>
+When a student moves up a level, <b>say nothing and change nothing visible.</b> The reward for
+getting better is not an announcement; it is that the work fits again. If moving up is an event,
+then being moved down is an event too, and you have rebuilt the label with extra steps.</div>
+<div class="foot"><span>Nobody Should Know Which One They Got &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet"><div class="bar"></div>
+<div class="kick">No software required</div>
+<h2>Six ways to do this on paper tomorrow</h2>
+<div class="step"><div class="n">1</div><div><h3>Print both versions identically</h3>
+<p class="small" style="margin:0">Same paper, same font, same header. <b>If you need to tell them
+apart, put a tiny mark where you will look and a student will not</b> &mdash; a dot in the footer, a
+different staple corner. Not a letter in the top right.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Hand them out face down, in seating order</h3>
+<p class="small" style="margin:0">Sorted beforehand. The thirty seconds of sorting at your desk
+replaces the entire visible system, and no student watches you decide anything.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Give the same instructions to the whole room</h3>
+<p class="small" style="margin:0">One set, said once, to everybody. <b>Any instruction that only
+makes sense for one version is a leak.</b></p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Keep the questions identical and put them on a separate sheet</h3>
+<p class="small" style="margin:0">One question sheet for the room, handed out to everybody. Now the
+only thing that differs is the reading, which is the only thing you wanted to differ.</p></div></div>
+<div class="step"><div class="n">5</div><div><h3>Never name a group after what it is</h3>
+<p class="small" style="margin:0">If you must group, name them after nothing &mdash; colors,
+rivers, anything arbitrary &mdash; and <b>change the membership often enough that the names stop
+meaning anything.</b> A group name that stays stable all year is a label whatever you call it.</p></div></div>
+<div class="step"><div class="n">6</div><div><h3>Move students quietly and often</h3>
+<p class="small" style="margin:0">Small, frequent, unannounced adjustments. <b>Movement that is
+normal is not news</b>, and a system where nobody can be sure who is on what is a system where it
+stops mattering.</p></div></div>
+<div class="note"><b>The test for whether it worked.</b><br>
+<b>Ask a student which version they got.</b> If they can tell you, something on this page is not
+being done. If they look at you blankly, you have it.</div>
+<div class="foot"><span>Nobody Should Know Which One They Got &middot; AI-Ready School</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn</div>
+<h2>Find your leaks</h2>
+<p class="lede">Take one thing you already differentiate. <b>Walk it through as a student would see
+it</b>, and write down every point where they could work out which version they got.</p>
+<div class="box"><h3>What I differentiate, and how many versions</h3>
+<div class="wl"></div></div>
+<div class="box"><h3>The four checks</h3>
+<table><thead><tr><th>Does it match across versions?</th><th style="width:48pt">Yes / no</th><th style="width:150pt">If no, what I will change</th></tr></thead>
+<tbody>
+<tr><td>The questions</td><td></td><td></td></tr>
+<tr><td>The key terms</td><td></td><td></td></tr>
+<tr><td>The look and the length</td><td></td><td></td></tr>
+<tr><td>What I say out loud</td><td></td><td></td></tr>
+</tbody></table></div>
+<div class="box"><h3>The one leak I had not noticed</h3>
+<div class="wl"></div></div>
+<div class="card p"><h3>If you want a tool that does this for you</h3>
+<p class="small" style="margin:0">Our <b>Vibe Coding for Teachers</b> build-alongs hand you a working
+classroom tool you own outright, with your own content going in from a setup screen and no code to
+edit. The rule on this page is the kind of thing you can build in once and never have to remember
+again. Search our store.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases for every review, and it is the only thing that decides
+whether another teacher ever sees this. Source for page 2: Kulik and Kulik, <i>Effects of Ability
+Grouping on Elementary School Pupils: A Meta-Analysis</i>, 1984 (ERIC ED255329).</div>
+<div class="foot"><span>Nobody Should Know Which One They Got &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>

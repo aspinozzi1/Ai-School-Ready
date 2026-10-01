@@ -302,6 +302,13 @@ const IMAGES = [
     'The running notes habit that saves a build',
     'A fill-in page so you leave with your own',
   ], 'PDF')],
+  ['nsk-whats-inside', whatsInside('Free \u00b7', 'Differentiation Without Labels', [
+    'Why the label does no teaching work',
+    'What the research actually says, source named',
+    'The four things that must match, or the tier shows',
+    'The rule about moving a student up',
+    'Six ways to do it on paper, no software',
+  ], 'PDF')],
   ['wai-whats-inside', whatsInside('Free \u00b7', 'Which AI Should Do This?', [
     'The one rule that settles it every time',
     'The two questions to ask about any job',

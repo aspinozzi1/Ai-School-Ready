@@ -2716,6 +2716,56 @@
       ],
       "previewUnit": "the full kit is 9 files + the game",
       "filesBadge": "9 files + game"
+    },
+    {
+      "id": "nobody-should-know",
+      "order": 66,
+      "name": "Nobody Should Know Which One They Got",
+      "product": "UPLOAD/01-free/nobody-should-know.pdf",
+      "cover": "tpt/covers/nobody-should-know-cover.png",
+      "thumbnails": [
+        "tpt/extras/nsk-whats-inside.png"
+      ],
+      "title": "Nobody Should Know Which One They Got | Differentiation Without Labels | Free",
+      "description": "FREE. You already differentiate. The question this is about is narrower and almost never asked: does the student need to know which version they were given? Usually they can tell - the colored paper, the group name, the sheet marked B. This is about taking that away, and why it is easier than it sounds.\n\nTHE ARGUMENT IS NOT THE ONE YOU EXPECT. The label does no teaching work. A student cannot act on \"you are on tier two.\" It is not feedback, it is a status. A thing that does no work and may cost something should go - and it costs almost nothing to remove.\n\nAND I CHECKED THE RESEARCH BEFORE WRITING IT, WHICH CHANGED THE PAGE. I expected to open with \"research shows labeling harms students.\" It does not say that. Kulik and Kulik's 1984 meta-analysis of 31 studies found ability grouping had \"significant positive effects on the academic performance of elementary school children\" - a small benefit - and, on the part this is about, \"trivially small effects on the self-concepts of elementary school pupils.\" The concerns about students in low groups internalizing what the group says about them are real but contested, and anybody who tells you the question is settled has not read enough of it. So the case for hiding the tier is a design case, not a research case, and the free says so plainly with the source named.\n\nTHE FOUR THINGS THAT HAVE TO MATCH, or the tier shows anyway: the same questions at every level, the same key terms, the same look and roughly the same length, and the same expectations out loud. That last one is the one that leaks, and it leaks through kindness.\n\nPLUS THE RULE ABOUT MOVEMENT: when a student moves up, say nothing and change nothing visible. If moving up is an event then being moved down is an event too, and you have rebuilt the label with extra steps.\n\nSIX WAYS TO DO IT ON PAPER TOMORROW, with no software at all - including how to tell versions apart without a letter in the corner, why the question sheet should be separate and identical, and why a group name that stays stable all year is a label whatever you call it.\n\nA FILL-IN PAGE to walk one thing you already differentiate through the four checks and find your own leaks. The test for whether it worked: ask a student which version they got. If they can tell you, something is still showing.\n\nWHERE IT COMES FROM: the reading in the software I run for my own high school woodshop course comes in three levels, with the same question bank and the same key terms at every one, and nothing on the student's screen names a level, shows a badge, or hints that anybody got different text.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Special Education"
+      ],
+      "tags": [
+        "differentiation",
+        "teacher tools",
+        "free",
+        "reading comprehension",
+        "professional development",
+        "classroom management"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "nsk_p2.png",
+        "nsk_p3.png",
+        "nsk_p4.png"
+      ],
+      "previewInside": [
+        "<b>Why the label does no teaching work</b>",
+        "What the research actually says, with the source named",
+        "<b>The four things that must match</b>, or the tier shows",
+        "The rule about moving a student up",
+        "<b>Six ways to do it on paper</b>, no software",
+        "A fill-in page to find your own leaks"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }
