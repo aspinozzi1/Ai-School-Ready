@@ -142,9 +142,10 @@ more than a tidy demonstration.</div>`);
 
 /* ----------------------------------------------------------- 19 the app */
 P('The booker','<h2>Opening it, resetting it, keeping it</h2>',`
-<p class="lede">Open <code>makerspace-booker.html</code> by double-clicking it. <b>You never edit
-code and you never open it in a text editor.</b> It works with the wifi off and nothing is
-transmitted anywhere.</p>
+<p class="lede"><b>Your download is one zip file.</b> Unzip it once and you have this guide and
+<code>makerspace-booker.html</code>. Open the app by double-clicking it. <b>You never edit code and
+you never open it in a text editor.</b> It works with the wifi off and nothing is transmitted
+anywhere.</p>
 <div class="card t"><h3>What it does</h3>
 <p class="small" style="margin:0">Five days, six slots a day. Pick a day, pick a slot, and one of the
 two buttons books it. Booked slots show as taken and cannot be booked twice. Canceling needs the

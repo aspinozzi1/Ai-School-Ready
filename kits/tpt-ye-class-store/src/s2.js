@@ -4,28 +4,30 @@ const {P,pages}=require('./s1.js');
 pages.push(`<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
 <div class="kick">Vibe Coding for Kids &middot; build 2</div>
 <h1>The Class Store</h1>
-<p class="lede">Five days. Your class decides what to sell and what it costs, you build the
-storefront live in front of them, they run it for real &mdash; and on the last day
-<b>they count the tin against what the software says</b> and find out why the two do not match.</p>
-<div class="row" style="margin:12pt 0">
-<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">5</h3><p class="small" style="margin:0">days, each ending in something real</p></div>
-<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">1</h3><p class="small" style="margin:0">working store app, included and ready</p></div>
+<div class="note" style="margin-bottom:9pt"><b>One lesson, and the whole week is built to land it.</b><br>
+<b style="font-size:12.5pt">You cannot check software unless you already know the answer.</b><br>
+Your class works out <i>by hand</i> what a full sell-out should earn. Then the app works it out.
+On day 5 the cash tin, the paper ledger and the app give three different numbers, and the class has
+to say which one is lying and why.</div>
+<p class="lede">That is what the five days are for. They decide what to sell and what it costs,
+you build the storefront live in front of them, and they run it for real.</p>
+<div class="row" style="margin:11pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">5</h3><p class="small" style="margin:0">days, and every one feeds day 5</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">3</h3><p class="small" style="margin:0">numbers on the last day that should match</p></div>
 <div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">accounts, logins or subscriptions</p></div>
 </div>
-<div class="note"><b>The lesson that separates this from every other class store.</b><br>
-The class works out on paper what a full sell-out should earn <i>before</i> the software does it.
-Then they check the software against their own number. <b>You cannot tell whether software is
-right unless you already know the answer.</b></div>
-<div class="card r"><h3>The students never touch the chatbot. That is the better lesson.</h3>
+<div class="card r"><h3>The students never touch the chatbot &mdash; and still own what it was told to do.</h3>
 <p class="small" style="margin:0">Chatbots are 13 and over, and no child's name goes into a prompt.
 So students do the research, the pricing, the feature list, the testing and the decisions, and
 <b>you do the prompting, on the board, where they can see their own spec becoming software.</b>
-Specification and judgment are the actual thinking. Typing prompts is not.</p></div>
+Specification and judgment are the actual thinking, and <b>you cannot check software against your
+own number unless you know what it was asked for.</b></p></div>
 <div class="card p" style="margin-top:2pt"><h3>Inside</h3>
 <p class="small" style="margin:0">Day-by-day teacher pages &middot; <b>seven student pages worth
 printing</b> &middot; the exact prompts written out in full &middot; what to do when the AI breaks
-it in front of thirty children &middot; the working store app with a setup screen, so you never
-edit code &middot; and the page on what this store deliberately refuses to record.</p></div>
+it in front of thirty children &middot; <b>the working store app, included and ready</b>,
+with a setup screen so you never edit code &middot; and the page on what this store deliberately
+refuses to record.</p></div>
 </div>
 <div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
 <div class="barb"></div></div>`);
@@ -39,20 +41,24 @@ P('Before you start','<h2>The week at a glance</h2>',`
 <tr><td><b>2</b><br>Price and stock</td><td>Set prices and opening stock across three tiers. <b>Work out a full sell-out by hand.</b></td><td>Push back on pricing. "Because it is cool" is not a reason.</td></tr>
 <tr><td><b>3</b><br>Build it</td><td>Read the spec aloud, watch it become a store, call out what is wrong.</td><td>Prompt on the board. Let it fail and get fixed where they can see.</td></tr>
 <tr><td><b>4</b><br>Open</td><td>Run a real selling session. Serve customers. Write down everything that goes wrong.</td><td><b>Say nothing.</b> Write down every workaround you watch them invent.</td></tr>
-<tr><td><b>5</b><br>Count up</td><td><b>Count the tin against the ledger.</b> Explain the gap. Decide one change.</td><td>Make that one change live. Ship it.</td></tr>
+<tr><td><b>5</b><br>Count up</td><td><b>Tin against ledger against app.</b> Explain the gap.</td><td>Make their one change live. Ship it.</td></tr>
 </tbody></table>
-<div class="note"><b>Day 5 is the one that makes this a unit rather than an activity.</b><br>
-Every other class store ends at "we had a store." This one ends at <i>the numbers did not match and
-we found out why</i>, which is the part that transfers to every job any of them will ever have.</div>
+<div class="note"><b>What each day is actually for.</b><br>
+Every other class store ends at "we had a store." This one is five steps toward one sentence:
+<b>you cannot check software unless you already know the answer.</b><br>
+<b>Day 1</b> gets a real number instead of a guess. <b>Day 2</b> works out the sell-out <i>by
+hand</i> &mdash; the number day 5 checks against. <b>Day 3</b> puts their spec into software, so they
+know what it was told to do. <b>Day 4</b> produces the paper ledger. <b>Day 5</b> puts tin, ledger
+and app side by side and makes them explain the gap.<br>
+<b>If you say one thing all week, say "we are going to check the computer."</b></div>
 <div class="card t"><h3>How long it really takes</h3>
-<p class="small" style="margin:0">Days 1, 2 and 5 are a lesson each. <b>Day 3 is 25 minutes</b> and
-can be squeezed into the end of another lesson. <b>Day 4 is as long as your store session is</b> —
-twenty minutes is plenty. The days do not have to be consecutive, and it works better spread over
-two weeks if your timetable is tight.</p></div>
+<p class="small" style="margin:0">Days 1, 2 and 5 are a lesson each. <b>Day 3 is 25 minutes</b>
+and fits at the end of another lesson. <b>Day 4 is as long as your store session is</b> — twenty
+minutes is plenty. The days need not be consecutive, and it works better spread over two weeks.</p></div>
 <div class="card g"><h3>What you need</h3>
 <p class="small" style="margin:0">One computer you can project. Any AI chat tool you already use.
-A tin, a jar or an envelope. Whatever you use as class money. And the store file in this
-download, which opens by double-click and needs nothing installed.</p></div>`);
+A tin and whatever you use as class money. <b>Your download is one zip</b> — unzip it once and the
+store file opens by double-click, with nothing installed.</p></div>`);
 
 /* ------------------------------------------------------------ 3 the rules */
 P('Before you start','<h2>Two rules, and one of them is not negotiable</h2>',`
@@ -91,6 +97,9 @@ is worth telling the class so on day 2.</p></div>`);
 P('Day 1 &middot; teacher','<h2>What will actually sell</h2>',`
 <p class="lede">One lesson. Ends with a ranked list of what this class will really spend on,
 built from evidence rather than from the loudest three voices.</p>
+<p class="small" style="margin-bottom:8pt"><b>Why this day exists:</b> day 5 compares three numbers.
+Today is where the class learns that <b>a number you guessed and a number you measured are not the
+same thing</b>, which is the habit the whole week runs on.</p>
 <div class="step"><div class="n">1</div><div><h3>Ask the wrong question first (4 minutes)</h3>
 <p class="small" style="margin:0">Put this on the board: <b>"Would you like a class store?"</b>
 Every hand goes up. Then ask what that told you. Answer: nothing. A question everybody says yes to
@@ -114,9 +123,9 @@ up. It is the difference between a business and a wish list, and they will quote
 other on day 2.</div>
 <div class="card t"><h3>If it derails</h3>
 <p class="small" style="margin:0">Somebody will propose something impossible — a phone, a day off.
-<b>Do not rule it out from the front.</b> Ask what it would cost you to actually provide, and let
-them work out that it is not on. Killing an idea yourself teaches them to stop proposing; letting
-the numbers kill it teaches them the numbers matter.</p></div>`);
+<b>Do not rule it out from the front.</b> Ask what it would cost you to provide, and let them work
+out that it is not on. <b>Letting the numbers kill an idea teaches them the numbers
+matter.</b></p></div>`);
 
 /* ------------------------------------------------- 5 day one student page */
 P('Day 1 &middot; student page','<h2>What will people really spend on?</h2>',`
@@ -220,6 +229,9 @@ total?</b> If one thing is most of it, the store depends on one thing selling.</
 
 /* ----------------------------------------------------------- 9 day three */
 P('Day 3 &middot; teacher','<h2>Build it live, in twenty-five minutes</h2>',`
+<p class="small" style="margin-bottom:8pt"><b>Why this day exists:</b> you cannot check software
+against your own number unless you know <b>what the software was told to do</b>. Today they say it,
+out loud, and watch it get built.</p>
 <p class="lede">The class watches their own spec become a working store. <b>You are at the keyboard.
 They are the ones who say whether it is right.</b></p>
 <div class="card t"><h3>Do this before the lesson, not during it</h3>
@@ -297,6 +309,9 @@ which is the opposite of what this unit is for.</div>`);
 
 /* ------------------------------------------------------------ 12 day four */
 P('Day 4 &middot; teacher','<h2>Open the store</h2>',`
+<p class="small" style="margin-bottom:8pt"><b>Why this day exists:</b> the paper ledger your
+students keep today is <b>the second of the three numbers</b> day 5 compares. Without it there is
+nothing to check the app against but the tin.</p>
 <p class="lede">A real selling session. Twenty minutes is plenty. <b>Your job today is to say
 nothing and write things down.</b></p>
 <div class="step"><div class="n">1</div><div><h3>Set the room up first (5 minutes, before they arrive)</h3>
