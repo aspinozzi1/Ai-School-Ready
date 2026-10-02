@@ -2846,3 +2846,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+TEST IT LIKE A USER
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+ye-test-like-user-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Vibe Coding for Kids | Teachers Pay Teachers
+
+--- DESCRIPTION ---
+
+A five-day unit on the step every design project skips: testing. The app is included and it is deliberately flawed, because a class cannot find usability problems in a polished app and a class that finds nothing decides testing is a formality. Six real problems are built into the Makerspace Booker, the teacher guide lists all six with the sentence a tester tends to say, and the three tester tasks are written out word for word. Day one they watch somebody struggle without helping. Day two they test three people each in silence. Day three they argue about which findings are real. Day four they pick three fixes and justify each with evidence. Day five you fix one live with AI on the board, and then they test it again on somebody new, which is the part almost nobody does. The app has no name field anywhere and findings sheets record what a tester did, never who they were. Six printable student pages. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+Entrepreneurship for Kids   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: design thinking · project based learning · vibe coding   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

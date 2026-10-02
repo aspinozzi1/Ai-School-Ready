@@ -1,0 +1,758 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Test It Like a User</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.tick{display:inline-block;width:13pt;height:13pt;border:2pt solid var(--ink);
+  border-radius:3pt;margin-right:5pt;vertical-align:-2pt}
+.flaw{display:flex;gap:9pt;align-items:flex-start;margin-bottom:7pt}
+.flaw .n{flex:none;width:22pt;height:22pt;border-radius:50%;background:var(--tomato);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:10pt;text-align:center;line-height:22pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Vibe Coding for Kids &middot; build 3</div>
+<h1>Test It Like a User</h1>
+<p class="lede">Five days. Your class is handed a working app with <b>six real usability problems
+built into it on purpose</b>, they find them by watching other people use it &mdash; and on the last
+day you fix one live and <b>make them test it again on somebody new.</b></p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">5</h3><p class="small" style="margin:0">days, each ending in written evidence</p></div>
+<div class="card r" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">6</h3><p class="small" style="margin:0">findable problems, listed for you</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:19pt;color:var(--blue)">0</h3><p class="small" style="margin:0">accounts, logins or subscriptions</p></div>
+</div>
+<div class="note"><b>The app is included, and it is deliberately flawed.</b><br>
+A class cannot find usability problems in a polished app, and a class that finds nothing concludes
+that testing is a formality. So this one ships with six genuine ones, of the kind every first build
+has. <b>The teacher's guide lists all six</b>, so you can tell whether your class is finding real
+things or guessing.</div>
+<div class="card p"><h3>The students never touch the chatbot. That is the better lesson.</h3>
+<p class="small" style="margin:0">Chatbots are 13 and over, and no child's name goes into a prompt.
+So students do the testing, the observing, the sorting and the deciding, and <b>you do the
+prompting, on the board, where they can see their own evidence becoming a change in the
+software.</b> Watching a person and arguing from what you saw is the thinking. Typing prompts is
+not.</p></div>
+<div class="card" style="margin-top:2pt"><h3>Inside</h3>
+<p class="small" style="margin:0">Day-by-day teacher pages &middot; <b>six student pages worth
+printing</b> &middot; the three tester tasks written word for word &middot; the six flaws with the
+sentence a tester is likely to say &middot; the exact prompts for day 5 &middot; what to do when the
+AI breaks the app in front of thirty children &middot; and the working app, which has no name field
+anywhere.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you start</div><h2>The week at a glance</h2>
+<table>
+<thead><tr><th style="width:52pt">Day</th><th>The class does</th><th>You do</th></tr></thead>
+<tbody>
+<tr><td><b>1</b><br>Watch</td><td>Give one person a task and watch without helping. Write down what they <i>did</i>, not what they said.</td><td>Model it badly first &mdash; helping, explaining, leading &mdash; then well.</td></tr>
+<tr><td><b>2</b><br>Test</td><td>Three testers each, the same three tasks, silence. Findings on paper.</td><td>Enforce the one rule: <b>if you had to explain it, that is a finding.</b></td></tr>
+<tr><td><b>3</b><br>Sort</td><td>Group the findings. Decide which are real problems and which are one person's preference.</td><td>Push on "everybody said" when two people said it.</td></tr>
+<tr><td><b>4</b><br>Choose</td><td>Pick three fixes out of everything found, and write the evidence for each one.</td><td>Refuse any fix with no observation behind it.</td></tr>
+<tr><td><b>5</b><br>Fix and re-test</td><td>Watch the fix happen, then <b>test it again on somebody who has not seen it.</b></td><td>Prompt on the board. Then make them test it again.</td></tr>
+</tbody></table>
+<div class="note"><b>Day 5 is the one that makes this a unit rather than an activity.</b><br>
+Almost nobody re-tests. A class that fixes something and then watches it still confuse somebody has
+learned the actual lesson, which is that <i>a fix is a hypothesis</i>, not an ending.</div>
+<div class="card t"><h3>How long it really takes</h3>
+<p class="small" style="margin:0">Days 1, 3 and 4 are a lesson each, and day 1 can be as short as
+twenty minutes. <b>Day 2 is as long as you can give it</b> &mdash; three testers each takes about
+twenty-five minutes once the class knows the rules. <b>Day 5 is thirty minutes</b>, split roughly in
+half between the fix and the re-test. The days do not have to be consecutive and the unit works
+better spread across two weeks.</p></div>
+<div class="card g"><h3>What you need</h3>
+<p class="small" style="margin:0">One computer you can project. Any AI chat tool you already use, for
+day 5 only. Printed findings sheets. A handful of devices for day 2, or one device and a line of
+testers. And the app in this download, which opens by double-click and needs nothing
+installed.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Before you start</div><h2>Three rules, and the first one is the whole unit</h2>
+<div class="card r"><h3>1 &middot; The tester is never helped and never named</h3>
+<p class="small" style="margin-bottom:5pt">The observer does not hint, does not point, does not say
+"it's the other button," and does not laugh. <b>The moment you help, the data is gone</b> &mdash; you
+have measured how good you are at explaining, which nobody needed to know.</p>
+<p class="small" style="margin:0">And the findings sheet records <b>what the tester did, never who
+they were.</b> "Tester 2 pressed Submit and stopped" is a finding. Naming the child who struggled,
+in front of the class, is how this unit goes wrong, and the student pages say so too.</p></div>
+<div class="card"><h3>2 &middot; The grown-up holds the keyboard</h3>
+<p class="small" style="margin:0">Every mainstream chatbot requires users to be 13 or over, and
+school guidance is consistent that a child's name, work or identity should not be typed into one.
+So <b>no student sits at the chatbot</b> at any point. Students specify, observe, argue and decide.
+That is the harder half and the half that transfers.</p></div>
+<div class="card t"><h3>3 &middot; Evidence beats opinion, including yours</h3>
+<p class="small" style="margin:0">A fix gets made because somebody was <i>watched</i> getting stuck,
+not because it would look nicer. Day 4 enforces this and it is the rule students will fight hardest.
+When a student cannot say who got stuck and where, the answer is not "no" &mdash; it is <b>"go and
+watch one more person."</b></p></div>
+<h2 style="margin-top:4pt">And one thing to settle before day 2</h2>
+<div class="note"><b>Testers should be people who have not seen the app.</b><br>
+Classmates who have been staring at it all week will sail through and find nothing. Another class,
+a sibling, a teaching assistant, the office staff, a parent at pickup. <b>If that is impossible,
+split your room in half</b> and keep one half away from the app until day 2.</div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Teacher only</div><h2>The app you have been given, and why it is flawed</h2>
+<p class="lede">The download includes <code>makerspace-booker.html</code>. It books a shared room
+&mdash; pick a day, pick a slot, book it, and slots show as free or taken. <b>It works. It does not
+crash and it does not lose bookings.</b> It is also quietly bad to use, on purpose.</p>
+<div class="card r"><h3>Why we did not ship you a good one</h3>
+<p class="small" style="margin-bottom:5pt">Usability testing on a polished app produces a class of
+thirty children writing "it was fine." Nothing is found, nothing is argued about, and the unit
+teaches that testing is a box to tick. <b>Every problem in this app is a real one</b>, of the kind
+that turns up in a genuine first build, and all six are findable by an eleven-year-old inside a
+two-minute task.</p>
+<p class="small" style="margin:0">It is also the honest version of the lesson. <b>You cannot see
+these problems from the inside.</b> The person who built it knows which button books, so the button
+seems obvious. That gap is the entire reason user testing exists, and a flawed app teaches it in a
+way a perfect one cannot.</p></div>
+<div class="card"><h3>Do not fix it before the class tests it</h3>
+<p class="small" style="margin:0">The fixed version is what day 5 produces. If you repair the app
+over the weekend out of embarrassment, you have removed the unit. <b>The next page lists what is
+wrong with it</b> so that you know what your class should be finding &mdash; it is for you, not for
+them, and it should not go on the wall.</p></div>
+<div class="card g"><h3>What the app deliberately does not have</h3>
+<p class="small" style="margin:0"><b>There is no name field anywhere in it</b>, and no record of who
+booked what. A booking system that records which named child was in which room, at which time, is a
+movement record about identified children, and we would rather not build one and then ask a class
+to improve it. Bookings are held against slots and a four-character code, and that is all.</p></div>
+<div class="card p"><h3>If you would rather use your own app</h3>
+<p class="small" style="margin:0">Everything in this pack works on any app your class has already
+built, or on any app at all &mdash; the school website, a lunch ordering system, the library
+catalog. <b>The five days do not depend on the booker.</b> It is here so that the unit is complete
+on the day you buy it.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Teacher only &middot; do not display</div><h2>The six flaws, and what a tester will say</h2>
+<p class="lede">Read this, then put it away. <b>Knowing the answers is what lets you tell whether
+your class is finding real things or guessing</b>, and lets you steer a task toward a flaw nobody
+has hit yet.</p>
+<table>
+<thead><tr><th style="width:22pt">#</th><th>What is wrong</th><th style="width:33%">What a tester tends to say</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td>The big <b>Submit</b> button only saves a draft. A second, smaller button called <b>Confirm booking</b> is the one that actually books.</td><td><i>"I thought I'd booked it."</i></td></tr>
+<tr><td><b>2</b></td><td><b>Nothing says it worked.</b> After a real booking the screen looks almost identical &mdash; a four-character code appears in small gray text and that is the whole confirmation.</td><td><i>"Did that work?"</i></td></tr>
+<tr><td><b>3</b></td><td>Every error message is the single word <b>Error</b>, whether the slot is taken, the day is missing or the code is wrong.</td><td><i>"It won't let me and it won't say why."</i></td></tr>
+<tr><td><b>4</b></td><td><b>The steps only work in one order.</b> Pick the day first, then the slot. Picking a slot and then changing the day silently clears the slot, and nothing says so.</td><td><i>"It keeps clearing what I picked."</i></td></tr>
+<tr><td><b>5</b></td><td><b>Book the whole day</b> is the biggest button on the screen and is almost never what anybody wants. <b>Cancel a booking</b> is the smallest thing on the booking screen.</td><td><i>"I nearly booked the whole day by accident."</i></td></tr>
+<tr><td><b>6</b></td><td>The confirmation code is shown once, is wiped by the next thing you do, and <b>is required on a different screen</b> in order to cancel.</td><td><i>"Nobody told me to write that down."</i></td></tr>
+</tbody></table>
+<div class="note"><b>If the class has found four of these by the end of day 2, the testing is working.</b><br>
+If they have found one, the problem is almost always that they are helping. Go back to day 1 for
+five minutes and model it badly again.</div>
+<div class="card t"><h3>Steering without telling</h3>
+<p class="small" style="margin:0">Flaws 1, 2 and 4 come out of task one. Flaw 6 and flaw 3 come out
+of task two. Flaw 5 comes out of task three, or out of anybody who is in a hurry. <b>If a flaw is
+going unfound, add a tester and give them that task</b> rather than announcing it.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 1 &middot; teacher</div><h2>Watch somebody struggle, and say nothing</h2>
+<p class="lede">Twenty to thirty minutes. Ends with a room that knows the difference between
+watching a person and interviewing one, which is the skill the rest of the week stands on.</p>
+<div class="step"><div class="n">1</div><div><h3>Do it badly, at the front (4 minutes)</h3>
+<p class="small" style="margin:0">Ask a volunteer to book Thursday afternoon on the projected app.
+Then <b>help them relentlessly</b>: point at the screen, say "not that one," explain what the button
+does, finish their sentence. Stop and ask the room what you learned about the app. <b>Nothing.</b>
+You learned that you can operate it, which was never in doubt.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Do it properly (4 minutes)</h3>
+<p class="small" style="margin:0">Second volunteer, same task, and now you say one sentence at the
+start and nothing after it: <b>"I can't help you, and nothing that goes wrong is your fault."</b>
+Sit on your hands. Let the silence be uncomfortable. The room will find it almost unbearable, and
+that reaction is worth naming out loud.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>What to write down (5 minutes)</h3>
+<p class="small" style="margin:0">Model the difference on the board. <b>"They clicked Submit, waited
+about three seconds, then clicked it again"</b> is an observation. "They found it confusing" is not
+&mdash; it is your conclusion about them. The student sheet has one column for each, on purpose, and
+the left column has to be filled in first.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Everybody watches one person (12 minutes)</h3>
+<p class="small" style="margin:0">Pairs. One tester, one observer, one task: <b>book any slot on
+Wednesday.</b> Swap. Then collect two or three observations aloud and bin any that are conclusions.
+<b>Do not discuss the app yet.</b> Today is about watching, not about the booker.</p></div></div>
+<div class="note"><b>The sentence to end on.</b><br>
+"If you had to explain it, that is a finding." Write it up and leave it up all week. It converts the
+helping instinct, which you cannot switch off, into the data you actually want.</div>
+<div class="card r"><h3>If it derails</h3>
+<p class="small" style="margin:0">Somebody will tell their tester the answer within ten seconds. Do
+not tell them off &mdash; <b>ask the room what that cost.</b> The pair has to start again with a new
+task, and the point lands harder from the restart than from a reprimand.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 1 &middot; student page</div><h2>Watch one person. Help nobody.</h2>
+<p class="small">Your job is to write down <b>what the person did</b>, like a camera. Not what you
+think they felt, and not their name. Fill the left column first. Leave the right column blank if
+you are not sure.</p>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>Say this, then stop talking</h3>
+<p class="small" style="margin:0"><b>"I can't help you, and nothing that goes wrong is your
+fault."</b> After that: no pointing, no hinting, no faces.</p></div>
+<p class="small" style="margin-bottom:4pt"><b>The task I gave them:</b></p>
+<div class="wl"></div>
+<table>
+<thead><tr><th style="width:50%">What they did &mdash; like a camera</th><th>What I think it means</th></tr></thead>
+<tbody>
+<tr><td style="height:40pt"></td><td></td></tr>
+<tr><td style="height:40pt"></td><td></td></tr>
+<tr><td style="height:40pt"></td><td></td></tr>
+<tr><td style="height:40pt"></td><td></td></tr>
+<tr><td style="height:40pt"></td><td></td></tr>
+</tbody></table>
+<div class="box"><h3>The hardest question, and the one worth answering</h3>
+<p class="small" style="margin-bottom:4pt">Where did they <b>pause</b>? Not where they failed
+&mdash; where they stopped and looked at the screen for a second.</p>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="card t"><h3>Did I help?</h3>
+<p class="small" style="margin:0"><span class="tick"></span>No, not once &nbsp;
+<span class="tick"></span>Yes, a bit &nbsp; <span class="tick"></span>Yes, a lot<br>
+If you helped, write what you said. <b>That sentence is a finding</b> &mdash; it is the thing the app
+should have said instead of you.</p>
+<div class="wl"></div></div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 2 &middot; teacher</div><h2>Run real tests on real strangers</h2>
+<p class="lede">One lesson, twenty-five minutes of it testing. Ends with a stack of findings sheets
+that are evidence rather than opinion. This is the day the unit lives or dies.</p>
+<div class="step"><div class="n">1</div><div><h3>Set the testers up (3 minutes)</h3>
+<p class="small" style="margin:0">Each student needs <b>three testers who have not seen the
+app.</b> Another class, older or younger, is ideal and a younger class is better than an older one.
+Siblings, adults in the building and the office staff all count. If you must use classmates, use the
+half of your room you kept away from it.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Hand out the three tasks, word for word (2 minutes)</h3>
+<p class="small" style="margin:0">They are on the next student page and they are written out exactly
+because <b>a vague task produces a vague test.</b> Students read the task aloud, hand over the
+device, and stop talking. They do not demonstrate first.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Test (20 minutes)</h3>
+<p class="small" style="margin:0">Three testers, three tasks each, one findings sheet per tester.
+Circulate and listen for helping. <b>Say nothing about the app itself all lesson</b>, however much
+you want to, and especially do not confirm whether something they found is "right."</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>One sentence each, out loud (5 minutes)</h3>
+<p class="small" style="margin:0">Go round the room. <b>One observation each, in the form "my tester
+did X at Y."</b> Do not sort, do not agree, do not fix. Just hear them. Tomorrow is for arguing.</p></div></div>
+<div class="note"><b>The forcing question, for "it was fine."</b><br>
+"It was fine" is not a finding, and you will get a lot of it. The question that breaks it every time
+is: <b>"What did they do, exactly, at the moment they paused?"</b> It is on the student sheet too,
+because it works better when they ask it of themselves.</div>
+<div class="card r"><h3>If it derails</h3>
+<p class="small" style="margin:0">A tester who gets frustrated and gives up <b>is your best
+data</b>, and the room needs to hear you say that. Thank them properly, write down exactly where they
+stopped, and make sure the child who tested them knows they did the job right rather than badly.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 2 &middot; student page</div><h2>The three tasks. Read them out exactly.</h2>
+<p class="small">Read the task aloud, hand over the device, and <b>stop talking.</b> Do not show them
+first. Do not explain what the buttons do. One sheet per tester.</p>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>Task 1</h3>
+<p class="lede" style="margin:0">"Book the makerspace for Thursday, first slot after lunch."</p></div>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>Task 2</h3>
+<p class="lede" style="margin:0">"You booked Tuesday by mistake. Cancel it."</p></div>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>Task 3</h3>
+<p class="lede" style="margin:0">"Find the earliest free slot tomorrow and take it."</p></div>
+<div class="box"><h3>Before you start, set the app up for task 2</h3>
+<p class="small" style="margin:0">Task 2 only works if there <b>is</b> a Tuesday booking. Book one
+yourself before the tester sits down, and <b>keep the code</b> &mdash; you may need it, and finding
+out why is part of the point.</p></div>
+<div class="card t"><h3>The two rules, again</h3>
+<p class="small" style="margin:0"><b>You may not help.</b> Not with your hands, not with your face.<br>
+<b>You may not write their name.</b> Call them Tester 1, Tester 2, Tester 3.</p></div>
+<div class="note"><b>If they ask you a question, write the question down.</b><br>
+Then say "I can't help with that, do whatever you think." <b>The question itself is the finding</b>
+&mdash; it is the thing the app should have answered without being asked.</div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 2 &middot; student page</div><h2>Findings sheet &mdash; one per tester</h2>
+<p class="small"><b>Tester:</b> <span class="tick"></span>1 &nbsp; <span class="tick"></span>2 &nbsp;
+<span class="tick"></span>3 &nbsp;&nbsp; No names. <b>Roughly how old:</b> ______ &nbsp;&nbsp;
+<b>Had they seen the app before?</b> <span class="tick"></span>No <span class="tick"></span>Yes</p>
+<table>
+<thead><tr><th style="width:38pt">Task</th><th>Where they got stuck, and what they did</th><th style="width:60pt">Finished it?</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td style="height:52pt"></td><td class="small">Y / N / with help</td></tr>
+<tr><td><b>2</b></td><td style="height:52pt"></td><td class="small">Y / N / with help</td></tr>
+<tr><td><b>3</b></td><td style="height:52pt"></td><td class="small">Y / N / with help</td></tr>
+</tbody></table>
+<div class="box"><h3>Anything they said out loud, in their words</h3>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="box"><h3>Anything they asked me</h3>
+<p class="small" style="margin-bottom:4pt">Every question is a finding. Write it exactly.</p>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="card t"><h3>And the question that beats "it was fine"</h3>
+<p class="small" style="margin-bottom:4pt">What did they do, <b>exactly</b>, at the moment they
+paused?</p>
+<div class="wl"></div></div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 3 &middot; teacher</div><h2>Sort the pile, and argue about it</h2>
+<p class="lede">One lesson. Ends with every finding in one of three groups and a room that can tell
+a problem from a preference, which is a distinction most adults cannot make either.</p>
+<div class="step"><div class="n">1</div><div><h3>Everything on the wall (8 minutes)</h3>
+<p class="small" style="margin:0">One finding per sticky note or per strip of paper, up on the board
+in no order. <b>Duplicates stay up</b> &mdash; the duplicates are the whole point, because a finding
+three testers hit is a different animal from one that one tester hit.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Group them, by what went wrong (12 minutes)</h3>
+<p class="small" style="margin:0">Not by task, by cause. Students come up and move things. Expect
+arguments about whether two notes are the same thing and <b>let them run</b>; working out that
+"I didn't know it saved" and "I pressed it twice" are the same underlying problem is the hardest
+thinking in the week.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Three buckets (10 minutes)</h3>
+<p class="small" style="margin:0">Label the groups: <b>Real problem</b> (more than one tester, or one
+tester who failed the task), <b>Just a preference</b> (somebody would have liked it differently),
+<b>Not sure yet</b> (needs one more tester). The third bucket has to exist or everything gets forced
+into the first.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Count, out loud (5 minutes)</h3>
+<p class="small" style="margin:0">For each real problem: <b>how many testers hit it, out of how
+many?</b> Write the number on the note. From here on, a finding without a number next to it does not
+get argued for.</p></div></div>
+<div class="note"><b>Push hard on "everybody said."</b><br>
+Nobody ever says "two of my three testers." They say "everybody said." <b>Make them count</b>, every
+single time, and make them say the fraction aloud. It is the most useful habit in the unit and it
+survives long after they have forgotten the app.</div>
+<div class="card r"><h3>The one to watch for</h3>
+<p class="small" style="margin:0">A student will argue that something is a real problem because
+<i>they</i> find it annoying, having used the app all week. <b>That is a preference, and from the
+worst possible source</b> &mdash; they are the only people in the building who already know how it
+works. Ask who they watched.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 3 &middot; student page</div><h2>Real problem, or just a preference?</h2>
+<p class="small">Take your findings one at a time. A finding is a <b>real problem</b> if more than one
+tester hit it, or if one tester could not finish the task because of it. Everything else goes in one
+of the other two columns, and that is fine.</p>
+<table>
+<thead><tr><th>The finding, in a few words</th><th style="width:48pt">How many testers</th><th style="width:72pt">Which column</th></tr></thead>
+<tbody>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+<tr><td style="height:33pt"></td><td></td><td class="small">R / P / ?</td></tr>
+</tbody></table>
+<p class="small" style="margin-bottom:5pt"><b>R</b> = real problem &nbsp;&middot;&nbsp;
+<b>P</b> = just a preference &nbsp;&middot;&nbsp; <b>?</b> = not sure, needs one more tester</p>
+<div class="box"><h3>The argument I had, and who won</h3>
+<p class="small" style="margin-bottom:4pt">Write down one finding somebody disagreed with you about,
+and what settled it.</p>
+<div class="wl"></div><div class="wl"></div></div>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>Say the fraction out loud</h3>
+<p class="small" style="margin:0">Not "everybody said." <b>"Two of my three testers."</b> If you
+cannot say the fraction, the finding is not ready to argue for yet.</p></div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 4 &middot; teacher</div><h2>Pick three, and justify every one</h2>
+<p class="lede">One lesson. Ends with exactly three fixes, each with a named piece of evidence behind
+it, and a room that has had to let go of two things it wanted.</p>
+<div class="step"><div class="n">1</div><div><h3>Why three and not everything (4 minutes)</h3>
+<p class="small" style="margin:0">Because that is the real constraint. There is always more wrong
+than there is time to fix, and <b>choosing is the job.</b> Say the number out loud and do not
+negotiate it. A class that is allowed six will fix six badly.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Nominations, with the fraction (10 minutes)</h3>
+<p class="small" style="margin:0">A student nominates a fix and must say: <b>what the fix is, who got
+stuck, and how many out of how many.</b> Missing any of the three and the nomination does not go on
+the board. This feels harsh for about four minutes and then the room adapts.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Argue and cut (12 minutes)</h3>
+<p class="small" style="margin:0">Push one question: <b>"If we only fix one, which one, and why that
+one?"</b> Expect them to pick the thing that annoys them rather than the thing that stopped a tester
+finishing. Keep pointing back at the task-completion column on the sheets.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Write the three as instructions (8 minutes)</h3>
+<p class="small" style="margin:0">Not "make it clearer." <b>"When a booking is made, show a green
+message that says Booked, with the day and the time in it."</b> A fix you cannot hand to somebody
+else is not a fix yet, and tomorrow you have to hand one to a chatbot.</p></div></div>
+<div class="note"><b>The two they let go of are worth a minute.</b><br>
+Write the rejected two on the board under the heading <b>Next time.</b> Nothing about this unit
+promises there will be a next time &mdash; but a class that sees good ideas parked rather than binned
+argues better the following week.</div>
+<div class="card t"><h3>If they pick a fix nobody was stuck on</h3>
+<p class="small" style="margin:0">Do not veto it. <b>Ask who got stuck on it and wait.</b> The silence
+does the work. If a student can produce a tester and a moment, it stays in &mdash; even if you think
+it is wrong, because the rule has to apply to you too.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 4 &middot; student page</div><h2>Three fixes, and the evidence for each</h2>
+<p class="small">You get three. Not four. For each one, write <b>what to change</b> as an instruction
+somebody else could follow, then <b>who got stuck</b> and <b>how many out of how many.</b> A fix with
+an empty evidence box does not count.</p>
+<div class="box"><h3>Fix 1</h3>
+<p class="small" style="margin-bottom:3pt"><b>Change this:</b></p><div class="wl"></div>
+<p class="small" style="margin-bottom:3pt"><b>Because I watched:</b></p><div class="wl"></div>
+<p class="small" style="margin:0"><b>How many testers hit it:</b> ______ out of ______</p></div>
+<div class="box"><h3>Fix 2</h3>
+<p class="small" style="margin-bottom:3pt"><b>Change this:</b></p><div class="wl"></div>
+<p class="small" style="margin-bottom:3pt"><b>Because I watched:</b></p><div class="wl"></div>
+<p class="small" style="margin:0"><b>How many testers hit it:</b> ______ out of ______</p></div>
+<div class="box"><h3>Fix 3</h3>
+<p class="small" style="margin-bottom:3pt"><b>Change this:</b></p><div class="wl"></div>
+<p class="small" style="margin-bottom:3pt"><b>Because I watched:</b></p><div class="wl"></div>
+<p class="small" style="margin:0"><b>How many testers hit it:</b> ______ out of ______</p></div>
+<div class="card t"><h3>Is a fix written well enough?</h3>
+<p class="small" style="margin-bottom:4pt"><b>"Make it clearer" is not a fix.</b> "When a booking is
+made, show a green message saying Booked, with the day and time in it" is. Could a stranger do what
+you wrote without asking you one question?</p>
+<p class="small" style="margin-bottom:3pt"><b>The fix I had to give up, and why it lost:</b></p>
+<div class="wl"></div></div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 5 &middot; teacher</div><h2>Fix one live &mdash; then test it again</h2>
+<p class="lede">Thirty minutes, split in half. The first half is the fix. <b>The second half is the
+part almost nobody does</b>, and it is the reason this unit exists.</p>
+<div class="step"><div class="n">1</div><div><h3>Read the fix out, from their sheet (2 minutes)</h3>
+<p class="small" style="margin:0">A student reads the chosen fix aloud as written, with the evidence
+after it. <b>You type what they wrote</b>, not an improved version of it. If the instruction is too
+vague for the AI to act on, that is a finding about the instruction, and the room should see you hit
+it.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Prompt on the board (10 minutes)</h3>
+<p class="small" style="margin:0">Prompts are written out in full on the next page. Project the chat.
+<b>Let it go wrong where they can see</b> &mdash; the recovery is more useful than a clean first
+try, and the class watching you say "no, that is not what we asked for" is the whole lesson about
+who is in charge.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Save the fixed file, before you test it (1 minute)</h3>
+<p class="small" style="margin:0">Press <b>Save this booker as a file</b> and keep it somewhere you
+will find it. Save the original too, under a different name. <b>You want both</b>, because the
+comparison is the evidence.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Re-test on somebody new (15 minutes)</h3>
+<p class="small" style="margin:0">A tester who has never seen either version. Same task that
+exposed the problem. Same silence. The student sheet for this is the last student page in the pack, and it
+asks one question that matters: <b>did the new person get stuck in the same place?</b></p></div></div>
+<div class="note"><b>If the fix made it worse, you have had the best possible lesson.</b><br>
+Say that out loud and mean it. A class that watches its own confident, well-evidenced fix confuse a
+new person has learned something that cannot be taught any other way: <b>a fix is a hypothesis.</b>
+Do not rescue the moment by fixing it again.</div>
+<div class="card t"><h3>If you have another twenty minutes</h3>
+<p class="small" style="margin:0">Do the second fix and re-test that one too. The second round is
+visibly faster and much calmer, and the class notices that themselves, which is worth more than you
+pointing it out.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 5 &middot; teacher</div><h2>The prompts, written out in full</h2>
+<p class="lede">You are at the keyboard. Open your AI chat tool, <b>attach or paste the whole
+<code>makerspace-booker.html</code> file</b>, and use these in order. The parts in yellow are the
+only parts you change.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &middot; the fix</div>
+<pre>This is a single-file HTML app that books slots in a room.
+Make exactly ONE change and nothing else:
+
+<b>&lt;paste the fix, in the class's own words&gt;</b>
+
+Rules:
+- It must stay one HTML file that opens by double-click and works offline.
+- Do not add any field that asks for a person's name.
+- Do not change anything I did not ask you to change.
+- Give me back the whole file, not a snippet.</pre></div>
+<div class="prompt"><div class="lbl">Prompt 2 &middot; when it did something else as well</div>
+<pre>You changed more than I asked. Start again from the file I gave you
+and make only this change: <b>&lt;the one fix&gt;</b>
+Leave every other button, color and word exactly as it was.</pre></div>
+<div class="prompt"><div class="lbl">Prompt 3 &middot; when the new version is broken</div>
+<pre>That version does not work. When I <b>&lt;what you did&gt;</b>,
+<b>&lt;what happened instead&gt;</b>.
+Go back to the version before your last change and fix only that.</pre></div>
+<div class="card r"><h3>Worked example, for the fix most classes choose</h3>
+<p class="small" style="margin:0">If the class picks the missing confirmation, the middle of prompt
+1 reads: <b>"When a booking is made, show a green message under the buttons that says Booked,
+followed by the day and the time. Keep showing it until the next thing the user does."</b> That is
+what a well-written fix looks like &mdash; a stranger could do it, and you can tell whether it
+worked by looking.</p></div>
+<div class="note"><b>The sentence to say while it is generating.</b><br>
+"If this comes back different from what we asked, <b>we are right and it is wrong.</b>" Children
+assume the computer knows better. Day 5 is the only chance all week to say otherwise while they
+watch.</div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Day 5 &middot; student page</div><h2>Re-test the fix on somebody new</h2>
+<p class="small">Find a tester who has <b>never seen this app</b>, in either version. Give them the
+task that broke before. Say the sentence, then stop talking.</p>
+<div class="card" style="box-shadow:4pt 4pt 0 var(--grape)"><h3>What we changed</h3>
+<div class="wl"></div></div>
+<p class="small" style="margin-bottom:4pt"><b>The task I gave them:</b></p>
+<div class="wl"></div>
+<table>
+<thead><tr><th>What they did &mdash; like a camera</th><th style="width:76pt">Stuck in the same place?</th></tr></thead>
+<tbody>
+<tr><td style="height:44pt"></td><td class="small">Yes / No</td></tr>
+<tr><td style="height:44pt"></td><td class="small">Yes / No</td></tr>
+<tr><td style="height:44pt"></td><td class="small">Yes / No</td></tr>
+</tbody></table>
+<div class="box"><h3>Did the fix work?</h3>
+<p class="small" style="margin-bottom:4pt"><span class="tick"></span>Yes &nbsp;
+<span class="tick"></span>No &nbsp; <span class="tick"></span>It fixed that, and broke something else</p>
+<p class="small" style="margin-bottom:3pt"><b>How I know:</b></p><div class="wl"></div></div>
+<div class="card t"><h3>And the one worth being honest about</h3>
+<p class="small" style="margin:0"><b>Did anything get worse?</b> A fix that fixes one thing and
+confuses somebody somewhere else is completely normal and is <i>not</i> a failure. Write it down
+anyway &mdash; especially if it was your fix.</p>
+<div class="wl"></div></div>
+<div class="foot"><span>Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Day 5 &middot; teacher</div><h2>When the AI breaks it in front of thirty children</h2>
+<p class="lede">It will happen, probably on the second prompt, and it is the most valuable five
+minutes in the unit if you handle it in front of them instead of apologizing for it.</p>
+<div class="card r"><h3>It returned a snippet instead of the file</h3>
+<p class="small" style="margin:0">Most common by far. Ask again: <b>"Give me the complete file,
+starting with the doctype line and ending with the closing html tag."</b> Do not try to paste a
+fragment into the file yourself in front of a class.</p></div>
+<div class="card"><h3>The new version opens to a blank page</h3>
+<p class="small" style="margin:0">Something is unfinished in the code. <b>Close it, reopen the file
+you saved before the change</b>, and use prompt 3. This is the reason step 3 of day 5 says to save
+first, and the class will understand why instantly.</p></div>
+<div class="card t"><h3>It fixed it and redesigned everything else as well</h3>
+<p class="small" style="margin:0">Very common and worth naming. Use prompt 2. Then ask the room the
+real question: <b>"Did anybody test the things it changed?"</b> No. So those changes are guesses,
+and guesses are exactly what the week has been arguing against.</p></div>
+<div class="card g"><h3>It argues that your fix is a bad idea</h3>
+<p class="small" style="margin:0">Sometimes it is right. Read what it said to the class, let them
+decide, and <b>do whatever they decide</b>, including overruling it. The decision belongs to the
+people who watched the testers.</p></div>
+<div class="note"><b>The one thing not to do.</b><br>
+Do not quietly fix it yourself at lunchtime and present a working version. <b>The class's
+relationship with the software depends on believing their evidence changed it</b>, and that is worth
+more than a tidy demonstration.</div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The booker</div><h2>Opening it, resetting it, keeping it</h2>
+<p class="lede">Open <code>makerspace-booker.html</code> by double-clicking it. <b>You never edit
+code and you never open it in a text editor.</b> It works with the wifi off and nothing is
+transmitted anywhere.</p>
+<div class="card t"><h3>What it does</h3>
+<p class="small" style="margin:0">Five days, six slots a day. Pick a day, pick a slot, and one of the
+two buttons books it. Booked slots show as taken and cannot be booked twice. Canceling needs the
+four-character code. <b>Bookings survive closing the browser</b>, which matters because the class
+needs the same state on day 2 that it had on day 1.</p></div>
+<div class="card r"><h3>Clearing it between testers</h3>
+<p class="small" style="margin:0"><b>Clear all bookings</b> is at the bottom and asks before it does
+it. Use it between classes. Leave a few slots booked before a tester sits down, though &mdash; an
+empty grid makes task 2 impossible and makes task 3 too easy.</p></div>
+<div class="card g"><h3>Saving your version</h3>
+<p class="small" style="margin:0"><b>Save this booker as a file</b> hands you back a single HTML file
+with your bookings inside it. Save the original before day 5 and the fixed one after, under
+different names. The two files side by side are the clearest evidence of the week that you will
+get.</p></div>
+<div class="card p"><h3>What it will never ask for</h3>
+<p class="small" style="margin:0"><b>There is no name field anywhere in the app</b> and nowhere to
+type one. Bookings are held against a day, a slot and a code. If a class decides on day 4 that it
+should record who booked, that is a genuinely good instinct, and the page headed <i>What this unit
+refuses to record</i> is the answer to it.</p></div>
+<div class="note"><b>Tested before it shipped, and the flaws were tested too.</b><br>
+The app was driven start to finish in a browser: booking, the draft button that does not book, every
+error message, canceling with a wrong code and then a right one, booking a whole day, reloading,
+and saving to a file and reopening it in a clean browser with the bookings intact. <b>All six flaws
+were confirmed present and reproducible</b>, which is an unusual thing to test for, and the console
+was checked for errors because a crash is not a usability finding.</div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Straight talking</div><h2>The six ways this unit goes wrong</h2>
+<div class="flaw"><div class="n">1</div><div><h3>Students help the tester</h3>
+<p class="small" style="margin:0">The hardest rule in the unit and the one that destroys the data.
+Day 1 exists entirely to make the helping instinct visible before it ruins day 2. <b>Expect to
+restart at least one pair</b>, and do it without irritation.</p></div></div>
+<div class="flaw"><div class="n">2</div><div><h3>"It was fine" findings</h3>
+<p class="small" style="margin:0">Not a finding. One question fixes it: <b>what did they do, exactly,
+at the moment they paused?</b> It is printed on the student sheet so that they can ask it of
+themselves while you are across the room.</p></div></div>
+<div class="flaw"><div class="n">3</div><div><h3>The class finds nothing</h3>
+<p class="small" style="margin:0">Almost always helping, occasionally testers who already know the
+app. <b>You have the list of all six</b>, so add a tester and aim them at a task that walks into one
+&mdash; without announcing what they are supposed to find.</p></div></div>
+<div class="flaw"><div class="n">4</div><div><h3>The class finds everything and fixes nothing</h3>
+<p class="small" style="margin:0">Thirty findings and no decision. Day 4 caps it at three with
+evidence required, which is the real-world constraint rather than a classroom one. <b>Do not
+negotiate the number.</b></p></div></div>
+<div class="flaw"><div class="n">5</div><div><h3>The fix makes it worse</h3>
+<p class="small" style="margin:0"><b>This is a success.</b> It is the only way a class learns that a
+fix is a hypothesis. Resist every instinct to repair the lesson, and put it on the wall.</p></div></div>
+<div class="flaw"><div class="n">6</div><div><h3>Testers are classmates who already know it</h3>
+<p class="small" style="margin:0">They will finish every task in forty seconds and find nothing, and
+the class will conclude the app is fine. Another class, a sibling, an adult. <b>Failing that, split
+your room in half on day 1</b> and keep one half away from the app.</p></div></div>
+<div class="note"><b>And one that is not a failure mode, although it feels like one.</b><br>
+A tester who gets frustrated and gives up is the best data in the room. Thank them, write down where
+they stopped, and make sure the child who tested them knows they did the job right.</div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Straight talking</div><h2>Assessment, honestly</h2>
+<p class="lede">There is no quiz here and there should not be. What a class produces in this unit is
+observable, and these are the four things actually worth looking at.</p>
+<table>
+<thead><tr><th style="width:33%">What you are looking at</th><th>Not there yet</th><th>Got it</th></tr></thead>
+<tbody>
+<tr><td><b>Observing</b><br><span class="small">Day 1 and day 2 sheets</span></td>
+<td class="small">"They found it confusing." A conclusion with no moment attached.</td>
+<td class="small">"They clicked Submit, waited, clicked it again, then looked at me."</td></tr>
+<tr><td><b>Not helping</b><br><span class="small">Watched, on day 2</span></td>
+<td class="small">Hints, pointing, finishing the tester's sentence.</td>
+<td class="small">Silence, and the question written down instead of answered.</td></tr>
+<tr><td><b>Arguing from evidence</b><br><span class="small">Day 3 and day 4</span></td>
+<td class="small">"Everybody said." "It's annoying."</td>
+<td class="small">"Two of my three, and one of them gave up on task 2."</td></tr>
+<tr><td><b>Specifying a change</b><br><span class="small">Day 4 sheet</span></td>
+<td class="small">"Make it clearer."</td>
+<td class="small">An instruction a stranger could follow without asking anything.</td></tr>
+</tbody></table>
+<div class="card t"><h3>The single best piece of evidence in the week</h3>
+<p class="small" style="margin:0">The day 5 re-test sheet, where a student has to write down whether
+their own fix worked. <b>A student who writes "no, and it broke something else" has understood more
+than one who writes "yes."</b> Mark it that way and say so before they fill it in.</p></div>
+<div class="card r"><h3>What not to grade</h3>
+<p class="small" style="margin:0">How many findings a student produced. A quiet observer with three
+precise observations has done better work than someone with eleven vague ones, and <b>counting
+rewards exactly the wrong behavior</b> on the one day of the week where precision matters most.</p></div>
+<div class="card g"><h3>If you need a grade in a book</h3>
+<p class="small" style="margin:0">Use the day 4 sheet. Three fixes, each with a change written as an
+instruction and an evidence line with a fraction in it. <b>Six boxes, each either filled properly or
+not</b>, which is defensible to a parent and takes about ninety seconds a child.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Straight talking</div><h2>What this unit refuses to record, and why</h2>
+<p class="lede">Two decisions were made before anything was built, and both of them are about where
+information lives rather than about whether a name appears.</p>
+<div class="card g"><h3>Build freely &mdash; none of this is about a child</h3>
+<p class="small" style="margin:0">The booking grid, the slots, the room, the three tasks, the
+findings sheets with their numbered testers, the three chosen fixes. It is all information about an
+app. <b>Prompt with it, print it, put it on the wall.</b></p></div>
+<div class="card t"><h3>Your own device &mdash; the saved files</h3>
+<p class="small" style="margin:0">The booker you save and the fixed version your class produces live
+on the computer you saved them to and are transmitted nowhere. <b>Treat them the way you treat any
+classroom file</b>, which for these is not very carefully, because there is nothing in them.</p></div>
+<div class="card r"><h3>Stop &mdash; any of it attached to a named child</h3>
+<p class="small" style="margin:0">"Tester 2 pressed Submit twice" is a finding. <b>Writing which
+child that was, and reading it out, is a different thing entirely</b> &mdash; it is a record of a
+named child struggling, produced in public, by their classmates. The student pages say no names
+twice, and it is worth saying a third time on day 2.</p></div>
+<h2 style="margin-top:4pt">And why the app has no name field</h2>
+<div class="note"><b>Build it so that the wrong thing is impossible, rather than so that you are careful.</b><br>
+A booking app that records which named child was in which room at which time is a movement record
+about identified children. We could have shipped one and written a warning next to it. <b>Instead
+there is nowhere to type a name</b>, which is a rule nobody has to remember on a busy Tuesday.</div>
+<div class="card p"><h3>If your class decides it should record who booked</h3>
+<p class="small" style="margin:0">That is a good instinct and the right answer is not "no." Ask the
+two questions that decide it: <b>where would that list live, and who could read it?</b> A class that
+works out for itself that a list of who was where is a different kind of thing from a list of free
+slots has had a better lesson than any rule you could have given them.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Straight talking</div><h2>What else is out there, and what is different here</h2>
+<p class="lede">Being straight about this is the fastest way to keep a review. Here is the comparison,
+in both directions, including the part that is not flattering.</p>
+<div class="card r"><h3>What already exists</h3>
+<p class="small" style="margin:0">Design-thinking units, which usually run empathize, define, ideate,
+prototype, test &mdash; and in most classrooms the testing step is a single afternoon at the end.
+Genius hour and project-based units, which end at a showcase. Plenty of material on gathering peer
+feedback. <b>If what you want is a full design-thinking unit, those are broader than this.</b></p></div>
+<div class="card t"><h3>What is different about this one</h3>
+<p class="small" style="margin-bottom:4pt"><b>It is the testing step, stretched to five days.</b>
+That step is the one that gets compressed to nothing everywhere else, and it is where the actual
+discipline lives.</p>
+<p class="small" style="margin-bottom:4pt"><b>Something is actually wrong with the app.</b> Peer
+feedback on each other's good work produces politeness. A flawed app produces findings.</p>
+<p class="small" style="margin:0"><b>It ends with a re-test.</b> Almost nothing does, and that is the
+difference between a class that has done testing and a class that has understood it.</p></div>
+<div class="card"><h3>What this pack is not</h3>
+<p class="small" style="margin:0">Not a design-thinking unit &mdash; there is no ideation stage and
+no prototyping. Not a course in programming. Not a professional usability method, which involves
+sample sizes and protocols this deliberately does not. And <b>not a claim that the booker is good
+software</b>, which would be a strange claim to make about an app we broke on purpose.</p></div>
+<div class="card p"><h3>On building on somebody else's idea</h3>
+<p class="small" style="margin:0">Usability testing, booking grids and sticky-note sorting belong to
+nobody and you are welcome to build on all of them. The words, the design and the code in these
+files are ours. That distinction is worth teaching the moment a class starts changing software with
+AI: <b>how a thing works is free to borrow; the particular way somebody said it and drew it is
+not.</b></p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Yours to use</div><h2>License, credit, and one favor</h2>
+<div class="card g"><h3>What you may do</h3>
+<p class="small" style="margin:0">Run this unit with your own classes for as long as you teach. Print
+the student pages as many times as you need. Change the booker however you like and save as many
+versions as you want. Put the file on the classroom computers or a flash drive. Your one purchase
+covers you and your classes.</p></div>
+<div class="card r"><h3>What needs another license</h3>
+<p class="small" style="margin:0">Sharing it with other teachers, putting it on a shared drive or a
+server, or handing it round a department or a building. Additional licenses are half price on the
+listing, and a school can buy them on a single purchase order. Please do not post the files publicly
+or sell anything made from them.</p></div>
+<div class="card t"><h3>What was tested before this shipped</h3>
+<p class="small" style="margin:0">The booker was driven start to finish in a browser: a booking made
+with the draft button and then with the real one, every error message, a wrong cancellation code and
+then a right one, a whole day booked, a reload with the bookings intact, and the file saved and
+reopened in a clean browser. <b>All six flaws were confirmed present and reproducible</b>, and the
+console was checked for errors, because an app that crashes teaches nothing about usability.</p></div>
+<div class="note"><b>If this earned its keep, would you leave a review?</b><br>
+TPT gives you credit toward your next purchase for it, and it is the only thing that decides whether
+another teacher ever sees this. If something did not work in your room, tell us that instead and we
+will fix it.</div>
+<div class="card"><h3>Built and audited by two certified teachers</h3>
+<p class="small" style="margin:0">Written by classroom teachers, checked by a second teacher before
+it shipped, and built on a rule we keep everywhere: the grown-up holds the keyboard, and no child's
+name goes into a prompt.</p></div>
+<div class="foot"><span>Vibe Coding for Kids &middot; Test It Like a User</span><span>Bright Scholar · AI-Ready School</span></div>
+<div class="barb"></div></div></body></html>

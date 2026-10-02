@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Makerspace Booker</title>
+<style>
+  :root{
+    --ink:#171F2B; --deep:#24303E; --slate:#38485A; --steel:#5E7489; --mist:#A9BCCB;
+    --bone:#F1ECE2; --sun:#EFB32C; --leaf:#5A9A62; --clay:#B3603E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ink);color:var(--bone);
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;padding:14px}
+  #app{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+  header h1{font-size:clamp(21px,3.6vw,30px);line-height:1.1}
+  .muted{color:var(--mist);font-size:14px}
+  .card{background:var(--deep);border:3px solid var(--bone);border-radius:11px;padding:13px 15px}
+  h2{font-size:clamp(16px,2.4vw,20px);margin-bottom:8px}
+  h3{font-size:15px;margin-bottom:6px}
+  .days{display:flex;gap:8px;flex-wrap:wrap}
+  .day{font:inherit;font-weight:800;font-size:15px;padding:9px 15px;border-radius:9px;
+       border:3px solid var(--bone);background:var(--slate);color:var(--bone);cursor:pointer}
+  .day[aria-pressed="true"]{background:var(--sun);color:var(--ink);border-color:var(--ink)}
+  .day:focus-visible{outline:4px solid var(--sun);outline-offset:3px}
+  .slots{display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin-top:10px}
+  .slot{font:inherit;text-align:left;background:var(--slate);border:3px solid var(--bone);
+        border-radius:9px;padding:10px 12px;color:var(--bone);cursor:pointer;
+        display:flex;flex-direction:column;gap:3px}
+  .slot:hover:not(:disabled){background:var(--steel);border-color:var(--sun)}
+  .slot:focus-visible{outline:4px solid var(--sun);outline-offset:2px}
+  .slot[aria-pressed="true"],
+  .slot[aria-pressed="true"]:hover{background:var(--sun);color:var(--ink);border-color:var(--ink)}
+  .slot:disabled{opacity:.5;cursor:not-allowed}
+  .slot .t{font-weight:800;font-size:16px}
+  .slot .s{font-size:13px;color:var(--mist)}
+  .slot[aria-pressed="true"] .s{color:var(--ink)}
+  .btn{font:inherit;font-weight:800;border-radius:9px;border:3px solid var(--ink);
+       background:var(--sun);color:var(--ink);cursor:pointer}
+  .btn:focus-visible{outline:4px solid var(--mist);outline-offset:3px}
+  .btn.huge{font-size:19px;padding:15px 26px;width:100%}
+  .btn.big{font-size:17px;padding:12px 22px}
+  .btn.tiny{font-size:12px;padding:4px 8px;background:var(--slate);color:var(--mist);
+            border:2px solid var(--steel);font-weight:600}
+  .btn.quiet{background:var(--slate);color:var(--bone);border-color:var(--bone)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+  .note{font-size:13px;color:var(--mist);min-height:1.3em;margin-top:8px}
+  .code{font-family:ui-monospace,Menlo,Consolas,monospace;font-weight:800;color:var(--sun)}
+  .fld{display:flex;flex-direction:column;gap:4px;max-width:260px}
+  .fld label{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sun)}
+  .fld input{font:inherit;font-size:16px;padding:9px 11px;border-radius:7px;
+       border:2px solid var(--steel);background:var(--ink);color:var(--bone)}
+  .msg{font-size:14px;margin-top:10px;min-height:1.3em}
+  .msg.bad{color:#F3A99A}
+  .msg.ok{color:#B6DCA6}
+  .foot{font-size:12px;color:var(--steel);text-align:center;padding-top:4px}
+  .foot a{color:var(--steel)}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Makerspace Booker</h1>
+    <p class="muted">Book the makerspace. No account, nothing stored about who you are.</p>
+  </header>
+
+  <!-- ------------------------------------------------------------- BOOK -->
+  <section id="vBook">
+    <div class="card">
+      <h2>Pick a day</h2>
+      <div class="days" id="days"></div>
+
+      <h2 style="margin-top:14px">Pick a slot</h2>
+      <div class="slots" id="slots"></div>
+      <p class="note" id="pick">Nothing picked yet.</p>
+
+      <div class="row">
+        <button class="btn huge" id="wholeDay">Book the whole day</button>
+      </div>
+      <div class="row">
+        <button class="btn big" id="submit">Submit</button>
+        <button class="btn quiet" id="confirm" style="font-size:13px;padding:7px 12px">Confirm booking</button>
+      </div>
+      <p class="msg" id="msg"></p>
+      <p class="note" id="codeLine"></p>
+    </div>
+    <p class="foot"><button class="btn tiny" id="toCancel">cancel a booking</button></p>
+  </section>
+
+  <!-- ----------------------------------------------------------- CANCEL -->
+  <section id="vCancel" hidden>
+    <div class="card">
+      <h2>Cancel a booking</h2>
+      <p class="muted">Enter the confirmation code you were given when you booked.</p>
+      <div class="fld" style="margin-top:10px"><label for="codeIn">Confirmation code</label>
+        <input type="text" id="codeIn" maxlength="8" autocomplete="off"></div>
+      <div class="row">
+        <button class="btn big" id="doCancel">Cancel it</button>
+        <button class="btn quiet" id="backBook">Back</button>
+      </div>
+      <p class="msg" id="cmsg"></p>
+    </div>
+  </section>
+
+  <div class="card">
+    <h3>Keeping it</h3>
+    <div class="row" style="margin-top:0">
+      <button class="btn quiet" id="saveBtn">Save this booker as a file</button>
+      <button class="btn tiny" id="resetBtn">Clear all bookings</button>
+    </div>
+    <p class="note" id="smsg"></p>
+  </div>
+</div>
+
+<script>
+/* ===========================================================================
+   THE MAKERSPACE BOOKER.
+
+   NOTE FOR THE TEACHER, NOT FOR THE CLASS:
+
+   This app works. It does not crash and it does not lose bookings. But it has
+   six usability problems built into it on purpose, and finding them is the
+   unit. They are listed in the teacher's guide with the sentence a tester is
+   likely to say. Do not fix them before the class tests it -- the fixed
+   version is what day 5 produces.
+
+   It records bookings against slots and nothing else. There is no name field
+   anywhere, because a booking system that records which named child was where,
+   when, is a movement record about identified children.
+   =========================================================================== */
+
+const $ = id => document.getElementById(id);
+const KEEP = 'makerspace.v1';
+const MARK = 'makerspace-your-bookings';
+let PRISTINE = '';
+
+const DAYS  = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+const SLOTS = ['8:30','9:30','10:30','11:30','1:15','2:15'];
+
+/* booked["Thursday|1:15"] = "A7K2" (the confirmation code) */
+let booked = {};
+let day  = null;          // the chosen day
+let slot = null;          // the chosen slot
+let draft = null;         // what Submit saved, which is not a booking
+
+function key(d,s){ return d+'|'+s; }
+function esc(t){ return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function newCode(){
+  const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let s='';
+  for(let i=0;i<4;i++) s+=a[Math.floor(Math.random()*a.length)];
+  return s;
+}
+
+/* ------------------------------------------------------------- drawing --- */
+function drawDays(){
+  $('days').innerHTML = DAYS.map(d =>
+    `<button class="day" data-d="${d}" aria-pressed="${d===day}">${d}</button>`).join('');
+}
+function drawSlots(){
+  $('slots').innerHTML = SLOTS.map(s=>{
+    const taken = day ? !!booked[key(day,s)] : false;
+    return `<button class="slot" data-s="${s}" aria-pressed="${s===slot}"${taken?' disabled':''}>
+      <span class="t">${s}</span><span class="s">${taken?'taken':'free'}</span></button>`;
+  }).join('');
+}
+function drawPick(){
+  $('pick').textContent = (day?day:'no day') + ', ' + (slot?slot:'no slot');
+}
+function redraw(){ drawDays(); drawSlots(); drawPick(); }
+
+/* FLAW 4: a slot can be picked before a day, and choosing the day afterwards
+   silently clears it. Nothing on screen says the order matters. */
+$('days').addEventListener('click', e=>{
+  const b=e.target.closest('.day'); if(!b) return;
+  day = b.dataset.d;
+  slot = null;                       // <-- silently cleared
+  draft = null;
+  redraw();
+});
+$('slots').addEventListener('click', e=>{
+  const b=e.target.closest('.slot'); if(!b||b.disabled) return;
+  slot = b.dataset.s;
+  redraw();
+});
+
+/* FLAW 1: the big obvious button only saves a draft. The small quiet one books. */
+$('submit').onclick = ()=>{
+  if(!day || !slot){ say('msg','bad','Error'); return; }   /* FLAW 3 */
+  draft = {day, slot};
+  say('msg','', '');
+};
+
+/* FLAW 2: booking succeeds and says nothing. The grid updates and that is all.
+   FLAW 6: the code appears once, in small text, and is wiped by the next action. */
+$('confirm').onclick = ()=>{
+  const d = draft || (day && slot ? {day,slot} : null);
+  if(!d){ say('msg','bad','Error'); return; }              /* FLAW 3 */
+  if(booked[key(d.day,d.slot)]){ say('msg','bad','Error'); return; }
+  const code = newCode();
+  booked[key(d.day,d.slot)] = code;
+  draft = null; slot = null;
+  persist(); redraw();
+  const m = $('msg'); m.className = 'msg'; m.textContent = '';
+  $('codeLine').textContent = 'Code: ' + code;
+};
+
+/* FLAW 5: this is the biggest button on the screen and it is the rarest action. */
+$('wholeDay').onclick = ()=>{
+  if(!day){ say('msg','bad','Error'); return; }            /* FLAW 3 */
+  let n=0;
+  SLOTS.forEach(s=>{ if(!booked[key(day,s)]){ booked[key(day,s)] = newCode(); n++; } });
+  draft=null; slot=null; persist(); redraw();
+  const m = $('msg'); m.className = 'msg'; m.textContent = '';
+  $('codeLine').textContent = n ? (n+' slots booked.') : '';
+};
+
+function say(id,kind,text){
+  const el=$(id); el.className='msg'+(kind?' '+kind:''); el.textContent=text;
+  if(id==='msg') $('codeLine').textContent='';             /* FLAW 6: wiped */
+}
+
+/* -------------------------------------------------------------- cancel --- */
+$('toCancel').onclick = ()=>{ $('vBook').hidden=true; $('vCancel').hidden=false;
+  $('cmsg').textContent=''; $('codeIn').value=''; $('codeIn').focus(); };
+$('backBook').onclick = ()=>{ $('vCancel').hidden=true; $('vBook').hidden=false; };
+$('doCancel').onclick = ()=>{
+  const c = $('codeIn').value.trim().toUpperCase();
+  const k = Object.keys(booked).find(k=>booked[k]===c);
+  if(!c || !k){ say('cmsg','bad','Error'); return; }
+  delete booked[k]; persist(); redraw();
+  const [d,s]=k.split('|');
+  say('cmsg','ok','Canceled '+d+' '+s+'.');
+};
+
+/* --------------------------------------------------------- keeping it --- */
+function persist(){ try{ localStorage.setItem(KEEP, JSON.stringify(booked)); }catch(e){} }
+$('resetBtn').onclick = ()=>{
+  if(!confirm('Clear every booking?')) return;
+  booked={}; draft=null; slot=null; persist(); redraw();
+  $('smsg').textContent='All bookings cleared.';
+};
+$('saveBtn').onclick = ()=>{
+  const src = PRISTINE || document.documentElement.outerHTML;
+  const clean = src.replace(new RegExp('<!--'+MARK+'-->[\\s\\S]*?<!--\\/'+MARK+'-->','g'),'');
+  const inject = '<!--'+MARK+'--><script>window.MY_BOOKINGS='
+    + JSON.stringify(booked).replace(/<\//g,'<\\/') + ';<\/script><!--/'+MARK+'-->';
+  /* assembled, never written out whole: a literal closing body tag in this
+     source would be the first one found and the injection would land here */
+  const END = '<\/bo'+'dy>';
+  const at = clean.lastIndexOf(END);
+  const html = '<!DOCTYPE html>\n' + clean.slice(0,at) + inject + '\n' + clean.slice(at);
+  const url = URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  const a = document.createElement('a'); a.href=url; a.download='makerspace-booker.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);
+  $('smsg').textContent='Saved as makerspace-booker.html, wherever your browser puts downloads.';
+};
+
+/* What loads, and in what order: a file saved from here beats the browser. The
+   listener that captures the page source is registered first, which is what
+   keeps the saved copy clean. */
+document.addEventListener('DOMContentLoaded',()=>{ PRISTINE = document.documentElement.outerHTML; });
+document.addEventListener('DOMContentLoaded',()=>{
+  if(window.MY_BOOKINGS) booked = window.MY_BOOKINGS;
+  else { try{ booked = JSON.parse(localStorage.getItem(KEEP)||'{}'); }catch(e){ booked={}; } }
+  redraw();
+});
+redraw();
+</script>
+</body>
+</html>

@@ -2766,6 +2766,67 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "ye-test-like-user",
+      "order": 67,
+      "name": "Test It Like a User",
+      "product": "UPLOAD/02-paid/Vibe-Coding-Test-It-Like-a-User.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/makerspace-booker.html"
+      ],
+      "cover": "tpt/covers/ye-test-like-user-cover.png",
+      "thumbnails": [
+        "tpt/extras/tlu-the-app.png",
+        "tpt/extras/tlu-whats-inside.png",
+        "tpt/extras/tlu-real-pages.png"
+      ],
+      "title": "Vibe Coding for Kids | Test It Like a User | The Day Your Class Breaks Your App",
+      "description": "Your class is handed a working app and told to find what is wrong with it. Six real usability problems are built into it on purpose, they find them by watching other people get stuck, and on the last day you fix one live and make them test it again on somebody new.\n\nTHE APP IS INCLUDED AND IT IS DELIBERATELY FLAWED. A class cannot find usability problems in a polished app, and a class that finds nothing concludes that testing is a formality. The Makerspace Booker works - it does not crash and it does not lose bookings - and it is quietly bad to use. The big button says Submit and only saves a draft. Nothing says a booking worked. Every error message is the single word \"Error.\" The steps only work in one order and nothing says so. \"Book the whole day\" is the biggest button on the screen and Cancel is the smallest. The confirmation code is shown once and needed later on a different screen.\n\nTHE TEACHER'S GUIDE LISTS ALL SIX, with the sentence a tester tends to say when they hit it, so you can tell whether your class is finding real things or guessing - and steer a task toward a flaw nobody has found yet. Do not fix them before the class tests them. The fixed version is what day 5 produces.\n\nTHE THREE TESTER TASKS ARE WRITTEN OUT WORD FOR WORD, because a vague task produces a vague test. Each one walks a tester straight into at least two of the six.\n\nFIVE DAYS. Day 1 watch somebody struggle and say nothing. Day 2 three testers each, same three tasks, silence. Day 3 sort the findings and argue about which are real. Day 4 pick three fixes and justify every one with evidence. Day 5 fix one live with AI on the board - then re-test it on somebody who has never seen it.\n\nDAY 5 IS WHAT MAKES THIS A UNIT RATHER THAN AN ACTIVITY. Almost nobody re-tests. A class that fixes something and then watches it still confuse a new person has learned the actual lesson, which is that a fix is a hypothesis. If the fix made it worse, that is a success and the pack says so.\n\nTHE STUDENTS NEVER TOUCH THE CHATBOT. Chatbots are 13 and over, and no child's name goes into a prompt. Students observe, sort, argue and decide; you do the prompting, on the board, where they can see their own evidence changing the software. The exact prompts are written out, including the two for when the AI breaks it in front of thirty children.\n\nTHE APP HAS NO NAME FIELD ANYWHERE, and that is deliberate. A booking system that records which named child was in which room at which time is a movement record about identified children. Bookings are held against a day, a slot and a four-character code. Findings sheets record what a tester did, never who they were - Tester 1, Tester 2, Tester 3.\n\nSIX STUDENT PAGES worth printing: the day 1 watching sheet, the three tasks, the findings sheet, the sort-it grid, the three-fixes-with-evidence sheet, and the re-test sheet.\n\nPLUS the six ways this unit goes wrong and what to do about each, an assessment page with no quiz in it, and a straight page on what already exists and how this differs.\n\nWHAT YOU NEED: one computer you can project, any AI chat tool you already use for day 5 only, printed sheets, and the app file - which opens by double-click, works with the wifi off, and needs nothing installed.\n\nWHAT WAS TESTED BEFORE THIS SHIPPED: the booker was driven start to finish in a browser - a booking made with the draft button and then with the real one, every error message, a wrong cancellation code and then a right one, a whole day booked, a reload with the bookings intact, and the file saved and reopened in a clean browser. All six flaws were confirmed present and reproducible, and the console was checked for errors, because an app that crashes teaches nothing about usability.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find this. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 18,
+      "licenses": 9,
+      "grades": [
+        "3rd grade",
+        "4th grade",
+        "5th grade",
+        "6th grade",
+        "7th grade",
+        "8th grade"
+      ],
+      "subjects": [
+        "Instructional Technology",
+        "Critical Thinking",
+        "Business"
+      ],
+      "tags": [
+        "design thinking",
+        "project based learning",
+        "vibe coding",
+        "peer feedback",
+        "entrepreneurship",
+        "critical thinking"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Kids",
+      "previewShots": [
+        "tlu_p2.png",
+        "tlu_p5.png",
+        "tlu_p16.png"
+      ],
+      "previewInside": [
+        "<b>The app is included - and flawed on purpose</b>",
+        "All six flaws listed for you, with what a tester says",
+        "<b>The three tester tasks</b>, written out word for word",
+        "Six student pages worth printing",
+        "<b>Day 5: fix one live, then re-test on somebody new</b>",
+        "What to do when the AI breaks it in front of the class"
+      ],
+      "previewUnit": "24 pages + the app",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }
