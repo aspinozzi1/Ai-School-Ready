@@ -356,6 +356,14 @@ const IMAGES = [
     'What to do when the AI breaks it in front of the class',
   ], 'PDF + HTML')],
   ['tlu-real-pages', realPages('#2D6CB5', ['tlu_p2.png', 'tlu_p5.png', 'tlu_p16.png'], '24 pages + the app')],
+  ['afg-whats-inside', whatsInside('Free \u00b7', 'AI Feedback That Cannot Cost a Grade', [
+    'Rule 1: it saves first and speaks second',
+    'Three things that go wrong when a tool can block',
+    'Rule 2: its opinion never touches the mark',
+    'What the research says, with the caveat usually left out',
+    'Rule 3: three things, not everything',
+    'Eight questions for an AI tool you did not build',
+  ], 'PDF')],
   ['cpw-whats-inside', whatsInside('Free \u00b7', 'Make the Copy Worthless', [
     'Why detecting it is the wrong job, with the numbers',
     'Four moves, each with a before and an after',

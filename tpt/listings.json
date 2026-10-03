@@ -2827,6 +2827,56 @@
       "previewUnit": "24 pages + the app",
       "insideHeading": "What is inside",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "ai-feedback-grade",
+      "order": 68,
+      "name": "AI Feedback That Cannot Cost a Grade",
+      "product": "UPLOAD/01-free/ai-feedback-cannot-cost-a-grade.pdf",
+      "cover": "tpt/covers/ai-feedback-grade-cover.png",
+      "thumbnails": [
+        "tpt/extras/afg-whats-inside.png"
+      ],
+      "title": "AI Feedback That Cannot Cost a Grade | 3 Rules Before It Reads Student Work",
+      "description": "FREE. AI feedback on student writing is arriving in every platform, and the default way it is built is wrong in three specific ways. Here are the three rules that fix it, written from the ones I had to build into the reading and assessment software I run for my own high school woodshop course.\n\nRULE 1 - IT SAVES FIRST AND SPEAKS SECOND. The student presses submit, the answer is recorded, and only then does the coach appear. In that order, always. A tool that can hold the submit button hostage until a student fixes what it flagged means a student who has finished cannot hand in, with four minutes left, because software has an opinion about a comma. Three things go wrong when a tool can block, and the page names all three - including the one nobody expects, which is that students start writing short clean sentences to get through the gate and you have optimized for the checker.\n\nRULE 2 - ITS OPINION NEVER TOUCHES THE MARK. Mechanics are excluded from every score, and the student is told so. This is not softness. A mark is a claim about whether a student understood something, and the moment spelling moves it, the mark is partly a claim about spelling and you can no longer read it as evidence of understanding.\n\nAND THERE IS REAL EVIDENCE, WITH THE CAVEAT STATED. Ruth Butler's 1988 study put 132 fifth and sixth graders into three conditions - grades only, comments only, or both. Interest and performance were generally higher after comments than after grades alone OR grades with comments; students who got both read the score and ignored the comment. The caveat, which is usually left out: the effect held for students in the bottom 25 percent of the class, while high achievers who received good grades kept their interest either way. So it is a strong argument about who gets hurt rather than a universal law - and those are exactly the students a writing coach is for.\n\nRULE 3 - THREE THINGS, NOT EVERYTHING. A model will happily return nineteen observations about a paragraph. Nineteen is not nine more useful than three; it is a verdict on the student, and it gets skimmed and closed.\n\nEIGHT QUESTIONS FOR A TOOL YOU DID NOT BUILD. Most teachers will never build this - they will be handed one. Eight questions to ask the sales page and then the tool, with the answer you want next to each. Including the one nobody asks: does anything the tool says change a score anywhere? The answer is often \"a little,\" and a tool that quietly folds a mechanics score into a participation number has done exactly the thing rule 2 forbids, with the student never finding out why their number moved.\n\nA FILL-IN PAGE. Run one assignment you already give through the three rules and find the place where your feedback costs a student something they did not expect to pay. Plus the test for whether it worked: hand the next one back and ask a student what they will do differently. If they tell you the score instead, it did not land.\n\nTHE RULES WORK WITH NO SOFTWARE AT ALL. All three are about when feedback arrives and what it is allowed to cost, which applies the same to the comments you write yourself on a Sunday evening.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "professional development",
+        "writing",
+        "teacher tools",
+        "free",
+        "assessment",
+        "classroom management"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "wcp_p2.png",
+        "wcp_p3.png",
+        "wcp_p4.png"
+      ],
+      "previewInside": [
+        "<b>Rule 1: it saves first and speaks second</b>",
+        "Three things that go wrong when a tool can block a submission",
+        "<b>Rule 2: its opinion never touches the mark</b>",
+        "What the research says, with the caveat usually left out",
+        "<b>Rule 3: three things, not everything</b>",
+        "<b>Eight questions</b> for an AI tool you did not build"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

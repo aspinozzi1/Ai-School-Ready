@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>AI Feedback That Cannot Cost a Grade</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<!-- ------------------------------------------------------------- 1 cover -->
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Free &middot; AI and student writing</div>
+<h1>AI Feedback That<br>Cannot Cost a Grade</h1>
+<p class="lede">AI feedback on student writing is arriving in every platform, and <b>the default
+way it is built is wrong in three specific ways.</b> Here are the three rules that fix it.</p>
+<div class="note"><b>The three rules, and every one of them is about what the tool may not do.</b><br>
+<b>1 &middot; It saves first and speaks second</b>, so feedback can never block a submission.<br>
+<b>2 &middot; Its opinion never touches the mark.</b> Mechanics are excluded from every score.<br>
+<b>3 &middot; Three things, not everything.</b> A page of corrections is a verdict, not
+feedback.</div>
+<div class="card r"><h3>This works whether or not you ever touch AI</h3>
+<p class="small" style="margin:0">All three are about <b>when feedback arrives and what it is
+allowed to cost</b>, and they apply the same to comments you write yourself on a Sunday evening.
+<b>If your school has bought an AI writing tool, page 4 is the page you want</b> &mdash; eight
+questions to ask before it reads a single student's work.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">I teach high school woodshop and I built the reading and assessment
+software my own classes use. It gives mechanics feedback on written answers. <b>Every rule here is
+one I had to write into it</b>, usually after getting it wrong first.</p></div>
+<div class="card" style="margin-top:2pt"><h3>Inside, in five pages</h3>
+<p class="small" style="margin:0">The three rules, each with what the default build does instead
+&middot; what the research actually says, <b>including the caveat usually left out</b> &middot;
+<b>eight questions</b> to ask an AI writing tool before it reads a word &middot; and a fill-in page
+that runs one assignment you already give through all three.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<!-- -------------------------------------------------------------- 2 rule 1 -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Rule 1</div>
+<h2>It saves first, and speaks second</h2>
+<p class="lede">The student presses submit. <b>The answer is written down.</b> Only then does the
+coach appear. In that order, always, and the order is the whole rule.</p>
+<div class="card r"><h3>What the default build does instead</h3>
+<p class="small" style="margin:0">It reads the work, decides it is not ready, and <b>holds the
+submit button hostage until the student fixes what it flagged.</b> It feels helpful when you
+demonstrate it. In a real room it means a student who has finished cannot hand in, with four minutes
+left, because software has an opinion about a comma.</p></div>
+<div class="card t"><h3>Three things that go wrong when the tool can block</h3>
+<p class="small" style="margin-bottom:4pt"><b>Work gets lost.</b> The student who cannot submit
+closes the tab. Nothing you say afterward gets that back.</p>
+<p class="small" style="margin-bottom:4pt"><b>The student starts writing for the tool.</b> Short,
+safe, mechanically clean sentences get through the gate fastest, so that is what you receive. You
+have optimized for the checker and taught nothing.</p>
+<p class="small" style="margin:0"><b>You lose the evidence.</b> The draft the student actually
+produced is the thing you needed to see. A gate means you only ever see the version that satisfied
+the gate.</p></div>
+<div class="note"><b>Build it so the wrong thing is impossible, rather than so that you are careful.</b><br>
+You could instead write a rule saying "never let the coach stop a student submitting" and hope
+everyone remembers it on a wet Tuesday in February. <b>Saving before the coach runs means nobody has
+to remember</b> &mdash; there is no moment at which blocking is even available.</div>
+<div class="card g"><h3>If you are not building anything</h3>
+<p class="small" style="margin:0">The same rule in a room with no software: <b>collect the work
+first, then talk about it.</b> Not "let me look before you hand that in." Taking it in is what makes
+the feedback safe to give, because at that point it cannot cost the student anything.</p></div>
+<div class="foot"><span>AI Feedback That Cannot Cost a Grade &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------- 3 rules 2 and 3 -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Rules 2 and 3</div>
+<h2>Its opinion never touches the mark</h2>
+<p class="lede">Mechanics are excluded from every score in my software. The coach can say a sentence
+is a fragment. <b>It cannot cost a single point for saying so</b>, and the student is told that.</p>
+<div class="card"><h3>Why this is not softness</h3>
+<p class="small" style="margin:0">A mark is a claim about whether a student understood something.
+<b>The moment spelling moves it, the mark is partly a claim about spelling</b> and you can no longer
+read it as evidence of understanding. Separating them is not lowering a standard; it is keeping the
+number meaningful. Mark the mechanics separately if you need to &mdash; just not in the same
+number.</p></div>
+<div class="card t"><h3>And there is evidence that a comment next to a score does nothing</h3>
+<p class="small" style="margin-bottom:4pt">Ruth Butler's 1988 study put 132 fifth and sixth graders
+into three conditions: <b>grades only, comments only, or both.</b> Interest and performance were
+generally higher after comments than after grades alone <i>or grades with comments</i>. Students who
+got both <b>read the score and ignored the comment.</b></p>
+<p class="small" style="margin:0"><b>The caveat, because it is usually left out.</b> The effect held
+for students in the bottom 25 percent of the class. High achievers who received good grades kept
+their interest either way. So this is a strong argument about who gets hurt, rather than a universal
+law &mdash; and the students it is about are the ones a writing coach is for.</p></div>
+<h2 style="margin-top:4pt">Three things, not everything</h2>
+<p class="small" style="margin-bottom:7pt">My coach returns <b>at most three</b> items on any
+answer. That cap is in the software, not in my judgment on the day.</p>
+<div class="card g"><h3>Why a cap and not "everything it finds"</h3>
+<p class="small" style="margin:0">A model will happily return nineteen observations about a
+paragraph. <b>Nineteen is not nine more useful than three; it is a verdict on the student</b> and it
+gets skimmed and closed. Three is roughly what a person acts on. If the same three come back next
+time, that is the signal &mdash; and it is legible precisely because there are only three.</p></div>
+<div class="note"><b>The sentence worth stealing for your own room.</b><br>
+"This is about the writing, and it is not about the grade." <b>Say it before the feedback, not
+after.</b> A student who hears it afterward has already read the comment as a sentence.</div>
+<div class="foot"><span>AI Feedback That Cannot Cost a Grade &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ---------------------------------------------------------- 4 checklist -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">For a tool you did not build</div>
+<h2>Eight questions before it reads student writing</h2>
+<p class="lede">Most teachers will never build this; they will be handed one. <b>These are the eight
+questions to ask, and the answers you want.</b> Ask them of the sales page, then of the tool.</p>
+<table>
+<thead><tr><th style="width:20pt">#</th><th>Ask</th><th style="width:36%">The answer you want</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td>Can a student submit while the tool is still unhappy with the work?</td><td><b>Yes, always.</b> If no, stop here.</td></tr>
+<tr><td><b>2</b></td><td>Is the work saved before the feedback runs?</td><td><b>Yes</b>, and it can be shown.</td></tr>
+<tr><td><b>3</b></td><td>Does anything the tool says change a score anywhere?</td><td><b>No.</b> If yes, which scores, and can you switch it off?</td></tr>
+<tr><td><b>4</b></td><td>How many items does it return at once, and can you cap it?</td><td>A cap you control, and a small default.</td></tr>
+<tr><td><b>5</b></td><td>Is student writing used to train a model?</td><td><b>No</b>, in writing, in the contract.</td></tr>
+<tr><td><b>6</b></td><td>Who else can read the feedback it gives a student?</td><td>You. Not other students, not by default.</td></tr>
+<tr><td><b>7</b></td><td>What happens when the internet drops mid-lesson?</td><td>The work is still saved. Feedback can wait.</td></tr>
+<tr><td><b>8</b></td><td>Can you see what it told a student, after the fact?</td><td><b>Yes.</b> You are accountable for it either way.</td></tr>
+</tbody></table>
+<div class="card r"><h3>The one that gets skipped</h3>
+<p class="small" style="margin:0"><b>Question 3 is the one nobody asks</b>, and the answer is often
+"a little." A tool that quietly folds a mechanics score into a participation or effort number has
+done exactly the thing rule 2 forbids, and the student never finds out why their number moved.</p></div>
+<div class="card p"><h3>And the honest one about questions 5 and 6</h3>
+<p class="small" style="margin:0">Student writing is student work, and in most of it a student will
+eventually mention something about themselves. <b>Treat anything a child wrote as identifiable</b>,
+because sooner or later it is. That is the same rule this store applies to every product it sells:
+<b>decide by where the data goes and who can reach it</b>, not by whether a name appears.</p></div>
+<div class="foot"><span>AI Feedback That Cannot Cost a Grade &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 5 fill-in -->
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn &middot; one assignment</div>
+<h2>Run one thing you already assign through the three rules</h2>
+<p class="small">Pick one piece of writing you take in regularly &mdash; an ordinary one. You are
+looking for the place where your feedback costs a student something they did not expect to pay.</p>
+<div class="box"><h3>The assignment</h3><div class="wl"></div></div>
+<div class="box"><h3>Rule 1 &middot; Does anything have to be fixed before it can be handed in?</h3>
+<p class="small" style="margin-bottom:4pt">A checklist, a tool that will not submit, a "let me see
+it first." Write what it is, or write <i>nothing</i>.</p>
+<div class="wl"></div></div>
+<div class="box"><h3>Rule 2 &middot; Does spelling, grammar or neatness move the number?</h3>
+<p class="small" style="margin-bottom:4pt">Including quietly: a rubric row, a rounding, an
+impression. <b>If it does, write how much.</b> Most people cannot say.</p>
+<div class="wl"></div></div>
+<div class="box"><h3>Rule 3 &middot; How many separate things does a student get back?</h3>
+<p class="small" style="margin-bottom:4pt">Count the marks on the last one you handed back, then
+write the three you would have kept.</p>
+<div class="wl"></div></div>
+<div class="card t"><h3>The test for whether it worked</h3>
+<p class="small" style="margin:0">Hand the next one back and ask a student what they will do
+differently. <b>If they tell you the score instead, it did not land</b> &mdash; and rule 2 is where
+to look first.</p></div>
+<div class="card p"><h3>If you would rather the rule lived in software than in your memory</h3>
+<p class="small" style="margin:0">Our <b>AI professional development staff trainings</b> are
+ready-to-run sessions with the full script, for the conversation a staff has to have before a tool
+like this is bought rather than after. Search our store.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases, and reviews decide whether another teacher ever sees
+this. Page 3 source: Butler, 1988.</div>
+<div class="foot"><span>AI Feedback That Cannot Cost a Grade &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>
