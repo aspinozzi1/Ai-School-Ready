@@ -2877,6 +2877,56 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "never-type-total",
+      "order": 69,
+      "name": "Never Type a Total",
+      "product": "UPLOAD/01-free/never-type-a-total.pdf",
+      "cover": "tpt/covers/never-type-total-cover.png",
+      "thumbnails": [
+        "tpt/extras/ntt-whats-inside.png"
+      ],
+      "title": "Never Type a Total | The One Rule That Keeps Your Answer Keys Correct",
+      "description": "FREE. A course exemplar I had published read \"10 x $8.44 = $80.44\". It is wrong by nearly four dollars. It sat there through my own proofreading and through a class of students, because a printed number looks like a fact.\n\nTHE FIX IS NOT \"CHECK MORE CAREFULLY.\" The fix is that the total is never typed at all. It is worked out from the parts every time it is shown, so the wrong number is not something you have to catch - it is something that cannot be written down.\n\nWHERE YOU ALREADY TYPE TOTALS. Answer keys. Points possible at the top of a test. A materials list with a cost at the bottom. A field trip letter home. A rubric that is supposed to add to 100. A price list on the wall. Every one of those is a number somebody typed once and now maintains by hand, and every one lies silently the moment a row changes.\n\nWHY PROOFREADING DOES NOT CATCH IT, which is the whole problem. A wrong total looks approximately right - $80.44 is in the neighborhood of $84.40, and the eye checks the shape of a number rather than its value. And nobody re-checks a number they typed themselves; the second read is reading your own earlier confidence. The real danger is not even the typo. It is the change: a price goes up, a rubric row gets reweighted, and the typed total stays exactly where it was, now confidently wrong.\n\nRULE 2 IS THE ONE THAT SURPRISES PEOPLE. Computers do not store decimal money exactly, so even a computed total can come out wrong-looking. The page shows real outputs rather than claiming it: 0.1 + 0.2 returns 0.30000000000000004, and 8.44 times 10 returns 84.39999999999999. Nobody loses money over four zeros and a one. What you lose is trust, in front of a class, when the board shows a number with a tail on it. The fix is one sentence: store money as a whole number of cents and divide only when you show it.\n\nAND THE ONE THAT CAUGHT ME: fractions typed as decimals. A board is three-quarters of an inch, not 0.75, and a shop runs on fractions - so does a recipe, a sewing pattern and a scale drawing. Keep the fraction the student sees, parse it for the arithmetic, and never make a child read a decimal of an inch because the software found it easier.\n\nSIX PLACES TO LOOK IN YOUR OWN MATERIALS, with what to do about each - including the one nobody expects to find, which is a figure that appears twice in one document. Only one copy ever gets updated, so if the two disagree you have just found out which one people actually read.\n\nAND IF YOU ASK AI TO HELP. It will happily add a column and it is often right. It is also perfectly willing to produce a total that is confidently wrong, in the same calm voice, and it will not tell you which kind of answer you just got. Ask it for the formula rather than the answer: a formula you can check in two seconds, a number you have to redo by hand.\n\nA FILL-IN PAGE to find one typed total in a document you already use, work it out again from the parts, and decide what you will change so it cannot happen twice. \"Be more careful\" is not an answer and will not survive August.\n\nWHERE IT COMES FROM. I teach high school woodshop and I built the software my own classes use. Both rules are in it because I got them wrong first, and the eighty-dollar total above is the mistake that caused the rewrite. Every figure printed on page 3 is real output, not an illustration.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Math"
+      ],
+      "tags": [
+        "teacher tools",
+        "free",
+        "professional development",
+        "math",
+        "classroom management",
+        "assessment"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "ntt_p2.png",
+        "ntt_p3.png",
+        "ntt_p4.png"
+      ],
+      "previewInside": [
+        "<b>The total is never typed - it is computed from the parts</b>",
+        "Why proofreading does not catch a wrong total",
+        "<b>Keep money in whole cents</b>, with the real outputs shown",
+        "Fractions typed as decimals, and what it costs a student",
+        "<b>Six places to look</b> in materials you already use",
+        "A fill-in page, so you leave having fixed one"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }

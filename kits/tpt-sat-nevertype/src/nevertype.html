@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Never Type a Total</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+.tick{display:inline-block;width:13pt;height:13pt;border:2pt solid var(--ink);border-radius:3pt;margin-right:5pt;vertical-align:-2pt}
+</style></head><body>
+<!-- ------------------------------------------------------------- 1 cover -->
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Free &middot; Making materials that stay correct</div>
+<h1>Never Type a Total</h1>
+<p class="lede">A course exemplar I had published read <b><code>10 x $8.44 = $80.44</code></b>. It is
+wrong by nearly four dollars. It sat there through my own proofreading and through a class of
+students, <b>because a printed number looks like a fact.</b></p>
+<div class="note"><b>The fix is not "check more carefully."</b><br>
+The fix is that <b>the total is never typed at all.</b> It is worked out from the parts every time
+it is shown, so the wrong number is not something you have to catch. It is something that cannot
+be written down.</div>
+<div class="card r"><h3>Where you already type totals</h3>
+<p class="small" style="margin:0">Answer keys. Points possible at the top of a test. A materials
+list with a cost at the bottom. A field trip letter home. A rubric that is supposed to add to 100.
+A price list on the wall. <b>Every one of those is a number somebody typed once and now has to
+maintain by hand</b>, and every one of them lies silently the moment a row changes.</p></div>
+<div class="card t"><h3>Two rules, and the second one surprises people</h3>
+<p class="small" style="margin-bottom:4pt"><b>1 &middot; Compute from the parts.</b> If a number can
+be worked out from other numbers on the page, it is never typed.</p>
+<p class="small" style="margin:0"><b>2 &middot; Keep money in whole cents.</b> Computers get decimal
+money wrong in a way that is genuinely surprising, and page 3 shows it happening rather than
+claiming it.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">I teach high school woodshop and I built the software my own
+classes use. <b>Both rules are in it because I got them wrong first</b>, and the eighty-dollar total
+above is the mistake that caused the rewrite.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 2 rule 1 -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Rule 1</div>
+<h2>Compute it from the parts, every time</h2>
+<p class="lede">The rule in one line: <b>if a number can be worked out from other numbers on the
+page, you do not type it.</b> Not into a document, not into a spreadsheet cell, not onto a poster.</p>
+<div class="card r"><h3>Why proofreading does not catch it, and this is the whole problem</h3>
+<p class="small" style="margin-bottom:4pt"><b>A wrong total looks approximately right.</b> $80.44 is
+in the neighborhood of $84.40. The eye checks the shape of a number, not its value, and a
+transposed digit keeps the shape.</p>
+<p class="small" style="margin:0"><b>And nobody re-checks a number they typed themselves.</b> You
+worked it out once, carefully, and from then on it is furniture. The second read is reading your own
+earlier confidence.</p></div>
+<div class="card"><h3>The part that actually bites, months later</h3>
+<p class="small" style="margin:0">The typo is not the real danger. <b>The real danger is the
+change.</b> A price goes up, a question gets dropped, a rubric row is reworded and reweighted. The
+parts move and <b>the typed total stays exactly where it was</b>, now confidently wrong, and nothing
+on the page indicates that anything happened.</p></div>
+<div class="card g"><h3>What this looks like with no software at all</h3>
+<p class="small" style="margin-bottom:4pt"><b>In a spreadsheet:</b> the total cell is a formula.
+Never a number. If you have ever typed a figure into a cell under a column of numbers, that is the
+habit this page is about.</p>
+<p class="small" style="margin-bottom:4pt"><b>In a document:</b> if the total cannot be a formula,
+<b>do not print it.</b> A materials list with no total is correct forever. A materials list with a
+stale total is worse than useless, because people trust it.</p>
+<p class="small" style="margin:0"><b>On a rubric:</b> state the weights, and let the points be the
+sum of the rows. The "out of 100" at the top is the single most commonly wrong number in a teacher's
+documents, and it is wrong because somebody reweighted a row in August.</p></div>
+<div class="note"><b>Build it so the wrong thing is impossible, rather than so that you are careful.</b><br>
+This is the same move as not having a box to type a student's name into, and the same move as giving
+every student a differently ordered test instead of policing copying. <b>You do not remember a rule.
+You remove the way to break it.</b></div>
+<div class="foot"><span>Never Type a Total &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 3 rule 2 -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Rule 2</div>
+<h2>Keep money in whole cents</h2>
+<p class="lede">Here is the part that catches people who did everything else right. <b>Computers do
+not store decimal money exactly</b>, so even a computed total can come out wrong-looking. These are
+real outputs, not an illustration.</p>
+<div class="prompt"><div class="lbl">What a computer actually returns</div>
+<pre>0.1 + 0.2                    <i>&rarr;</i> <b>0.30000000000000004</b>
+8.44 x 10                    <i>&rarr;</i> <b>84.39999999999999</b>
+1.10 x 3                     <i>&rarr;</i> <b>3.3000000000000003</b>
+2.35 + 1.10 + 0.95 + 4.04    <i>&rarr;</i> <b>8.440000000000001</b></pre></div>
+<div class="card r"><h3>Why this matters even though it is a tiny amount</h3>
+<p class="small" style="margin:0">Nobody loses money over four zeros and a one. <b>What you lose is
+trust</b>, in front of a class, when the board says $8.440000000000001 and thirty students decide the
+software is broken. And the moment you round it for display, you have two different numbers in the
+system and no rule about which one is real.</p></div>
+<div class="card t"><h3>The fix, and it is one sentence</h3>
+<p class="small" style="margin-bottom:4pt"><b>Store money as a whole number of cents and divide only
+when you show it.</b> $8.44 is 844. Ten of them is 8,440. Shown, that is $84.40, exactly, every
+time.</p>
+<p class="small" style="margin:0">The same four parts above, added as cents and divided at the end,
+give <b>8.44</b> with nothing after it. The arithmetic did not change. <b>What changed is that the
+rounding happens once, at the end, where you can see it.</b></p></div>
+<div class="card g"><h3>And the one that caught me: fractions typed as decimals</h3>
+<p class="small" style="margin:0">A shop runs on fractions, and so does a recipe, a sewing pattern
+and a scale drawing. <b>A board is three-quarters of an inch, not 0.75</b>, and the moment somebody
+retypes it as 0.75 you have lost the thing the student was supposed to read. Keep the fraction the
+student sees, <b>parse it for the arithmetic</b>, and never make a child read a decimal of an inch
+because the software found it easier.</p></div>
+<div class="note"><b>If you are not writing software, the same rule reads:</b><br>
+<b>round once, at the end, where somebody can see it happen.</b> Not in the middle of a column, not
+differently in two places, and never twice.</div>
+<div class="foot"><span>Never Type a Total &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------ 4 the audit -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">Twenty minutes, once</div>
+<h2>Six places to look, and what to do about each</h2>
+<p class="lede">Go through the materials you already use. <b>You are looking for numbers you typed
+that something else could work out.</b> This is quicker than it sounds and it rarely comes up empty.</p>
+<table>
+<thead><tr><th style="width:20pt">#</th><th>Where to look</th><th style="width:40%">What to do</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td><b>Points possible</b> at the top of a test or a rubric</td><td>Make it the sum of the rows, or delete it.</td></tr>
+<tr><td><b>2</b></td><td><b>Answer keys</b> where an answer is arithmetic on the question</td><td>Work every one again from the question, not from the key.</td></tr>
+<tr><td><b>3</b></td><td><b>Materials and supply lists</b> with a cost at the bottom</td><td>A formula, or no total at all.</td></tr>
+<tr><td><b>4</b></td><td><b>Letters home</b> quoting a price or a date count</td><td>Check against the source the day you send it.</td></tr>
+<tr><td><b>5</b></td><td><b>Anything you copied from last year</b></td><td>Every number in it is a year old. Treat it as unverified.</td></tr>
+<tr><td><b>6</b></td><td><b>A total that appears twice</b> in one document</td><td>Delete one of them. Two copies of a number is two chances to be wrong.</td></tr>
+</tbody></table>
+<div class="card r"><h3>The one nobody expects to find</h3>
+<p class="small" style="margin:0"><b>Row 6.</b> A figure in the body and the same figure in a summary
+box is the most reliable source of contradiction in any document, because only one of them ever gets
+updated. <b>If you find a document where the two disagree, you have found out which one people
+actually read.</b></p></div>
+<div class="card p"><h3>And if you ask AI to help with any of this</h3>
+<p class="small" style="margin:0">It will happily add a column for you and it is often right. <b>It
+is also perfectly willing to produce a total that is confidently wrong</b>, in the same calm voice,
+and it will not tell you which kind of answer you just got. <b>Ask it for the formula rather than
+the answer.</b> A formula you can check in two seconds; a number you have to redo by hand.</p></div>
+<div class="foot"><span>Never Type a Total &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 5 fill-in -->
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn &middot; one document</div>
+<h2>Find one typed total in something you already use</h2>
+<p class="small">Pick a document you hand out or hang up. Not your best one &mdash; an ordinary one
+you have used for more than a year, because age is what makes a typed total go wrong.</p>
+<div class="box"><h3>The document</h3><div class="wl"></div></div>
+<div class="box"><h3>The number I did not work out again</h3>
+<p class="small" style="margin-bottom:4pt">Write the number, and where on the page it sits.</p>
+<div class="wl"></div></div>
+<div class="box"><h3>Work it out from the parts now. What did you get?</h3>
+<div class="wl"></div>
+<p class="small" style="margin:0"><span class="tick"></span>They match &nbsp;
+<span class="tick"></span>They do not &nbsp; <span class="tick"></span>I cannot tell what the parts
+are, which is its own finding</p></div>
+<div class="box"><h3>What I am going to do so it cannot happen again</h3>
+<p class="small" style="margin-bottom:4pt">A formula, a deletion, or a note saying where the real
+number lives. <b>"Be more careful" is not an answer</b> and will not survive August.</p>
+<div class="wl"></div>
+<p class="small" style="margin:0"><b>And how long had it been wrong?</b> If the document was a copy
+from last year, the honest answer is a year.</p></div>
+<div class="card p"><h3>If you would rather the rule lived in a tool than in your memory</h3>
+<p class="small" style="margin:0">Our <b>Vibe Coding for Teachers</b> build-alongs hand you a working
+classroom tool you own outright, with your own content going in from a setup screen and no code to
+edit. <b>A total a tool computes is a total you never have to check again.</b> Search our store.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases, and reviews decide whether another teacher ever sees
+this. Every figure on page 3 is real output, not an illustration.</div>
+<div class="foot"><span>Never Type a Total &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>

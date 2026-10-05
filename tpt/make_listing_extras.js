@@ -364,6 +364,14 @@ const IMAGES = [
     'Rule 3: three things, not everything',
     'Eight questions for an AI tool you did not build',
   ], 'PDF')],
+  ['ntt-whats-inside', whatsInside('Free \u00b7', 'Never Type a Total', [
+    'The total is never typed - it is computed from the parts',
+    'Why proofreading does not catch a wrong total',
+    'Keep money in whole cents, with the real outputs shown',
+    'Fractions typed as decimals, and what it costs a student',
+    'Six places to look in materials you already use',
+    'A fill-in page, so you leave having fixed one',
+  ], 'PDF')],
   ['cpw-whats-inside', whatsInside('Free \u00b7', 'Make the Copy Worthless', [
     'Why detecting it is the wrong job, with the numbers',
     'Four moves, each with a before and an after',
