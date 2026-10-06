@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>How Do You Know It Works?</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+.tick{display:inline-block;width:13pt;height:13pt;border:2pt solid var(--ink);border-radius:3pt;margin-right:5pt;vertical-align:-2pt}
+</style></head><body>
+<!-- ------------------------------------------------------------- 1 cover -->
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Free &middot; Checking what AI built you</div>
+<h1>How Do You Know<br>It Works?</h1>
+<p class="lede">It is the first question a skeptical colleague asks about anything you built with
+AI, and <b>almost nobody can answer it.</b> "I clicked around and it seemed fine" is not an answer.
+Neither is "the AI said it was done."</p>
+<div class="note"><b>The answer is a list, and it fits on one sticky note.</b><br>
+Six cases that must be true. You write them down <i>once</i>, before you change anything, and you
+run them after every single change the AI makes. <b>That is the whole method</b>, and it is the
+difference between a tool you trust in front of thirty children and one you hope about.</div>
+<div class="card r"><h3>Why this matters more with AI than without it</h3>
+<p class="small" style="margin:0">When you build something yourself, you know which part you just
+touched. <b>When AI rewrites a file, you do not.</b> It will fix what you asked and quietly change
+three things you did not, in the same confident reply, and nothing in the conversation tells you
+which. <b>The list is how you find out</b> in ninety seconds instead of in front of a class.</p></div>
+<div class="card t"><h3>You do not need thirty test files</h3>
+<p class="small" style="margin:0">The software I run for my own high school woodshop course has
+thirty of them, covering money, fractions, board-foot math, scoring, placement, timing, resuming
+after a reload and safety. <b>You need six lines on paper.</b> The discipline is identical and the
+effort is not remotely comparable.</p></div>
+<div class="card p" style="margin-top:2pt"><h3>Inside, in five pages</h3>
+<p class="small" style="margin:0">The six checks worth writing down &middot; <b>why you test the
+refusals rather than the successes</b> &middot; the order that makes the list useful instead of
+decorative &middot; a worked list for a real tool, and the three things it caught &middot; and a
+fill-in page so you leave with your own.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<!-- -------------------------------------------------------- 2 the six -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The list</div>
+<h2>Six checks, and they cover almost everything</h2>
+<p class="lede">These are not six checks about <i>your</i> tool. They are the six <b>shapes</b> of
+thing that break, and almost every real bug in a small classroom tool is one of them.</p>
+<table>
+<thead><tr><th style="width:20pt">#</th><th>The check</th><th style="width:38%">What it catches</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td><b>The ordinary case.</b> One normal thing, done the normal way.</td><td>That it works at all. Run it first and never skip it.</td></tr>
+<tr><td><b>2</b></td><td><b>The empty case.</b> No names in the list, no questions typed, nothing chosen.</td><td>The crash on a Monday morning before you have put anything in.</td></tr>
+<tr><td><b>3</b></td><td><b>The last one.</b> The final item, the last seat, the thirtieth student.</td><td>Counting that is off by one, which is the single most common bug there is.</td></tr>
+<tr><td><b>4</b></td><td><b>The duplicate.</b> The same name twice, the same answer twice.</td><td>Two children called Jack. It will happen in September.</td></tr>
+<tr><td><b>5</b></td><td><b>The reload.</b> Close it, open it again, and look.</td><td>A tool that forgets. The difference between an app and a picture.</td></tr>
+<tr><td><b>6</b></td><td><b>The refusal.</b> Ask it to do the thing it should not allow.</td><td>The next page is about this one, because it is the one everybody skips.</td></tr>
+</tbody></table>
+<div class="card t"><h3>Make each one a sentence, not a category</h3>
+<p class="small" style="margin-bottom:4pt">"The empty case" is a reminder. <b>"Open it with no
+students in the list and press Shuffle &mdash; it should say the list is empty, not freeze"</b> is a
+check. The difference is that the second one has an answer, so somebody else could run it, and so
+could you in March when you have forgotten everything.</p>
+<p class="small" style="margin:0"><b>Write what should happen, not just what to do.</b> A check with
+no expected result is a thing you look at and then decide you are happy with.</p></div>
+<div class="card g"><h3>Six is the number for a reason</h3>
+<p class="small" style="margin:0">Long enough to catch the shapes above. <b>Short enough that you
+will actually run it</b> after a change you think is trivial, which is exactly when it earns its
+keep. A list of twenty gets run once and then admired.</p></div>
+<div class="foot"><span>How Do You Know It Works? &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ----------------------------------------------- 3 refusals and order -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The two habits</div>
+<h2>Test the refusals, not the successes</h2>
+<p class="lede">Everybody checks that the thing works. <b>Almost nobody checks that it stops.</b>
+And the refusals are what you need in front of a class, because that is where the embarrassment
+lives.</p>
+<div class="card r"><h3>What a refusal looks like in a classroom tool</h3>
+<p class="small" style="margin-bottom:4pt"><b>Selling the last one.</b> Stock reaches zero. Does the
+next tap say "sold out" or does it quietly sell a thing you do not have?</p>
+<p class="small" style="margin-bottom:4pt"><b>Booking a taken slot.</b> Does it say so, or does it
+look like it worked?</p>
+<p class="small" style="margin:0"><b>Deleting something that matters.</b> Does it ask first? Does it
+refuse outright? <b>"It just did it" is an answer you only get once.</b></p></div>
+<div class="card"><h3>And the refusal that is really a message</h3>
+<p class="small" style="margin:0">A tool that cannot do what you asked should <b>say which thing it
+could not do and why.</b> "Error" is not a refusal, it is a shrug. When AI writes you an error
+message, that message is a feature it wrote without being asked to think about &mdash; <b>read it,
+and make it say something a tired adult can act on.</b></p></div>
+<h2 style="margin-top:4pt">Write the check before you prompt</h2>
+<p class="small" style="margin-bottom:7pt">This is the habit that costs nothing and changes
+everything, and it is about order rather than effort.</p>
+<div class="step"><div class="n">1</div><div><h3>Decide what should be true afterward</h3>
+<p class="small" style="margin:0">One sentence, written down, <b>before</b> you type the prompt.
+"After this, booking a taken slot should say which slot and offer the next free one."</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Then prompt</h3>
+<p class="small" style="margin:0">Ask for the change. Let it do whatever it does.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Then run the whole list, not just the new bit</h3>
+<p class="small" style="margin:0">All six, every time. <b>The new thing usually works; it is checks
+two and five that have quietly stopped working</b>, and you would never have looked.</p></div></div>
+<div class="note"><b>Why the order matters more than it sounds.</b><br>
+If you decide what "worked" means <i>after</i> you see the result, you are not checking it. <b>You
+are being persuaded by it</b>, and a confident reply is very persuasive at half past four.</div>
+<div class="foot"><span>How Do You Know It Works? &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------ 4 worked example -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">A real one</div>
+<h2>A six-line list for a classroom store, and what it caught</h2>
+<p class="lede">A small tool that sells class-money items to students: a shelf, a price, a stock
+count, a running total. <b>Here is the whole list</b>, in the form a sentence with an expected
+result.</p>
+<div class="prompt"><div class="lbl">The list, on one sticky note</div>
+<pre><b>1</b> Sell one sticker. Total goes up by the sticker price, stock drops by one.
+<b>2</b> Open with an empty shelf. It says there is nothing to sell.
+   It does not show a blank screen.
+<b>3</b> Sell the last eraser. Stock shows zero.
+<b>4</b> Sell a second last eraser. <i>It refuses and says sold out.</i>
+<b>5</b> Add two items both called "pencil". Both still sell separately.
+<b>6</b> Close the tab, reopen. Shelf, stock and total are all still there.</pre></div>
+<div class="card r"><h3>What it caught, and none of these were visible by clicking around</h3>
+<p class="small" style="margin-bottom:4pt"><b>Check 4.</b> The last item sold, and then sold again,
+and the stock went to minus one. <b>The screen looked completely normal.</b></p>
+<p class="small" style="margin-bottom:4pt"><b>Check 6.</b> A later change moved where the total was
+kept, and the total stopped surviving a reload while everything else did. <b>Nothing about that
+change looked like it was near the total.</b></p>
+<p class="small" style="margin:0"><b>Check 2.</b> An empty shelf showed a blank white page, which
+is the version a teacher sees first, on the morning they open it before putting anything in. <b>The
+worst possible first impression, and the easiest to miss</b>, because you never open your own tool
+empty after the first day.</p></div>
+<div class="card t"><h3>Three bugs, six lines, about four minutes a run</h3>
+<p class="small" style="margin:0">That is the entire argument. <b>It is not thorough and it is not
+meant to be.</b> It is the cheapest thing that stops you finding out in front of a class.</p></div>
+<div class="foot"><span>How Do You Know It Works? &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 5 fill-in -->
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn &middot; six lines</div>
+<h2>Write the list for something you already use</h2>
+<p class="small">A tool you built, a spreadsheet you rely on, or one somebody handed you. Each line
+is <b>what you do</b> and <b>what should happen</b>. If you cannot say what should happen, that is
+the finding.</p>
+<p class="small" style="margin-bottom:6pt"><b>The thing I am checking:</b></p>
+<div class="wl"></div>
+<table>
+<thead><tr><th style="width:20pt">#</th><th>What I do</th><th style="width:40%">What should happen</th></tr></thead>
+<tbody>
+<tr><td><b>1</b><br><span class="small">ordinary</span></td><td style="height:27pt"></td><td></td></tr>
+<tr><td><b>2</b><br><span class="small">empty</span></td><td style="height:27pt"></td><td></td></tr>
+<tr><td><b>3</b><br><span class="small">the last one</span></td><td style="height:27pt"></td><td></td></tr>
+<tr><td><b>4</b><br><span class="small">duplicate</span></td><td style="height:27pt"></td><td></td></tr>
+<tr><td><b>5</b><br><span class="small">reload</span></td><td style="height:27pt"></td><td></td></tr>
+<tr><td><b>6</b><br><span class="small">refusal</span></td><td style="height:27pt"></td><td></td></tr>
+</tbody></table>
+<div class="box"><h3>Run it now. What failed?</h3>
+<p class="small" style="margin:0"><span class="tick"></span>Nothing &nbsp;
+<span class="tick"></span>One of them &nbsp; <span class="tick"></span>More than one</p></div>
+<div class="card p"><h3>If you want to watch this done with a whole staff</h3>
+<p class="small" style="margin:0">Our <b>Vibe Coding Staff PD</b> is a ready-to-run session with
+the full script, where every teacher leaves with a working tool they built. <b>"How do you know it
+works" is the question that session exists to answer.</b> Search our store.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases, and reviews decide whether another teacher sees
+this.</div>
+<div class="foot"><span>How Do You Know It Works? &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>

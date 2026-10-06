@@ -372,6 +372,14 @@ const IMAGES = [
     'Six places to look in materials you already use',
     'A fill-in page, so you leave having fixed one',
   ], 'PDF')],
+  ['hki-whats-inside', whatsInside('Free \u00b7', 'How Do You Know It Works?', [
+    'Six checks that fit on one sticky note',
+    'The empty case, the last one, the duplicate, the reload',
+    'Test the refusals, not the successes',
+    'Write the check before you prompt, and why order matters',
+    'A worked list for a real tool, and the three bugs it caught',
+    'A fill-in page, so you leave with your own six',
+  ], 'PDF')],
   ['cpw-whats-inside', whatsInside('Free \u00b7', 'Make the Copy Worthless', [
     'Why detecting it is the wrong job, with the numbers',
     'Four moves, each with a before and an after',

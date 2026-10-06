@@ -2975,3 +2975,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+HOW DO YOU KNOW IT WORKS?
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+know-it-works-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+How Do You Know It Works? | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free for teachers: how do you know it works is the first question a skeptical colleague asks about anything you built with AI, and almost nobody can answer it. The answer is a list that fits on one sticky note. Six cases that must be true, written down before you change anything and run after every single change. Inside: why this matters more with AI than without it, since a model will fix what you asked and quietly change three things you did not in the same confident reply; the six shapes that break, which are the ordinary case, the empty case, the last one, the duplicate, the reload and the refusal; why you test the refusals rather than the successes, because that is where the embarrassment lives; why you write the check before you prompt rather than after; a worked six-line list for a real classroom tool and the three bugs it caught that clicking around never would; and a fill-in page so you leave with your own. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: teacher tools · free · professional development   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

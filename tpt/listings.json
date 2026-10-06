@@ -2927,6 +2927,56 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "know-it-works",
+      "order": 70,
+      "name": "How Do You Know It Works?",
+      "product": "UPLOAD/01-free/how-do-you-know-it-works.pdf",
+      "cover": "tpt/covers/know-it-works-cover.png",
+      "thumbnails": [
+        "tpt/extras/hki-whats-inside.png"
+      ],
+      "title": "How Do You Know It Works? | Six Checks for Anything You Built With AI",
+      "description": "FREE. \"How do you know it works?\" is the first question a skeptical colleague asks about anything you built with AI, and almost nobody can answer it. \"I clicked around and it seemed fine\" is not an answer. Neither is \"the AI said it was done.\"\n\nTHE ANSWER IS A LIST, AND IT FITS ON ONE STICKY NOTE. Six cases that must be true. You write them down once, before you change anything, and you run them after every single change the AI makes. That is the whole method, and it is the difference between a tool you trust in front of thirty children and one you hope about.\n\nWHY THIS MATTERS MORE WITH AI THAN WITHOUT IT. When you build something yourself, you know which part you just touched. When AI rewrites a file, you do not. It will fix what you asked and quietly change three things you did not, in the same confident reply, and nothing in the conversation tells you which.\n\nTHE SIX CHECKS ARE SHAPES, NOT STEPS. The ordinary case, so you know it works at all. The empty case, which is the crash on a Monday morning before you have put anything in. The last one, which catches counting that is off by one. The duplicate, because there will be two children called Jack in September. The reload, which is the difference between an app and a picture. And the refusal, which is the one everybody skips.\n\nTEST THE REFUSALS, NOT THE SUCCESSES. Everybody checks that the thing works. Almost nobody checks that it stops - and the refusals are what you need in front of a class, because that is where the embarrassment lives. Selling the last one twice. Booking a slot somebody already has. Deleting something that mattered without asking. \"It just did it\" is an answer you only get once.\n\nAND WRITE THE CHECK BEFORE YOU PROMPT. One sentence saying what should be true afterward, written down BEFORE you type the prompt. If you decide what \"worked\" means after you see the result, you are not checking it - you are being persuaded by it, and a confident reply is very persuasive at half past four.\n\nA WORKED LIST FOR A REAL TOOL, and the three bugs it caught, none of which were visible by clicking around: an item that sold twice and took stock to minus one while the screen looked completely normal; a total that quietly stopped surviving a reload after a change that was nowhere near the total; and a blank white page on an empty shelf, which is the version a teacher sees first and the easiest to miss.\n\nA FILL-IN PAGE with the six shapes laid out, so you leave with a list for something you already rely on - and a space for what failed when you ran it.\n\nYOU DO NOT NEED THIRTY TEST FILES. The software I run for my own high school woodshop course has thirty of them, covering money, fractions, board-foot math, scoring, placement, timing, resuming after a reload and safety. You need six lines on paper. The discipline is identical and the effort is not remotely comparable.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Professional Development",
+        "Instructional Technology"
+      ],
+      "tags": [
+        "teacher tools",
+        "free",
+        "professional development",
+        "instructional technology",
+        "classroom management",
+        "critical thinking"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "hki_p2.png",
+        "hki_p3.png",
+        "hki_p4.png"
+      ],
+      "previewInside": [
+        "<b>Six checks that fit on one sticky note</b>",
+        "The empty case, the last one, the duplicate, the reload",
+        "<b>Test the refusals, not the successes</b>",
+        "Write the check before you prompt, and why order matters",
+        "<b>A worked list for a real tool, and the three bugs it caught</b>",
+        "A fill-in page, so you leave with your own six"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }
