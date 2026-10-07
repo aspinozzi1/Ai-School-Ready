@@ -392,6 +392,22 @@ Kits 1 and 2 are live at $24 with $10 licenses, which is not half; Kit 3 follows
 **Next Lane C slot:** none owed. A new PD (Session 4 or 5) is a two-Wednesday build and is not
 started; the brief for 2026-10-07 decides between that, a Lane A build-along, or a free.
 
+### Wednesday 2026-10-07 — Lane A, job 3 (not a PD)
+
+**Shipped as drop 71** (`vibe-seating`, order 71): "Vibe Coding for Teachers | The Seating Chart That
+Remembers the Term" (68 chars), **$12, license $6**, 6 tags. One zip (8-page PDF + `seating-chart.html`).
+Built to `tpt/intel/2026-10-04-sun-brief.md`, the Sunday build that never shipped. The brief's job-3 call stood:
+no PD started, because the Lane C keyword rows are still unrun. **Next Lane C slot:** unchanged, a new PD
+starts only on an owner instruction or usable Priority 1 rows.
+Browser-tested offline (Playwright, zero console errors): sample 24 seated with 5 charts of history, setup
+screen, parser naming blank/duplicate/"Surname, First"/full-name lines, drag in/out/swap and click-to-place,
+blocked cells never filled, Shuffle, avoid-repeats (5 runs on the sample, independently recounted: 0 repeats),
+forced failure naming the pairs (137 ms, no hang), more students than seats, mid-term add keeps history,
+two classes survive reload, flip, print (1 page, interface hidden), save then reopen in a clean profile,
+re-save leaves exactly one injected block, reset history asks first and keeps seating.
+Not tested: the four change-it prompts were not run through an AI tool (the pack says results vary).
+Classroomscreen figures re-verified on its pricing page 2026-10-07.
+
 ### Standing rules specific to Lane C
 
 - **Presentable cold.** The script is word for word and the deck matches it

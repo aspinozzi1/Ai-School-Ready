@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>The Seating Chart That Remembers the Term</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+</style></head><body>
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Vibe Coding for Teachers</div>
+<h1>The Seating Chart That Remembers the Term</h1>
+<p class="lede"><b>A seating chart that forgets the term is a picture, not a tool.</b> This one is a single file you
+double-click. It opens with a class of 24 already seated and a term of history behind it, and its
+<b>Shuffle, avoiding repeats</b> button seats your class so that nobody sits next to someone they have
+already sat next to &mdash; or tells you, by name, which pairs it could not keep apart.</p>
+<div class="row" style="margin:12pt 0">
+<div class="card t" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">1</h3><p class="small" style="margin:0">file, no install, no account, works with the wifi off</p></div>
+<div class="card" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">0</h3><p class="small" style="margin:0">network calls &mdash; your class list is never sent anywhere</p></div>
+<div class="card g" style="text-align:center"><h3 style="font-size:20pt;color:var(--blue)">4</h3><p class="small" style="margin:0">copy-and-paste prompts that change the tool itself</p></div>
+</div>
+<div class="note"><b>Unzip once.</b> Your download is one zip file. Unzip it and you will find this PDF and
+<code style="color:#fff">seating-chart.html</code>. Double-click the HTML file. That is the whole installation.</div>
+<div class="card r"><h3>Why it has to remember</h3>
+<p class="small" style="margin:0">Free chart makers are good at making a chart. None of them is a record of who
+sat where in October when you are deciding where they sit in February. This tool keeps that record on your
+own computer, uses it every time you reshuffle, and says so plainly when a small class has run out of new
+neighbors.</p></div>
+<div class="card p"><h3>What is in this pack</h3>
+<p class="small" style="margin:0">Ten minutes to your own class (p. 2) &middot; the feature the tool rests on
+(p. 3) &middot; rooms that are not grids (p. 4) &middot; four prompts that change the tool (p. 5) &middot;
+what goes wrong and the fix (p. 6) &middot; where your data lives (p. 7) &middot; the honest page, how this was
+built, and one favor (p. 8).</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 1</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">Start here</div><h2>Ten minutes, start to finish</h2>
+<p class="lede">Each step ends with something you can see. If you do not see it, stop and check that step.</p>
+<div class="step"><div class="n">1</div><div><h3>Unzip, then double-click <code>seating-chart.html</code></h3>
+<p class="small" style="margin:0"><b>You should see:</b> a chart of 24 first names in a 4-by-6 grid, and under it a list of
+who has sat next to whom. The class is invented sample data. Press <b>Shuffle, avoiding repeats</b> once to
+watch it work, then <b>Undo</b>.</p></div></div>
+<div class="step"><div class="n">2</div><div><h3>Press <b>Set up this class</b></h3>
+<p class="small" style="margin:0"><b>You should see:</b> the setup screen &mdash; class name, rows and columns, a clickable
+room, a box for names, and a button to start a new term. No code anywhere.</p></div></div>
+<div class="step"><div class="n">3</div><div><h3>Name the class and set the room</h3>
+<p class="small" style="margin:0">Type a name such as &ldquo;Period 3&rdquo;. Set rows and columns. <b>Click any cell
+that is not a seat</b> &mdash; your desk, a door, a cabinet. <b>You should see:</b> striped cells that will never receive a name.</p></div></div>
+<div class="step"><div class="n">4</div><div><h3>Put your first names in, one per line, and press <b>Update the class list</b></h3>
+<p class="small" style="margin:0">Paste from a spreadsheet column or type them. <b>You should see:</b> a count of
+names, and a list of every line it skipped and why &mdash; a blank line, a repeat, a &ldquo;Surname, First&rdquo; line.
+First names or initials only; page 7 says why.</p></div></div>
+<div class="step"><div class="n">5</div><div><h3>Press <b>Back to the chart</b>, then <b>Shuffle</b></h3>
+<p class="small" style="margin:0"><b>You should see:</b> every name seated, none in a striped cell. Drag a name onto
+another seat and the two swap. Or click a name, then click a seat.</p></div></div>
+<div class="step"><div class="n">6</div><div><h3>Press <b>Record this chart in the history</b>, then <b>Save to file</b></h3>
+<p class="small" style="margin:0"><b>You should see:</b> the history count go up, and a file download holding your class
+list, seating and history. Open that file next time, not the original.</p></div></div>
+<div class="prompt"><div class="lbl">Optional &mdash; have AI draft sample names to try it out</div>
+I teach a class of 24 students. Give me a list of 24 plausible first names for a class roster, one per line,
+nothing else on each line. No surnames. No numbering. No commentary.
+<p class="small" style="margin:6pt 0 0">The setup screen has a copy button and a box for the number. <b>Read the names
+before you use them: AI gets things wrong, and a drafted list is sample data, not your class.</b> Replace it with
+your real first names, typed or pasted from your own spreadsheet. Never paste your real list into a chatbot.</p></div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 2</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">The feature the tool rests on</div><h2>Shuffle, avoiding repeats</h2>
+<p class="lede">It reads the history, then seats your whole class so that, as far as the room allows, nobody sits
+beside or directly behind someone they have already sat beside this term.</p>
+<div class="card t"><h3>How the history is made</h3>
+<p class="small" style="margin:0">You press <b>Record this chart in the history</b> when a chart goes live. That stores the
+pairs side by side or front-to-back. Nothing records automatically, so a shuffle you did not like never counts.</p></div>
+<div class="card g"><h3>When it works</h3>
+<p class="small" style="margin:0">The message reads <i>&ldquo;Seated with no repeats: nobody is next to anyone they have already sat
+next to this term.&rdquo;</i> <b>Undo</b> brings back the old chart.</p></div>
+<div class="card r"><h3>When it cannot &mdash; and this is not a bug</h3>
+<p class="small">In a small class every pairing eventually exists. Then the tool does not pretend and does not hang. It seats everyone, then says:</p>
+<pre>Could not avoid 3 repeats. The grid and the history leave no way
+around it, so these pairs are next to each other again:
+  B &amp; A &mdash; sat together 1 time already
+  B &amp; D &mdash; sat together 1 time already
+  C &amp; D &mdash; sat together 1 time already</pre>
+<p class="small" style="margin:0"><b>What to do:</b> start a new term (<b>Reset the history</b>), accept the repeats it named,
+or add seats. That message is the most important line in the file, because software that says
+&ldquo;I could not&rdquo; is software you can trust when it says &ldquo;I did.&rdquo;</p></div>
+<div class="card"><h3>Two shuffles, two jobs</h3>
+<table><thead><tr><th style="width:36%">Button</th><th>What it does</th></tr></thead><tbody>
+<tr><td><b>Shuffle</b></td><td>Fills only empty seats. Nobody already seated moves.</td></tr>
+<tr><td><b>Shuffle, avoiding repeats</b></td><td>Reseats everyone, using the history. For a plain random chart, <b>Clear seats</b> then <b>Shuffle</b>.</td></tr>
+</tbody></table></div>
+<div class="card p"><h3>Task: make it refuse</h3>
+<p class="small" style="margin:0">Make a class of four names in a 2-by-2 room. Shuffle, avoiding repeats, record, and repeat. <b>You should see</b> the refusal above, with names, within a few presses.</p></div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 3</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">Real rooms</div><h2>Your room is not a grid</h2>
+<p class="lede">A rigid grid is the fastest way a seating tool gets abandoned. These are the five things real rooms do.</p>
+<div class="card"><h3>1. Pods, a horseshoe, a bank of computers</h3>
+<p class="small" style="margin:0">Click the cells that are not seats on the setup screen. A horseshoe is a grid with the middle
+blocked. Two pods are a grid with a column blocked between them. <b>Task:</b> block a whole column, press <b>Clear seats</b>, then <b>Shuffle</b>:
+the column stays empty and the tool names who did not fit.</p></div>
+<div class="card t"><h3>2. More students than seats</h3>
+<p class="small" style="margin:0">It will happen on day one. The tool seats who it can and names who did not fit:
+<i>&ldquo;Not enough seats for 2 students: D, C.&rdquo;</i> Nobody is silently dropped.</p></div>
+<div class="card g"><h3>3. A new student mid-term</h3>
+<p class="small" style="margin:0">Add the name on a new line in the class list and press <b>Update the class list</b>. The history, the
+layout and everyone else&rsquo;s seat are untouched. The new name appears under <b>Not seated yet</b>.</p></div>
+<div class="card p"><h3>4. Two charts for one class &mdash; a normal one and a test one</h3>
+<p class="small" style="margin:0">The class selector at the top holds one chart per entry. Use <b>Add another class</b>, call it
+&ldquo;Period 3 test&rdquo;, and give it the same names. Each keeps its own seating and history, and both survive closing the page.</p></div>
+<div class="card r"><h3>5. The printout is backwards</h3>
+<p class="small" style="margin:0">Whether a chart is drawn from the students&rsquo; side or yours is a real question. This tool prints
+which one it is, on the page, under the front-of-room bar. <b>Flip left and right</b> turns it around.
+<b>Task:</b> press Flip, then Print, and read the line under the chart.</p></div>
+<div class="note"><b>Print</b> gives one page: the class name, a front-of-the-room bar, and the names. No buttons, no history,
+no interface. Choose &ldquo;Save as PDF&rdquo; in the print window to keep a copy.</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 4</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">Make it yours</div><h2>Four prompts that change the tool itself</h2>
+<p class="lede">Each one changes one real thing, and each ends with a thirty-second test. <b>Work on the original file with the
+invented sample class &mdash; never on a file you have saved.</b> A saved file holds your class list, and your class list does not go
+into a chatbot. Page 7 explains.</p>
+<div class="prompt"><div class="lbl">Prompt 1 &mdash; a second row at the back</div>
+Below is a single-file HTML app, a classroom seating chart. Add a way to add one more row of desks at the back without
+losing anyone's seat, and make the new size persist. Return the complete file, changed in as few places as possible,
+and tell me which lines you changed. [paste the file]<br><b>Test:</b> a new row of empty seats appears; reload; it is still there.</div>
+<div class="prompt"><div class="lbl">Prompt 2 &mdash; color seats by how long since the student moved</div>
+Below is a single-file HTML app, a classroom seating chart that stores a list of recorded charts in its history. Color
+each seat by how many recorded charts that student has stayed in the same seat for: a cool color for one or two,
+a warm color for five or more. Add a one-line key. Return the complete file. [paste the file]<br><b>Test:</b> the sample class shows a mix of colors.</div>
+<div class="prompt"><div class="lbl">Prompt 3 &mdash; a keep-these-two-apart list</div>
+Below is a single-file HTML app, a classroom seating chart. Add a "Keep apart" list on the setup screen where I can enter pairs
+of first names. Make "Shuffle, avoiding repeats" honor it, and when it cannot, say so in plain words and name the pair
+instead of pretending. Return the complete file. [paste the file]<br><b>Test:</b> add two names as a pair, shuffle many times; they never touch. Then make it impossible and read the message.</div>
+<div class="prompt"><div class="lbl">Prompt 4 &mdash; the date on the print</div>
+Below is a single-file HTML app, a classroom seating chart. Put today's date under the class name on the printed page only,
+so a chart in a sub folder says when it was true. Return the complete file. [paste the file]<br><b>Test:</b> Print preview shows today's date; the screen does not.</div>
+<div class="card r" style="margin-top:2pt"><p class="small" style="margin:0"><b>Prompt 3 is the one to run in front of colleagues.</b>
+The honest answer &mdash; &ldquo;it could not&rdquo; &mdash; is the whole lesson about software. Save each result under a new name and keep the original.
+AI results differ every run; if a change breaks something, paste back the symptom and ask it to fix only that.</p></div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 5</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">When it goes wrong</div><h2>What actually breaks, and the fix</h2>
+<table><thead><tr><th style="width:30%">What you see</th><th>The fix</th></tr></thead><tbody>
+<tr><td>Chart is full but a name is missing</td><td>Check <b>Not seated yet</b>. A name is there only if there were fewer seats than students; the message names who.</td></tr>
+<tr><td>A name I typed was skipped</td><td>The setup screen lists each skipped line and why. Fix the line, press <b>Update the class list</b> again.</td></tr>
+<tr><td>Two students share a first name</td><td>Add an initial to each: <b>Ava B.</b> and <b>Ava R.</b> The tool treats identical names as duplicates on purpose.</td></tr>
+<tr><td>&ldquo;Could not avoid&rdquo; every time</td><td>Not a bug: the class has run out of new neighbors. Start a new term, accept the repeats it named, or add seats.</td></tr>
+<tr><td>I changed the grid and people vanished</td><td>Shrinking the room sends anyone in a removed row or column back to <b>Not seated yet</b>. Make the room bigger again and place them.</td></tr>
+<tr><td>It forgot everything after I cleared my browser data</td><td>That erases the browser&rsquo;s copy. Open the file you <b>Saved to file</b>. Save after every term-changing session.</td></tr>
+<tr><td>My saved file and the original disagree</td><td>Always open the saved file, never the original. Keep the original untouched as your template.</td></tr>
+<tr><td>Print shows a second page</td><td>Choose Letter, margins Default, and Scale 100 in the print window; a very tall room may need a smaller zoom.</td></tr>
+<tr><td>The chart is mirrored from how I stand</td><td>Press <b>Flip left and right</b> and read the line under the chart.</td></tr>
+<tr><td>Drag does nothing on my tablet</td><td>Click a name, then click a seat. It works without dragging.</td></tr>
+</tbody></table>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 6</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">Where your data lives</div><h2>First names, a term of history, and your own device</h2>
+<p class="lede">The tier is decided by <b>where the data lives and who can reach it</b>, not by whether names appear.</p>
+<table><thead><tr><th style="width:21%">Tier</th><th>For this tool</th></tr></thead><tbody>
+<tr><td><b>1 &mdash; build freely</b></td><td>The grid, the row and column counts, the blocked cells, the class name, the print layout. Nothing about a child.</td></tr>
+<tr><td><b>2 &mdash; your own device</b></td><td><b>The class list, the seating history, and any file you save.</b> First names of real children, held in this browser and in the file you save. Transmitted nowhere; no account exists; no server holds a copy.</td></tr>
+<tr><td><b>3 &mdash; stop</b></td><td>The same list in a shared drive, a cloud document, an email attachment, or pasted into a chatbot. <b>The moment it leaves your machine it is a different thing.</b></td></tr>
+</tbody></table>
+<div class="card t"><h3>Why first names or initials, with the reason</h3>
+<p class="small" style="margin:0">A chart has to be readable from the front of the room, and first names already do that. A surname adds nothing to the job and turns a classroom aid into something closer to a record.</p></div>
+<div class="card r"><h3>The history is the sensitive part, not the chart</h3>
+<p class="small" style="margin:0">A printed chart is ordinary. <b>A term of who-sat-next-to-whom is a small social record of a group of children.</b> Treat the saved file like a gradebook file: your machine, your business. Do not put it on a shared drive. Follow your own district&rsquo;s policy, which is the one that governs you.</p></div>
+<div class="card g"><h3>How you can tell nothing is uploaded &mdash; five seconds</h3>
+<p class="small" style="margin:0">Turn the wifi off and open the file. Everything works. There is no upload in it because there is no network call in it: you do not have to remember a rule, because the capability does not exist.</p></div>
+<div class="note"><b>The one place it leaves your machine is the AI prompts on page 5.</b> Those go to the AI tool with the
+<i>original file and its invented sample class</i>, never a saved file. Build it so the wrong thing is impossible rather than so that you are careful.</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 7</span></div>
+<div class="barb"></div></div>
+<div class="sheet"><div class="bar"></div><div class="kick">The honest page</div><h2>What this does not do, how it was built, and one favor</h2>
+<div class="card"><h3>If all you need is a chart, use a free one</h3>
+<p class="small" style="margin:0">Free seating-chart makers are more finished and look nicer, and some save charts to an account. Free tiers cap how many
+students you can seat. Classroomscreen&rsquo;s own pricing page lists &ldquo;Save three name lists&rdquo; on its free plan; Pro is $3 a month billed annually
+at $36, and adds &ldquo;Save unlimited name lists&rdquo;. If you only need a chart for the wall, keep your twelve dollars.
+<b>What is different here:</b> one file you own once, working with the wifi down, that cannot be switched off or repriced &mdash; and a term of memory.</p></div>
+<div class="card t"><h3>How this is built &mdash; and what we are not claiming</h3>
+<p class="small" style="margin:0">The tool is one HTML file written with an AI assistant. We drove it in a real browser, offline: opening, setup,
+pasting a list with a blank line, a repeat and a &ldquo;Surname, First&rdquo; line, dragging in, out and onto an occupied seat, blocked cells, both shuffles,
+forcing the refusal, two classes surviving a reload, print, save, and reopening the saved file in a clean browser profile.
+<b>We are not claiming</b> it is a security product, that it suits any district&rsquo;s data policy, that it works in every old browser, or that the four prompts
+produce the same result in every AI tool. It is a tool for one teacher&rsquo;s own device.</p></div>
+<div class="card p"><h3>What it does not do</h3>
+<p class="small" style="margin:0">It does not sync between computers. It does not know your students&rsquo; needs, so it will happily seat someone beside a
+person you would never pair; check every chart. It does not replace your judgment.</p></div>
+<div class="card g"><h3>License</h3>
+<p class="small" style="margin:0">One license is for one teacher. Other teachers in your building need their own; additional licenses are half price, and purchase orders go through TpT for Schools.</p></div>
+<div class="note"><b>One favor.</b> A short review is how other teachers find work like this, and TPT gives you credit toward future purchases for every review you leave. If something does not work in your room, please use the Q&amp;A first &mdash; we would rather fix it than leave you stuck.</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School &middot; p. 8</span></div>
+<div class="barb"></div></div>
+</body></html>

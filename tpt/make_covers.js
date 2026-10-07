@@ -372,6 +372,11 @@ const PRODUCTS = [
     title: 'The Locked Room', accent: 'A Digital Escape Room You Own',
     lede: 'Open the file and it works. Put your own clues in from a setup screen - a wrong answer jams the lock instead of ending anything.',
     chips: ['The game', '8 pages', '10 minutes', '$14'] },
+  { file: 'vibe-seating', badge: 'Vibe Coding for Teachers',
+    kicker: 'Any grade \u00b7 nothing leaves your computer',
+    title: 'The Seating Chart', accent: 'That Remembers the Term',
+    lede: 'A seating chart that forgets the term is a picture, not a tool. This one is a file you open, and it remembers.',
+    chips: ['The tool', '8 pages', 'Works offline', '$12'] },
 ];
 
 /* ---- school-accent layer (owner directive 2026-08-25): every Main Cover

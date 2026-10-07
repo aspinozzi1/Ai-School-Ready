@@ -2977,6 +2977,63 @@
       "previewUnit": "5 pages",
       "insideHeading": "What is inside",
       "filesBadge": "PDF"
+    },
+    {
+      "id": "vibe-seating",
+      "order": 71,
+      "name": "Vibe Coding - The Seating Chart That Remembers",
+      "product": "UPLOAD/02-paid/Vibe-Coding-The-Seating-Chart-That-Remembers.pdf",
+      "extraFiles": [
+        "UPLOAD/02-paid/seating-chart.html"
+      ],
+      "cover": "tpt/covers/vibe-seating-cover.png",
+      "thumbnails": [
+        "tpt/extras/sg-the-tool.png",
+        "tpt/extras/sg-setup.png",
+        "tpt/extras/sg-whats-inside.png",
+        "tpt/extras/sg-real-pages.png"
+      ],
+      "title": "Vibe Coding for Teachers | The Seating Chart That Remembers the Term",
+      "description": "Open the file. A class of 24 is already seated, with a term of history behind it. Press one button and it reseats everyone so that nobody sits next to someone they have already sat next to this term.\n\nA SEATING CHART THAT FORGETS THE TERM IS A PICTURE, NOT A TOOL. This one keeps the record on your own computer and uses it every time you reshuffle. When a small class has run out of new neighbors it does not pretend: it seats everyone and names the pairs it could not keep apart.\n\nNO CODE, AND NOTHING TO INSTALL. One HTML file that opens in the browser you already use. No account, no subscription, nothing to renew, and it runs with the wifi down. Your download is one zip: unzip it once and you have the PDF and the file.\n\nWHAT YOU CAN DO WITH IT. Set up a class from a screen built into the file: name, rows and columns, and a click on any cell that is not a seat - a door, your desk, a cabinet. Paste first names one per line and it tells you which lines it skipped and why. Drag a name into a seat, out again, or onto another seat to swap. Shuffle fills the empty seats; Shuffle, avoiding repeats reseats the whole class from the history. Keep a chart for every class, and a test chart for the same class. Print a clean one-page chart. Save the whole thing back as your own file.\n\nWHAT IT DOES WITH YOUR STUDENTS' NAMES: keeps them on your device and sends them nowhere. There is no upload in the file because there is no network call in the file. The pack names where the data lives, why a term of who-sat-next-to-whom is the sensitive part, and a five-second way to check for yourself.\n\nALSO IN THE EIGHT PAGES: ten minutes from opening it to your own class, what to do for pods and horseshoes, a new student mid-term, more students than seats, and a printout that comes out backwards; four copy-and-paste prompts that change the tool itself, each with a thirty-second test; and the fixes for what actually goes wrong.\n\nWHAT THIS IS NOT. It is not a replacement for the free chart makers online, which are more finished and look nicer; if all you need is a chart for the wall, use one of those. This one is a file you own, works offline, cannot be switched off, and remembers the term. It does not sync between computers and it does not know which students should never sit together, so check every chart.\n\nRUNNING THIS ACROSS A TEAM? Additional licenses are half price, and we accept purchase orders through TpT for Schools.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find work like this. If something in here does not work in your room, please use the Q&A first - we would rather fix it than leave you stuck with it.\n\nBuilt and audited by two certified teachers.",
+      "price": 12,
+      "licenses": 6,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "Classroom Management",
+        "Instructional Technology",
+        "For All Subject Areas"
+      ],
+      "tags": [
+        "seating chart",
+        "editable seating chart",
+        "vibe coding",
+        "classroom management",
+        "classroom seating chart",
+        "teacher tools"
+      ],
+      "formats": [
+        "PDF",
+        "HTML"
+      ],
+      "customCategory": "Vibe Coding for Teachers",
+      "previewShots": [
+        "sg_p2.png",
+        "sg_p3.png",
+        "sg_p5.png"
+      ],
+      "previewInside": [
+        "<b>Open the file and it works</b> - a class of 24 already seated, nothing to install",
+        "<b>Shuffle, avoiding repeats</b> - uses the whole term's history",
+        "When it cannot, it <b>names the pairs it had to repeat</b>",
+        "Blocked cells for doors, desks and pods; print one clean page",
+        "Four prompts that change the tool itself, each with a test",
+        "Where the data lives: your device, sent nowhere"
+      ],
+      "previewUnit": "8 pages + the tool",
+      "insideHeading": "What you do with it",
+      "filesBadge": "PDF + HTML"
     }
   ]
 }

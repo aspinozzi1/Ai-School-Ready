@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Seating Chart That Remembers the Term</title>
+<style>
+  :root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+        --cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#6B7C8C;--rule:#E3DCCD;--wash:#FFF8E8}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);
+       background:var(--cream);line-height:1.45;padding:14px}
+  #app{max-width:1100px;margin:0 auto}
+  header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+         border-bottom:4px solid var(--ink);padding-bottom:10px;margin-bottom:12px}
+  h1{font-size:clamp(20px,3.2vw,28px);line-height:1.1}
+  h1 small{display:block;font-size:13px;font-weight:600;color:var(--grey);margin-top:3px}
+  h2{font-size:15px;margin-bottom:6px}
+  button,select,input,textarea{font:inherit;color:inherit}
+  button{cursor:pointer;background:#fff;border:2.5px solid var(--ink);border-radius:10px;
+         padding:7px 12px;font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--sunny)}
+  button:hover:not(:disabled){transform:translate(-1px,-1px)}
+  button:disabled{opacity:.45;cursor:default;box-shadow:none}
+  button.go{background:var(--blue);color:#fff}
+  button.warn{background:#fff;border-color:var(--tomato);color:var(--tomato);box-shadow:3px 3px 0 var(--tomato)}
+  button.sm{padding:4px 9px;font-size:13px;box-shadow:2px 2px 0 var(--sunny)}
+  :focus-visible{outline:4px solid var(--sunny);outline-offset:2px}
+  .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  select{border:2.5px solid var(--ink);border-radius:10px;padding:7px 10px;background:#fff;font-weight:700}
+  .cols{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:start}
+  @media (max-width:760px){.cols{grid-template-columns:1fr}}
+  .panel{background:#fff;border:2.5px solid var(--ink);border-radius:13px;padding:11px 13px;
+         box-shadow:4px 4px 0 var(--teal)}
+  .panel.h{box-shadow:4px 4px 0 var(--grape)}
+  #pool{min-height:60px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip,.seat .nm{font-weight:700}
+  .chip{background:var(--wash);border:2px solid var(--ink);border-radius:99px;padding:4px 11px;
+        cursor:grab;font-size:14px;user-select:none}
+  .chip.sel,.seat.sel{outline:4px solid var(--sunny);outline-offset:1px}
+  #front{background:var(--ink);color:#fff;text-align:center;font-weight:800;font-size:12px;
+         letter-spacing:.14em;text-transform:uppercase;border-radius:8px;padding:5px;margin-bottom:8px}
+  #grid{display:grid;gap:7px}
+  .seat{min-height:54px;border:2.5px solid var(--ink);border-radius:10px;background:#fff;
+        display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;
+        font-size:15px;cursor:pointer;word-break:break-word}
+  .seat.empty{background:var(--wash);border-style:dashed;color:var(--grey);font-size:12px}
+  .seat.blocked{background:repeating-linear-gradient(45deg,#E9E4D6,#E9E4D6 6px,#F6F2E6 6px,#F6F2E6 12px);
+        border-color:var(--grey);cursor:default;color:var(--grey);font-size:11px}
+  .seat.over{background:#DFF6F5;border-color:var(--teal)}
+  .seat[draggable=true]{cursor:grab}
+  #msg{margin:10px 0 0;padding:9px 12px;border-radius:10px;border:2.5px solid var(--ink);background:#fff;
+       font-weight:600;min-height:42px}
+  #msg.good{border-color:var(--leaf);background:#EEF9F1}
+  #msg.bad{border-color:var(--tomato);background:#FFF1EC}
+  #msg ul{margin:5px 0 0 20px;font-weight:500}
+  .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+  #hist ul{list-style:none;columns:2;column-gap:20px;font-size:14px}
+  #hist li{break-inside:avoid;padding:2px 0}
+  .x{display:inline-block;background:var(--ink);color:#fff;border-radius:99px;padding:0 8px;
+     font-size:12px;font-weight:800;margin-left:5px}
+  .sub{font-size:13px;color:var(--grey)}
+  footer{margin-top:14px;font-size:13px;color:var(--grey);text-align:center}
+  /* setup */
+  #setup{display:none}
+  #setup.on{display:block}
+  #setup .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:760px){#setup .grid2{grid-template-columns:1fr}}
+  label{display:block;font-weight:700;font-size:14px;margin:8px 0 3px}
+  input[type=text],input[type=number],textarea{width:100%;border:2.5px solid var(--ink);
+        border-radius:9px;padding:7px 9px;background:#fff}
+  input[type=number]{width:90px}
+  textarea{min-height:190px;resize:vertical;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+  #aiPrompt{min-height:96px;background:var(--wash);font-size:13px}
+  #pv{display:grid;gap:5px;margin-top:6px;max-width:420px}
+  #pv button{padding:0;min-height:30px;border-width:2px;border-radius:7px;box-shadow:none;background:#fff;font-size:11px}
+  #pv button.blocked{background:repeating-linear-gradient(45deg,#CFC8B4,#CFC8B4 5px,#EDE8D8 5px,#EDE8D8 10px);
+        border-color:var(--ink)}
+  .why{background:var(--wash);border-left:5px solid var(--sunny);padding:7px 10px;border-radius:6px;
+       font-size:13px;margin-top:6px}
+  .dz{margin-top:14px;padding-top:10px;border-top:2.5px dashed var(--rule)}
+  .confirm{display:none;margin-top:8px;padding:9px 11px;border:2.5px solid var(--tomato);
+           border-radius:10px;background:#FFF1EC}
+  .confirm.on{display:block}
+  /* print */
+  #printArea{display:none}
+  @media print{
+    @page{margin:0.5in}
+    body{background:#fff;padding:0}
+    #app{display:none}
+    #printArea{display:block}
+    #printArea h1{font-size:26pt;margin-bottom:4pt}
+    #printArea .sub{font-size:11pt;color:#333;margin-bottom:10pt}
+    #printArea #pfront{background:#000;color:#fff;text-align:center;font-weight:800;letter-spacing:.14em;
+         font-size:11pt;padding:4pt;margin-bottom:8pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #printArea .pg{display:grid;gap:6pt}
+    #printArea .ps{border:1.5pt solid #000;border-radius:6pt;min-height:0.7in;display:flex;
+         align-items:center;justify-content:center;font-size:15pt;font-weight:700;text-align:center;padding:3pt}
+    #printArea .ps.blocked{border-style:dashed;background:#eee;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #printArea .ps.empty{border-style:dashed}
+  }
+</style>
+</head>
+<body>
+<div id="app">
+<header>
+  <h1>The Seating Chart That Remembers the Term<small>Bright Scholar &middot; AI-Ready School &middot; nothing on this page is sent anywhere</small></h1>
+  <div class="bar">
+    <label for="classSel" style="margin:0">Class</label>
+    <select id="classSel" aria-label="Class"></select>
+    <button id="setupBtn" class="go">Set up this class</button>
+  </div>
+</header>
+
+<main id="main">
+<div class="cols">
+  <div class="panel">
+    <h2>Not seated yet <span id="poolN" class="x">0</span></h2>
+    <div id="pool" aria-label="Students not yet in a seat"></div>
+    <p class="sub" style="margin-top:8px">Drag a name to a seat, or click a name and then a seat.</p>
+  </div>
+  <div>
+    <div class="panel" style="box-shadow:4px 4px 0 var(--sunny)">
+      <div id="front">Front of the room</div>
+      <div id="grid"></div>
+      <p class="sub" id="viewNote" style="margin-top:7px"></p>
+    </div>
+    <div class="actions">
+      <button id="shuf">Shuffle</button>
+      <button id="shufAvoid" class="go">Shuffle, avoiding repeats</button>
+      <button id="clr">Clear seats</button>
+      <button id="undo" disabled>Undo</button>
+      <button id="rec">Record this chart in the history</button>
+      <button id="flip">Flip left and right</button>
+      <button id="print">Print</button>
+      <button id="save">Save to file</button>
+    </div>
+    <div id="msg" role="status" aria-live="polite">Ready. This is a sample class &mdash; press <b>Set up this class</b> to put in your own.</div>
+  </div>
+</div>
+<div class="panel h" id="hist" style="margin-top:14px">
+  <h2>Who has sat next to whom this term</h2>
+  <p class="sub" id="histSum"></p>
+  <ul id="histList"></ul>
+  <p class="sub" style="margin-top:6px">Next to means side by side or one directly in front of the other. The history grows only when you press <b>Record this chart in the history</b>.</p>
+</div>
+</main>
+
+<section id="setup" class="panel" aria-label="Set up this class">
+  <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center">
+    <h2 style="font-size:19px">Set up this class</h2>
+    <button id="doneBtn" class="go">Back to the chart</button>
+  </div>
+  <div class="grid2">
+    <div>
+      <label for="sName">1. Class name</label>
+      <input type="text" id="sName" maxlength="40">
+      <label>2. The room: rows and columns</label>
+      <span class="sub">Rows</span> <input type="number" id="sRows" min="1" max="10">
+      <span class="sub">Columns</span> <input type="number" id="sCols" min="1" max="12">
+      <label>3. Seats that are not seats &mdash; click a cell to block it</label>
+      <p class="sub">A door, your desk, a cabinet, the gap between two pods. Blocked cells never get a name, not even from Shuffle.</p>
+      <div id="pv"></div>
+      <div class="dz">
+        <label>5. Start a new term</label>
+        <p class="sub">Clears the who-sat-next-to-whom history. The seating and the class list stay.</p>
+        <button id="resetH" class="warn" style="margin-top:6px">Reset the history&hellip;</button>
+        <div class="confirm" id="resetC"><b id="resetT"></b><div style="margin-top:7px;display:flex;gap:8px">
+          <button id="resetYes" class="warn">Yes, reset the history</button><button id="resetNo">Cancel</button></div></div>
+        <p style="margin-top:10px"><button id="newClass">Add another class</button>
+        <button id="delClass" class="warn">Delete this class&hellip;</button></p>
+        <div class="confirm" id="delC"><b id="delT"></b><div style="margin-top:7px;display:flex;gap:8px">
+          <button id="delYes" class="warn">Yes, delete it</button><button id="delNo">Cancel</button></div></div>
+      </div>
+    </div>
+    <div>
+      <label for="sNames">4. The class list &mdash; one first name per line</label>
+      <div class="why"><b>First names or initials only, and here is why.</b> A seating chart has to be readable from the front of the room, and a first name already does that. A surname adds nothing to the job and turns a classroom aid into something closer to a record. Two Avas? Add an initial: Ava B. and Ava R.</div>
+      <textarea id="sNames" spellcheck="false" aria-label="Class list, one first name per line"></textarea>
+      <div class="actions" style="margin-top:7px"><button id="loadNames" class="go">Update the class list</button></div>
+      <div id="parseMsg" class="sub" style="margin-top:6px" role="status" aria-live="polite"></div>
+      <label for="aiN">Want AI to draft sample names?</label>
+      <span class="sub">How many</span> <input type="number" id="aiN" min="1" max="60" value="24">
+      <textarea id="aiPrompt" readonly aria-label="Prompt to copy"></textarea>
+      <div class="actions" style="margin-top:6px"><button id="copyP" class="sm">Copy the prompt</button></div>
+      <div class="why"><b>Read them before you use them.</b> AI gets things wrong, and a drafted list is sample data, not your class. Replace it with your real first names. Your real list is never to be pasted into a chatbot.</div>
+    </div>
+  </div>
+</section>
+<footer>This file makes no network calls &mdash; there is no upload in it because there is no way to upload. Your class list and history live in this browser, and in any file you save.</footer>
+</div>
+
+<div id="printArea" aria-hidden="true">
+  <h1 id="pTitle"></h1><div class="sub" id="pSub"></div>
+  <div id="pfront">FRONT OF THE ROOM</div><div class="pg" id="pGrid"></div>
+</div>
+
+<script>
+'use strict';
+/* ---- state ------------------------------------------------------------ */
+var KEYP='seatingchart.v1.', MARK='SEATING-CHART-DATA';
+var S=null, SEL=null, UNDO=null, PRISTINE='';
+var $=function(id){return document.getElementById(id);};
+function clone(o){return JSON.parse(JSON.stringify(o));}
+function K(r,c){return r+','+c;}
+
+/* the sample: 24 invented first names, a 6-by-4 room, and five earlier charts */
+function sample(){
+  var names=['Ava','Ben','Cleo','Dev','Elena','Finn','Gia','Hugo','Iris','Jonah','Kira','Leo',
+             'Mina','Noah','Opal','Pablo','Quinn','Rosa','Sami','Tess','Uri','Vera','Wes','Zoe'];
+  var rows=4, cols=6, seed=7;
+  function rnd(){seed=(seed*1103515245+12345)&0x7fffffff;return seed/0x7fffffff;}
+  function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  var hist=[], dates=['2026-08-24','2026-09-07','2026-09-21','2026-09-28','2026-10-05'], seats;
+  for(var h=0;h<5;h++){
+    var order=shuf(names); seats={};
+    for(var i=0;i<order.length;i++) seats[K(Math.floor(i/cols),i%cols)]=order[i];
+    hist.push({d:dates[h],pairs:pairsOf(seats,rows,cols,{})});
+  }
+  return {id:'sample-v1',rev:0,current:'Period 3 (sample)',classes:{'Period 3 (sample)':
+    {rows:rows,cols:cols,blocked:[],roster:names,seats:seats,flip:false,history:hist}}};
+}
+function cur(){return S.classes[S.current];}
+
+/* ---- neighbours and history -------------------------------------------- */
+function pairsOf(seats,rows,cols,blockedSet){
+  var out=[];
+  for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
+    var a=seats[K(r,c)]; if(!a) continue;
+    var n=[[r,c+1],[r+1,c]];
+    for(var i=0;i<n.length;i++){var b=seats[K(n[i][0],n[i][1])]; if(b) out.push(a<b?[a,b]:[b,a]);}
+  }
+  return out;
+}
+function pk(a,b){return a<b?a+'|'+b:b+'|'+a;}
+function counts(cl){
+  var m={}; cl.history.forEach(function(e){e.pairs.forEach(function(p){var k=pk(p[0],p[1]);m[k]=(m[k]||0)+1;});});
+  return m;
+}
+function seatedMap(cl){return cl.seats;}
+
+/* ---- persistence -------------------------------------------------------- */
+function persist(){
+  S.rev=Date.now();
+  try{localStorage.setItem(KEYP+S.id,JSON.stringify(S));}catch(e){}
+}
+function load(){
+  var emb=window.MY_CHART||null, base=emb||sample(), kept=null;
+  try{kept=JSON.parse(localStorage.getItem(KEYP+base.id)||'null');}catch(e){}
+  S = (kept&&kept.rev>(base.rev||0)&&kept.classes&&kept.classes[kept.current])?kept:base;
+}
+
+/* ---- messages ----------------------------------------------------------- */
+function say(kind,text,list){
+  var m=$('msg'); m.className=kind||''; m.textContent=text;
+  if(list&&list.length){var u=document.createElement('ul');
+    list.forEach(function(t){var li=document.createElement('li');li.textContent=t;u.appendChild(li);}); m.appendChild(u);}
+}
+
+/* ---- drawing ------------------------------------------------------------ */
+function unseated(cl){
+  var on={}; Object.keys(cl.seats).forEach(function(k){on[cl.seats[k]]=1;});
+  return cl.roster.filter(function(n){return !on[n];});
+}
+function view(cl){ return cl.flip?'Seen from the front of the room, looking at the class.':'Seen from the back of the room, looking toward the front.'; }
+function colAt(cl,c){return cl.flip?cl.cols-1-c:c;}
+function render(){
+  var cl=cur(), sel=$('classSel');
+  sel.innerHTML=''; Object.keys(S.classes).forEach(function(n){var o=document.createElement('option');o.value=o.textContent=n;if(n===S.current)o.selected=true;sel.appendChild(o);});
+  var g=$('grid'); g.innerHTML=''; g.style.gridTemplateColumns='repeat('+cl.cols+',minmax(0,1fr))';
+  var bl={}; cl.blocked.forEach(function(k){bl[k]=1;});
+  for(var r=0;r<cl.rows;r++)for(var vc=0;vc<cl.cols;vc++){
+    var c=colAt(cl,vc), key=K(r,c), d=document.createElement('div'); d.className='seat'; d.dataset.key=key;
+    if(bl[key]){d.className+=' blocked';d.textContent='not a seat';d.dataset.blocked='1';}
+    else{
+      var n=cl.seats[key];
+      if(n){d.dataset.name=n;d.draggable=true;var s=document.createElement('span');s.className='nm';s.textContent=n;d.appendChild(s);
+        d.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain','seat:'+this.dataset.key);e.dataTransfer.effectAllowed='move';});}
+      else{d.className+=' empty';d.textContent='empty';}
+      d.addEventListener('dragover',function(e){e.preventDefault();this.classList.add('over');});
+      d.addEventListener('dragleave',function(){this.classList.remove('over');});
+      d.addEventListener('drop',function(e){e.preventDefault();this.classList.remove('over');
+        var v=e.dataTransfer.getData('text/plain'); if(v) move(v,this.dataset.key);});
+      d.addEventListener('click',function(){clickSeat(this.dataset.key);});
+      if(SEL&&SEL===('seat:'+key)) d.className+=' sel';
+      d.setAttribute('role','button'); d.setAttribute('tabindex','0');
+      d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();clickSeat(this.dataset.key);}});
+    }
+    g.appendChild(d);
+  }
+  var p=$('pool'); p.innerHTML=''; var un=unseated(cl); $('poolN').textContent=un.length;
+  un.forEach(function(n){var c=document.createElement('span');c.className='chip';c.textContent=n;c.draggable=true;c.dataset.name=n;
+    c.tabIndex=0;c.setAttribute('role','button');
+    if(SEL==='chip:'+n)c.className+=' sel';
+    c.addEventListener('dragstart',function(e){e.dataTransfer.setData('text/plain','chip:'+this.dataset.name);});
+    c.addEventListener('click',function(){SEL=(SEL==='chip:'+this.dataset.name)?null:'chip:'+this.dataset.name;render();});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+    p.appendChild(c);});
+  if(!un.length) p.innerHTML='<span class="sub">Everyone is seated.</span>';
+  p.ondragover=function(e){e.preventDefault();};
+  p.ondrop=function(e){e.preventDefault();var v=e.dataTransfer.getData('text/plain'); if(v&&v.indexOf('seat:')===0) unseat(v.slice(5));};
+  $('viewNote').textContent=view(cl)+' Top of the chart is the front of the room.';
+  renderHist(); $('undo').disabled=!UNDO;
+}
+function renderHist(){
+  var cl=cur(), m=counts(cl), on={}, keys;
+  cl.roster.forEach(function(x){on[x]=1;});
+  keys=Object.keys(m).filter(function(k){var p=k.split('|');return on[p[0]]&&on[p[1]];});
+  var n=cl.roster.length, possible=n*(n-1)/2;
+  $('histSum').textContent=cl.history.length+' chart'+(cl.history.length===1?'':'s')+' recorded'+
+    (cl.history.length?' ('+cl.history[0].d+' to '+cl.history[cl.history.length-1].d+')':'')+'. '+
+    keys.length+' of '+possible+' possible pairs have sat together.';
+  var l=$('histList'); l.innerHTML='';
+  keys.sort(function(a,b){return m[b]-m[a]||(a<b?-1:1);}).slice(0,12).forEach(function(k){
+    var li=document.createElement('li'),p=k.split('|');li.textContent=p[0]+' & '+p[1];
+    var x=document.createElement('span');x.className='x';x.textContent='×'+m[k];li.appendChild(x);l.appendChild(li);});
+  if(!keys.length){var li=document.createElement('li');li.textContent='Nothing recorded yet.';l.appendChild(li);}
+}
+
+/* ---- moving names ------------------------------------------------------- */
+function snap(){UNDO=clone(cur().seats);}
+function nameOf(src,cl){return src.indexOf('chip:')===0?src.slice(5):cl.seats[src.slice(5)];}
+function move(src,toKey){
+  var cl=cur(); if(cl.blocked.indexOf(toKey)>=0) return;
+  var name=nameOf(src,cl); if(!name) return;
+  snap(); SEL=null;
+  var other=cl.seats[toKey];
+  if(src.indexOf('seat:')===0){
+    var from=src.slice(5); if(from===toKey){render();return;}
+    if(other){cl.seats[from]=other; say('good',name+' and '+other+' swapped seats.');}
+    else{delete cl.seats[from]; say('good',name+' moved.');}
+    cl.seats[toKey]=name;
+  }else{
+    cl.seats[toKey]=name;
+    say('good',other?name+' is seated. '+other+' went back to the list.':name+' is seated.');
+  }
+  persist(); render();
+}
+function unseat(key){var cl=cur(),n=cl.seats[key]; if(!n) return; snap(); delete cl.seats[key]; SEL=null; say('good',n+' went back to the list.'); persist(); render();}
+function clickSeat(key){
+  var cl=cur();
+  if(SEL){ if(SEL==='seat:'+key){SEL=null;render();return;} move(SEL,key); return; }
+  if(cl.seats[key]){SEL='seat:'+key;render();}
+}
+
+/* ---- shuffles ----------------------------------------------------------- */
+function freeSeats(cl){
+  var out=[]; for(var r=0;r<cl.rows;r++)for(var c=0;c<cl.cols;c++){var k=K(r,c); if(cl.blocked.indexOf(k)<0) out.push(k);} return out;
+}
+function randShuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function leftOut(names){return names.length?' Not enough seats for '+names.length+' student'+(names.length===1?'':'s')+': '+names.join(', ')+'. Add seats in Set up this class, or unblock a cell.':'';}
+function plainShuffle(){
+  var cl=cur(), empties=freeSeats(cl).filter(function(k){return !cl.seats[k];}), pool=randShuf(unseated(cl));
+  if(!cl.roster.length){say('bad','There is no class list yet. Press Set up this class and add names.');return;}
+  if(!pool.length){say('bad','Everyone is already seated. Use Clear seats first, or Shuffle, avoiding repeats to reseat the whole class.');return;}
+  snap(); empties=randShuf(empties); var n=Math.min(empties.length,pool.length);
+  for(var i=0;i<n;i++) cl.seats[empties[i]]=pool[i];
+  var rest=pool.slice(n);
+  say(rest.length?'bad':'good','Filled '+n+' empty seat'+(n===1?'':'s')+'.'+leftOut(rest));
+  persist(); render();
+}
+function avoidShuffle(){
+  var cl=cur(), seats=freeSeats(cl), names=cl.roster.slice();
+  if(!names.length){say('bad','There is no class list yet. Press Set up this class and add names.');return;}
+  if(!seats.length){say('bad','There are no usable seats. Unblock a cell in Set up this class.');return;}
+  var m=counts(cl), idx={}; seats.forEach(function(k,i){idx[k]=i;});
+  var edges=[]; seats.forEach(function(k){var p=k.split(','),r=+p[0],c=+p[1];
+    [[r,c+1],[r+1,c]].forEach(function(q){var kk=K(q[0],q[1]); if(kk in idx) edges.push([idx[k],idx[kk]]);});});
+  function cost(a){var t=0;for(var i=0;i<edges.length;i++){var x=a[edges[i][0]],y=a[edges[i][1]]; if(x&&y) t+=(m[pk(x,y)]||0);}return t;}
+  var best=null,bestC=Infinity,TRIES=12,STEPS=4000;
+  for(var t=0;t<TRIES&&bestC>0;t++){
+    var pick=randShuf(names).slice(0,seats.length), a=pick.slice(); while(a.length<seats.length)a.push(null);
+    a=randShuf(a); var c0=cost(a);
+    for(var s=0;s<STEPS&&c0>0;s++){
+      var i=Math.floor(Math.random()*a.length), j=Math.floor(Math.random()*a.length); if(i===j) continue;
+      var tmp=a[i];a[i]=a[j];a[j]=tmp; var c1=cost(a);
+      if(c1<=c0) c0=c1; else {tmp=a[i];a[i]=a[j];a[j]=tmp;}
+    }
+    if(c0<bestC){bestC=c0;best=a.slice();}
+  }
+  snap(); cl.seats={}; best.forEach(function(n,i){if(n) cl.seats[seats[i]]=n;});
+  var seated={}; best.forEach(function(n){if(n)seated[n]=1;});
+  var out=names.filter(function(n){return !seated[n];});
+  var reps=[]; edges.forEach(function(e){var x=best[e[0]],y=best[e[1]]; if(x&&y&&m[pk(x,y)]) reps.push(x+' & '+y+' — sat together '+m[pk(x,y)]+' time'+(m[pk(x,y)]===1?'':'s')+' already');});
+  var head, list=null;
+  if(!reps.length) head='Seated with no repeats: nobody is next to anyone they have already sat next to this term.';
+  else{head='Could not avoid '+reps.length+' repeat'+(reps.length===1?'':'s')+'. The grid and the history leave no way around it, so these pairs are next to each other again:';
+       list=reps.slice(0,10); if(reps.length>10) list.push('and '+(reps.length-10)+' more');}
+  say(reps.length||out.length?'bad':'good',head+leftOut(out),list);
+  persist(); render();
+}
+
+/* ---- the other buttons --------------------------------------------------- */
+$('shuf').onclick=plainShuffle;
+$('shufAvoid').onclick=avoidShuffle;
+$('clr').onclick=function(){var cl=cur(); if(!Object.keys(cl.seats).length){say('','The chart is already empty.');return;} snap(); cl.seats={}; SEL=null; say('good','Seats cleared. The history is untouched.'); persist(); render();};
+$('undo').onclick=function(){if(!UNDO)return; cur().seats=UNDO; UNDO=null; say('good','Undone.'); persist(); render();};
+$('flip').onclick=function(){var cl=cur(); cl.flip=!cl.flip; say('good',view(cl)); persist(); render();};
+$('rec').onclick=function(){
+  var cl=cur(), p=pairsOf(cl.seats,cl.rows,cl.cols,{}), last=cl.history[cl.history.length-1];
+  if(!p.length){say('bad','Nothing to record: no two students are seated next to each other.');return;}
+  if(last&&JSON.stringify(last.pairs)===JSON.stringify(p)){say('','This chart is already the latest one in the history.');return;}
+  var d=new Date(), iso=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+  cl.history.push({d:iso,pairs:p}); say('good','Recorded. The history now has '+cl.history.length+' charts.'); persist(); render();
+};
+$('print').onclick=function(){
+  var cl=cur(); $('pTitle').textContent=S.current;
+  $('pSub').textContent=view(cl)+' Top of the chart is the front of the room.';
+  var g=$('pGrid'); g.innerHTML=''; g.style.gridTemplateColumns='repeat('+cl.cols+',1fr)';
+  for(var r=0;r<cl.rows;r++)for(var vc=0;vc<cl.cols;vc++){var k=K(r,colAt(cl,vc)),d=document.createElement('div'); d.className='ps';
+    if(cl.blocked.indexOf(k)>=0){d.className+=' blocked';} else if(cl.seats[k]) d.textContent=cl.seats[k]; else d.className+=' empty';
+    g.appendChild(d);}
+  window.print();
+};
+
+/* ---- save to file --------------------------------------------------------- */
+$('save').onclick=function(){
+  var src=PRISTINE||document.documentElement.outerHTML;
+  var clean=src.replace(new RegExp('<!--'+MARK+'-->[\\s\\S]*?<!--\\/'+MARK+'-->','g'),'');
+  S.rev=Date.now(); if(S.id==='sample-v1') S.id='mine-'+S.rev.toString(36);
+  persist();
+  var inject='<!--'+MARK+'--><script>window.MY_CHART='+JSON.stringify(S).replace(/<\//g,'<\\/')+';<\/script><!--/'+MARK+'-->';
+  var END='<\/bo'+'dy>', at=clean.lastIndexOf(END);
+  var html='<!DOCTYPE html>\n'+clean.slice(0,at)+inject+'\n'+clean.slice(at);
+  var name=('seating-chart-'+S.current).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,50);
+  var url=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  var a=document.createElement('a'); a.href=url; a.download=name+'.html'; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url);},4000);
+  say('good','Saved as '+name+'.html, wherever your browser puts downloads. It holds the class list, the seating and the whole history, so treat it like a gradebook file: keep it on your own computer.');
+};
+
+/* ---- the class selector ------------------------------------------------------ */
+$('classSel').onchange=function(){S.current=this.value; SEL=null; UNDO=null; say('','Switched to '+S.current+'.'); persist(); render();};
+
+/* ---- set up -------------------------------------------------------------------- */
+function parseNames(text){
+  var lines=text.split(/\r?\n/), ok=[], skipped=[], seen={};
+  lines.forEach(function(raw,i){
+    var t=raw.trim().replace(/\s+/g,' '), ln='Line '+(i+1)+': ';
+    if(!t){ if(i<lines.length-1||raw.length) skipped.push(ln+'blank, skipped.'); return; }
+    if(t.indexOf(',')>=0){skipped.push(ln+'"'+t+'" looks like "Surname, First". Type the first name only.');return;}
+    if(t.split(' ').length>2){skipped.push(ln+'"'+t+'" looks like a full name. First name or initials only.');return;}
+    if(t.length>20){skipped.push(ln+'"'+t.slice(0,20)+'…" is too long for a first name.');return;}
+    var low=t.toLowerCase();
+    if(seen[low]){skipped.push(ln+'"'+t+'" is already on the list. Add an initial to tell two apart, like "'+t.charAt(0).toUpperCase()+t.slice(1)+' B.".');return;}
+    seen[low]=1; ok.push(t);
+  });
+  return {ok:ok,skipped:skipped};
+}
+function pvDraw(){
+  var cl=cur(), p=$('pv'); p.innerHTML=''; p.style.gridTemplateColumns='repeat('+cl.cols+',minmax(0,1fr))';
+  for(var r=0;r<cl.rows;r++)for(var c=0;c<cl.cols;c++){(function(r,c){
+    var k=K(r,c), b=document.createElement('button'), blk=cl.blocked.indexOf(k)>=0;
+    b.className=blk?'blocked':''; b.textContent=blk?'X':''; b.setAttribute('aria-pressed',blk); b.setAttribute('aria-label','Row '+(r+1)+', column '+(c+1)+(blk?', blocked':', seat'));
+    b.dataset.key=k;
+    b.onclick=function(){var i=cl.blocked.indexOf(k);
+      if(i>=0) cl.blocked.splice(i,1); else {cl.blocked.push(k); if(cl.seats[k]){delete cl.seats[k];}}
+      persist(); pvDraw(); render();};
+    p.appendChild(b);})(r,c);}
+}
+function fillSetup(){
+  var cl=cur(); $('sName').value=S.current; $('sRows').value=cl.rows; $('sCols').value=cl.cols;
+  $('sNames').value=cl.roster.join('\n'); $('parseMsg').textContent='';
+  aiText(); pvDraw();
+  $('resetC').classList.remove('on'); $('delC').classList.remove('on'); $('delClass').disabled=Object.keys(S.classes).length<2;
+}
+function aiText(){
+  var n=Math.max(1,Math.min(60,parseInt($('aiN').value,10)||24));
+  $('aiPrompt').value='I teach a class of '+n+' students. Give me a list of '+n+' plausible first names for a class roster, one per line, nothing else on each line. No surnames. No numbering. No commentary.';
+}
+$('aiN').oninput=aiText;
+$('copyP').onclick=function(){
+  var t=$('aiPrompt'); t.select();
+  var done=function(){say('good','Prompt copied. Paste it into your AI tool, then read the names before you use them.');$('parseMsg').textContent='Prompt copied.';};
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(done,function(){document.execCommand('copy');done();});
+  else{try{document.execCommand('copy');}catch(e){} done();}
+};
+function openSetup(){fillSetup(); $('main').style.display='none'; $('setup').classList.add('on'); window.scrollTo(0,0); $('sName').focus();}
+function closeSetup(){$('setup').classList.remove('on'); $('main').style.display=''; render();}
+$('setupBtn').onclick=openSetup; $('doneBtn').onclick=closeSetup;
+function resize(){
+  var cl=cur(), r=Math.max(1,Math.min(10,parseInt($('sRows').value,10)||cl.rows)), c=Math.max(1,Math.min(12,parseInt($('sCols').value,10)||cl.cols));
+  $('sRows').value=r; $('sCols').value=c; cl.rows=r; cl.cols=c;
+  Object.keys(cl.seats).forEach(function(k){var p=k.split(','); if(+p[0]>=r||+p[1]>=c) delete cl.seats[k];});
+  cl.blocked=cl.blocked.filter(function(k){var p=k.split(',');return +p[0]<r&&+p[1]<c;});
+  persist(); pvDraw(); render();
+}
+$('sRows').onchange=resize; $('sCols').onchange=resize;
+$('sName').onchange=function(){
+  var v=this.value.trim().replace(/\s+/g,' ').slice(0,40);
+  if(!v||v===S.current){this.value=S.current;return;}
+  if(S.classes[v]){this.value=S.current;$('parseMsg').textContent='There is already a class called "'+v+'".';return;}
+  S.classes[v]=S.classes[S.current]; delete S.classes[S.current]; S.current=v; persist(); render();
+};
+$('loadNames').onclick=function(){
+  var cl=cur(), r=parseNames($('sNames').value), before=cl.roster.slice();
+  var added=r.ok.filter(function(n){return before.indexOf(n)<0;}), dropped=before.filter(function(n){return r.ok.indexOf(n)<0;});
+  cl.roster=r.ok; Object.keys(cl.seats).forEach(function(k){if(r.ok.indexOf(cl.seats[k])<0) delete cl.seats[k];});
+  var t=r.ok.length+' name'+(r.ok.length===1?'':'s')+' in the class list. '+(added.length?added.length+' new. ':'')+(dropped.length?dropped.length+' removed. ':'')+'The history and the seating of everyone else are untouched.';
+  var pm=$('parseMsg'); pm.textContent=t;
+  if(r.skipped.length){var u=document.createElement('ul');u.style.margin='4px 0 0 18px';
+    r.skipped.forEach(function(s){var li=document.createElement('li');li.textContent=s;u.appendChild(li);});
+    var h=document.createElement('div');h.style.cssText='font-weight:700;margin-top:4px;color:#E4572E';h.textContent='Skipped '+r.skipped.length+' line'+(r.skipped.length===1?'':'s')+':';pm.appendChild(h);pm.appendChild(u);}
+  $('sNames').value=r.ok.join('\n'); persist(); render();
+};
+$('resetH').onclick=function(){var n=cur().history.length;$('resetT').textContent='This clears the '+n+' recorded chart'+(n===1?'':'s')+' for '+S.current+'. The seating and the class list stay. It cannot be undone.';$('resetC').classList.add('on');};
+$('resetNo').onclick=function(){$('resetC').classList.remove('on');};
+$('resetYes').onclick=function(){cur().history=[];persist();render();$('resetC').classList.remove('on');$('parseMsg').textContent='History cleared. The seating is as you left it.';};
+$('newClass').onclick=function(){
+  var i=2; while(S.classes['Class '+i]) i++; var nm='Class '+i;
+  S.classes[nm]={rows:5,cols:6,blocked:[],roster:[],seats:{},flip:false,history:[]}; S.current=nm; SEL=null; UNDO=null; persist(); fillSetup(); render();
+};
+$('delClass').onclick=function(){$('delT').textContent='Delete '+S.current+' with its class list and history? It cannot be undone.';$('delC').classList.add('on');};
+$('delNo').onclick=function(){$('delC').classList.remove('on');};
+$('delYes').onclick=function(){delete S.classes[S.current]; S.current=Object.keys(S.classes)[0]; persist(); fillSetup(); render();};
+
+/* ---- start ---------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded',function(){PRISTINE=document.documentElement.outerHTML; load(); render();});
+</script>
+</body>
+</html>
