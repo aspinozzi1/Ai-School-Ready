@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Ask for a Setup Screen</title><style>@import url('file:///home/user/Ai-School-Ready/kits/tooling/fonts/brand-fonts.css');
+:root{--ink:#17293B;--blue:#2D6CB5;--teal:#17BEBB;--sunny:#FFC43D;--tomato:#E4572E;
+--cream:#FFFDF8;--leaf:#4CAF6D;--grape:#8367C7;--grey:#7A8B9A;--rule:#E3DCCD}
+@page{size:Letter;margin:0}*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fff;font-size:10.5pt;line-height:1.5}
+.sheet{width:8.5in;height:11in;position:relative;overflow:hidden;page-break-after:always;
+  background:var(--cream);padding:0.55in 0.6in 0.5in}
+.sheet:last-child{page-break-after:auto}
+.sheet.stu{background:#fff}
+.bar{position:absolute;top:0;left:0;right:0;height:13pt;background:linear-gradient(to right,
+  var(--tomato) 0 25%,var(--sunny) 25% 50%,var(--teal) 50% 75%,var(--blue) 75% 100%)}
+.barb{position:absolute;bottom:0;left:0;right:0;height:9pt;background:linear-gradient(to right,
+  var(--blue) 0 25%,var(--teal) 25% 50%,var(--sunny) 50% 75%,var(--tomato) 75% 100%)}
+.kick{font-family:'Fredoka',sans-serif;font-weight:600;font-size:8.5pt;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:4pt}
+.kick.stu{color:var(--grape)}
+h1{font-family:'Luckiest Guy','Fredoka',sans-serif;font-weight:400;font-size:29pt;line-height:1.05;margin-bottom:9pt}
+h2{font-family:'Fredoka',sans-serif;font-weight:700;font-size:16pt;color:var(--blue);margin-bottom:7pt}
+h3{font-family:'Fredoka',sans-serif;font-weight:600;font-size:11.5pt;margin-bottom:3pt}
+p{margin-bottom:7pt}.lede{font-size:11.5pt;margin-bottom:9pt}.small{font-size:9.5pt}
+.card{background:#fff;border:2.5pt solid var(--ink);border-radius:13pt;padding:11pt 14pt;
+  margin-bottom:9pt;box-shadow:4pt 4pt 0 var(--sunny)}
+.card.t{box-shadow:4pt 4pt 0 var(--teal)}.card.g{box-shadow:4pt 4pt 0 var(--leaf)}
+.card.r{box-shadow:4pt 4pt 0 var(--tomato)}.card.p{box-shadow:4pt 4pt 0 var(--grape)}
+.note{background:var(--ink);color:#fff;border-radius:13pt;padding:12pt 15pt;margin-bottom:9pt}
+.note b{color:var(--sunny)}
+.prompt{background:#fff;border:2.5pt dashed var(--blue);border-radius:11pt;padding:11pt 13pt;
+  margin-bottom:9pt;font-size:9.5pt}
+.prompt .lbl{font-family:'Fredoka',sans-serif;font-weight:700;font-size:8pt;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:5pt}
+code{font-family:'DejaVu Sans Mono',monospace;font-size:8.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:9pt}
+th{font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:left;
+  background:var(--ink);color:#fff;padding:7pt 9pt}
+th:first-child{border-radius:9pt 0 0 0}th:last-child{border-radius:0 9pt 0 0}
+td{border-bottom:1.5pt solid var(--rule);padding:8pt 9pt;font-size:9.5pt;vertical-align:top}
+tr:nth-child(even) td{background:#FFF8E8}
+.foot{position:absolute;bottom:17pt;left:0.6in;right:0.6in;display:flex;
+  justify-content:space-between;font-size:8pt;color:var(--grey)}
+.row{display:flex;gap:9pt}.row>*{flex:1}
+.wl{border-bottom:1.5pt solid var(--rule);height:26pt;margin-bottom:6pt}
+.wl.tall{height:38pt}
+.box{border:2.5pt solid var(--ink);border-radius:11pt;padding:9pt 11pt;margin-bottom:8pt;background:#fff}
+.day{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+pre{font-family:'DejaVu Sans Mono',monospace;font-size:8pt;line-height:1.45;
+  background:var(--ink);color:#F4F1E8;border-radius:9pt;padding:9pt 11pt;margin-bottom:9pt;
+  white-space:pre-wrap;word-break:break-word}
+pre b{color:var(--sunny);font-weight:400}
+pre i{color:#9FB3C6;font-style:normal}
+.sql{background:#0E1B27}
+.step{display:flex;gap:9pt;align-items:flex-start;margin-bottom:8pt}
+.step .n{flex:none;width:26pt;height:26pt;border-radius:50%;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:11pt;text-align:center;
+  line-height:26pt}
+.day .n{flex:none;width:52pt;border-radius:8pt;background:var(--blue);color:#fff;
+  font-family:'Fredoka',sans-serif;font-weight:700;font-size:9pt;text-align:center;padding:5pt 2pt}
+.tick{display:inline-block;width:13pt;height:13pt;border:2pt solid var(--ink);border-radius:3pt;margin-right:5pt;vertical-align:-2pt}
+</style></head><body>
+<!-- ------------------------------------------------------------- 1 cover -->
+<div class="sheet"><div class="bar"></div><div style="padding-top:22pt">
+<div class="kick">Free &middot; Asking AI for the right shape</div>
+<h1>Ask for a<br>Setup Screen</h1>
+<p class="lede">AI will build you a classroom tool in about four minutes. <b>Then it will tell you
+to open the file in a text editor and change the part between the brackets</b>, and that is the step
+where almost everybody quietly stops using it.</p>
+<div class="note"><b>One sentence, added to whatever you were going to ask for, prevents it.</b><br>
+<b>"Put a setup screen inside the file so I can change the content without editing any code."</b>
+That is the whole request, and it is the difference between a tool you adapt for four years and a
+demo you never open again.</div>
+<div class="card r"><h3>Why editing the code is the step people give up at</h3>
+<p class="small" style="margin-bottom:4pt"><b>It is not that it is hard.</b> It is that it is
+frightening in a way that is completely rational: there is no undo, no save button you trust, and
+no way to tell whether the thing you deleted mattered.</p>
+<p class="small" style="margin:0">So it gets done once, carefully, in August &mdash; <b>and then
+never again</b>, which means the tool is frozen on the day you made it. A tool you cannot change
+is a worksheet with extra steps.</p></div>
+<div class="card t"><h3>Where this comes from</h3>
+<p class="small" style="margin:0">I teach high school woodshop and build the software my classes
+use. <b>I shipped a classroom game that asked teachers to edit a block of code</b>, watched what
+that actually meant for somebody who does not write code for a living, and rebuilt it the same
+evening around a setup screen. <b>The tool did not change. Who could use it changed completely.</b></p></div>
+<div class="card p" style="margin-top:2pt"><h3>Inside, in five pages</h3>
+<p class="small" style="margin:0">What a setup screen is and <b>the three questions that decide what
+goes on it</b> &middot; the request written out, and what to do when you get a code block anyway
+&middot; <b>the paste-and-fill shortcut</b> that gets AI to draft your content in about thirty
+seconds &middot; the one parser rule that stops it failing silently &middot; and a fill-in page.</p></div>
+</div>
+<div class="foot"><span>Built and audited by two certified teachers</span><span>Bright Scholar &middot; AI-Ready School</span></div>
+<div class="barb"></div></div>
+
+<!-- --------------------------------------------------------- 2 what goes on -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The idea</div>
+<h2>What a setup screen is, and what belongs on it</h2>
+<p class="lede">A screen inside the tool, reached from a button, where <b>everything that is yours
+rather than the tool's</b> gets typed in. Your questions. Your class list. Your prices. Your room.
+Nothing else.</p>
+<div class="card t"><h3>Three questions decide what goes on it</h3>
+<p class="small" style="margin-bottom:4pt"><b>1 &middot; Would a different teacher need to change
+this?</b> Your questions, yes. The color of the buttons, no. <b>If everybody would change it, it
+belongs on the screen.</b></p>
+<p class="small" style="margin-bottom:4pt"><b>2 &middot; Would <i>you</i> change it again next
+term?</b> A class list changes every year and a price list changes every month. Those belong on the
+screen even if nobody else would touch them.</p>
+<p class="small" style="margin:0"><b>3 &middot; Does getting it wrong break the tool?</b> If the
+answer is yes, it belongs on the screen <b>with a check beside it</b> &mdash; not in the code where
+a stray character ends the lesson.</p></div>
+<div class="card"><h3>And the test that settles any argument</h3>
+<p class="small" style="margin:0"><b>Hand the file to a colleague who has never seen it and say
+nothing.</b> If they can make it theirs, the screen is right. If they ask you a question, the answer
+to that question belongs on the screen &mdash; which is the same rule as user testing, and the same
+reason it works.</p></div>
+<div class="card g"><h3>What should <b>not</b> go on it</h3>
+<p class="small" style="margin:0">Everything else. A setup screen with thirty options is a settings
+menu, and a settings menu is a thing people close. <b>Six to ten fields is a tool. Thirty is a
+chore.</b> If you cannot decide, leave it out &mdash; it is far easier to add a field later than to
+take one away from somebody who started using it.</p></div>
+<div class="note"><b>The reason this is the most useful thing on this page.</b><br>
+A tool you can change is a tool you still use in March. <b>Everything else about building with AI is
+downstream of whether the thing survives contact with a second week.</b></div>
+<div class="foot"><span>Ask for a Setup Screen &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ----------------------------------------------------------- 3 the ask -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The request</div>
+<h2>Written out, and what to do when it ignores you</h2>
+<p class="lede">Add this to whatever you were going to ask for. It works on a new build and it works
+on something you already have.</p>
+<div class="prompt"><div class="lbl">Add to any build request</div>
+<pre>Put a <b>setup screen inside the file</b>, reached from a button, where I can
+change the content without editing any code or opening a text editor.
+
+On it: <b>&lt;list the things that are yours &mdash; questions, names, prices&gt;</b>
+
+Rules:
+- It saves what I type and still has it when I reopen the file.
+- It tells me when something I typed will not work, and says why.
+- Everything else stays where it is. Do not redesign the rest.</pre></div>
+<div class="prompt"><div class="lbl">When it hands you a code block anyway</div>
+<pre>That still asks me to edit code. I need a screen with input boxes,
+inside the running page, that a person who has never seen code
+could use. Keep everything else exactly as it is.</pre></div>
+<div class="card r"><h3>The three things it will get wrong, and they are the same three every time</h3>
+<p class="small" style="margin-bottom:4pt"><b>It forgets.</b> You type your questions in, close the
+file, reopen it, and they are gone. Ask for it to still be there after a reload, in those words.</p>
+<p class="small" style="margin-bottom:4pt"><b>It redesigns everything else.</b> You asked for a
+screen and got a new color scheme. Say "do not change anything I did not ask about" and say it
+again if you have to.</p>
+<p class="small" style="margin:0"><b>It accepts anything.</b> A blank field, a stray comma, a
+duplicate &mdash; all swallowed, and the tool quietly misbehaves later. The next page is about that
+one, because it is the one that costs you a lesson.</p></div>
+<div class="note"><b>Say what should be true, not what to build.</b><br>
+"A screen a person who has never seen code could use" is a requirement you can check. "A nice
+settings page" is a wish. <b>The first one gets tested; the second gets agreed with.</b></div>
+<div class="foot"><span>Ask for a Setup Screen &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------ 4 paste and fill -->
+<div class="sheet"><div class="bar"></div>
+<div class="kick">The half that saves the evening</div>
+<h2>Let AI fill the screen, and make the parser honest</h2>
+<p class="lede">A setup screen you have to type into by hand on a Sunday is still work. <b>The
+second half of the request is a paste box</b>, and a prompt that fills it in about thirty seconds.</p>
+<div class="prompt"><div class="lbl">Add this to the same request</div>
+<pre>Also give me a <b>paste box</b> on the setup screen that accepts a plain
+list, one item per line, and a <b>copy button for a prompt</b> I can paste
+into any AI chat tool to produce that list in the right format.</pre></div>
+<div class="card t"><h3>Why one item per line beats anything cleverer</h3>
+<p class="small" style="margin:0">It is the format a spreadsheet column already gives you, it is
+the format an AI returns without being argued with, and <b>it is the only format you can check by
+looking at it.</b> If you need more than one piece of information per line, separate them with a
+vertical bar rather than a comma &mdash; <b>commas are already in your content</b> and a comma
+format breaks the first time somebody writes "Smith, Alex".</p></div>
+<div class="card r"><h3>The one parser rule, and it is the whole page</h3>
+<p class="small" style="margin-bottom:4pt"><b>Ask for this in those words: "when a line cannot be
+used, tell me which line and why, and keep the rest."</b></p>
+<p class="small" style="margin:0">The default behavior is to silently skip anything it does not
+understand. <b>You paste thirty questions, twenty-eight load, and nothing tells you</b> — and you
+find out in front of a class. A parser that names what it dropped turns a lost lesson into four
+seconds of reading.</p></div>
+<div class="card g"><h3>And the instruction that always goes with the drafting prompt</h3>
+<p class="small" style="margin:0"><b>Read what it gives you before you use it.</b> AI will write
+you twenty plausible review questions in thirty seconds and two of them will be wrong, or off your
+standard, or ask something you have not taught yet. <b>Thirty seconds of drafting still needs two
+minutes of reading</b>, and you own the standards either way.</p></div>
+<div class="foot"><span>Ask for a Setup Screen &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+
+<!-- ------------------------------------------------------------- 5 fill-in -->
+<div class="sheet stu"><div class="bar"></div>
+<div class="kick stu">Your turn &middot; one tool</div>
+<h2>Design the setup screen before you ask for anything</h2>
+<p class="small">A tool you want, or one you have and never changed. <b>Fill this in first, then
+paste it into the request on page 3.</b></p>
+<p class="small" style="margin-bottom:5pt"><b>The tool:</b></p><div class="wl"></div>
+<table>
+<thead><tr><th>What goes on the screen</th><th style="width:30%">Why: everybody changes it, I change it yearly, or it breaks things</th></tr></thead>
+<tbody>
+<tr><td style="height:22pt"></td><td></td></tr>
+<tr><td style="height:22pt"></td><td></td></tr>
+<tr><td style="height:22pt"></td><td></td></tr>
+<tr><td style="height:22pt"></td><td></td></tr>
+<tr><td style="height:22pt"></td><td></td></tr>
+<tr><td style="height:22pt"></td><td></td></tr>
+</tbody></table>
+<div class="box"><h3>What I left off, and why</h3>
+<p class="small" style="margin-bottom:4pt">Six to ten fields is a tool, thirty is a chore. Name one
+thing you were tempted by and cut.</p>
+<div class="wl"></div></div>
+<div class="box"><h3>The paste box: one item per line, and each line is</h3>
+<p class="small" style="margin-bottom:4pt">For example: <code>question | answer | wrong | wrong</code>,
+or just a name. <b>Vertical bars, never commas.</b></p>
+<div class="wl"></div></div>
+<div class="card p"><h3>The test when it comes back, and where to start instead</h3>
+<p class="small" style="margin-bottom:4pt">Hand it to somebody who has never seen it and say
+nothing. <b>If they ask you a question, the answer belongs on the screen.</b></p>
+<p class="small" style="margin:0">Or start from one that works: our <b>Vibe Coding for Teachers</b>
+tools each ship as a working file with the setup screen already in it and no code to edit. Search
+our store.</p></div>
+<div class="note"><b>If this was useful, would you leave a review?</b><br>
+TPT gives you credit toward future purchases, and reviews decide whether another teacher sees this.</div>
+<div class="foot"><span>Ask for a Setup Screen &middot; AI-Ready School</span><span>Built and audited by two certified teachers</span></div>
+<div class="barb"></div></div>
+</body></html>

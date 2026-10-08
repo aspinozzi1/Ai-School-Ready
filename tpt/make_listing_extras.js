@@ -380,6 +380,14 @@ const IMAGES = [
     'A worked list for a real tool, and the three bugs it caught',
     'A fill-in page, so you leave with your own six',
   ], 'PDF')],
+  ['sus-whats-inside', whatsInside('Free \u00b7', 'Ask for a Setup Screen', [
+    'The one sentence to add to any build request',
+    'Three questions that decide what goes on the screen',
+    'What should not go on it, and why thirty fields fails',
+    'The three things AI gets wrong every time',
+    'The paste box, and the parser rule worth the download',
+    'A fill-in page to design it before you ask',
+  ], 'PDF')],
   ['cpw-whats-inside', whatsInside('Free \u00b7', 'Make the Copy Worthless', [
     'Why detecting it is the wrong job, with the numbers',
     'Four moves, each with a before and an after',

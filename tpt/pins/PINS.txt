@@ -3061,3 +3061,46 @@ the season — use this toggle to schedule those.
 Toggle ON (the pin graphic and product were made partly with AI — that's
 our honest provenance line everywhere else too). Leave "AI-generated
 person" UNCHECKED (there are no people in these pins).
+
+------------------------------------------------------------------
+ASK FOR A SETUP SCREEN
+------------------------------------------------------------------
+
+--- UPLOAD YOUR MEDIA ---
+
+setup-screen-pin.png   (in this folder; PNG, well under the 20 MB cap)
+
+--- TITLE ---
+
+Ask for a Setup Screen | Free Teacher Resource
+
+--- DESCRIPTION ---
+
+Free for teachers: AI will build you a classroom tool in about four minutes, then tell you to open the file in a text editor and change the part between the brackets, and that is the step where almost everybody quietly stops using it. One sentence added to the request prevents it. Inside: why editing code is the step people give up at, three questions that decide what goes on a setup screen and the test that settles any argument, what should not go on it since six to ten fields is a tool and thirty is a chore, the request written out in full plus the follow-up for when it hands you a code block anyway, the three things AI gets wrong every time, the paste box and drafting prompt that fill the screen in thirty seconds, why vertical bars beat commas, and the one parser rule worth the download on its own. Plus a fill-in page. From two certified teachers.
+
+--- LINK ---
+
+Paste this listing's TPT URL (your store > open the listing > copy the address bar)
+
+--- BOARD ---
+
+AI for Teachers   <- create once, reuse forever
+
+--- TAGGED TOPICS ---
+
+Try: teacher tools · free · instructional technology   <- pick whatever Pinterest's search suggests closest
+
+--- TAG PRODUCTS ---
+
+Skip.
+
+--- PUBLISH AT A LATER DATE ---
+
+Skip (publish now). Exception: seasonal pins go out 30-45 days before
+the season — use this toggle to schedule those.
+
+--- MARK AS AI-MODIFIED ---
+
+Toggle ON (the pin graphic and product were made partly with AI — that's
+our honest provenance line everywhere else too). Leave "AI-generated
+person" UNCHECKED (there are no people in these pins).

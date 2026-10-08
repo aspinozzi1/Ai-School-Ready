@@ -3034,6 +3034,56 @@
       "previewUnit": "8 pages + the tool",
       "insideHeading": "What you do with it",
       "filesBadge": "PDF + HTML"
+    },
+    {
+      "id": "setup-screen",
+      "order": 72,
+      "name": "Ask for a Setup Screen",
+      "product": "UPLOAD/01-free/ask-for-a-setup-screen.pdf",
+      "cover": "tpt/covers/setup-screen-cover.png",
+      "thumbnails": [
+        "tpt/extras/sus-whats-inside.png"
+      ],
+      "title": "Ask for a Setup Screen | The One Request That Makes an AI Tool Yours | Free",
+      "description": "FREE. AI will build you a classroom tool in about four minutes. Then it will tell you to open the file in a text editor and change the part between the brackets, and that is the step where almost everybody quietly stops using it.\n\nONE SENTENCE PREVENTS IT. \"Put a setup screen inside the file so I can change the content without editing any code.\" That is the whole request, and it is the difference between a tool you adapt for four years and a demo you never open again.\n\nWHY EDITING THE CODE IS WHERE PEOPLE GIVE UP. It is not that it is hard. It is that it is frightening in a completely rational way: there is no undo, no save button you trust, and no way to tell whether the thing you deleted mattered. So it gets done once, carefully, in August, and then never again - which means the tool is frozen on the day you made it. A tool you cannot change is a worksheet with extra steps.\n\nTHREE QUESTIONS DECIDE WHAT GOES ON THE SCREEN. Would a different teacher need to change this? Would YOU change it again next term? Does getting it wrong break the tool? And the test that settles any argument: hand the file to a colleague who has never seen it and say nothing - if they ask you a question, the answer to that question belongs on the screen.\n\nWHAT SHOULD NOT GO ON IT, which matters just as much. Six to ten fields is a tool. Thirty is a settings menu, and a settings menu is a thing people close.\n\nTHE REQUEST IS WRITTEN OUT IN FULL, plus the follow-up for when it hands you a code block anyway, and the three things it gets wrong every time: it forgets what you typed after a reload, it redesigns everything you did not ask about, and it accepts anything you type without complaint.\n\nTHE HALF THAT SAVES THE EVENING. A setup screen you have to type into by hand on a Sunday is still work. Ask for a paste box and a copy button for a prompt that drafts your content in about thirty seconds. One item per line, and vertical bars rather than commas - because commas are already in your content and a comma format breaks the first time somebody writes \"Smith, Alex\".\n\nAND THE ONE PARSER RULE, which is worth the download on its own: \"when a line cannot be used, tell me which line and why, and keep the rest.\" The default behavior is to silently skip whatever it does not understand. You paste thirty questions, twenty-eight load, nothing tells you, and you find out in front of a class.\n\nA FILL-IN PAGE to design the screen before you ask for anything, including what you decided to leave off.\n\nWHERE THIS COMES FROM. I teach high school woodshop and build the software my classes use. I shipped a classroom game that asked teachers to edit a block of code, watched what that actually meant for somebody who does not write code for a living, and rebuilt it the same evening around a setup screen. The tool did not change. Who could use it changed completely.\n\nLEAVING A REVIEW EARNS YOU TPT CREDIT. TPT gives you credit toward future purchases for every review you leave, and reviews are how other teachers find free resources like this one. If something here does not work in your room, please use the Q&A first - we would rather fix it.\n\nBuilt and audited by two certified teachers.",
+      "price": 0,
+      "licenses": 0,
+      "grades": [
+        "Not Grade Specific"
+      ],
+      "subjects": [
+        "For All Subject Areas",
+        "Instructional Technology",
+        "Professional Development"
+      ],
+      "tags": [
+        "teacher tools",
+        "free",
+        "instructional technology",
+        "professional development",
+        "classroom management",
+        "computer science"
+      ],
+      "formats": [
+        "PDF"
+      ],
+      "customCategory": "AI for Teachers",
+      "previewShots": [
+        "sus_p2.png",
+        "sus_p3.png",
+        "sus_p4.png"
+      ],
+      "previewInside": [
+        "<b>The one sentence to add to any build request</b>",
+        "Three questions that decide what goes on the screen",
+        "<b>What should not go on it, and why thirty fields fails</b>",
+        "The three things AI gets wrong every time",
+        "<b>The paste box, and the parser rule worth the download</b>",
+        "A fill-in page to design it before you ask"
+      ],
+      "previewUnit": "5 pages",
+      "insideHeading": "What is inside",
+      "filesBadge": "PDF"
     }
   ]
 }
